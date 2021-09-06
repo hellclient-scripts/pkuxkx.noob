@@ -1,8 +1,10 @@
 (function(app){
     world.Note("加载系统参数");
     app.Params={
-        "tick":"1000",
+        "tick":"1100",
         "cmdlimit":"20",
+        "cmdinterval":"50",
+        "echo":"t",
     }
     app.InitParam=function(name,val){
         app.Params[name]=val
@@ -10,7 +12,7 @@
     app.GetParam=function(name){
         var val=world.GetVariable("sys_"+name)
         if (val===""){
-            val=app.Var[name]
+            val=app.Params[name]
             if (val===undefined){
                 val= ""
             }

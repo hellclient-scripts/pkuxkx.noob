@@ -31,5 +31,12 @@
     app.Info.Roomobjs["Wang tiejiang"]="yztj"
     addroom("yzzxl","扬州醉仙楼")
     app.Info.Roomnames["醉仙楼"]="yzzxl"
-    
+    addroom("yzcg","春来茶馆")
+    app.Info.Roomnames["春来茶馆"]="yzcg"
+    addroom("yzyp","扬州药铺")
+    app.Info.Roomobjs["Ping yizhi"]="yzyp"
+    addroom("yzsy","扬州书院")
+    app.Info.Roomobjs["Fu zi"]="yzsy"
+    addroom("yzkd","扬州客店")
+    app.Info.Roomobjs["Song shengyi"]="yzkd"
 })(App)
