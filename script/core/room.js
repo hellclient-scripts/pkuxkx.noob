@@ -2,10 +2,11 @@
     app.Data.Room={}
     app.Core.OnRoom=function(name, output, wildcards){
         app.Data.Room={
+            ID:"",
             Name:wildcards[1],
             Desc:"",
+            Tags:wildcards[2],
             Objs:[],
-            ObjsMap:{},
         }
         world.EnableTriggerGroup("roomexit",true)
     }
@@ -16,18 +17,23 @@
         }
     }
     App.Core.OnRoomExits=function(name, output, wildcards){
+        world.EnableTrigger("room_desc",false)
         world.EnableTriggerGroup("roomexit",false)
         world.EnableTriggerGroup("roomobj",true)
-        var exits=wildcards[1].match(exitsre).sort()
-        app.Data.Room.Exits=exits
+        if (name!="room_noexit"){
+            var exits=wildcards[1].match(exitsre).sort()
+            app.Data.Room.Exits=exits
+        }else{
+            app.Data.Room.Exits=[]
+        }
+        app.Raise("OnRoomExits")
     }
     App.Core.OnRoomObj=function(name, output, wildcards){
-        app.Data.Room.Objs.push({ID:wildcards[1],Name:wildcards[0]})
-        app.Data.Room.ObjsMap[wildcards[1].toLowerCase()]=wildcards[0]
+        var obj={ID:wildcards[1],Name:wildcards[0]}
+        app.Data.Room.Objs.push(obj)
+        app.Raise("OnRoomObj",obj)
     }
     App.Core.OnRoomObjEnd=function(name, output, wildcards){
-        if (output.length<3 || output.slice(0,4)!="    "){
-            world.EnableTriggerGroup("roomobj",false)
-        }
+        world.EnableTriggerGroup("roomobj",false)
     }
 })(App)

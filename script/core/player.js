@@ -95,7 +95,7 @@
     app.Core.OnPlayerScore9=function(name, output, wildcards){
         app.Data.Score["kill"]=wildcards[0]-0
         app.Data.Score["job"]=wildcards[1]
-        app.Data.Score["saving"]=CNumber.Convert(wildcards[2])
+        app.Data.Score["saving"]=wildcards[3]?(wildcards[3]-0):0
     }
     app.Core.OnPlayerScore10=function(name, output, wildcards){
         app.Data.Score["killed"]=wildcards[0]-0
@@ -115,4 +115,58 @@
     app.Core.OnPlayerScoreEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("playerscore",false)
     }
+    app.Data.Skills={
+        All:[],
+    }
+    app.Core.OnPlayerSkills=function(name, output, wildcards){
+        world.EnableTriggerGroup("playerskills",true)
+        app.Data.Skills={
+            Max:CNumber.Convert(wildcards[1]),
+            _currentType:"",
+            All:[],
+        }
+    }
+    App.Core.OnPlayerNoSkills=function(name, output, wildcards){
+        app.Data.Skills={
+            All:[],
+        }
+    }
+    app.Core.OnPlayerSkillsType=function(name, output, wildcards){
+        app.Data.Skills._currentType=wildcards[0]
+    }
+    app.Core.OnPlayerSkillsObj=function(name, output, wildcards){
+        app.Data.Skills.All.push({
+            ID:wildcards[2],
+            Name:wildcards[1],
+            Used:wildcards[0]!="  ",
+            Comment:wildcards[3],
+            Level:wildcards[4],
+            Max:wildcards[5],
+            Type:app.Data.Skills._currentType,
+        })
+    }
+    app.Core.OnPlayerSkillsEnd=function(name, output, wildcards){
+        delete(app.Data.Skills["_currentType"],playerskills)
+    }
+    app.Data.Jifa=[]
+    app.Core.OnPlayerJifa=function(name, output, wildcards){
+        world.EnableTriggerGroup("playerjifa",true)
+        app.Data.Jifa=[]
+    }
+    App.Core.OnPlayerNoJifa=function(name, output, wildcards){
+        app.Data.Jifa=[]
+    }
+    app.Core.OnPlayerJifaObj=function(name, output, wildcards){
+        app.Data.Jifa.push({
+            ID:wildcards[1],
+            Name:wildcards[0],
+            Skill:wildcards[2],
+            Tags:wildcards[3],
+            Level:wildcards[5],
+        })
+    }
+    app.Core.OnPlayerJifaEnd=function(name, output, wildcards){
+        world.EnableTriggerGroup("playerjifa",false)
+    }
+    
 })(App)
