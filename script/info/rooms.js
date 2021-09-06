@@ -1,42 +1,41 @@
 (function(app){
     app.Info.Rooms={}
-    app.Info.Roomnames={}
-    app.Info.Roomobjs={}
+    app.Info.Stations={}
+    app.Info.Landmarks={}
+
+    var addroom=function(name,desc,data){
+        app.Info.Rooms[name]=desc
+        if (data.Landmark){
+            app.Info.Landmarks[data.Landmark]=name
+        }
+        if (data.Station){
+            app.Info.Stations[data.Station]=name
+        }
+    }
+    
     app.RegisterCallback("info.room.objlocate",function(data){
-        if (!app.Data.Room.ID && app.Info.Roomobjs[data.ID]){
-            app.Data.Room.ID=app.Info.Roomobjs[data.ID]
+        if (!app.Data.Room.ID && app.Info.Landmarks[data.ID]){
+            app.Data.Room.ID=app.Info.Landmarks[data.ID]
             world.Note("定位成功，位于 "+app.Info.Rooms[app.Data.Room.ID]+"("+app.Data.Room.ID+")")
         }
     })
-    app.Bind("OnRoomObj","info.room.objlocate")
     app.RegisterCallback("info.room.namelocate",function(){
-        var id=app.Info.Roomnames[app.Data.Room.Name]
+        var id=app.Info.Stations[app.Data.Room.Name]
         if (id){
             app.Data.Room.ID=id
             world.Note("定位成功，位于 "+app.Info.Rooms[app.Data.Room.ID]+"("+app.Data.Room.ID+")")
         }
     })
+    app.Bind("OnRoomObj","info.room.objlocate")
     app.Bind("OnRoomExits","info.room.namelocate")
 
-    var addroom=function(id,name){
-        app.Info.Rooms[id]=name
-    }
-    addroom("yzgc","扬州广场")
-    app.Info.Roomobjs["Rong shu"]="yzgc"
-    addroom("yzqz","扬州钱庄")
-    app.Info.Roomnames["扬州钱庄"]="yzqz"
-    addroom("yzdp","扬州当铺")
-    app.Info.Roomobjs["Tang nan"]="yzdp"
-    addroom("yztj","扬州铁匠")
-    app.Info.Roomobjs["Wang tiejiang"]="yztj"
-    addroom("yzzxl","扬州醉仙楼")
-    app.Info.Roomnames["醉仙楼"]="yzzxl"
-    addroom("yzcg","春来茶馆")
-    app.Info.Roomnames["春来茶馆"]="yzcg"
-    addroom("yzyp","扬州药铺")
-    app.Info.Roomobjs["Ping yizhi"]="yzyp"
-    addroom("yzsy","扬州书院")
-    app.Info.Roomobjs["Fu zi"]="yzsy"
-    addroom("yzkd","扬州客店")
-    app.Info.Roomobjs["Song shengyi"]="yzkd"
+    addroom("yzgc","扬州广场",{Landmark:"Rong shu"})
+    addroom("yzqz","扬州钱庄",{Station:"扬州钱庄"})
+    addroom("yzdp","扬州当铺",{Landmark:"Tang nan"})
+    addroom("yztj","扬州铁匠",{Landmark:"Wang tiejiang"})
+    addroom("yzzxl","扬州醉仙楼",{Station:"醉仙楼"})
+    addroom("yzcg","春来茶馆",{Station:"春来茶馆"})
+    addroom("yzyp","扬州药铺",{Landmark:"Ping yizhi"})
+    addroom("yzsy","扬州书院",{Landmark:"Fu zi"})
+    addroom("yzkd","扬州客店",{Landmark:"Song shengyi"})
 })(App)
