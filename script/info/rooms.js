@@ -3,13 +3,13 @@
     app.Info.Stations={}
     app.Info.Landmarks={}
 
-    var addroom=function(name,desc,data){
-        app.Info.Rooms[name]=desc
+    var addroom=function(id,desc,data){
+        app.Info.Rooms[id]=desc
         if (data.Landmark){
-            app.Info.Landmarks[data.Landmark]=name
+            app.Info.Landmarks[data.Landmark]=id
         }
         if (data.Station){
-            app.Info.Stations[data.Station]=name
+            app.Info.Stations[data.Station]=id
         }
     }
     
@@ -19,7 +19,7 @@
             world.Note("定位成功，位于 "+app.Info.Rooms[app.Data.Room.ID]+"("+app.Data.Room.ID+")")
         }
     })
-    app.RegisterCallback("info.room.namelocate",function(){
+    app.RegisterCallback("info.room.idlocate",function(){
         var id=app.Info.Stations[app.Data.Room.Name]
         if (id){
             app.Data.Room.ID=id
@@ -27,7 +27,7 @@
         }
     })
     app.Bind("OnRoomObj","info.room.objlocate")
-    app.Bind("OnRoomExits","info.room.namelocate")
+    app.Bind("OnRoomExits","info.room.idlocate")
 
     addroom("yzgc","扬州广场",{Landmark:"Rong shu"})
     addroom("yzqz","扬州钱庄",{Station:"扬州钱庄"})
@@ -38,4 +38,6 @@
     addroom("yzyp","扬州药铺",{Landmark:"Ping yizhi"})
     addroom("yzsy","扬州书院",{Landmark:"Fu zi"})
     addroom("yzkd","扬州客店",{Landmark:"Song shengyi"})
+    addroom("yzdtpns","扬州打铁铺内室",{Station:"打铁铺内室"})
+    
 })(App)
