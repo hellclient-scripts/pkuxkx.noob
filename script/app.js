@@ -11,6 +11,13 @@ App.Init=function(){
 App.RegisterCallback=function(name,fn){
     App.Callbacks[name]=fn
 }
+App.ExecuteCallback=function(name,data){
+    var fn=App.Callbacks[name]
+    if (!fn){
+        throw "回调["+name+"]无法找到"
+    }
+    return fn(data)
+}
 App.Bind=function(event,callback){
     var listeners=App.Listeners[event]
     if (!listeners){

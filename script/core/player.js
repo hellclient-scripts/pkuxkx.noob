@@ -1,54 +1,5 @@
 (function(app){
-    app.Data.HP={
-    }
-    app.Core.OnPlayerHP=function(name, output, wildcards){
-        app.Data.HP={
-        }
-        world.EnableTriggerGroup("playerhp",true)
-    }
-    app.Core.OnPlayerHP1=function(name, output, wildcards){
-        app.Data.HP["eff_jing"]=wildcards[0]-0
-        app.Data.HP["jing"]=wildcards[1]-0
-        app.Data.HP["per_jing"]=wildcards[2]-0
-        app.Data.HP["eff_jingli"]=wildcards[3]-0
-        app.Data.HP["jingli"]=wildcards[4]-0
-        app.Data.HP["jiajing"]=wildcards[5]-0
-    }
-    app.Core.OnPlayerHP2=function(name, output, wildcards){
-        app.Data.HP["eff_qixue"]=wildcards[0]-0
-        app.Data.HP["qixue"]=wildcards[1]-0
-        app.Data.HP["per_qixue"]=wildcards[2]-0
-        app.Data.HP["eff_neili"]=wildcards[3]-0
-        app.Data.HP["neili"]=wildcards[4]-0
-        app.Data.HP["jiali"]=wildcards[5]-0
-    }
-    app.Core.OnPlayerHP3=function(name, output, wildcards){
-        app.Data.HP["eff_zhenqi"]=wildcards[0]-0
-        app.Data.HP["zhengqi"]=wildcards[1]-0
-        app.Data.HP["eff_jingqi"]=wildcards[2]-0
-        app.Data.HP["jingqi"]=wildcards[3]-0
-        app.Data.HP["jingqi_status"]=wildcards[4]
-    }
-    app.Core.OnPlayerHP4=function(name, output, wildcards){
-        app.Data.HP["eff_zhenqi"]=wildcards[0]-0
-        app.Data.HP["zhengqi"]=wildcards[1]-0
-        app.Data.HP["eff_jingqi"]=wildcards[2]-0
-        app.Data.HP["jingqi"]=wildcards[3]-0
-        app.Data.HP["jingqi_status"]=wildcards[4]
-    }
-    app.Core.OnPlayerHP5=function(name, output, wildcards){
-        app.Data.HP["eff_drink"]=wildcards[0]-0
-        app.Data.HP["drink"]=wildcards[1]-0
-        app.Data.HP["drink_status"]=wildcards[2]
-        app.Data.HP["exp"]=wildcards[3]-0
-    }
-    app.Core.OnPlayerHP6=function(name, output, wildcards){
-        app.Data.HP["status"]=wildcards[0]
-    }
-    
-    app.Core.OnPlayerHPEnd=function(name, output, wildcards){
-        world.EnableTriggerGroup("playerhp",false)
-    }
+
     app.Data.Score={}
     app.Core.OnPlayerScore=function(name, output, wildcards){
         app.Data.Score={
@@ -167,6 +118,31 @@
     }
     app.Core.OnPlayerJifaEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("playerjifa",false)
+    }
+    app.Data.HP={
+    }
+    app.Core.OnPlayerHpbrief=function(name, output, wildcards){
+        app.Data.HP={}
+        app.Data.HP["exp"]=world.GetTriggerWildcard(name,"exp")-0
+        app.Data.HP["pot"]=world.GetTriggerWildcard(name,"pot")-0
+        app.Data.HP["neili"]=world.GetTriggerWildcard(name,"neili")-0
+        app.Data.HP["eff_neili"]=world.GetTriggerWildcard(name,"effneili")-0
+        app.Data.HP["jingli"]=world.GetTriggerWildcard(name,"jingli")-0
+        app.Data.HP["eff_jingli"]=world.GetTriggerWildcard(name,"eff_jingli")-0
+        app.Data.HP["qixue_cap"]=world.GetTriggerWildcard(name,"qixue_cap")-0
+        app.Data.HP["qixue"]=world.GetTriggerWildcard(name,"qixue")-0
+        app.Data.HP["eff_qixue"]=world.GetTriggerWildcard(name,"eff_qixue")-0
+        app.Data.HP["jing_cap"]=world.GetTriggerWildcard(name,"jing_cap")-0
+        app.Data.HP["jing"]=world.GetTriggerWildcard(name,"jing")-0
+        app.Data.HP["eff_jing"]=world.GetTriggerWildcard(name,"eff_jing")-0
+        app.Data.HP["zhenqi"]=world.GetTriggerWildcard(name,"zhenqi")-0
+        app.Data.HP["zhanyi"]=world.GetTriggerWildcard(name,"zhanyi")-0
+        app.Data.HP["food"]=world.GetTriggerWildcard(name,"food")-0
+        app.Data.HP["drink"]=world.GetTriggerWildcard(name,"drink")-0
+        app.Data.HP["fighting"]=(world.GetTriggerWildcard(name,"fighting")=="1")
+        app.Data.HP["busy"]=(world.GetTriggerWildcard(name,"busy")=="1")
+
+
     }
     
 })(App)
