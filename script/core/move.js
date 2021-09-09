@@ -1,16 +1,16 @@
 (function(app){
     app.Path=Include("include/path.js")()
-    Move=function(){
-        this.Mode=""
+    Move=function(mode,target,onFinish,data){
+        this.Target=target
+        this.Mode=mode?mode:"walk"
+        this.OnFinish=onFinish?onFinish:""
+        this.Data=data?data:""
         this.Paths=[]
         this.Searched=[]
-        this.Target=""
         this.OnStart=""
         this.OnStep=""
-        this.OnFinish=""
         this.OnFail=""
         this.OnWrongway=""
-        this.Data=""
     }
     Move.prototype.Start=function(){
         var walk=this
@@ -47,6 +47,7 @@
   
         }
     }
+    app.Move=Move
     app.Data.Move=null
     app.Data.PendingMove=null
 
@@ -55,14 +56,6 @@
         app.MoveContinue()
     })
 
-    app.NewMove=function(mode,target,onFinish,data){
-        var move=newMove()
-        move.Target=target
-        move.Mode=mode?mode:"walk"
-        move.OnFinish=onFinish?onFinish:""
-        move.Data=data?data:""
-        return move
-    }
     app.MoveStop=function(){
         world.EnableTriggerGroup("move",false)
     }
