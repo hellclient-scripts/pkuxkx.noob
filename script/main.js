@@ -22,6 +22,9 @@ onAssist=function(){
 onBroadcast=function(msg,global,channel,global){
     
 }
-eval(world.ReadFile("util.js"),"util.js")
-eval(world.ReadFile("app.js"),"app.js")
+function Include(file){
+    return eval(world.ReadFile(file),file)
+}
+Include("util.js")
+Include("app.js")
 App.Start()

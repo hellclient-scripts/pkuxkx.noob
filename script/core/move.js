@@ -1,28 +1,18 @@
 (function(app){
-    newMove=function(){
-        var m={
-            Mode:"",
-            Path:[],
-            Searched:[],
-            Target:"",
-            OnStart:"",
-            OnStep:"",
-            OnPath:"",
-            OnFinish:"",
-            OnFail:"",
-            OnWrongway:"",
-            Data:"",
-        }
-        m.Start=start.bind(m)
-        return m
+    app.Path=Include("include/path.js")()
+    Move=function(){
+        this.Mode=""
+        this.Paths=[]
+        this.Searched=[]
+        this.Target=""
+        this.OnStart=""
+        this.OnStep=""
+        this.OnFinish=""
+        this.OnFail=""
+        this.OnWrongway=""
+        this.Data=""
     }
-    app.Data.Move=null
-    app.Data.PendingMove=null
-    app.RegisterCallback("core.move.onmovestart",function(){
-        world.EnableTriggerGroup("move",true)
-        app.MoveContinue()
-    })
-    var start=function(){
+    Move.prototype.Start=function(){
         var walk=this
         if (app.Data.Move==null){
             app.Data.Move=walk
@@ -57,6 +47,14 @@
   
         }
     }
+    app.Data.Move=null
+    app.Data.PendingMove=null
+
+    app.RegisterCallback("core.move.onmovestart",function(){
+        world.EnableTriggerGroup("move",true)
+        app.MoveContinue()
+    })
+
     app.NewMove=function(mode,target,onFinish,data){
         var move=newMove()
         move.Target=target

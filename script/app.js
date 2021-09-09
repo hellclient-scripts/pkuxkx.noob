@@ -46,21 +46,28 @@ App.Start=function(){
     App.Load("info/info.js")
     App.Raise("ready")    
 }
-App.Dump=function(){
-    return JSON.stringify(App.Data,null,2)
+App.DumpData=function(){
+    Dump(App.Data,true)
 }
 App.RegisterAPI=function(name,fm){
     App.API[name]=fm
 }
+Dump=function(data,silence){
+    let output=JSON.stringify(data,null,2)
+    if (!silence){
+        world.Note(output)
+    }
+    return output
+}
 Debug=function(){
-    world.Note(App.Dump())
+    Dump(App.Data)
 }
 Bound=function(){
-    world.Note(JSON.stringify(App.Listeners,null,2))
+    Dump(App.Listeners)
 }
 DumpPath=function(fr,to){
     if (typeof(to)=="string"){
         to=[to]
     }
-    world.Note(JSON.stringify(App.API.GetPath(fr,to),null,2))
+    Dump(App.API.GetPath(fr,to))
 }
