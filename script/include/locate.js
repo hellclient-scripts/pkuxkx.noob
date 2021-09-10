@@ -27,6 +27,14 @@
     Locate.prototype.AllWalked=function(){
         return this.Levels[this.Levels.length-1].length==0
     }
+    Locate.prototype.Skip=function(){
+        if (this.AllWalked()){
+            return nil
+        }
+        this.Levels[this.Levels.length-1].shift()
+        return this.NextStep()
+    }
+    
     //进入新房间，传入当前房间出口，返回下一步行动的出口，失败返回null
     Locate.prototype.Enter=function(exits){
         //确定是否是回退

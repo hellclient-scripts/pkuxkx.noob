@@ -20,6 +20,7 @@
             case "run":
             break
             case "locate":
+                world.EnableTimer("steptimeout",false)
                 if (app.Data.Room.ID){
                     world.Note("定位成功")
                     if (app.Data.PendingMove!=null){
@@ -29,16 +30,16 @@
                         return
                     }
                     this.Stop()
-                    app.ExecuteCallback(this.onFinish)
+                    app.ExecuteCallback(this.onFinish,this.Data)
                     return
                 }
                 let step=walk.Context.Enter(app.Data.Room.Exits)
                 if (step){
-                    app.Send(step)
+                    this.tryMove(step)
                 }else{
                     this.Stop()
                     world.Note("定位失败")
-                    app.ExecuteCallback(this.onFail)
+                    app.ExecuteCallback(this.onFail,this.Data)
                 }
             break
             default:
@@ -46,7 +47,20 @@
 
         }
     }
+    Move.prototype.OnStepTimeout=function(){
+        world.EnableTimer("steptimeout",false)
+        let step=this.Context.Skip()
+        if (step){
+            world.Note("移动超时，换个出口")
+            this.tryMove(step)
+        }else{
+            this.Stop()
+            world.Note("定位失败")
+            app.ExecuteCallback(this.onFail,this.Data)
+        }
+    }
     Move.prototype.Stop=function(){
+        world.EnableTimer("steptimeout",false)
         app.Data.Move=null
         app.Data.PendingMove=null
     }
@@ -85,6 +99,10 @@
   
         }
     }
+    Move.prototype.tryMove=function(data){
+        world.EnableTimer("steptimeout",true)
+        App.Send(data)
+    }
     app.Move=Move
     app.Data.Move=null
     app.Data.PendingMove=null
@@ -95,5 +113,10 @@
         }
     })
     app.Bind("OnRoomEnd","core.move.onroomobjend")
+    app.OnMoveStepTimeout=function(name){
+        if (app.Data.Move){
+            app.Data.Move.OnStepTimeout()
+        }
+    }
 
 })(App)
