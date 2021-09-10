@@ -52,7 +52,7 @@
             if (back){
                 //是返回的出口,不再进入
                 if (back==step){
-                    returnstep=back
+                    returnstep=data
                 }else{
                     level.push(data)
                 }
