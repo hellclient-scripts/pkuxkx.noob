@@ -22,6 +22,9 @@ onAssist=function(){
 onBroadcast=function(msg,global,channel,global){
     
 }
+onBuffer=function(data){
+    return data=="> "
+}
 function Include(file){
     return eval(world.ReadFile(file),file)
 }

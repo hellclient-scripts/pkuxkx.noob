@@ -35,5 +35,6 @@
     }
     App.Core.OnRoomObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("roomobj",false)
+        app.Raise("OnRoomEnd")
     }
 })(App)

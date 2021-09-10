@@ -8,6 +8,9 @@ OnDisconnect = "onDisconnected"
 OnBroadcast = "onBroadcast"
 OnAssist = "onAssist"
 Channel = "pkuxkx.noob"
+OnBuffer="onBuffer"
+OnBufferMin=2
+OnBufferMax=2
 Timers = []
 Aliases = []
 
@@ -1187,3 +1190,35 @@ Aliases = []
   Inverse = false
   Italic = false
   Variable = "" 
+
+   
+[[Triggers]]
+  ID = "core_response"
+  Name = "core_response"
+  Enabled = true
+  Match = "^系统回馈：core = (.+)( (.*)){0,1}$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnResponse"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""

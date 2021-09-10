@@ -7,4 +7,4 @@
         this.Target=target?target:""
     }
     return Step
-})
+})()

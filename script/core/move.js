@@ -1,16 +1,43 @@
 (function(app){
-    app.Path=Include("include/path.js")()
+    app.Path=Include("include/path.js")
+    let locate=Include("include/locate.js")
     Move=function(mode,target,onFinish,data){
         this.Target=target
         this.Mode=mode?mode:"walk"
         this.OnFinish=onFinish?onFinish:""
         this.Data=data?data:""
-        this.Paths=[]
-        this.Searched=[]
+        this.Context=null
         this.OnStart=""
         this.OnStep=""
         this.OnFail=""
         this.OnWrongway=""
+    }
+    Move.prototype.OnRoomObjEnd=function(){
+        var walk=this
+        switch (walk.Mode){
+            case "walk":
+            break
+            case "run":
+            break
+            case "locate":
+                if (app.Data.Room.ID){
+                    world.Note("定位成功")
+                    if (app.Data.PendingMove!=null){
+                        app.Data.Move=app.Data.PendingMove
+                        app.Data.PendingMove=null
+                        app.Data.Move.Start()
+                        return
+                    }
+                    app.Data.Move=null
+                    app.ExecuteCallback(this.onFinish)
+                    return
+                }
+                app.Send(walk.Context.Enter(app.Data.Room.Exits))
+            break
+            default:
+            throw "app.Move:Mode["+walk.Mode+"]无效"
+
+        }
     }
     Move.prototype.Start=function(){
         var walk=this
@@ -41,6 +68,8 @@
                 app.Execute(onStart)
             break
             case "locate":
+                walk.Context=new locate(walk.Target-0)
+                App.Send("l")
             break
             default:
                 throw "app.Move:Mode["+walk.Mode+"]无效"
@@ -51,15 +80,11 @@
     app.Data.Move=null
     app.Data.PendingMove=null
 
-    app.RegisterCallback("core.move.onmovestart",function(){
-        world.EnableTriggerGroup("move",true)
-        app.MoveContinue()
+    app.RegisterCallback("core.move.onroomobjend",function(){
+        if (app.Data.Move){
+            app.Data.Move.OnRoomObjEnd()
+        }
     })
+    app.Bind("OnRoomEnd","core.move.onroomobjend")
 
-    app.MoveStop=function(){
-        world.EnableTriggerGroup("move",false)
-    }
-    app.MoveContinue=function(){
-
-    }
 })(App)

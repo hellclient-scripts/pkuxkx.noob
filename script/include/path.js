@@ -1,5 +1,5 @@
 (function(){
-    let Step=Include("include/step.js")()
+    let Step=Include("include/step.js")
     let Path=function(){
         this.Moving=[]
         this.Steps=[]
@@ -37,4 +37,4 @@
         return this.Moving.shift()
     }
     return Path
-})
+})()
