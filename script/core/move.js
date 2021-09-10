@@ -28,16 +28,27 @@
                         app.Data.Move.Start()
                         return
                     }
-                    app.Data.Move=null
+                    this.Stop()
                     app.ExecuteCallback(this.onFinish)
                     return
                 }
-                app.Send(walk.Context.Enter(app.Data.Room.Exits))
+                let step=walk.Context.Enter(app.Data.Room.Exits)
+                if (step){
+                    app.Send(step)
+                }else{
+                    this.Stop()
+                    world.Note("定位失败")
+                    app.ExecuteCallback(this.onFail)
+                }
             break
             default:
             throw "app.Move:Mode["+walk.Mode+"]无效"
 
         }
+    }
+    Move.prototype.Stop=function(){
+        app.Data.Move=null
+        app.Data.PendingMove=null
     }
     Move.prototype.Start=function(){
         var walk=this
@@ -64,8 +75,6 @@
                     return
                 }
                 var onStart=walk.onStart
-                if (!onStart){onStart="core.move.onmovestart"}
-                app.Execute(onStart)
             break
             case "locate":
                 walk.Context=new locate(walk.Target-0)
