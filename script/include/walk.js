@@ -1,24 +1,21 @@
 (function(){
     let Step=Include("include/step.js")
-    let Walk=function(){
+    let Walk=function(path){
         this.Moving=[]
-        this.Path=[]
+        this.Path=path
     }
     Walk.prototype.Current=function(){
-        if (this.Steps.length==0){
-            return null
-        }
-        return this.Steps[0]
+        return this.Path.First()
     }
     Walk.prototype.Move=function(){
-        let step=this.Steps.shift()
+        let step=this.Path.Shift()
         if (step){
             this.Moving.push(step)
         }
-        return this.Current()
+        return step
     }
     Walk.prototype.Arrive=function(){
         return this.Moving.shift()
     }
     return Walk
-})
+})()

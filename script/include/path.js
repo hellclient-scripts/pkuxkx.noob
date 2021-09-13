@@ -1,42 +1,50 @@
-(function(){
-    let Step=Include("include/step.js")
-    let Path=function(commands,target){
-        this.Steps=[]
-        let self=this
-        if (commands){
-            commands.forEach(function(cmd){
+(function () {
+    let Step = Include("include/step.js")
+    let Path = function (commands, target) {
+        this.Steps = []
+        let self = this
+        if (commands) {
+            commands.forEach(function (cmd) {
                 self.Push(cmd)
             })
-            this.Steps[this.Steps.length-1].SetTarget(target)
+            this.Steps[this.Steps.length - 1].SetTarget(target)
         }
     }
-    Path.prototype.Push=function(command,target){
-        this.PushStep(new Step(command,target))
+    Path.prototype.Push = function (command, target) {
+        this.PushStep(new Step(command, target))
     }
-    Path.prototype.PushStep=function(step){
-        this.Steps.push(step)
+    Path.prototype.PushStep = function (step) {
+        if (step.Command){
+            this.Steps.push(step)
+        }
     }
-    Path.prototype.PushCommands=function(commands,target){
-        var self=this
-        if (commands){
-            commands.forEach(function(cmd){
+    Path.prototype.PushCommands = function (commands, target) {
+        var self = this
+        if (commands) {
+            commands.forEach(function (cmd) {
                 self.Push(cmd)
             })
-            this.Steps[this.Steps.length-1].SetTarget(target)
+            this.Steps[this.Steps.length - 1].SetTarget(target)
         }
     }
-    Path.prototype.Clone=function(){
-        let result=new Path()
-        this.Steps.forEach(function(step){
+    Path.prototype.Clone = function () {
+        let result = new Path()
+        this.Steps.forEach(function (step) {
             result.Steps.push(step)
         })
         return result
     }
-    Path.prototype.Length=function(){
+    Path.prototype.Length = function () {
         return this.Steps.length
     }
-    Path.prototype.Shift=function(){
+    Path.prototype.Shift = function () {
         return this.Steps.shift()
+    }
+    Path.prototype.First = function () {
+        if (this.Steps.length == 0) {
+            return null
+        }
+        return this.Steps[0]
     }
     return Path
 })()

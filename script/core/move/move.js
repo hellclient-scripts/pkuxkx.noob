@@ -17,14 +17,12 @@
         this.OnWrongway=options.OnWrongway?options.OnWrongway:""
         this.OnStart=function(){}
         this.Start=function(){
-            this.OnStart()
-            var walk=this
             if (app.Data.Move==null){
-                app.Data.Move=walk
+                app.Data.Move=this
+                this.OnStart()
             }else{
-                app.Data.PendingMove=walk
+                app.Data.PendingMove=this
             }
-    
         }
         this.OnStepTimeout=function(){
 

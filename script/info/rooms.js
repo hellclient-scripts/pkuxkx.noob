@@ -39,5 +39,12 @@
     addroom("yzsy","扬州书院",{Landmark:"Fu zi"})
     addroom("yzkd","扬州客店",{Landmark:"Song shengyi"})
     addroom("yzdtpns","扬州打铁铺内室",{Station:"打铁铺内室"})
-    
+    addroom("qfgl","曲阜鼓楼",{Station:"鼓楼"})
+    addroom("xyzhq","信阳镇淮桥",{Station:"镇淮桥"})
+    addroom("xcc","许昌城",{Station:"许昌城"})
+    addroom("nyc","南阳城",{Station:"南阳城"})
+    addroom("xydp","襄阳当铺",{Station:"襄阳当铺"})
+    addroom("jz","荆州",{Station:"荆州"})
+    addroom("rzc","汝州城",{Station:"汝州城"})
+
 })(App)

@@ -4,11 +4,18 @@
         "yzdp":"yzgc|s;e|w;n",
         "yztj":"yzgc|e;e;s|n;w;w",
         "yzzxl":"yzgc|n;n;e|w;s;s",
-        "yzzxl":"yzgc|s;s;w|e;n;n",
+        "yzcg":"yzgc|s;s;w|e;n;n",
         "yzyp":"yzgc|e;e;n|s;w;w",
         "yzsy":"yzgc|e;e;n|s;w;w",
         "yzkd":"yzgc|n;e|w;s",
         "yzdtpns":"yztj|s|n",
+        "qfgl":"yzgc|n;n;n;n;n;n;n;n;n;n|s;s;s;s;s;s;s;s;s;s",
+        "xyzhq":"yzgc|w;w;w;w;nw;w;w;w;w;w;n|s;e;e;e;e;e;se;e;e;e;e",
+        "xcc":"xyzhq|n;n;n;n;n|s;s;s;s;s",
+        "nyc":"xcc|sw;sw;w;s;sw;sw|ne;ne;n;e;ne;ne",
+        "xydp":"nyc|sw;s;s;s;s;s;s;w;w;n|s;e;e;n;n;n;n;n;n;bo xiaolu&&ne",
+        "jz":"xydp|s;e;e;s;s;s;s;s;s;s;s;s;s;s|n;n;n;n;n;n;n;n;n;n;n;w;w;n",
+        "rzc":"xcc|nw;nw|se;se"
     }
     app.RegisterCallback("info.paths.loadpaths",function(){
         world.Note("加载路径")
@@ -55,5 +62,5 @@
         result.Command=commands.join(";")
         return result
     })
-    app.Bind("ready","info.paths.loadpaths")
+    app.Bind("Ready","info.paths.loadpaths")
 })(App)

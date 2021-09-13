@@ -1,30 +1,30 @@
-(function(app){
-    let patrol=Include("include/patrol.js")
-    let Move=Include("core/move/move.js")
-    let Patrol=function(mode,target,onFinish,options){
-        Move.call(this,mode,target,onFinish,options)
-        this.Move=function(){
-            this.Current=this.Context.Move()
-            if (this.Current==null){
+(function (app) {
+    let patrol = Include("include/patrol.js")
+    let Move = Include("core/move/move.js")
+    let Patrol = function (mode, target, onFinish, options) {
+        Move.call(this, mode, target, onFinish, options)
+        this.Move = function () {
+            this.Current = this.Context.Move()
+            if (this.Current == null) {
                 this.Stop()
                 world.Note("巡查完毕")
-                app.ExecuteCallback(this.onFinish,this.Data)
+                app.ExecuteCallback(this.onFinish, this.Data)
                 return
             }
             this.TryMove()
         }
-        this.OnStart=function(){
-            this.Context=new patrol(this.Target)
+        this.OnStart = function () {
+            this.Context = new patrol(this.Target)
             App.Send("l")
         }
-        this.Resume=function(){
-            if (this.Paused){
-                this.Paused=false
-            } 
+        this.Resume = function () {
+            if (this.Paused) {
+                this.Paused = false
+            }
             this.Move()
         }
-        this.OnRoomObjEnd=function(){
-            if (this.OnStep && !app.ExecuteCallback(this.OnStep,this.StepData)){
+        this.OnRoomObjEnd = function () {
+            if (this.OnStep && !app.ExecuteCallback(this.OnStep, this.StepData)) {
                 this.Pause()
                 return
             }

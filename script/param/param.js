@@ -4,6 +4,7 @@
         "tick":"1100",
         "cmdlimit":"20",
         "cmdinterval":"50",
+        "walkstep":"8",
         "echo":"t",
     }
     app.InitParam=function(name,val){
