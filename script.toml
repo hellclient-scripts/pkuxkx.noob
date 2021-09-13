@@ -1253,7 +1253,8 @@ Aliases = []
   Italic = false
   Variable = ""
 
-[[Triggers]]
+
+  [[Triggers]]
   ID = "room_objend"
   Name = "room_objend"
   Enabled = false
@@ -1283,7 +1284,36 @@ Aliases = []
   Inverse = false
   Italic = false
   Variable = ""
-
+[[Triggers]]
+  ID = "charset"
+  Name = "charset"
+  Enabled = true
+  Match = "^Input 1 for GBK, 2 for UTF8, 3 for BIG5$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnConnectCharset"
+  SendTo = 0
+  Sequence = 500
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
 [[Timers]]
   ID = "steptimeout"
   Name = "steptimeout"
