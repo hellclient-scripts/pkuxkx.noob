@@ -1,5 +1,6 @@
 (function(){
     var backward=Include("include/backward.js")
+    var Step=Include("include/step.js")
     let Locate=function(depth){
         //最大步数
         this.Depth=depth?depth:1
@@ -15,10 +16,10 @@
                 return null
             }
             //回退一步
-            return this.Returns[this.Returns.length-1]
+            return new Step(this.Returns[this.Returns.length-1])
         }
         //进入当前房间的下一个出口
-        return this.Levels[this.Levels.length-1][0]
+        return new Step(this.Levels[this.Levels.length-1][0])
 
     }
     Locate.prototype.OutOfRange=function(){

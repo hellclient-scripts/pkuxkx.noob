@@ -1,14 +1,20 @@
 (function(){
     let Step=Include("include/step.js")
-    let Path=function(){
-        this.Moving=[]
+    let Path=function(commands,target){
         this.Steps=[]
+        let self=this
+        if (commands){
+            commands.forEach(function(cmd){
+                self.Push(cmd)
+            })
+            this.Steps[this.Steps.length-1].SetTarget(target)
+        }
     }
     Path.prototype.Push=function(command,target){
         this.PushStep(new Step(command,target))
     }
-    Path.prototype.PushStep=function(path){
-        this.Steps.push(path)
+    Path.prototype.PushStep=function(step){
+        this.Steps.push(step)
     }
     Path.prototype.PushCommands=function(commands,target){
         var self=this
@@ -19,22 +25,18 @@
             this.Steps[this.Steps.length-1].SetTarget(target)
         }
     }
-
-    Path.prototype.Current=function(){
-        if (this.Steps.length==0){
-            return null
-        }
-        return this.Steps[0]
+    Path.prototype.Clone=function(){
+        let result=new Path()
+        this.Steps.forEach(function(step){
+            result.Steps.push(step)
+        })
+        return result
     }
-    Path.prototype.Move=function(){
-        let step=this.Steps.shift()
-        if (step){
-            this.Moving.push(step)
-        }
-        return this.Current()
+    Path.prototype.Length=function(){
+        return this.Steps.length
     }
-    Path.prototype.Arrive=function(){
-        return this.Moving.shift()
+    Path.prototype.Shift=function(){
+        return this.Steps.shift()
     }
     return Path
 })()

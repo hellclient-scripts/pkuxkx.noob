@@ -33,6 +33,14 @@
         app.Data.Room.Objs.push(obj)
         app.Raise("OnRoomObj",obj)
     }
+    App.HasRoomObj=function(id){
+        for(var i in app.Data.Room.Objs){
+            if (app.Data.Room.Objs[i].ID===id){
+                return true
+            }
+        }
+        return false
+    }
     App.Core.OnRoomObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("roomobj",false)
         app.Raise("OnRoomEnd")
