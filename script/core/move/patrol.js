@@ -23,6 +23,12 @@
             }
             this.Move()
         }
+        this.Retry=function(){
+            world.DoAfterSpecial(0.1, 'App.Data.Move.RetryMove()', 12);
+        }
+        this.RetryMove=function(){
+            this.TryMove()
+        }
         this.OnRoomObjEnd = function () {
             if (this.OnStep && !app.ExecuteCallback(this.OnStep, this.StepData)) {
                 this.Pause()

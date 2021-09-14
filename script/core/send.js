@@ -4,7 +4,7 @@
     var _linesre = new RegExp("[^;\n]+", "g");
     var _groupre=new RegExp("[;\n]", "g");
     var _flags=".^"
-        app.Commands={}
+    app.Commands={}
     //注册回调为命令
     app.RegisterCommand=function(name,callback){
         app.Commands[name]=callback
@@ -73,7 +73,7 @@
                     continue
                 }
                 //去前缀
-                if (_flags.indexOf(prefix)>0){
+                if (_flags.indexOf(prefix)>=0){
                     cmd=cmd.substr(1)
                 }
                 buf.push(cmd)

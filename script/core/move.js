@@ -48,4 +48,16 @@
             app.Data.Move.OnStepTimeout()
         }
     }
+    app.Core.OnMoveRetry=function(name, output, wildcards){
+        if (app.Data.Move && !app.Data.Move.Paused) {
+            app.Data.Move.Retry()
+        }
+    }
+    app.Core.OnMoveSailEnd=function(name, output, wildcards){
+        app.Send("halt;out")
+    }
+    app.RegisterCallback("core.move.sail",function(){
+        app.Raise("waiting")
+    })
+    app.RegisterCommand("sail","core.move.sail")
 })(App)

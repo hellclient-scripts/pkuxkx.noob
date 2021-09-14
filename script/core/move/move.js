@@ -19,31 +19,38 @@
         this.Start=function(){
             if (app.Data.Move==null){
                 app.Data.Move=this
+                world.EnableTriggerGroup("move",true)
                 this.OnStart()
             }else{
                 app.Data.PendingMove=this
             }
         }
         this.OnStepTimeout=function(){
-
+            
         }
         this.Pause=function(){
             this.Paused=true
         }
         this.Resume=function(){
         }
+        this.Retry=function(){
+        }
         this.OnStop=function(){}
         this.Stop=function(){
             this.OnStop()
             world.EnableTimer("steptimeout",false)
+            world.EnableTriggerGroup("move",false)
             app.Data.Move=null
             app.Data.PendingMove=null    
         }
         this.OnRoomObjEnd=function(){
             
         }
-        this.TryMove=function(){
-            app.Send(this.Current.Command)
+        this.TryMove=function(step){
+            if (!step){
+                step=this.Current
+            }
+            app.Send(step.Command)
         }
     }
     return Move

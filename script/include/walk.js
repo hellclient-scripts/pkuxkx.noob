@@ -14,6 +14,12 @@
         }
         return step
     }
+    Walk.prototype.NextStep=function(){
+        if (this.Moving.length==0){
+            return null
+        }
+        return this.Moving[0]
+    }
     Walk.prototype.Arrive=function(){
         return this.Moving.shift()
     }

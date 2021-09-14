@@ -3,6 +3,7 @@ App.Init=function(){
     App.Core={}
     App.Info={}
     App.API={}
+    App.Alias={}
     App.Callbacks={}
     App.Listeners={}
     App.Data={}
@@ -46,6 +47,7 @@ App.Start=function(){
     App.Load("param/param.js")
     App.Load("core/core.js")
     App.Load("info/info.js")
+    App.Load("alias/alias.js")
     App.Raise("Ready")    
 }
 App.DumpData=function(){
