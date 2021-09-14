@@ -1,4 +1,39 @@
 (function (app) {
+    let pathre=a=/^(\[(.+)\]){0,1}(.*)$/
+    let parsepath=function(fr,to,str){
+        let result=str.match(pathre)
+        if (result==null){
+            world.Note("无效的路径"+str)
+            return null
+        }
+        let path = Mapper.newpath()
+        path.from=fr
+        path.to=to
+        path.command=result[3]
+        path.delay = result[3].split(";").length
+        let pathtags=[]
+        let pathexcludetags=[]
+        if (result[2]){
+            let tags=result[2].split(",")
+
+                tags.forEach(function(tag){
+
+                    if (tag.length>0){
+
+                        if (tag[0]=="!"){
+                            if (tag.length>1){
+                                pathexcludetags.push(tag.substr(1))
+                            }
+                            return
+                        }
+                        pathtags.push(tag)
+                    }
+                })
+        }
+        path.tags=pathtags
+        path.excludetags=pathexcludetags
+        return path
+    }
     app.Info.Paths = [
         "yzgc|yzqz|n;w|e;s",
         "yzgc|yzdp|s;e|w;n",
@@ -25,8 +60,11 @@
         "hz|cdkd|su;.sw;.se;.su;sd;s;s;e|w;n;n;nu;nd;.nw;.ne;.nd",
         "cdkd|yyl|w;s;s;se;se;e;e;ne;.ne;.nw;.nw;.ne;ed;e;n|s;w;wu;sw;.se;.se;.sw;.sw;w;w;nw;nw;n;n;e",
         "xyzhq|xcz|s;s;s;s;sd;se|nw;nu;n;n;n;n",
-        "xcz|xyl|s;ask shao gong about 过江&&enter;#sail;se;se;s|n;nw;nw;ask shao gong about 过江&&enter;#sail;n",
+        "xcz|xyl|[rich]s;ask shao gong about 过江&&enter;#sail;se;se;s|[rich]n;nw;nw;ask shao gong about 过江&&enter;#sail;n",
         "xyl|jzkd|sw;sw;nw|se;ne;ne",
+        "yyl|jzkd|e;e;e;e;e;e;ed;se;ed;e;ne;ne;ne;ne;ne;nw|se;sw;sw;sw;sw;sw;w;wu;nw;wu;w;w;w;w;w;w",
+        "yzgc|sdnb|enter shudong|out",
+        "sdnb|sdx|say 天堂有路你不走呀&&d|u",
     ]
     app.RegisterCallback("info.paths.loadpaths", function () {
         world.Note("加载路径")
@@ -35,22 +73,18 @@
             Mapper.clearroom(key)
         }
         for (var key in app.Info.Paths) {
-            var data = app.Info.Paths[key].split("|")
-            var from = data[0]
-            var to = data[1]
-            var topath = Mapper.newpath()
-            topath.from = from
-            topath.to = to
-            topath.command = data[2]
-            topath.delay = data[2].split(";").length
-            Mapper.addpath(from, topath)
-            if (data.length > 3) {
-                var frompath = Mapper.newpath()
-                frompath.from = to
-                frompath.to = from
-                frompath.command = data[3]
-                frompath.delay = data[3].split(";").length
-                Mapper.addpath(to, frompath)
+            let data = app.Info.Paths[key].split("|")
+            let from = data[0]
+            let to = data[1]
+            let topath = parsepath(from,to,data[2])
+            if (topath){
+                Mapper.addpath(from, topath)
+            }
+            if (data.length > 3 ) {
+                let frompath = parsepath(to,from,data[3])
+                if (frompath){
+                    Mapper.addpath(to, frompath)
+                }
             }
         }
 

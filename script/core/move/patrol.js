@@ -30,6 +30,10 @@
             this.TryMove()
         }
         this.OnRoomObjEnd = function () {
+            if (this.Ignore){
+                this.Ignore=false
+                return;
+            }
             if (this.OnStep && !app.ExecuteCallback(this.OnStep, this.StepData)) {
                 this.Pause()
                 return

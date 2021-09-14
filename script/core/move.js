@@ -53,11 +53,16 @@
             app.Data.Move.Retry()
         }
     }
+    app.Core.OnMoveIgnore=function(name, output, wildcards){
+        if (app.Data.Move && !app.Data.Move.Paused) {
+            app.Data.Move.Ignore=true
+        }
+    }
     app.Core.OnMoveSailEnd=function(name, output, wildcards){
         app.Send("halt;out")
     }
     app.RegisterCallback("core.move.sail",function(){
-        app.Raise("waiting")
+        app.Raise("Waiting")
     })
     app.RegisterCommand("sail","core.move.sail")
 })(App)

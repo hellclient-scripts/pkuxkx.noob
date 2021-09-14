@@ -5,18 +5,19 @@
         }
         this.Target=target
         this.Mode=mode
+        this.Ignore=false
         this.Paused=false
         this.Current=null
         this.OnFinish=onFinish?onFinish:""
         this.Data=options.Data?options.Data:""
         this.Context=null
-        this.OnStart=options.OnStart?options.OnStart:""
         this.OnStep=options.OnStep?options.OnStep:""
         this.StepData=options.StepData?options.StepData:""
         this.OnFail=options.OnFail?options.OnFail:""
         this.OnWrongway=options.OnWrongway?options.OnWrongway:""
         this.OnStart=function(){}
         this.Start=function(){
+            app.Raise("MoveInit")
             if (app.Data.Move==null){
                 app.Data.Move=this
                 world.EnableTriggerGroup("move",true)

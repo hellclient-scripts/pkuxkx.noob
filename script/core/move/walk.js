@@ -70,6 +70,10 @@
             this.TryMove(this.Context.NextStep())
         }
         this.OnRoomObjEnd = function () {
+            if (this.Ignore){
+                this.Ignore=false
+                return;
+            }
             this.Context.Arrive()
             if (!this.Paused && this.OnStep) {
                 app.ExecuteCallback(this.OnStep, this.StepData)

@@ -3,7 +3,7 @@
         let cmd=wildcards[0]
         let data=wildcards[2]
         if (cmd){
-            app.Raise("response.core."+cmd,data)
+            app.Raise("Response.Core."+cmd,data)
         }
     }
 })(App)
