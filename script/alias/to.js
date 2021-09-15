@@ -26,7 +26,6 @@
         }
     })
     app.RegisterCallback("alias.to.finish", function (data) {
-        world.Note("finish")
         if (data) {
             app.Send(data)
         }
