@@ -16,6 +16,11 @@
         }
         return str.replace(_groupre, "&&")
     }
+    app.RegisterCallback("core.send.send", function (data) {
+        if (data) {
+            app.Send(data)
+        }
+    })
     //发送命令
     app.Send=function(str,grouped){
         if (!str){

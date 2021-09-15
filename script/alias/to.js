@@ -22,12 +22,7 @@
     app.RegisterCallback("alias.to.move", function () {
         let data = app.AliasPopData("To")
         if (data) {
-            app.NewMove("walk", data.Target, "alias.to.finish", { Data: data.Command }).Start()
-        }
-    })
-    app.RegisterCallback("alias.to.finish", function (data) {
-        if (data) {
-            app.Send(data)
+            app.NewMove("walk", data.Target, "core.send.send", { Data: data.Command }).Start()
         }
     })
 })(App)
