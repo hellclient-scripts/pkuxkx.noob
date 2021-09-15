@@ -57,7 +57,6 @@
     addroom("xyl","浔阳楼",{Station:"浔阳楼"})
     addroom("xcz","小池镇",{Station:"小池镇"})
     addroom("jzkd","盈月客栈",{Station:"盈月客栈"})
-    
     addroom("sdnb","树洞内部",{Station:"树洞内部"})
     addroom("sdx","树洞下",{Station:"树洞下"})
     addroom("zpgc","赞普广场",{Station:"赞普广场"})

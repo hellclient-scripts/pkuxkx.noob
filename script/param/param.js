@@ -5,6 +5,11 @@
         "cmdlimit":"20",
         "cmdinterval":"50",
         "walkstep":"8",
+        "checkhpinterval":"1000",
+        "checkscoreinterval":"30000",
+        "checkjifainterval":"60000",
+        "checkskillsinterval":"60000",
+        "checkiteminterval":"10000",
         "echo":"t",
     }
     app.InitParam=function(name,val){

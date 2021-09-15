@@ -90,6 +90,7 @@
 
     })
     app.RegisterAPI("GetPath", function (fr, tolist) {
+        app.Raise("PathInit")
         var data = Mapper.getpath(fr, 1, tolist)
         if (!data) {
             return null

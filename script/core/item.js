@@ -1,9 +1,14 @@
 (function(app){
+    let check=Include("core/check/check.js")
     app.Data.Items=[]
+    app.Data.LastItem=[]
     app.Data.Equipments=[]
     app.Data.Load=0
     app.Data.Weapon=""
     app.Data.WeaponID=""
+    app.Bind("Check","core.item.item")
+    let checkItem=(new check("item")).WithLevel(app.CheckLevelBrief).WithCommand("i2").WithIntervalParam("checkiteminterval").WithLastID("LastItem")
+    app.RegisterCallback("core.item.item",checkItem.Callback())
     app.Core.OnItem=function(name, output, wildcards){
         app.Data.Items=[]
         app.Data.Equipments=[]
@@ -37,7 +42,7 @@
     app.Core.OnItemEquipmentObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("equipment",false)
     }
-    app.RegisterCallback("core.item.initwalk",function(){
+    app.RegisterCallback("core.item.inittags",function(){
         let goldname =app.GetItemObj("Gold")
         let gold=0
         let silvername =app.GetItemObj("Silver")
@@ -50,7 +55,7 @@
         }
         Mapper.settag("rich",gold*100+silver>10)
     })
-    app.Bind("MoveInit","core.item.initwalk")
+    app.Bind("PathInit","core.item.inittags")
     app.GetItemObj=function(id,lowercase){
         if (lowercase){
             id=id.toLowerCase()

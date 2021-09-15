@@ -8,7 +8,7 @@
             if (this.Current == null) {
                 this.Stop()
                 world.Note("巡查完毕")
-                app.ExecuteCallback(this.onFinish, this.Data)
+                app.ExecuteCallback(this.OnFinish, this.Data)
                 return
             }
             this.TryMove()

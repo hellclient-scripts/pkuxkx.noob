@@ -35,7 +35,7 @@
                     return
                 }
                 this.Stop()
-                app.ExecuteCallback(this.onFinish,this.Data)
+                app.ExecuteCallback(this.OnFinish,this.Data)
                 return
             }
             let step=this.Context.Enter(app.Data.Room.Exits)

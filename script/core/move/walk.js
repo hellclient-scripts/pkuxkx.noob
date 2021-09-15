@@ -4,11 +4,15 @@
     var backward = Include("include/backward.js")
     let Walk = function (mode, target, onFinish, options) {
         Move.call(this, mode, target, onFinish, options)
+        this.Finish=function(){
+            this.Stop()
+            world.Note("到达目的地")
+            app.ExecuteCallback(this.OnFinish, this.Data)
+            return
+        }
         this.Move = function () {
             if (this.Context.Path.Length() == 0) {
-                this.Stop()
-                world.Note("到达目的地")
-                app.ExecuteCallback(this.onFinish, this.Data)
+                this.Finish()
                 return
             }
             let step
@@ -38,9 +42,7 @@
                 return
             }
             if (app.Data.Room.ID==this.Target){
-                this.Stop()
-                world.Note("到达目的地")
-                app.ExecuteCallback(this.onFinish, this.Data)
+                this.Finish()
                 return 
             }
             var target = this.Target

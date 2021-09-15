@@ -1,3 +1,24 @@
+var Now=function(){
+    return (new Date()).getTime()
+}
+var After=function(time,duration){
+    if (!time){
+        return true
+    }
+    if (duration){
+        time=time+duration
+    }
+    return Now()>time
+}
+var Before=function(time,duration){
+    if (!time){
+        return fale
+    }
+    if (duration){
+        time=time-duration
+    }
+    return Now()<time
+}
 var CNumber={
     re:new RegExp("(((零|一|二|三|四|五|六|七|八|九|十|百|千|万)*)(支|顶|块|朵|面|匹|位|支|颗|个|把|只|粒|张|枚|件|柄|根|块|文|两|碗|滴|岁)){0,1}(.*)"),
     list:"零一二三四五六七八九",

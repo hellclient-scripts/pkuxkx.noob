@@ -29,6 +29,21 @@ App.Bind=function(event,callback){
     listeners.push(callback)
     App.Listeners[event]=listeners
 }
+App.Unbind=function(event,callback){
+    var listeners=App.Listeners[event]
+    if (!listeners){
+        return
+    }
+    for (let i=0;i<listeners.length;i++){
+        if (listeners[i]==callback){
+            listeners.splice(i,1)
+            return
+        }
+    }
+}
+App.UnbindAll=function(event){
+    delete(App.Listeners[event])
+}
 App.Raise=function(event,data){
     var listeners=App.Listeners[event]
     if (listeners){
@@ -69,9 +84,14 @@ Debug=function(){
 Bound=function(){
     Dump(App.Listeners)
 }
-DumpPath=function(fr,to){
+DumpPath=function(fr,to,full){
     if (typeof(to)=="string"){
         to=[to]
     }
-    Dump(App.API.GetPath(fr,to))
+    let path=App.API.GetPath(fr,to)
+    if (path==null){
+        Dump(path)
+        return
+    }
+    Dump(full?path:path.Command)
 }

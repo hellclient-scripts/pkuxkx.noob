@@ -47,7 +47,7 @@ Channel = "pkuxkx.noob"
   ID = "core_response"
   Name = "core_response"
   Enabled = true
-  Match = "^系统回馈：core = (.+)( (.*)){0,1}$"
+  Match = "^系统回馈：(.+) = (.+)( (.*)){0,1}$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -822,7 +822,7 @@ Channel = "pkuxkx.noob"
   ID = "player_scoreend"
   Name = "player_scoreend"
   Enabled = false
-  Match = "^└──────────────────────────────北大侠客行────┘$"
+  Match = "^└────────────┴────────────┴────北大侠客行────┘$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -1427,7 +1427,7 @@ Channel = "pkuxkx.noob"
   ID = "to"
   Name = "to"
   Enabled = true
-  Match = "^#to (.*)(\\s+(.*)){0,1}$"
+  Match = "^#to (\\S+)(\\s+(.*)){0,1}$"
   Send = ""
   Script = "App.Alias.To"
   SendTo = 0
