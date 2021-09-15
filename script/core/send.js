@@ -21,6 +21,10 @@
             app.Send(data)
         }
     })
+    app.Core.SendAlias = function (name, line, wildcards) {
+        app.Send(line)
+    }
+
     //发送命令
     app.Send=function(str,grouped){
         if (!str){
@@ -51,17 +55,9 @@
                         buf=[]
                     }
                     //切分命令，#之后第一个空格之前的为指令，第一个空格后的为数据
-                    var directive
-                    var data
-                    var index=cmd.indexOf(" ")
-                    if (index>0){
-                        directive=cmd.substr(1,index)
-                        data=cmd.substr(index+1)
-                    }else{
-                        directive=cmd.substr(1)
-                    }
-                    if (app.Commands[directive]){
-                        app.Callbacks[app.Commands[directive]](data)
+                    let directive=new Directive(cmd.substr(1))
+                    if (app.Commands[directive.Command]){
+                        app.Callbacks[app.Commands[directive.Command]](directive.Data)
                         continue
                     }
                     //未注册命令，检测是否为#20 xxx格式
@@ -74,7 +70,7 @@
                             continue
                         }
                     }
-                    world.Note("未知的命令: "+directive)
+                    world.Note("未知的命令: "+directive.Command)
                     continue
                 }
                 //去前缀

@@ -62,3 +62,33 @@ var CNumber={
         }
     }
 }
+
+var Directive
+(function(){
+    let re=/^(\S*)( (.*)){0,1}$/
+    Directive=function(str){
+        let result=str.match(re)
+        if (result==null){
+            this.Command=str
+            this.Data=""
+            return
+        }
+        this.Command=result[1]||""
+        this.Data=result[3]||""
+    }
+})()
+
+var Pipe
+(function(){
+    let re=/^([^|]*)(\|(.*)){0,1}$/
+    Pipe=function(str){
+        let result=str.match(re)
+        if (result==null){
+            this.Command=str
+            this.Next=""
+            return
+        }
+        this.Command=result[1]||""
+        this.Next=result[3]||""
+    }
+})()
