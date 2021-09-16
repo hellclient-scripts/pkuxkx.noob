@@ -21,10 +21,6 @@
             app.Send(data)
         }
     })
-    app.Core.SendAlias = function (name, line, wildcards) {
-        app.Send(line)
-    }
-
     //发送命令
     app.Send=function(str,grouped){
         if (!str){

@@ -92,3 +92,13 @@ var Pipe
         this.Next=result[3]||""
     }
 })()
+
+var CloneArray=function (data,skipempty) {
+    let result=[]
+    for(let i=0;i<data.length;i++){
+        if (!skipempty || data[i]){
+            result.push(data[i])
+        }
+    }
+    return result
+}

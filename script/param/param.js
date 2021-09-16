@@ -1,8 +1,8 @@
 (function(app){
     world.Note("加载系统参数");
     app.Params={
-        "tick":"1100",
-        "cmdlimit":"20",
+        "tick":"550",
+        "cmdlimit":"10",
         "cmdinterval":"50",
         "walkstep":"8",
         "checkhpinterval":"1000",
