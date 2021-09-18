@@ -54,7 +54,7 @@ App.Raise=function(event,data){
 }
 
 App.Load=function(name){
-    eval(world.ReadFile(name),name)
+    Include(name)
 }
 
 App.Start=function(){

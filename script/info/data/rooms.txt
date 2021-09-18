@@ -1,0 +1,30 @@
+yz||扬州广场||||Landmark||Rong shu
+yzqz||扬州钱庄||||Station||扬州钱庄
+yzdp||扬州当铺||||Landmark||Tang nan
+yztj||扬州铁匠||||Landmark||Wang tiejiang
+yzjl||扬州醉仙楼||||Station||醉仙楼
+yzcg||春来茶馆||||Station||春来茶馆
+yzyp||扬州药铺||||Landmark||Ping yizhi
+yzsy||扬州书院||||Landmark||Fu zi
+yzkd||扬州客店||||Landmark||Tianshen suicong
+yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
+qfsm||曲阜孔庙||||Station||孔庙
+xin-zhq||信阳镇淮桥||||Station||镇淮桥
+zy-xcc||许昌城||||Station||许昌城
+zy-nyc||南阳城||||Station||南阳城
+xydp||襄阳当铺||||Station||襄阳当铺
+jz||荆州||||Station||荆州
+zy-rzc||汝州城||||Station||汝州城
+qf-sms||石门寺||||Station||石门寺
+ts-sjy||石经峪||||Station||石经峪
+ly||洛阳中心广场||||Station||洛阳中心广场
+cakd||长安三秦客栈||||Station||三秦客栈
+cayp||长安千金堂||||Station||千金堂
+ca-hz||汉中||||Station||汉中
+cdkd||成都悦来客店||||Station||悦来客店
+yyjl||岳阳楼||||Station||岳阳楼
+jz-xyl||浔阳楼||||Station||浔阳楼
+xin-xcz||小池镇||||Station||小池镇
+jzkd||盈月客栈||||Station||盈月客栈
+gb-sdnb||树洞内部||||Station||树洞内部
+gb-sdx||树洞下||||Station||树洞下
