@@ -22,7 +22,7 @@ cakd||长安三秦客栈||||Station||三秦客栈
 cayp||长安千金堂||||Station||千金堂
 ca-hz||汉中||||Station||汉中
 cdkd||成都悦来客店||||Station||悦来客店
-yyjl||岳阳楼||||Station||岳阳楼
+yy-yyl||岳阳楼||||Station||岳阳楼
 jz-xyl||浔阳楼||||Station||浔阳楼
 xin-xcz||小池镇||||Station||小池镇
 jzkd||盈月客栈||||Station||盈月客栈
