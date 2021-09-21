@@ -16,7 +16,7 @@ onDisconnected=function (){
 }
 
 onAssist=function(){
-
+    App.UIAssistantShow()
 }
 
 onBroadcast=function(msg,global,channel,global){
