@@ -1,5 +1,6 @@
 (function (app) {
     app.Info.UserPaths=[]
+    app.Info.BuiltinPaths=[]
     let pathre=/^(\[(.+)\]){0,1}(.*)$/
     let sep=/\|\|/
     let parsepath=function(fr,to,str){
@@ -59,8 +60,8 @@
         for (var key in app.Info.Rooms) {
             Mapper.clearroom(key)
         }
-        let paths= world.ReadLines("info/data/paths.txt")
-        loadpath(paths)
+        app.Info.BuiltinPaths= world.ReadLines("info/data/paths.txt")
+        loadpath(app.Info.BuiltinPaths)
         if (world.HasHomeFile("data/paths.txt")){
             app.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
             loadpath(app.Info.UserPaths)

@@ -1,4 +1,5 @@
 (function (app) {
+    app.Info.BuiltinRooms=[]
     app.Info.UserRooms=[]
     app.Info.Rooms = {}
     app.Info.Stations = {}
@@ -55,8 +56,8 @@
         });
     }
     app.RegisterCallback("info.rooms.loadrooms", function () {
-        let rooms = world.ReadLines("info/data/rooms.txt")
-        loadrooms(rooms)
+        app.Info.BuiltinRooms = world.ReadLines("info/data/rooms.txt")
+        loadrooms(app.Info.BuiltinRooms)
         if (world.HasHomeFile("data/rooms.txt")){
             app.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
             loadrooms(app.Info.UserRooms)
