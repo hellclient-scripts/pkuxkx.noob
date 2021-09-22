@@ -13,7 +13,7 @@ xin-zhq||信阳镇淮桥||||Station||镇淮桥
 zy-xcc||许昌城||||Station||许昌城
 zy-nyc||南阳城||||Station||南阳城
 xydp||襄阳当铺||||Station||襄阳当铺
-jz||荆州||||Station||荆州
+xy-jz||荆州||||Station||荆州
 zy-rzc||汝州城||||Station||汝州城
 qf-sms||石门寺||||Station||石门寺
 ts-sjy||石经峪||||Station||石经峪

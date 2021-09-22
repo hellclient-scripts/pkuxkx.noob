@@ -10,6 +10,7 @@
         "checkjifainterval":"60000",
         "checkskillsinterval":"60000",
         "checkiteminterval":"10000",
+        "charset":"2",
         "initcmd":"set area_detail 1;set breif 2;",
         "echo":"t",
     }

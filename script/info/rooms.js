@@ -36,6 +36,9 @@
     app.RegisterCallback("info.rooms.loadrooms", function () {
         let rooms = world.ReadLines("info/data/rooms.txt")
         rooms.forEach(function (data) {
+            if (data==""){
+                return
+            }
             let info = data.split(sep)
             let options = {
                 Desc: info[2],
