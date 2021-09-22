@@ -1,4 +1,5 @@
 (function (app) {
+    app.Info.UserPaths=[]
     let pathre=/^(\[(.+)\]){0,1}(.*)$/
     let sep=/\|\|/
     let parsepath=function(fr,to,str){
@@ -35,13 +36,7 @@
         path.excludetags=pathexcludetags
         return path
     }
-    app.RegisterCallback("info.paths.loadpaths", function () {
-        world.Note("加载路径")
-        Mapper.reset()
-        for (var key in app.Info.Rooms) {
-            Mapper.clearroom(key)
-        }
-        let paths= world.ReadLines("info/data/paths.txt")
+    let loadpath=function (paths){
         for (var key in paths) {
             let data = paths[key].split(sep)
             let from = data[0]
@@ -56,6 +51,19 @@
                     Mapper.addpath(to, frompath)
                 }
             }
+        }
+    }
+    app.RegisterCallback("info.paths.loadpaths", function () {
+        world.Note("加载路径")
+        Mapper.reset()
+        for (var key in app.Info.Rooms) {
+            Mapper.clearroom(key)
+        }
+        let paths= world.ReadLines("info/data/paths.txt")
+        loadpath(paths)
+        if (world.HasHomeFile("data/paths.txt")){
+            app.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
+            loadpath(app.Info.UserPaths)
         }
 
     })

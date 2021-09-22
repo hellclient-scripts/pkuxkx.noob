@@ -1,4 +1,5 @@
 (function (app) {
+    app.Info.UserRooms=[]
     app.Info.Rooms = {}
     app.Info.Stations = {}
     app.Info.Landmarks = {}
@@ -33,8 +34,7 @@
     })
     app.Bind("OnRoomObj", "info.room.objlocate")
     app.Bind("OnRoomExits", "info.room.idlocate")
-    app.RegisterCallback("info.rooms.loadrooms", function () {
-        let rooms = world.ReadLines("info/data/rooms.txt")
+    let loadrooms=function(rooms) {
         rooms.forEach(function (data) {
             if (data==""){
                 return
@@ -53,6 +53,14 @@
             }
             addroom(info[0], info[1], options)
         });
+    }
+    app.RegisterCallback("info.rooms.loadrooms", function () {
+        let rooms = world.ReadLines("info/data/rooms.txt")
+        loadrooms(rooms)
+        if (world.HasHomeFile("data/rooms.txt")){
+            app.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
+            loadrooms(app.Info.UserRooms)
+        }
     })
     app.Bind("Ready", "info.rooms.loadrooms")
 })(App)
