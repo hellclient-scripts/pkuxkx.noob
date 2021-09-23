@@ -57,11 +57,19 @@
     }
     app.RegisterCallback("info.rooms.loadrooms", function () {
         app.Info.BuiltinRooms = world.ReadLines("info/data/rooms.txt")
+        Mapper.reset()
+        for (var key in app.Info.Rooms) {
+            Mapper.clearroom(key)
+        }
         loadrooms(app.Info.BuiltinRooms)
         if (world.HasHomeFile("data/rooms.txt")){
             app.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
             loadrooms(app.Info.UserRooms)
         }
     })
+    app.SaveUserRooms=function(){
+        let data=app.Info.UserRooms.join("\n")
+        world.WriteHomeFile("data/rooms.txt",data)
+    }
     app.Bind("Ready", "info.rooms.loadrooms")
 })(App)

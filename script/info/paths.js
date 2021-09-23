@@ -3,21 +3,16 @@
     app.Info.BuiltinPaths=[]
     let pathre=/^(\[(.+)\]){0,1}(.*)$/
     let sep=/\|\|/
-    let parsepath=function(fr,to,str){
-        let result=str.match(pathre)
-        if (result==null){
-            world.Note("无效的路径"+str)
-            return null
-        }
+    let parsepath=function(fr,to,taglist,str){
         let path = Mapper.newpath()
         path.from=fr
         path.to=to
-        path.command=result[3]
-        path.delay = result[3].split(";").length
+        path.command=str
+        path.delay = str.split(";").length
         let pathtags=[]
         let pathexcludetags=[]
-        if (result[2]){
-            let tags=result[2].split(",")
+        if (taglist){
+            let tags=taglist.split(",")
 
                 tags.forEach(function(tag){
 
@@ -42,12 +37,13 @@
             let data = paths[key].split(sep)
             let from = data[0]
             let to = data[1]
-            let topath = parsepath(from,to,data[2])
+            let tags=data[2]
+            let topath = parsepath(from,to,tags,data[3])
             if (topath){
                 Mapper.addpath(from, topath)
             }
-            if (data.length > 3 ) {
-                let frompath = parsepath(to,from,data[3])
+            if (data.length > 4 ) {
+                let frompath = parsepath(to,from,tags,data[4])
                 if (frompath){
                     Mapper.addpath(to, frompath)
                 }
@@ -56,10 +52,6 @@
     }
     app.RegisterCallback("info.paths.loadpaths", function () {
         world.Note("加载路径")
-        Mapper.reset()
-        for (var key in app.Info.Rooms) {
-            Mapper.clearroom(key)
-        }
         app.Info.BuiltinPaths= world.ReadLines("info/data/paths.txt")
         loadpath(app.Info.BuiltinPaths)
         if (world.HasHomeFile("data/paths.txt")){
