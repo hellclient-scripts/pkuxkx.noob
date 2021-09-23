@@ -141,7 +141,7 @@
         if (code==0 && data){
             app.Info.UserRooms.push(data)
             publishgrid(UserroomsGrid,app.Info.UserRooms)
-            app.SaveUserRooms()
+            app.API.SaveUserRooms()
         }
     }
     UserroomsGrid.setonupdate("App.InfoUIDataUserroomsGridOnUpdate")
@@ -156,7 +156,7 @@
         if (code==0){
             app.Info.UserRooms[updateingroom]=data
             publishgrid(UserroomsGrid,app.Info.UserRooms)
-            app.SaveUserRooms()
+            app.API.SaveUserRooms()
         }
     }
     UserroomsGrid.setondelete("App.InfoUIDataUserroomsGridOnDelete")
@@ -164,7 +164,7 @@
         if (code==0 && data){
             app.Info.UserRooms.splice(data-0,1)
             publishgrid(UserroomsGrid,app.Info.UserRooms)
-            app.SaveUserRooms()
+            app.API.SaveUserRooms()
         }
     }
 
@@ -202,7 +202,8 @@ app.InfoUIDataUserpathsGridOnCreateSubmit=function(name,id,code,data){
     if (code==0 && data){
         app.Info.UserPaths.push(data)
         publishgrid(UserpathsGrid,app.Info.UserPaths)
-        app.SaveUserPaths()
+        app.API.ResetMapper()
+        app.API.SaveUserPaths()
     }
 }
 UserpathsGrid.setonupdate("App.InfoUIDataUserpathsGridOnUpdate")
@@ -217,7 +218,8 @@ app.InfoUIDataUserpathsGridOnUpdateSubmit=function(name,id,code,data){
     if (code==0){
         app.Info.UserPaths[updateingpath]=data
         publishgrid(UserpathsGrid,app.Info.UserPaths)
-        app.SaveUserPaths()
+        app.API.ResetMapper()
+        app.API.SaveUserPaths()
     }
 }
 UserpathsGrid.setondelete("App.InfoUIDataUserpathsGridOnDelete")
@@ -225,7 +227,8 @@ app.InfoUIDataUserpathsGridOnDelete=function(name,id,code,data){
     if (code==0 && data){
         app.Info.UserPaths.splice(data-0,1)
         publishgrid(UserpathsGrid,app.Info.UserPaths)
-        app.SaveUserPaths()
+        app.API.ResetMapper()
+        app.API.SaveUserPaths()
     }
 }
 })(App)
