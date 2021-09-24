@@ -9,9 +9,38 @@ OnBroadcast = "onBroadcast"
 OnAssist = "onAssist"
 OnBuffer = "onBuffer"
 OnBufferMin = 2
-OnBufferMax = 2
+OnBufferMax = 0
 Channel = "pkuxkx.noob"
-
+[[Triggers]]
+  ID = "more"
+  Name = "more"
+  Enabled = true
+  Match = "^== 未完继续 \\d*% == \\(q 离开，b 前一页，其他继续下一页\\)$"
+  Send = "next"
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = ""
+  SendTo = 0
+  Sequence = 200
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = false
+  OmitFromLog = true
+  OmitFromOutput = true
+  Inverse = false
+  Italic = false
+  Variable = ""
 [[Triggers]]
   ID = "gap"
   Name = "gap"

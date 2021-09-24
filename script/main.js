@@ -23,7 +23,15 @@ onBroadcast=function(msg,global,channel,global){
     
 }
 onBuffer=function(data){
-    return data=="> "
+    if (data.length==2){
+        return data=="> "
+    }
+    if (data.length>20){
+        if (data.substr(0,7)=="== 未完继续" && data.substr(-6,6)=="继续下一页)"){
+            return true
+        }
+    }
+    return false
 }
 function Include(file){
     return eval(world.ReadFile(file),file)
