@@ -10,12 +10,12 @@
 ## 抄经
 
 ```
-#to sms||#do ask sengren about job
+#to qf-sms||#do ask sengren about job
 ```
 记住工号
 
 ```
-#to sjy||#do write jing||#afterbusy||#delay 2000||#to sms||#do ask sengren about done
+#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done
 ```
 然后report 工号
 
