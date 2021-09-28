@@ -5,7 +5,7 @@
             ID:"",
             Name:wildcards[1],
             Desc:"",
-            Tags:wildcards[2],
+            Tags:wildcards[3],
             Objs:[],
         }
         world.EnableTriggerGroup("roomexit",true)
