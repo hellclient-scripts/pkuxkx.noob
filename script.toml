@@ -71,6 +71,36 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
+[[Triggers]]
+  ID = "fullme"
+  Name = "fullme"
+  Enabled = true
+  Match = "^(http:\\/\\/fullme\\.pkuxkx\\.net\\/robot\\.php\\?filename=\\d+)"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnFullmeURL"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
 
 [[Triggers]]
   ID = "core_response"
