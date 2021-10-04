@@ -1,5 +1,11 @@
 (function(app){
-    app.Data.Room={}
+    app.Data.Room={
+        ID:"",
+        Name:"",
+        Desc:"",
+        Tags:"",
+        Objs:[],
+    }
     app.Core.OnRoom=function(name, output, wildcards){
         app.Data.Room={
             ID:"",
@@ -11,12 +17,12 @@
         world.EnableTriggerGroup("roomexit",true)
     }
     var exitsre = new RegExp("[a-z]*[^、 和]", "g");
-    App.Core.OnRoomDesc=function(name, output, wildcards){
+    app.Core.OnRoomDesc=function(name, output, wildcards){
         if (app.Data.Room.Exits==null){
             app.Data.Room.Desc+=output+"\n"
         }
     }
-    App.Core.OnRoomExits=function(name, output, wildcards){
+    app.Core.OnRoomExits=function(name, output, wildcards){
         world.EnableTrigger("room_desc",false)
         world.EnableTriggerGroup("roomexit",false)
         world.EnableTriggerGroup("roomobj",true)
@@ -28,12 +34,12 @@
         }
         app.Raise("OnRoomExits")
     }
-    App.Core.OnRoomObj=function(name, output, wildcards){
+    app.Core.OnRoomObj=function(name, output, wildcards){
         var obj={ID:wildcards[1],Name:wildcards[0]}
         app.Data.Room.Objs.push(obj)
         app.Raise("OnRoomObj",obj)
     }
-    App.HasRoomObj=function(id){
+    app.HasRoomObj=function(id){
         for(var i in app.Data.Room.Objs){
             if (app.Data.Room.Objs[i].ID===id){
                 return true
@@ -41,7 +47,7 @@
         }
         return false
     }
-    App.Core.OnRoomObjEnd=function(name, output, wildcards){
+    app.Core.OnRoomObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("roomobj",false)
         app.Raise("OnRoomEnd")
     }
