@@ -32,6 +32,9 @@
     app.Core.OnFullmeURL=function(name, output, wildcards){
         app.Core.FullmeUrl=wildcards[0]
     }
+    app.Core.OnFullmeURLFail=function(name, output, wildcards){
+        app.Core.FullmeUrl=""
+    }
     app.Core.OnFullmeSubmit=function(name,id,code,data){
         if (code==0 && data){
             let callback= app.Data.FullmeCallback
@@ -47,7 +50,13 @@
     app.RegisterCallback("core.fullme.send",function(data){
         app.Send("fullme "+data)
     })
-    app.Fullme=function(){
-        app.API.Fullme("core.fullme.send")
+    App.Core.DoFullme=function(){
+        app.Send("fullme")
+        app.Response("core","fullmeprompt")
     }
+    app.RegisterCallback("core.fullmeprompt",function(){
+        world.Note("show fullme")
+        app.API.Fullme("core.fullme.send")
+    })
+    app.Bind("Response.core.fullmeprompt","core.fullmeprompt")
 })(App)
