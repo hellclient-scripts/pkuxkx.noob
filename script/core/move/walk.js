@@ -38,7 +38,7 @@
         this.OnStart = function () {
             if (!app.Data.Room.ID) {
                 this.Stop()
-                app.Raise("MoveLost")
+                app.Raise("MoveLost",this)
                 return
             }
             if (app.Data.Room.ID==this.Target){
