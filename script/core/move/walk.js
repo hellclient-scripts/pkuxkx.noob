@@ -11,6 +11,7 @@
             return
         }
         this.Move = function () {
+            let self=this
             if (this.Context.Path.Length() == 0) {
                 this.Finish()
                 return
@@ -27,12 +28,14 @@
                 if (this.Context.Current() && !backward[this.Context.Current().Command]) {
                     break
                 }
-                if (this.Context.Moving.length >= app.GetNumberParam("walkstep")) {
+                if (!app.Vehicle.MultiStep || this.Context.Moving.length >= app.GetNumberParam("walkstep")) {
                     break
                 }
             }
+            
             this.Context.Moving.forEach(function (step) {
-                app.Send(step.Command)
+                self.Current=step
+                app.Go(step.Command)
             })
         }
         this.OnStart = function () {
@@ -49,7 +52,7 @@
             if (typeof (target) == "string") {
                 target = [target]
             }
-            var path = App.API.GetPath(app.Data.Room.ID, target)
+            var path = app.API.GetPath(app.Data.Room.ID, target,app.Vehicle.Fly)
             if (path == null) {
                 this.Stop()
                 world.Note("无法找到从[" + app.Data.Room.ID + "]到[" + target.join(",") + "]的路径")
@@ -66,7 +69,7 @@
             this.Move()
         }
         this.Retry=function(){
-            world.DoAfterSpecial(0.1, 'App.Data.Move.RetryMove()', 12);
+            world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.Data.Move.RetryMove()', 12);
         }
         this.RetryMove=function(){
             this.TryMove(this.Context.NextStep())
@@ -76,6 +79,7 @@
                 this.Ignore=false
                 return;
             }
+            app.Raise("MoveArrive",this.Context.NextStep())
             this.Context.Arrive()
             if (!this.Paused && this.OnStep) {
                 app.ExecuteCallback(this.OnStep, this.StepData)

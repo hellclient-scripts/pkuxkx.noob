@@ -22,11 +22,24 @@
         this.tryExplore=function(data){
             world.EnableTimer("steptimeout",true)
             this.Current=data
-            App.Send(data.Command)
+            App.Go(data.Command)
+        }
+        this.RetryExplore=function(){
+            world.EnableTimer("steptimeout",false)
+            this.tryExplore(this.Current)
+        }
+        this.Retry=function(){
+            world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.Data.Move.RetryExplore()', 12);
         }
         this.OnRoomObjEnd=function(){
             world.EnableTimer("steptimeout",false)
-            if (app.Data.Room.ID){
+            if (app.Data.Room.Name){
+                let rids=Mapper.getroomid(app.Data.Room.Name)
+                if (rids&& rids.length==1){
+                    app.Data.Room.ID=rids[0]
+                }
+            }
+            if (app.Data.Room.ID!==""){
                 world.Note("定位成功")
                 if (app.Data.PendingMove!=null){
                     app.Data.Move=app.Data.PendingMove
@@ -40,6 +53,7 @@
             }
             let step=this.Context.Enter(app.Data.Room.Exits)
             if (step){
+                this.Current=step
                 this.tryExplore(step)
             }else{
                 this.Stop()

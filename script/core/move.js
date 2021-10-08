@@ -12,7 +12,6 @@
                 return new patrol(mode, target, onFinish, data)
             case "walk":
                 return new walk(mode, target, onFinish, data)
-
             default:
                 throw "app.Move:Mode[" + walk.Mode + "]无效"
         }
@@ -41,7 +40,11 @@
         }
         return true
     })
-
+    app.RegisterCallback("core.move.nobusy", function () {
+        if (app.Data.Move && !app.Data.Move.Paused) {
+            app.Data.Move.Move()
+        }
+    })
     app.Bind("OnRoomEnd", "core.move.onroomobjend")
     app.OnMoveStepTimeout = function (name) {
         if (app.Data.Move && !app.Data.Move.Paused) {
@@ -58,11 +61,21 @@
             app.Data.Move.Ignore=true
         }
     }
+    app.Core.OnMoveEnterBoat=function(name, output, wildcards){
+        if (app.Data.Move && !app.Data.Move.Paused && app.Data.Move.Current!=null) {
+            if (app.Data.Move.Current.Command.indexOf("yell boat")>=0){
+                app.Go("enter")
+            }
+        }
+
+    }
     app.Core.OnMoveSailEnd=function(name, output, wildcards){
-        app.Send("halt;out")
+        app.Send("halt")
+        app.Go("out ")
     }
     app.RegisterCallback("core.move.sail",function(){
         app.Raise("Waiting")
     })
     app.RegisterCommand("sail","core.move.sail")
+
 })(App)

@@ -24,7 +24,7 @@
             this.Move()
         }
         this.Retry=function(){
-            world.DoAfterSpecial(0.1, 'App.Data.Move.RetryMove()', 12);
+            world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.Data.Move.RetryMove()', 12);
         }
         this.RetryMove=function(){
             this.TryMove()
@@ -34,6 +34,7 @@
                 this.Ignore=false
                 return;
             }
+            app.Raise("MoveArrive",this.Context.NextStep())
             if (this.OnStep && !app.ExecuteCallback(this.OnStep, this.StepData)) {
                 this.Pause()
                 return

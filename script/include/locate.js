@@ -30,7 +30,7 @@
     }
     Locate.prototype.Skip=function(){
         if (this.AllWalked()){
-            return nil
+            return null
         }
         this.Levels[this.Levels.length-1].shift()
         return this.NextStep()

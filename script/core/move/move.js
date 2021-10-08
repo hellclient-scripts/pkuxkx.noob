@@ -15,8 +15,10 @@
         this.StepData=options.StepData?options.StepData:""
         this.OnFail=options.OnFail?options.OnFail:""
         this.OnWrongway=options.OnWrongway?options.OnWrongway:""
+        this.Vehicle=options.Vehicle
         this.OnStart=function(){}
         this.Start=function(){
+            app.Drive(this.Vehicle)
             app.Raise("MoveInit")
             if (app.Data.Move==null){
                 app.Data.Move=this
@@ -47,11 +49,14 @@
         this.OnRoomObjEnd=function(){
             
         }
+        this.Go=function(command){
+            app.Go(command)
+        }
         this.TryMove=function(step){
             if (!step){
                 step=this.Current
             }
-            app.Send(step.Command)
+            this.Go(step.Command)
         }
     }
     return Move
