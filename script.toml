@@ -1669,3 +1669,26 @@ Channel = "pkuxkx.noob"
   ReverseSpeedwalk = false
   OmitFromOutput = false
   OmitFromCommandHistory = false
+     [[Aliases]]
+  ID = "item"
+  Name = "item"
+  Enabled = true
+  Match = "^#item (.+)$"
+  Send = ""
+  Script = "App.Core.OnAliasItem"
+  SendTo = 0
+  Sequence = 0
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+  

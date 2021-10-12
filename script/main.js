@@ -33,8 +33,20 @@ onBuffer=function(data){
     }
     return false
 }
-function Include(file){
-    return eval(world.ReadFile(file),file)
+var Modules=new function(){
+    this.Loaded={}
+    let cache={}
+    this.Include=function(file){
+        if (this.Loaded[file]){
+            return cache[file]
+        }
+        cache[file]=eval(world.ReadFile(file),file)
+        this.Loaded[file]=true
+        return cache[file]
+    }
+}
+var Include=function(file){
+   return Modules.Include(file)
 }
 Include("util.js")
 Include("app.js")

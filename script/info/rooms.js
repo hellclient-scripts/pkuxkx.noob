@@ -4,10 +4,6 @@
     app.Info.Rooms = {}
     app.Info.Stations = {}
     app.Info.Landmarks = {}
-    let sep = /\|\|/
-
-
-
     app.RegisterCallback("info.room.objlocate", function (data) {
         if (!app.Data.Room.ID && app.Info.Landmarks[data.ID]) {
             app.Data.Room.ID = app.Info.Landmarks[data.ID]

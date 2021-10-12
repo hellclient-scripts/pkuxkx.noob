@@ -9,6 +9,9 @@
         this.OnFinish=""
         this.OnFail=""
         this.Data=""
+        this.Execute=function(data, onFinish, onFail){
+            Task.prototype.Execute.call(this, data, onFinish, onFail)
+        }
     }
     Task.prototype.OnClose=function () {
         
