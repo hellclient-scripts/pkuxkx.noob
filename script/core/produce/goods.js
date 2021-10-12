@@ -1,13 +1,13 @@
 (function (app) {
     let produce = Include("core/produce/produce.js")
-    app.RegisterCallback("core.produce.arrive",function(){
+    app.RegisterCallback("core.produce.goods.arrive",function(){
         if (app.GetTaskID() =="produce.goods"){
             app.Send(app.CurrentTask.Item.Command)
             app.Send("i2")
-            app.CheckBusy("core.produce.finish")
+            app.CheckBusy("core.produce.goods.finish")
         }
     })
-    app.RegisterCallback("core.produce.finish",function(){
+    app.RegisterCallback("core.produce.goods.finish",function(){
         if (app.GetTaskID() =="produce.goods"){
             app.CurrentTask.Finish(app.CurrentTask.Item)
         }
@@ -16,7 +16,7 @@
         produce.call(this, "produce.goods")
         this.Execute = function (data, onFinish, onFail) {
             produce.prototype.Execute.call(this, data, onFinish, onFail)
-            let move=app.NewMove("walk",this.Item.Location,"core.produce.arrive",{})
+            let move=app.NewMove("walk",this.Item.Location,"core.produce.goods.arrive",{})
             move.onFail=onFail
             move.Start()
         }
