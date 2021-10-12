@@ -18,6 +18,7 @@ zy-rzc||汝州城||||Station||汝州城
 qf-sms||石门寺||||Station||石门寺
 ts-sjy||石经峪||||Station||石经峪
 ly||洛阳中心广场||||Station||洛阳中心广场
+ly-wxl||望星楼||||Station||望星楼
 cakd||长安三秦客栈||||Station||三秦客栈
 cayp||长安千金堂||||Station||千金堂
 ca-hz||汉中||||Station||汉中

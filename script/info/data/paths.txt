@@ -17,6 +17,7 @@ zy-xcc||zy-rzc||||nw;nw||se;se
 qfsm||qf-sms||||e;e;ne;eu;enter||out;wd;sw;w;w
 qfsm||ts-sjy||||e;n;n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s;s;w
 zy-nyc||ly||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
+ly||ly-wxl||||n;w||e;s
 ly||cakd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
 cakd||cayp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
 cayp||ca-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
