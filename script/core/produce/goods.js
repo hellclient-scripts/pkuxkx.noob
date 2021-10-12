@@ -17,7 +17,7 @@
         this.Execute = function (data, onFinish, onFail) {
             produce.prototype.Execute.call(this, data, onFinish, onFail)
             let move=app.NewMove("walk",this.Item.Location,"core.produce.goods.arrive",{})
-            move.onFail=onFail
+            move.onFail="core.task.fail"
             move.Start()
         }
     }

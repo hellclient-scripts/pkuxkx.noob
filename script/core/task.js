@@ -32,4 +32,9 @@
       task.Execute(data,onFinish,onFail)
       return true
   }
+  app.RegisterCallback("core.task.fail",function(){
+    if (app.CurrentTask){
+        app.CurrentTask.Fail()
+      }
+  })
 })(App)
