@@ -6,7 +6,8 @@
         list.append("userrooms","用户房间信息")
         list.append("builtinpaths","内建路径信息(只读)")
         list.append("userpaths","用户路径信息")
-
+        list.append("builtinitems","内建道具信息(只读)")
+        
         list.send("App.InfoUIData")
     }
     app.InfoUIData=function(name,id,code,data) {
@@ -32,6 +33,12 @@
                     UserpathsGrid.setfilter("")
                     publishgrid(UserpathsGrid,app.Info.UserPaths)
                 break
+                case "builtinitems":
+                    BuiltinitemsGrid.setpage(1)
+                    BuiltinitemsGrid.setfilter("")
+                    publishgrid(BuiltinitemsGrid,app.Info.BuiltinItems)
+                break
+                
             }
         }
     }
@@ -195,7 +202,7 @@ app.InfoUIDataUserpathsGridOnView=function(name,id,code,data){
 UserpathsGrid.setoncreate("App.InfoUIDataUserpathsGridOnCreate")
 app.InfoUIDataUserpathsGridOnCreate=function(name,id,code,data){
     if (code==0){
-        Userinput.prompt("App.InfoUIDataUserpathsGridOnCreateSubmit","添加路径","请添加房间，格式为 [to]||[from]||[tag1],[tag2],[!tag3]||[topath]||[frompath] 如 yz||yzyp||||e;e;n||s;w;w","[to]||[from]||[tag1],[tag2],[!tag3]||[topath]||[frompath]")
+        Userinput.prompt("App.InfoUIDataUserpathsGridOnCreateSubmit","添加路径","请添加路径，格式为 [to]||[from]||[tag1],[tag2],[!tag3]||[topath]||[frompath] 如 yz||yzyp||||e;e;n||s;w;w","[to]||[from]||[tag1],[tag2],[!tag3]||[topath]||[frompath]")
     }
 }
 app.InfoUIDataUserpathsGridOnCreateSubmit=function(name,id,code,data){
@@ -231,4 +238,30 @@ app.InfoUIDataUserpathsGridOnDelete=function(name,id,code,data){
         app.API.SaveUserPaths()
     }
 }
+
+let BuiltinitemsGrid=Userinput.newdatagrid("内建道具信息","内建道具信息管理")
+BuiltinitemsGrid.setonpage("App.InfoUIDataBuiltinitemsGridOnPage")
+app.InfoUIDataBuiltinitemsGridOnPage=function(name,id,code,data){
+    if (code==0 && data){
+        BuiltinitemsGrid.setpage(data-0)
+        publishgrid(BuiltinitemsGrid,app.Info.BuiltinItems)
+    }
+}
+BuiltinitemsGrid.setonfilter("App.InfoUIDataBuiltinitemsGridOnFilter")
+app.InfoUIDataBuiltinitemsGridOnFilter=function(name,id,code,data){
+    if (code==0){
+        BuiltinitemsGrid.setpage(1)
+        BuiltinitemsGrid.setfilter(data)
+
+        publishgrid(BuiltinitemsGrid,app.Info.BuiltinItems)
+
+    }
+}
+BuiltinitemsGrid.setonview("App.InfoUIDataBuiltinitemsGridOnView")
+app.InfoUIDataBuiltinitemsGridOnView=function(name,id,code,data){
+    if (code==0 && data){
+        Userinput.alert("","查看内建道具",app.Info.BuiltinItems[data-0])
+    }
+}
+
 })(App)

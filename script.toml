@@ -135,7 +135,7 @@ Channel = "pkuxkx.noob"
   ID = "core_response"
   Name = "core_response"
   Enabled = true
-  Match = "^系统回馈：(\\S+) = (\\S+)( (.*)){0,1}$"
+  Match = "^(> )*系统回馈：(\\S+) = (\\S+)( (.*)){0,1}$"
   Send = ""
   ColourChangeType = 0
   Colour = 0

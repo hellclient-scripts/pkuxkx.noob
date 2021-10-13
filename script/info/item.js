@@ -3,9 +3,9 @@
     let item=Include("include/item.js")
     app.Info.Items=[]
     app.Info.BuiltinItems=[]
-    app.RegisterCallback("info.items.loaditems", function () {
-        app.Info.BuiltinItems= world.ReadLines("info/data/items.txt")
-        app.Info.BuiltinItems.forEach(function(line){
+    app.Info.UserItems=[]
+    let loaditems=function(data){
+        data.forEach(function(line){
             let i= new item()
             var data=line.split(sep)
             i.ID=data[0]
@@ -18,6 +18,15 @@
             i.Comment=data[7]
             app.Info.Items.push(i)
         })
+    }
+    app.RegisterCallback("info.items.loaditems", function () {
+        app.Info.BuiltinItems= world.ReadLines("info/data/items.txt")
+        if (world.HasHomeFile("data/items.txt")){
+            app.Info.UserItems=world.ReadHomeLines("data/items.txt")
+        }
+        loaditems(app.Info.BuiltinItems)
+        loaditems(app.Info.UserItems)
+
     })
     app.RegisterAPI("GetItem", function (id) {
         for (var key in app.Info.Items){
