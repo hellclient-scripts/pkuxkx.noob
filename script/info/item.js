@@ -28,6 +28,10 @@
         loaditems(app.Info.UserItems)
 
     })
+    app.RegisterAPI("SaveUserItems",function(){
+        let data=app.Info.UserItems.join("\n")
+        world.WriteHomeFile("data/items.txt",data)
+    })
     app.RegisterAPI("GetItem", function (id) {
         for (var key in app.Info.Items){
             if (app.Info.Items[key].ID==id){

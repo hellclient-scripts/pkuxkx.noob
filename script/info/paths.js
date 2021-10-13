@@ -9,10 +9,10 @@
             app.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
         }
     })
-    app.API.SaveUserPaths=function(){
+    app.RegisterAPI("SaveUserPaths",function(){
         let data=app.Info.UserPaths.join("\n")
         world.WriteHomeFile("data/paths.txt",data)
-    }
+    })
     app.RegisterAPI("GetPath", function (fr, tolist) {
         app.Raise("PathInit")
         var data = Mapper.getpath(fr, 1, tolist)

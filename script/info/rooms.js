@@ -27,9 +27,9 @@
             app.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
         }
     })
-    app.API.SaveUserRooms=function(){
+    app.RegisterAPI("SaveUserRooms",function(){
         let data=app.Info.UserRooms.join("\n")
         world.WriteHomeFile("data/rooms.txt",data)
-    }
+    })
     app.Bind("Ready", "info.rooms.loadrooms")
 })(App)

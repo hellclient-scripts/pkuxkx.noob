@@ -7,7 +7,8 @@
         list.append("builtinpaths","内建路径信息(只读)")
         list.append("userpaths","用户路径信息")
         list.append("builtinitems","内建道具信息(只读)")
-        
+        list.append("useritems","用户道具信息")
+
         list.send("App.InfoUIData")
     }
     app.InfoUIData=function(name,id,code,data) {
@@ -38,7 +39,11 @@
                     BuiltinitemsGrid.setfilter("")
                     publishgrid(BuiltinitemsGrid,app.Info.BuiltinItems)
                 break
-                
+                case "useritems":
+                    UserItemsGrid.setpage(1)
+                    UserItemsGrid.setfilter("")
+                    publishgrid(UserItemsGrid,app.Info.UserItems)
+                break
             }
         }
     }
@@ -196,7 +201,7 @@ app.InfoUIDataUserpathsGridGridOnFilter=function(name,id,code,data){
 UserpathsGrid.setonview("App.InfoUIDataUserpathsGridOnView")
 app.InfoUIDataUserpathsGridOnView=function(name,id,code,data){
     if (code==0 && data){
-        Userinput.alert("","查看内建房间",app.Info.UserPaths[data-0])
+        Userinput.alert("","查看用户路径",app.Info.UserPaths[data-0])
     }
 }
 UserpathsGrid.setoncreate("App.InfoUIDataUserpathsGridOnCreate")
@@ -264,4 +269,67 @@ app.InfoUIDataBuiltinitemsGridOnView=function(name,id,code,data){
     }
 }
 
+let UserItemsGrid=Userinput.newdatagrid("用户道具信息","用户道具信息管理")
+UserItemsGrid.setonpage("App.InfoUIDataUserItemsGridOnPage")
+app.InfoUIDataUserItemsGridOnPage=function(name,id,code,data){
+    if (code==0 && data){
+        UserItemsGrid.setpage(data-0)
+        publishgrid(UserItemsGrid,app.Info.UserItems)
+    }
+}
+UserItemsGrid.setonfilter("App.InfoUIDataUserItemsGridGridOnFilter")
+app.InfoUIDataUserItemsGridGridOnFilter=function(name,id,code,data){
+    if (code==0){
+        UserItemsGrid.setpage(1)
+        UserItemsGrid.setfilter(data)
+
+        publishgrid(UserItemsGrid,app.Info.UserItems)
+
+    }
+}
+UserItemsGrid.setonview("App.InfoUIDataUserItemsGridOnView")
+app.InfoUIDataUserItemsGridOnView=function(name,id,code,data){
+    if (code==0 && data){
+        Userinput.alert("","查看用户道具",app.Info.UserItems[data-0])
+    }
+}
+UserItemsGrid.setoncreate("App.InfoUIDataUserItemsGridOnCreate")
+app.InfoUIDataUserItemsGridOnCreate=function(name,id,code,data){
+    if (code==0){
+        Userinput.prompt("App.InfoUIDataUserItemsGridOnCreateSubmit","添加道具","请添加道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||","[ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]")
+    }
+}
+app.InfoUIDataUserItemsGridOnCreateSubmit=function(name,id,code,data){
+    if (code==0 && data){
+        app.Info.UserItems.push(data)
+        publishgrid(UserItemsGrid,app.Info.UserItems)
+        app.API.ResetMapper()
+        app.API.SaveUserItems()
+    }
+}
+UserItemsGrid.setonupdate("App.InfoUIDataUserItemsGridOnUpdate")
+let updateingitem
+app.InfoUIDataUserItemsGridOnUpdate=function(name,id,code,data){
+    updateingitem=data-0
+    if (code==0){
+        Userinput.prompt("App.InfoUIDataUserItemsGridOnUpdateSubmit","编辑道具","编辑道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||",app.Info.UserItems[updateingpath])
+    }
+}
+app.InfoUIDataUserItemsGridOnUpdateSubmit=function(name,id,code,data){
+    if (code==0){
+        app.Info.UserItems[updateingitem]=data
+        publishgrid(UserItemsGrid,app.Info.UserItems)
+        app.API.ResetMapper()
+        app.API.SaveUserItems()
+    }
+}
+UserItemsGrid.setondelete("App.InfoUIDataUserItemsGridOnDelete")
+app.InfoUIDataUserItemsGridOnDelete=function(name,id,code,data){
+    if (code==0 && data){
+        app.Info.UserItems.splice(data-0,1)
+        publishgrid(UserItemsGrid,app.Info.UserItems)
+        app.API.ResetMapper()
+        app.API.SaveUserItems()
+    }
+}
 })(App)
