@@ -312,7 +312,7 @@ let updateingitem
 app.InfoUIDataUserItemsGridOnUpdate=function(name,id,code,data){
     updateingitem=data-0
     if (code==0){
-        Userinput.prompt("App.InfoUIDataUserItemsGridOnUpdateSubmit","编辑道具","编辑道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||",app.Info.UserItems[updateingpath])
+        Userinput.prompt("App.InfoUIDataUserItemsGridOnUpdateSubmit","编辑道具","编辑道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||",app.Info.UserItems[updateingitem])
     }
 }
 app.InfoUIDataUserItemsGridOnUpdateSubmit=function(name,id,code,data){

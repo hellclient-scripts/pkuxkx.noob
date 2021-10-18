@@ -24,13 +24,15 @@
         if (world.HasHomeFile("data/items.txt")){
             app.Info.UserItems=world.ReadHomeLines("data/items.txt")
         }
-        loaditems(app.Info.BuiltinItems)
-        loaditems(app.Info.UserItems)
-
+        app.API.ResetItems()
     })
     app.RegisterAPI("SaveUserItems",function(){
         let data=app.Info.UserItems.join("\n")
         world.WriteHomeFile("data/items.txt",data)
+    })
+    app.RegisterAPI("ResetItems",function(){
+        loaditems(app.Info.BuiltinItems)
+        loaditems(app.Info.UserItems)
     })
     app.RegisterAPI("GetItem", function (id) {
         for (var key in app.Info.Items){
