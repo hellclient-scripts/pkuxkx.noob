@@ -41,26 +41,26 @@
         }
         return false
     }
-    app.TryOfferGroups = function (groups, onfinish, onfail) {
+    app.TryOfferGroups = function (groups, onfinish, onrejected) {
         if (tyr_offergroups(groups, onfinish)) {
             return true
         }
-        app.ExecuteCallback(onfail)
+        app.ExecuteCallback(onrejected)
         return false
 
     }
-    app.TryOfferGroup = function (groupid, onfinish, onfail) {
+    app.TryOfferGroup = function (groupid, onfinish, onrejected) {
         if (tyr_offergroup(groupid, onfinish)) {
             return true
         }
-        app.ExecuteCallback(onfail)
+        app.ExecuteCallback(onrejected)
         return false
     }
-    app.TryOffers = function (offers, onfinish, onfail) {
+    app.TryOffers = function (offers, onfinish, onrejected) {
         if (try_offers(offers, onfinish)) {
             return true
         }
-        app.ExecuteCallback(onfail)
+        app.ExecuteCallback(onrejected)
         return false
     }
 })(App)
