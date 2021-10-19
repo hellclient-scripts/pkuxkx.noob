@@ -16,7 +16,13 @@
             app.NewMove("walk", data, "app.core.task.queuenext", { OnFail: "app.core.task.queuefail", Vehicle: app.Vehicle.ID }).Start()
         }
     })
+    app.RegisterCallback("core.task.check", function () {
+        if (app.GetTaskID() == "queue" ) {
+            app.TryProposalGroups(["prepare"],"app.core.task.queuenext")
+        }
+    })
     app.Bind("Response.core.task.queue.to", "core.task.to.move")
+    
     let Queue = function () {
         Task.call(this, "queue")
         this.Execute = function (data, onFinish, onFail) {
@@ -42,6 +48,11 @@
             let str = app.Data.Queue.Remain.shift()
             let current = new Directive(str)
             switch (current.Command) {
+                case "#check":
+                    app.Send("l")
+                    app.Check(app.CheckLevelFull)
+                    app.CheckBusy("core.task.check")
+                    break
                 case "#to":
                     let c = new Directive(current.Data)
                     let vehicle
@@ -76,6 +87,11 @@
                     this.Do(str)
             }
 
+        }
+        this.Check = function (data) {
+            app.Send("l")
+            app.Check(app.CheckLevelFull)
+            app.Response("core", "task.queue.eheck")
         }
         this.To = function (data) {
             app.Send("l")

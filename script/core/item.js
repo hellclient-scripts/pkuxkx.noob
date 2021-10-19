@@ -42,18 +42,21 @@
     app.Core.OnItemEquipmentObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("equipment",false)
     }
-    app.RegisterCallback("core.item.inittags",function(){
+    app.GetCash=function(){
+        let cashname=app.GetItemObj("Cash")
+        let cash=0
         let goldname =app.GetItemObj("Gold")
         let gold=0
-        let silvername =app.GetItemObj("Silver")
-        let silver=0
+        if (cashname){
+            cash=CNumber.Split(cashname).Count
+        }
         if (goldname){
             gold=CNumber.Split(goldname).Count
         }
-        if (silvername){
-            silver=CNumber.Split(silvername).Count
-        }
-        Mapper.settag("rich",gold*100+silver>10)
+        return cash*10+gold
+    }
+    app.RegisterCallback("core.item.inittags",function(){
+        Mapper.settag("rich",app.GetCash()>1)
     })
     app.Bind("PathInit","core.item.inittags")
     app.GetItemObj=function(id,lowercase){

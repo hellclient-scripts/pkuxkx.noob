@@ -1,4 +1,5 @@
 (function (app) {
+
     app.Proposals = {}
     app.ProposalGroups = {}
     app.RegisterProposal = function (proposal) {
@@ -8,31 +9,31 @@
         app.Proposals[proposal.ID] = proposal
     }
     app.RegisterProposalGroup = function (groupid, proposals) {
-        app.Proposals[groupid] = proposals
+        app.ProposalGroups[groupid] = proposals
     }
 
     let try_proposals = function (proposals, onfinish) {
         for (var i in proposals) {
             let proposal = app.Proposals[proposals[i]]
             if (!proposal) {
-                throw "要约 [" + groupid + "] 没找到"
+                throw "提案 [" + proposals[i] + "] 没找到"
             }
-            if (proposal.Evaluate()) {
-                proposal.Accept(onfinish)
+            if (proposal.Submit()) {
+                proposal.Execute(onfinish)
                 return true
             }
         }
         return false
     }
-    let tyr_proposalgroup = function (groupid, onfinish) {
+    let try_proposalgroup = function (groupid, onfinish) {
         let group = app.ProposalGroups[groupid]
         if (!group) {
-            throw "要约组 [" + groupid + "] 没找到"
+            throw "提案组 [" + groupid + "] 没找到"
         }
         return try_proposals(group, onfinish)
 
     }
-    let tyr_proposalgroups = function (groups, onfinish) {
+    let try_proposalgroups = function (groups, onfinish) {
         for (var i in groups) {
             let group=groups[i]
             if (try_proposalgroup(group,onfinish)){
@@ -42,7 +43,7 @@
         return false
     }
     app.TryProposalGroups = function (groups, onfinish, onrejected) {
-        if (tyr_proposalgroups(groups, onfinish)) {
+        if (try_proposalgroups(groups, onfinish)) {
             return true
         }
         app.ExecuteCallback(onrejected)
@@ -50,7 +51,7 @@
 
     }
     app.TryProposalGroup = function (groupid, onfinish, onrejected) {
-        if (tyr_proposalgroup(groupid, onfinish)) {
+        if (try_proposalgroup(groupid, onfinish)) {
             return true
         }
         app.ExecuteCallback(onrejected)
@@ -63,4 +64,8 @@
         app.ExecuteCallback(onrejected)
         return false
     }
+
+    Include("core/proposal/cash.js")
+    Include("core/proposal/prepare.js")
+
 })(App)

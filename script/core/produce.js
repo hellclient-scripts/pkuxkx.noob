@@ -1,5 +1,5 @@
 (function(app){
-    Include("core/produce/goods.js")
+    Include("core/task/goods.js")
     app.Produce=function(id,onFinish,onFail){
         let item=App.API.GetItem(id)
         if (item==null){

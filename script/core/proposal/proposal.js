@@ -1,20 +1,20 @@
 (function (app) {
-    let Offer=function(id){
+    let Proposal=function(id){
         if (!id) {
             throw "Proposal的id不能为空"
         }
         this.ID=id
         this.OnFinish=""
-        this.OnAccept=function(){
+        this.OnExecute=function(){
 
         }
-        this.Accept=function(onFinish){
+        this.Execute=function(onFinish){
             this.OnFinish=onFinish
-            this.OnAccept()
+            this.OnExecute()
         }
-        this.Evaluate=function(){
+        this.Submit=function(){
             return false
         }
     }
-    return Offer
+    return Proposal
 })(App)

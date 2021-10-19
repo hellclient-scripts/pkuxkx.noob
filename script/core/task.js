@@ -37,4 +37,9 @@
         app.CurrentTask.Fail()
       }
   })
+  app.RegisterCallback("core.task.Finish",function(data){
+    if (app.CurrentTask){
+        app.CurrentTask.Finish()
+      }
+  })
 })(App)
