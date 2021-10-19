@@ -1,7 +1,7 @@
 (function (app) {
     let Offer=function(id){
         if (!id) {
-            throw "Offer的id不能为空"
+            throw "Proposal的id不能为空"
         }
         this.ID=id
         this.OnFinish=""
