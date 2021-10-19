@@ -62,7 +62,7 @@
                 continue
             }
             count++
-            if (i>=start && i<end){
+            if (count>=start && count<end){
                 grid.append(i,alldata[i])
             }
         }
