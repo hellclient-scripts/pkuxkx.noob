@@ -18,7 +18,7 @@
     })
     app.RegisterCallback("core.task.check", function () {
         if (app.GetTaskID() == "queue" ) {
-            app.TryProposalGroups(["prepare"],"app.core.task.queuenext")
+            app.TryProposalGroups(["prepare"],"app.core.task.queuenext","app.core.task.queuenext")
         }
     })
     app.Bind("Response.core.task.queue.to", "core.task.to.move")

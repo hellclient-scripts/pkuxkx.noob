@@ -15,8 +15,12 @@
     }
     Task.prototype.Finish=function(data){
         this.OnClose()
-        app.CurrentTask=null
-        app.Stopped=false
+        if (app.QueuedTasks.length){
+            app.CurrentTask=app.QueuedTasks.shift()
+        }else{
+            app.CurrentTask=null
+            app.Stopped=false
+        }
         return app.ExecuteCallback(this.OnFinish,data)
     }
     Task.prototype.Fail=function(data){
@@ -32,8 +36,8 @@
     }
     Task.prototype.Execute=function(data,onFinish,onFail){
         this.Data=data?data:"",
-        this.OnFinish=onFinish?"":onFinish
-        this.OnFail=onFail?"":onFail
+        this.OnFinish=onFinish?onFinish:""
+        this.OnFail=onFail?onFail:""
     }
     Task.prototype.Avaliable=function (){
         return true

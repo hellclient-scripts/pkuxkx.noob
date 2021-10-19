@@ -1,5 +1,6 @@
 (function(app){
   app.Tasks={}
+  app.QueuedTasks=[]
   app.CurrentTask=null
   app.Stopped=false
   app.RegisterTask=function(task){
@@ -23,10 +24,11 @@
         return false
     }
       if (app.CurrentTask){
-          world.Note("正在执行任务["+app.CurrentTask.ID+"]中，无法执行新任务。")
-          return false
+        app.QueuedTasks.unshift(app.CurrentTask)
       }
-      world.Note("开始执行任务["+id+"]。")
+      if (app.QueuedTasks.length==0){
+        world.Note("开始执行任务["+id+"]。")
+      }
       app.CurrentTask=task
       app.Stopped=false
       task.Execute(data,onFinish,onFail)
