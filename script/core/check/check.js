@@ -8,6 +8,9 @@
         this.Command = ""
         this.IntervalParam = ""
         this.LastID = ""
+        this.Send=function(){
+            app.Send(this.Command)
+        }
     }
     Check.prototype.WithLevel = function (level) {
         this.Level = level
@@ -33,7 +36,7 @@
                 }
             }
         }
-        app.Send(this.Command)
+        this.Send()
         return true
     }
     Check.prototype.Callback = function () {
