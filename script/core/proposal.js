@@ -24,7 +24,7 @@
         }
         return false
     }
-    let tyr_proposalgroup = function (group, onfinish) {
+    let tyr_proposalgroup = function (groupid, onfinish) {
         let group = app.ProposalGroups[groupid]
         if (!group) {
             throw "要约组 [" + groupid + "] 没找到"

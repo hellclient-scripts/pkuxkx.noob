@@ -1,8 +1,8 @@
 (function(app){
     app.Core.OnResponse=function(name, output, wildcards){
-        let type=wildcards[0]
-        let cmd=wildcards[1]
-        let data=wildcards[3]
+        let type=wildcards[1]
+        let cmd=wildcards[2]
+        let data=wildcards[4]
         if (cmd){
             app.Raise("Response."+type+"."+cmd,data)
         }
