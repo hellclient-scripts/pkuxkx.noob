@@ -1,3 +1,3 @@
 (function (app) {
-    app.RegisterProposalGroup("prepare",["cash"])
+    app.RegisterProposalGroup("prepare",["cash","food"])
 })(App)

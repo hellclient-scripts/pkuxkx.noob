@@ -74,4 +74,11 @@
         }
         return null
     }
+    app.GetItemNumber=function(id,lowercase){
+        let label=app.GetItemObj(id,lowercase)
+        if (!label){
+            return 0
+        }
+        return CNumber.Split(label).Count
+    }
 })(App)

@@ -9,13 +9,14 @@
             let i= new item()
             var data=line.split(sep)
             i.ID=data[0]
-            i.Name=data[1]
-            i.Label=data[2]
-            i.Type=data[3]
-            i.Location=data[4]
-            i.Command=data[5]
-            i.Interval=data[6]?data[6]-0:0
-            i.Comment=data[7]
+            i.Alias=data[1]
+            i.Name=data[2]
+            i.Label=data[3]
+            i.Type=data[4]
+            i.Location=data[5]
+            i.Command=data[6]
+            i.Interval=data[7]?data[7]-0:0
+            i.Comment=data[8]
             app.Info.Items.push(i)
         })
     }

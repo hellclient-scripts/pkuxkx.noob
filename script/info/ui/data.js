@@ -296,7 +296,7 @@ app.InfoUIDataUserItemsGridOnView=function(name,id,code,data){
 UserItemsGrid.setoncreate("App.InfoUIDataUserItemsGridOnCreate")
 app.InfoUIDataUserItemsGridOnCreate=function(name,id,code,data){
     if (code==0){
-        Userinput.prompt("App.InfoUIDataUserItemsGridOnCreateSubmit","添加道具","请添加道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||","[ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]")
+        Userinput.prompt("App.InfoUIDataUserItemsGridOnCreateSubmit","添加道具","请添加道具，格式为 [ID]||[Alias]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||","[ID]||[Alias]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]")
     }
 }
 app.InfoUIDataUserItemsGridOnCreateSubmit=function(name,id,code,data){
@@ -312,7 +312,7 @@ let updateingitem
 app.InfoUIDataUserItemsGridOnUpdate=function(name,id,code,data){
     updateingitem=data-0
     if (code==0){
-        Userinput.prompt("App.InfoUIDataUserItemsGridOnUpdateSubmit","编辑道具","编辑道具，格式为 [ID]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||",app.Info.UserItems[updateingitem])
+        Userinput.prompt("App.InfoUIDataUserItemsGridOnUpdateSubmit","编辑道具","编辑道具，格式为 [ID]||[Alias]||[Name]||[Label]||[Type]||[Location]||[Command]||[Interval]||[Comment]如 gan liang||gan liang||Gan liang||干粮||goods||yz-zxl||buy gan liang ||||",app.Info.UserItems[updateingitem])
     }
 }
 app.InfoUIDataUserItemsGridOnUpdateSubmit=function(name,id,code,data){

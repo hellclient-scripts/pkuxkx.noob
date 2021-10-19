@@ -66,6 +66,7 @@
     }
 
     Include("core/proposal/cash.js")
+    Include("core/proposal/food.js")
     Include("core/proposal/prepare.js")
 
 })(App)
