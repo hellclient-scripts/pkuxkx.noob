@@ -1,6 +1,6 @@
 (function(){
-    var State=function(id){
-        this.ID=id
+    var State=function(){
+        this.ID=""
         this.Tags={}
     }
     State.prototype.Enter=function(context,oldstatue){
