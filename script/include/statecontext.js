@@ -16,5 +16,5 @@
         }
     }
     
-    return StateContxt
+    return StateContext
 })()
