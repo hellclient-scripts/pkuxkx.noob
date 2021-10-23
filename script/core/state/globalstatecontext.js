@@ -5,8 +5,9 @@
     }
     GlobalStateContext.prototype = Object.create(statecontext.prototype)
     GlobalStateContext.prototype.ChangeState=function(newstatue){
-        statecontext.prototype.ChangeState.call(this,newstatue)
         app.Data.State=newstatue.ID
+        statecontext.prototype.ChangeState.call(this,newstatue)
+        app.UpdateState()
     }
     return GlobalStateContext
 })(App)

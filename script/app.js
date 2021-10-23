@@ -6,7 +6,9 @@ App.Init=function(){
     App.Alias={}
     App.Callbacks={}
     App.Listeners={}
-    App.Data={}
+    App.Data={
+        Running:false,
+    }
     App.Mods={}
 }
 App.RegisterCallback=function(name,fn){
