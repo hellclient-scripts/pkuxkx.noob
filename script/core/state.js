@@ -29,6 +29,7 @@
     }
     app.RegisterState(new (Include("core/state/stateinit.js"))())
     app.RegisterState(new (Include("core/state/stateready.js"))())
+    app.RegisterState(new (Include("core/state/stateprepare.js"))())
     app.RegisterState(new (Include("core/state/statemanual.js"))())
     app.ChangeState("init")
 })(App)

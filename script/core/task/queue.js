@@ -88,11 +88,6 @@
             }
 
         }
-        this.Check = function (data) {
-            app.Send("l")
-            app.Check(app.CheckLevelFull)
-            app.Response("core", "task.queue.eheck")
-        }
         this.To = function (data) {
             app.Send("l")
             app.Check(app.CheckLevelFull)

@@ -6,13 +6,12 @@
     }
     StateReady.prototype = Object.create(basicstate.prototype)
     StateReady.prototype.Enter=function(context,newstatue){
-        basicstate.call(context,newstatue)
+        basicstate.prototype.Entercall(this,context,newstatue)
         if (!app.Running){
             app.ChangeState("manual")
             return
         }
-    }
-    StateReady.prototype.OnEvent=function(context,event,data){
+        app.ChangeState("check")
     }
     return StateReady
 })(App)

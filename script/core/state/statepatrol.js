@@ -6,12 +6,13 @@
     }
     StatePatrol.prototype = Object.create(statemove.prototype)
     StatePatrol.prototype.Enter=function(context,newstatue){
-        statemove.prototype.Enter(context,newstatue)
+        statemove.prototype.Enter.call(this,context,newstatue)
     }
     StatePatrol.prototype.Leave=function(context,oldstatue){
-        statemove.prototype.Leave(context,oldstatue)
+        statemove.prototype.Leave.call(this,context,oldstatue)
     }
     StatePatrol.prototype.OnEvent=function(context,event,data){
+        statemove.prototype.OnEvent.call(this,context,event,data)
     }
     return StatePatrol
 })(App)
