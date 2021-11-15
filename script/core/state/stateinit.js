@@ -6,7 +6,7 @@
     }
     StateInit.prototype = Object.create(basicstate.prototype)
     StateInit.prototype.Enter=function(context,newstatue){
-        basicstate.call(context,newstatue)
+        basicstate.prototype.Enter.call(context,newstatue)
         world.Note("初始化状态")
         app.ChangeState("ready")
     }

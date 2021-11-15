@@ -19,4 +19,6 @@ App.Load("core/task/queue.js")
 App.Load("core/produce.js")
 App.Load("core/proposal.js")
 App.Load("core/state.js")
+App.Load("core/transition.js")
+
 
