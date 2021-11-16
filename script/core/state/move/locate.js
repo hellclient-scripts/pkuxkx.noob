@@ -7,14 +7,14 @@
     }
     StateLocate.prototype = Object.create(basicstate.prototype)
     StateLocate.prototype.Enter=function(context,oldstatue){
-        basicstate.prototype.Enter.call(context,oldstatue)
+        basicstate.prototype.Enter.call(this,context,oldstatue)
         this.Start()
     }
     StateLocate.prototype.Start=function(){
         let move=app.GetContext("Move")
         move.Context=new locate(move.Target-0)
+        move.StartCmd="l"
         this.Locating()
-        app.Send("l")
     }
     StateLocate.prototype.Locating=function(){
         app.ChangeState("locating")

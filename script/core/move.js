@@ -1,33 +1,11 @@
 (function (app) {
     app.Path = Include("include/path.js")
     let Move=Include("include/move.js")
-    app.NewMove = function (mode, target) {
-        return new Move(mode,target)
+    app.NewMove = function (mode, target,data) {
+        return new Move(mode,target,data)
     }
     app.RegisterCallback("core.move.onroomobjend", function () {
         app.OnStateEvent("move.onRoomObjEnd")
-    })
-    // app.RegisterCallback("core.move.onStepRoomObj", function (data) {
-    //     if (data && !data.Found) {
-    //         let obj = data["Obj"]
-    //         if (!obj) {
-    //             return true
-    //         }
-    //         if (!App.HasRoomObj(obj)) {
-    //             return true
-    //         }
-    //         if (data["Cmd"]) {
-    //             app.Send(data["Cmd"])
-    //         }
-    //         data.Found = true
-    //         return false
-    //     }
-    //     return true
-    // })
-    app.RegisterCallback("core.move.nobusy", function () {
-        if (app.Data.Move && !app.Data.Move.Paused) {
-            app.Data.Move.Move()
-        }
     })
     app.Bind("OnRoomEnd", "core.move.onroomobjend")
     app.OnMoveStepTimeout = function (name) {
@@ -60,5 +38,10 @@
     app.RegisterState(new (Include("core/state/move/walking.js"))())
     app.RegisterState(new (Include("core/state/move/locate.js"))())
     app.RegisterState(new (Include("core/state/move/locating.js"))())
+    app.RegisterState(new (Include("core/state/move/patrol.js"))())
+    app.RegisterState(new (Include("core/state/move/patroling.js"))())
+    app.RegisterState(new (Include("core/state/move/patrolnobusy.js"))())
+    app.RegisterState(new (Include("core/state/move/find.js"))())
+    app.RegisterState(new (Include("core/state/move/finding.js"))())
 
 })(App)

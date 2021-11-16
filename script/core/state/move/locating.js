@@ -7,10 +7,16 @@
     }
     StateLocating.prototype = Object.create(Move.prototype)
     StateLocating.prototype.Enter=function(context,newstatue){
-        Move.prototype.Enter.call(context,newstatue)
+        Move.prototype.Enter.call(this,context,newstatue)
+        let move=app.GetContext("Move")
+        if (move.StartCmd){
+            app.Send(move.StartCmd)
+            move.StartCmd=""
+            return
+        }
     }
     StateLocating.prototype.Leave=function(context,newstatue){
-        Move.prototype.Enter.call(context,newstatue)
+        Move.prototype.Enter.call(this,context,newstatue)
     }
     StateLocating.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -27,7 +33,7 @@
                 this.OnStepTimeout()
             break
             default:
-                Move.prototype.Enter.call(context,event,data)
+                Move.prototype.Enter.call(this,context,event,data)
         }
     }
     StateLocating.prototype.Fail=function(){

@@ -1,13 +1,14 @@
 (function(app){
-    let Move=function(mode,target){
+    let Move=function(mode,target,data){
         this.Mode=mode
         this.Target=target
         this.Current=null
-        this.Data={}
+        this.Data=data?data:{}
         this.Context=null
         this.StateOnStep=""
         this.Stopped=false
         this.OnRoom=""
+        this.StartCmd=""
     }
     Move.prototype.Start=function(){
         app.Automaton.Push()
@@ -16,15 +17,6 @@
     }
     Move.prototype.Stop=function(){
         this.Stopped=true
-    }
-    Move.prototype.Go=function(command){
-        app.Go(command)
-    }
-    Move.prototype.TryMove=function(step){
-        if (!step){
-            step=this.Current
-        }
-        this.Go(step.Command)
     }
     return Move
 })(App)

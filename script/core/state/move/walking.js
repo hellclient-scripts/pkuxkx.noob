@@ -7,11 +7,11 @@
     }
     StateWalking.prototype = Object.create(Move.prototype)
     StateWalking.prototype.Enter=function(context,newstatue){
-        Move.prototype.Enter.call(context,newstatue)
+        Move.prototype.Enter.call(this,context,newstatue)
         this.Move()
     }
     StateWalking.prototype.Leave=function(context,newstatue){
-        Move.prototype.Enter.call(context,newstatue)
+        Move.prototype.Enter.call(this,context,newstatue)
     }
     StateWalking.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -25,7 +25,7 @@
                 this.OnRoomObjEnd()
             break
             default:
-                Move.prototype.Enter.call(context,event,data)
+                Move.prototype.Enter.call(this,context,event,data)
         }
     }
     StateWalking.prototype.Move=function(){
@@ -65,7 +65,7 @@
     }
     StateWalking.prototype.RetryMove=function(){
         let move=app.GetContext("Move")
-        move.TryMove(move.Context.NextStep())
+        this.TryMove(move.Context.NextStep())
     }
     StateWalking.prototype.OnRoomObjEnd=function(){
         let move=app.GetContext("Move")

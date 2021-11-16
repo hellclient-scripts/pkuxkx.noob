@@ -7,7 +7,7 @@
     }
     StateReady.prototype = Object.create(basicstate.prototype)
     StateReady.prototype.Enter=function(context,newstatue){
-        basicstate.prototype.Enter.call(context,newstatue)
+        basicstate.prototype.Enter.call(this,context,newstatue)
         this.Handler()
     }
     return StateReady

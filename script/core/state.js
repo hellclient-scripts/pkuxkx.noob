@@ -20,6 +20,9 @@
         let state=app.GetState(id)
         app.StateContext.ChangeState(state)
     }
+    app.LastState=function(){
+        return app.StateContext.LastState
+    }
     app.OnStateEvent=function(event,data){
         app.StateContext.OnEvent(event,data)
     }

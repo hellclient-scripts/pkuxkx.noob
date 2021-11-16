@@ -7,7 +7,7 @@
     }
     StateWalk.prototype = Object.create(basicstate.prototype)
     StateWalk.prototype.Enter=function(context,oldstatue){
-        basicstate.prototype.Enter.call(context,oldstatue)
+        basicstate.prototype.Enter.call(this,context,oldstatue)
         this.Start()
     }
     StateWalk.prototype.Start=function(){

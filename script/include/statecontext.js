@@ -1,5 +1,6 @@
 (function(){
     var StateContext=function(){
+        this.LastState=null
         this.State=null
     }
     StateContext.prototype.ChangeState=function(newstatue){
@@ -8,6 +9,7 @@
             this.State.Leave(this,newstatue)
         }
         this.State=newstatue
+        this.LastState=old
         this.State.Enter(this,old)
     }
     StateContext.prototype.OnEvent=function(event,data){
