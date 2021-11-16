@@ -31,7 +31,7 @@
     })
     app.Bind("OnRoomEnd", "core.move.onroomobjend")
     app.OnMoveStepTimeout = function (name) {
-        app.OnStateEvent("move.steptimeout")
+        app.OnStateEvent("move.stepTimeout")
     }
     app.Core.OnMoveRetry=function(name, output, wildcards){
         app.OnStateEvent("move.retry")
@@ -58,4 +58,7 @@
     app.RegisterCommand("sail","core.move.sail")
     app.RegisterState(new (Include("core/state/move/walk.js"))())
     app.RegisterState(new (Include("core/state/move/walking.js"))())
+    app.RegisterState(new (Include("core/state/move/locate.js"))())
+    app.RegisterState(new (Include("core/state/move/locating.js"))())
+
 })(App)

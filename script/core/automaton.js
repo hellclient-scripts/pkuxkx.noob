@@ -39,10 +39,11 @@
         if (app.Data.Automata.length==0){
             world.Note("自动任务失败")
             app.ChangeState("manual")
+            return
         }
         let fail=app.Automaton.Current().Fail
         app.Data.Automata.pop()
-        if (fail==""){
+        if (!fail){
             app.Automaton.Fail()
         }else{
             app.ChangeState(fail)

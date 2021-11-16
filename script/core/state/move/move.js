@@ -15,6 +15,15 @@
         basicstate.prototype.Leave.call(context,newstatue)
     }
     StateMove.prototype.OnEvent=function(context,event,data){
+        switch(event){
+            case "move.ignore":
+                this.Ignore()
+            break
+        }
+    }
+    StateMove.prototype.Ignore=function(){
+        let move=app.GetContext("Move")
+        move.Ignore=true
     }
     return StateMove
 })(App)
