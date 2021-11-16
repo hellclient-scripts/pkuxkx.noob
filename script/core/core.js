@@ -1,4 +1,6 @@
 world.Note("加载核心代码")
+App.Load("core/state.js")
+App.Load("core/automaton.js")
 App.Load("core/connect.js")
 App.Load("core/food.js")
 App.Load("core/room.js")
@@ -18,7 +20,3 @@ App.Load("core/task.js")
 App.Load("core/task/queue.js")
 App.Load("core/produce.js")
 App.Load("core/proposal.js")
-App.Load("core/state.js")
-App.Load("core/transition.js")
-
-

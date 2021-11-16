@@ -12,7 +12,7 @@
     app.GetState=function(id){
         let state=app.States[id]
         if (!state){
-            throw "未知的state id"+id
+            throw "未知的state id "+id
         }
         return state
     }
@@ -20,7 +20,7 @@
         let state=app.GetState(id)
         app.StateContext.ChangeState(state)
     }
-    app.OnStateEnvent=function(event,data){
+    app.OnStateEvent=function(event,data){
         app.StateContext.OnEvent(event,data)
     }
     app.UpdateState=function(){
@@ -31,5 +31,8 @@
     app.RegisterState(new (Include("core/state/stateready.js"))())
     app.RegisterState(new (Include("core/state/stateprepare.js"))())
     app.RegisterState(new (Include("core/state/statemanual.js"))())
-    app.ChangeState("init")
+    app.RegisterCallback("core.state.init",function(){
+        app.ChangeState("init")
+    })
+    app.Bind("Ready", "core.state.init")
 })(App)

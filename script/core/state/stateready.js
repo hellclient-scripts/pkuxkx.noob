@@ -3,15 +3,12 @@
     let StateReady=function(){
         basicstate.call(this)
         this.ID="ready"
+        this.Handler=null
     }
     StateReady.prototype = Object.create(basicstate.prototype)
     StateReady.prototype.Enter=function(context,newstatue){
-        basicstate.prototype.Enter.call(this,context,newstatue)
-        if (!app.Running){
-            app.ChangeState("manual")
-            return
-        }
-        app.ChangeState("check")
+        basicstate.prototype.Enter.call(context,newstatue)
+        this.Handler()
     }
     return StateReady
 })(App)
