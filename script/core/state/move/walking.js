@@ -18,6 +18,9 @@
             case "move.retry":
                 this.Retry()
             break
+            case "move.retrymove":
+                this.RetryMove()
+            break
             case "move.onRoomObjEnd":
                 this.OnRoomObjEnd()
             break
@@ -57,8 +60,8 @@
         world.Note("到达目的地")
         app.Finish()
     }
-    StateWalking.Retry=function(){
-        world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.Data.Move.RetryMove()', 12);
+    StateWalking.prototype.Retry=function(){
+        world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
     }
     StateWalking.prototype.RetryMove=function(){
         let move=app.GetContext("Move")
