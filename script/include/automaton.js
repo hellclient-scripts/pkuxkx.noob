@@ -3,7 +3,7 @@
         this.FinalState=final
         this.Context={}
         this.Transitions=states?states:[]
-        this.FailState=final
+        this.FailState=""
     }
     Automaton.prototype.WithFinalState=function(final){
         this.FinalState=final

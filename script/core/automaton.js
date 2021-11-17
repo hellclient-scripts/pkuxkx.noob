@@ -1,5 +1,7 @@
 (function(app){
     let automaton=Include("include/automaton.js")
+    let active=Include("include/active.js")
+
     app.Data.Automata=[]
     app.Automaton={}
     app.Automaton.Current=function(){
@@ -80,5 +82,10 @@
     app.ResponseReady=function(){
         app.Response("core","state.response")
     }
+    app.NewActive=function(location,cmd,final,nobusy){
+        return new active(location,cmd,final,nobusy)
+    }
+    app.RegisterState(new (Include("core/state/active/activeexecute.js"))())
+    app.RegisterState(new (Include("core/state/active/activemove.js"))())
 
 })(App)

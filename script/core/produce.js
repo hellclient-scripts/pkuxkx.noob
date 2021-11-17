@@ -11,6 +11,4 @@
     }
     app.RegisterState(new (Include("core/state/produce/goods.js"))())
     app.RegisterState(new (Include("core/state/produce/producecheck.js"))())
-    app.RegisterState(new (Include("core/state/produce/produceexecute.js"))())
-    app.RegisterState(new (Include("core/state/produce/producemove.js"))())
 })(App)
