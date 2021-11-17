@@ -5,8 +5,8 @@
         this.Submit=function(){
             return app.GetCash()<app.GetNumberParam("gold_min")
         }
-        this.OnExecute=function(){
-            let move=app.NewMove("walk",app.GetParam("bank_location"),"core.proposal.cash.arrive",{})
+        this.Execute=function(){
+            let move=app.NewMove("walk",app.GetParam("bank_location"),"core.proposal.cash.arrive")
             move.Start()
         }
     }

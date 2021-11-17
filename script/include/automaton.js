@@ -2,7 +2,7 @@
     let Automaton=function(final,states){
         this.FinalState=final
         this.Context={}
-        this.Transitions=states|[]
+        this.Transitions=states?states:[]
         this.FailState=final
     }
     Automaton.prototype.WithFinalState=function(final){
@@ -14,7 +14,7 @@
         return this
     }
     Automaton.prototype.WithTransitions=function(states){
-        this.Transitions=states|[]
+        this.Transitions=states?states:[]
         return this
     }
     Automaton.prototype.WithData=function(key,value){

@@ -12,7 +12,7 @@
         app.ProposalGroups[groupid] = proposals
     }
 
-    let try_proposals = function (proposals, onfinish) {
+    let try_proposals = function (proposals) {
         for (var i in proposals) {
             let proposal = app.Proposals[proposals[i]]
             if (!proposal) {
@@ -25,43 +25,40 @@
         }
         return false
     }
-    let try_proposalgroup = function (groupid, onfinish) {
+    let try_proposalgroup = function (groupid) {
         let group = app.ProposalGroups[groupid]
         if (!group) {
             throw "提案组 [" + groupid + "] 没找到"
         }
-        return try_proposals(group, onfinish)
+        return try_proposals(group)
 
     }
-    let try_proposalgroups = function (groups, onfinish) {
+    let try_proposalgroups = function (groups) {
         for (var i in groups) {
             let group=groups[i]
-            if (try_proposalgroup(group,onfinish)){
+            if (try_proposalgroup(group)){
                 return true
             }
         }
         return false
     }
-    app.TryProposalGroups = function (groups, onfinish, onrejected) {
-        if (try_proposalgroups(groups, onfinish)) {
+    app.TryProposalGroups = function (groups) {
+        if (try_proposalgroups(groups)) {
             return true
         }
-        app.ExecuteCallback(onrejected)
         return false
 
     }
-    app.TryProposalGroup = function (groupid, onfinish, onrejected) {
-        if (try_proposalgroup(groupid, onfinish)) {
+    app.TryProposalGroup = function (groupid) {
+        if (try_proposalgroup(groupid)) {
             return true
         }
-        app.ExecuteCallback(onrejected)
         return false
     }
-    app.TryProposals = function (proposals, onfinish, onrejected) {
-        if (try_proposals(proposals, onfinish)) {
+    app.TryProposals = function (proposals) {
+        if (try_proposals(proposals)) {
             return true
         }
-        app.ExecuteCallback(onrejected)
         return false
     }
 

@@ -31,7 +31,7 @@
         return app.Data.Automata.pop()
     }
     app.Automaton.Finish=function(){
-        let final=app.Automaton.Current().Final
+        let final=app.Automaton.Current().FinalState
         app.Data.Automata.pop()
         app.ChangeState(final?final:"ready")
     }
@@ -41,7 +41,7 @@
             app.ChangeState("manual")
             return
         }
-        let fail=app.Automaton.Current().Fail
+        let fail=app.Automaton.Current().FailState
         app.Data.Automata.pop()
         if (!fail){
             app.Automaton.Fail()
@@ -61,14 +61,24 @@
         }
         let a=app.Automaton.Current()
         if (a.Transitions.length){
-            app.ChangeState(t.Transitions.shift())
+            app.ChangeState(a.Transitions.shift())
             return
         }
-        a.Automaton.Finish()
+        app.Automaton.Finish()
     }
+    app.RegisterCallback("core.automaton.ready",function(){
+        app.ChangeState("ready")        
+    })
     app.GetContext=app.Automaton.GetContext
     app.SetContext=app.Automaton.SetContext
     app.GetState("ready").Handler=auto
     app.Finish=app.Automaton.Finish
     app.Fail=app.Automaton.Fail
+    app.RegisterState(new (Include("core/state/statenobusy.js"))())
+    app.GetState("nobusy").Callback="core.automaton.ready"
+    app.Bind("Response.core.state.response","core.automaton.ready")
+    app.ResponseReady=function(){
+        app.Response("core","state.response")
+    }
+
 })(App)

@@ -18,7 +18,7 @@
             return
         }
         if (app.Data.Room.ID==move.Target){
-            move.Finish()
+            app.Finish()
             return 
         }
         var target = move.Target
