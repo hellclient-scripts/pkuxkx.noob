@@ -19,7 +19,7 @@
                 throw "提案 [" + proposals[i] + "] 没找到"
             }
             if (proposal.Submit()) {
-                proposal.Execute(onfinish)
+                proposal.Execute()
                 return true
             }
         }

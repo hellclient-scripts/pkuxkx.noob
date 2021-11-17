@@ -26,10 +26,6 @@
     app.OnStateEvent=function(event,data){
         app.StateContext.OnEvent(event,data)
     }
-    app.UpdateState=function(){
-        let statuetext=app.Data.State
-        world.SetStatus(statuetext);
-    }
     app.RegisterState(new (Include("core/state/stateinit.js"))())
     app.RegisterState(new (Include("core/state/stateready.js"))())
     app.RegisterState(new (Include("core/state/stateprepare.js"))())
