@@ -85,7 +85,14 @@
     app.NewActive=function(location,cmd,final,nobusy){
         return new active(location,cmd,final,nobusy)
     }
+ 
     app.RegisterState(new (Include("core/state/active/activeexecute.js"))())
     app.RegisterState(new (Include("core/state/active/activemove.js"))())
+    app.Wait=function(delay,final){
+        let a=app.Automaton.Push(final,["wait"]).WithData("Delay",delay)
+        app.ChangeState("ready")        
+    }
+    app.RegisterState(new (Include("core/state/statewait.js"))())
+
 
 })(App)
