@@ -26,7 +26,10 @@
         this.Data=data
         return this
     }
-    Active.prototype.Start=function(){
+    Active.prototype.Start=function(final){
+        if (final){
+            this.FinalState=final
+        }
         let transitions
         if (this.Nobusy){
             transitions=["core.state.active.move","nobusy","core.state.active.execute","nobusy"]

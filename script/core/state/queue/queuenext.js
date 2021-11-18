@@ -15,10 +15,8 @@
         let str = queue.Remain.shift()
         let current = new Directive(str)
         switch (current.Command) {
-            case "#check":
-                app.Send("l")
-                app.Check(app.CheckLevelFull)
-                app.CheckBusy("core.task.check")
+            case "#prepare":
+                app.StartFullPrepare(this.ID)
                 break
             case "#to":
                 let c = new Directive(current.Data)
@@ -37,7 +35,7 @@
             case "#move":
                 break
             case "#afterbusy":
-                app.Push("core.state.queue.next",["nobusy"])
+                app.Automaton.Push("core.state.queue.next",["nobusy"])
                 app.ChangeState("ready")
                 break
             case "#do":
@@ -55,10 +53,10 @@
                 if (!app.Stopped) {
                     queue.Remain = CloneArray(queue.Queue)
                 }
-                this.Enter(context,oldstatue)
+                app.ChangeState("core.state.queue.loop")
                 break
             default:
-                app.NewActive("",current.Data,"core.state.queue.next",false).Start()
+                app.NewActive("",str,"core.state.queue.next",false).Start()
         }
 
     }

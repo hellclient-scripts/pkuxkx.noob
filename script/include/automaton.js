@@ -17,6 +17,14 @@
         this.Transitions=states?states:[]
         return this
     }
+    Automaton.prototype.Insert=function(states){
+        let s=states?states:[]
+        this.Transitions=s.concat(this.Transitions)
+    }
+    Automaton.prototype.Append=function(states){
+        let s=states?states:[]
+        this.Transitions=this.Transitions.concat(s)
+    }
     Automaton.prototype.WithData=function(key,value){
         this.Context[key]=value
         return this

@@ -28,7 +28,6 @@
     }
     app.RegisterState(new (Include("core/state/stateinit.js"))())
     app.RegisterState(new (Include("core/state/stateready.js"))())
-    app.RegisterState(new (Include("core/state/stateprepare.js"))())
     app.RegisterState(new (Include("core/state/statemanual.js"))())
     app.RegisterState(new (Include("core/state/statecheckitem.js"))())
     app.RegisterCallback("core.state.init",function(){

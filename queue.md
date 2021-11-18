@@ -10,7 +10,7 @@
 ## 抄经
 
 ```
-#to qf-sms||#do ask sengren about job
+#prepare||#to qf-sms||#do ask sengren about job
 ```
 记住工号
 
@@ -22,5 +22,5 @@
 ## 做药
 
 ```
-#to yzyp||ask ping yizhi about 工作||n||peiyao||#afterbusy||#delay 5000||s||give cheng yao to ping yizhi||#loop
+#prepare||#to yzyp||ask ping yizhi about 工作||n||peiyao||#afterbusy||#delay 5000||s||give cheng yao to ping yizhi||#loop
 ```

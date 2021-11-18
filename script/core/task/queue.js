@@ -19,6 +19,7 @@
     }
     Queue.prototype = Object.create(Task.prototype)
     app.RegisterState(new (Include("core/state/queue/queuenext.js"))())
+    app.RegisterState(new (Include("core/state/queue/queueloop.js"))())
     app.RegisterTask(new Queue())
 
 })(App)

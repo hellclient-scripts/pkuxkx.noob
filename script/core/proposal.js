@@ -1,4 +1,5 @@
 (function (app) {
+    let prepare=Include("include/prepare.js")
 
     app.Proposals = {}
     app.ProposalGroups = {}
@@ -19,11 +20,10 @@
                 throw "提案 [" + proposals[i] + "] 没找到"
             }
             if (proposal.Submit()) {
-                proposal.Execute()
-                return true
+                return proposal
             }
         }
-        return false
+        return null
     }
     let try_proposalgroup = function (groupid) {
         let group = app.ProposalGroups[groupid]
@@ -36,35 +36,32 @@
     let try_proposalgroups = function (groups) {
         for (var i in groups) {
             let group=groups[i]
-            if (try_proposalgroup(group)){
-                return true
+            let p=try_proposalgroup(group)
+            if (p){
+                return p
             }
         }
-        return false
+        return null
     }
     app.TryProposalGroups = function (groups) {
-        if (try_proposalgroups(groups)) {
-            return true
-        }
-        return false
-
+        return try_proposalgroups(groups)
     }
     app.TryProposalGroup = function (groupid) {
-        if (try_proposalgroup(groupid)) {
-            return true
-        }
-        return false
+        return try_proposalgroup(groupid)
     }
     app.TryProposals = function (proposals) {
-        if (try_proposals(proposals)) {
-            return true
-        }
-        return false
+        return try_proposals(proposals)
     }
-
+    app.NewPrepare=function(level,items,group){
+        return new prepare(level,items,group)
+    }
+    app.StartFullPrepare=function(final){
+        this.NewPrepare(app.CheckLevelFull,["prepare"],true).Start(final)
+    }
     Include("core/proposal/cash.js")
     Include("core/proposal/food.js")
     Include("core/proposal/drink.js")
     Include("core/proposal/prepare.js")
-
+    app.RegisterState(new (Include("core/state/prepare/preparecheck.js"))())
+    app.RegisterState(new (Include("core/state/prepare/prepareconfirm.js"))())
 })(App)
