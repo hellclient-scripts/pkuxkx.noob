@@ -7,8 +7,9 @@
         Objs:[],
     }
     app.Core.OnRoom=function(name, output, wildcards){
+        let id=app.Data.Room.ID
         app.Data.Room={
-            ID:"",
+            ID:id,
             Name:wildcards[1],
             Desc:"",
             Tags:wildcards[3],

@@ -4,6 +4,10 @@
         this.Context={}
         this.Transitions=states?states:[]
         this.FailState=""
+        this.State=""
+    }
+    Automaton.prototype.SetCurrentState=function(state){
+        this.State=state
     }
     Automaton.prototype.WithFinalState=function(final){
         this.FinalState=final

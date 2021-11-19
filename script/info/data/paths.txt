@@ -4,7 +4,7 @@ yz||yztj||||e;e;s||n;w;w
 yz||yz-zxl||||n;n;e||w;s;s
 yz||yzcg||||s;s;w||e;n;n
 yz||yzyp||||e;e;n||s;w;w
-yz||yzsy||||e;e;n||s;w;w
+yz||yzsy||||e;n||s;w
 yz||yzkd||||n;e||w;s
 yztj||yz-dtpns||||s||n
 yz||qfsm||||n;n;n;n;n;n;n;n;n;w||e;s;s;s;s;s;s;s;s;s
@@ -29,3 +29,9 @@ jz-xyl||jzkd||||sw;sw;nw||se;ne;ne
 yy-yyl||jzkd||||e;e;e;e;e;e;ed;se;ed;e;ne;ne;ne;ne;ne;nw||se;sw;sw;sw;sw;sw;w;wu;nw;wu;w;w;w;w;w;w
 yz||gb-sdnb||||enter shudong||out
 gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
+yz||yz-xjk||||d||u
+yz-xjk||yz-fds||||out||enter
+yy-yyl||yy-yyfy||||e;e;e;e;s;||n;w;w;w;w
+yy-yyfy||ncsy||||n;w;s;s;s;su;su;su;ed;nu;enter||out;sd;wu;nd;nd;nd;n;n;n;e;s
+ncsy||nckd||||out;sd;ed;ed;e;e;e;n;w||e;s;w;w;w;wu;wu;nu;enter
+nckd||jzkd||||e;n;n;nw;ne;w;n;n;n;n;n;ne;ne;nw||se;sw;sw;s;s;s;s;s;e;sw;se;s;s;w

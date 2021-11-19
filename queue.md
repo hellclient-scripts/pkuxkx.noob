@@ -24,3 +24,9 @@
 ```
 #prepare||#to yzyp||ask ping yizhi about 工作||n||peiyao||#afterbusy||#delay 5000||s||give cheng yao to ping yizhi||#loop
 ```
+
+## 读书
+
+```
+#prepare||#to yz-xjk||#do du shu for 50||#delay 1000||#loop
+```

@@ -29,3 +29,8 @@ xin-xcz||小池镇||||Station||小池镇
 jzkd||盈月客栈||||Station||盈月客栈
 gb-sdnb||树洞内部||||Station||树洞内部
 gb-sdx||树洞下||||Station||树洞下
+yz-xjk||销金窟||||Station||销金窟
+yz-fds||发呆室||||Station||发呆室
+yy-yyfy||岳阳府衙||||Station||岳阳府衙
+ncsy||岳麓书院||||Station||岳麓书院
+nckd||偃月楼||||Station||偃月楼
