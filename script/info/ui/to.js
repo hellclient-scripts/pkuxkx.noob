@@ -6,7 +6,7 @@
             var loc=app.Info.Rooms[key]
             list.append(loc.ID,loc.Name+"("+loc.ID+") "+(loc.Desc?loc.Desc:"")+" ROOM")
         }
-        list.send("App.InfoUITo")
+        list.publish("App.InfoUITo")
     }
     app.InfoUITo=function(name,id,code,data) {
         if (code==0 && data){

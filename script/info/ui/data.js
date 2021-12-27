@@ -9,7 +9,7 @@
         list.append("builtinitems","内建道具信息(只读)")
         list.append("useritems","用户道具信息")
 
-        list.send("App.InfoUIData")
+        list.publish("App.InfoUIData")
     }
     app.InfoUIData=function(name,id,code,data) {
         if (code==0 && data){

@@ -16,7 +16,7 @@
         app.UIAssistant.forEach(function(data){
             list.append(data.ID,data.Label)
         })      
-        list.send("App.UIAssistantExecute")
+        list.publish("App.UIAssistantExecute")
     }
     app.UIAssistantExecute = function (name, id, code, data) {
         if (code == 0 && data) {
