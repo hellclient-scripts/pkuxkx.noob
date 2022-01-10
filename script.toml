@@ -1524,6 +1524,24 @@ Channel = "pkuxkx.noob"
   Italic = false
   Variable = ""  
 [[Timers]]
+  ID = "gc"
+  Name = "gc"
+  Enabled = true
+  Hour = 0
+  Minute = 0
+  Second = 0.2
+  Send = ""
+  Script = "App.OnTimerGC"
+  AtTime = false
+  SendTo = 0
+  ActionWhenDisconnectd = true
+  Temporary = false
+  OneShot = false
+  Group = ""
+  Variable = ""
+  OmitFromLog = false
+  OmitFromOutput = false  
+[[Timers]]
   ID = "steptimeout"
   Name = "steptimeout"
   Enabled = false

@@ -11,6 +11,9 @@ App.Init=function(){
     }
     App.Mods={}
 }
+App.OnTimerGC=function(name){
+    App.Raise("gc")
+}
 App.RegisterCallback=function(name,fn){
     App.Callbacks[name]=fn
 }

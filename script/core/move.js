@@ -4,7 +4,27 @@
     app.NewMove = function (mode, target,data) {
         return new Move(mode,target,data)
     }
+    app.GetMoved=function(){
+        gc()
+        return moved.length
+    }
+    var moved=[]
+    var gc=function(){
+        newmoved=[]
+        var now=(new Date()).getTime()
+        moved.forEach(function(ts){
+            if ((now-ts)<500){
+                newmoved.push(ts)
+            }
+        })
+        moved=newmoved
+    }
+    app.RegisterCallback("core.move.gc", function () {
+        gc()
+    })    
+    app.Bind("gc","core.move.gc")
     app.RegisterCallback("core.move.onroomobjend", function () {
+        moved.push((new Date()).getTime())
         app.OnStateEvent("move.onRoomObjEnd")
     })
     app.Bind("OnRoomEnd", "core.move.onroomobjend")
@@ -12,9 +32,11 @@
         app.OnStateEvent("move.stepTimeout")
     }
     app.Core.OnMoveRetry=function(name, output, wildcards){
+        moved.splice(-1)
         app.OnStateEvent("move.retry")
     }
     app.Core.OnMoveIgnore=function(name, output, wildcards){
+        moved.splice(-1)
         app.OnStateEvent("move.ignore")
     }
     app.Core.OnMoveEnterBoat=function(name, output, wildcards){
