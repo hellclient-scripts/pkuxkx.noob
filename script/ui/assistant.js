@@ -10,6 +10,10 @@
     }
     app.UIAssistantShow = function () {
         var list = Userinput.newlist("助理", "请选择你需要的帮助", false)
+        if (!app.AuthCheck()){
+            app.Auth()
+            return
+        }
         app.UIAssistant.sort(function(a, b) {
             return a.Position - b.Position;
           });

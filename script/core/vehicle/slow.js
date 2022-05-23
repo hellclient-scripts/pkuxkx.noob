@@ -6,7 +6,7 @@
         this.MultiStep=false
         this.Fly=true
         this.Sender=function(cmd){
-            if (app.GetMoved()<5){
+            if (app.GetMoved()<4){
                 app.Send(cmd)
             }else{
                 app.OnStateEvent("move.retry")

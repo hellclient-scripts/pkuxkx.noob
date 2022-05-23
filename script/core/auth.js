@@ -1,4 +1,7 @@
 (function(app){
+    app.AuthCheck=function(){
+        return (world.CheckPermissions(["http"])&& world.CheckTrustedDomains(["fullme.pkuxkx.net"]))
+    }
     app.Auth=function(success,script){
         if (!script){
             script=""
