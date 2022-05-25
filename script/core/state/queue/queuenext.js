@@ -55,6 +55,9 @@
                 }
                 app.ChangeState("core.state.queue.loop")
                 break
+            case "#showfullme":
+                app.Core.FullmeUrlByKey(current.Data)
+                break
             default:
                 app.NewActive("",str,"core.state.queue.next",false).Start()
         }

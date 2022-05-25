@@ -23,7 +23,7 @@ onBroadcast=function(msg,global,channel,global){
     
 }
 onResponse=function(msgtype,id,data){
-    
+    App.onResponse(msgtype,id,data)
 }
 onBuffer=function(data){
     if (data.length==2){

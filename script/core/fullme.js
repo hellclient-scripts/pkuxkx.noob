@@ -1,13 +1,25 @@
 (function(app){
     let imgsrcre=/<img src="\.([^"]+)"/
     app.Data.FullmeCallback=""
+    app.Data.FullmeUrl=""
+    app.Data.FullmeUrls={} 
+
     app.API.Fullme=function(callback){
-        let url=app.Core.FullmeUrl
+        let url=app.Data.FullmeUrl
         if (url){
-            app.Data.FullmeCallback=callback?callback:""
-            app.Core.FullmeReq=HTTP.New("GET",url)
-            app.Core.FullmeReq.AsyncExecute("App.Core.OnFullme")
+            app.Core.FullmeLoadHTML(url,callback)
         }
+    }
+    app.Core.FullmeLoadHTML=function(htmlurl,callback){
+        app.Data.FullmeCallback=callback?callback:""
+        Request("fullme",htmlurl)
+        app.Core.FullmeReq=HTTP.New("GET",htmlurl)
+        app.Core.FullmeReq.AsyncExecute("App.Core.OnFullme")
+    }
+    app.Core.FullmeUrlByKey=function(key,callback){
+        let url=app.Data.FullmeUrls[key]
+        app.Data.FullmeUrl=url
+        app.Core.FullmeLoadHTML(url,callback)
     }
     app.Core.FullmeReq=null
     app.Core.OnFullme=function(name,id,code,data){
@@ -28,12 +40,17 @@
             app.API.Fullme(app.Data.FullmeCallback)
         }
     }
-    app.Core.FullmeUrl=""
     app.Core.OnFullmeURL=function(name, output, wildcards){
-        app.Core.FullmeUrl=wildcards[0]
+        app.Data.FullmeUrl=wildcards[0]
+    }
+    app.Core.OnFullmeGonghao=function(name, output, wildcards){
+        app.Data.FullmeUrls.gonghao=app.Data.FullmeUrl
+    }
+    app.Core.OnFullmeCmd=function(name, output, wildcards){
+        app.Data.FullmeUrls.fullme=app.Data.FullmeUrl
     }
     app.Core.OnFullmeURLFail=function(name, output, wildcards){
-        app.Core.FullmeUrl=""
+        app.Data.FullmeUrl=""
     }
     app.Core.OnFullmeSubmit=function(name,id,code,data){
         if (code==0 && data){
@@ -50,7 +67,7 @@
     app.RegisterCallback("core.fullme.send",function(data){
         app.Send("fullme "+data)
     })
-    App.Core.DoFullme=function(){
+    app.Core.DoFullme=function(){
         app.Send("fullme")
         app.Response("core","fullmeprompt")
     }
@@ -59,4 +76,13 @@
         app.API.Fullme("core.fullme.send")
     })
     app.Bind("Response.core.fullmeprompt","core.fullmeprompt")
+    app.Core.ResponseFullme=function(msgtype,id,data){
+        let result=data.split("|")
+        if (result.length!=2){
+            return
+        }
+        if (app.Data.FullmeUrls.gonghao==result[1]){
+            app.Send("report "+result[0])
+        }
+    }
 })(App)

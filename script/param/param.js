@@ -2,7 +2,7 @@
     world.Note("加载系统参数");
     app.Params={
         "tick":"550",
-        "cmdlimit":"10",
+        "cmdlimit":"8",
         "cmdinterval":"50",
         "eatinterval":"10",
         "food":"gan liang",
