@@ -22,6 +22,9 @@ onAssist=function(){
 onBroadcast=function(msg,global,channel,global){
     
 }
+onResponse=function(msgtype,id,data){
+    
+}
 onBuffer=function(data){
     if (data.length==2){
         return data=="> "
