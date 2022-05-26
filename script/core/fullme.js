@@ -82,6 +82,7 @@
             return
         }
         if (app.Data.FullmeUrls.gonghao==result[1]){
+            Userinput.hideall()
             app.Send("report "+result[0])
         }
     }
