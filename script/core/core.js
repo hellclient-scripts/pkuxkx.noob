@@ -13,7 +13,7 @@ App.Load("core/response.js")
 App.Load("core/check.js")
 App.Load("core/busy.js")
 App.Load("core/auth.js")
-App.Load("core/fullme.js")
+App.Load("core/captcha.js")
 
 App.Load("core/task.js")
 

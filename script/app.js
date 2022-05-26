@@ -59,8 +59,8 @@ App.Raise=function(event,data){
 }
 App.onResponse=function(msgtype,id,data){
     switch (msgtype){
-        case "fullme":
-            App.Core.ResponseFullme(msgtype,id,data)
+        case "captcha":
+            App.Core.CaptchaResponse(msgtype,id,data)
             break;
     }
 }
