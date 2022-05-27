@@ -33,6 +33,7 @@
                 if (code){
                     app.Send(this.Cmd+code)
                 }else{
+                    app.Data.CaptchaCountFail++
                     app.Fail()
                 }
                 break

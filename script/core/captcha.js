@@ -72,7 +72,7 @@
     }
     app.Core.CaptchaFullmeLater=function(name, output, wildcards){
         app.Data.CatpchaLastURL=""
-        app.API.CaptchaSaveURL("fullme")
+        app.Data.CaptchaURLs["fullme"]=""
     }
 
     app.Core.CaptchaOnGonghao=function(name, output, wildcards){

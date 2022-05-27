@@ -10,7 +10,7 @@
 ## 抄经
 
 ```
-#prepare||#to qf-sms||#do report wrong||#do ask sengren about job||#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done||#captcha 工号||#loop
+#prepare||#to qf-sms||#do report wrong||#do ask sengren about job||#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done||#captcha 工号||#delay 1000||#loop
 ```
 然后report 工号
 
