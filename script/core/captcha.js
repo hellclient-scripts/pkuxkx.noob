@@ -2,6 +2,8 @@
     let imgsrcre=/<img src="\.([^"]+)"/
     app.Data.CaptchaURLs={} 
     app.Data.CaptchaCode=""
+    app.Data.CaptchaCountSuccess=0
+    app.Data.CaptchaCountFail=0
     app.Data.CaptchaCurrentURL=""
     app.Core.CatpchaLastURL=""
     app.Core.CaptchaReq=null
@@ -12,8 +14,11 @@
     app.Core.CaptchaLoadURL=function(type){
         app.Data.CaptchaCurrentURL=app.Data.CaptchaURLs[type]
     }
-    app.API.Captcha=function(type,final){
-        app.Automaton.Push(final,["core.state.captcha.captcha"])
+    app.API.Captcha=function(type,final,fail){
+        let a=app.Automaton.Push(final,["core.state.captcha.captcha"])
+        if (fail){
+            a.WithFailState(fail)
+        }
         app.SetContext("type",type)
         app.ChangeState("ready")
     }
@@ -57,11 +62,17 @@
         app.Data.FullmeUrl=""
     }
 
-    app.Core.OnCaptchaGonghao=function(name, output, wildcards){
+    app.Core.CaptchaOnGonghao=function(name, output, wildcards){
         app.API.CaptchaSaveURL("工号")
     }
-    app.Core.OnFullmeCmd=function(name, output, wildcards){
+    app.Core.CaptchaOnFullmeCmd=function(name, output, wildcards){
         app.API.CaptchaSaveURL("fullme")
+    }
+    app.Core.CaptchaOnSuccess=function(name, output, wildcards){
+        app.OnStateEvent("captcha.success")
+    }
+    app.Core.CaptchaOnFail=function(name, output, wildcards){
+        app.OnStateEvent("captcha.fail")
     }
     app.RegisterState(new (Include("core/state/captcha/captcha.js"))())
     app.Core.CaptchaResponse=function(msgtype,id,data){

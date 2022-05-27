@@ -56,7 +56,7 @@
                 app.ChangeState("core.state.queue.loop")
                 break
             case "#captcha":
-                app.API.Captcha(current.Data,"core.state.queue.next")
+                app.API.Captcha(current.Data,"core.state.queue.next","core.state.queue.next")
                 break
             default:
                 app.NewActive("",str,"core.state.queue.next",false).Start()

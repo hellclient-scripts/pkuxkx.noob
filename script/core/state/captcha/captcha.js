@@ -35,9 +35,11 @@
                 }
                 break
             case "captcha.success":
+                app.Data.CaptchaCountSuccess++
                 app.Finish()
                 break
             case "captcha.fail":
+                app.Data.CaptchaCountFail++
                 app.Fail()
                 break
         }
