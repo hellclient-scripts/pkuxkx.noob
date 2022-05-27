@@ -21,7 +21,7 @@
     app.Bind("OnRoomExits", "info.room.idlocate")
 
     app.RegisterCallback("info.rooms.loadrooms", function () {
-        world.Note("加载路径")
+        world.Note("加载房间")
         app.Info.BuiltinRooms = world.ReadLines("info/data/rooms.txt")
         if (world.HasHomeFile("data/rooms.txt")){
             app.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")

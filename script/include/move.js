@@ -11,7 +11,7 @@
         this.StartCmd=""
     }
     Move.prototype.Start=function(final){
-        app.Automaton.Push(final)
+        app.Automaton.Push([],final)
         app.SetContext("Move",this)
         app.ChangeState(this.Mode)
     }

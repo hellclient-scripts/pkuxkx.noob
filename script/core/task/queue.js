@@ -13,7 +13,7 @@
             let list = data.split(re)
             let q=new queue(list)
             app.Send("l")
-            app.Automaton.Push("",["core.state.queue.next"]).WithData("Queue",q)
+            app.Automaton.Push(["core.state.queue.next"]).WithData("Queue",q)
             app.ResponseReady()
         }
     }

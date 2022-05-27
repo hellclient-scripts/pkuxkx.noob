@@ -10,13 +10,13 @@
         }
         return app.Data.Automata[app.Data.Automata.length-1]
     }
-    app.Automaton.New=function(final,states){
-        let a=new automaton(final,states)
+    app.Automaton.New=function(states,final){
+        let a=new automaton(states,final)
         app.Data.Automata=[t]
         return a
     }
-    app.Automaton.Push=function(final,states){
-        let a=new automaton(final,states)
+    app.Automaton.Push=function(states,final){
+        let a=new automaton(states,final)
         app.Data.Automata.push(a)
         return a
     }
@@ -89,7 +89,7 @@
     app.RegisterState(new (Include("core/state/active/activeexecute.js"))())
     app.RegisterState(new (Include("core/state/active/activemove.js"))())
     app.Wait=function(delay,final){
-        let a=app.Automaton.Push(final,["wait"]).WithData("Delay",delay)
+        let a=app.Automaton.Push(["wait"],final).WithData("Delay",delay)
         app.ChangeState("ready")        
     }
     app.RegisterState(new (Include("core/state/statewait.js"))())

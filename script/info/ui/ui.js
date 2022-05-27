@@ -1,3 +1,5 @@
+App.Load("info/ui/stop.js")
 App.Load("info/ui/to.js")
 App.Load("info/ui/fullme.js")
 App.Load("info/ui/data.js")
+App.Load("info/ui/presets.js")

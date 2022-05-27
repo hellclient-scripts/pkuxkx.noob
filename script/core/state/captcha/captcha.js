@@ -23,10 +23,12 @@
         Request("captcha",app.Data.CaptchaCurrentURL)
         app.Core.CaptchaLoad()
     }
+    StateCaptcha.prototype.Leave=function(context,newstatue){
+        Userinput.hideall()
+    }
     StateCaptcha.prototype.OnEvent=function(context,event,data){
         switch(event){
             case "captcha.submit":
-                Userinput.hideall()
                 let code=app.Data.CaptchaCode
                 if (code){
                     app.Send(this.Cmd+code)
@@ -40,6 +42,9 @@
                 break
             case "captcha.fail":
                 app.Data.CaptchaCountFail++
+                app.Fail()
+                break
+            case "stop":
                 app.Fail()
                 break
         }

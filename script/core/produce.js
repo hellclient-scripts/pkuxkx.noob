@@ -4,7 +4,7 @@
         if (item==null){
             throw "item "+id +" not found"
         }
-        let a=app.Automaton.Push("checkitem")
+        let a=app.Automaton.Push([],"checkitem")
         a.WithTransitions([item.Type])
         a.WithData("Item",item)
         app.ChangeState("ready")

@@ -1,5 +1,5 @@
 (function(){
-    let Automaton=function(final,states){
+    let Automaton=function(states,final){
         this.FinalState=final
         this.Context={}
         this.Transitions=states?states:[]

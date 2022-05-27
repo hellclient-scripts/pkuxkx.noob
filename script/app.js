@@ -57,6 +57,12 @@ App.Raise=function(event,data){
         })
     }
 }
+App.Stopped=true
+App.Stop=function(){
+    Note("中止任务")
+    App.Stopped=true
+    App.OnStateEvent("stop")
+}
 App.onResponse=function(msgtype,id,data){
     switch (msgtype){
         case "captcha":

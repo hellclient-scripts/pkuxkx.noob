@@ -15,7 +15,7 @@
         app.Check(this.Level)
     }
     Prepare.prototype.Start=function(final){
-        app.Automaton.Push(final,["core.state.prepare.check","core.state.prepare.confirm"]).WithData("Prepare",this)
+        app.Automaton.Push(["core.state.prepare.check","core.state.prepare.confirm"],final).WithData("Prepare",this)
         app.ChangeState("ready")
     }
     return Prepare

@@ -1,6 +1,3 @@
 (function(app){
-    app.InfoUIFullme=function() {
-        app.Core.DoFullme()
-    }
-    app.RegisterAssistant("fullme","Fullme",app.InfoUIFullme,5)
+    app.RegisterAssistant("fullme","Fullme",App.Core.CaptchaFullme,5)
 })(App)

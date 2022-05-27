@@ -8,7 +8,7 @@
     StateQueueNext.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let queue=app.GetContext("Queue")
-        if (queue.Remain.length === 0) {
+        if (app.Stopped || queue.Remain.length === 0) {
             app.Finish()
             return
         }
@@ -35,7 +35,7 @@
             case "#move":
                 break
             case "#afterbusy":
-                app.Automaton.Push("core.state.queue.next",["nobusy"])
+                app.Automaton.Push(["nobusy"],"core.state.queue.next")
                 app.ChangeState("ready")
                 break
             case "#do":

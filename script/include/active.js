@@ -36,7 +36,7 @@
         }else{
             transitions=["core.state.active.move","core.state.active.execute"]
         }
-        let a=app.Automaton.Push(this.FinalState,transitions)
+        let a=app.Automaton.Push(transitions,this.FinalState)
         a.WithData("Active",this)
         app.ChangeState("ready")
     }

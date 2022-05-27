@@ -10,7 +10,7 @@
 ## 抄经
 
 ```
-#prepare||#to qf-sms||#do report wrong||#do ask sengren about job||#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done||#captcha 工号
+#prepare||#to qf-sms||#do report wrong||#do ask sengren about job||#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done||#captcha 工号||#loop
 ```
 然后report 工号
 
@@ -23,5 +23,5 @@
 ## 读书
 
 ```
-#prepare||#to yz-xjk||#do du shu for 50||#delay 1000||#loop
+#prepare||#to yz-xjk||#do aliasliangong||#delay 1000||#loop
 ```
