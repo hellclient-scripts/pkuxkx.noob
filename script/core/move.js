@@ -31,6 +31,10 @@
     app.OnMoveStepTimeout = function (name) {
         app.OnStateEvent("move.stepTimeout")
     }
+    app.Core.OnMoveWrongWay=function(name, output, wildcards){
+        app.Data.Room.ID=""
+        app.OnStateEvent("move.wrongway")
+    }
     app.Core.OnMoveRetry=function(name, output, wildcards){
         moved.splice(-1)
         app.OnStateEvent("move.retry")

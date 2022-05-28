@@ -16,6 +16,10 @@
     }
     StateMove.prototype.OnEvent=function(context,event,data){
         switch(event){
+            case "move.wrongway":
+                Note("路径错误")
+                app.Fail()
+            break
             case "move.ignore":
                 this.Ignore()
             break

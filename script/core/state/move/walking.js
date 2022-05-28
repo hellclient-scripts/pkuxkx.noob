@@ -11,7 +11,7 @@
         this.Move()
     }
     StateWalking.prototype.Leave=function(context,newstatue){
-        Move.prototype.Enter.call(this,context,newstatue)
+        Move.prototype.Leave.call(this,context,newstatue)
     }
     StateWalking.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -25,7 +25,7 @@
                 this.OnRoomObjEnd()
             break
             default:
-                Move.prototype.Enter.call(this,context,event,data)
+                Move.prototype.OnEvent.call(this,context,event,data)
         }
     }
     StateWalking.prototype.Move=function(){

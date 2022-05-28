@@ -16,7 +16,7 @@
         }
     }
     StateLocating.prototype.Leave=function(context,newstatue){
-        Move.prototype.Enter.call(this,context,newstatue)
+        Move.prototype.Leave.call(this,context,newstatue)
     }
     StateLocating.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -33,7 +33,7 @@
                 this.OnStepTimeout()
             break
             default:
-                Move.prototype.Enter.call(this,context,event,data)
+                Move.prototype.OnEvent.call(this,context,event,data)
         }
     }
     StateLocating.prototype.Fail=function(){
