@@ -2,5 +2,5 @@
     app.InfoUIStop=function() {
         App.Stop()
     }
-    app.RegisterAssistant("stop","终止行动",app.InfoUIStop,0)
+    app.RegisterAssistant("stop","中止行动",app.InfoUIStop,0)
 })(App)

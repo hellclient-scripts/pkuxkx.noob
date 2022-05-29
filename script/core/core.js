@@ -20,3 +20,5 @@ App.Load("core/task.js")
 App.Load("core/task/queue.js")
 App.Load("core/produce.js")
 App.Load("core/proposal.js")
+App.Load("core/puzzle.js")
+

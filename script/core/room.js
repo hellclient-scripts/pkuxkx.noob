@@ -17,7 +17,7 @@
         }
         world.EnableTriggerGroup("roomexit",true)
     }
-    var exitsre = new RegExp("[a-z]*[^、 和]", "g");
+    var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
     app.Core.OnRoomDesc=function(name, output, wildcards){
         if (app.Data.Room.Exits==null){
             app.Data.Room.Desc+=output+"\n"

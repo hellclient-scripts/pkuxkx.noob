@@ -1,3 +1,7 @@
+var Version={
+    Major:2022,
+    Minor:529,
+}
 var App={}
 App.Init=function(){
     App.Core={}
@@ -81,6 +85,7 @@ App.Start=function(){
     App.Load("core/core.js")
     App.Load("info/info.js")
     App.Load("alias/alias.js")
+    App.Load("quest/quest.js")
     App.Raise("Ready")    
 }
 App.DumpData=function(){
