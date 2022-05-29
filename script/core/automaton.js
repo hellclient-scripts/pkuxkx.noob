@@ -1,6 +1,7 @@
 (function(app){
     let automaton=Include("include/automaton.js")
     let active=Include("include/active.js")
+    let actives=Include("include/actives.js")
 
     app.Data.Automata=[]
     app.Automaton={}
@@ -20,6 +21,7 @@
         app.Data.Automata.push(a)
         return a
     }
+    app.Push=app.Automaton.Push
     app.Automaton.GetContext=function(key){
         return app.Automaton.Current().Context[key]
     }
@@ -71,6 +73,9 @@
     app.RegisterCallback("core.automaton.ready",function(){
         app.ChangeState("ready")        
     })
+    app.Ready=function(){
+        app.ChangeState("ready")        
+    }
     app.GetContext=app.Automaton.GetContext
     app.SetContext=app.Automaton.SetContext
     app.GetState("ready").Handler=auto
@@ -93,6 +98,11 @@
         app.ChangeState("ready")        
     }
     app.RegisterState(new (Include("core/state/statewait.js"))())
-
+    app.NewActives=function(activelist,final){
+        return new actives(activelist,final)
+    }
+ 
+    app.RegisterState(new (Include("core/state/actives/activesready.js"))())
+    app.RegisterState(new (Include("core/state/actives/activesstep.js"))())
 
 })(App)

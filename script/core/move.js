@@ -1,6 +1,13 @@
 (function (app) {
     app.Path = Include("include/path.js")
     let Move=Include("include/move.js")
+    app.Move=function(path,data){
+        if (!path){
+            path=""
+        }
+        let m=app.NewMove("patrol",new app.Path(path.split(";")),data)
+        m.Start()
+    }
     app.NewMove = function (mode, target,data) {
         return new Move(mode,target,data)
     }

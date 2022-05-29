@@ -5,6 +5,7 @@
         this.FinalState=final?final:""
         this.Nobusy=nobusy?true:false
         this.Data=null
+        this.ModeState="core.state.active.move"
     }
     Active.prototype.WithLocation=function(location){
         this.Location=location
@@ -30,11 +31,20 @@
         if (final){
             this.FinalState=final
         }
-        let transitions
-        if (this.Nobusy){
-            transitions=["core.state.active.move","nobusy","core.state.active.execute","nobusy"]
-        }else{
-            transitions=["core.state.active.move","core.state.active.execute"]
+        let transitions=[]
+        if (this.Location){
+            transitions=[this.ModeState]
+
+            if (this.Nobusy){
+                transitions.push("nobusy")
+            }  
+        }
+        if (this.Command){
+            transitions.push("core.state.active.execute")
+            if (this.Nobusy){
+                transitions.push("nobusy")
+            }
+    
         }
         let a=app.Automaton.Push(transitions,this.FinalState)
         a.WithData("Active",this)

@@ -2,7 +2,7 @@
     app.Quest.WD.Liandan={}
     app.Quest.WD.Liandan.Danlu="[]"
     app.Quest.WD.Liandan.Start=function(){
-        app.ChangeState("core.state.quest.wd.liandan.zuo")
+        app.ChangeState("core.state.quest.wd.liandan.liandan")
     }
     app.Quest.WD.Liandan.Items=[
         app.Core.Puzzle.NewItem("change H","黄色火焰 change H"),
@@ -16,5 +16,10 @@
     app.Quest.WD.Liandan.OnFail=function(name, output, wildcards){
         app.OnStateEvent("quest.wd.liandan.fail")
     }
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/stateliandan.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/statestart.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/statetoyu.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/stateaskyu.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/statetozuo.js"))())
     app.RegisterState(new (Include("core/state/quest/wd/liandan/statezuo.js"))())
 })(App)

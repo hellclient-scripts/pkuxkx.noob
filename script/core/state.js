@@ -16,8 +16,17 @@
         }
         return state
     }
+    let logState=false
+    let logData=false
+    app.LogState=function(withdata){
+        logState=true
+        logData=withdata
+    }
     app.ChangeState=function(id){
         let state=app.GetState(id)
+        if (logState){
+            Note("State log:change state ["+id+"]")
+        }
         app.StateContext.ChangeState(state)
     }
     app.LastState=function(){
