@@ -6,12 +6,12 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        if (context.Actives.length==0){
+        let actives=app.GetContext("Actives")
+        if (actives.length==0){
             app.Finish()
             return
         }
-        app.Push("core.state.actives.step")
-        context.Actives.shift().Start()
+        actives.shift().WithFinalState("core.state.actives.step").Start()
     }
     return State
 })(App)

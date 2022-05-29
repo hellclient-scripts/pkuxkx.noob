@@ -16,10 +16,13 @@
     app.Quest.WD.Liandan.OnFail=function(name, output, wildcards){
         app.OnStateEvent("quest.wd.liandan.fail")
     }
+    app.Quest.WD.Liandan.OnSuccess=function(name, output, wildcards){
+        app.OnStateEvent("quest.wd.liandan.success")
+    }
     app.RegisterState(new (Include("core/state/quest/wd/liandan/stateliandan.js"))())
-    app.RegisterState(new (Include("core/state/quest/wd/liandan/statestart.js"))())
-    app.RegisterState(new (Include("core/state/quest/wd/liandan/statetoyu.js"))())
-    app.RegisterState(new (Include("core/state/quest/wd/liandan/stateaskyu.js"))())
-    app.RegisterState(new (Include("core/state/quest/wd/liandan/statetozuo.js"))())
     app.RegisterState(new (Include("core/state/quest/wd/liandan/statezuo.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/start.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/success.js"))())
+    app.RegisterState(new (Include("core/state/quest/wd/liandan/fail.js"))())
+
 })(App)

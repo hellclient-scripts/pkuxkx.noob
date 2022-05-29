@@ -11,6 +11,9 @@
         }
         return app.Data.Automata[app.Data.Automata.length-1]
     }
+    app.DumpAutomaton=function(){
+        Dump(app.Automaton)
+    }
     app.Automaton.New=function(states,final){
         let a=new automaton(states,final)
         app.Data.Automata=[t]
@@ -90,9 +93,17 @@
     app.NewActive=function(location,cmd,final,nobusy){
         return new active(location,cmd,final,nobusy)
     }
- 
+    app.NewPatrolActive=function(location,cmd,final,nobusy){
+        if (location){
+            location=new app.Path(location.split(";"))
+        }
+        return new active(location,cmd,final,nobusy).WithModeState("core.state.active.patrol")
+    }
+    
     app.RegisterState(new (Include("core/state/active/activeexecute.js"))())
     app.RegisterState(new (Include("core/state/active/activemove.js"))())
+    app.RegisterState(new (Include("core/state/active/activepatrol.js"))())
+
     app.Wait=function(delay,final){
         let a=app.Automaton.Push(["wait"],final).WithData("Delay",delay)
         app.ChangeState("ready")        

@@ -6,17 +6,11 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        app.NewActives(
+        app.NewActives([
             app.NewActive("wd","","",false),
-        ).Start()
-        app.Push([
-            "core.state.quest.wd.liandan.start",
-            "core.state.quest.wd.liandan.toyu",
-            "core.state.quest.wd.liandan.askyu",
-            "core.state.quest.wd.liandan.tozuo",
-            "core.state.quest.wd.liandan.zuo",
-        ])
-        app.Ready()
+            app.NewPatrolActive("n;n;n;n;e;e","ask yu daiyan about 炼丹","",false),
+            app.NewPatrolActive("s","","",false),
+        ],"core.state.quest.wd.liandan.start").Start()
     }
     return State
 })(App)

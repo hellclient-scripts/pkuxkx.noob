@@ -15,6 +15,9 @@
                 app.Send(app.Data.Puzzle.Answer)
             }
             break
+        case "quest.wd.liandan.success":
+            app.Finish()
+            break
         case "quest.wd.liandan.fail":
             app.Fail()
             break

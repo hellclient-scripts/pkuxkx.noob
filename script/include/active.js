@@ -27,6 +27,11 @@
         this.Data=data
         return this
     }
+    Active.prototype.WithModeState=function(state){
+        this.ModeState=state
+        return this
+    }
+    
     Active.prototype.Start=function(final){
         if (final){
             this.FinalState=final
