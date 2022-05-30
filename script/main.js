@@ -36,18 +36,24 @@ onBuffer=function(data){
     }
     return false
 }
-var Modules=new function(){
+
+var loader=function(){
     this.Loaded={}
     let cache={}
+    this.reader=world.ReadFile
+    
     this.Include=function(file){
         if (this.Loaded[file]){
             return cache[file]
         }
-        cache[file]=eval(world.ReadFile(file),file)
+        cache[file]=eval(this.reader(file),file)
         this.Loaded[file]=true
         return cache[file]
     }
 }
+var Modules=new loader()
+var Mod=new loader()
+Mod.reader=world.ReadModFile
 var Include=function(file){
    return Modules.Include(file)
 }

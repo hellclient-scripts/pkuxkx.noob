@@ -80,6 +80,10 @@ App.Load=function(name){
 
 App.Start=function(){
     App.Init()
+    if (HasModFile("src/index.js")){
+        Note("发现mod,加载中")
+        Mod.Include("src/index.js")
+    }
     App.Load("ui/ui.js")
     App.Load("param/param.js")
     App.Load("core/core.js")
