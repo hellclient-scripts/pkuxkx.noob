@@ -3,6 +3,7 @@ var Version={
     Minor:529,
 }
 var App={}
+App.Mod={}
 App.Init=function(){
     App.Core={}
     App.Info={}
@@ -68,11 +69,7 @@ App.Stop=function(){
     App.OnStateEvent("stop")
 }
 App.onResponse=function(msgtype,id,data){
-    switch (msgtype){
-        case "captcha":
-            App.Core.CaptchaResponse(msgtype,id,data)
-            break;
-    }
+    App.Raise("response",{type:msgtype,id:id,data:data})
 }
 App.Load=function(name){
     Include(name)

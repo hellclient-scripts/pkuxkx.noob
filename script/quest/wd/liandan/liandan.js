@@ -8,6 +8,8 @@
         app.Core.Puzzle.NewItem("change H","黄色火焰 change H"),
         app.Core.Puzzle.NewItem("change M","紫色火焰 change M"),
         app.Core.Puzzle.NewItem("change L","红色火焰 change L"),
+        app.Core.Puzzle.NewItem("","绿色火焰 不操作"),
+
     ]
     app.Quest.WD.Liandan.OnDanlu=function(name, output, wildcards){
         app.Quest.WD.Liandan.Danlu=DumpOutput(19,2)

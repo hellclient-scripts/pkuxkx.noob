@@ -14,6 +14,7 @@
             if (app.Data.Puzzle.Answer!=""){
                 app.Send(app.Data.Puzzle.Answer)
             }
+            Userinput.hideall()
             break
         case "quest.wd.liandan.success":
             app.Finish()
@@ -24,7 +25,7 @@
         }
     }
     StateZuo.prototype.ShowPuzzle=function(){
-        app.Core.Puzzle.Show("丹炉状态","根据丹炉颜色选择操作",app.Quest.WD.Liandan.Danlu,app.Quest.WD.Liandan.Items)
+        app.Core.Puzzle.Show("wd.danlu","丹炉状态","根据丹炉颜色选择操作",app.Quest.WD.Liandan.Danlu,app.Quest.WD.Liandan.Items)
     }
     StateZuo.prototype.Enter=function(context,oldstatue){
         app.Send("zuo;kan")

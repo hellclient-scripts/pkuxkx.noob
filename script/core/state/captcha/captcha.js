@@ -20,7 +20,7 @@
             app.Fail()
             return
         }
-        Request("captcha",app.Data.CaptchaCurrentURL)
+        app.Raise("captcha")
         app.Core.CaptchaLoad()
     }
     StateCaptcha.prototype.Leave=function(context,newstatue){
