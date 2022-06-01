@@ -1,14 +1,14 @@
-(function(app){
-    app.CheckLevelBrief=0
-    app.CheckLevelFull=10
-    app.Check=function(level){
-        app.Raise("Check",{Level:level?level:0,ID:""})
+(function(App){
+    App.CheckLevelBrief=0
+    App.CheckLevelFull=10
+    App.Check=function(level){
+        App.Raise("Check",{Level:level?level:0,ID:""})
     }
-    app.ForceCheck=function(id){
+    App.ForceCheck=function(id){
         if (!id){
             throw "ForceCheck的id不可为空"
         }
-        app.Raise("Check",{Level:0,ID:id})
+        App.Raise("Check",{Level:0,ID:id})
 
     }
 })(App)

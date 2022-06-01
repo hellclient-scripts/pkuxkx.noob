@@ -6,10 +6,10 @@
         this.MultiStep=false
         this.Fly=true
         this.Sender=function(cmd){
-            if (app.GetMoved()<4){
-                app.Send(cmd)
+            if (App.GetMoved()<4){
+                App.Send(cmd)
             }else{
-                app.OnStateEvent("move.retry")
+                App.OnStateEvent("move.retry")
             }
         }
     }

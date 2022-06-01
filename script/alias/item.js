@@ -1,8 +1,8 @@
 (function(app) {
-    app.Core.OnAliasItem = function (name, line, wildcards) {
-        app.Send("l")
-        app.Check(app.CheckLevelFull)
-        app.Response("core", "produce", wildcards[0])
+    App.Core.OnAliasItem = function (name, line, wildcards) {
+        App.Send("l")
+        App.Check(App.CheckLevelFull)
+        App.Response("core", "produce", wildcards[0])
     }    
 })(App)
 

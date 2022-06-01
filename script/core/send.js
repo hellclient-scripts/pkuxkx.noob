@@ -1,36 +1,36 @@
-(function(app){
-    Metronome.settick(app.GetNumberParam("tick"))
-    Metronome.setinterval(app.GetNumberParam("cmdinterval"))
+(function(App){
+    Metronome.settick(App.GetNumberParam("tick"))
+    Metronome.setinterval(App.GetNumberParam("cmdinterval"))
     var _linesre = new RegExp("[^;\n]+", "g");
     var _groupre=new RegExp("[;\n]", "g");
     var _flags=".^"
-    app.Commands={}
+    App.Commands={}
     //注册回调为命令
-    app.RegisterCommand=function(name,callback){
-        app.Commands[name]=callback
+    App.RegisterCommand=function(name,callback){
+        App.Commands[name]=callback
     }
     //将命令转换为命令组形式
-    app.GroupCmds=function(str){
+    App.GroupCmds=function(str){
         if (str == "" || str == null){
             return "";
         }
         return str.replace(_groupre, "&&")
     }
-    app.RegisterCallback("core.send.send", function (data) {
+    App.RegisterCallback("core.send.send", function (data) {
         if (data) {
-            app.Send(data)
+            App.Send(data)
         }
     })
     //发送命令
-    app.Send=function(str,grouped){
+    App.Send=function(str,grouped){
         if (!str){
             return
         }
         if (grouped){
-            str=app.GroupCmds(str)
+            str=App.GroupCmds(str)
         }
-        Metronome.setbeats(app.GetNumberParam("cmdlimit"))
-        var echo=app.GetBoolParam("echo")
+        Metronome.setbeats(App.GetNumberParam("cmdlimit"))
+        var echo=App.GetBoolParam("echo")
         //本组命令
         var buf=[]
         //切分命令组
@@ -52,8 +52,8 @@
                     }
                     //切分命令，#之后第一个空格之前的为指令，第一个空格后的为数据
                     let directive=new Directive(cmd.substr(1))
-                    if (app.Commands[directive.Command]){
-                        app.Callbacks[app.Commands[directive.Command]](directive.Data)
+                    if (App.Commands[directive.Command]){
+                        App.Callbacks[App.Commands[directive.Command]](directive.Data)
                         continue
                     }
                     //未注册命令，检测是否为#20 xxx格式

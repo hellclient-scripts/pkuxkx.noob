@@ -11,27 +11,27 @@
             this.ShowPuzzle()
             break;
         case "puzzle.answer":
-            if (app.Data.Puzzle.Answer!=""){
-                app.Send(app.Data.Puzzle.Answer)
+            if (App.Data.Puzzle.Answer!=""){
+                App.Send(App.Data.Puzzle.Answer)
             }
             Userinput.hideall()
             break
         case "quest.wd.liandan.success":
-            app.Finish()
+            App.Finish()
             break
         case "quest.wd.liandan.fail":
-            app.Fail()
+            App.Fail()
             break
         }
     }
     StateZuo.prototype.ShowPuzzle=function(){
-        app.Core.Puzzle.Show("wd.danlu","丹炉状态","根据丹炉颜色选择操作",app.Quest.WD.Liandan.Danlu,app.Quest.WD.Liandan.Items)
+        App.Core.Puzzle.Show("wd.danlu","丹炉状态","根据丹炉颜色选择操作",App.Quest.WD.Liandan.Danlu,App.Quest.WD.Liandan.Items)
     }
     StateZuo.prototype.Enter=function(context,oldstatue){
-        app.Send("zuo;kan")
+        App.Send("zuo;kan")
     }
     StateZuo.prototype.Leave=function(context,oldstatue){
-        app.Send("zhan")
+        App.Send("zhan")
     }
     return StateZuo
 })(App)

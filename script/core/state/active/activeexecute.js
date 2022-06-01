@@ -7,9 +7,9 @@
     StateActiveExecute.prototype = Object.create(basicstate.prototype)
     StateActiveExecute.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        let active=app.GetContext("Active")
-        app.Send(active.Command)
-        app.ChangeState("ready")
+        let active=App.GetContext("Active")
+        App.Send(active.Command)
+        App.ChangeState("ready")
     }
     return StateActiveExecute
 })(App)

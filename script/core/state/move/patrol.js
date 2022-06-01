@@ -11,13 +11,13 @@
         this.Start()
     }
     StatePatrol.prototype.Start=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         move.Context=new patrol(move.Target)
         move.StartCmd="l"
         this.Patroling()
     }
     StatePatrol.prototype.Patroling=function(){
-        app.ChangeState("patroling")
+        App.ChangeState("patroling")
     }
     return StatePatrol
 })(App)

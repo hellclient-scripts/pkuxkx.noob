@@ -15,24 +15,24 @@
     }
     Task.prototype.Finish=function(data){
         this.OnClose()
-        if (app.QueuedTasks.length){
-            app.CurrentTask=app.QueuedTasks.shift()
+        if (App.QueuedTasks.length){
+            App.CurrentTask=App.QueuedTasks.shift()
         }else{
-            app.CurrentTask=null
-            app.Stopped=false
+            App.CurrentTask=null
+            App.Stopped=false
         }
-        return app.ExecuteCallback(this.OnFinish,data)
+        return App.ExecuteCallback(this.OnFinish,data)
     }
     Task.prototype.Fail=function(data){
         this.OnClose()
-        app.CurrentTask=null
-        app.Stopped=false
-        return app.ExecuteCallback(this.OnFail,data)
+        App.CurrentTask=null
+        App.Stopped=false
+        return App.ExecuteCallback(this.OnFail,data)
     }
     Task.prototype.Cancel=function(){
         this.OnClose()
-        app.CurrentTask=null
-        app.Stopped=false
+        App.CurrentTask=null
+        App.Stopped=false
     }
     Task.prototype.Execute=function(data,onFinish,onFail){
         this.Data=data?data:"",

@@ -6,7 +6,7 @@
     }
     StateFinding.prototype = Object.create(basicstate.prototype)
     StateFinding.prototype.Enter=function(context,oldstatue){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         let data=move.Data
         if (data && !data.Found) {
             let obj = data["Obj"]
@@ -19,18 +19,18 @@
                 return 
             }
             data.Found = true
-            app.Finish()
+            App.Finish()
             return
         }
         this.Move()
     }
     StateFinding.prototype.Move=function(){
-        let s=app.LastState()
+        let s=App.LastState()
         if (!s){
-            app.Fail()
+            App.Fail()
             return
         }
-        app.ChangeState(s.ID)
+        App.ChangeState(s.ID)
     }
     return StateFinding
 })(App)

@@ -3,11 +3,11 @@
     let Food= function(){
         proposal.call(this,"food")
         this.Submit=function(){
-            return app.GetItemNumber(App.API.GetItem(app.GetParam("food")).Name,true)<app.GetNumberParam("food_min")
+            return App.GetItemNumber(App.API.GetItem(App.GetParam("food")).Name,true)<App.GetNumberParam("food_min")
         }
         this.Execute=function(){
-            app.Produce(app.GetParam("food"))
+            App.Produce(App.GetParam("food"))
         }
     }
-    app.RegisterProposal(new Food())
+    App.RegisterProposal(new Food())
 })(App)

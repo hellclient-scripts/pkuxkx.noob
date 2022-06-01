@@ -5,11 +5,11 @@
     }
     GlobalStateContext.prototype = Object.create(statecontext.prototype)
     GlobalStateContext.prototype.ChangeState=function(newstatue){
-        app.Data.State=newstatue.ID
+        App.Data.State=newstatue.ID
         statecontext.prototype.ChangeState.call(this,newstatue)
-        if (app.Data.Automata.length!=0 && app.Data.State!="ready"){
-            let a=app.Data.Automata[app.Data.Automata.length-1]
-            a.SetCurrentState(app.Data.State)
+        if (App.Data.Automata.length!=0 && App.Data.State!="ready"){
+            let a=App.Data.Automata[App.Data.Automata.length-1]
+            a.SetCurrentState(App.Data.State)
         }
         
     }

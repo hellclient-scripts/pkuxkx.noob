@@ -5,7 +5,7 @@
         this.ID="go"
         this.TagDrive=true
         this.Sender=function(cmd){
-            app.Send(this.ConvertDrivePath("go ",cmd))
+            App.Send(this.ConvertDrivePath("go ",cmd))
         }
     }
     Go.prototype = Object.create(Vehicle.prototype)

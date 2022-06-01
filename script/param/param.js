@@ -1,6 +1,6 @@
-(function(app){
+(function(App){
     world.Note("加载系统参数");
-    app.Params={
+    App.Params={
         "tick":"550",
         "cmdlimit":"8",
         "cmdinterval":"50",
@@ -22,28 +22,28 @@
         "initcmd":"set area_detail 1;set breif 2;",
         "echo":"t",
     }
-    app.InitParam=function(name,val){
-        app.Params[name]=val
+    App.InitParam=function(name,val){
+        App.Params[name]=val
     }
-    app.GetParam=function(name){
+    App.GetParam=function(name){
         var val=world.GetVariable("sys_"+name)
         if (val===""){
-            val=app.Params[name]
+            val=App.Params[name]
             if (val===undefined){
                 val= ""
             }
         }
         return val
     }
-    app.GetNumberParam=function(name){
-        var val=app.GetParam(name)
+    App.GetNumberParam=function(name){
+        var val=App.GetParam(name)
         if (!val){
             return 0
         }
         return val-0
     }
-    app.GetBoolParam=function(name){
-        var val=app.GetParam(name).toLowerCase()
+    App.GetBoolParam=function(name){
+        var val=App.GetParam(name).toLowerCase()
         if (!val){
             return false
         }

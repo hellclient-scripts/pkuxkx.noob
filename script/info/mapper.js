@@ -68,32 +68,32 @@
         });
     }
     var addroom = function (id, name, data) {
-        app.Info.Rooms[id] = {
+        App.Info.Rooms[id] = {
             ID: id,
             Name: name,
             Desc: data.Desc ? data.Desc : null
         }
         if (data.Landmark) {
-            app.Info.Landmarks[data.Landmark] = id
+            App.Info.Landmarks[data.Landmark] = id
         }
         if (data.Station) {
-            app.Info.Stations[data.Station] = id
+            App.Info.Stations[data.Station] = id
         }
     }
-    app.API.ResetMapper=function(){
-        loadrooms(app.Info.BuiltinRooms)
-        loadrooms(app.Info.UserRooms)
+    App.API.ResetMapper=function(){
+        loadrooms(App.Info.BuiltinRooms)
+        loadrooms(App.Info.UserRooms)
         Mapper.reset()
-        for (var key in app.Info.Rooms) {
+        for (var key in App.Info.Rooms) {
             Mapper.clearroom(key)
         }
-        loadpath(app.Info.BuiltinPaths)
-        loadpath(app.Info.UserPaths)
+        loadpath(App.Info.BuiltinPaths)
+        loadpath(App.Info.UserPaths)
 
     }
-    app.RegisterCallback("info.mapper.reset", function () {
-        app.API.ResetMapper()
+    App.RegisterCallback("info.mapper.reset", function () {
+        App.API.ResetMapper()
     })
-    app.Bind("Ready", "info.mapper.reset")
+    App.Bind("Ready", "info.mapper.reset")
 
 })(App)

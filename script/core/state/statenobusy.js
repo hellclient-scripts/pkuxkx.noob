@@ -8,7 +8,7 @@
     StateNoBusy.prototype = Object.create(basicstate.prototype)
     StateNoBusy.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        app.CheckBusy(this.Callback)
+        App.CheckBusy(this.Callback)
     }
     return StateNoBusy
 })(App)

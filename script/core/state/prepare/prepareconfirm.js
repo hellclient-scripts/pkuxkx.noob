@@ -10,10 +10,10 @@
         let prepare=App.GetContext("Prepare")
         let p=prepare.Try()
         if (p){
-            app.Automaton.Current().Insert(["core.state.prepare.check",this.ID])
+            App.Automaton.Current().Insert(["core.state.prepare.check",this.ID])
             p.Execute()
         }else{
-            app.Finish()
+            App.Finish()
         }
     }
     return StatePrepareConfrim

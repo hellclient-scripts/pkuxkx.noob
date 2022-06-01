@@ -7,8 +7,8 @@
     StateCheckitem.prototype = Object.create(basicstate.prototype)
     StateCheckitem.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        app.Send("i2")
-        app.ResponseReady()
+        App.Send("i2")
+        App.ResponseReady()
     }
     return StateCheckitem
 })(App)

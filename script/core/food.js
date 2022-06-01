@@ -1,24 +1,24 @@
 
-(function(app){
+(function(App){
     let check=Include("core/check/check.js")
-    app.Data.LastEat=0
-    app.GetFood=function(){
-        return App.API.GetItem(app.GetParam("food"))
+    App.Data.LastEat=0
+    App.GetFood=function(){
+        return App.API.GetItem(App.GetParam("food"))
     }
-    app.GetDrink=function(){
-        return App.API.GetItem(app.GetParam("drink"))
+    App.GetDrink=function(){
+        return App.API.GetItem(App.GetParam("drink"))
     }
-    app.EatCmd=function(){
-        return "eat "+app.GetFood().Alias+";drink "+app.GetDrink().Alias
+    App.EatCmd=function(){
+        return "eat "+App.GetFood().Alias+";drink "+App.GetDrink().Alias
     }
-    app.Eat=function(){
-        app.Data.LastEat=Now()
-        app.Send(app.EatCmd())
+    App.Eat=function(){
+        App.Data.LastEat=Now()
+        App.Send(App.EatCmd())
     }
-    app.Bind("Check","core.food.eat")
-    let checkFood=(new check("food")).WithLevel(app.CheckLevelBrief).WithIntervalParam("eatinterval").WithLastID("LastEat")
+    App.Bind("Check","core.food.eat")
+    let checkFood=(new check("food")).WithLevel(App.CheckLevelBrief).WithIntervalParam("eatinterval").WithLastID("LastEat")
     checkFood.Send=function(){
-        app.Eat()
+        App.Eat()
     }
-    app.RegisterCallback("core.food.eat",checkFood.Callback())
+    App.RegisterCallback("core.food.eat",checkFood.Callback())
     })(App)

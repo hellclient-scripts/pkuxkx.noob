@@ -3,13 +3,13 @@
     let Cash= function(){
         proposal.call(this,"cash")
         this.Submit=function(){
-            return app.GetCash()<app.GetNumberParam("gold_min")
+            return App.GetCash()<App.GetNumberParam("gold_min")
         }
         this.Execute=function(){
-            let cmd="qu "+app.GetParam("gold_withdraw")+" gold"
-            let active=app.NewActive(app.GetParam("bank_location"),cmd,"",true)
+            let cmd="qu "+App.GetParam("gold_withdraw")+" gold"
+            let active=App.NewActive(App.GetParam("bank_location"),cmd,"",true)
             active.Start()
         }
     }
-    app.RegisterProposal(new Cash())
+    App.RegisterProposal(new Cash())
 })(App)

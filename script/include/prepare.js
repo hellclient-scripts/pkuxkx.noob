@@ -6,17 +6,17 @@
     }
     Prepare.prototype.Try=function(){
         if (this.Group){
-            return app.TryProposalGroups(this.Items)
+            return App.TryProposalGroups(this.Items)
         }else{
-            return app.TryProposals(this.Items)
+            return App.TryProposals(this.Items)
         }
     }
     Prepare.prototype.Check=function(){
-        app.Check(this.Level)
+        App.Check(this.Level)
     }
     Prepare.prototype.Start=function(final){
-        app.Automaton.Push(["core.state.prepare.check","core.state.prepare.confirm"],final).WithData("Prepare",this)
-        app.ChangeState("ready")
+        App.Automaton.Push(["core.state.prepare.check","core.state.prepare.confirm"],final).WithData("Prepare",this)
+        App.ChangeState("ready")
     }
     return Prepare
 })(App)

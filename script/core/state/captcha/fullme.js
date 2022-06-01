@@ -8,20 +8,20 @@
     StateFullme.prototype = Object.create(basicstate.prototype)
     StateFullme.prototype.Enter=function(context,oldstatue){
         Note("准备fullme")
-        Note("Fullme链接"+app.Data.CaptchaURLs["fullme"])
-        if (app.Data.CaptchaURLs["fullme"]==""){
+        Note("Fullme链接"+App.Data.CaptchaURLs["fullme"])
+        if (App.Data.CaptchaURLs["fullme"]==""){
             Note("Fullme链接为空")
-            app.Fail()
+            App.Fail()
             return
         }
-        let index=app.GetContext("index")
+        let index=App.GetContext("index")
         if (index>=3){
             Note("超过重试次数")
-            app.Fail()
+            App.Fail()
             return
         }
-        app.SetContext("index",index+1)
-        app.API.Captcha("fullme",null,this.ID)
+        App.SetContext("index",index+1)
+        App.API.Captcha("fullme",null,this.ID)
     }
     return StateFullme
 })(App)

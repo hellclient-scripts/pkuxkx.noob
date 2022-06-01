@@ -8,9 +8,9 @@
     StateLocating.prototype = Object.create(Move.prototype)
     StateLocating.prototype.Enter=function(context,newstatue){
         Move.prototype.Enter.call(this,context,newstatue)
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.StartCmd){
-            app.Send(move.StartCmd)
+            App.Send(move.StartCmd)
             move.StartCmd=""
             return
         }
@@ -38,11 +38,11 @@
     }
     StateLocating.prototype.Fail=function(){
         world.Note("定位失败")
-        app.Automaton.Fail()
+        App.Automaton.Fail()
     }
     StateLocating.prototype.OnStepTimeout=function(){
         world.EnableTimer("steptimeout",false)
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         let step=move.Context.Skip()
         if (step){
             world.Note("移动超时，换个出口")
@@ -53,40 +53,40 @@
     }
     StateLocating.prototype.Finish=function(){
         world.Note("定位成功")
-        app.Finish()
+        App.Finish()
     }
     StateLocating.prototype.tryExplore=function(data){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         world.EnableTimer("steptimeout",true)
         move.Current=data
         App.Go(data.Command)
     }
     StateLocating.prototype.Retry=function(){
-        world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
     }
     StateLocating.prototype.RetryExplore=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         world.EnableTimer("steptimeout",false)
         this.tryExplore(move.Current)
     }
     StateLocating.prototype.OnRoomObjEnd=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.Ignore){
             move.Ignore=false
             return;
         }
         world.EnableTimer("steptimeout",false)
-        if (app.Data.Room.Name){
-            let rids=Mapper.getroomid(app.Data.Room.Name)
+        if (App.Data.Room.Name){
+            let rids=Mapper.getroomid(App.Data.Room.Name)
             if (rids&& rids.length==1){
-                app.Data.Room.ID=rids[0]
+                App.Data.Room.ID=rids[0]
             }
         }
-        if (app.Data.Room.ID!==""){
-            app.Finish()
+        if (App.Data.Room.ID!==""){
+            App.Finish()
             return
         }
-        let step=move.Context.Enter(app.Data.Room.Exits)
+        let step=move.Context.Enter(App.Data.Room.Exits)
         if (step){
             move.Current=step
             this.tryExplore(step)

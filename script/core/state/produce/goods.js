@@ -7,8 +7,8 @@
     StateGoods.prototype = Object.create(basicstate.prototype)
     StateGoods.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        let item=app.GetContext("Item")
-        let a=app.NewActive(item.Location,item.Command,"",true)
+        let item=App.GetContext("Item")
+        let a=App.NewActive(item.Location,item.Command,"",true)
         a.WithData(item)
         a.Start()
     }

@@ -6,14 +6,14 @@
     }
     StatePatroling.prototype = Object.create(Move.prototype)
     StatePatroling.prototype.GetStateOnStep=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         return move.StateOnStep?move.StateOnStep:"patrolnobusy"
     }
     StatePatroling.prototype.Enter=function(context,newstatue){
         Move.prototype.Enter.call(this,context,newstatue)
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.StartCmd){
-            app.Send(move.StartCmd)
+            App.Send(move.StartCmd)
             move.StartCmd=""
             return
         }
@@ -38,7 +38,7 @@
         }
     }
     StatePatroling.prototype.Move=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         move.Current = move.Context.Move()
         if (move.Current == null) {
             this.Finish()
@@ -48,26 +48,26 @@
     }
     StatePatroling.prototype.Fail=function(){
         world.Note("巡查失败")
-        app.Automaton.Fail()
+        App.Automaton.Fail()
     }
 
     StatePatroling.prototype.Finish=function(){
         world.Note("巡查成功")
-        app.Finish()
+        App.Finish()
     }
     StatePatroling.prototype.Retry=function(){
-        world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
     }
     StatePatroling.prototype.RetryMove=function(){
         this.TryMove()
     }
     StatePatroling.prototype.OnRoomObjEnd=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.Ignore){
             move.Ignore=false
             return;
         }
-        app.ChangeState(this.GetStateOnStep())
+        App.ChangeState(this.GetStateOnStep())
     }
     return StatePatroling
 })(App)

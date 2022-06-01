@@ -1,4 +1,4 @@
-(function(app){
+(function(App){
     let Active=function(location,cmd,final,nobusy){
         this.Location=location
         this.Command=cmd?cmd:""
@@ -51,9 +51,9 @@
             }
     
         }
-        let a=app.Automaton.Push(transitions,this.FinalState)
+        let a=App.Automaton.Push(transitions,this.FinalState)
         a.WithData("Active",this)
-        app.ChangeState("ready")
+        App.ChangeState("ready")
     }
     return Active
 })(App)

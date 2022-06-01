@@ -18,7 +18,7 @@
         switch(event){
             case "move.wrongway":
                 Note("路径错误")
-                app.Fail()
+                App.Fail()
             break
             case "move.ignore":
                 this.Ignore()
@@ -26,15 +26,15 @@
         }
     }
     StateMove.prototype.Ignore=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         move.Ignore=true
     }
     StateMove.prototype.Go=function(command){
-        app.Go(command)
+        App.Go(command)
     }
     StateMove.prototype.TryMove=function(step){
         if (!step){
-            let move=app.GetContext("Move")
+            let move=App.GetContext("Move")
             step=move.Current
         }
         this.Go(step.Command)

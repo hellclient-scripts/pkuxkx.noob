@@ -12,14 +12,14 @@
             }
             let list = data.split(re)
             let q=new queue(list)
-            app.Send("l")
-            app.Automaton.Push(["core.state.queue.next"]).WithData("Queue",q)
-            app.ResponseReady()
+            App.Send("l")
+            App.Automaton.Push(["core.state.queue.next"]).WithData("Queue",q)
+            App.ResponseReady()
         }
     }
     Queue.prototype = Object.create(Task.prototype)
-    app.RegisterState(new (Include("core/state/queue/queuenext.js"))())
-    app.RegisterState(new (Include("core/state/queue/queueloop.js"))())
-    app.RegisterTask(new Queue())
+    App.RegisterState(new (Include("core/state/queue/queuenext.js"))())
+    App.RegisterState(new (Include("core/state/queue/queueloop.js"))())
+    App.RegisterTask(new Queue())
 
 })(App)

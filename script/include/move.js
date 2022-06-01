@@ -1,4 +1,4 @@
-(function(app){
+(function(App){
     let Move=function(mode,target,data){
         this.Mode=mode
         this.Target=target
@@ -11,9 +11,9 @@
         this.StartCmd=""
     }
     Move.prototype.Start=function(final){
-        app.Automaton.Push([],final)
-        app.SetContext("Move",this)
-        app.ChangeState(this.Mode)
+        App.Automaton.Push([],final)
+        App.SetContext("Move",this)
+        App.ChangeState(this.Mode)
     }
     Move.prototype.Stop=function(){
         this.Stopped=true

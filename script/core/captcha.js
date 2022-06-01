@@ -1,105 +1,105 @@
-(function(app){
+(function(App){
     let imgsrcre=/<img src="\.([^"]+)"/
-    app.Data.CaptchaURLs={} 
-    app.Data.CaptchaCode=""
-    app.Data.CaptchaCountSuccess=0
-    app.Data.CaptchaCountFail=0
-    app.Data.CaptchaCurrentURL=""
-    app.Core.CatpchaLastURL=""
-    app.Core.CaptchaReq=null
+    App.Data.CaptchaURLs={} 
+    App.Data.CaptchaCode=""
+    App.Data.CaptchaCountSuccess=0
+    App.Data.CaptchaCountFail=0
+    App.Data.CaptchaCurrentURL=""
+    App.Core.CatpchaLastURL=""
+    App.Core.CaptchaReq=null
 
-    app.API.CaptchaSaveURL=function(type){
-        app.Data.CaptchaURLs[type]=app.Core.CatpchaLastURL
+    App.API.CaptchaSaveURL=function(type){
+        App.Data.CaptchaURLs[type]=App.Core.CatpchaLastURL
     }
-    app.Core.CaptchaLoadURL=function(type){
-        app.Data.CaptchaCurrentURL=app.Data.CaptchaURLs[type]
+    App.Core.CaptchaLoadURL=function(type){
+        App.Data.CaptchaCurrentURL=App.Data.CaptchaURLs[type]
     }
-    app.API.Captcha=function(type,final,fail){
-        let a=app.Automaton.Push(["core.state.captcha.captcha"],final)
+    App.API.Captcha=function(type,final,fail){
+        let a=App.Automaton.Push(["core.state.captcha.captcha"],final)
         if (fail){
             a.WithFailState(fail)
         }
         a.WithData("type",type)
-        app.ChangeState("ready")
+        App.ChangeState("ready")
     }
-    app.Core.CaptchaLoad=function(){
-        app.Core.CaptchaReq=HTTP.New("GET",app.Data.CaptchaCurrentURL)
-        app.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
+    App.Core.CaptchaLoad=function(){
+        App.Core.CaptchaReq=HTTP.New("GET",App.Data.CaptchaCurrentURL)
+        App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
     }
-    app.Core.CatpchaParseHTML=function(name,id,code,data){
+    App.Core.CatpchaParseHTML=function(name,id,code,data){
         if (code!=0){
             throw data
         }
         if (code==0){
-            let result=imgsrcre.exec(app.Core.CaptchaReq.ResponseBody())
+            let result=imgsrcre.exec(App.Core.CaptchaReq.ResponseBody())
             if (result==null){
                 throw "无法匹配图片地址"
             }
             let url="http://fullme.pkuxkx.net"+result[1]
-            app.Core.CaptchaShow(url)
+            App.Core.CaptchaShow(url)
         }
     }
-    app.Core.CaptchaFullme=function(){
-        app.Data.CaptchaURLs["fullme"]=""
-        app.Send("fullme 1;fullme 1;fullme 1;fullme")
-        app.Response("core","captchafullme")
+    App.Core.CaptchaFullme=function(){
+        App.Data.CaptchaURLs["fullme"]=""
+        App.Send("fullme 1;fullme 1;fullme 1;fullme")
+        App.Response("core","captchafullme")
     }
-    app.RegisterCallback("core.captchafullme",function(){
-        let a=app.Automaton.Push(["core.state.captcha.fullme"])
+    App.RegisterCallback("core.captchafullme",function(){
+        let a=App.Automaton.Push(["core.state.captcha.fullme"])
         a.WithData("index",0)
-        app.ChangeState("ready")
+        App.ChangeState("ready")
     })
-    app.Bind("Response.core.captchafullme","core.captchafullme")
+    App.Bind("Response.core.captchafullme","core.captchafullme")
 
-    app.Core.CaptchaShow=function(url){
+    App.Core.CaptchaShow=function(url){
         let vp=Userinput.newvisualprompt("验证码","忽略红色字符，如果是方向性文字，每对中括号内文字为一组",url)
         vp.setrefreshcallback("App.Core.CatpchaRefresh")
         vp.publish("App.Core.OnCaptchaSubmit")
     }
-    app.Core.CatpchaRefresh=function(name,id,code,data){
+    App.Core.CatpchaRefresh=function(name,id,code,data){
         if (code==0){
-            app.Core.CaptchaLoad()
+            App.Core.CaptchaLoad()
         }
     }
-    app.Core.OnCaptchaSubmit=function(name,id,code,data){
+    App.Core.OnCaptchaSubmit=function(name,id,code,data){
         if (code==0 && data){
-            app.Data.CaptchaCode=data
-            app.OnStateEvent("captcha.submit")
+            App.Data.CaptchaCode=data
+            App.OnStateEvent("captcha.submit")
         }
     }
-    app.Core.CaptchaOnURL=function(name, output, wildcards){
-        app.Core.CatpchaLastURL=wildcards[0]
+    App.Core.CaptchaOnURL=function(name, output, wildcards){
+        App.Core.CatpchaLastURL=wildcards[0]
     }
-    app.Core.CaptchaFullmeLater=function(name, output, wildcards){
-        app.Data.CatpchaLastURL=""
-        app.Data.CaptchaURLs["fullme"]=""
-    }
-
-    app.Core.CaptchaOnGonghao=function(name, output, wildcards){
-        app.API.CaptchaSaveURL("工号")
-    }
-    app.Core.CaptchaOnFullmeCmd=function(name, output, wildcards){
-        app.API.CaptchaSaveURL("fullme")
-    }
-    app.Core.CaptchaOnSuccess=function(name, output, wildcards){
-        app.OnStateEvent("captcha.success")
-    }
-    app.Core.CaptchaOnFail=function(name, output, wildcards){
-        app.OnStateEvent("captcha.fail")
+    App.Core.CaptchaFullmeLater=function(name, output, wildcards){
+        App.Data.CatpchaLastURL=""
+        App.Data.CaptchaURLs["fullme"]=""
     }
 
-    app.Core.CaptchaResponse=function(msgtype,id,data){
+    App.Core.CaptchaOnGonghao=function(name, output, wildcards){
+        App.API.CaptchaSaveURL("工号")
+    }
+    App.Core.CaptchaOnFullmeCmd=function(name, output, wildcards){
+        App.API.CaptchaSaveURL("fullme")
+    }
+    App.Core.CaptchaOnSuccess=function(name, output, wildcards){
+        App.OnStateEvent("captcha.success")
+    }
+    App.Core.CaptchaOnFail=function(name, output, wildcards){
+        App.OnStateEvent("captcha.fail")
+    }
+
+    App.Core.CaptchaResponse=function(msgtype,id,data){
         let result=data.split("|")
         if (result.length!=2){
             return
         }
-        if (app.Data.CaptchaCurrentURL==result[1]){
-            app.Data.CaptchaCode=result[0]
-            app.OnStateEvent("captcha.submit")
+        if (App.Data.CaptchaCurrentURL==result[1]){
+            App.Data.CaptchaCode=result[0]
+            App.OnStateEvent("captcha.submit")
         }
     }
 
-    app.RegisterState(new (Include("core/state/captcha/captcha.js"))())
-    app.RegisterState(new (Include("core/state/captcha/fullme.js"))())
+    App.RegisterState(new (Include("core/state/captcha/captcha.js"))())
+    App.RegisterState(new (Include("core/state/captcha/fullme.js"))())
 
 })(App)

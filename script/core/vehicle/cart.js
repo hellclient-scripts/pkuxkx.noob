@@ -5,7 +5,7 @@
         this.TagDrive=true
         this.ID="cart"
         this.Sender=function(cmd){
-            app.Send(this.ConvertDrivePath("gan che to ",cmd))
+            App.Send(this.ConvertDrivePath("gan che to ",cmd))
         }
     }
     Cart.prototype = Object.create(Vehicle.prototype)

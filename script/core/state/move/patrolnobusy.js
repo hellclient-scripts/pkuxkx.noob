@@ -6,12 +6,12 @@
     }
     StatePatrolNobusy.prototype = Object.create(basicstate.prototype)
     StatePatrolNobusy.prototype.Enter=function(context,oldstatue){
-        let s=app.LastState()
+        let s=App.LastState()
         if (!s){
-            app.Fail()
+            App.Fail()
             return
         }
-        app.ChangeState(s.ID)
+        App.ChangeState(s.ID)
     }
     return StatePatrolNobusy
 })(App)

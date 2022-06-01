@@ -6,7 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        app.ChangeState("core.state.actives.ready")
+        App.ChangeState("core.state.actives.ready")
     }
     return State
 })(App)

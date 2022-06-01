@@ -1,14 +1,14 @@
-(function(app){
-    app.Data.Room={
+(function(App){
+    App.Data.Room={
         ID:"",
         Name:"",
         Desc:"",
         Tags:"",
         Objs:[],
     }
-    app.Core.OnRoom=function(name, output, wildcards){
-        let id=app.Data.Room.ID
-        app.Data.Room={
+    App.Core.OnRoom=function(name, output, wildcards){
+        let id=App.Data.Room.ID
+        App.Data.Room={
             ID:id,
             Name:wildcards[1],
             Desc:"",
@@ -18,38 +18,38 @@
         world.EnableTriggerGroup("roomexit",true)
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
-    app.Core.OnRoomDesc=function(name, output, wildcards){
-        if (app.Data.Room.Exits==null){
-            app.Data.Room.Desc+=output+"\n"
+    App.Core.OnRoomDesc=function(name, output, wildcards){
+        if (App.Data.Room.Exits==null){
+            App.Data.Room.Desc+=output+"\n"
         }
     }
-    app.Core.OnRoomExits=function(name, output, wildcards){
+    App.Core.OnRoomExits=function(name, output, wildcards){
         world.EnableTrigger("room_desc",false)
         world.EnableTriggerGroup("roomexit",false)
         world.EnableTriggerGroup("roomobj",true)
         if (name!="room_noexit"){
             var exits=wildcards[1].match(exitsre).sort()
-            app.Data.Room.Exits=exits
+            App.Data.Room.Exits=exits
         }else{
-            app.Data.Room.Exits=[]
+            App.Data.Room.Exits=[]
         }
-        app.Raise("OnRoomExits")
+        App.Raise("OnRoomExits")
     }
-    app.Core.OnRoomObj=function(name, output, wildcards){
+    App.Core.OnRoomObj=function(name, output, wildcards){
         var obj={ID:wildcards[1],Name:wildcards[0]}
-        app.Data.Room.Objs.push(obj)
-        app.Raise("OnRoomObj",obj)
+        App.Data.Room.Objs.push(obj)
+        App.Raise("OnRoomObj",obj)
     }
-    app.HasRoomObj=function(id){
-        for(var i in app.Data.Room.Objs){
-            if (app.Data.Room.Objs[i].ID===id){
+    App.HasRoomObj=function(id){
+        for(var i in App.Data.Room.Objs){
+            if (App.Data.Room.Objs[i].ID===id){
                 return true
             }
         }
         return false
     }
-    app.Core.OnRoomObjEnd=function(name, output, wildcards){
+    App.Core.OnRoomObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("roomobj",false)
-        app.Raise("OnRoomEnd")
+        App.Raise("OnRoomEnd")
     }
 })(App)

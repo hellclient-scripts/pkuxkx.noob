@@ -9,7 +9,7 @@
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let prepare=App.GetContext("Prepare")
         prepare.Check()
-        app.ResponseReady()
+        App.ResponseReady()
     }
     return StatePrepareCheck
 })(App)

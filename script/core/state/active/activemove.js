@@ -8,11 +8,11 @@
     StateActiveMove.prototype = Object.create(basicstate.prototype)
     StateActiveMove.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        let active=app.GetContext("Active")
+        let active=App.GetContext("Active")
         if (active.Location){
-            app.NewMove(this.Move,active.Location).Start()
+            App.NewMove(this.Move,active.Location).Start()
         }else{
-            app.ChangeState("ready")
+            App.ChangeState("ready")
         }
     }
     return StateActiveMove

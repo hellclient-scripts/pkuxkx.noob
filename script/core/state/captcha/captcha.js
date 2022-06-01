@@ -7,7 +7,7 @@
     }
     StateCaptcha.prototype = Object.create(basicstate.prototype)
     StateCaptcha.prototype.Enter=function(context,oldstatue){
-        this.Type=app.GetContext("type")
+        this.Type=App.GetContext("type")
         switch (this.Type){
             case "工号":
                 this.Cmd="report "
@@ -15,13 +15,13 @@
             default:
                 this.Cmd="fullme "
         }
-        app.Core.CaptchaLoadURL(this.Type)
-        if (!app.Data.CaptchaCurrentURL){
-            app.Fail()
+        App.Core.CaptchaLoadURL(this.Type)
+        if (!App.Data.CaptchaCurrentURL){
+            App.Fail()
             return
         }
-        app.Raise("captcha")
-        app.Core.CaptchaLoad()
+        App.Raise("captcha")
+        App.Core.CaptchaLoad()
     }
     StateCaptcha.prototype.Leave=function(context,newstatue){
         Userinput.hideall()
@@ -29,24 +29,24 @@
     StateCaptcha.prototype.OnEvent=function(context,event,data){
         switch(event){
             case "captcha.submit":
-                let code=app.Data.CaptchaCode
+                let code=App.Data.CaptchaCode
                 if (code){
-                    app.Send(this.Cmd+code)
+                    App.Send(this.Cmd+code)
                 }else{
-                    app.Data.CaptchaCountFail++
-                    app.Fail()
+                    App.Data.CaptchaCountFail++
+                    App.Fail()
                 }
                 break
             case "captcha.success":
-                app.Data.CaptchaCountSuccess++
-                app.Finish()
+                App.Data.CaptchaCountSuccess++
+                App.Finish()
                 break
             case "captcha.fail":
-                app.Data.CaptchaCountFail++
-                app.Fail()
+                App.Data.CaptchaCountFail++
+                App.Fail()
                 break
             case "stop":
-                app.Fail()
+                App.Fail()
                 break
         }
     }

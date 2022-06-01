@@ -9,7 +9,7 @@
         this.IntervalParam = ""
         this.LastID = ""
         this.Send=function(){
-            app.Send(this.Command)
+            App.Send(this.Command)
         }
     }
     Check.prototype.WithLevel = function (level) {
@@ -31,7 +31,7 @@
     Check.prototype.Execute = function (force) {
         if (!force) {
             if (this.IntervalParam && this.LastID) {
-                if (!After(app.Data[this.LastID], app.GetNumberParam(this.IntervalParam))) {
+                if (!After(App.Data[this.LastID], App.GetNumberParam(this.IntervalParam))) {
                     return false
                 }
             }

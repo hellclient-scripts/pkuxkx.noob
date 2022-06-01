@@ -1,7 +1,7 @@
 
-(function(app){
-app.Core.OnConnectCharset=function(name, output, wildcards){
-    app.Send(app.GetParam("charset"))
-    app.Raise("Login")
+(function(App){
+App.Core.OnConnectCharset=function(name, output, wildcards){
+    App.Send(App.GetParam("charset"))
+    App.Raise("Login")
 }
 })(App)

@@ -6,9 +6,9 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        app.NewActives([
-            app.NewPatrolActive("n","ask yu daiyan about 炼丹","",false),
-            app.NewPatrolActive("w;w;s;s;s;s","ask chongxu daozhang about success","",false),
+        App.NewActives([
+            App.NewPatrolActive("n","ask yu daiyan about 炼丹","",false),
+            App.NewPatrolActive("w;w;s;s;s;s","ask chongxu daozhang about success","",false),
         ]).Start()
     }
     return State

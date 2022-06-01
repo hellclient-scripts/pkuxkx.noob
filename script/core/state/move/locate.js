@@ -11,13 +11,13 @@
         this.Start()
     }
     StateLocate.prototype.Start=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         move.Context=new locate(move.Target-0)
         move.StartCmd="l"
         this.Locating()
     }
     StateLocate.prototype.Locating=function(){
-        app.ChangeState("locating")
+        App.ChangeState("locating")
     }
     return StateLocate
 })(App)

@@ -6,9 +6,9 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        let actives=app.GetContext("Actives")
+        let actives=App.GetContext("Actives")
         if (actives.length==0){
-            app.Finish()
+            App.Finish()
             return
         }
         actives.shift().WithFinalState("core.state.actives.step").Start()

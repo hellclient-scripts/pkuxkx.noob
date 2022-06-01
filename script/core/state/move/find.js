@@ -6,7 +6,7 @@
     }
     StateFind.prototype = Object.create(patrol.prototype)
     StateFind.prototype.Enter=function(context,oldstatue){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         move.StateOnStep="finding"
         patrol.prototype.Enter.call(this,context,oldstatue)
     }

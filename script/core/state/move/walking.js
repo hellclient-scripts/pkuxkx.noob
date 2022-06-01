@@ -29,9 +29,9 @@
         }
     }
     StateWalking.prototype.Move=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.Context.Path.Length() == 0) {
-            app.Data.Room.ID=move.Target
+            App.Data.Room.ID=move.Target
             this.Finish()
             return
         }
@@ -47,35 +47,35 @@
             if (move.Context.Current() && !backward[move.Context.Current().Command]) {
                 break
             }
-            if (!app.Vehicle.MultiStep || move.Context.Moving.length >= app.GetNumberParam("walkstep")) {
+            if (!App.Vehicle.MultiStep || move.Context.Moving.length >= App.GetNumberParam("walkstep")) {
                 break
             }
         }
         
         move.Context.Moving.forEach(function (step) {
             move.Current=step
-            app.Go(step.Command)
+            App.Go(step.Command)
         })
     }
     StateWalking.prototype.Finish=function(){
         world.Note("到达目的地")
-        app.Finish()
+        App.Finish()
     }
     StateWalking.prototype.Retry=function(){
-        world.DoAfterSpecial(app.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
     }
     StateWalking.prototype.RetryMove=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         this.TryMove(move.Context.NextStep())
     }
     StateWalking.prototype.OnRoomObjEnd=function(){
-        let move=app.GetContext("Move")
+        let move=App.GetContext("Move")
         if (move.Ignore){
             move.Ignore=false
             return;
         }
         if (move.OnRoom){
-            app.ExeuteCallback(move.OnRoom,move)
+            App.ExeuteCallback(move.OnRoom,move)
         }
         move.Context.Arrive()
         if (move.Context.Moving.length == 0){

@@ -7,7 +7,7 @@
     StateQueueLoop.prototype = Object.create(basicstate.prototype)
     StateQueueLoop.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        app.ChangeState("core.state.queue.next")
+        App.ChangeState("core.state.queue.next")
     }
     return StateQueueLoop
 })(App)

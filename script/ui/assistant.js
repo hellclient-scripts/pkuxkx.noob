@@ -1,32 +1,32 @@
 (function (app) {
-    app.UIAssistant=[]
-    app.RegisterAssistant=function (id,label,script,position) {
-        app.UIAssistant.push({
+    App.UIAssistant=[]
+    App.RegisterAssistant=function (id,label,script,position) {
+        App.UIAssistant.push({
             ID:id,
             Label:label,
             Script:script,
             Position:position,
         })
     }
-    app.UIAssistantShow = function () {
+    App.UIAssistantShow = function () {
         var list = Userinput.newlist("助理", "请选择你需要的帮助", false)
-        if (!app.AuthCheck()){
-            app.Auth()
+        if (!App.AuthCheck()){
+            App.Auth()
             return
         }
-        app.UIAssistant.sort(function(a, b) {
+        App.UIAssistant.sort(function(a, b) {
             return a.Position - b.Position;
           });
-        app.UIAssistant.forEach(function(data){
+        App.UIAssistant.forEach(function(data){
             list.append(data.ID,data.Label)
         })      
         list.publish("App.UIAssistantExecute")
     }
-    app.UIAssistantExecute = function (name, id, code, data) {
+    App.UIAssistantExecute = function (name, id, code, data) {
         if (code == 0 && data) {
-            for(let key in app.UIAssistant){
-                if (app.UIAssistant[key].ID==data){
-                    app.UIAssistant[key].Script()
+            for(let key in App.UIAssistant){
+                if (App.UIAssistant[key].ID==data){
+                    App.UIAssistant[key].Script()
                     return 
                 }
             }

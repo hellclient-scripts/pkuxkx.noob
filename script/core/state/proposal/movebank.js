@@ -7,9 +7,9 @@
     StateProposalMovebank.prototype = Object.create(basicstate.prototype)
     StateProposalMovebank.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        app.Send("qu "+app.GetParam("gold_withdraw")+" gold")
-        app.Send("i2")
-        app.ResponseReady()
+        App.Send("qu "+App.GetParam("gold_withdraw")+" gold")
+        App.Send("i2")
+        App.ResponseReady()
     }
     return StateProposalMovebank
 })(App)

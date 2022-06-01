@@ -1,119 +1,119 @@
-(function(app){
+(function(App){
     let automaton=Include("include/automaton.js")
     let active=Include("include/active.js")
     let actives=Include("include/actives.js")
 
-    app.Data.Automata=[]
-    app.Automaton={}
-    app.Automaton.Current=function(){
-        if (app.Data.Automata.length==0){
+    App.Data.Automata=[]
+    App.Automaton={}
+    App.Automaton.Current=function(){
+        if (App.Data.Automata.length==0){
             throw "自动机为空"
         }
-        return app.Data.Automata[app.Data.Automata.length-1]
+        return App.Data.Automata[App.Data.Automata.length-1]
     }
-    app.DumpAutomaton=function(){
-        Dump(app.Automaton)
+    App.DumpAutomaton=function(){
+        Dump(App.Automaton)
     }
-    app.Automaton.New=function(states,final){
+    App.Automaton.New=function(states,final){
         let a=new automaton(states,final)
-        app.Data.Automata=[t]
+        App.Data.Automata=[t]
         return a
     }
-    app.Automaton.Push=function(states,final){
+    App.Automaton.Push=function(states,final){
         let a=new automaton(states,final)
-        app.Data.Automata.push(a)
+        App.Data.Automata.push(a)
         return a
     }
-    app.Push=app.Automaton.Push
-    app.Automaton.GetContext=function(key){
-        return app.Automaton.Current().Context[key]
+    App.Push=App.Automaton.Push
+    App.Automaton.GetContext=function(key){
+        return App.Automaton.Current().Context[key]
     }
-    app.Automaton.SetContext=function(key,value){
-        return app.Automaton.Current().Context[key]=value
+    App.Automaton.SetContext=function(key,value){
+        return App.Automaton.Current().Context[key]=value
     }
-    app.Automaton.Pop=function(){
-        if (app.Data.Automata.length==0){
+    App.Automaton.Pop=function(){
+        if (App.Data.Automata.length==0){
             throw "自动机为空"
         }
-        return app.Data.Automata.pop()
+        return App.Data.Automata.pop()
     }
-    app.Automaton.Finish=function(){
-        let final=app.Automaton.Current().FinalState
-        app.Data.Automata.pop()
-        app.ChangeState(final?final:"ready")
+    App.Automaton.Finish=function(){
+        let final=App.Automaton.Current().FinalState
+        App.Data.Automata.pop()
+        App.ChangeState(final?final:"ready")
     }
-    app.Automaton.Fail=function(){
-        if (app.Data.Automata.length==0){
+    App.Automaton.Fail=function(){
+        if (App.Data.Automata.length==0){
             world.Note("自动任务失败")
-            app.ChangeState("manual")
+            App.ChangeState("manual")
             return
         }
-        let fail=app.Automaton.Current().FailState
-        app.Data.Automata.pop()
+        let fail=App.Automaton.Current().FailState
+        App.Data.Automata.pop()
         if (!fail){
-            app.Automaton.Fail()
+            App.Automaton.Fail()
         }else{
-            app.ChangeState(fail)
+            App.ChangeState(fail)
         }
         
     }
-    app.Automaton.Flush=function(){
-        app.Data.Automata=[]
+    App.Automaton.Flush=function(){
+        App.Data.Automata=[]
     }
     let auto=function(){
-        if (app.Data.Automata.length==0){
+        if (App.Data.Automata.length==0){
             world.Note("自动任务结束")
-            app.ChangeState("manual")
+            App.ChangeState("manual")
             return
         }
-        let a=app.Automaton.Current()
+        let a=App.Automaton.Current()
         if (a.Transitions.length){
-            app.ChangeState(a.Transitions.shift())
+            App.ChangeState(a.Transitions.shift())
             return
         }
-        app.Automaton.Finish()
+        App.Automaton.Finish()
     }
-    app.RegisterCallback("core.automaton.ready",function(){
-        app.ChangeState("ready")        
+    App.RegisterCallback("core.automaton.ready",function(){
+        App.ChangeState("ready")        
     })
-    app.Ready=function(){
-        app.ChangeState("ready")        
+    App.Ready=function(){
+        App.ChangeState("ready")        
     }
-    app.GetContext=app.Automaton.GetContext
-    app.SetContext=app.Automaton.SetContext
-    app.GetState("ready").Handler=auto
-    app.Finish=app.Automaton.Finish
-    app.Fail=app.Automaton.Fail
-    app.RegisterState(new (Include("core/state/statenobusy.js"))())
-    app.GetState("nobusy").Callback="core.automaton.ready"
-    app.Bind("Response.core.state.response","core.automaton.ready")
-    app.ResponseReady=function(){
-        app.Response("core","state.response")
+    App.GetContext=App.Automaton.GetContext
+    App.SetContext=App.Automaton.SetContext
+    App.GetState("ready").Handler=auto
+    App.Finish=App.Automaton.Finish
+    App.Fail=App.Automaton.Fail
+    App.RegisterState(new (Include("core/state/statenobusy.js"))())
+    App.GetState("nobusy").Callback="core.automaton.ready"
+    App.Bind("Response.core.state.response","core.automaton.ready")
+    App.ResponseReady=function(){
+        App.Response("core","state.response")
     }
-    app.NewActive=function(location,cmd,final,nobusy){
+    App.NewActive=function(location,cmd,final,nobusy){
         return new active(location,cmd,final,nobusy)
     }
-    app.NewPatrolActive=function(location,cmd,final,nobusy){
+    App.NewPatrolActive=function(location,cmd,final,nobusy){
         if (location){
-            location=new app.Path(location.split(";"))
+            location=new App.Path(location.split(";"))
         }
         return new active(location,cmd,final,nobusy).WithModeState("core.state.active.patrol")
     }
     
-    app.RegisterState(new (Include("core/state/active/activeexecute.js"))())
-    app.RegisterState(new (Include("core/state/active/activemove.js"))())
-    app.RegisterState(new (Include("core/state/active/activepatrol.js"))())
+    App.RegisterState(new (Include("core/state/active/activeexecute.js"))())
+    App.RegisterState(new (Include("core/state/active/activemove.js"))())
+    App.RegisterState(new (Include("core/state/active/activepatrol.js"))())
 
-    app.Wait=function(delay,final){
-        let a=app.Automaton.Push(["wait"],final).WithData("Delay",delay)
-        app.ChangeState("ready")        
+    App.Wait=function(delay,final){
+        let a=App.Automaton.Push(["wait"],final).WithData("Delay",delay)
+        App.ChangeState("ready")        
     }
-    app.RegisterState(new (Include("core/state/statewait.js"))())
-    app.NewActives=function(activelist,final){
+    App.RegisterState(new (Include("core/state/statewait.js"))())
+    App.NewActives=function(activelist,final){
         return new actives(activelist,final)
     }
  
-    app.RegisterState(new (Include("core/state/actives/activesready.js"))())
-    app.RegisterState(new (Include("core/state/actives/activesstep.js"))())
+    App.RegisterState(new (Include("core/state/actives/activesready.js"))())
+    App.RegisterState(new (Include("core/state/actives/activesstep.js"))())
 
 })(App)

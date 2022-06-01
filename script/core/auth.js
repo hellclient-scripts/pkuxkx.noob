@@ -1,8 +1,8 @@
-(function(app){
-    app.AuthCheck=function(){
+(function(App){
+    App.AuthCheck=function(){
         return (world.CheckPermissions(["http"])&& world.CheckTrustedDomains(["fullme.pkuxkx.net"]))
     }
-    app.Auth=function(success,script){
+    App.Auth=function(success,script){
         if (!script){
             script=""
         }
@@ -17,6 +17,6 @@
             world.RequestTrustDomains(["fullme.pkuxkx.net"],"申请信任Fulleme网址用于显示验证码",script)
             return
         }
-        app.ExecuteCallback(success)
+        App.ExecuteCallback(success)
     }
 })(App)

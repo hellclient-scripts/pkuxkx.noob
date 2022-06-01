@@ -1,4 +1,4 @@
-(function(app){
+(function(App){
     let Actives=function(actives,final){
         this.Actives=actives
         if (this.Actives==null){
@@ -7,9 +7,9 @@
         this.Final=final
     }
     Actives.prototype.Start=function(){
-        let a=app.Automaton.Push(["core.state.actives.ready"],this.Final)
+        let a=App.Automaton.Push(["core.state.actives.ready"],this.Final)
         a.WithData("Actives",this.Actives)
-        app.Ready()
+        App.Ready()
     }
     return Actives
 }

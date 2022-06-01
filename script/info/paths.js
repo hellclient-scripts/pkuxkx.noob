@@ -1,25 +1,25 @@
 (function (app) {
-    app.Info.UserPaths=[]
-    app.Info.BuiltinPaths=[]
+    App.Info.UserPaths=[]
+    App.Info.BuiltinPaths=[]
 
   
-    app.RegisterCallback("info.paths.loadpaths", function () {
-        app.Info.BuiltinPaths= world.ReadLines("info/data/paths.txt")
+    App.RegisterCallback("info.paths.loadpaths", function () {
+        App.Info.BuiltinPaths= world.ReadLines("info/data/paths.txt")
         if (world.HasHomeFile("data/paths.txt")){
-            app.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
+            App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
         }
     })
-    app.RegisterAPI("SaveUserPaths",function(){
-        let data=app.Info.UserPaths.join("\n")
+    App.RegisterAPI("SaveUserPaths",function(){
+        let data=App.Info.UserPaths.join("\n")
         world.WriteHomeFile("data/paths.txt",data)
     })
-    app.RegisterAPI("GetPath", function (fr, tolist) {
-        app.Raise("PathInit")
+    App.RegisterAPI("GetPath", function (fr, tolist) {
+        App.Raise("PathInit")
         var data = Mapper.getpath(fr, 1, tolist)
         if (!data) {
             return null
         }
-        let path = new app.Path()
+        let path = new App.Path()
         let commands = []
         var result = {
             Delay: 0,
@@ -34,5 +34,5 @@
         result.Command = commands.join(";")
         return result
     })
-    app.Bind("Ready", "info.paths.loadpaths")
+    App.Bind("Ready", "info.paths.loadpaths")
 })(App)

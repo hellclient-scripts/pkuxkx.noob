@@ -11,31 +11,31 @@
         this.Start()
     }
     StateWalk.prototype.Start=function(){
-        let move=app.GetContext("Move")
-        if (!app.Data.Room.ID) {
+        let move=App.GetContext("Move")
+        if (!App.Data.Room.ID) {
             move.Stop()
-            app.Raise("MoveLost",this)
+            App.Raise("MoveLost",this)
             return
         }
-        if (app.Data.Room.ID==move.Target){
-            app.Finish()
+        if (App.Data.Room.ID==move.Target){
+            App.Finish()
             return 
         }
         var target = move.Target
         if (typeof (target) == "string") {
             target = [target]
         }
-        var path = app.API.GetPath(app.Data.Room.ID, target,app.Vehicle.Fly)
+        var path = App.API.GetPath(App.Data.Room.ID, target,App.Vehicle.Fly)
         if (path == null) {
-            world.Note("无法找到从[" + app.Data.Room.ID + "]到[" + target.join(",") + "]的路径")
-            app.Fail()
+            world.Note("无法找到从[" + App.Data.Room.ID + "]到[" + target.join(",") + "]的路径")
+            App.Fail()
             return
         }
         move.Context = new walk(path.Path)
         this.Walking()
     }
     StateWalk.prototype.Walking=function(){
-        app.ChangeState("walking")
+        App.ChangeState("walking")
     }
     return StateWalk
 })(App)

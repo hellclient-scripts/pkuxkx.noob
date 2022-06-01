@@ -1,17 +1,17 @@
 (function (app) {
-    app.Path = Include("include/path.js")
+    App.Path = Include("include/path.js")
     let Move=Include("include/move.js")
-    app.Move=function(path,data){
+    App.Move=function(path,data){
         if (!path){
             path=""
         }
-        let m=app.NewMove("patrol",new app.Path(path.split(";")),data)
+        let m=App.NewMove("patrol",new App.Path(path.split(";")),data)
         m.Start()
     }
-    app.NewMove = function (mode, target,data) {
+    App.NewMove = function (mode, target,data) {
         return new Move(mode,target,data)
     }
-    app.GetMoved=function(){
+    App.GetMoved=function(){
         gc()
         return moved.length
     }
@@ -26,55 +26,55 @@
         })
         moved=newmoved
     }
-    app.RegisterCallback("core.move.gc", function () {
+    App.RegisterCallback("core.move.gc", function () {
         gc()
     })    
-    app.Bind("gc","core.move.gc")
-    app.RegisterCallback("core.move.onroomobjend", function () {
+    App.Bind("gc","core.move.gc")
+    App.RegisterCallback("core.move.onroomobjend", function () {
         moved.push((new Date()).getTime())
-        app.OnStateEvent("move.onRoomObjEnd")
+        App.OnStateEvent("move.onRoomObjEnd")
     })
-    app.Bind("OnRoomEnd", "core.move.onroomobjend")
-    app.OnMoveStepTimeout = function (name) {
-        app.OnStateEvent("move.stepTimeout")
+    App.Bind("OnRoomEnd", "core.move.onroomobjend")
+    App.OnMoveStepTimeout = function (name) {
+        App.OnStateEvent("move.stepTimeout")
     }
-    app.Core.OnMoveWrongWay=function(name, output, wildcards){
-        app.Data.Room.ID=""
-        app.OnStateEvent("move.wrongway")
+    App.Core.OnMoveWrongWay=function(name, output, wildcards){
+        App.Data.Room.ID=""
+        App.OnStateEvent("move.wrongway")
     }
-    app.Core.OnMoveRetry=function(name, output, wildcards){
+    App.Core.OnMoveRetry=function(name, output, wildcards){
         moved.splice(-1)
-        app.OnStateEvent("move.retry")
+        App.OnStateEvent("move.retry")
     }
-    app.Core.OnMoveIgnore=function(name, output, wildcards){
+    App.Core.OnMoveIgnore=function(name, output, wildcards){
         moved.splice(-1)
-        app.OnStateEvent("move.ignore")
+        App.OnStateEvent("move.ignore")
     }
-    app.Core.OnMoveEnterBoat=function(name, output, wildcards){
-        app.OnStateEvent("move.enterboat")
-        if (app.Data.Move && !app.Data.Move.Paused && app.Data.Move.Current!=null) {
-            if (app.Data.Move.Current.Command.indexOf("yell boat")>=0){
-                app.Go("enter")
+    App.Core.OnMoveEnterBoat=function(name, output, wildcards){
+        App.OnStateEvent("move.enterboat")
+        if (App.Data.Move && !App.Data.Move.Paused && App.Data.Move.Current!=null) {
+            if (App.Data.Move.Current.Command.indexOf("yell boat")>=0){
+                App.Go("enter")
             }
         }
 
     }
-    app.Core.OnMoveSailEnd=function(name, output, wildcards){
-        app.Send("halt")
-        app.Go("out ")
+    App.Core.OnMoveSailEnd=function(name, output, wildcards){
+        App.Send("halt")
+        App.Go("out ")
     }
-    app.RegisterCallback("core.move.sail",function(){
-        app.Raise("Waiting")
+    App.RegisterCallback("core.move.sail",function(){
+        App.Raise("Waiting")
     })
-    app.RegisterCommand("sail","core.move.sail")
-    app.RegisterState(new (Include("core/state/move/walk.js"))())
-    app.RegisterState(new (Include("core/state/move/walking.js"))())
-    app.RegisterState(new (Include("core/state/move/locate.js"))())
-    app.RegisterState(new (Include("core/state/move/locating.js"))())
-    app.RegisterState(new (Include("core/state/move/patrol.js"))())
-    app.RegisterState(new (Include("core/state/move/patroling.js"))())
-    app.RegisterState(new (Include("core/state/move/patrolnobusy.js"))())
-    app.RegisterState(new (Include("core/state/move/find.js"))())
-    app.RegisterState(new (Include("core/state/move/finding.js"))())
+    App.RegisterCommand("sail","core.move.sail")
+    App.RegisterState(new (Include("core/state/move/walk.js"))())
+    App.RegisterState(new (Include("core/state/move/walking.js"))())
+    App.RegisterState(new (Include("core/state/move/locate.js"))())
+    App.RegisterState(new (Include("core/state/move/locating.js"))())
+    App.RegisterState(new (Include("core/state/move/patrol.js"))())
+    App.RegisterState(new (Include("core/state/move/patroling.js"))())
+    App.RegisterState(new (Include("core/state/move/patrolnobusy.js"))())
+    App.RegisterState(new (Include("core/state/move/find.js"))())
+    App.RegisterState(new (Include("core/state/move/finding.js"))())
 
 })(App)

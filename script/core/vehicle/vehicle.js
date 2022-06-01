@@ -1,4 +1,4 @@
-(function(app){
+(function(App){
     let _drivepath=Include("include/drivepath.js")
     let Vehicle=function(){
         this.TagDrive=false
@@ -7,7 +7,7 @@
         this.RetryInterval=0.5
         this.Fly=false
         this.Sender=function(cmd){
-            app.Send(cmd)
+            App.Send(cmd)
         }
     }
     Vehicle.prototype.Send=function(cmd){

@@ -1,6 +1,6 @@
-(function(app){
-    app.InfoUIStop=function() {
+(function(App){
+    App.InfoUIStop=function() {
         App.Stop()
     }
-    app.RegisterAssistant("stop","中止行动",app.InfoUIStop,0)
+    App.RegisterAssistant("stop","中止行动",App.InfoUIStop,0)
 })(App)
