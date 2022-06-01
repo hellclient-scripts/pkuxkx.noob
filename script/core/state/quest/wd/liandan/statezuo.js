@@ -14,7 +14,6 @@
             if (App.Data.Puzzle.Answer!=""){
                 App.Send(App.Data.Puzzle.Answer)
             }
-            Userinput.hideall()
             break
         case "quest.wd.liandan.success":
             App.Finish()
@@ -31,6 +30,7 @@
         App.Send("zuo;kan")
     }
     StateZuo.prototype.Leave=function(context,oldstatue){
+        Userinput.hideall()
         App.Send("zhan")
     }
     return StateZuo

@@ -3,6 +3,7 @@
         this.Location=location
         this.Command=cmd?cmd:""
         this.FinalState=final?final:""
+        this.FailState=""
         this.Nobusy=nobusy?true:false
         this.Data=null
         this.ModeState="core.state.active.move"
@@ -17,6 +18,10 @@
     }
     Active.prototype.WithFinalState=function(final){
         this.FinalState=final?final:""
+        return this
+    }
+    Active.prototype.WithFailState=function(fail){
+        this.FailState=fail?fail:""
         return this
     }
     Active.prototype.WithNobusy=function(nobusy){
@@ -53,6 +58,9 @@
         }
         let a=App.Automaton.Push(transitions,this.FinalState)
         a.WithData("Active",this)
+        if (a.FailState!=""){
+            a.WithFailState(this.FailState)
+        }
         App.ChangeState("ready")
     }
     return Active

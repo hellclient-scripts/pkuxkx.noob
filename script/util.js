@@ -1,3 +1,16 @@
+var RandomInt=function(max){
+    if (max<1){
+        throw "random error"
+    }
+    return Math.floor(Math.random()*(max-1))
+}
+var RandomList=function(list){
+    let index=RandomInt(list.length)
+    return list[index]
+}
+var RandomKey=function(map){
+   return RandomList(Object.keys(map))
+}
 var Now=function(){
     return (new Date()).getTime()
 }
@@ -102,3 +115,37 @@ var CloneArray=function (data,skipempty) {
     }
     return result
 }
+
+var Recorder=function(){
+    Recorder=function(){
+        this.output="[]"
+    }
+    Recorder.prototype.Catch=function(length,offset){
+        this.output=DumpOutput(length,offset)
+        this.Preview()
+    }
+    Recorder.prototype.Preview=function(){
+        Note("预览：")
+        Note(OutputToText(this.output))
+    }
+    Recorder.prototype.Replay=function(){
+        Note("3..2..1..重放开始")
+        SimulateOutput(this.output)
+    }
+
+    Recorder.prototype.Save=function(name){
+        WriteHomeFile("dumps-"+name+".json",this.output)
+        Note("保存成功："+"dumps-"+name+".json")
+    }
+    Recorder.prototype.Load=function(name){
+        let output=ReadHomeFile("dumps-"+name+".json")
+        Note("加载成功："+"dumps-"+name+".json")
+        this.output=output
+    }
+
+    Recorder.prototype.Play=function(name){
+        this.Load(name)
+        this.Replay()
+    }
+    return new Recorder()
+}()

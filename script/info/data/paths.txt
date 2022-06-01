@@ -38,3 +38,4 @@ nckd||jzkd||||e;n;n;nw;ne;w;n;n;n;n;n;ne;ne;nw||se;sw;sw;s;s;s;s;s;e;sw;se;s;s;w
 xydp||wd-sm||||s;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;n
 wd-sqd||wd-sm||||ask song yuanqiao about 下山&&s;sd;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu;n
 wd||wd-sqd||||n||s
+wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;w;sd;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;e;nu;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
