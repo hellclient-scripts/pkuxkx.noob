@@ -41,7 +41,17 @@
 
 
     App.Data.Traversal={}
-    App.Core.Traversal.PickType=function(key,title,desc){
+
+    App.Core.Traversal.PickType=function(){
+        var List = Userinput.newlist("类型", "请选择你的遍历类型", false)
+        List.append("walk","浏览")
+        List.append("findroom","寻找房间")
+        List.append("findobj","寻找对象")
+        List.publish("App.Core.Traversal.OnPickType")
+    }
+    App.Core.Traversal.OnPickType=function(name,id,code,data){
+        if (code==0){
+        }
     }
     App.Core.Traversal.Show=function(key,title,desc){
         App.Data.Traversal.Key=key
