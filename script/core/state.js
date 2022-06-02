@@ -42,5 +42,5 @@
     App.RegisterCallback("core.state.init",function(){
         App.ChangeState("init")
     })
-    App.Bind("Ready", "core.state.init")
+    App.Bind("Init", "core.state.init")
 })(App)

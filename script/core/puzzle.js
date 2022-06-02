@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.Core.Puzzle={}
     App.Data.Puzzle={}
     App.Core.Puzzle.NewItem=function(key,value){

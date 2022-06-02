@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let basicstate = Include("core/state/basicstate.js")
     let StateFullme=function(){
         basicstate.call(this)

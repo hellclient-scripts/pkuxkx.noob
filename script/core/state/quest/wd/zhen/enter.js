@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let basicstate = Include("core/state/basicstate.js")
     let State=function(){
         basicstate.call(this)
@@ -9,7 +9,7 @@
         app.Send("zhenfa")
     }
     State.prototype.ShowPuzzle=function(){
-        App.Core.Puzzle.ShowText("wd.zhenfa","阵法npc状态","根据丹炉颜色选择操作",App.Quest.WD.Zhen.NPC,App.Quest.WD.Zhen.Items)
+        App.Core.Puzzle.ShowText("wd.zhenfa","阵法npc状态","请确定哪个位置还空着",App.Quest.WD.Zhen.NPC,App.Quest.WD.Zhen.Items)
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -24,7 +24,7 @@
             }
             break
         case "quest.wd.zhen.success":
-            App.Finish()
+            App.Ready()
             break
         case "quest.wd.zhen.fail":
             App.Fail()

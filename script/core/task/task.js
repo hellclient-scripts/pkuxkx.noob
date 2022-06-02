@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Task=function(id){
         if (!id) {
             throw "Task的id不能为空"

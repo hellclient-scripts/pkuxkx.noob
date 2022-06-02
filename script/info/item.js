@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let sep=/\|\|/
     let item=Include("include/item.js")
     App.Info.Items=[]
@@ -69,5 +69,5 @@
         })
         return result
     })
-    App.Bind("Ready", "info.items.loaditems")
+    App.Bind("Init", "info.items.loaditems")
 })(App)

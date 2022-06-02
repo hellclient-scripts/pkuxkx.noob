@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let movestate = Include("core/state/active/activemove.js")
     let State=function(){
         movestate.call(this)

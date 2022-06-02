@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.Info.BuiltinPresetsLabels=[]
 
     App.Info.BuiltinPresets={}
@@ -12,6 +12,6 @@
             App.Info.BuiltinPresets[preset.label]=preset
         });
     })
-    App.Bind("Ready", "info.presets.loadpresets")
+    App.Bind("Init", "info.presets.loadpresets")
 
 })(App)

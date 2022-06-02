@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let statecontext = Include("include/statecontext.js")
     let GlobalStateContext=function(){
         statecontext.call(this)

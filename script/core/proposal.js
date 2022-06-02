@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let prepare=Include("include/prepare.js")
 
     App.Proposals = {}

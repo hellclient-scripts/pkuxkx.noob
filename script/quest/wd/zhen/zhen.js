@@ -7,10 +7,10 @@
     }
     App.Quest.WD.Zhen.Items=[
         App.Core.Puzzle.NewItem("zouwei 金","没人走金，zouwei 金"),
-        App.Core.Puzzle.NewItem("zouwei 木","没人走金，zouwei 木"),
-        App.Core.Puzzle.NewItem("zouwei 水","没人走金，zouwei 水"),
-        App.Core.Puzzle.NewItem("zouwei 火","没人走金，zouwei 火"),
-        App.Core.Puzzle.NewItem("zouwei 土","没人走金，zouwei 土"),
+        App.Core.Puzzle.NewItem("zouwei 木","没人走木，zouwei 木"),
+        App.Core.Puzzle.NewItem("zouwei 水","没人走水，zouwei 水"),
+        App.Core.Puzzle.NewItem("zouwei 火","没人走火，zouwei 火"),
+        App.Core.Puzzle.NewItem("zouwei 土","没人走土，zouwei 土"),
     ]
 
     App.Quest.WD.Zhen.Locations={"nw":"se","w":"e","sw":"ne","se":"nw","e":"w","ne":"sw"}

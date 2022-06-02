@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Move = Include("core/state/move/move.js")
     var backward = Include("include/backward.js")
     let StateWalking=function(){

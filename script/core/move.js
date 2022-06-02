@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.Path = Include("include/path.js")
     let Move=Include("include/move.js")
     App.Move=function(path,data){

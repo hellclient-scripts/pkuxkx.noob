@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let sep=/\|\|/
     let parsepath=function(fr,to,taglist,str){
         let path = Mapper.newpath()

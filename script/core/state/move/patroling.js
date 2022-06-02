@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Move = Include("core/state/move/move.js")
     let StatePatroling=function(){
         Move.call(this)

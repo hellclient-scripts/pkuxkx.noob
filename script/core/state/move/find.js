@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let patrol = Include("core/state/move/patrol.js")
     let StateFind=function(){
         patrol.call(this)

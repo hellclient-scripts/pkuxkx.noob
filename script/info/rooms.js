@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.Info.BuiltinRooms=[]
     App.Info.UserRooms=[]
     App.Info.Rooms = {}

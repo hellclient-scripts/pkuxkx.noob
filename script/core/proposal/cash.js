@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let proposal=Include("core/proposal/proposal.js")
     let Cash= function(){
         proposal.call(this,"cash")

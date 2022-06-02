@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.UIAssistant=[]
     App.RegisterAssistant=function (id,label,script,position) {
         App.UIAssistant.push({

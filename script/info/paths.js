@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     App.Info.UserPaths=[]
     App.Info.BuiltinPaths=[]
 
@@ -34,5 +34,5 @@
         result.Command = commands.join(";")
         return result
     })
-    App.Bind("Ready", "info.paths.loadpaths")
+    App.Bind("Init", "info.paths.loadpaths")
 })(App)

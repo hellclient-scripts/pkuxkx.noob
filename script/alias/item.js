@@ -1,4 +1,4 @@
-(function(app) {
+(function(App) {
     App.Core.OnAliasItem = function (name, line, wildcards) {
         App.Send("l")
         App.Check(App.CheckLevelFull)

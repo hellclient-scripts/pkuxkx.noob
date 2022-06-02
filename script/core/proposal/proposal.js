@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Proposal=function(id){
         if (!id) {
             throw "Proposal的id不能为空"

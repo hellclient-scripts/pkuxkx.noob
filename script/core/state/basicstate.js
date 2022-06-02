@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let state = Include("include/state.js")
     let BasicState=function(){
         state.call(this)

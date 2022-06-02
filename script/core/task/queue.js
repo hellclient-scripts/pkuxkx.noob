@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Task = Include("core/task/task.js")
     let queue = Include("core/queue/queue.js")
 

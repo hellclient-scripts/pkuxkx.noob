@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Check = function (id) {
         if (!id) {
             throw "Check的id不能为空"

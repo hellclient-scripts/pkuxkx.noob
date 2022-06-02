@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Prepare=function(level,items,group){
         this.Level=level
         this.Items=items

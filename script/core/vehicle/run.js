@@ -1,4 +1,4 @@
-(function (app) {
+(function (App) {
     let Vehicle = Include("core/vehicle/vehicle.js")
     let Run = function () {
         Vehicle.call(this)
