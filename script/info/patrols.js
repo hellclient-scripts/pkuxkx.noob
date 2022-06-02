@@ -2,11 +2,19 @@
     App.Info.UserPatrols=[]
     App.Info.BuiltinPatrols=[]
     App.Info.Patrols={}
-    var loadline=function(line){
+    App.Info.PatrolsList=[]
 
+    var loadline=function(line){
+        var data=SplitN(line,"||",2)
+        if (data.length==0){
+            return
+        }
+        App.Info.Patrols[data[0]]=line
+        App.Info.PatrolsList.push(line)
     }
     App.Info.ReloadPatrols=function(){
         App.Info.Patrols={}
+        App.Info.PatrolsList=[]
         App.Info.BuiltinPatrols.forEach(function(line){
             loadline(line)
         });
