@@ -24,7 +24,8 @@
         let data=App.Info.UserPatrols.join("\n")
         world.WriteHomeFile("data/patrols.txt",data)
     })
-    App.RegisterAPI("GetPatrol", function (name) {
-    })
     App.Bind("Init", "info.patrols.loadpatrols")
+    App.RegisterCallback("info.patrols.reloadpatrols",App.Info.ReloadPatrols)
+    App.Bind("Ready", "info.patrols.reloadpatrols")
+
 })(App)

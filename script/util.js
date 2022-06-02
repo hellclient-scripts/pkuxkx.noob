@@ -129,8 +129,9 @@ var Recorder=function(){
         Note(OutputToText(this.output))
     }
     Recorder.prototype.Replay=function(){
-        Note("3..2..1..重放开始")
-        SimulateOutput(this.output)
+        let output=ConcatOutput(PrintOutput("==== 开始模拟输出 ===="),this.output)
+        output=ConcatOutput(output,PrintOutput("==== 结束模拟输出 ===="))
+        SimulateOutput(output)
     }
 
     Recorder.prototype.Save=function(name){
