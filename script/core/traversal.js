@@ -41,7 +41,29 @@
 
 
     App.Data.Traversal={}
+    App.Core.Traversal.PromptTarget=function(key,title,desc,output){
+        let vp=Userinput.newvisualprompt(title+" [ "+key+" ]",desc,output)
+        vp.setmediatype("output")
+        vp.publish("App.Core.Traversal.OnTarget")
+    }
+    App.Core.Traversal.PromptTargetText=function(key,title,desc,lines){
+        let vp=Userinput.newvisualprompt(title+" [ "+key+" ]",desc,lines)
+        vp.setmediatype("text")
+        vp.publish("App.Core.Traversal.OnTarget")
+    }
+    App.Core.Traversal.Target=function(data){
+        App.Data.Traversal.Target=data
+        App.OnStateEvent("traversal.target")
+    }
 
+    App.Core.Traversal.OnTarget=function(name,id,code,data){
+        Userinput.hideall()
+        if (code==0&&data){
+            App.Core.Traversal.Answer(data)
+        }else{
+            App.Core.Traversal.Answer("")
+        }
+    }
     App.Core.Traversal.PickType=function(){
         var List = Userinput.newlist("类型", "请选择你的遍历类型", false)
         List.append("walk","浏览")
@@ -51,7 +73,14 @@
     }
     App.Core.Traversal.OnPickType=function(name,id,code,data){
         if (code==0){
+            App.Core.Traversal.Type(data)
+        }else{
+            App.Core.Traversal.Type("")
         }
+    }
+    App.Core.Traversal.Type=function(data){
+        App.Data.Traversal.Type=data
+        App.OnStateEvent("traversal.type")
     }
     App.Core.Traversal.Show=function(key,title,desc){
         App.Data.Traversal.Key=key
