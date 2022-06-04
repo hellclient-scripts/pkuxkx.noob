@@ -10,7 +10,7 @@
         App.Quest.WD.Zhen.Back=App.Quest.WD.Zhen.Locations[App.Quest.WD.Zhen.Dir]
         let a=App.Push(["core.state.quest.wd.zhen.move","core.state.quest.wd.zhen.enter","core.state.quest.wd.zhen.success"])
         a.WithFailState("core.state.quest.wd.zhen.cancel")
-        App.Ready()
+        App.Next()
     }
     State.prototype.Leave=function(context,oldstatue){
         Userinput.hideall()

@@ -7,7 +7,7 @@
         let a=App.Automaton.Push([],"checkitem")
         a.WithTransitions([item.Type])
         a.WithData("Item",item)
-        App.ChangeState("ready")
+        App.Next()
     }
     App.RegisterState(new (Include("core/state/produce/goods.js"))())
 })(App)

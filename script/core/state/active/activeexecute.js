@@ -9,7 +9,7 @@
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let active=App.GetContext("Active")
         App.Send(active.Command)
-        App.ChangeState("ready")
+        App.Next()
     }
     return StateActiveExecute
 })(App)

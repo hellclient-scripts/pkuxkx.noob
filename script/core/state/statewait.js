@@ -10,7 +10,7 @@
         switch(event){
             case "core.state.wait.after":
                 if (this.SN==data){
-                    App.ChangeState("ready")
+                    App.Next()
                 }
             break
             default:

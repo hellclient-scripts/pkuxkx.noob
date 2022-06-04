@@ -16,7 +16,7 @@
             }
             break
         case "quest.wd.liandan.success":
-            App.Finish()
+            App.Next()
             break
         case "quest.wd.liandan.fail":
             App.Fail()

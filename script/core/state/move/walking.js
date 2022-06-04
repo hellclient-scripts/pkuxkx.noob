@@ -59,7 +59,7 @@
     }
     StateWalking.prototype.Finish=function(){
         world.Note("到达目的地")
-        App.Finish()
+        App.Next()
     }
     StateWalking.prototype.Retry=function(){
         world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);

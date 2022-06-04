@@ -20,7 +20,7 @@
             a.WithFailState(fail)
         }
         a.WithData("type",type)
-        App.ChangeState("ready")
+        App.Next()
     }
     App.Core.CaptchaLoad=function(){
         App.Core.CaptchaReq=HTTP.New("GET",App.Data.CaptchaCurrentURL)
@@ -47,7 +47,7 @@
     App.RegisterCallback("core.captchafullme",function(){
         let a=App.Automaton.Push(["core.state.captcha.fullme"])
         a.WithData("index",0)
-        App.ChangeState("ready")
+        App.Next()
     })
     App.Bind("Response.core.captchafullme","core.captchafullme")
 

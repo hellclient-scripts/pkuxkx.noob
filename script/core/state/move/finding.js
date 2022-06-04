@@ -19,7 +19,7 @@
                 return 
             }
             data.Found = true
-            App.Finish()
+            App.Next()
             return
         }
         this.Move()

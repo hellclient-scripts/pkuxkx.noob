@@ -8,7 +8,7 @@
     StateInit.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
         world.Note("初始化状态")
-        App.ChangeState("ready")
+        App.Next()
     }
     StateInit.prototype.OnEvent=function(context,event,data){
     }

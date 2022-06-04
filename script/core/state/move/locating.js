@@ -53,7 +53,7 @@
     }
     StateLocating.prototype.Finish=function(){
         world.Note("定位成功")
-        App.Finish()
+        App.Next()
     }
     StateLocating.prototype.tryExplore=function(data){
         let move=App.GetContext("Move")
@@ -83,7 +83,7 @@
             }
         }
         if (App.Data.Room.ID!==""){
-            App.Finish()
+            App.Next()
             return
         }
         let step=move.Context.Enter(App.Data.Room.Exits)

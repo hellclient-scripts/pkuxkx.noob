@@ -8,7 +8,7 @@
     State.prototype.Enter=function(context,oldstatue){
         let actives=App.GetContext("Actives")
         if (actives.length==0){
-            App.Finish()
+            App.Return()
             return
         }
         actives.shift().WithFinalState("core.state.actives.step").Start()

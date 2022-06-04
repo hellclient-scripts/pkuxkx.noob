@@ -13,7 +13,7 @@
             App.Automaton.Current().Insert(["core.state.prepare.check",this.ID])
             p.Execute()
         }else{
-            App.Finish()
+            App.Next()
         }
     }
     return StatePrepareConfrim

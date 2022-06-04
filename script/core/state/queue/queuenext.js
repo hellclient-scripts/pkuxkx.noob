@@ -9,7 +9,7 @@
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let queue=App.GetContext("Queue")
         if (App.Stopped || queue.Remain.length === 0) {
-            App.Finish()
+            App.Next()
             return
         }
         let str = queue.Remain.shift()
@@ -36,7 +36,7 @@
                 break
             case "#afterbusy":
                 App.Automaton.Push(["nobusy"],"core.state.queue.next")
-                App.ChangeState("ready")
+                App.Next()
                 break
             case "#do":
                 App.NewActive("",current.Data,"core.state.queue.next",false).Start()

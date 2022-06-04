@@ -74,15 +74,15 @@
         App.Automaton.Finish()
     }
     App.RegisterCallback("core.automaton.ready",function(){
-        App.ChangeState("ready")        
+        App.Next()        
     })
-    App.Ready=function(){
+    App.Next=function(){
         App.ChangeState("ready")        
     }
     App.GetContext=App.Automaton.GetContext
     App.SetContext=App.Automaton.SetContext
     App.GetState("ready").Handler=auto
-    App.Finish=App.Automaton.Finish
+    App.Return=App.Automaton.Finish
     App.Fail=App.Automaton.Fail
     App.RegisterState(new (Include("core/state/statenobusy.js"))())
     App.GetState("nobusy").Callback="core.automaton.ready"
@@ -106,7 +106,7 @@
 
     App.Wait=function(delay,final){
         let a=App.Automaton.Push(["wait"],final).WithData("Delay",delay)
-        App.ChangeState("ready")        
+        App.Next()        
     }
     App.RegisterState(new (Include("core/state/statewait.js"))())
     App.NewActives=function(activelist,final){

@@ -12,7 +12,7 @@
         if (active.Location){
             App.NewMove(this.Move,active.Location).Start()
         }else{
-            App.ChangeState("ready")
+            App.Next()
         }
     }
     return StateActiveMove

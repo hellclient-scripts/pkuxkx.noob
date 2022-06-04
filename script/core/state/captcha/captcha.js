@@ -39,7 +39,7 @@
                 break
             case "captcha.success":
                 App.Data.CaptchaCountSuccess++
-                App.Finish()
+                App.Next()
                 break
             case "captcha.fail":
                 App.Data.CaptchaCountFail++

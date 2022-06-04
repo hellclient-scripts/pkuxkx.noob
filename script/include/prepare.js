@@ -16,7 +16,7 @@
     }
     Prepare.prototype.Start=function(final){
         App.Automaton.Push(["core.state.prepare.check","core.state.prepare.confirm"],final).WithData("Prepare",this)
-        App.ChangeState("ready")
+        App.Next()
     }
     return Prepare
 })(App)

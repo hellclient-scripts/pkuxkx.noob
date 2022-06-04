@@ -7,7 +7,7 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
         App.Push(["core.state.quest.wd.liandan.zuo"],"core.state.quest.wd.liandan.success").WithFailState("core.state.quest.wd.liandan.fail")
-        App.Ready()
+        App.Next()
     }
     return State
 })(App)

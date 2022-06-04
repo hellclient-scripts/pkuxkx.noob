@@ -61,7 +61,7 @@
         if (a.FailState!=""){
             a.WithFailState(this.FailState)
         }
-        App.ChangeState("ready")
+        App.Next()
     }
     return Active
 })(App)

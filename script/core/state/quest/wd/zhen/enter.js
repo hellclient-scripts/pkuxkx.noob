@@ -24,7 +24,7 @@
             }
             break
         case "quest.wd.zhen.success":
-            App.Ready()
+            App.Next()
             break
         case "quest.wd.zhen.fail":
             App.Fail()

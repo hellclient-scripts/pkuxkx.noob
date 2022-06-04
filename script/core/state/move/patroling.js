@@ -53,7 +53,7 @@
 
     StatePatroling.prototype.Finish=function(){
         world.Note("巡查成功")
-        App.Finish()
+        App.Next()
     }
     StatePatroling.prototype.Retry=function(){
         world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
