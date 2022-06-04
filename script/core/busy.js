@@ -20,4 +20,9 @@ App.CheckBusy=function(callback,data){
     }
     App.Send("tuna")
 }
+App.RegisterCallback("app.core.busyonconnected",function(){
+    world.EnableTriggerGroup("busy",true)
+    world.EnableTimer("busy_retry",false)
+})
+App.Bind("Connected","app.core.busyonconnected")
 })(App)

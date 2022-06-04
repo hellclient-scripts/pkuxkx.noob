@@ -8,7 +8,7 @@ onClose=function (){
 }
 
 onConnected=function (){
-
+    App.Raise("Connected")
 }
 
 onDisconnected=function (){
