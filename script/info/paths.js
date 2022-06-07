@@ -17,6 +17,7 @@
     })
     App.RegisterAPI("SaveUserPaths",function(){
         let data=App.Info.UserPaths.join("\n")
+        MakeHoneFolder("data/")
         world.WriteHomeFile("data/paths.txt",data)
     })
     App.RegisterAPI("GetPath", function (fr, tolist) {
