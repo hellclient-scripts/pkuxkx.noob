@@ -1,11 +1,15 @@
 (function (App) {
-    App.Path = Include("include/path.js")
     let Move=Include("include/move.js")
+    let Goal=Include("core/goal.js")
+    App.LastMove=null
+    App.NewGoal=function(target){
+        return new Goal(target)
+    }
     App.Move=function(path,data){
         if (!path){
             path=""
         }
-        let m=App.NewMove("patrol",new App.Path(path.split(";")),data)
+        let m=App.NewMove("patrol",App.API.ConvertPath(path),data)
         m.Start()
     }
     App.NewMove = function (mode, target,data) {

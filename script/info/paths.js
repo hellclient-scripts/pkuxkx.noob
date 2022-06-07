@@ -1,4 +1,5 @@
 (function (App) {
+    let ipath = Include("include/path.js")
     App.Info.UserPaths=[]
     App.Info.BuiltinPaths=[]
 
@@ -8,6 +9,11 @@
         if (world.HasHomeFile("data/paths.txt")){
             App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
         }
+    })
+    App.RegisterAPI("ConvertPath",function(path,target){
+        let p = new ipath()
+        p.PushCommands(path.split(";"),target?target:"")
+        return p
     })
     App.RegisterAPI("SaveUserPaths",function(){
         let data=App.Info.UserPaths.join("\n")
@@ -19,7 +25,7 @@
         if (!data) {
             return null
         }
-        let path = new App.Path()
+        let path = new ipath()
         let commands = []
         var result = {
             Delay: 0,

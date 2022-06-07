@@ -40,9 +40,24 @@
         App.Data.Room.Objs.push(obj)
         App.Raise("OnRoomObj",obj)
     }
-    App.HasRoomObj=function(id){
+    App.HasRoomObjName=function(name){
         for(var i in App.Data.Room.Objs){
-            if (App.Data.Room.Objs[i].ID===id){
+            if (App.Data.Room.Objs[i].Name===name){
+                return true
+            }
+        }
+        return false
+    }
+    App.HasRoomObj=function(id,ci){
+        if (ci){
+            id=id.toLowerCase()
+        }
+        for(var i in App.Data.Room.Objs){
+            let oid=App.Data.Room.Objs[i].ID
+            if (ci){
+                oid=oid.toLowerCase()
+            }
+            if (oid===id){
                 return true
             }
         }
