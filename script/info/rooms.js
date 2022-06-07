@@ -29,7 +29,7 @@
     })
     App.RegisterAPI("SaveUserRooms",function(){
         let data=App.Info.UserRooms.join("\n")
-        MakeHoneFolder("data/")
+        MakeHomeFolder("data/")
         world.WriteHomeFile("data/rooms.txt",data)
     })
     App.Bind("Ready", "info.rooms.loadrooms")

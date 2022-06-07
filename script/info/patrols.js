@@ -30,7 +30,7 @@
     })
     App.RegisterAPI("SaveUserPatrols",function(){
         let data=App.Info.UserPatrols.join("\n")
-        MakeHoneFolder("data/")
+        MakeHomeFolder("data/")
         world.WriteHomeFile("data/patrols.txt",data)
     })
     App.Bind("Init", "info.patrols.loadpatrols")

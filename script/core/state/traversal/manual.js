@@ -33,7 +33,7 @@
                 App.Core.Traversal.Show("traversal.manual.show","选择遍历路径","请选择你要进行的遍历的路径")                
                 break
             default:
-                State.prototype.Enter.call(this, context, event, data)
+                basicstate.prototype.OnEvent.call(this, context, event, data)
         }
     }
     return State

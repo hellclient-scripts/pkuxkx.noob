@@ -135,13 +135,13 @@ var Recorder=function(){
     }
 
     Recorder.prototype.Save=function(name){
-        MakeHoneFolder("dumps")
+        MakeHomeFolder("dumps")
         WriteHomeFile("dumps/"+name+".json",this.output)
-        Note("保存成功："+"dumps-"+name+".json")
+        Note("保存成功："+"dumps/"+name+".json")
     }
     Recorder.prototype.Load=function(name){
         let output=ReadHomeFile("dumps/"+name+".json")
-        Note("加载成功："+"dumps-"+name+".json")
+        Note("加载成功："+"dumps/"+name+".json")
         this.output=output
     }
 

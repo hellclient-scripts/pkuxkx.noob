@@ -29,7 +29,7 @@
     })
     App.RegisterAPI("SaveUserItems",function(){
         let data=App.Info.UserItems.join("\n")
-        MakeHoneFolder("data/")
+        MakeHomeFolder("data/")
         world.WriteHomeFile("data/items.txt",data)
     })
     App.RegisterAPI("ResetItems",function(){
