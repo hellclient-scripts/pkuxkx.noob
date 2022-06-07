@@ -21,6 +21,10 @@
         this.Type = "desc"
         return this
     }
+    Goal.prototype.FindKnownRoom = function () {
+        this.Type = "known"
+        return this
+    }
     Goal.prototype.Check = function () {
         if (this.Found) {
             return
@@ -38,6 +42,8 @@
             case "desc":
                 this.Found = (App.Data.Room.Desc.indexOf(this.Target) >= 0)
                 break
+            case "known":
+                this.Found=(App.Data.Room.ID!="")
         }
     }
     return Goal

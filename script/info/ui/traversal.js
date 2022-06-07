@@ -1,6 +1,6 @@
 (function(App){
     App.InfoUITraversalRemain=function() {
-            App.LastMove.WithData(App.NewGoal()).Continue()        
+            App.LastMove.WithData(App.NewGoal().FindKnownRoom()).Continue()        
     }
     App.InfoUITraversal=function() {
             App.Traversal()

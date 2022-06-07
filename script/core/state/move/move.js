@@ -33,10 +33,12 @@
         App.Go(command)
     }
     StateMove.prototype.TryMove=function(step){
+        let move=App.GetContext("Move")
         if (!step){
-            let move=App.GetContext("Move")
             step=move.Current
         }
+        move.FromRoom=App.Data.Room.ID
+        App.Data.Room.ID=""
         this.Go(step.Command)
     }
     return StateMove

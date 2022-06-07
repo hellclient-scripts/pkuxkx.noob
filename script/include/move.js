@@ -10,6 +10,7 @@
         this.Stopped=false
         this.OnRoom=""
         this.StartCmd=""
+        this.FromRoom=""
     }
     Move.prototype.Start=function(final){
         App.Automaton.Push([],final)
