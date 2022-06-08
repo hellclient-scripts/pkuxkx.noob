@@ -95,7 +95,7 @@
     }
     App.NewPatrolActive=function(location,cmd,final,nobusy){
         if (location){
-            location=app.API.ConvertPath(location)
+            location=App.API.ConvertPath(location)
         }
         return new active(location,cmd,final,nobusy).WithModeState("core.state.active.patrol")
     }

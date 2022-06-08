@@ -1,4 +1,3 @@
-
 (function (App) {
     var Goal = function (target) {
         this.Type = ""

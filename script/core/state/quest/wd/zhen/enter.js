@@ -6,7 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        app.Send("zhenfa")
+        App.Send("zhenfa")
     }
     State.prototype.ShowPuzzle=function(){
         App.Core.Puzzle.ShowText("wd.zhenfa","阵法npc状态","请确定哪个位置还空着",App.Quest.WD.Zhen.NPC,App.Quest.WD.Zhen.Items)

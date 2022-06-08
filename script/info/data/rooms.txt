@@ -3,6 +3,7 @@ yzqz||扬州钱庄||||Station||扬州钱庄
 yzdp||扬州当铺||||Landmark||Tang nan
 yztj||扬州铁匠||||Landmark||Wang tiejiang
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
+yz-cszh||盛昌总行||||Station||盛昌总行
 yzcg||春来茶馆||||Station||春来茶馆
 yzyp||扬州药铺||||Landmark||Ping yizhi
 yzsy||扬州书院||||Landmark||Fu zi

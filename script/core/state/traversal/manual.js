@@ -9,6 +9,9 @@
     State.prototype.Enter=function(context,oldstatue){
         App.Core.Traversal.PickType("traversal.manual.type","选择遍历类型","请选择你要进行的遍历的类型")
     }
+    State.prototype.Leave=function(context,oldstatue){
+        Userinput.hideall()
+    }
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "core.traversal.type":

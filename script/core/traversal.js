@@ -63,7 +63,6 @@
     }
 
     App.Core.Traversal.OnTarget = function (name, id, code, data) {
-        Userinput.hideall()
         if (code == 0 && data) {
             App.Core.Traversal.Target(data)
         } else {

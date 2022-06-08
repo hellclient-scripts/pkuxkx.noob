@@ -14,7 +14,7 @@
                 }
             break
             default:
-                StateWait.prototype.Enter.call(this,context,event,data)
+                basicstate.prototype.OnEvent.call(this,context,event,data)
         }
     }
     StateWait.prototype.Enter=function(context,oldstatue){
