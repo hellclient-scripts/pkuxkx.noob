@@ -27,7 +27,26 @@ onResponse=function(msgtype,id,data){
 }
 onBuffer=function(data){
     if (data.length==2){
+        //提示符
         return data=="> "
+    }
+    if (data.length==11){
+        if (data[0].charCodeAt()==27&&data.slice(1,7)=="[1;36m"&&data.slice(-2)==".."){
+            //武当诵经
+            return true
+        }
+        if (data[0].charCodeAt()==27&&data.slice(1,9)=="[2;37;0m"&&data.slice(-2)=="> "){
+            //白色提示符
+            return true
+        }
+        return false
+    }
+
+    if (data.length==20){
+        if (data[9].charCodeAt()==27&& data.slice(10,16)=="[1;36m"&&data[0].charCodeAt()==27&&data.slice(1,9)=="[2;37;0m"&&data.slice(-2)==".."){
+                //白色提示符
+                return true
+        }
     }
     if (data.length>20){
         if (data.substr(0,7)=="== 未完继续" && data.substr(-6,6)=="继续下一页)"){

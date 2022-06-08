@@ -1,4 +1,5 @@
 world.Note("加载核心代码")
+App.Load("core/init.js")
 App.Load("core/state.js")
 App.Load("core/automaton.js")
 App.Load("core/connect.js")

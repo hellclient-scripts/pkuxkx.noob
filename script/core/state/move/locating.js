@@ -62,7 +62,7 @@
         App.Go(data.Command)
     }
     StateLocating.prototype.Retry=function(){
-        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.RaiseStateEvent("move.retrymove")', 12);
     }
     StateLocating.prototype.RetryExplore=function(){
         let move=App.GetContext("Move")

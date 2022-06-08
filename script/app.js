@@ -66,7 +66,7 @@ App.Stopped=true
 App.Stop=function(){
     Note("中止任务")
     App.Stopped=true
-    App.OnStateEvent("stop")
+    App.RaiseStateEvent("stop")
 }
 App.onResponse=function(msgtype,id,data){
     App.Raise("response",{type:msgtype,id:id,data:data})

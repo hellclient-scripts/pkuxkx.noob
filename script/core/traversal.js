@@ -59,7 +59,7 @@
     }
     App.Core.Traversal.Target = function (data) {
         App.Data.Traversal.Target = data
-        App.OnStateEvent("core.traversal.target")
+        App.RaiseStateEvent("core.traversal.target")
     }
 
     App.Core.Traversal.OnTarget = function (name, id, code, data) {
@@ -86,7 +86,7 @@
     }
     App.Core.Traversal.Type = function (data) {
         App.Data.Traversal.Type = data
-        App.OnStateEvent("core.traversal.type")
+        App.RaiseStateEvent("core.traversal.type")
     }
     App.Core.Traversal.GetGoal = function () {
         let g = App.NewGoal(App.Data.Traversal.Target)
@@ -127,7 +127,7 @@
     }
     App.Core.Traversal.Answer = function (answer) {
         App.Data.Traversal.Answer = answer
-        App.OnStateEvent("core.traversal.answer")
+        App.RaiseStateEvent("core.traversal.answer")
     }
     App.Core.Traversal.OnAnswer = function (name, id, code, data) {
         Grid.hide()

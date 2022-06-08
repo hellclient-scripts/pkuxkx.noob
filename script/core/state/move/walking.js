@@ -62,7 +62,7 @@
         App.Next()
     }
     StateWalking.prototype.Retry=function(){
-        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.RaiseStateEvent("move.retrymove")', 12);
     }
     StateWalking.prototype.RetryMove=function(){
         let move=App.GetContext("Move")

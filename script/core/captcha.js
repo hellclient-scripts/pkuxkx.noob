@@ -64,7 +64,7 @@
     App.Core.OnCaptchaSubmit=function(name,id,code,data){
         if (code==0 && data){
             App.Data.CaptchaCode=data
-            App.OnStateEvent("captcha.submit")
+            App.RaiseStateEvent("captcha.submit")
         }
     }
     App.Core.CaptchaOnURL=function(name, output, wildcards){
@@ -82,10 +82,10 @@
         App.API.CaptchaSaveURL("fullme")
     }
     App.Core.CaptchaOnSuccess=function(name, output, wildcards){
-        App.OnStateEvent("captcha.success")
+        App.RaiseStateEvent("captcha.success")
     }
     App.Core.CaptchaOnFail=function(name, output, wildcards){
-        App.OnStateEvent("captcha.fail")
+        App.RaiseStateEvent("captcha.fail")
     }
 
     App.Core.CaptchaResponse=function(msgtype,id,data){
@@ -95,7 +95,7 @@
         }
         if (App.Data.CaptchaCurrentURL==result[1]){
             App.Data.CaptchaCode=result[0]
-            App.OnStateEvent("captcha.submit")
+            App.RaiseStateEvent("captcha.submit")
         }
     }
 

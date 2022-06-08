@@ -22,7 +22,7 @@
         let delay=App.GetContext("Delay")
         let sn=world.GetUniqueID()
         this.SN=sn
-        world.DoAfterSpecial(delay, 'App.OnStateEvent("core.state.wait.after","'+sn+'")', 12);
+        world.DoAfterSpecial(delay, 'App.RaiseStateEvent("core.state.wait.after","'+sn+'")', 12);
     }
     return StateWait
 })(App)

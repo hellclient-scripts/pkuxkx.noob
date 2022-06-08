@@ -50,7 +50,7 @@
     }
     App.Core.Puzzle.Answer=function(answer){
         App.Data.Puzzle.Answer=answer
-        App.OnStateEvent("puzzle.answer")
+        App.RaiseStateEvent("puzzle.answer")
     }
     App.Core.Puzzle.OnAnswer=function(name,id,code,data){
         if (code==0&&data){

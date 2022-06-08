@@ -56,7 +56,7 @@
         App.Next()
     }
     StatePatroling.prototype.Retry=function(){
-        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.OnStateEvent("move.retrymove")', 12);
+        world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.RaiseStateEvent("move.retrymove")', 12);
     }
     StatePatroling.prototype.RetryMove=function(){
         this.TryMove()

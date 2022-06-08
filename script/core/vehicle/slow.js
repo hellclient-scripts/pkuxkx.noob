@@ -9,7 +9,7 @@
             if (App.GetMoved()<4){
                 App.Send(cmd)
             }else{
-                App.OnStateEvent("move.retry")
+                App.RaiseStateEvent("move.retry")
             }
         }
     }

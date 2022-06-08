@@ -17,18 +17,18 @@
     App.Quest.WD.Zhen.OnZouwei=function(name, output, wildcards){
         App.Quest.WD.Zhen.NPC=""
         App.Quest.WD.Zhen.Free={"金":true,"木":true,"水":true,"火":true,"土":true}
-        App.OnStateEvent("quest.wd.zhen.zouwei")
+        App.RaiseStateEvent("quest.wd.zhen.zouwei")
     }
     App.Quest.WD.Zhen.OnZhenmove=function(name, output, wildcards){
         App.Quest.WD.Zhen.NPC=App.Quest.WD.Zhen.NPC+output+"\n"
         delete(App.Quest.WD.Zhen.Free[wildcards[2]])
-        App.OnStateEvent("quest.wd.zhen.move")
+        App.RaiseStateEvent("quest.wd.zhen.move")
     }
     App.Quest.WD.Zhen.OnSuccess=function(name, output, wildcards){
-        App.OnStateEvent("quest.wd.zhen.success")
+        App.RaiseStateEvent("quest.wd.zhen.success")
     }
     App.Quest.WD.Zhen.OnFail=function(name, output, wildcards){
-        App.OnStateEvent("quest.wd.zhen.fail")
+        App.RaiseStateEvent("quest.wd.zhen.fail")
     }
     App.RegisterState(new (Include("core/state/quest/wd/zhen/zhen.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/zhen/move.js"))())

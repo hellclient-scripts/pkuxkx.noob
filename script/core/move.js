@@ -36,26 +36,26 @@
     App.Bind("gc","core.move.gc")
     App.RegisterCallback("core.move.onroomobjend", function () {
         moved.push((new Date()).getTime())
-        App.OnStateEvent("move.onRoomObjEnd")
+        App.RaiseStateEvent("move.onRoomObjEnd")
     })
     App.Bind("OnRoomEnd", "core.move.onroomobjend")
     App.OnMoveStepTimeout = function (name) {
-        App.OnStateEvent("move.stepTimeout")
+        App.RaiseStateEvent("move.stepTimeout")
     }
     App.Core.OnMoveWrongWay=function(name, output, wildcards){
         App.Data.Room.ID=""
-        App.OnStateEvent("move.wrongway")
+        App.RaiseStateEvent("move.wrongway")
     }
     App.Core.OnMoveRetry=function(name, output, wildcards){
         moved.splice(-1)
-        App.OnStateEvent("move.retry")
+        App.RaiseStateEvent("move.retry")
     }
     App.Core.OnMoveIgnore=function(name, output, wildcards){
         moved.splice(-1)
-        App.OnStateEvent("move.ignore")
+        App.RaiseStateEvent("move.ignore")
     }
     App.Core.OnMoveEnterBoat=function(name, output, wildcards){
-        App.OnStateEvent("move.enterboat")
+        App.RaiseStateEvent("move.enterboat")
         if (App.Data.Move && !App.Data.Move.Paused && App.Data.Move.Current!=null) {
             if (App.Data.Move.Current.Command.indexOf("yell boat")>=0){
                 App.Go("enter")

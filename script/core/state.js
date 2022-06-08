@@ -32,7 +32,7 @@
     App.LastState=function(){
         return App.StateContext.LastState
     }
-    App.OnStateEvent=function(event,data){
+    App.RaiseStateEvent=function(event,data){
         App.StateContext.OnEvent(event,data)
     }
     App.RegisterState(new (Include("core/state/stateinit.js"))())

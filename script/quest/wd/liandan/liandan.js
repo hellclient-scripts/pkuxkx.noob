@@ -13,13 +13,13 @@
     ]
     App.Quest.WD.Liandan.OnDanlu=function(name, output, wildcards){
         App.Quest.WD.Liandan.Danlu=DumpOutput(19,2)
-        App.OnStateEvent("quest.wd.liandan.danlu")
+        App.RaiseStateEvent("quest.wd.liandan.danlu")
     }
     App.Quest.WD.Liandan.OnFail=function(name, output, wildcards){
-        App.OnStateEvent("quest.wd.liandan.fail")
+        App.RaiseStateEvent("quest.wd.liandan.fail")
     }
     App.Quest.WD.Liandan.OnSuccess=function(name, output, wildcards){
-        App.OnStateEvent("quest.wd.liandan.success")
+        App.RaiseStateEvent("quest.wd.liandan.success")
     }
     App.RegisterState(new (Include("core/state/quest/wd/liandan/stateliandan.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/liandan/statezuo.js"))())
