@@ -19,7 +19,7 @@
             App.Next()
             break
         case "quest.wd.liandan.fail":
-            App.Fail()
+            App.Next()
             break
         }
     }

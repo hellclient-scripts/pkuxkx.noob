@@ -12,11 +12,11 @@
         this.Data=data
         return this
     }
-    Command.prototype.WithFinal=function(final){
+    Command.prototype.WithFinalState=function(final){
         this.Final=final
         return this
     }
-    Command.prototype.WithFail=function(fail){
+    Command.prototype.WithFailState=function(fail){
         this.Fail=fail
         return this
     }
@@ -25,6 +25,7 @@
     }
     Command.prototype.Push=function(){
         let a=App.Push(this.Transitions,this.Final)
+        a.WithFailState(this.Fail)
         this.ApplyData(a)
         return this
     }

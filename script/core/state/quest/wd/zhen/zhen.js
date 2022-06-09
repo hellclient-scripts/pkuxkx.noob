@@ -8,8 +8,14 @@
     State.prototype.Enter=function(context,oldstatue){
         App.Quest.WD.Zhen.Dir=RandomKey(App.Quest.WD.Zhen.Locations)
         App.Quest.WD.Zhen.Back=App.Quest.WD.Zhen.Locations[App.Quest.WD.Zhen.Dir]
-        let a=App.Push(["core.state.quest.wd.zhen.move","core.state.quest.wd.zhen.enter","core.state.quest.wd.zhen.success"])
-        a.WithFailState("core.state.quest.wd.zhen.cancel")
+
+        App.Commands([
+            App.NewCommand("patrol",App.Options.NewPath(App.Quest.WD.Zhen.Dir),"","core.state.quest.wd.zhen.zhen"),
+            App.NewCommand("state","core.state.quest.wd.zhen.enter"),
+            App.NewCommand("patrol",App.Options.NewPath(App.Quest.WD.Zhen.Back)),
+            App.NewCommand("ask",App.Quest.WD.QuestionSuccess),
+            App.NewCommand("ask",App.Quest.WD.QuestionCancel),
+        ]).Push()
         App.Next()
     }
     State.prototype.Leave=function(context,oldstatue){

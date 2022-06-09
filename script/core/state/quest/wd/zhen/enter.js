@@ -27,7 +27,7 @@
             App.Next()
             break
         case "quest.wd.zhen.fail":
-            App.Fail()
+            App.Next()
             break
         }
     }

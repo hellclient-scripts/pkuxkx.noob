@@ -31,9 +31,5 @@
         App.RaiseStateEvent("quest.wd.zhen.fail")
     }
     App.RegisterState(new (Include("core/state/quest/wd/zhen/zhen.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/zhen/move.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/zhen/enter.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/zhen/success.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/zhen/cancel.js"))())
-
 })(App)

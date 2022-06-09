@@ -1,6 +1,5 @@
 
 (function(App){
-    let Question=Include("include/question.js")
     App.Core.Ask={}
     App.Core.Ask.LastNPC=""
     App.Core.Ask.LastQuestion=""
@@ -10,9 +9,6 @@
         App.Core.Ask.LastNPC=npc
         App.Core.Ask.LastQuestion=question
         App.Send("ask "+npc+" about "+question)
-    }
-    App.NewQuestion=function(npc,question,length){
-        return new Question(npc,question,length)
     }
     App.PushAsk=function(question){
         App.Push(["core.ask"]).WithData("Question",question)

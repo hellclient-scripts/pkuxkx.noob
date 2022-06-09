@@ -42,9 +42,6 @@
         App.Quest.WD.Chanting.CurrentPage=1
     }
     App.RegisterState(new (Include("core/state/quest/wd/chanting/chanting.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/chanting/find.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/chanting/read.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/chanting/back.js"))())
-    App.RegisterState(new (Include("core/state/quest/wd/chanting/finish.js"))())
 
 })(App)
