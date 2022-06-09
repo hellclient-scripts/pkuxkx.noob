@@ -1,12 +1,12 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
-    let StateReady=function(){
+    let State=function(){
         basicstate.call(this)
         this.ID="ready"
         this.Handler=null
     }
-    StateReady.prototype = Object.create(basicstate.prototype)
-    StateReady.prototype.Enter=function(context,newstatue){
+    State.prototype = Object.create(basicstate.prototype)
+    State.prototype.Enter=function(context,newstatue){
         basicstate.prototype.Enter.call(this,context,newstatue)
         if (App.Core.Inited){
             this.Handler()
@@ -14,7 +14,7 @@
         }
         App.Core.Init()
     }
-    StateReady.prototype.OnEvent=function(context,event,data){
+    State.prototype.OnEvent=function(context,event,data){
         switch(event){
             case "inited":
                 this.Handler()
@@ -23,5 +23,5 @@
                 basicstate.prototype.OnEvent.call(this,context,event,data)
         }
     }
-    return StateReady
+    return State
 })(App)

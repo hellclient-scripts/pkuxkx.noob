@@ -35,10 +35,10 @@
     App.RaiseStateEvent=function(event,data){
         App.StateContext.OnEvent(event,data)
     }
-    App.RegisterState(new (Include("core/state/stateinit.js"))())
-    App.RegisterState(new (Include("core/state/stateready.js"))())
-    App.RegisterState(new (Include("core/state/statemanual.js"))())
-    App.RegisterState(new (Include("core/state/statecheckitem.js"))())
+    App.RegisterState(new (Include("core/state/init.js"))())
+    App.RegisterState(new (Include("core/state/ready.js"))())
+    App.RegisterState(new (Include("core/state/manual.js"))())
+    App.RegisterState(new (Include("core/state/checkitem.js"))())
     App.RegisterCallback("core.state.init",function(){
         App.ChangeState("init")
     })

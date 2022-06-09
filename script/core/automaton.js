@@ -11,9 +11,6 @@
         }
         return App.Data.Automata[App.Data.Automata.length-1]
     }
-    App.DumpAutomaton=function(){
-        Dump(App.Automaton)
-    }
     App.Automaton.New=function(states,final){
         let a=new automaton(states,final)
         App.Data.Automata=[t]
@@ -84,7 +81,7 @@
     App.GetState("ready").Handler=auto
     App.Return=App.Automaton.Finish
     App.Fail=App.Automaton.Fail
-    App.RegisterState(new (Include("core/state/statenobusy.js"))())
+    App.RegisterState(new (Include("core/state/nobusy.js"))())
     App.GetState("nobusy").Callback="core.automaton.ready"
     App.Bind("Response.core.state.response","core.automaton.ready")
     App.ResponseReady=function(){
@@ -108,7 +105,7 @@
         let a=App.Automaton.Push(["wait"],final).WithData("Delay",delay)
         App.Next()        
     }
-    App.RegisterState(new (Include("core/state/statewait.js"))())
+    App.RegisterState(new (Include("core/state/wait.js"))())
     App.NewActives=function(activelist,final){
         return new actives(activelist,final)
     }

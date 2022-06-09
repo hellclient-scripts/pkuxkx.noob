@@ -1,16 +1,16 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
-    let StateInit=function(){
+    let State=function(){
         basicstate.call(this)
         this.ID="init"
     }
-    StateInit.prototype = Object.create(basicstate.prototype)
-    StateInit.prototype.Enter=function(context,oldstatue){
+    State.prototype = Object.create(basicstate.prototype)
+    State.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
         world.Note("初始化状态")
         App.ChangeState("manual")
     }
-    StateInit.prototype.OnEvent=function(context,event,data){
+    State.prototype.OnEvent=function(context,event,data){
     }
-    return StateInit
+    return State
 })(App)
