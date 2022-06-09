@@ -29,17 +29,18 @@
                     vehicle = ""
                     target = c.Command
                 }
-                App.Drive(vehicle)
-                App.NewActive(target,"","core.state.queue.next",false).Start()
+                App.NewCommand("to",App.Options.NewWalkpath(target,vehicle)).WithFinal("core.state.queue.next").Push()
+                App.Next()
                 break
             case "#move":
                 break
             case "#afterbusy":
-                App.Automaton.Push(["nobusy"],"core.state.queue.next")
+                App.NewCommand("nobusy").WithFinal("core.state.queue.next").Push()
                 App.Next()
                 break
             case "#do":
-                App.NewActive("",current.Data,"core.state.queue.next",false).Start()
+                App.NewCommand("do",current.Data).WithFinal("core.state.queue.next").Push()
+                App.Next()
                 break
             case "#delay":
                 let data=current.Data
@@ -47,7 +48,9 @@
                     throw "delay 的秒数必须为正数"
                 }
                 let delay=(data - 0) / 1000
-                App.Wait(delay,"core.state.queue.next")
+                App.NewCommand("delay",delay).WithFinal("core.state.queue.next").Push()
+                App.Next()
+
                 break
             case "#loop":
                 if (!App.Stopped) {
@@ -59,7 +62,8 @@
                 App.API.Captcha(current.Data,"core.state.queue.next","core.state.queue.next")
                 break
             default:
-                App.NewActive("",str,"core.state.queue.next",false).Start()
+                App.NewCommand("do",str).WithFinal("core.state.queue.next").Push()
+                App.Next()
         }
 
     }

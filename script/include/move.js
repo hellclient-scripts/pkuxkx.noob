@@ -11,6 +11,7 @@
         this.OnRoom=""
         this.StartCmd=""
         this.FromRoom=""
+        this.Vehicle=""
     }
     Move.prototype.Push=function(final){
         App.Automaton.Push(["core.state.move.start"],final)
@@ -22,6 +23,10 @@
     }
     Move.prototype.WithData=function(data){
         this.Data=data
+        return this
+    }
+    Move.prototype.WithVehicle=function(vehicle){
+        this.Vehicle=vehicle
         return this
     }
     Move.prototype.Continue=function(final){

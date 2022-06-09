@@ -19,6 +19,7 @@ App.Load("core/ask.js")
 
 App.Load("core/task.js")
 App.Load("core/command.js")
+App.Load("core/options.js")
 
 App.Load("core/task/queue.js")
 App.Load("core/produce.js")

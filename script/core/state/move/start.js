@@ -9,6 +9,7 @@
         let move=App.GetContext("Move")
         App.LastMove=move
         App.SetContext("Move",move)
+        App.Drive(move.Vehicle)
         App.ChangeState(move.Mode)
     }
     return State
