@@ -1,8 +1,5 @@
 (function(App){
     let automaton=Include("include/automaton.js")
-    let active=Include("include/active.js")
-    let actives=Include("include/actives.js")
-
     App.Data.Automata=[]
     App.Automaton={}
     App.Automaton.Current=function(){
@@ -86,30 +83,10 @@
     App.ResponseReady=function(){
         App.Response("core","state.response")
     }
-    App.NewActive=function(location,cmd,final,nobusy){
-        return new active(location,cmd,final,nobusy)
-    }
-    App.NewPatrolActive=function(location,cmd,final,nobusy){
-        if (location){
-            location=App.API.ConvertPath(location)
-        }
-        return new active(location,cmd,final,nobusy).WithModeState("core.state.active.patrol")
-    }
-    
-    App.RegisterState(new (Include("core/state/active/activeexecute.js"))())
-    App.RegisterState(new (Include("core/state/active/activemove.js"))())
-    App.RegisterState(new (Include("core/state/active/activepatrol.js"))())
-
     App.Wait=function(delay,final){
         let a=App.Automaton.Push(["wait"],final).WithData("Delay",delay)
         App.Next()        
     }
     App.RegisterState(new (Include("core/state/wait.js"))())
-    App.NewActives=function(activelist,final){
-        return new actives(activelist,final)
-    }
- 
-    App.RegisterState(new (Include("core/state/actives/activesready.js"))())
-    App.RegisterState(new (Include("core/state/actives/activesstep.js"))())
 
 })(App)

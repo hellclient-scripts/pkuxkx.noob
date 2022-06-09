@@ -8,8 +8,12 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
         let data = App.Data.Traversal.Answer.split("||")
-        let a = App.NewActive(data[1], "", "core.state.traversal.arrive", true)
-        a.Start()
+        App.Commands([
+            App.NewCommand("to",App.Options.NewWalk(data[1])),
+            App.NewCommand("nobusy"),
+            App.NewCommand("find",App.Options.NewFind(data[3],App.Core.Traversal.GetGoal())),
+        ]).Push()
+        App.Next()
     }
     return State
 })(App)

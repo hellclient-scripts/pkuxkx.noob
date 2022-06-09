@@ -8,9 +8,13 @@
     StateGoods.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let item=App.GetContext("Item")
-        let a=App.NewActive(item.Location,item.Command,"",true)
-        a.WithData(item)
-        a.Start()
+        App.Commands([
+            App.NewCommand("to",App.Options.NewWalk(App.GetParam("item.Location"))),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do",item.Command),
+            App.NewCommand("nobusy"),
+        ]).Push()
+        App.Next()
     }
     return StateGoods
 })(App)

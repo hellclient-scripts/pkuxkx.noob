@@ -27,6 +27,7 @@
     App.RegisterCommand(Include("core/command/do.js"))
     App.RegisterCommand(Include("core/command/nobusy.js"))
     App.RegisterCommand(Include("core/command/patrol.js"))
+    App.RegisterCommand(Include("core/command/find.js"))
     App.RegisterCommand(Include("core/command/to.js"))
     App.RegisterCommand(Include("core/command/state.js"))
     App.RegisterCommand(Include("core/command/commands.js"))

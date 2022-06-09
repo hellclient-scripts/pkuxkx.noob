@@ -7,8 +7,14 @@
         }
         this.Execute=function(){
             let cmd="qu "+App.GetParam("gold_withdraw")+" gold"
-            let active=App.NewActive(App.GetParam("bank_location"),cmd,"",true)
-            active.Start()
+
+            App.Commands([
+                App.NewCommand("to",App.Options.NewWalk(App.GetParam("bank_location"))),
+                App.NewCommand("nobusy"),
+                App.NewCommand("do",cmd),
+                App.NewCommand("nobusy"),
+            ]).Push()
+            App.Next()
         }
     }
     App.RegisterProposal(new Cash())
