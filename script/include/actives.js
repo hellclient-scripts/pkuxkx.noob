@@ -6,9 +6,12 @@
         }
         this.Final=final
     }
-    Actives.prototype.Start=function(){
+    Actives.prototype.Push=function(){
         let a=App.Automaton.Push(["core.state.actives.ready"],this.Final)
         a.WithData("Actives",this.Actives)
+    }
+    Actives.prototype.Start=function(){
+        this.Push()
         App.Next()
     }
     return Actives

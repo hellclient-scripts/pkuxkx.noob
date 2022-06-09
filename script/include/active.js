@@ -38,6 +38,10 @@
     }
     
     Active.prototype.Start=function(final){
+        this.Push(final)
+        App.Next()
+    }
+    Active.prototype.Push=function(final){
         if (final){
             this.FinalState=final
         }
@@ -61,7 +65,6 @@
         if (a.FailState!=""){
             a.WithFailState(this.FailState)
         }
-        App.Next()
     }
     return Active
 })(App)

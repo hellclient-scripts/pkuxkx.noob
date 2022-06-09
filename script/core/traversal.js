@@ -22,9 +22,24 @@
         grid.setmaxpage(Math.ceil(count / pagesize))
         grid.publish("")
     }
+    App.Core.Traversal.New=function(){
+        App.Data.Traversal={}
+    }
     App.Traversal=function(){
+        App.Core.Traversal.New()
+        App.Core.Traversal.Prompt()
+    }
+    App.Core.Traversal.Finish=function(full){
+        let g=App.NewGoal().FindKnownRoom()
+        if (!full){
+            g.FindKnownRoom()
+        }
+        App.LastMove.WithData(g).Continue()
+    }
+    App.Core.Traversal.Prompt=function(){
         App.Push(["core.state.traversal.manual"])
         App.Next()
+
     }
     App.Core.Traversal.Start=function(){
         App.Push(["core.state.traversal.traversal"])
@@ -48,6 +63,7 @@
         }
     }
     App.Core.Traversal.PromptTarget = function (key, title, desc, output) {
+        App.Raise("traversal.prompttarget")
         let vp = Userinput.newvisualprompt(title + " [ " + key + " ]", desc, output)
         vp.setmediatype("output")
         vp.publish("App.Core.Traversal.OnTarget")
@@ -70,6 +86,7 @@
         }
     }
     App.Core.Traversal.PickType = function () {
+        App.Raise("traversal.picktype")
         var List = Userinput.newlist("类型", "请选择你的遍历类型", false)
         List.append("room", "寻找房间")
         List.append("objid", "寻找对象id")
@@ -112,7 +129,7 @@
         App.Data.Traversal.Title = title
         App.Data.Traversal.Desc = desc
         App.Data.Traversal.Answer = ""
-        App.Raise("puzzle")
+        App.Raise("traversal.show")
         if (App.Data.Traversal.Silence) {
             return
         }
