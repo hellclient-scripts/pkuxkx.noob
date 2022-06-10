@@ -11,6 +11,7 @@
         this.OnRoom=""
         this.StartCmd=""
         this.FromRoom=""
+        this.Ignore=false
         this.Vehicle=""
     }
     Move.prototype.Push=function(final){

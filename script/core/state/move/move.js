@@ -37,8 +37,12 @@
         if (!step){
             step=move.Current
         }
+        let maze=App.Core.Maze.LoadMaze(step.Command)
+        if (maze){
+            maze.Explore(this)
+            return
+        }
         move.FromRoom=App.Data.Room.ID
-        App.Data.Room.ID=""
         this.Go(step.Command)
     }
     return StateMove

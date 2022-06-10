@@ -20,7 +20,15 @@
         }
         return this.Moving[0]
     }
-    Walk.prototype.Arrive=function(){
+    Walk.prototype.Arrive=function(move){
+        let current=move.Current.Command
+        if (current){
+            let maze=App.Core.Maze.LoadMaze(current)
+            if (maze && !maze.IsEscaped(move)){
+                maze.Explore(move)
+                return
+            }
+        }
         return this.Moving.shift()
     }
     return Walk

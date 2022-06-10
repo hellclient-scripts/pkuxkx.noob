@@ -63,6 +63,22 @@
         }
         return false
     }
+    App.HasRoomExit=function(exit){
+        for(var i in App.Data.Room.Exits){
+            if (exit==App.Data.Room.Exits[i]){
+                return true
+            }
+        }
+        return false 
+    }
+    App.HasRoomExits=function(exits){
+        for(var i in exits){
+            if (!App.HasRoomExit(exits[i])){
+                return true
+            }
+        }
+        return true
+    }
     App.Core.OnRoomObjEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("roomobj",false)
         App.Raise("OnRoomEnd")

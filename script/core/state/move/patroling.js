@@ -39,6 +39,13 @@
     }
     StatePatroling.prototype.Move=function(){
         let move=App.GetContext("Move")
+        if (move.Current){
+            let maze=App.Core.Maze.LoadMaze(move.Current.Command)
+            if (maze && !maze.IsEscaped(move)){
+                this.TryMove()
+                return
+            }
+        }
         move.Current = move.Context.Move()
         if (move.Current == null) {
             this.Finish()

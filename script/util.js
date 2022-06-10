@@ -2,7 +2,7 @@ var RandomInt=function(max){
     if (max<1){
         throw "random error"
     }
-    return Math.floor(Math.random()*(max-1))
+    return Math.floor(Math.random()*max)
 }
 var RandomList=function(list){
     let index=RandomInt(list.length)

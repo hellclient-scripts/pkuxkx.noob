@@ -51,10 +51,10 @@
                 break
             }
         }
-        
+        let self=this
         move.Context.Moving.forEach(function (step) {
             move.Current=step
-            App.Go(step.Command)
+            self.TryMove(step)
         })
     }
     StateWalking.prototype.Finish=function(){
@@ -77,7 +77,7 @@
         if (move.OnRoom){
             App.ExeuteCallback(move.OnRoom,move)
         }
-        move.Context.Arrive()
+        move.Context.Arrive(move)
         if (move.Context.Moving.length == 0){
             this.Move()
         }
