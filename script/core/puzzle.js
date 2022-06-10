@@ -15,6 +15,7 @@
         App.Data.Puzzle.Answer=""
         App.Raise("puzzle")
         if (App.Data.Puzzle.Silence){
+            Note("静默模式")
             return
         }
         let vp=Userinput.newvisualprompt(title+" [ "+key+" ]",desc,output)
@@ -37,6 +38,7 @@
         App.Data.Puzzle.Answer=""
         App.Raise("puzzletext")
         if (App.Data.Puzzle.Silence){
+            Note("静默模式")
             return
         }
         let vp=Userinput.newvisualprompt(title+" [ "+key+" ]",desc,text)

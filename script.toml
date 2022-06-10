@@ -789,6 +789,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1dtqml4729l356tn69ph"
+  Name = "wd.chanting.book2"
+  Enabled = true
+  Match = "\\n()第(.+)章.*\\n================================================================\\n((==\\s+\\S*\\s+==\\n){2,10})================================================================\\n(\\S+)\\s+第(.+)页/总(.+)页\\n上一页\\(pageup\\)/下一页\\(pagedown\\)\\s+诵经\\(chanting\\)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Quest.WD.Chanting.OnBook2"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = true
+  LinesToMatch = 15
+  WildcardLowerCase = false
+  Group = "quest.wd"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true

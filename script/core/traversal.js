@@ -64,11 +64,20 @@
     }
     App.Core.Traversal.PromptTarget = function (key, title, desc, output) {
         App.Raise("traversal.prompttarget")
+        if (App.Data.Traversal.Silence){
+            Note("静默模式")
+            return
+        }
         let vp = Userinput.newvisualprompt(title + " [ " + key + " ]", desc, output)
         vp.setmediatype("output")
         vp.publish("App.Core.Traversal.OnTarget")
     }
     App.Core.Traversal.PromptTargetText = function (key, title, desc, lines) {
+        App.Raise("traversal.prompttarget")
+        if (App.Data.Traversal.Silence){
+            Note("静默模式")
+            return
+        }
         let vp = Userinput.newvisualprompt(title + " [ " + key + " ]", desc, lines?lines:"")
         vp.setmediatype("text")
         vp.publish("App.Core.Traversal.OnTarget")
@@ -87,6 +96,10 @@
     }
     App.Core.Traversal.PickType = function () {
         App.Raise("traversal.picktype")
+        if (App.Data.Traversal.Silence){
+            Note("静默模式")
+            return
+        }
         var List = Userinput.newlist("类型", "请选择你的遍历类型", false)
         List.append("room", "寻找房间")
         List.append("objid", "寻找对象id")
@@ -130,7 +143,8 @@
         App.Data.Traversal.Desc = desc
         App.Data.Traversal.Answer = ""
         App.Raise("traversal.show")
-        if (App.Data.Traversal.Silence) {
+        if (App.Data.Traversal.Silence){
+            Note("静默模式")
             return
         }
         Grid = Userinput.newdatagrid(title + " [ " + key + " ]", desc)

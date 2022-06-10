@@ -1,7 +1,6 @@
 (function(App){
     App.Quest.WD.Caiqi={}
-    App.Quest.WD.Chanting.Start=function(location,book,label,section){
-        App.Quest.WD.Chanting.NewQuest(location,book,label,section)
+    App.Quest.WD.Caiqi.Start=function(location,book,label,section){
         App.Push(["core.state.quest.wd.caiqi.caiqi"])
         App.Next()
     }

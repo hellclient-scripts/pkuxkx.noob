@@ -23,6 +23,7 @@
     }
     App.Core.Ask.OnAsk=function(name, output, wildcards){
         App.Data.Ask.Replies=[]
+        App.Data.Ask.Lines=[]
         App.Data.Ask.Time=Now()
         App.Core.Ask.LastNPC=""
         App.Core.Ask.LastQuestion=""
@@ -35,6 +36,7 @@
             world.EnableTriggerGroup("core.ask.reply",false)
         }else{
             App.Data.Ask.Replies.push(output)
+            App.Data.Ask.Lines.push(JSON.parse(DumpOutput(1))[0])
         }
         App.RaiseStateEvent("core.reply")
     }

@@ -24,7 +24,6 @@
             App.NewCommand("nobusy"),
             App.NewCommand("to",App.Options.NewWalk("wd")),
             App.NewCommand("ask",App.Quest.WD.QuestionSuccess),
-            App.NewCommand("ask",App.Quest.WD.QuestionCancel),
         ]).Push()
         App.Next()
     }

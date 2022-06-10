@@ -18,7 +18,6 @@
             App.NewCommand("ask",QuestionLiandan),
             App.NewCommand("patrol",App.Options.NewPath("w;w;s;s;s;s")),
             App.NewCommand("ask",App.Quest.WD.QuestionSuccess),
-            App.NewCommand("ask",App.Quest.WD.QuestionCancel),
         ]).Push()
         App.Next()
     }

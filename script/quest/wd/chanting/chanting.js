@@ -18,6 +18,15 @@
         App.Quest.WD.Chanting.Book.Max=CNumber.Convert(wildcards[6])
         App.RaiseStateEvent("quest.wd.chanting.onbook")
     }
+    App.Quest.WD.Chanting.OnBook2=function(name, output, wildcards){
+        App.Quest.WD.Chanting.Book={}
+        App.Quest.WD.Chanting.Book.Label=""
+        App.Quest.WD.Chanting.Book.Section=(CNumber.Convert(wildcards[1]))
+        App.Quest.WD.Chanting.Book.Content=wildcards[2]
+        App.Quest.WD.Chanting.Book.Name=wildcards[3]
+        App.Quest.WD.Chanting.Book.Max=CNumber.Convert(wildcards[6])
+        App.RaiseStateEvent("quest.wd.chanting.onbook")
+    }
     App.Quest.WD.Chanting.PageDown=function(offset){
         App.Quest.WD.Chanting.ChangePage(App.Quest.WD.Chanting.CurrentPage+offset)
     }
