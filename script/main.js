@@ -44,7 +44,7 @@ onBuffer=function(data){
 
     if (data.length==20){
         if (data[9].charCodeAt()==27&& data.slice(10,16)=="[1;36m"&&data[0].charCodeAt()==27&&data.slice(1,9)=="[2;37;0m"&&data.slice(-2)==".."){
-                //白色提示符
+                //白色提示符+诵经
                 return true
         }
     }

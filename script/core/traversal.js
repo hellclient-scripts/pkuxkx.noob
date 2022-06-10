@@ -30,7 +30,7 @@
         App.Core.Traversal.Prompt()
     }
     App.Core.Traversal.Finish=function(full){
-        let g=App.NewGoal().FindKnownRoom()
+        let g=App.NewGoal()
         if (!full){
             g.FindKnownRoom()
         }

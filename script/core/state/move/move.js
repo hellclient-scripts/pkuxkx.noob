@@ -43,6 +43,8 @@
             return
         }
         move.FromRoom=App.Data.Room.ID
+        App.Data.Room.ID=""
+
         this.Go(step.Command)
     }
     return StateMove
