@@ -33,5 +33,7 @@
     App.RegisterCommand(Include("core/command/commands.js"))
     App.RegisterCommand(Include("core/command/function.js"))
     App.RegisterCommand(Include("core/command/prepare.js"))
+    App.RegisterCommand(Include("core/command/quest.js"))
+    App.RegisterCommand(Include("core/command/quests.js"))
 
 })(App)

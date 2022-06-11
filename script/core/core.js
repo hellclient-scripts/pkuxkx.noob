@@ -28,3 +28,4 @@ App.Load("core/proposal.js")
 App.Load("core/puzzle.js")
 App.Load("core/traversal.js")
 
+App.Load("core/quest.js")

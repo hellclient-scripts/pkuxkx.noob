@@ -2,10 +2,8 @@
     let Quest=function(){
         this.ID=""
     }
-    Quest.prototype.IsEscaped=function(move){
-        return false
-    }
-    Quest.prototype.Explore=function(move){
+    Quest.prototype.Start=function(param){
+
     }
     return Quest
 })()

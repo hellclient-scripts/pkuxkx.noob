@@ -21,6 +21,7 @@
         "charset":"2",
         "initcmd":"set area_detail 1;set breif 2;",
         "echo":"t",
+        "questsdelay":"1",
     }
     App.InitParam=function(name,val){
         App.Params[name]=val

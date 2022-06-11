@@ -9,6 +9,10 @@
         App.Push(["core.state.quest.wd.chanting.chanting"])
         App.Next()
     }
+    App.Quest.WD.Chanting.OnBookFail=function(name, output, wildcards){
+        App.RaiseStateEvent("quest.wd.chanting.readfail")
+    }
+
     App.Quest.WD.Chanting.OnBook=function(name, output, wildcards){
         App.Quest.WD.Chanting.Book={}
         App.Quest.WD.Chanting.Book.Label=wildcards[0]

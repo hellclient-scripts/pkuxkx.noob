@@ -22,6 +22,7 @@
                 App.Quest.WD.Liandan.Start()
             break
             case "说道：「你已经很长时间没有fullme了，我看你是机器人吧！":
+                App.Core.Quest.Cooldown("wd",60000)
                 App.Fail()
             break
             case "说道：「今天全派弟子要在":
@@ -35,6 +36,7 @@
                 App.Quest.WD.Chanting.Start(output.Words[2].Text,output.Words[4].Text,data[1],data[2]-0)
             break
             default:
+                App.Core.Quest.Cooldown("wd",30000)
                 App.Fail()
                 return
         }

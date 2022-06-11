@@ -637,7 +637,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dtlot59dqrln72ev26av"
   Name = "wd.chanting.book"
   Enabled = true
-  Match = "\\n(\\S{1,4}·\\S{1,4}·\\S{1,5})\\((\\d+)\\)\\n================================================================\\n((==\\s+\\S*\\s+==\\n){2,10})================================================================\\n(\\S{1,4}·\\S{1,9})\\s+第(.+)页/总(.+)页\\n上一页\\(pageup\\)/下一页\\(pagedown\\)\\s+诵经\\(chanting\\)$"
+  Match = "\\n(\\S{1,15})\\((\\d+)\\)\\n================================================================\\n((==\\s+\\S*\\s+==\\n){2,10})================================================================\\n(\\S{1,4}·\\S{1,9})\\s+第(.+)页/总(.+)页\\n上一页\\(pageup\\)/下一页\\(pagedown\\)\\s+诵经\\(chanting\\)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -809,6 +809,37 @@ Channel = "pkuxkx.noob"
   Repeat = false
   MultiLine = true
   LinesToMatch = 15
+  WildcardLowerCase = false
+  Group = "quest.wd"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1dtsgkhlqijcu6tnurft"
+  Name = "App.Quest.WD.Chanting.OnBookFail"
+  Enabled = true
+  Match = "^这本.+一共只有.+页！$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Quest.WD.Chanting.OnBookFail"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
   WildcardLowerCase = false
   Group = "quest.wd"
   IgnoreCase = false
@@ -1039,7 +1070,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -1070,7 +1101,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。)$"
   Send = ""
   ColourChangeType = 0
@@ -1101,7 +1132,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -2318,10 +2349,33 @@ Channel = "pkuxkx.noob"
   OmitFromCommandHistory = false
 
 [[Aliases]]
+  ID = "quests"
+  Name = "quests"
+  Enabled = true
+  Match = "^#quests (.+)$"
+  Send = ""
+  Script = "App.Core.Quest.OnAliasQuests"
+  SendTo = 0
+  Sequence = 0
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
+[[Aliases]]
   ID = "queue"
   Name = "queue"
   Enabled = true
-  Match = "^#(to|do|delay|captcha) .*$"
+  Match = "^#(to|do|delay|captcha|quest) .*$"
   Send = ""
   Script = "App.Core.OnAliasQueue"
   SendTo = 0
