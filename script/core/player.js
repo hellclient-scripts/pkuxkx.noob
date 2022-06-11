@@ -148,7 +148,7 @@
         App.Data.HP["exp"]=world.GetTriggerWildcard(name,"exp")-0
         App.Data.HP["pot"]=world.GetTriggerWildcard(name,"pot")-0
         App.Data.HP["neili"]=world.GetTriggerWildcard(name,"neili")-0
-        App.Data.HP["eff_neili"]=world.GetTriggerWildcard(name,"effneili")-0
+        App.Data.HP["eff_neili"]=world.GetTriggerWildcard(name,"eff_neili")-0
         App.Data.HP["jingli"]=world.GetTriggerWildcard(name,"jingli")-0
         App.Data.HP["eff_jingli"]=world.GetTriggerWildcard(name,"eff_jingli")-0
         App.Data.HP["qixue_cap"]=world.GetTriggerWildcard(name,"qixue_cap")-0
