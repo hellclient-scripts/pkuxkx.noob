@@ -9,7 +9,7 @@
         basicstate.prototype.Enter.call(this,context,oldstatue)
         let item=App.GetContext("Item")
         App.Commands([
-            App.NewCommand("to",App.Options.NewWalk(App.GetParam("item.Location"))),
+            App.NewCommand("to",App.Options.NewWalk(item.Location)),
             App.NewCommand("nobusy"),
             App.NewCommand("do",item.Command),
             App.NewCommand("nobusy"),

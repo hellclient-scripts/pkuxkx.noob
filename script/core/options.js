@@ -3,6 +3,7 @@
     let path=Include("include/option/path.js")
     let question=Include("include/option/question.js")
     let find=Include("include/option/find.js")
+    let prepare=Include("include/option/prepare.js")
 
     App.Options={}
     App.Options.NewWalk=function(target,vehicle){
@@ -16,5 +17,8 @@
     }
     App.Options.NewFind=function(path,goal,vehicle){
         return new find(path,goal,vehicle)
+    }
+    App.Options.NewPrepare=function(level,items,group){
+        return new prepare(level,items,group)
     }
 }(App))

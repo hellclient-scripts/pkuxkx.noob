@@ -1,6 +1,4 @@
 (function (App) {
-    let prepare=Include("include/prepare.js")
-
     App.Proposals = {}
     App.ProposalGroups = {}
     App.RegisterProposal = function (proposal) {
@@ -20,6 +18,7 @@
                 throw "提案 [" + proposals[i] + "] 没找到"
             }
             if (proposal.Submit()) {
+                Note("提案"+proposal.ID+"被接受")
                 return proposal
             }
         }
@@ -52,12 +51,7 @@
     App.TryProposals = function (proposals) {
         return try_proposals(proposals)
     }
-    App.NewPrepare=function(level,items,group){
-        return new prepare(level,items,group)
-    }
-    App.StartFullPrepare=function(final){
-        this.NewPrepare(App.CheckLevelFull,["prepare"],true).Start(final)
-    }
+    App.PrapareFull=App.Options.NewPrepare(App.CheckLevelFull,["prepare"],true)
     Include("core/proposal/cash.js")
     Include("core/proposal/food.js")
     Include("core/proposal/drink.js")

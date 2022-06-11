@@ -21,15 +21,17 @@
             case "说道：「武当三侠最近迷上了炼丹，需要一个道童帮他看守丹炉，你到俞岱岩那里帮他看看炉火吧。":
                 App.Quest.WD.Liandan.Start()
             break
+            case "说道：「你已经很长时间没有fullme了，我看你是机器人吧！":
+                App.Fail()
+            break
             case "说道：「今天全派弟子要在":
                 let label=output.Words[6].Text
                 let data
                 if (label[0]=="第"){
-                    data=["",CNumber.Convert(label.slice(1).split("章",1))]
+                    data=["",CNumber.Convert(label.slice(1).split("章",1)[0])]
                 }else{
                     data=label.match(re)
                 }
-                Dump(data)
                 App.Quest.WD.Chanting.Start(output.Words[2].Text,output.Words[4].Text,data[1],data[2]-0)
             break
             default:
@@ -43,6 +45,7 @@
         App.Quest.WD.Zhen.Back=App.Quest.WD.Zhen.Locations[App.Quest.WD.Zhen.Dir]
 
         App.Commands([
+            App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("to",App.Options.NewWalk("wd")),
             App.NewCommand("ask",App.Quest.WD.QuestionCancel),
             App.NewCommand("ask",App.Quest.WD.QuestionQuest),

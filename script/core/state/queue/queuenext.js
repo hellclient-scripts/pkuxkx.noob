@@ -16,7 +16,8 @@
         let current = new Directive(str)
         switch (current.Command) {
             case "#prepare":
-                App.StartFullPrepare(this.ID)
+                App.NewCommand('prepare',App.PrapareFull).WithFinalState("core.state.queue.next").Push()
+                App.Next()
                 break
             case "#to":
                 let c = new Directive(current.Data)
