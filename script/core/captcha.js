@@ -22,6 +22,10 @@
         a.WithData("type",type)
         App.Next()
     }
+    App.Core.CaptchaFullme=function(){
+     App.NewCommand("fullme").Push()
+     App.Next()
+    }
     App.Core.CaptchaLoad=function(){
         App.Core.CaptchaReq=HTTP.New("GET",App.Data.CaptchaCurrentURL)
         App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
@@ -39,15 +43,13 @@
             App.Core.CaptchaShow(url)
         }
     }
-    App.Core.CaptchaFullme=function(){
+    App.Core.SendFullme=function(){
         App.Data.CaptchaURLs["fullme"]=""
         App.Send("fullme 1;fullme 1;fullme 1;fullme")
         App.Response("core","captchafullme")
     }
     App.RegisterCallback("core.captchafullme",function(){
-        let a=App.Automaton.Push(["core.state.captcha.fullme"])
-        a.WithData("index",0)
-        App.Next()
+        App.RaiseStateEvent("core.state.captcha.fullme")
     })
     App.Bind("Response.core.captchafullme","core.captchafullme")
 
@@ -101,5 +103,6 @@
 
     App.RegisterState(new (Include("core/state/captcha/captcha.js"))())
     App.RegisterState(new (Include("core/state/captcha/fullme.js"))())
+    App.RegisterState(new (Include("core/state/captcha/fullmestart.js"))())
 
 })(App)

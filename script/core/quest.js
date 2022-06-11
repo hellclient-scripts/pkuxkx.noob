@@ -34,6 +34,7 @@
             App.Fail()
             return
         }
+        App.Stopped=false
         quest.Start(param)
     }
     App.Core.Quest.SetQuests=function(queue){
@@ -52,4 +53,6 @@
     App.RegisterState(new (Include("core/state/quests/fail.js"))())
 
     App.RegisterQuest(new (Include("core/quest/wd.js"))())
+    App.RegisterQuest(new (Include("core/quest/fullme.js"))())
+
 })(App)

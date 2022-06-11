@@ -1,12 +1,12 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
-    let StateCaptcha=function(){
+    let State=function(){
         basicstate.call(this)
         this.ID="core.state.captcha.captcha"
 
     }
-    StateCaptcha.prototype = Object.create(basicstate.prototype)
-    StateCaptcha.prototype.Enter=function(context,oldstatue){
+    State.prototype = Object.create(basicstate.prototype)
+    State.prototype.Enter=function(context,oldstatue){
         this.Type=App.GetContext("type")
         switch (this.Type){
             case "工号":
@@ -23,10 +23,10 @@
         App.Raise("captcha")
         App.Core.CaptchaLoad()
     }
-    StateCaptcha.prototype.Leave=function(context,newstatue){
+    State.prototype.Leave=function(context,newstatue){
         Userinput.hideall()
     }
-    StateCaptcha.prototype.OnEvent=function(context,event,data){
+    State.prototype.OnEvent=function(context,event,data){
         switch(event){
             case "captcha.submit":
                 let code=App.Data.CaptchaCode
@@ -50,5 +50,5 @@
                 break
         }
     }
-    return StateCaptcha
+    return State
 })(App)

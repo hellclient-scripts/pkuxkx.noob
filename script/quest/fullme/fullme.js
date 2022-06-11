@@ -1,0 +1,14 @@
+(function(App){
+    App.Quest.Fullme={}
+    App.Quest.Fullme.Cooldown=function(){
+        App.Core.Quest.Cooldown("fullme",960000)
+        App.Next()
+    }
+    App.Quest.Fullme.Start=function(){
+        App.Commands([
+            App.NewCommand("fullme",null,"ready","ready"),
+            App.NewCommand("function",App.Quest.Fullme.Cooldown),
+        ]).Push()
+        App.Next()
+    }
+    })(App)
