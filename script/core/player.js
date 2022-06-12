@@ -107,6 +107,14 @@
             Type:App.Data.Skills._currentType,
         })
     }
+    App.Core.PlayerGetSkillByID=function(id){
+        App.Data.Skills.All.forEach(skill => {
+            if (skill.ID.toLowerCase()==id.toLowerCase()){
+                return skill
+            }
+        });
+        return null
+    }
     App.Core.OnPlayerSkillsEnd=function(name, output, wildcards){
         delete(App.Data.Skills["_currentType"],playerskills)
         App.Data.LastSkills=Now()
@@ -141,7 +149,7 @@
     }
     App.Data.LastHP=0
     App.Bind("Check","core.player.hp")
-    let checkHP=(new check("hp")).WithLevel(App.CheckLevelFull).WithCommand("hpbrief").WithIntervalParam("checkhpinterval").WithLastID("LastHP")
+    let checkHP=(new check("hp")).WithLevel(App.CheckLevelFull).WithCommand("yun recover;yun regenerate;hpbrief").WithIntervalParam("checkhpinterval").WithLastID("LastHP")
     App.RegisterCallback("core.player.hp",checkHP.Callback())
     App.Core.OnPlayerHpbrief=function(name, output, wildcards){
         App.Data.HP={}

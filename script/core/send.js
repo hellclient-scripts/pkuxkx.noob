@@ -4,10 +4,10 @@
     var _linesre = new RegExp("[^;\n]+", "g");
     var _groupre=new RegExp("[;\n]", "g");
     var _flags=".^"
-    App.Commands={}
+    App.Aliases={}
     //注册回调为命令
-    App.RegisterCommand=function(name,callback){
-        App.Commands[name]=callback
+    App.RegisterAlias=function(name,callback){
+        App.Aliases[name]=callback
     }
     //将命令转换为命令组形式
     App.GroupCmds=function(str){
@@ -52,8 +52,8 @@
                     }
                     //切分命令，#之后第一个空格之前的为指令，第一个空格后的为数据
                     let directive=new Directive(cmd.substr(1))
-                    if (App.Commands[directive.Command]){
-                        App.Callbacks[App.Commands[directive.Command]](directive.Data)
+                    if (App.Aliases[directive.Command]){
+                        App.Callbacks[App.Aliases[directive.Command]](directive.Data)
                         continue
                     }
                     //未注册命令，检测是否为#20 xxx格式

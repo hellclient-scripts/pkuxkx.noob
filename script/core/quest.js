@@ -55,5 +55,7 @@
     App.RegisterQuest(new (Include("core/quest/wd.js"))())
     App.RegisterQuest(new (Include("core/quest/fullme.js"))())
     App.RegisterQuest(new (Include("core/quest/dazuo.js"))())
+    App.RegisterQuest(new (Include("core/quest/dz.js"))())
+    App.RegisterQuest(new (Include("core/quest/study.js"))())
 
 })(App)

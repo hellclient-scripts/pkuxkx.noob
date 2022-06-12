@@ -2,10 +2,10 @@
     let basicquest=Include("include/quest.js")
     let Quest=function(){
         basicquest.call(this)
-        this.ID="dazuo"
+        this.ID="study"
     }
     Quest.prototype.Start=function(param){
-        App.Quest.Dazuo.Start(param)
+        App.Quest.Study.Start(param)
     }
     return Quest
 })(App)

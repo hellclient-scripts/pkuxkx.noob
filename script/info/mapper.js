@@ -63,6 +63,12 @@
                 case "Station":
                     options.Station = info[4]
                     break
+                case "Tags":
+                    options.Tags = info[4]
+                    break
+                case "Full":
+                    options.Full=info[4]
+                    break
             }
             addroom(info[0], info[1], options)
         });
@@ -78,6 +84,12 @@
         }
         if (data.Station) {
             App.Info.Stations[data.Station] = id
+        }
+        if (data.Tags) {
+            App.Info.Tags[data.Tags] = id
+        }
+        if (data.Full) {
+            App.Info.Full[data.Full] = id
         }
     }
     App.API.ResetMapper=function(){

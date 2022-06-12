@@ -6,7 +6,9 @@ yz||yzcg||||s;s;w||e;n;n
 yz||yzyp||||e;e;n||s;w;w
 yz||yzsy||||e;n||s;w
 yz||yzkd||||n;e||w;s
-yz||yz-cszh||||s;s;s;w||e;n;n;n
+yz||yz-sczh||||s;s;s;w||e;n;n;n
+yzkd||yz-kd2f||||u;enter||out;d
+yz-sczh||home||||#home||out
 yztj||yz-dtpns||||s||n
 yz||qfsm||||n;n;n;n;n;n;n;n;n;w||e;s;s;s;s;s;s;s;s;s
 yz||xin-nwh||||w;w;w;w;nw;w;w;w;w;w;s;w||e;n;e;e;e;e;e;se;e;e;e;e
@@ -41,7 +43,7 @@ xydp||wd-sm||||s;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;
 jksm||jzkd||||w;w;wu;wu;wd;sw;w;w;sw;nw||se;ne;e;e;ne;eu;ed;ed;e;e
 jksm||jk-ngf||||s;e;e;e;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;w;w;w;n
 jk-ngf||la||||e;se;se;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;nw;nw;w
-la-ywm||la||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
+la-yfm||la||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jx||la||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 sz||jx||||s;s;s;s;s;s;n;n;n;n;n;n
 wd-sqd||wd-sm||||ask song yuanqiao about 下山&&s;sd;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu;n

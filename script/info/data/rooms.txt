@@ -1,13 +1,15 @@
+home||玩家储存柜||||Tags||[玩家储物柜]
 yz||扬州广场||||Landmark||Rong shu
 yzqz||扬州钱庄||||Station||扬州钱庄
 yzdp||扬州当铺||||Landmark||Tang nan
 yztj||扬州铁匠||||Landmark||Wang tiejiang
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
-yz-cszh||盛昌总行||||Station||盛昌总行
+yz-sczh||盛昌总行||||Station||盛昌总行
 yzcg||春来茶馆||||Station||春来茶馆
 yzyp||扬州药铺||||Landmark||Ping yizhi
 yzsy||扬州书院||||Landmark||Fu zi
 yzkd||扬州客店||||Landmark||Tianshen suicong
+yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 qfsm||曲阜孔庙||||Station||孔庙
 xin-zhq||信阳镇淮桥||||Station||镇淮桥
@@ -40,7 +42,7 @@ nckd||偃月楼||||Station||偃月楼
 jksm||灵英观||||Station||灵英观
 jk-ngf||宁国府||||Station||宁国府
 la||大理寺||||Landmark||Jianghu tu
-la-ywm||岳飞墓||||Station||岳飞墓 
+la-yfm||岳飞墓||||Station||岳飞墓
 jx||嘉兴城||||Station||嘉兴城
 sz||沧浪亭||||Station||沧浪亭
 wd-sm||武当山门||||Station||武当山门

@@ -1,0 +1,24 @@
+(function(App){
+    App.Quest.DZ={}
+    App.Quest.DZ.Max=0
+    App.Quest.DZ.Check=function(){
+        if (App.Quest.DZ.Max>0&&App.Data.HP["neili"]>=App.Quest.DZ.Max){
+            App.Core.Quest.Cooldown("dz",900000)
+            App.Fail()
+            return
+        }
+        App.Next()
+    }
+    App.Quest.DZ.Start=function(max){
+        App.Quest.DZ.Max=max?(max-0):0
+        App.Commands([
+            App.NewCommand('prepare',App.PrapareFull),
+            App.NewCommand("function",App.Quest.DZ.Check),
+            App.NewCommand("to",App.Options.NewWalk(App.GetSafeRoom())),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do","dz"),
+            App.NewCommand("nobusy"),
+        ]).Push()
+        App.Next()
+    }
+    })(App)

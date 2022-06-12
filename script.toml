@@ -2462,3 +2462,23 @@ Channel = "pkuxkx.noob"
   ReverseSpeedwalk = false
   OmitFromOutput = false
   OmitFromCommandHistory = false
+
+[[RequiredParams]]
+  Name = "waitcmd"
+  Desc = "等待指令"
+  Intro = "等待时发送的指令，必须可以立刻halt"
+
+[[RequiredParams]]
+  Name = "quests"
+  Desc = "任务列表"
+  Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start后使用这个列表进行任务"
+
+[[RequiredParams]]
+  Name = "study"
+  Desc = "学习列表"
+  Intro = "回车或逗号分割的学习列表，格式为 技能1::学习指令1::位置1::对象1::最大等级1,技能2::学习指令2::位置2::对象2::最大等级2\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao\nfocre::lingwu\ntiyunzong::lian::dodge::home\ntaoiom::read::::jing"
+
+[[RequiredParams]]
+  Name = "home"
+  Desc = "home名字"
+  Intro = "储存柜的名字"
