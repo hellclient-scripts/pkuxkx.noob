@@ -28,7 +28,7 @@ var Before=function(time,duration){
         return fale
     }
     if (duration){
-        time=time-duration
+        time=time+duration
     }
     return Now()<time
 }

@@ -50,3 +50,4 @@ wd-sqd||wd-sm||||ask song yuanqiao about 下山&&s;sd;sd;wd;wd;sd;sd;e;sd;sd;sd;
 wd||wd-sqd||||n||s
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
 wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林向南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林向北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
+wd-kf||wd-sqd||||w;w||e;e

@@ -17,13 +17,16 @@
             App.Raise("MoveLost",this)
             return
         }
-        if (App.Data.Room.ID==move.Target){
-            App.Next()
-            return 
-        }
+
         var target = move.Target
         if (typeof (target) == "string") {
             target = [target]
+        }
+        for(var i=0;i<target.length;i++){
+            if (App.Data.Room.ID==target[i]){
+                App.Next()
+                return 
+            }   
         }
         var path = App.API.GetPath(App.Data.Room.ID, target,App.Vehicle.Fly)
         if (path == null) {

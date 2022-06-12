@@ -50,3 +50,4 @@ wd-sqd||三清殿||||Station||三清殿
 wd||武当广场||||Station||武当广场
 wd-tzfx||天柱峰下||||Station||天柱峰下
 wd-fzg2f||复真观二层||||Station||复真观二层
+wd-kf||武当客房||||||

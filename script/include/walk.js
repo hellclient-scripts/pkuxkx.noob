@@ -28,6 +28,7 @@
                 maze.Explore(move)
                 return
             }
+            App.Data.Room.ID=move.Current.Target
         }
         return this.Moving.shift()
     }

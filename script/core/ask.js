@@ -5,7 +5,7 @@
     App.Core.Ask.LastQuestion=""
     App.Data.Ask={}
     App.Core.Ask.MaxReply=10
-    App.Core.Ask=function(npc,question){
+    App.Core.AskQuestion=function(npc,question){
         App.Core.Ask.LastNPC=npc
         App.Core.Ask.LastQuestion=question
         App.Send("ask "+npc+" about "+question)
@@ -33,6 +33,7 @@
     }
     App.Core.Ask.OnReply=function(name, output, wildcards){
         if (App.Data.Ask.Replies.length>=App.Core.Ask.MaxReply){
+            Note("too many reply")
             world.EnableTriggerGroup("core.ask.reply",false)
         }else{
             App.Data.Ask.Replies.push(output)

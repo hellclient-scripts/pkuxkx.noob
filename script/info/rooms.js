@@ -2,6 +2,7 @@
     App.Info.BuiltinRooms=[]
     App.Info.UserRooms=[]
     App.Info.Rooms = {}
+    App.Info.SleepRooms=['wd-kf']
     App.Info.Stations = {}
     App.Info.Landmarks = {}
     App.Info.Tags={}

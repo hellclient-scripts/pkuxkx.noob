@@ -31,7 +31,6 @@
     StateWalking.prototype.Move=function(){
         let move=App.GetContext("Move")
         if (move.Context.Path.Length() == 0) {
-            App.Data.Room.ID=move.Target
             this.Finish()
             return
         }
