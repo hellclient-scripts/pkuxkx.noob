@@ -1,7 +1,7 @@
 (function(App){
     let Command=function(data){
         this.Data=data
-        this.ContextKey="data"
+        this.ContextKey="Data"
         this.Transitions=[]
         this.Final=""
         this.Fail=""

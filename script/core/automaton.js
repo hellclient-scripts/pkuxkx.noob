@@ -31,6 +31,13 @@
         }
         return App.Data.Automata.pop()
     }
+    App.Automaton.Import=function(automaton){
+        App.Data.Automata.push(automaton)
+        if (automaton.State){
+            App.ImportState(automaton.State)
+        }
+        
+    }
     App.Automaton.Finish=function(){
         let final=App.Automaton.Current().FinalState
         App.Data.Automata.pop()
@@ -49,7 +56,6 @@
         }else{
             App.ChangeState(fail)
         }
-        
     }
     App.Automaton.Flush=function(){
         App.Data.Automata=[]
@@ -75,6 +81,7 @@
     }
     App.GetContext=App.Automaton.GetContext
     App.SetContext=App.Automaton.SetContext
+    
     App.GetState("ready").Handler=auto
     App.Return=App.Automaton.Finish
     App.Fail=App.Automaton.Fail

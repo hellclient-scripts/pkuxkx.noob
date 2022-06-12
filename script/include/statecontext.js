@@ -12,6 +12,10 @@
         this.LastState=old
         this.State.Enter(this,old)
     }
+    StateContext.prototype.ImportState=function(newstatue){
+        this.State=newstatue
+    }
+
     StateContext.prototype.OnEvent=function(event,data){
         if (this.State){
             this.State.OnEvent(this,event,data)

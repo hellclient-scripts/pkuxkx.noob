@@ -50,6 +50,9 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
+    App.Core.OnMoveNotAllowed=function(name, output, wildcards){
+        App.RaiseStateEvent("move.notallowed")
+    }
     App.Core.OnMoveIgnore=function(name, output, wildcards){
         moved.splice(-1)
         App.RaiseStateEvent("move.ignore")

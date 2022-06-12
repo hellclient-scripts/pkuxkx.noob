@@ -25,4 +25,6 @@
     }
     App.RegisterMaze(new (Include("core/maze/wdmln.js"))())
     App.RegisterMaze(new (Include("core/maze/wdmls.js"))())
+    App.RegisterMaze(new (Include("core/maze/wdxs.js"))())
+
     })(App)

@@ -29,6 +29,17 @@
         }
         App.StateContext.ChangeState(state)
     }
+    App.ImportState=function(id){
+        let state=App.GetState(id)
+        if (logState){
+            Note("State log:import state ["+id+"]")
+        }
+        App.StateContext.ImportState(state)
+
+    }
+    App.CurrentState=function(){
+        return App.StateContext.State
+    }
     App.LastState=function(){
         return App.StateContext.LastState
     }
