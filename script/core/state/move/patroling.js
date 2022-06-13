@@ -23,6 +23,10 @@
         Move.prototype.Leave.call(this,context,newstatue)
     }
     StatePatroling.prototype.OnEvent=function(context,event,data){
+        let move=App.GetContext("Move")
+        if (move.OnMazeStateEvent(this,event)){
+            return
+        }
         switch(event){
             case "move.retry":
                 this.Retry()

@@ -16,6 +16,9 @@
     }
     StateMove.prototype.OnEvent=function(context,event,data){
         switch(event){
+            case "rollback":
+                App.LastMove=App.GetContext("Move")
+            break
             case "move.wrongway":
                 Note("路径错误")
                 App.Fail()

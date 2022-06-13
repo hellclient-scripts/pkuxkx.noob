@@ -9,9 +9,4 @@
         "desc":"做药队列",
         "cmd":"#prepare||#to yzyp||ask ping yizhi about 工作||n||peiyao||#afterbusy||#delay 5000||s||give cheng yao to ping yizhi||#loop"
     }
-    ,{
-        "label":"练功",
-        "desc":"练功队列，将需要练功的指令设为aliasliangong",
-        "cmd":"#prepare||#to yz-xjk||#do aliasliangong||#delay 1000||#afterbusy||#loop"
-    }
 ]

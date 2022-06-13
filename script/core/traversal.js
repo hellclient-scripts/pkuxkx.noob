@@ -22,11 +22,13 @@
         grid.setmaxpage(Math.ceil(count / pagesize))
         grid.publish("")
     }
-    App.Core.Traversal.New=function(){
-        App.Data.Traversal={}
+    App.Core.Traversal.New=function(keyword){
+        App.Data.Traversal={
+            Key:keyword?keyword:""
+        }
     }
     App.Traversal=function(){
-        App.Core.Traversal.New()
+        App.Core.Traversal.New("core.traversal.manual")
         App.Core.Traversal.Prompt()
     }
     App.Core.Traversal.Finish=function(full){
@@ -62,23 +64,23 @@
 
         }
     }
-    App.Core.Traversal.PromptTarget = function (key, title, desc, output) {
+    App.Core.Traversal.PromptTarget = function (title, desc, output) {
         App.Raise("traversal.prompttarget")
         if (App.Data.Traversal.Silence){
             Note("静默模式")
             return
         }
-        let vp = Userinput.newvisualprompt(title + " [ " + key + " ]", desc, output)
+        let vp = Userinput.newvisualprompt(title + " [ " + App.Data.Traversal.Key + " ]", desc, output)
         vp.setmediatype("output")
         vp.publish("App.Core.Traversal.OnTarget")
     }
-    App.Core.Traversal.PromptTargetText = function (key, title, desc, lines) {
+    App.Core.Traversal.PromptTargetText = function (title, desc, lines) {
         App.Raise("traversal.prompttarget")
         if (App.Data.Traversal.Silence){
             Note("静默模式")
             return
         }
-        let vp = Userinput.newvisualprompt(title + " [ " + key + " ]", desc, lines?lines:"")
+        let vp = Userinput.newvisualprompt(title + " [ " + App.Data.Traversal.Key + " ]", desc, lines?lines:"")
         vp.setmediatype("text")
         vp.publish("App.Core.Traversal.OnTarget")
     }
@@ -100,7 +102,7 @@
             Note("静默模式")
             return
         }
-        var List = Userinput.newlist("类型", "请选择你的遍历类型", false)
+        var List = Userinput.newlist("类型["+App.Data.Traversal.Key+"]", "请选择你的遍历类型", false)
         List.append("room", "寻找房间")
         List.append("objid", "寻找对象id")
         List.append("objname", "寻找对象名")
@@ -136,8 +138,7 @@
         }
         return g
     }
-    App.Core.Traversal.Show = function (key, title, desc) {
-        App.Data.Traversal.Key = key
+    App.Core.Traversal.Show = function (title, desc) {
         App.Data.Traversal.Silence = false
         App.Data.Traversal.Title = title
         App.Data.Traversal.Desc = desc
@@ -147,7 +148,7 @@
             Note("静默模式")
             return
         }
-        Grid = Userinput.newdatagrid(title + " [ " + key + " ]", desc)
+        Grid = Userinput.newdatagrid(title + " [ " + App.Data.Traversal.Key+" ]", desc)
         Grid.setpage(1)
         Grid.setfilter("")
         Grid.setonpage("App.Core.Traversal.OnPage")

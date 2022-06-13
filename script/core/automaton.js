@@ -31,13 +31,6 @@
         }
         return App.Data.Automata.pop()
     }
-    App.Automaton.Import=function(automaton){
-        App.Data.Automata.push(automaton)
-        if (automaton.State){
-            App.ImportState(automaton.State)
-        }
-        
-    }
     App.Automaton.Finish=function(){
         let final=App.Automaton.Current().FinalState
         App.Data.Automata.pop()

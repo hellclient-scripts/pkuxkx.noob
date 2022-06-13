@@ -12,10 +12,25 @@
         return true
     }
     Maze.prototype.Explore=function(move){
-        let current=App.Automaton.Current()
-        App.Push(["core.state.maze.wdxs"]).WithData("Automaton",current)
-        App.Next()
+            App.Go("sd")
     }
-    App.RegisterState(new (Include("core/state/maze/wdxs/wdxs.js"))())
+    Maze.prototype.OnStateEvent=function(move,state,event,data){
+        switch (event){
+            case "move.notallowed":
+                let snap=App.Core.Snapshot.Take("move.retry")
+                App.Commands([
+                    App.NewCommand("patrol",App.Options.NewPath("n")),
+                    App.NewCommand("do","ask song yuanqiao about 下山"),
+                    App.NewCommand("patrol",App.Options.NewPath("s")),
+                    App.NewCommand("function",function(){
+                        App.Core.Snapshot.Rollback(snap)
+                    }),
+                ]).Push()
+                App.Next()
+                return true
+                break;
+        }
+        return false
+    }
     return Maze
 })(App)

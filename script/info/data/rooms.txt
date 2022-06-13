@@ -51,3 +51,9 @@ wd||武当广场||||Station||武当广场
 wd-tzfx||天柱峰下||||Station||天柱峰下
 wd-fzg2f||复真观二层||||Station||复真观二层
 wd-kf||武当客房||||||
+hsc||打谷场||||Station||打谷场
+yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
+hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west
+ly-hlg||虎牢关||||Station||虎牢关
+dls-hzd||猴子洞||||Station||猴子洞
+dls-zpgc||赞普广场||||Station||赞普广场

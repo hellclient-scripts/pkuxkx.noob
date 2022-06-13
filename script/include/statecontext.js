@@ -12,7 +12,7 @@
         this.LastState=old
         this.State.Enter(this,old)
     }
-    StateContext.prototype.ImportState=function(newstatue){
+    StateContext.prototype.RollbackState=function(newstatue){
         this.State=newstatue
     }
 

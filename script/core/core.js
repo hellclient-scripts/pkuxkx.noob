@@ -20,7 +20,7 @@ App.Load("core/auth.js")
 App.Load("core/captcha.js")
 App.Load("core/ask.js")
 App.Load("core/sleep.js")
-
+App.Load("core/snapshot.js")
 App.Load("core/task.js")
 App.Load("core/command.js")
 

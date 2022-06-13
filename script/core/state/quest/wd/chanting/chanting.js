@@ -1,7 +1,7 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
     let find=function(){
-        App.Core.Traversal.New()
+        App.Core.Traversal.New("quest.wd.chanting")
         App.Data.Traversal.Type="room"
         App.Data.Traversal.Target=App.Quest.WD.Chanting.Quest.Location
         App.Core.Traversal.Prompt()
