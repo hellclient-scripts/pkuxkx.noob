@@ -30,4 +30,6 @@
     App.RegisterMaze(new (Include("core/maze/wdml.js"))())
     App.RegisterMaze(new (Include("core/maze/wdxs.js"))())
     App.RegisterMaze(new (Include("core/maze/gbmd.js"))())
+    App.RegisterMaze(new (Include("core/maze/mlsl.js"))())
+    
     })(App)

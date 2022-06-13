@@ -27,7 +27,6 @@ ly-wxl||望星楼||||Station||望星楼
 cakd||长安三秦客栈||||Station||三秦客栈
 cayp||长安千金堂||||Station||千金堂
 ca-hz||汉中||||Station||汉中
-cdkd||成都悦来客店||||Station||悦来客店
 yy-yyl||岳阳楼||||Station||岳阳楼
 jz-xyl||浔阳楼||||Station||浔阳楼
 xin-xcz||小池镇||||Station||小池镇
@@ -57,3 +56,11 @@ hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northe
 ly-hlg||虎牢关||||Station||虎牢关
 dls-hzd||猴子洞||||Station||猴子洞
 dls-zpgc||赞普广场||||Station||赞普广场
+wdj||五毒教广场||||Landmark||Gushen ta
+wdj-jsdd||金蛇大殿||||Station||金蛇大殿
+wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
+km-yxs||月兴盛||||Station||月兴盛
+bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘点]enter,west
+dl-thj||大理太和居||||Station||太和居
+tls-sj||天龙寺山脚||||Station||天龙寺山脚
+cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
