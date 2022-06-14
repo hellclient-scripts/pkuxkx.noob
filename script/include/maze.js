@@ -8,6 +8,9 @@
     }
     Maze.prototype.Explore=function(move){
     }
+    Maze.prototype.Init=function(){
+    }
+
     Maze.prototype.OnStateEvent=function(move,state,event,data){
         return false
     }

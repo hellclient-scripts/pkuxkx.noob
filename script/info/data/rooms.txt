@@ -64,3 +64,11 @@ bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘
 dl-thj||大理太和居||||Station||太和居
 tls-sj||天龙寺山脚||||Station||天龙寺山脚
 cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
+wdj-lgxs-s||雷公西山南入口||||Full||山间路[门派] [存盘点]north,southdown
+wdj-lgxs-e||雷公西山东入口||||Full||山间路[门派] [存盘点]eastdown,west
+wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
+wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,south
+wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
+wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
+hmz||黑苗苗王殿前||||Station||苗王殿前
+wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown

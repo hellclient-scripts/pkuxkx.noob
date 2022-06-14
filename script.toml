@@ -47,7 +47,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！)$"
   Send = ""
   ColourChangeType = 0
@@ -388,7 +388,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dsqn6aj6ul227178naki"
   Name = "room_exits2"
-  Enabled = true
+  Enabled = false
   Match = "^    这里明显的(方向|出口)有 (.*\\n.*和 .+)。$"
   Send = ""
   ColourChangeType = 0
@@ -758,37 +758,6 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
-  ID = "d1dto03skc2mdm72f03b9f"
-  Name = ""
-  Enabled = true
-  Match = "^\\[命令进入缓冲\\]$"
-  Send = " "
-  ColourChangeType = 0
-  Colour = 0
-  Wildcard = 0
-  SoundFileName = ""
-  SoundIfInactive = false
-  Script = ""
-  SendTo = 0
-  Sequence = 100
-  ExpandVariables = false
-  Temporary = false
-  OneShot = false
-  Regexp = true
-  Repeat = false
-  MultiLine = false
-  LinesToMatch = 0
-  WildcardLowerCase = false
-  Group = "system"
-  IgnoreCase = false
-  KeepEvaluating = true
-  OmitFromLog = false
-  OmitFromOutput = false
-  Inverse = false
-  Italic = false
-  Variable = ""
-
-[[Triggers]]
   ID = "d1dtqml4729l356tn69ph"
   Name = "wd.chanting.book2"
   Enabled = true
@@ -977,7 +946,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1du1s6fu86mhs546bld"
   Name = "room_exits3"
-  Enabled = true
+  Enabled = false
   Match = "^    这里明显的(方向|出口)有 (.*和.*\\n.*)。$"
   Send = ""
   ColourChangeType = 0
@@ -2093,7 +2062,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "room_exits"
   Name = "room_exits"
-  Enabled = true
+  Enabled = false
   Match = "^    这里明显的(方向|出口)有 (.* 和 .+)。$"
   Send = ""
   ColourChangeType = 0
@@ -2124,7 +2093,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "room_noexit"
   Name = "room_noexit"
-  Enabled = true
+  Enabled = false
   Match = "^    这里没有任何明显的(出口)。()$"
   Send = ""
   ColourChangeType = 0
@@ -2155,7 +2124,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "room_onlyexit"
   Name = "room_onlyexit"
-  Enabled = true
+  Enabled = false
   Match = "^    这里唯一的(出口|方向)有 (.*)。$"
   Send = ""
   ColourChangeType = 0
@@ -2341,7 +2310,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "room_desc"
   Name = "room_desc"
-  Enabled = true
+  Enabled = false
   Match = "^.*$"
   Send = ""
   ColourChangeType = 0

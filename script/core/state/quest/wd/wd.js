@@ -35,6 +35,7 @@
                 }
                 App.Quest.WD.Chanting.Start(output.Words[2].Text,output.Words[4].Text,data[1],data[2]-0)
             break
+            case "说道：「山下双井子村的崔老汉似乎有点麻烦，你现在下山一趟帮他解决麻烦。":
             default:
                 App.Core.Quest.Cooldown("wd",30000)
                 App.Fail()

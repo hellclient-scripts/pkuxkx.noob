@@ -1,31 +1,32 @@
+"use strict";
 world.Note("加载pkuxkx.noob机器人")
-onOpen=function (){
+var onOpen=function (){
 
 }
 
-onClose=function (){
+var onClose=function (){
 
 }
 
-onConnected=function (){
+var onConnected=function (){
     App.Raise("Connected")
 }
 
-onDisconnected=function (){
+var onDisconnected=function (){
 
 }
 
-onAssist=function(){
+var onAssist=function(){
     App.UIAssistantShow()
 }
 
-onBroadcast=function(msg,global,channel,global){
+var onBroadcast=function(msg,global,channel){
     
 }
-onResponse=function(msgtype,id,data){
+var onResponse=function(msgtype,id,data){
     App.onResponse(msgtype,id,data)
 }
-onBuffer=function(data){
+var onBuffer=function(data){
     if (data.length==2){
         //提示符
         return data=="> "

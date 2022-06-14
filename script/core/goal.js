@@ -39,10 +39,11 @@
                 this.Found=App.HasRoomObjName(this.Target)
                 break
             case "desc":
-                this.Found = (App.Data.Room.Desc.indexOf(this.Target) >= 0)
+                this.Found = (App.Core.RoomDesc.Desc.indexOf(this.Target) >= 0)
                 break
             case "known":
                 this.Found=(App.Data.Room.ID!="")
+                break
         }
     }
     return Goal

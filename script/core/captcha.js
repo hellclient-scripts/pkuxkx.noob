@@ -5,11 +5,11 @@
     App.Data.CaptchaCountSuccess=0
     App.Data.CaptchaCountFail=0
     App.Data.CaptchaCurrentURL=""
-    App.Core.CatpchaLastURL=""
+    App.Data.CatpchaLastURL=""
     App.Core.CaptchaReq=null
 
     App.API.CaptchaSaveURL=function(type){
-        App.Data.CaptchaURLs[type]=App.Core.CatpchaLastURL
+        App.Data.CaptchaURLs[type]=App.Data.CatpchaLastURL
     }
     App.Core.CaptchaLoadURL=function(type){
         App.Data.CaptchaCurrentURL=App.Data.CaptchaURLs[type]
@@ -70,7 +70,7 @@
         }
     }
     App.Core.CaptchaOnURL=function(name, output, wildcards){
-        App.Core.CatpchaLastURL=wildcards[0]
+        App.Data.CatpchaLastURL=wildcards[0]
     }
     App.Core.CaptchaFullmeLater=function(name, output, wildcards){
         App.Data.CatpchaLastURL=""

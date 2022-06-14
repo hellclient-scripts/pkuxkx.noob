@@ -67,3 +67,10 @@ bmz-zzhsdm||km-yxs||||w;w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;
 km-yxs||dl-thj||||s;w;w;w;w;nw;w;nw;w;n;n;n;n;e||w;s;s;s;s;e;se;e;se;e;e;e;e;n
 dl-thj||tls-sj||||w;n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s;e
 cd||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
+wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
+wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown
+wdj-lgxs-e||wdj-lgds-w||||ed||w
+wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west
+hmz||wdj-swdsn-s||||n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s
+hmz||wdj-jbq||||n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s
+bmz-zzhsdm||wdj-swdsb-s||||w;w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e;e
