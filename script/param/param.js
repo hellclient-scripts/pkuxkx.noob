@@ -1,8 +1,8 @@
 (function(App){
     world.Note("加载系统参数");
     App.Params={
-        "tick":"550",
-        "cmdlimit":"5",
+        "tick":"1100",
+        "cmdlimit":"6",
         "cmdinterval":"50",
         "eatinterval":"10",
         "food":"gan liang",
