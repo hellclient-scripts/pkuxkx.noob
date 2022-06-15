@@ -10,7 +10,9 @@
     }
     Maze.prototype.Init=function(){
     }
-
+    Maze.prototype.Leave=function(){
+        App.Core.Maze.Last=""
+    }
     Maze.prototype.OnStateEvent=function(move,state,event,data){
         return false
     }

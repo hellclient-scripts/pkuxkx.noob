@@ -27,9 +27,6 @@
     }
     Maze.prototype.IsEscaped=function(move){
         let escaped=(this.CheckSuccess()&&this.Command)
-        if (escaped){
-            this.Command=null
-        }
         return escaped
     }
     Maze.prototype.Explore=function(move){

@@ -30,6 +30,9 @@
     App.Quest.WD.Zhen.OnFail=function(name, output, wildcards){
         App.RaiseStateEvent("quest.wd.zhen.fail")
     }
+    App.Quest.WD.Zhen.OnWrong=function(name, output, wildcards){
+        App.RaiseStateEvent("quest.wd.zhen.wrong")
+    }
     App.RegisterState(new (Include("core/state/quest/wd/zhen/zhen.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/zhen/enter.js"))())
 })(App)

@@ -45,10 +45,14 @@
         let move=App.GetContext("Move")
         if (move.Current){
             let maze=App.Core.Maze.LoadMaze(move.Current.Command)
-            if (maze && !maze.IsEscaped(move)){
-                this.TryMove()
-                return
-            }
+            if (maze ){
+                if (!maze.IsEscaped(move)){
+                    this.TryMove()
+                    return
+                 }else{
+                     maze.Leave()
+                 }
+             }
         }
         move.Current = move.Context.Move()
         if (move.Current == null) {

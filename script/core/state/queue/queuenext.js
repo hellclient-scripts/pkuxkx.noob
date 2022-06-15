@@ -61,7 +61,8 @@
                 if (!App.Stopped) {
                     queue.Remain = CloneArray(queue.Queue)
                 }
-                App.ChangeState("core.state.queue.loop")
+                App.NewCommand("delay", App.GetNumberParam("queuedelay")).WithFinalState("core.state.queue.next").Push()
+                App.Next()
                 break
             case "#captcha":
                 App.API.Captcha(current.Data, "core.state.queue.next", "core.state.queue.next")

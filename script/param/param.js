@@ -22,6 +22,7 @@
         "initcmd":"set area_detail 1;set breif 2;",
         "echo":"t",
         "questsdelay":"1",
+        "queuedelay":"1",
         "sleepdelay":"30000",
     }
     App.InitParam=function(name,val){

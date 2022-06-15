@@ -976,7 +976,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1du659ncnkd8j56sri1"
-  Name = "App.Core.OnBuffFull"
+  Name = "App.OnBuffFull"
   Enabled = true
   Match = "^\\[命令进入缓冲\\]$"
   Send = ""
@@ -985,7 +985,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.OnBuffFull"
+  Script = "App.OnBuffFull"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -1006,17 +1006,17 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
-  ID = "d1du6hl8ud97g672r4c3i9"
-  Name = "room_exitsfog"
-  Enabled = false
-  Match = "^    浓雾中你觉得似乎有(方向|出口)通往 (.*\\n.*和 .+)方向。$"
+  ID = "d1du6ti4vlkch372r4mtpq"
+  Name = "App.Quest.WD.Zhen.OnWrong"
+  Enabled = true
+  Match = "……你站错了方位，整个五行阵全都乱套了，大家只好都停下来！￥"
   Send = ""
   ColourChangeType = 0
   Colour = 0
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.OnRoomExits"
+  Script = "App.Quest.WD.Zhen.OnWrong"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -1027,7 +1027,7 @@ Channel = "pkuxkx.noob"
   MultiLine = false
   LinesToMatch = 0
   WildcardLowerCase = false
-  Group = "roomexit"
+  Group = "quest.wd"
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
@@ -1256,7 +1256,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -1287,7 +1287,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。)$"
   Send = ""
   ColourChangeType = 0
@@ -1318,7 +1318,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0

@@ -29,6 +29,9 @@
         case "quest.wd.zhen.fail":
             App.Next()
             break
+        case "quest.wd.zhen.wrong":
+            App.Fail()
+            break
         }
     }
 

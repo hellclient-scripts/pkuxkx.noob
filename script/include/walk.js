@@ -24,9 +24,13 @@
         let current=move.Current.Command
         if (current){
             let maze=App.Core.Maze.LoadMaze(current)
-            if (maze && !maze.IsEscaped(move)){
-                maze.Explore(move)
-                return
+            if (maze) {
+                if(!maze.IsEscaped(move)){
+                    maze.Explore(move)
+                    return
+                }else{
+                    maze.Leave()
+                }
             }
             App.Data.Room.ID=move.Current.Target
         }
