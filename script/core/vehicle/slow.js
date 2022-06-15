@@ -5,13 +5,6 @@
         this.ID="slow"
         this.MultiStep=false
         this.Fly=true
-        this.Sender=function(cmd){
-            if (App.GetMoved()<4){
-                App.Send(cmd)
-            }else{
-                App.RaiseStateEvent("move.retry")
-            }
-        }
     }
     Slow.prototype = Object.create(Vehicle.prototype)
     return Slow

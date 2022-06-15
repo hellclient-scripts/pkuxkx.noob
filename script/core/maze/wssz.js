@@ -2,7 +2,7 @@
     let Random=Include("core/maze/random.js")
     let Maze=function(param){
         Random.call(this,param)
-        this.ID="苗岭大山"
+        this.ID="万兽山庄"
     }
     Maze.prototype = Object.create(Random.prototype)
     Maze.prototype.CheckSuccess=function(){
@@ -11,7 +11,7 @@
         return info==data[1]      
     }
     Maze.prototype.CheckWrongway=function(){
-        return App.Data.Room.Tags=="[门派] [存盘点]"
+        return App.Data.Room.Name=="林间道"
     }
     return Maze
 })(App)

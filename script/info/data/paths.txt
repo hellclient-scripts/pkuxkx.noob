@@ -6,6 +6,7 @@ yz||yzcg||||s;s;w||e;n;n
 yz||yzyp||||e;e;n||s;w;w
 yz||yzsy||||e;n||s;w
 yz||yzkd||||n;e||w;s
+yz||yzsm||||n;n;w||e;s;s
 yz||yz-sczh||||s;s;s;w||e;n;n;n
 yzkd||yz-kd2f||||u;enter||out;d
 yz-sczh||home||||#home||out
@@ -74,3 +75,6 @@ wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]n
 hmz||wdj-swdsn-s||||n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s
 hmz||wdj-jbq||||n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s
 bmz-zzhsdm||wdj-swdsb-s||||w;w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e;e
+zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
+wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
+wssz-md-n||wssz-hm||||nw;nd;w||e;su;se

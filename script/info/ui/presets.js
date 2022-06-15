@@ -1,6 +1,6 @@
 (function(App){
     const pagesize=10
-let BuiltinpresetsGrid=Userinput.newdatagrid("预设任务","预设任务列表")
+let BuiltinpresetsGrid=Userinput.newdatagrid("预设动作","预设动作列表")
 BuiltinpresetsGrid.setonpage("App.InfoUIDataBuiltinpresetsGridOnPage")
 let publishgrid=function(grid,alldata){
     let page=grid.getpage()

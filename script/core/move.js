@@ -15,27 +15,38 @@
     App.NewMove = function (mode, target,data) {
         return new Move(mode,target,data)
     }
-    App.GetMoved=function(){
-        gc()
-        return moved.length
-    }
+
     var moved=[]
+    var movebuff=[]
     var gc=function(){
         newmoved=[]
         var now=(new Date()).getTime()
         moved.forEach(function(ts){
-            if ((now-ts)<500){
+            if ((now-ts)<600){
                 newmoved.push(ts)
             }
         })
         moved=newmoved
     }
+    
     App.RegisterCallback("core.move.gc", function () {
         gc()
-    })    
+        if (moved.length<3&&movebuff.length){
+            App.Send(movebuff.shift())
+            moved.push((new Date()).getTime())
+        }
+    })
+    App.SendToMoveBuff=function(cmd){
+        gc()
+        if (moved.length<3){
+            App.Send(cmd)
+            moved.push((new Date()).getTime())
+        }else{
+            movebuff.push(cmd)
+        }
+    }
     App.Bind("gc","core.move.gc")
     App.RegisterCallback("core.move.onroomobjend", function () {
-        moved.push((new Date()).getTime())
         App.RaiseStateEvent("move.onRoomObjEnd")
     })
     App.Bind("OnRoomEnd", "core.move.onroomobjend")

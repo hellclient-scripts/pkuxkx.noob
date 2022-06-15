@@ -11,9 +11,9 @@ yzsy||扬州书院||||Landmark||Fu zi
 yzkd||扬州客店||||Landmark||Tianshen suicong
 yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
+yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 qfsm||曲阜孔庙||||Station||孔庙
-xin-zhq||信阳镇淮桥||||Station||镇淮桥
-xin-nwh||南湾湖||||Station||南湾湖
+xin-nwh||信阳南湾湖||||Station||南湾湖
 zy-xcc||许昌城||||Station||许昌城
 zy-nyc||南阳城||||Station||南阳城
 xydp||襄阳当铺||||Station||襄阳当铺
@@ -72,3 +72,6 @@ wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,so
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 hmz||黑苗苗王殿前||||Station||苗王殿前
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
+wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
+wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
+wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west

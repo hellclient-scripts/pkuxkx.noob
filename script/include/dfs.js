@@ -20,7 +20,8 @@
    Next.prototype.Arrive=function(exits){
     let filtered=[]
     exits.forEach(exit => {
-        if (this.DFS.GetBackward(exit)){
+        let back=this.DFS.GetBackward(exit)
+        if (back && back!=this.Command){
             filtered.push(exit)
         }
     });
