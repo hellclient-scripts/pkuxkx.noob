@@ -61,6 +61,9 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
+    App.Core.OnBuffFull=function(name, output, wildcards){
+        App.RaiseStateEvent("move.retry")
+    }
     App.Core.OnMoveNotAllowed=function(name, output, wildcards){
         App.RaiseStateEvent("move.notallowed")
     }

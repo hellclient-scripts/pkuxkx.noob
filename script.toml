@@ -47,7 +47,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！)$"
   Send = ""
   ColourChangeType = 0
@@ -976,7 +976,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1du659ncnkd8j56sri1"
-  Name = "App.OnBuffFull"
+  Name = "App.Core.OnBuffFull"
   Enabled = true
   Match = "^\\[命令进入缓冲\\]$"
   Send = ""
@@ -985,7 +985,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.OnBuffFull"
+  Script = "App.Core.OnBuffFull"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -1256,7 +1256,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -1287,7 +1287,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。)$"
   Send = ""
   ColourChangeType = 0
@@ -1318,7 +1318,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
