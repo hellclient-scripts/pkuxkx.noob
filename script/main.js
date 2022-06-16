@@ -56,7 +56,9 @@ var onBuffer=function(data){
     }
     return false
 }
-
+var onHUDClick=function(x,y){
+    Dump({"x":x,y:y})
+}
 var loader=function(){
     this.Loaded={}
     let cache={}

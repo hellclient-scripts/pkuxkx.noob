@@ -7,6 +7,7 @@
     StateManual.prototype = Object.create(basicstate.prototype)
     StateManual.prototype.Enter=function(Context,newstatue){
         world.Note("进入手动模式")
+        Userinput.Popup("","进入手动模式","可以点击输入框左侧的小人图标选择下一步的动作","info")
     }
     StateManual.prototype.OnEvent=function(context,event,data){
     }
