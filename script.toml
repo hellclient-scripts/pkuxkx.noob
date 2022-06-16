@@ -14,6 +14,37 @@ OnBufferMax = 0
 Channel = "pkuxkx.noob"
 
 [[Triggers]]
+  ID = "d1du8l0pm063k861q63jg"
+  Name = "App.Core.HUD.OnChat"
+  Enabled = true
+  Match = "^(【北侠QQ群】|【闲聊】)"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.HUD.OnChat"
+  SendTo = 0
+  Sequence = -1
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "gap"
   Name = "gap"
   Enabled = true
@@ -47,7 +78,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！)$"
   Send = ""
   ColourChangeType = 0
@@ -2692,3 +2723,8 @@ Channel = "pkuxkx.noob"
   Name = "neili_min"
   Desc = "最小内力"
   Intro = "内力比这个小会去尝试睡觉或打坐"
+
+[[RequiredParams]]
+  Name = "saferoom"
+  Desc = "安全屋位置"
+  Intro = "不填默认为home,home未设置则为扬州客店二楼"

@@ -35,10 +35,10 @@
             switch(type){
                 case "lian":
                 case "read":
-                    location=App.GetSafeRoom()
+                    location=App.GetSleepRooms()
                 break
                 case "lingwu":
-                    location=App.GetSafeRoom()
+                    location=App.GetSleepRooms()
                 default:
                     throw "学习["+type+"]位置不可为空"
                 break

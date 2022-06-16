@@ -26,7 +26,7 @@
         App.Commands([
             App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("function",App.Quest.Dazuo.Check),
-            App.NewCommand("to",App.Options.NewWalk(App.GetSafeRoom())),
+            App.NewCommand("to",App.Options.NewWalk(App.GetSleepRooms())),
             App.NewCommand("nobusy"),
             App.NewCommand("function",App.Quest.Dazuo.Command),
             App.NewCommand("nobusy"),

@@ -23,7 +23,7 @@
         "echo":"t",
         "questsdelay":"1",
         "queuedelay":"1",
-        "sleepdelay":"30000",
+        "sleepdelay":"10500",
     }
     App.InitParam=function(name,val){
         App.Params[name]=val

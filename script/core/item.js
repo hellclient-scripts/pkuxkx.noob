@@ -74,6 +74,27 @@
         }
         return null
     }
+    App.GetItemByName=function(name,convert){
+        for (var key in App.Data.Items){
+            let itemname= App.Data.Items[key].ID
+            if (convert){
+                itemname=CNumber.Split(itemname).Item
+            }
+            if (name==itemname){
+                return App.Data.Items[key].ID
+            }
+        }
+        return null
+    }
+    App.HasAnyItemObj=function(idlist,lowercase){
+        for (var index in idlist){
+            var item=App.GetItemObj(idlist[index],lowercase)
+            if (item){
+                return item
+            }
+        }
+        return false
+    }
     App.GetItemNumber=function(id,lowercase){
         let label=App.GetItemObj(id,lowercase)
         if (!label){
