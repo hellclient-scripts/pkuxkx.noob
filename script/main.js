@@ -13,6 +13,7 @@ var onConnected=function (){
 }
 
 var onDisconnected=function (){
+    App.Raise("Disconnected")
 
 }
 
@@ -21,7 +22,8 @@ var onAssist=function(){
 }
 
 var onBroadcast=function(msg,global,channel){
-    
+    App.Raise("Broadcast")
+
 }
 var onResponse=function(msgtype,id,data){
     App.onResponse(msgtype,id,data)
@@ -57,7 +59,7 @@ var onBuffer=function(data){
     return false
 }
 var onHUDClick=function(x,y){
-    Dump({"x":x,y:y})
+    App.Raise("onHUDClick",{X:x,Y:y})
 }
 var loader=function(){
     this.Loaded={}
