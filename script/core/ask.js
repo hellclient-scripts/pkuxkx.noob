@@ -38,6 +38,7 @@
             App.Data.Ask.Replies.push(output)
             App.Data.Ask.Lines.push(JSON.parse(DumpOutput(1))[0])
         }
+        App.Raise("core.reply")
         App.RaiseStateEvent("core.reply")
     }
     App.Core.Ask.NoMoreReply=function(){

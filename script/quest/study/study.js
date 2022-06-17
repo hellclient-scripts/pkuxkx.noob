@@ -6,6 +6,9 @@
     App.Quest.Study.PickPlan=function(){
         let available=[]
         App.Quest.Study.Plan.forEach(p=>{
+            if (App.Data.HP["pot"]==0 && p.Type=="xue"){
+                return
+            }
             skill=App.Core.PlayerGetSkillByID(p.Skill)
             if (skill!=null){
                 let max=p.Max
@@ -13,9 +16,6 @@
                     max=skill.Max
                 }
                 if (skill>=max){
-                    return
-                }
-                if (App.Data.HP["pot"]==0 && skills.type=="xue"){
                     return
                 }
             }
@@ -44,6 +44,7 @@
                 break
             }
         }
+        App.Raise("quest.set","学习 "+App.Quest.Study.Current.Type+" "+App.Quest.Study.Current.Skill+"@"+location)
         App.Commands([
             App.NewCommand('to',App.Options.NewWalk(location)),
             App.NewCommand('nobusy'),

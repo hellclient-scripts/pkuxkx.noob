@@ -5,6 +5,7 @@
     App.Quest.WD.Chanting.CurrentPage=1
     let filter=/[\s\n\=]/g
     App.Quest.WD.Chanting.Start=function(location,book,label,section){
+        App.Raise("quest.set","武当新人诵经《"+bool+"》 "+label+"["+section+"]"+"@"+location)
         App.Quest.WD.Chanting.NewQuest(location,book,label,section)
         App.Push(["core.state.quest.wd.chanting.chanting"])
         App.Next()

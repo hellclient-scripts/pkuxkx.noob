@@ -145,6 +145,11 @@
         world.EnableTriggerGroup("playerjifa",false)
         App.Data.LastJifa=Now()
     }
+
+    App.Bind("Check","core.player.avatar")
+    let checkAvatar=(new check("avatar")).WithLevel(App.CheckLevelBrief).WithCommand("i").WithIntervalParam("checkavatarinterval").WithLastID("LastAvatar")
+    App.RegisterCallback("core.player.avatar",checkAvatar.Callback())
+
     App.Data.HP={
     }
     App.Data.LastHP=0

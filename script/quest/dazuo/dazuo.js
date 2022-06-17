@@ -10,10 +10,10 @@
         App.Next()
     }
     App.Quest.Dazuo.Command=function(){
-
         let num=App.Data.HP["neili"]*2-App.Data.HP["eff_neili"]
-        if (num>App.Data.HP["eff_qixue"]){
-            num=App.Data.HP["eff_qixue"]
+        let cap=Math.floor(App.Data.HP["eff_qixue"]*0.9)
+        if (num>cap){
+            num=cap
         }
         if (num<10){
             num=10
@@ -23,6 +23,11 @@
     }
     App.Quest.Dazuo.Start=function(max){
         App.Quest.Dazuo.Max=max?(max-0):0
+        if (max){
+            App.Raise("quest.set","Dazuo内力到"+max)
+        }else{
+            App.Raise("quest.set","Dazuo内力")
+        }
         App.Commands([
             App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("function",App.Quest.Dazuo.Check),

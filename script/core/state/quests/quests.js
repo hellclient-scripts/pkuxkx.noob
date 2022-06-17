@@ -19,7 +19,6 @@
         App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
         if (loop){
             App.NewCommand("delay",App.GetNumberParam("questsdelay")).Push()
-
         }
         App.Next()
     }
