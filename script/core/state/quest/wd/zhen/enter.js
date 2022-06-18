@@ -26,7 +26,7 @@
         case "quest.wd.zhen.success":
             App.Next()
             break
-        case "quest.wd.zhen.fail":
+        case "move.notallowed":
             App.Next()
             break
         case "quest.wd.zhen.wrong":

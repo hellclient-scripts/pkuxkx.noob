@@ -78,3 +78,9 @@ bmz-zzhsdm||wdj-swdsb-s||||w;w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
+ly||ly-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
+ly-mjd||jy-jiyuan||||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail
+jy-jiyuan||jy-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
+hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
+hzxz||cayp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
+lingzhou||lanzhou||||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e

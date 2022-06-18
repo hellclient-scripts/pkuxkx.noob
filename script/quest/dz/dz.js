@@ -9,7 +9,10 @@
         }
         App.Next()
     }
-    App.Quest.DZ.Start=function(max){
+    App.Quest.DZ.Start=function(cmd){
+        let data=cmd.split("::")
+        max=data[0]
+        location=data.length>1?data[1]:App.GetSafeRoom()
         App.Quest.DZ.Max=max?(max-0):0
         if (max){
             App.Raise("quest.set","Dz内力到"+max)
@@ -19,7 +22,7 @@
         App.Commands([
             App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("function",App.Quest.DZ.Check),
-            App.NewCommand("to",App.Options.NewWalk(App.GetSafeRoom())),
+            App.NewCommand("to",App.Options.NewWalk(location)),
             App.NewCommand("nobusy"),
             App.NewCommand("do","dz"),
             App.NewCommand("nobusy"),

@@ -118,20 +118,21 @@
                 UpdateHUD(0, JSON.stringify([line]))
                 App.Core.HUD.RenderQuest()
                 break
-            case "simple":
-                SetHUDSize(2)
-                word = JSON.parse(NewWord("极简模式"))
-                word.Color = "Bright-White"
-                line.Words.push(word)
-                UpdateHUD(0, JSON.stringify([line]))
-                break
-            default:
+                case "chat":
                 word = JSON.parse(NewWord("聊天模式"))
                 word.Color = "Bright-White"
                 line.Words.push(word)
                 SetHUDSize(App.Core.HUD.MaxChatHistory + 2)
                 UpdateHUD(0, JSON.stringify([line]))
                 UpdateHUD(1, JSON.stringify(App.Core.HUD.ChatHistory))
+                break
+                default:
+                    SetHUDSize(2)
+                    word = JSON.parse(NewWord("极简模式"))
+                    word.Color = "Bright-White"
+                    line.Words.push(word)
+                    UpdateHUD(0, JSON.stringify([line]))
+    
         }
     }
     App.Core.HUD.InitHUD()
@@ -141,7 +142,7 @@
         if (App.Core.HUD.ChatHistory.length > App.Core.HUD.MaxChatHistory) {
             App.Core.HUD.ChatHistory = App.Core.HUD.ChatHistory.slice(-App.Core.HUD.MaxChatHistory)
         }
-        if (App.Core.HUD.Mode == "") {
+        if (App.Core.HUD.Mode == "chat") {
             UpdateHUD(1, JSON.stringify(App.Core.HUD.ChatHistory))
         }
     }
@@ -180,7 +181,7 @@
     App.RegisterCallback("App.Core.HUD.OnClick", function (click) {
         var List = Userinput.newlist("类型", "更改HUD类型", false)
         List.append("note", "记录Note")
-        List.append("", "聊天模式")
+        List.append("chat", "聊天模式")
         List.append("quest", "任务简报")
         List.append("simple", "极简模式")
         List.publish("App.Core.HUD.ChangeMode")
@@ -203,6 +204,7 @@
                     List.publish("App.Core.HUD.OnNote")
                     break
                 case "":
+                case "chat":
                 case "quest":
                 case "simple":
                     world.SetVariable("HUDMode", data)
@@ -214,5 +216,8 @@
                     break
             }
         }
+    }
+    if (world.GetVariable("HUDMode")==""){
+        Userinput.Popup("", "HUD模式", "你还没有选择您的HUD模式，点击HUD面板进行选择")
     }
 })(App)

@@ -75,3 +75,8 @@ wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]nort
 wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
 wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
 wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
+ly-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
+jy-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
+jy-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
+lingzhou||灵州||||Full||城中心[大夏国] [都城]east,north,south,west
+lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south,west

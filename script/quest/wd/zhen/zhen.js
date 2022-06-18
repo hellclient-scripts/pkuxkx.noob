@@ -29,7 +29,7 @@
         App.RaiseStateEvent("quest.wd.zhen.success")
     }
     App.Quest.WD.Zhen.OnFail=function(name, output, wildcards){
-        App.RaiseStateEvent("quest.wd.zhen.fail")
+        App.RaiseStateEvent("move.notallowed")
     }
     App.Quest.WD.Zhen.OnWrong=function(name, output, wildcards){
         App.RaiseStateEvent("quest.wd.zhen.wrong")

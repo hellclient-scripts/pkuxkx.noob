@@ -26,6 +26,10 @@
             case "move.ignore":
                 this.Ignore()
             break
+            case "move.notallowed":
+                Note("无法通过")
+                App.Fail()
+                break
         }
     }
     StateMove.prototype.Ignore=function(){
