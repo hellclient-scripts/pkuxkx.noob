@@ -18,6 +18,9 @@
                 App.Next()
             }
             break;
+        case "core.nothere":
+            App.Fail()
+            break
         }
     }
     return State

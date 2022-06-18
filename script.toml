@@ -18,7 +18,7 @@ Channel = "pkuxkx.noob"
   ID = "d1du8l0pm063k861q63jg"
   Name = "App.Core.HUD.OnChat"
   Enabled = true
-  Match = "^(【北侠QQ群】|【闲聊】)\\S+\\(\\S+\\)"
+  Match = "^(【北侠QQ群】|【闲聊】).+\\(\\S+\\)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -79,7 +79,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！)$"
   Send = ""
   ColourChangeType = 0
@@ -1153,6 +1153,37 @@ Channel = "pkuxkx.noob"
   LinesToMatch = 0
   WildcardLowerCase = false
   Group = "hud.avart"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1ducmqae14rm171moiara"
+  Name = "App.Core.NPC.OnNotHere"
+  Enabled = true
+  Match = "^这里没有这个人。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.NPC.OnNotHere"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
@@ -2806,7 +2837,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "study"
   Desc = "学习列表"
-  Intro = "回车或逗号分割的学习列表，格式为 技能1::学习指令1::位置1::对象1::最大等级1,技能2::学习指令2::位置2::对象2::最大等级2\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao\nfocre::lingwu\ntiyunzong::lian::dodge::home\ntaoiom::read::::jing"
+  Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习指令1::位置1::对象1::最大等级1::开始前指令1::结束后指令1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao\nfocre::lingwu\ntiyunzong::lian::::dodge\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword"
 
 [[RequiredParams]]
   Name = "home"

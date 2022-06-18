@@ -61,19 +61,25 @@
                 cmd=App.Quest.Study.Xue()
             break
             case "lian":
-                cmd="lian "+ study.Skill+" 50"
+                cmd="lian "+ study.Target+" 50"
             break
             case "lingwu":
                 cmd="lingwu "+ study.Skill+" 50"
             break
-            case "read":
-                cmd="read "+ study.Target+" 50"
+            case "du":
+                cmd="du "+ study.Target+" for 50"
+            break
+            case "cmd":
+                cmd=study.Target
             break
             default:
                 throw "学习方式["+study.Type+"]未知"
         }
         App.Commands([
+            App.NewCommand("do",App.Quest.Study.Current.Before),
             App.NewCommand("do",cmd),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do",App.Quest.Study.Current.After),
             App.NewCommand("rest"),
         ]).Push()
         App.Next()
@@ -85,9 +91,9 @@
     }
     let re=/\n/g
     App.Quest.Study.Start=function(cmd){
+        Dump(cmd)
         if (cmd==""){
             cmd=world.GetVariable("study").replace(re, ",")
-
         }
         let data=cmd.split(",")
         data.forEach(value => {

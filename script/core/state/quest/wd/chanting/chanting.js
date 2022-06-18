@@ -23,6 +23,7 @@
 
         App.Commands([
             App.NewCommand("to",App.Options.NewWalk("wd-fzg2f")),
+            App.NewCommand("do","give all to zhike daozhang"),
             App.NewCommand("ask",App.Options.NewQuestion("zhike daozhang","遗失",1)),
             App.NewCommand("do","jie "+App.Quest.WD.Chanting.Quest.Book+";i2"),
             App.NewCommand("nobusy"),

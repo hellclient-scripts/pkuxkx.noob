@@ -35,6 +35,7 @@
             return
         }
         move.Context = new walk(path.Path)
+        App.Send("set breif 2")
         this.Walking()
     }
     StateWalk.prototype.Walking=function(){

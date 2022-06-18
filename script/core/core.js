@@ -9,6 +9,8 @@ App.Load("core/food.js")
 App.Load("core/room.js")
 App.Load("core/player.js")
 App.Load("core/item.js")
+App.Load("core/npc.js")
+
 App.Load("core/send.js")
 App.Load("core/move.js")
 App.Load("core/maze.js")
@@ -32,3 +34,5 @@ App.Load("core/traversal.js")
 
 App.Load("core/quest.js")
 App.Load("core/hud.js")
+App.Load("core/help.js")
+

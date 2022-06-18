@@ -76,7 +76,7 @@
     }
     App.GetItemByName=function(name,convert){
         for (var key in App.Data.Items){
-            let itemname= App.Data.Items[key].ID
+            let itemname= App.Data.Items[key].Name
             if (convert){
                 itemname=CNumber.Split(itemname).Item
             }

@@ -23,9 +23,9 @@
     }
     let wordCurrentQuest = JSON.parse(NewWord("当前任务:"))
     wordCurrentQuest.Color = "Bright-Cyan"
-    let wordCurrentNoQuest = JSON.parse(NewWord("当前没有任务。"))
+    let wordCurrentNoQuest = JSON.parse(NewWord("没有任务。"))
     wordCurrentNoQuest.Color = "Bright-Cyan"
-    let wordQuestNote = JSON.parse(NewWord("备注:"))
+    let wordQuestNote = JSON.parse(NewWord("备注:    "))
     wordQuestNote.Color = "Bright-Yellow"
     App.Core.HUD.CurrentQuest = ""
     App.Core.HUD.SetQuset = function (str) {
@@ -202,6 +202,7 @@
                     })
                     List.publish("App.Core.HUD.OnNote")
                     break
+                case "":
                 case "quest":
                 case "simple":
                     world.SetVariable("HUDMode", data)

@@ -1,7 +1,10 @@
 (function (App) {
     var Goal = function (target) {
         this.Type = ""
-        this.Target = target ? target : ""
+        if(!target){
+            target=""
+        }
+        this.Target = target.split("||")
         this.Found = false
     }
     Goal.prototype.FindRoom = function () {
@@ -24,26 +27,34 @@
         this.Type = "known"
         return this
     }
-    Goal.prototype.Check = function () {
+    Goal.prototype.CheckTarget=function(target){
         if (this.Found) {
             return
         }
         switch (this.Type) {
             case "room":
-                this.Found = (App.Data.Room.Name == this.Target)
+                this.Found = (App.Data.Room.Name == target)
                 break
             case "objid":
-                this.Found=App.HasRoomObj(this.Target,true)
+                this.Found=App.HasRoomObj(target,true)
                 break
             case "objname":
-                this.Found=App.HasRoomObjName(this.Target)
+                this.Found=App.HasRoomObjName(target)
                 break
             case "desc":
-                this.Found = (App.Core.RoomDesc.Desc.indexOf(this.Target) >= 0)
+                this.Found = (App.Core.RoomDesc.Desc.indexOf(target) >= 0)
                 break
             case "known":
                 this.Found=(App.Data.Room.ID!="")
                 break
+        }
+    }
+    Goal.prototype.Check = function () {
+        for (let i=0;i<this.Target.length;i++){
+            if (this.Found) {
+                return
+            }
+            this.CheckTarget(this.Target[i])
         }
     }
     return Goal
