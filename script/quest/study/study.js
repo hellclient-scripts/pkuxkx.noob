@@ -25,7 +25,7 @@
             App.Fail()
             return
         }
-        App.Quest.Study.Current=RandomList(App.Quest.Study.Plan)
+        App.Quest.Study.Current=RandomList(available)
         App.Next()
     }
     App.Quest.Study.Move=function(){
