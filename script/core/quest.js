@@ -49,6 +49,20 @@
     App.Core.Quest.OnAliasQuests=function (name, line, wildcards){
         App.Core.Quest.StartQuests(wildcards[0].split("||"))
     }
+    App.Core.Quest.StartVariable=function(){
+        let qusets=world.GetVariable("quests")
+        if (qusets==""){
+            Note("quests变量为空")
+        }
+        App.Core.Quest.StartQuests(qusets.split("||"))
+    }
+    App.Core.OnQuestAliasStart = function (name, line, wildcards) {
+        App.Core.Quest.StartVariable()
+    }
+    if (world.GetVariable("quests")==""){
+        Userinput.Popup("","quests变量未设置","设置quests变量后，可以通过#start命令直接开始执行命令")
+    }
+
     App.RegisterState(new (Include("core/state/quests/quests.js"))())
     App.RegisterState(new (Include("core/state/quests/success.js"))())
     App.RegisterState(new (Include("core/state/quests/fail.js"))())

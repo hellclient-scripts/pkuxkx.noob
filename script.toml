@@ -2824,6 +2824,29 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
+[[Aliases]]
+  ID = "d1duech1v5bcaq6k1q6vj"
+  Name = "start"
+  Enabled = true
+  Match = "^#start$"
+  Send = ""
+  Script = "App.Core.OnQuestAliasStart"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
 [[RequiredParams]]
   Name = "waitcmd"
   Desc = "等待指令"

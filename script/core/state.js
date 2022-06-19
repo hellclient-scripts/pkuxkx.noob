@@ -1,6 +1,8 @@
 (function(App){
     let globalstatecontext=Include("core/state/globalstatecontext.js")
     App.Data.State=""
+    App.Data.StateHistory=[]
+    App.Data.StateHistoryMax=20
     App.States={}
     App.StateContext=new globalstatecontext()
     App.RegisterState=function(state){
@@ -27,6 +29,8 @@
         if (logState){
             Note("State log:change state ["+id+"]")
         }
+        App.Data.StateHistory.push(id)
+        App.Data.StateHistory=App.Data.StateHistory.slice(-App.Data.StateHistoryMax)
         App.StateContext.ChangeState(state)
     }
     App.CurrentState=function(){
