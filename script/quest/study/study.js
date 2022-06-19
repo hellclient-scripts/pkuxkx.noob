@@ -91,7 +91,6 @@
     }
     let re=/\n/g
     App.Quest.Study.Start=function(cmd){
-        Dump(cmd)
         if (cmd==""){
             cmd=world.GetVariable("study").replace(re, ",")
         }

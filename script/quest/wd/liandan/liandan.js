@@ -13,7 +13,7 @@
 
     ]
     App.Quest.WD.Liandan.OnDanlu=function(name, output, wildcards){
-        App.Quest.WD.Liandan.Danlu=DumpOutput(19,2)
+        App.Quest.WD.Liandan.Danlu=DumpOutput(19)
         App.RaiseStateEvent("quest.wd.liandan.danlu")
     }
     App.Quest.WD.Liandan.OnFail=function(name, output, wildcards){

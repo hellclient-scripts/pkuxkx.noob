@@ -22,9 +22,8 @@
         MapLines: [],
     }
     App.Core.OnRoom = function (name, output, wildcards) {
-        let id = App.Data.Room.ID
         App.Data.Room = {
-            ID: id,
+            ID: "",
             Name: wildcards[1],
             Tags: wildcards[3],
             Objs: [],

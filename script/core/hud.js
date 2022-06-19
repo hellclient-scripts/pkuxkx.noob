@@ -1,6 +1,11 @@
 (function (App) {
     App.Core.HUD = {}
     App.Core.HUD.Mode = "0"//"":聊天模式,"simple":极简模式,"quest"2:任务简报
+    App.Core.HUD.QuestLog = []
+    App.Core.HUD.MaxQuestLog = 500
+    App.Core.HUD.ChatLog = []
+    App.Core.HUD.MaxChatLog = 500
+
     App.Core.HUD.ChatHistory = []
     App.Core.HUD.MaxChatHistory = 16
     App.Core.HUD.Avatar = []
@@ -43,8 +48,10 @@
             return
         }
         if (App.Data.Ask.Replies.length == 1) {
-            App.Core.HUD.Replies.push(JSON.parse(DumpOutput(1))[0].Words)
-
+            let output = (DumpOutput(1))
+            App.Core.HUD.Replies.push(JSON.parse(output)[0].Words)
+            App.Core.HUD.QuestLog.push(OutputToText(output))
+            App.Core.HUD.QuestLog = App.Core.HUD.QuestLog.slice(-App.Core.HUD.QuestLogMax)
             if (App.Core.HUD.Replies.length >= App.Core.HUD.QuestLength - 2) {
                 App.Core.HUD.Replies = App.Core.HUD.Replies.slice(2 - App.Core.HUD.QuestLength)
             }
@@ -75,8 +82,8 @@
                     break
                 case 6:
                     words.push(wordQuestNote)
-                    let note=world.GetVariable("HUDNote")
-                    if (note){
+                    let note = world.GetVariable("HUDNote")
+                    if (note) {
                         words.push(...JSON.parse(note))
                     }
                     break
@@ -118,7 +125,7 @@
                 UpdateHUD(0, JSON.stringify([line]))
                 App.Core.HUD.RenderQuest()
                 break
-                case "chat":
+            case "chat":
                 word = JSON.parse(NewWord("聊天模式"))
                 word.Color = "Bright-White"
                 line.Words.push(word)
@@ -126,13 +133,13 @@
                 UpdateHUD(0, JSON.stringify([line]))
                 UpdateHUD(1, JSON.stringify(App.Core.HUD.ChatHistory))
                 break
-                default:
-                    SetHUDSize(2)
-                    word = JSON.parse(NewWord("极简模式"))
-                    word.Color = "Bright-White"
-                    line.Words.push(word)
-                    UpdateHUD(0, JSON.stringify([line]))
-    
+            default:
+                SetHUDSize(2)
+                word = JSON.parse(NewWord("极简模式"))
+                word.Color = "Bright-White"
+                line.Words.push(word)
+                UpdateHUD(0, JSON.stringify([line]))
+
         }
     }
     App.Core.HUD.InitHUD()
@@ -142,6 +149,9 @@
         if (App.Core.HUD.ChatHistory.length > App.Core.HUD.MaxChatHistory) {
             App.Core.HUD.ChatHistory = App.Core.HUD.ChatHistory.slice(-App.Core.HUD.MaxChatHistory)
         }
+        App.Core.HUD.ChatLog.push(output)
+        App.Core.HUD.ChatLog = App.Core.HUD.ChatLog.slice(-App.Core.HUD.MaxChatLog)
+
         if (App.Core.HUD.Mode == "chat") {
             UpdateHUD(1, JSON.stringify(App.Core.HUD.ChatHistory))
         }
@@ -181,27 +191,43 @@
     App.RegisterCallback("App.Core.HUD.OnClick", function (click) {
         var List = Userinput.newlist("类型", "更改HUD类型", false)
         List.append("note", "记录Note")
-        List.append("chat", "聊天模式")
-        List.append("quest", "任务简报")
-        List.append("simple", "极简模式")
+        List.append("morechat", "显示聊天历史")
+        List.append("morequest", "显示任务历史")
+        List.append("chat", "切换聊天模式")
+        List.append("quest", "切换任务模式")
+        List.append("simple", "切换极简模式")
         List.publish("App.Core.HUD.ChangeMode")
     })
-    App.Core.HUD.OnNote=function(name, id, code, data){
-        if (code==0&&data){
-            world.SetVariable("HUDNote",data)
+    App.Core.HUD.OnNote = function (name, id, code, data) {
+        if (code == 0 && data) {
+            world.SetVariable("HUDNote", data)
             App.Core.HUD.RenderQuestLine(6)
         }
+    }
+    App.Core.HUD.ShowChatLog = function () {
+        let log = App.Core.HUD.ChatLog.join("\n")
+        Userinput.Note("", "聊天日志", log)
+    }
+    App.Core.HUD.ShowQuestLog = function () {
+        let log = App.Core.HUD.QuestLog.join("\n")
+        Userinput.Note("", "任务日志", log)
     }
     App.Core.HUD.ChangeMode = function (name, id, code, data) {
         if (code == 0) {
             switch (data) {
                 case "note":
                     var List = Userinput.newlist("记录", "选择你要记录的文字", false)
-                    let output=JSON.parse(DumpOutput(20))
-                    output.forEach(function(line){
-                        List.append(JSON.stringify(line.Words),OutputToText(JSON.stringify([line])))
+                    let output = JSON.parse(DumpOutput(20))
+                    output.forEach(function (line) {
+                        List.append(JSON.stringify(line.Words), OutputToText(JSON.stringify([line])))
                     })
                     List.publish("App.Core.HUD.OnNote")
+                    break
+                case "morechat":
+                    App.Core.HUD.ShowChatLog()
+                    break
+                case "morequest":
+                    App.Core.HUD.ShowQuestLog()
                     break
                 case "":
                 case "chat":
@@ -217,7 +243,7 @@
             }
         }
     }
-    if (world.GetVariable("HUDMode")==""){
+    if (world.GetVariable("HUDMode") == "") {
         Userinput.Popup("", "HUD模式", "你还没有选择您的HUD模式，点击HUD面板进行选择")
     }
 })(App)

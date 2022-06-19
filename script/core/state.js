@@ -18,15 +18,16 @@
         }
         return state
     }
-    let logState=false
+    App.LoggingState=false
     let logData=false
     App.LogState=function(withdata){
-        logState=true
+        App.LoggingState=true
         logData=withdata
     }
+    App.LogState
     App.ChangeState=function(id){
         let state=App.GetState(id)
-        if (logState){
+        if (App.LoggingState){
             Note("State log:change state ["+id+"]")
         }
         App.Data.StateHistory.push(id)

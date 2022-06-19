@@ -67,11 +67,12 @@
     App.RegisterState(new (Include("core/state/quests/success.js"))())
     App.RegisterState(new (Include("core/state/quests/fail.js"))())
 
-    App.RegisterQuest(new (Include("core/quest/wd.js"))())
     App.RegisterQuest(new (Include("core/quest/fullme.js"))())
     App.RegisterQuest(new (Include("core/quest/dazuo.js"))())
     App.RegisterQuest(new (Include("core/quest/dz.js"))())
     App.RegisterQuest(new (Include("core/quest/tuna.js"))())
     App.RegisterQuest(new (Include("core/quest/study.js"))())
+    App.RegisterQuest(new (Include("core/quest/wd.js"))())
+    App.RegisterQuest(new (Include("core/quest/wdj.js"))())
 
 })(App)
