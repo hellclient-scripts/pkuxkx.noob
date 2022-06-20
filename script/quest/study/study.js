@@ -15,8 +15,16 @@
                 if (max<=0){
                     max=skill.Max
                 }
-                if (skill>=max){
+                if (skill.Level>=max){
                     return
+                }
+            }
+            if (p.Type=="lian"){
+                let base=App.Core.PlayerGetSkillByID(p.Target)
+                if (base!=null){
+                    if (skill.Level>=Math.floor(base.Level)){
+                        return 
+                    }
                 }
             }
              available.push(p)
@@ -39,6 +47,7 @@
                 break
                 case "lingwu":
                     location=App.GetSleepRooms()
+                    break
                 default:
                     throw "学习["+type+"]位置不可为空"
                 break
@@ -66,7 +75,7 @@
             case "lingwu":
                 cmd="lingwu "+ study.Skill+" 50"
             break
-            case "du":
+            case "read":
                 cmd="du "+ study.Target+" for 50"
             break
             case "cmd":

@@ -79,7 +79,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！)$"
   Send = ""
   ColourChangeType = 0
@@ -2157,7 +2157,7 @@ Channel = "pkuxkx.noob"
   ID = "player_skills"
   Name = "player_skills"
   Enabled = true
-  Match = "^你目前所学过的技能：（共(\\S+)项技能，你的技能等级最多能达到(\\S+)级）$"
+  Match = "^┌─*技能列表\\(共(.+)项\\)─*┬─────────────┬──────┬──────┬──────┐$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2879,11 +2879,6 @@ Channel = "pkuxkx.noob"
   OmitFromCommandHistory = false
 
 [[RequiredParams]]
-  Name = "waitcmd"
-  Desc = "等待指令"
-  Intro = "等待时发送的指令，必须可以立刻halt"
-
-[[RequiredParams]]
   Name = "quests"
   Desc = "任务列表"
   Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start后使用这个列表进行任务"
@@ -2907,3 +2902,28 @@ Channel = "pkuxkx.noob"
   Name = "saferoom"
   Desc = "安全屋位置"
   Intro = "不填默认为home,home未设置则为扬州客店二楼"
+
+[[RequiredParams]]
+  Name = "wait_cmd"
+  Desc = "等待指令"
+  Intro = "等待时发送的指令，必须可以立刻halt"
+
+[[RequiredParams]]
+  Name = "jifa_cmd"
+  Desc = "激发指令"
+  Intro = "用于激发武功"
+
+[[RequiredParams]]
+  Name = "id"
+  Desc = "用户ID"
+  Intro = "填写用户ID,用于自动登陆"
+
+[[RequiredParams]]
+  Name = "password"
+  Desc = "密码"
+  Intro = "用户密码。填写用户密码，进行自动登陆"
+
+[[RequiredParams]]
+  Name = "fight_prepare_cmd"
+  Desc = "战斗准备指令"
+  Intro = "战斗前的指令，比如yun powerup"

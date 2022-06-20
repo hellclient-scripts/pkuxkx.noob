@@ -82,7 +82,7 @@
     App.Core.OnPlayerSkills=function(name, output, wildcards){
         world.EnableTriggerGroup("playerskills",true)
         App.Data.Skills={
-            Max:CNumber.Convert(wildcards[1]),
+            Max:CNumber.Convert(wildcards[0]),
             _currentType:"",
             All:[],
         }
@@ -102,17 +102,18 @@
             Name:wildcards[1],
             Used:wildcards[0]!="  ",
             Comment:wildcards[3],
-            Level:wildcards[4],
+            Level:wildcards[4]-0,
             Max:wildcards[5],
             Type:App.Data.Skills._currentType,
         })
     }
     App.Core.PlayerGetSkillByID=function(id){
-        App.Data.Skills.All.forEach(skill => {
+        for (var i=0;i<App.Data.Skills.All.length;i++){
+            let skill=App.Data.Skills.All[i]
             if (skill.ID.toLowerCase()==id.toLowerCase()){
                 return skill
             }
-        });
+        }
         return null
     }
     App.Core.OnPlayerSkillsEnd=function(name, output, wildcards){
