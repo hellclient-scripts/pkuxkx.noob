@@ -2927,3 +2927,13 @@ Channel = "pkuxkx.noob"
   Name = "fight_prepare_cmd"
   Desc = "战斗准备指令"
   Intro = "战斗前的指令，比如yun powerup"
+
+[[RequiredParams]]
+  Name = "food_max"
+  Desc = "最大食物"
+  Intro = "补充食物的最大值，默认值是10.偏远地区如五毒可以适当调高"
+
+[[RequiredParams]]
+  Name = "drink_max"
+  Desc = "最大饮水"
+  Intro = "补充饮水的最大值，默认值是10.偏远地区如五毒可以适当调高"

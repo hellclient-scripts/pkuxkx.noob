@@ -7,9 +7,11 @@
         "eatinterval":"10",
         "food":"gan liang",
         "food_min":"2",
+        "food_max":"10",
         "drink":"niurou tang",
         "drink_min":"2",
-        "gold_min":"1",
+        "drink_max":"10",
+        "gold_min":"4",
         "gold_withdraw":"1",
         "bank_location":"yzqz",
         "walkstep":"8",
@@ -20,7 +22,6 @@
         "checkiteminterval":"10000",
         "checkavatarinterval":"60000",
         "charset":"2",
-        "initcmd":"set area_detail 1;set breif 2;set hpbrief long,report",
         "echo":"t",
         "questsdelay":"1",
         "queuedelay":"1",
@@ -30,7 +31,7 @@
         App.Params[name]=val
     }
     App.GetParam=function(name){
-        var val=world.GetVariable("sys_"+name)
+        var val=world.GetVariable(name)
         if (val===""){
             val=App.Params[name]
             if (val===undefined){
