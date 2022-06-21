@@ -47,7 +47,7 @@ jksm||jk-ngf||||s;e;e;e;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;w;w;w;n
 jk-ngf||la||||e;se;se;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;nw;nw;w
 la-yfm||la||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jx||la||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
-sz||jx||||s;s;s;s;s;s;n;n;n;n;n;n
+sz||jx||||s;s;s;s;s;s;||n;n;n;n;n;n
 wd||wd-sm||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
@@ -86,3 +86,6 @@ jy-jiyuan||jy-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
 hzxz||cayp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
 lingzhou||lanzhou||||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||10
+gyz-dm||sz||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
+gyz-gyt||gyz-dm||||sd;sd;out||enter;nu;nu
+gyz-gyt||gyz||||e;e||w;w

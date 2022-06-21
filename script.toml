@@ -1039,7 +1039,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1du659ncnkd8j56sri1"
-  Name = "App.OnBuffFull"
+  Name = "App.Core.OnBuffFull"
   Enabled = true
   Match = "^\\[命令进入缓冲\\]$"
   Send = ""
@@ -1048,7 +1048,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.OnBuffFull"
+  Script = "App.Core.OnBuffFull"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false

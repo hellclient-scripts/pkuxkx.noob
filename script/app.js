@@ -74,13 +74,20 @@ App.onResponse=function(msgtype,id,data){
 App.Load=function(name){
     Include(name)
 }
-
+App.LoadMods=function(){
+    let mod=GetModInfo()
+    if (mod.Exists){
+        mod.FolderList.forEach(function(mod){
+            if (HasModFile(mod+"/src/index.js")){
+                Note("发现mod,加载中")
+                Mod.Include(mod+"/src/index.js")
+            }
+        })
+    }
+}
 App.Start=function(){
     App.Init()
-    if (HasModFile("src/index.js")){
-        Note("发现mod,加载中")
-        Mod.Include("src/index.js")
-    }
+    App.LoadMods()
     App.Load("ui/ui.js")
     App.Load("param/param.js")
     App.Load("core/core.js")

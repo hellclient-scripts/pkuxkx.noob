@@ -76,6 +76,9 @@
                 case "Full":
                     options.Full=info[4]
                     break
+                case "DescStart":
+                    options.DescStart=info[4]
+                    break       
             }
             addroom(info[0], info[1], options)
         });
@@ -97,6 +100,9 @@
         }
         if (data.Full) {
             App.Info.Full[data.Full] = id
+        }
+        if (data.DescStart){
+            App.Info.DescStart[data.DescStart]=id
         }
     }
     App.API.ResetMapper=function(){

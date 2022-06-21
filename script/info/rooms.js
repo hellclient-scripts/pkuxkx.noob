@@ -5,6 +5,7 @@
     App.Info.SleepRooms=[]
     App.Info.Stations = {}
     App.Info.Landmarks = {}
+    App.Info.DescStart={}
     App.Info.Tags={}
     App.Info.Full={}
     App.Info.LoadSleepRooms=function(){
@@ -28,8 +29,17 @@
     App.Info.RoomFull=function(){
         return App.Data.Room.Name+App.Data.Room.Tags+App.Data.Room.Exits.join(",")
     }
+    App.Info.RoomDescStart=function(){
+        return App.Core.RoomDesc.Desc.trim().slice(0,20)
+    }
     App.RegisterCallback("info.room.idlocate", function () {
         var id = App.Info.Stations[App.Data.Room.Name]||App.Info.Tags[App.Data.Room.Tags]||App.Info.Full[App.Info.RoomFull()]
+        if (!id){
+            let descstart=App.Info.RoomDescStart()
+            if (descstart){
+                id=App.Info.DescStart[descstart]
+            }    
+        }
         if (id) {
             App.Data.Room.ID = id
             world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")
