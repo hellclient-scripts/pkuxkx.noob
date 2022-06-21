@@ -1,11 +1,11 @@
 (function (App) {
     let sep=/\|\|/
-    let parsepath=function(fr,to,taglist,str){
+    let parsepath=function(fr,to,taglist,str,delay){
         let path = Mapper.newpath()
         path.from=fr
         path.to=to
         path.command=str
-        path.delay = str.split(";").length
+        path.delay = str.split(";").length+delay
         let pathtags=[]
         let pathexcludetags=[]
         if (taglist){
@@ -31,16 +31,23 @@
     }
     let loadpath=function (paths){
         for (var key in paths) {
+            if (paths[key]==""||paths[key].slice(0,2)=="//"){
+                continue
+            }
             let data = paths[key].split(sep)
             let from = data[0]
             let to = data[1]
             let tags=data[2]
-            let topath = parsepath(from,to,tags,data[3])
+            let delay=0
+            if (data.length>5){
+                delay=data[5]=0
+            }
+            let topath = parsepath(from,to,tags,data[3],delay)
             if (topath){
                 Mapper.addpath(from, topath)
             }
             if (data.length > 4 ) {
-                let frompath = parsepath(to,from,tags,data[4])
+                let frompath = parsepath(to,from,tags,data[4],delay)
                 if (frompath){
                     Mapper.addpath(to, frompath)
                 }
@@ -49,7 +56,7 @@
     }
     let loadrooms=function(rooms) {
         rooms.forEach(function (data) {
-            if (data==""){
+            if (data==""||data.slice(0,2)=="//"){
                 return
             }
             let info = data.split(sep)

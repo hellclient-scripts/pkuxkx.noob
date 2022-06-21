@@ -5,6 +5,9 @@
     App.Info.PatrolsList=[]
 
     var loadline=function(line){
+        if (line==""||line.slice(0,2)=="//"){
+            return
+        }
         var data=SplitN(line,"||",2)
         if (data.length==0){
             return

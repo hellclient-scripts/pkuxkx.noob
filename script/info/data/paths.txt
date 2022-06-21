@@ -13,6 +13,7 @@ yz-sczh||home||||#home||out
 yztj||yz-dtpns||||s||n
 yz||qfsm||||n;n;n;n;n;n;n;n;n;w||e;s;s;s;s;s;s;s;s;s
 yz||xin-nwh||||w;w;w;w;nw;w;w;w;w;w;s;w||e;n;e;e;e;e;e;se;e;e;e;e
+yzqz||yz-jd||||s||n
 xin-nwh||xin-xcz||||e;s;s;sd;se||nw;nu;n;n;w
 xin-nwh||zy-xcc||||e;n;n;n;n;n;n;n||s;s;s;s;s;s;s;w
 zy-xcc||zy-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
@@ -25,9 +26,9 @@ ly||ly-wxl||||n;w||e;s
 ly||cakd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
 cakd||cayp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
 cayp||ca-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
-ca-hz||cd||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd
+ca-hz||cd||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||40
 cd||yy-yyl||||se;se;e;e;ne;.ne;.nw;.nw;.ne;ed;e;n||s;w;wu;sw;.se;.se;.sw;.sw;w;w;nw;nw
-xin-xcz||jz-xyl||rich||s;ask shao gong about 过江&&enter;#sail;se;se;s||n;nw;nw;ask shao gong about 过江&&enter;#sail;n
+xin-xcz||jz-xyl||rich||s;ask shao gong about 过江&&enter;#sail;se;se;s||n;nw;nw;ask shao gong about 过江&&enter;#sail;n||10
 jz-xyl||jzkd||||sw;sw;nw||se;ne;ne
 yy-yyl||jzkd||||e;e;e;e;e;e;ed;se;ed;e;ne;ne;ne;ne;ne;nw||se;sw;sw;sw;sw;sw;w;wu;nw;wu;w;w;w;w;w;w
 yz||gb-sdnb||||enter shudong||out
@@ -63,6 +64,7 @@ hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
 ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out||l 山壁&&enter;s;e;s;w;s;out;s
+wdj||wdj-sf||||se||nw
 wdj-jbq||bmz-zzhsdm||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n;e||w;s;s;se;eu;l 东南&&southeast;se;se;se;s
 bmz-zzhsdm||km-yxs||||w;w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;n||s;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;e;
 km-yxs||dl-thj||||s;w;w;w;w;nw;w;nw;w;n;n;n;n;e||w;s;s;s;s;e;se;e;se;e;e;e;e;n
@@ -79,8 +81,8 @@ zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
 ly||ly-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-ly-mjd||jy-jiyuan||||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail
+ly-mjd||jy-jiyuan||||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||10
 jy-jiyuan||jy-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
 hzxz||cayp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
-lingzhou||lanzhou||||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e
+lingzhou||lanzhou||||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||10

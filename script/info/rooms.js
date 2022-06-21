@@ -2,11 +2,21 @@
     App.Info.BuiltinRooms=[]
     App.Info.UserRooms=[]
     App.Info.Rooms = {}
-    App.Info.SleepRooms=['wd-kf']
+    App.Info.SleepRooms=[]
     App.Info.Stations = {}
     App.Info.Landmarks = {}
     App.Info.Tags={}
     App.Info.Full={}
+    App.Info.LoadSleepRooms=function(){
+        App.Info.SleepRooms=[]
+        let lines=world.ReadLines("info/data/sleeprooms.txt")
+        lines.forEach(function(line){
+            if (line==""||line.slice(0,2)=="//"){
+                return
+            }
+            App.Info.SleepRooms.push(line)
+        })
+    }
     App.Info.RoomHome="home"
     App.Info.RoomSafe="yz-kd2f"
     App.RegisterCallback("info.room.objlocate", function (data) {
@@ -35,6 +45,7 @@
         if (world.HasHomeFile("data/rooms.txt")){
             App.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
         }
+        App.Info.LoadSleepRooms()
     })
     App.RegisterAPI("SaveUserRooms",function(){
         let data=App.Info.UserRooms.join("\n")

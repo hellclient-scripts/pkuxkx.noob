@@ -70,6 +70,9 @@
         grid.resetitems()
         for (let i=0;i<alldata.length;i++){
             let data=alldata[i]
+            if (data==""||data.slice(0,2)=="//"){
+                continue
+            }
             if (filter && data.indexOf(filter)<0){
                 continue
             }

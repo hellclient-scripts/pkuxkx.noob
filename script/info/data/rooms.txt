@@ -1,6 +1,8 @@
+//扬州地区
 home||玩家储存柜||||Tags||[玩家储物柜]
 yz||扬州广场||||Landmark||Rong shu
 yzqz||扬州钱庄||||Station||扬州钱庄
+yz-jd||扬州金店||||Station||扬州金店
 yzdp||扬州当铺||||Landmark||Tang nan
 yztj||扬州铁匠||||Landmark||Wang tiejiang
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
@@ -12,6 +14,7 @@ yzkd||扬州客店||||Landmark||Tianshen suicong
 yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
+
 qfsm||曲阜孔庙||||Station||孔庙
 xin-nwh||信阳南湾湖||||Station||南湾湖
 zy-xcc||许昌城||||Station||许昌城
@@ -70,6 +73,7 @@ wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
 wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,south
 wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
+wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 hmz||黑苗苗王殿前||||Station||苗王殿前
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
