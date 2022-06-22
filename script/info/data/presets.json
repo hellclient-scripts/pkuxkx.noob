@@ -9,4 +9,10 @@
         "desc":"做药队列",
         "cmd":"#prepare||#to yzyp||ask ping yizhi about 工作||n||peiyao||#afterbusy||#delay 5000||s||give cheng yao to ping yizhi||#loop"
     }
+    ,{
+        "label":"少林读石桌",
+        "desc":"需要在西碑林下开始",
+        "cmd":"#do yun regenerate||#do yun recover||#do dazuo max||#delay 2000||#do halt||#do drink tang||#do eat gan liang||#do du table||#do du table||##do du table||#loop"
+    }
+
 ]

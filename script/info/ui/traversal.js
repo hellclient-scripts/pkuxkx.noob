@@ -29,6 +29,6 @@
             }
         }
 }
-    App.RegisterAssistant("traversal","遍历",App.InfoUITraversal,2)
+    App.RegisterAssistant("traversal","遍历",App.InfoUITraversal,50)
 
 })(App)

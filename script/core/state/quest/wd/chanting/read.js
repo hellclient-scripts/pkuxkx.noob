@@ -27,7 +27,7 @@
             App.CheckBusy("core.state.quest.wd.chanting.readfinish")
             break;
         case "quest.wd.chanting.readfail":
-            App.Fail()
+            App.Next()
             break;
         }
     }

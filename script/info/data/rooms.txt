@@ -14,6 +14,8 @@ yzkd||扬州客店||||Landmark||Tianshen suicong
 yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
+yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。
+yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 
 qfsm||曲阜孔庙||||Station||孔庙
 xin-nwh||信阳南湾湖||||Station||南湾湖
@@ -47,12 +49,16 @@ la||大理寺||||Landmark||Jianghu tu
 la-yfm||岳飞墓||||Station||岳飞墓
 jx||嘉兴城||||Station||嘉兴城
 sz||沧浪亭||||Station||沧浪亭
+
+//武当
 wd-sm||武当山门||||Station||武当山门
 wd-sqd||三清殿||||Station||三清殿
 wd||武当广场||||Station||武当广场
 wd-tzfx||天柱峰下||||Station||天柱峰下
 wd-fzg2f||复真观二层||||Station||复真观二层
 wd-kf||武当客房||||DescStart||这里是武当派招待远来客人暂时休息的地方。
+wd-jxg||武当静修阁||||Full||静修阁[门派]east,up
+
 hsc||打谷场||||Station||打谷场
 yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
 hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west
@@ -67,6 +73,8 @@ bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘
 dl-thj||大理太和居||||Station||太和居
 tls-sj||天龙寺山脚||||Station||天龙寺山脚
 cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
+
+//苗疆
 wdj-lgxs-s||雷公西山南入口||||Full||山间路[门派] [存盘点]north,southdown
 wdj-lgxs-e||雷公西山东入口||||Full||山间路[门派] [存盘点]eastdown,west
 wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
@@ -75,10 +83,14 @@ wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,so
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 hmz||黑苗苗王殿前||||Station||苗王殿前
+
+
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
 wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
 wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
+
+
 ly-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
 jy-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
 jy-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east

@@ -60,7 +60,7 @@
         }
     }
     
-    App.RegisterAssistant("data","数据管理",App.InfoUIDataShowList,50)
+    App.RegisterAssistant("data","数据管理",App.InfoUIDataShowList,70)
     let publishgrid=function(grid,alldata){
         let page=grid.getpage()
         let filter=grid.getfilter()

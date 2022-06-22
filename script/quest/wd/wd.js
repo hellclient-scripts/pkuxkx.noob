@@ -1,5 +1,7 @@
 (function(App){
 App.Quest.WD={}
+App.Quest.WD.Type=""
+App.Quest.WD.Data={}
 App.Quest.WD.QuestionSuccess=App.Options.NewQuestion("chongxu daozhang","success")
 App.Quest.WD.QuestionCancel=App.Options.NewQuestion("chongxu daozhang","cancel")
 App.Quest.WD.QuestionQuest=App.Options.NewQuestion("chongxu daozhang","quest")

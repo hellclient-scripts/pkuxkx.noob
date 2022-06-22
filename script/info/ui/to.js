@@ -13,5 +13,5 @@
             App.ExecuteTask("queue","#to "+data)
         }
     }
-    App.RegisterAssistant("to","前往地点",App.InfoUIToShowList,10)
+    App.RegisterAssistant("to","前往地点",App.InfoUIToShowList,40)
 })(App)

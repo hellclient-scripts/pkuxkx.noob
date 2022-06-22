@@ -61,6 +61,6 @@ App.InfoUIDataBuiltinpresetsRun=function(name,id,code,data){
         Execute(data)
     }
 }
-App.RegisterAssistant("presets","预设任务列表",App.InfoUIPresetsShow,15)
+App.RegisterAssistant("presets","预设任务列表",App.InfoUIPresetsShow,60)
 
 })(App)
