@@ -18,12 +18,12 @@
                 if (skill.Level>=max){
                     return
                 }
-            }
-            if (p.Type=="lian"){
-                let base=App.Core.PlayerGetSkillByID(p.Target)
-                if (base!=null){
-                    if (skill.Level>=Math.floor(base.Level)){
-                        return 
+                if (p.Type=="lian"){
+                    let base=App.Core.PlayerGetSkillByID(p.Target)
+                    if (base!=null){
+                        if (skill.Level>=Math.floor(base.Level)){
+                            return 
+                        }
                     }
                 }
             }
@@ -59,6 +59,7 @@
             App.NewCommand('nobusy'),
             App.NewCommand('function',App.Quest.Study.Execute),
             App.NewCommand('rest'),
+            App.NewCommand('do',"skills"),
         ]).Push()
         App.Next()
     }

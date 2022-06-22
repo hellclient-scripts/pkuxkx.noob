@@ -58,7 +58,8 @@ wd-tzfx||天柱峰下||||Station||天柱峰下
 wd-fzg2f||复真观二层||||Station||复真观二层
 wd-kf||武当客房||||DescStart||这里是武当派招待远来客人暂时休息的地方。
 wd-jxg||武当静修阁||||Full||静修阁[门派]east,up
-
+wd-cw||武当崔老汉家||||Full||草屋[野外]east
+wd-xl||武当路口[土匪任务入口]||||RoomStart||双井子村中的小路，村子里只有稀稀落落的几
 hsc||打谷场||||Station||打谷场
 yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
 hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west

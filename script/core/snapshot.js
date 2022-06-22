@@ -8,6 +8,7 @@
     App.Core.Snapshot.Rollback=function(snap){
         App.Data.Automata.push(snap.Automaton)
         App.StateContext.State=snap.State
+        App.Data.State=snap.State.ID
         if (App.LoggingState){
             Note("State log:change state ["+snap.State.ID+"]")
         }

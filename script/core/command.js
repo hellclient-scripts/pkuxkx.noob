@@ -39,5 +39,6 @@
     App.RegisterCommand(Include("core/command/sleep.js"))
     App.RegisterCommand(Include("core/command/rest.js"))
     App.RegisterCommand(Include("core/command/musthave.js"))
+    App.RegisterCommand(Include("core/command/rollback.js"))
 
 })(App)
