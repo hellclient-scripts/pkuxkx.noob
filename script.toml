@@ -2218,7 +2218,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_skillsend"
   Name = "player_skillsend"
-  Enabled = false
+  Enabled = true
   Match = "^└─────────────┴─────────────┴──────┴────北大侠客行────┘$"
   Send = ""
   ColourChangeType = 0
@@ -2249,7 +2249,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_skillsobj"
   Name = "player_skillsobj"
-  Enabled = false
+  Enabled = true
   Match = "^│(□|  )(\\S+)\\s*│(\\S+)\\s*│(\\S+)\\s*│(\\S+)\\+{0,1}\\s*│(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2280,7 +2280,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_skillstype"
   Name = "player_skillstype"
-  Enabled = false
+  Enabled = true
   Match = "^.─+\\S+项([^─]+)─+.─────────────.──────.──────.──────.$"
   Send = ""
   ColourChangeType = 0
@@ -2930,7 +2930,7 @@ Channel = "pkuxkx.noob"
   Intro = "内力比这个小会去尝试睡觉或打坐"
 
 [[RequiredParams]]
-  Name = "saferoom"
+  Name = "safe_room"
   Desc = "安全屋位置"
   Intro = "不填默认为home,home未设置则为扬州客店二楼"
 
@@ -2955,11 +2955,6 @@ Channel = "pkuxkx.noob"
   Intro = "用户密码。填写用户密码，进行自动登陆"
 
 [[RequiredParams]]
-  Name = "fight_prepare_cmd"
-  Desc = "战斗准备指令"
-  Intro = "战斗前的指令，比如yun powerup"
-
-[[RequiredParams]]
   Name = "food_max"
   Desc = "最大食物"
   Intro = "补充食物的最大值，默认值是10.偏远地区如五毒可以适当调高"
@@ -2968,3 +2963,33 @@ Channel = "pkuxkx.noob"
   Name = "drink_max"
   Desc = "最大饮水"
   Intro = "补充饮水的最大值，默认值是10.偏远地区如五毒可以适当调高"
+
+[[RequiredParams]]
+  Name = "shopping_mode"
+  Desc = "消费模式"
+  Intro = "请通过助理按钮设置"
+
+[[RequiredParams]]
+  Name = "combat_mode"
+  Desc = " 战斗模式"
+  Intro = "手工设置容易出错，请通过帮助按钮设置"
+
+[[RequiredParams]]
+  Name = "combat"
+  Desc = "战斗指令"
+  Intro = ""
+
+[[RequiredParams]]
+  Name = "combat_boss"
+  Desc = "对Boss战斗指令"
+  Intro = ""
+
+[[RequiredParams]]
+  Name = "combat_multi"
+  Desc = "被群殴战斗指令"
+  Intro = ""
+
+[[RequiredParams]]
+  Name = "combat_prepare_cmd"
+  Desc = "战斗指令"
+  Intro = "在语气会发生战斗前的准备"

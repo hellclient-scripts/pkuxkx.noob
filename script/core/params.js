@@ -13,7 +13,7 @@
         return rooms
     }
     App.GetSafeRoom=function(){
-        let room=world.GetVariable("saferoom")
+        let room=world.GetVariable("safe_room")
         if (room){
             return room
         }
@@ -22,4 +22,13 @@
     App.GetParamNeiliMin=function(){
         return world.GetVariable("neili_min")
     }
+    App.GetParamGoldMin=function(){
+        let v=world.GetVariable("gold_min")
+        return v?(v-0):App.Core.ShoppingMode.Current().GoldMin()
+    }
+    App.SetVariable=function(key,value){
+        world.SetVariable(key,value)
+        Userinput.Popup("", "设置修改", "设置修改已生效，记得保存游戏")
+    }
+
 })(App)

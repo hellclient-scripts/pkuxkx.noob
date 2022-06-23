@@ -3,7 +3,7 @@
     let Cash= function(){
         proposal.call(this,"cash")
         this.Submit=function(){
-            return App.GetCash()<App.GetNumberParam("gold_min")
+            return App.GetCash()<App.GetParamGoldMin()
         }
         this.Execute=function(){
             let cmd="qu "+App.GetParam("gold_withdraw")+" gold"

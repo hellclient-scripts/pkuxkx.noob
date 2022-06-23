@@ -6,7 +6,7 @@
         return new snapshot(event,data)
     }
     App.Core.Snapshot.Rollback=function(snap){
-        App.Data.Automata.push(snap.Automaton)
+        App.Core.Automata=snap.Automaton
         App.StateContext.State=snap.State
         App.Data.State=snap.State.ID
         if (App.LoggingState){

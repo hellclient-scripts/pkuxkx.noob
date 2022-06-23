@@ -55,10 +55,6 @@
         }
         return cash*10+gold
     }
-    App.RegisterCallback("core.item.inittags",function(){
-        Mapper.settag("rich",App.GetCash()>1)
-    })
-    App.Bind("PathInit","core.item.inittags")
     App.GetItemObj=function(id,lowercase){
         if (lowercase){
             id=id.toLowerCase()

@@ -45,7 +45,10 @@ ncsy||岳麓书院||||Station||岳麓书院
 nckd||偃月楼||||Station||偃月楼
 jksm||灵英观||||Station||灵英观
 jk-ngf||宁国府||||Station||宁国府
+
 la||大理寺||||Landmark||Jianghu tu
+lach||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招
+
 la-yfm||岳飞墓||||Station||岳飞墓
 jx||嘉兴城||||Station||嘉兴城
 sz||沧浪亭||||Station||沧浪亭
@@ -60,18 +63,25 @@ wd-kf||武当客房||||DescStart||这里是武当派招待远来客人暂时休�
 wd-jxg||武当静修阁||||Full||静修阁[门派]east,up
 wd-cw||武当崔老汉家||||Full||草屋[野外]east
 wd-xl||武当路口[土匪任务入口]||||RoomStart||双井子村中的小路，村子里只有稀稀落落的几
+
 hsc||打谷场||||Station||打谷场
 yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
 hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west
 ly-hlg||虎牢关||||Station||虎牢关
+
 dls-hzd||猴子洞||||Station||猴子洞
 dls-zpgc||赞普广场||||Station||赞普广场
+dls-sm||大轮寺山门||||Station||大轮寺山门
+dlsch||大轮寺马车店||||Full||马车店[城市]west
+
 wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
-km-yxs||月兴盛||||Station||月兴盛
-bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘点]enter,west
-dl-thj||大理太和居||||Station||太和居
+
+kmch||昆明车行||||DescStart||这里是昆明当地的一家马车行，挂着一个招牌
+km||昆明||||DescStart||这里是昆明城的城中心，鲜花遍地。
+dl||大理||||Full||中心广场[大理国] [都城]east,north,south,west
+dlch||大理车行||||DescStart||这里是大理城当地的一家马车行，挂着一个招
 tls-sj||天龙寺山脚||||Station||天龙寺山脚
 cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
 
@@ -84,6 +94,7 @@ wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,so
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 hmz||黑苗苗王殿前||||Station||苗王殿前
+bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘点]enter,west
 
 
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown

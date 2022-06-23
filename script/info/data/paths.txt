@@ -27,9 +27,9 @@ ly||ly-wxl||||n;w||e;s
 ly||cakd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
 cakd||cayp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
 cayp||ca-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
-ca-hz||cd||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||40
+ca-hz||cd||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||100
 cd||yy-yyl||||se;se;e;e;ne;.ne;.nw;.nw;.ne;ed;e;n||s;w;wu;sw;.se;.se;.sw;.sw;w;w;nw;nw
-xin-xcz||jz-xyl||rich||s;ask shao gong about 过江&&enter;#sail;se;se;s||n;nw;nw;ask shao gong about 过江&&enter;#sail;n||10
+xin-xcz||jz-xyl||sail||s;ask shao gong about 过江&&enter;#sail;se;se;s||n;nw;nw;ask shao gong about 过江&&enter;#sail;n||20
 jz-xyl||jzkd||||sw;sw;nw||se;ne;ne
 yy-yyl||jzkd||||e;e;e;e;e;e;ed;se;ed;e;ne;ne;ne;ne;ne;nw||se;sw;sw;sw;sw;sw;w;wu;nw;wu;w;w;w;w;w;w
 yz||gb-sdnb||||enter shudong||out
@@ -48,30 +48,34 @@ jksm||jk-ngf||||s;e;e;e;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;w;w;w;n
 jk-ngf||la||||e;se;se;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;nw;nw;w
 la-yfm||la||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jx||la||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
+la||lach||||n;e;n||s;w;s
 sz||jx||||s;s;s;s;s;s;||n;n;n;n;n;n
 wd||wd-sm||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
+wd-jxg||wd-sqd||||e;e;e;s||n;w;w;w
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
 wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
 wd-kf||wd-sqd||||w;w||e;e
 wd-xl||wd-cw||||w||e
 wd-sm||wd-xl||||e;s;se||nw;n;w
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
+gb-sdx||wd-sm||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
-gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||
+gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
-gb-sdx||ly-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||
-gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||
-gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||
+gb-sdx||ly-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
+gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;ee
+gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
 ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
 wdj-jbq||bmz-zzhsdm||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n;e||w;s;s;se;eu;l 东南&&southeast;se;se;se;s
-bmz-zzhsdm||km-yxs||||w;w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;n||s;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;e;
-km-yxs||dl-thj||||s;w;w;w;w;nw;w;nw;w;n;n;n;n;e||w;s;s;s;s;e;se;e;se;e;e;e;e;n
-dl-thj||tls-sj||||w;n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s;e
+bmz-zzhsdm||km||||w;w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;e;
+km||dl||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
+dl||dlch||||w||e
+dl||tls-sj||||n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s
 cd||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
 wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown
@@ -84,11 +88,17 @@ zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
 ly||ly-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-ly-mjd||jy-jiyuan||||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||10
+ly-mjd||jy-jiyuan||sail||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||20
 jy-jiyuan||jy-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
 hzxz||cayp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
-lingzhou||lanzhou||||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||10
+lingzhou||lanzhou||sail||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||20
 gyz-dm||sz||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
 gyz-gyt||gyz-dm||||sd;sd;out||enter;nu;nu
 gyz-gyt||gyz||||e;e||w;w
+dls-hzd||dls-sm||||wu;nw||se;ed
+dls-sm||dlsch||||e||w
+
+dlsch||kmch||train||gu;qu kunming||gu;qu dalunsi||10
+dlsch||dlch||train||gu;qu dalichengzhong||gu;qu dalunsi||10
+dlsch||lach||train||gu;qu hangzhou||gu;qu dalunsi||15

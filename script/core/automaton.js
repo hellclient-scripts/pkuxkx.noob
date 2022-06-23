@@ -1,21 +1,21 @@
 (function(App){
     let automaton=Include("include/automaton.js")
-    App.Data.Automata=[]
+    App.Core.Automata=[]
     App.Automaton={}
     App.Automaton.Current=function(){
-        if (App.Data.Automata.length==0){
+        if (App.Core.Automata.length==0){
             throw "自动机为空"
         }
-        return App.Data.Automata[App.Data.Automata.length-1]
+        return App.Core.Automata[App.Core.Automata.length-1]
     }
     App.Automaton.New=function(states,final){
         let a=new automaton(states,final)
-        App.Data.Automata=[t]
+        App.Core.Automata=[t]
         return a
     }
     App.Automaton.Push=function(states,final){
         let a=new automaton(states,final)
-        App.Data.Automata.push(a)
+        App.Core.Automata.push(a)
         return a
     }
     App.Push=App.Automaton.Push
@@ -26,24 +26,24 @@
         return App.Automaton.Current().Context[key]=value
     }
     App.Automaton.Pop=function(){
-        if (App.Data.Automata.length==0){
+        if (App.Core.Automata.length==0){
             throw "自动机为空"
         }
-        return App.Data.Automata.pop()
+        return App.Core.Automata.pop()
     }
     App.Automaton.Finish=function(){
         let final=App.Automaton.Current().FinalState
-        App.Data.Automata.pop()
+        App.Core.Automata.pop()
         App.ChangeState(final?final:"ready")
     }
     App.Automaton.Fail=function(){
-        if (App.Data.Automata.length==0){
+        if (App.Core.Automata.length==0){
             world.Note("自动任务失败")
             App.ChangeState("manual")
             return
         }
         let fail=App.Automaton.Current().FailState
-        App.Data.Automata.pop()
+        App.Core.Automata.pop()
         if (!fail){
             App.Automaton.Fail()
         }else{
@@ -51,10 +51,10 @@
         }
     }
     App.Automaton.Flush=function(){
-        App.Data.Automata=[]
+        App.Core.Automata=[]
     }
     let auto=function(){
-        if (App.Data.Automata.length==0){
+        if (App.Core.Automata.length==0){
             world.Note("自动任务结束")
             App.ChangeState("manual")
             return
