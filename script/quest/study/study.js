@@ -26,6 +26,14 @@
                         }
                     }
                 }
+                if (p.Type=="lingwu"){
+                    let high=App.Core.PlayerGetSkillByID(p.Target)
+                    if (high!=null){
+                        if (Math.floor(skill.Level)>Math.floor(high.Level)){
+                            return
+                        }
+                    }
+                }
             }
              available.push(p)
         })

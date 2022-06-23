@@ -52,7 +52,7 @@ la||lach||||n;e;n||s;w;s
 sz||jx||||s;s;s;s;s;s;||n;n;n;n;n;n
 wd||wd-sm||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
-wd-jxg||wd-sqd||||e;e;e;s||n;w;w;w
+wd-jxg||wd-sqd||||e;e;s||n;w;w
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
 wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
 wd-kf||wd-sqd||||w;w||e;e
@@ -64,7 +64,7 @@ gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
 gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
 gb-sdx||ly-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
-gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;ee
+gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;e;e
 gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
 ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e

@@ -12,7 +12,6 @@
         "drink_min":"2",
         "drink_max":"10",
         "gold_min":"4",
-        "gold_withdraw":"1",
         "bank_location":"yzqz",
         "walkstep":"8",
         "checkhpinterval":"1000",

@@ -6,7 +6,7 @@
             return App.GetCash()<App.GetParamGoldMin()
         }
         this.Execute=function(){
-            let cmd="qu "+App.GetParam("gold_withdraw")+" gold"
+            let cmd="qu "+App.GetParamGoldMin()+" gold"
 
             App.Commands([
                 App.NewCommand("to",App.Options.NewWalk(App.GetParam("bank_location"))),
