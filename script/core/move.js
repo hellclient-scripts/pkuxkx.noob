@@ -61,6 +61,12 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
+    App.Core.OnMoveRain=function(name, output, wildcards){
+        if (wildcards[0]==App.Data.Room.Name){
+            moved.splice(-1)
+            App.RaiseStateEvent("move.retry")
+        }
+    }
     App.Core.OnBuffFull=function(name, output, wildcards){
         App.RaiseStateEvent("move.retry")
     }

@@ -94,7 +94,7 @@ wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,so
 wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
-hmz||黑苗苗王殿前||||Station||苗王殿前
+mwd||苗王殿||||Station||苗王殿
 bmz-zzhsdm||白苗寨主居室大门||||Full||寨主居室大门[门派] [存盘点]enter,west
 
 

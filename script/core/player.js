@@ -155,11 +155,9 @@
     }
     App.Data.LastHP=0
     App.Bind("Check","core.player.hp")
-    let checkHP=(new check("hp")).WithLevel(App.CheckLevelFull).WithCommand("yun recover;yun regenerate;hpbrief").WithIntervalParam("checkhpinterval").WithLastID("LastHP")
-    App.RegisterCallback("core.player.hp",checkHP.Callback())
+
     App.Core.OnPlayerHpbrief=function(name, output, wildcards){
         App.Data.HP={}
-        App.Data.HP["exp"]=world.GetTriggerWildcard(name,"exp")-0
         App.Data.HP["pot"]=world.GetTriggerWildcard(name,"pot")-0
         App.Data.HP["neili"]=world.GetTriggerWildcard(name,"neili")-0
         App.Data.HP["eff_neili"]=world.GetTriggerWildcard(name,"eff_neili")-0
@@ -168,16 +166,63 @@
         App.Data.HP["qixue_cap"]=world.GetTriggerWildcard(name,"qixue_cap")-0
         App.Data.HP["qixue"]=world.GetTriggerWildcard(name,"qixue")-0
         App.Data.HP["eff_qixue"]=world.GetTriggerWildcard(name,"eff_qixue")-0
+        App.Data.HP["per_qixue"]=100*App.Data.HP["qixue"]/App.Data.HP["qixue_cap"]
         App.Data.HP["jing_cap"]=world.GetTriggerWildcard(name,"jing_cap")-0
         App.Data.HP["jing"]=world.GetTriggerWildcard(name,"jing")-0
         App.Data.HP["eff_jing"]=world.GetTriggerWildcard(name,"eff_jing")-0
+        App.Data.HP["per_jing"]=100*App.Data.HP["jing"]/App.Data.HP["jing_cap"]
         App.Data.HP["zhenqi"]=world.GetTriggerWildcard(name,"zhenqi")-0
         App.Data.HP["zhanyi"]=world.GetTriggerWildcard(name,"zhanyi")-0
         App.Data.HP["food"]=world.GetTriggerWildcard(name,"food")-0
         App.Data.HP["drink"]=world.GetTriggerWildcard(name,"drink")-0
-        App.Data.HP["fighting"]=(world.GetTriggerWildcard(name,"fighting")=="1")
-        App.Data.HP["busy"]=(world.GetTriggerWildcard(name,"busy")=="1")
         App.Data.LastHP=Now()
     }
+
+    let checkHP=(new check("hp")).WithLevel(App.CheckLevelFull).WithCommand("yun recover;yun regenerate;hp").WithIntervalParam("checkhpinterval").WithLastID("LastHP")
+    App.RegisterCallback("core.player.hp",checkHP.Callback())
+    App.Core.OnPlayerHP=function(name, output, wildcards){
+        App.Data.HP={
+        }
+        world.EnableTriggerGroup("playerhp",true)
+    }
+    App.Core.OnPlayerHP1=function(name, output, wildcards){
+        App.Data.HP["eff_jing"]=wildcards[0]-0
+        App.Data.HP["jing"]=wildcards[1]-0
+        App.Data.HP["per_jing"]=wildcards[2]-0
+        App.Data.HP["eff_jingli"]=wildcards[3]-0
+        App.Data.HP["jingli"]=wildcards[4]-0
+        App.Data.HP["jiajing"]=wildcards[5]-0
+    }
+    App.Core.OnPlayerHP2=function(name, output, wildcards){
+        App.Data.HP["eff_qixue"]=wildcards[0]-0
+        App.Data.HP["qixue"]=wildcards[1]-0
+        App.Data.HP["per_qixue"]=wildcards[2]-0
+        App.Data.HP["eff_neili"]=wildcards[3]-0
+        App.Data.HP["neili"]=wildcards[4]-0
+        App.Data.HP["jiali"]=wildcards[5]-0
+    }
+    App.Core.OnPlayerHP3=function(name, output, wildcards){
+        App.Data.HP["eff_zhenqi"]=wildcards[0]-0
+        App.Data.HP["zhengqi"]=wildcards[1]-0
+        App.Data.HP["eff_jingqi"]=wildcards[2]-0
+        App.Data.HP["jingqi"]=wildcards[3]-0
+        App.Data.HP["jingqi_status"]=wildcards[4]
+    }
+    App.Core.OnPlayerHP4=function(name, output, wildcards){
+        App.Data.HP["food"]=wildcards[0]-0
+        App.Data.HP["food_cap"]=wildcards[1]-0
+        App.Data.HP["pot"]=wildcards[3]-0
+    }
+    App.Core.OnPlayerHP5=function(name, output, wildcards){
+        App.Data.HP["drink"]=wildcards[0]-0
+        App.Data.HP["drink_cap"]=wildcards[1]-0
+        App.Data.HP["exp"]=wildcards[3]-0
+    }
+    App.Core.OnPlayerHP6=function(name, output, wildcards){
+        App.Data.HP["status"]=wildcards[0]
+    }
     
+    App.Core.OnPlayerHPEnd=function(name, output, wildcards){
+        world.EnableTriggerGroup("playerhp",false)
+    }
 })(App)

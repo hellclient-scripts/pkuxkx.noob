@@ -66,7 +66,7 @@ gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
 gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
 gb-sdx||ly-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
-gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;e;e
+gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;e
 gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
 ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
@@ -83,8 +83,8 @@ wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
 wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown
 wdj-lgxs-e||wdj-lgds-w||||ed||w
 wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west
-hmz||wdj-swdsn-s||||n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s
-hmz||wdj-jbq||||n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s
+mwd||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
+mwd||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 bmz-zzhsdm||wdj-swdsb-s||||w;w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e;e
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
