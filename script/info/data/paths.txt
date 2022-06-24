@@ -58,6 +58,8 @@ wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密�
 wd-kf||wd-sqd||||w;w||e;e
 wd-xl||wd-cw||||w||e
 wd-sm||wd-xl||||e;s;se||nw;n;w
+wd-xl||wd-zl||||#maze 武当土匪进入
+wd-zl||wd-xl||||#maze 武当土匪离开;n;nd;w;s;se
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
 gb-sdx||wd-sm||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||

@@ -40,5 +40,7 @@
     App.RegisterMaze(new (Include("core/maze/mlsl.js"))())
     App.RegisterMaze(new (Include("core/maze/mjds.js"))())
     App.RegisterMaze(new (Include("core/maze/wssz.js"))())
-
-    })(App)
+    App.RegisterMaze(new (Include("core/maze/wdtfin.js"))())
+    App.RegisterMaze(new (Include("core/maze/wdtfout.js"))())
+})(App)
+    

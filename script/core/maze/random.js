@@ -24,18 +24,22 @@
     Maze.prototype.CheckWrongway=function(){
         //必须实现这个接口，判断是否走到了预期外的地点需要返回
         //return App.Data.Room.Tags=="[门派] [存盘点]"
+        return false
+    }
+    Maze.prototype.EntryCmd=function(){
+        let data=SplitN(this.Current,">",2)
+        return data[0]
     }
     Maze.prototype.IsEscaped=function(move){
         let escaped=(this.CheckSuccess()&&this.Command)
         return escaped
     }
     Maze.prototype.Explore=function(move){
-        let data=SplitN(this.Current,">",2)
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
                 App.Send("set brief 1")
                 this.Command=DFS.New()
-                let level=this.Command.Arrive([data[0]])
+                let level=this.Command.Arrive([this.EntryCmd()])
                 this.Command=level.Next()
                 App.Go(this.Command.Command)
                 return;
@@ -45,6 +49,9 @@
         }else{
             App.Fail()
         }
+    }
+    Maze.prototype.GetExits=function(){
+        return App.Data.Room.Exits
     }
     Maze.prototype.OnStateEvent=function(move,state,event,data){
         switch (event){
@@ -62,7 +69,7 @@
                     fr.unshift(MazeBackward[this.Command.Command])
                     App.Core.Maze.Info[info + "-" +this.Start]=(fr.join(";"))
                 }
-                let level=this.Command.Arrive(giveup?[]:App.Data.Room.Exits)
+                let level=this.Command.Arrive(giveup?[]:this.GetExits())
                 if (level==null){
                    App.Fail()
                     return 

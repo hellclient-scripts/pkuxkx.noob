@@ -36,7 +36,7 @@
     App.Core.HUD.SetQuset = function (str) {
         App.Core.HUD.CurrentQuest = str
         if (App.Core.HUD.Mode == "quest") {
-            App.Core.HUD.RenderQuestLine(App.Core.HUD.QuestLength - 3)
+            App.Core.HUD.RenderQuestLine(App.Core.HUD.QuestLength - 2)
         }
     }
     App.RegisterCallback("App.Core.HUD.SetQuest", function (data) {
@@ -52,10 +52,10 @@
             App.Core.HUD.Replies.push(JSON.parse(output)[0].Words)
             App.Core.HUD.QuestLog.push(OutputToText(output))
             App.Core.HUD.QuestLog = App.Core.HUD.QuestLog.slice(-App.Core.HUD.QuestLogMax)
-            if (App.Core.HUD.Replies.length >= App.Core.HUD.QuestLength - 2) {
-                App.Core.HUD.Replies = App.Core.HUD.Replies.slice(2 - App.Core.HUD.QuestLength)
+            if (App.Core.HUD.Replies.length >= App.Core.HUD.QuestLength - 3) {
+                App.Core.HUD.Replies = App.Core.HUD.Replies.slice(3 - App.Core.HUD.QuestLength)
             }
-            for (var i = 0; i < App.Core.HUD.QuestLength - 2; i++) {
+            for (var i = 0; i < App.Core.HUD.QuestLength - 3; i++) {
                 App.Core.HUD.RenderQuestLine(i)
             }
         }
@@ -275,6 +275,9 @@
         list.append("核心弟子", "核心弟子：会接危险战斗任务，Wimpy55,有强力技能组合后选这个")
         list.publish("App.Core.HUD.OnCombatMode")
     }
+    if (world.GetVariable("combat_mode")==""){
+        Userinput.Popup("App.Core.HUD.PickCombatMode", "战斗模式", "你还没有选择您的战斗模式，点击HUD面板进行选择")
+    }
     App.Core.HUD.PickShoppingMode = function () {
         var list = Userinput.newlist("请选择你要设置消费模式", "消费模式决定了机器一些消费计算使用用的的参数")
         list.append("一穷二白", "一穷二白：默认gold_min为0,不坐任何交通工具，会从成都翻山过长江，不买吃喝")
@@ -282,6 +285,9 @@
         list.append("中产阶级", "中产阶级：默认gold_min为10,会坐车去偏远的地方")
         list.append("土豪阶级", "土豪阶级：默认gold_min为100,较近的地方也会坐车")
         list.publish("App.Core.HUD.OnShoppingMode")
+    }
+    if (world.GetVariable("shopping_mode")==""){
+        Userinput.Popup("App.Core.HUD.PickShoppingMode", "消费模式", "你还没有选择您的消费模式，点击HUD面板进行选择")
     }
     App.Core.HUD.OnCombatMode = function (name, id, code, data) {
         if (code == 0 && data) {
