@@ -22,9 +22,9 @@
         App.Core.Combat.Looted={}
     }
     App.Core.Combat.Looted={}
+
     App.Core.Combat.OnKilled=function(name, output, wildcards){
         App.RaiseStateEvent("combat.killed",wildcards[0])
-        App.Core.Combat.Looted[wildcards[0]]=true
     }
     App.Core.Combat.NewBlockedCombat=function(){
         App.Core.Combat.Current=new combat()
@@ -36,15 +36,12 @@
         App.Send(world.GetVariable("jifa_cmd"))
         App.Send("set wimpy "+ App.Core.CombatMode.Current().GetWimpy())
     }
-    App.Core.Combat.Prepare=function(){
-        App.Send(world.GetVariable("combat_prepare_cmd"))
-        App.Next()
-    }
     App.Core.Combat.Rest=function(){
         App.NewCommand("rest").Push()
         App.Next()
     }
     App.Core.Combat.OnLoot=function(name, output, wildcards){
+        App.Core.Combat.Looted[wildcards[0]]=true
         let cmd=App.Data.Room.LootCmds[wildcards[0]]
         if (cmd){
             App.Send(cmd)

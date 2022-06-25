@@ -41,4 +41,9 @@
     App.RegisterCommand(Include("core/command/musthave.js"))
     App.RegisterCommand(Include("core/command/rollback.js"))
     App.RegisterCommand(Include("core/command/rest.js"))
+    App.RegisterCommand(Include("core/command/setloot.js"))
+    App.RegisterCommand(Include("core/command/kill.js"))
+    App.RegisterCommand(Include("core/command/powerup.js"))
+    App.RegisterCommand(Include("core/command/combatinit.js"))
+
 })(App)

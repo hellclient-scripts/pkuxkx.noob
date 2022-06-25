@@ -1472,6 +1472,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1duvh9bl42f84738dcuio"
+  Name = "App.Core.Combat.OnLoot"
+  Enabled = true
+  Match = "^([^【】])死了。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.Combat.OnLoot"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -3474,9 +3505,9 @@ Channel = "pkuxkx.noob"
   Intro = ""
 
 [[RequiredParams]]
-  Name = "combat_prepare_cmd"
-  Desc = "战斗指令"
-  Intro = "在语气会发生战斗前的准备"
+  Name = "powerup_cmd"
+  Desc = "战斗前的强化指令"
+  Intro = ""
 
 [[RequiredParams]]
   Name = "exp_limit"
