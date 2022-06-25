@@ -225,4 +225,8 @@
     App.Core.OnPlayerHPEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("playerhp",false)
     }
+    App.Core.OnHealed=function(name,output,wildcards){
+        App.Data.HP["eff_qixue"]=App.Data.HP["qixue"]-0
+        App.Data.HP["per_qixue"]=100
+    }
 })(App)

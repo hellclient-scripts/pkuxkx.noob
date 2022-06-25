@@ -1,4 +1,6 @@
 (function(App){
+    let combat=Include("include/combat.js")
+
     App.Core.Combat={}
     App.Core.Combat.Current=null
     App.Core.Combat.OnEscapeFail=function(name, output, wildcards){
@@ -7,8 +9,20 @@
     App.Core.Combat.OnTick=function(){
         App.RaiseStateEvent("combat.tick")
     }
+    App.Core.Combat.OnFinish=function(){
+        App.RaiseStateEvent("combat.finish")
+    }
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
         App.RaiseStateEvent("combat.blocked",wildcards[0])
+    }
+    App.Core.Combat.OnKilled=function(name, output, wildcards){
+        App.RaiseStateEvent("combat.killed",wildcards[0])
+    }
+    App.Core.Combat.NewBlockedCombat=function(){
+        App.Core.Combat.Current=new combat()
+        App.Core.Combat.Current.SetCommands(world.GetVariable("combat"))
+        App.Push(["core.state.combat.combat"])
+        App.Next()
     }
     App.Core.Combat.Init=function(){
         App.Send(world.GetVariable("jifa_cmd"))
@@ -22,4 +36,7 @@
         App.Next()
     }
     world.EnableTimer("App.Core.Combat.OnTick",false)
+
+    App.RegisterState(new (Include("core/state/combat/combat.js"))())
+    App.RegisterState(new (Include("core/state/combat/rest.js"))())
 })(App)

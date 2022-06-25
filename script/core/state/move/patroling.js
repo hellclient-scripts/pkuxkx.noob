@@ -28,6 +28,10 @@
             return
         }
         switch(event){
+            case "combat.blocked":
+                App.Automaton.Current().Insert([this.ID])
+                App.Core.Combat.NewBlockedCombat()
+                return 
             case "move.retry":
                 this.Retry()
             break
@@ -81,6 +85,11 @@
         if (move.Ignore){
             move.Ignore=false
             return;
+        }
+        if (move.Current&&move.Current.Target){
+            if (App.Data.Room.ID==""){
+                App.Data.Room.ID=move.Current.Target
+            }
         }
         App.ChangeState(this.GetStateOnStep())
     }

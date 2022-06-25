@@ -7,14 +7,23 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
         world.EnableTimer("App.Core.Combat.OnTick",true)
+        App.Core.Combat.Current.Perform()
     }
-    State.prototype.Level=function(context,oldstatue){
+    State.prototype.Leave=function(context,oldstatue){
         world.EnableTimer("App.Core.Combat.OnTick",false)
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
-        case "core.tick":
+        case "combat.tick":
             App.Core.Combat.Current.Perform()
+            break
+        case "combat.finish":
+            App.Commands([
+                App.NewCommand("do","hpbrief"),
+                App.NewCommand("nobusy"),
+                App.NewCommand("state","core.state.combat.rest"),
+            ]).Push()
+            App.Next()
             break
         }
     }

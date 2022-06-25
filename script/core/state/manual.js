@@ -10,6 +10,12 @@
         Userinput.Popup("","进入手动模式","可以点击输入框左侧的小人图标选择下一步的动作","info")
     }
     StateManual.prototype.OnEvent=function(context,event,data){
+        switch(event){
+            case "combat.killed":
+                Note("被叫杀，自动反击")
+                App.Core.Combat.NewBlockedCombat()
+                break
+        }
     }
     return StateManual
 })(App)
