@@ -8,6 +8,7 @@
     State.prototype.Enter=function(context,oldstatue){
         world.EnableTimer("App.Core.Combat.OnTick",true)
         App.Core.Combat.Current.Perform()
+        App.Core.Combat.CheckFighting()
     }
     State.prototype.Leave=function(context,oldstatue){
         world.EnableTimer("App.Core.Combat.OnTick",false)
@@ -16,7 +17,7 @@
         switch(event){
         case "combat.tick":
             App.Core.Combat.Current.Perform()
-            App.Send("dazuo -99")
+            App.Core.Combat.CheckFighting()
             break
         case "combat.finish":
             App.Commands([

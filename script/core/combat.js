@@ -18,12 +18,17 @@
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
         App.RaiseStateEvent("combat.blocked",wildcards[0])
     }
+    App.Core.Combat.ResetLooted=function(){
+        App.Core.Combat.Looted={}
+    }
+    App.Core.Combat.Looted={}
     App.Core.Combat.OnKilled=function(name, output, wildcards){
         App.RaiseStateEvent("combat.killed",wildcards[0])
+        App.Core.Combat.Looted[wildcards[0]]=true
     }
     App.Core.Combat.NewBlockedCombat=function(){
         App.Core.Combat.Current=new combat()
-        App.Core.Combat.Current.SetCommands(world.GetVariable("combat"))
+        App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands())
         App.Push(["core.state.combat.combat"])
         App.Next()
     }
@@ -45,9 +50,22 @@
             App.Send(cmd)
         }
     }
-    
+    App.Core.Combat.CheckFighting=function(){
+        App.Send("dazuo -1")
+    }
+    App.Core.Combat.GetCommands=function(name){
+        if (!name){
+            name="combat"
+        }
+        let value=world.GetVariable(name)
+        if (!value){
+            value=world.GetVariable("combat")
+        }
+        return value
+    }
     world.EnableTimer("App.Core.Combat.OnTick",false)
 
     App.RegisterState(new (Include("core/state/combat/combat.js"))())
     App.RegisterState(new (Include("core/state/combat/rest.js"))())
+    App.RegisterState(new (Include("core/state/combat/kill.js"))())
 })(App)
