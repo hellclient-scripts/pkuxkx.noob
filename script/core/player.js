@@ -229,4 +229,7 @@
         App.Data.HP["eff_qixue"]=App.Data.HP["qixue"]-0
         App.Data.HP["per_qixue"]=100
     }
+    App.Core.OnNoNeili=function(name,output,wildcards){
+        App.Data.HP["eff_neili"]=0
+    }
 })(App)
