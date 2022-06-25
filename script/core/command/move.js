@@ -10,7 +10,7 @@
         let move=App.NewMove("patrol",this.Data.Path).WithVehicle(this.Data.Vehicle)
         automaton.WithData(this.ContextKey,move)
     }
-    Patrol.prototype.CommandID="patrol"
+    Patrol.prototype.CommandID="move"
     App.RegisterState(new (Include("core/state/command/move.js"))())
     return Patrol
 }(App))

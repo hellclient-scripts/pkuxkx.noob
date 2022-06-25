@@ -70,11 +70,11 @@
         App.Quest.WDJ.Type = ""
         App.Commands([
             App.NewCommand("to", App.Options.NewWalk("wdj")),
-            App.NewCommand("patrol", App.Options.NewPath("n")),
+            App.NewCommand("move", App.Options.NewPath("n")),
             App.NewCommand("do", "drink"),
-            App.NewCommand("patrol", App.Options.NewPath("s;su")),
+            App.NewCommand("move", App.Options.NewPath("s;su")),
             App.NewCommand("do", "have"),
-            App.NewCommand("patrol", App.Options.NewPath("nd")),
+            App.NewCommand("move", App.Options.NewPath("nd")),
             App.NewCommand("ask", App.Quest.WDJ.QuestionJob),
             App.NewCommand("function", function () { Start(snap) }),
         ]).Push()

@@ -10,13 +10,13 @@
     State.prototype.Enter=function(context,oldstatue){
         App.Commands([
             App.NewCommand("to",App.Options.NewWalk("wd")),
-            App.NewCommand("patrol",App.Options.NewPath("n;n;n;n;e;e")),
+            App.NewCommand("move",App.Options.NewPath("n;n;n;n;e;e")),
             App.NewCommand("ask",QuestionLiandan),
-            App.NewCommand("patrol",App.Options.NewPath("s")),
+            App.NewCommand("move",App.Options.NewPath("s")),
             App.NewCommand("state","core.state.quest.wd.liandan.zuo"),
-            App.NewCommand("patrol",App.Options.NewPath("n")),
+            App.NewCommand("move",App.Options.NewPath("n")),
             App.NewCommand("ask",QuestionLiandan),
-            App.NewCommand("patrol",App.Options.NewPath("w;w;s;s;s;s")),
+            App.NewCommand("move",App.Options.NewPath("w;w;s;s;s;s")),
             App.NewCommand("ask",App.Quest.WD.QuestionSuccess),
         ]).Push()
         App.Next()

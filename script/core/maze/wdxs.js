@@ -19,9 +19,9 @@
             case "move.notallowed":
                 let snap=App.Core.Snapshot.Take("move.retry")
                 App.Commands([
-                    App.NewCommand("patrol",App.Options.NewPath("n")),
+                    App.NewCommand("move",App.Options.NewPath("n")),
                     App.NewCommand("do","ask song yuanqiao about 下山"),
-                    App.NewCommand("patrol",App.Options.NewPath("s")),
+                    App.NewCommand("move",App.Options.NewPath("s")),
                     App.NewCommand("function",function(){
                         App.Core.Snapshot.Rollback(snap)
                     }),

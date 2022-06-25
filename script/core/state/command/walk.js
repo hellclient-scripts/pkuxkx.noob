@@ -28,7 +28,7 @@
             return
         }
         App.Send("set breif 2")
-        App.NewCommand("patrol",App.Options.NewPath(path.Path,move.Vehicle)).Push()
+        App.NewCommand("move",App.Options.NewPath(path.Path,move.Vehicle)).Push()
         App.Next()
     }
     return State

@@ -20,7 +20,7 @@
                 switch (App.Data.Room.Name){
                     case "树洞内部":
                         App.Commands([
-                            App.NewCommand("patrol",App.Options.NewPath("d")),
+                            App.NewCommand("move",App.Options.NewPath("d")),
                             App.NewCommand("function",function(){
                                 App.Core.Snapshot.Rollback(snap)
                             }),

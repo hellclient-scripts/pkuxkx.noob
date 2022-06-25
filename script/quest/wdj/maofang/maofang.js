@@ -3,16 +3,16 @@
     App.Quest.WDJ.Maofang.Start=function(){
         App.Raise("quest.set","五毒教任务茅房")
         App.Commands([
-            App.NewCommand("patrol",App.Options.NewPath("w")),
+            App.NewCommand("move",App.Options.NewPath("w")),
             App.NewCommand("do","zhao 净桶"),
             App.NewCommand("nobusy"),
-            App.NewCommand("patrol",App.Options.NewPath("e;se")),
+            App.NewCommand("move",App.Options.NewPath("e;se")),
             App.NewCommand("do","yao"),
             App.NewCommand("nobusy"),
-            App.NewCommand("patrol",App.Options.NewPath("nw;w")),
+            App.NewCommand("move",App.Options.NewPath("nw;w")),
             App.NewCommand("do","dao"),
             App.NewCommand("nobusy"),
-            App.NewCommand("patrol",App.Options.NewPath("e")),
+            App.NewCommand("move",App.Options.NewPath("e")),
         ]).Push()
         App.Next()
     }
