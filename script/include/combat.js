@@ -20,5 +20,8 @@
             }
         })
     }
+    Combat.prototype.Perform=function(){
+        App.Send(this.PerformCmd)
+    }
     return Combat
 })()

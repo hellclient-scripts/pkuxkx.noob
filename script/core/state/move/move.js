@@ -30,6 +30,8 @@
                 Note("无法通过")
                 App.Fail()
                 break
+            case "combat.blocked":
+                break
         }
     }
     StateMove.prototype.Ignore=function(){
