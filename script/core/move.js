@@ -61,6 +61,10 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
+    App.Core.OnMovePlayGuard=function(name, output, wildcards){
+        moved.splice(-1)
+        App.RaiseStateEvent("move.retry")
+    }
     App.Core.OnMoveRain=function(name, output, wildcards){
         if (wildcards[0]==App.Data.Room.Name){
             moved.splice(-1)

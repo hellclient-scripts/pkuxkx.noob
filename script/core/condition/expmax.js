@@ -5,7 +5,7 @@
     }
     Condition.prototype = Object.create(BaseCondition.prototype)
     Condition.prototype.Match=function(param){
-        let exp=(param?param:world.GetVariable())-0
+        let exp=(param?param:world.GetVariable("exp_max"))-0
         return App.Data.HP["exp"]<=exp
     }
     return Condition

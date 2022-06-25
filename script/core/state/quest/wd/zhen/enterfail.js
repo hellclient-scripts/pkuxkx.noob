@@ -7,8 +7,7 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
         App.Pop()
-        App.Push("core.state.quest.wd.zhen.zhen")
-        App.Next()
+        App.ChangeState("core.state.quest.wd.zhen.zhen")
     }
     return State
 })(App)

@@ -3,6 +3,7 @@
     App.Core.Inited=false
     App.Core.Init=function(){
         App.Send(App.Core.InitCmd)
+        App.Core.Combat.Init()
         App.Response("core","init")
     }
     App.RegisterCallback("app.core.init",function(){
