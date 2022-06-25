@@ -1,0 +1,12 @@
+(function(App){
+    let BaseCondition = Include("core/condition/condition.js")
+    let Condition=function(){
+        this.ID="expmax"
+    }
+    Condition.prototype = Object.create(BaseCondition.prototype)
+    Condition.prototype.Match=function(param){
+        let exp=(param?param:world.GetVariable())-0
+        return App.Data.HP["exp"]<=exp
+    }
+    return Condition
+})(App)

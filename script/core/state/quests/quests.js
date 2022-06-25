@@ -17,8 +17,12 @@
             App.Core.Quest.Remain=[...App.Core.Quest.Queue]
             loop=true
         }
-        let q=App.Core.Quest.Remain.shift()
-        App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
+        let q=App.Core.Condition.MatchCmd(App.Core.Quest.Remain.shift())
+        if (q==""){
+            App.ChangeState(this.ID)
+        }else{
+            App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
+        }
         if (loop){
             App.NewCommand("delay",App.GetNumberParam("questsdelay")).Push()
         }

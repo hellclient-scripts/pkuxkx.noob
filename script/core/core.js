@@ -10,6 +10,7 @@ App.Load("core/room.js")
 App.Load("core/player.js")
 App.Load("core/item.js")
 App.Load("core/npc.js")
+App.Load("core/condition.js")
 
 App.Load("core/send.js")
 App.Load("core/move.js")
