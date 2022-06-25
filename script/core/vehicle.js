@@ -11,20 +11,21 @@
         Cart:new cart(),
         Slow:new slow(),
     }
+    App.GetVehicle=function(id){
+        if(!id){
+            return App.DefaultVehicle
+        }
+        for (let key in App.Vehicles) {
+            if (App.Vehicles[key].ID == id){
+                return App.Vehicles[key]
+            }
+        }
+        throw "未知的载具 " +id        
+    }
     App.DefaultVehicle=App.Vehicles.Slow
     App.Vehicle=App.DefaultVehicle
     App.Drive=function(id){
-        if(id){
-            for (let key in App.Vehicles) {
-				if (App.Vehicles[key].ID == id){
-                    App.Vehicle=App.Vehicles[key]
-                    return
-                }
-			}
-            throw "未知的载具 " +id
-        }else{
-            App.Vehicle=App.DefaultVehicle
-        }
+        App.Vehicle=App.GetVehicle(id)
     }
     App.RegisterCallback("core.vehicle.inittags",function(){
         Mapper.settag("drive",App.Vehicle.TagDrive)

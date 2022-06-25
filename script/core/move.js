@@ -102,7 +102,6 @@
     })
     App.RegisterAlias("sail","core.move.sail")
     App.RegisterAlias("home","core.move.home")
-    App.RegisterState(new (Include("core/state/move/walk.js"))())
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/locate.js"))())
     App.RegisterState(new (Include("core/state/move/locating.js"))())

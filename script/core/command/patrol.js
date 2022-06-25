@@ -11,5 +11,6 @@
         automaton.WithData(this.ContextKey,move)
     }
     Patrol.prototype.CommandID="patrol"
+    App.RegisterState(new (Include("core/state/command/move.js"))())
     return Patrol
 }(App))

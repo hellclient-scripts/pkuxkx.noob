@@ -1,6 +1,9 @@
 (function(App){
     let Path=function(path,vehicle){
-        this.Path=App.API.ConvertPath(path)
+        if (typeof(path)=="string"){
+            path=App.API.ConvertPath(path)
+        }
+        this.Path=path
         this.Vehicle=vehicle?vehicle:""
     }
     return Path

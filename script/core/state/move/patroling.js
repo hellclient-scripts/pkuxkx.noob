@@ -62,12 +62,12 @@
         this.TryMove()
     }
     StatePatroling.prototype.Fail=function(){
-        world.Note("巡查失败")
+        world.Note("行走失败")
         App.Automaton.Fail()
     }
 
     StatePatroling.prototype.Finish=function(){
-        world.Note("巡查成功")
+        world.Note("到达目的地")
         App.Next()
     }
     StatePatroling.prototype.Retry=function(){
