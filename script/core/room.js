@@ -4,6 +4,7 @@
         Name: "",
         Tags: "",
         Objs: [],
+        LootCmds:{},
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -27,6 +28,7 @@
             Name: wildcards[1],
             Tags: wildcards[3],
             Objs: [],
+            LootCmds:{},
         }
         App.Core.RoomDesc = {
             Mode: 0,
@@ -144,5 +146,8 @@
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
         world.EnableTriggerGroup("roomobj", false)
         App.Raise("OnRoomEnd")
+    }
+    App.SetLootCmd=function(name,cmd){
+        App.Data.Room.LootCmds[name]=cmd
     }
 })(App)

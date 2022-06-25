@@ -12,6 +12,9 @@
     App.Core.Combat.OnFinish=function(){
         App.RaiseStateEvent("combat.finish")
     }
+    App.Core.Combat.OnFighting=function(){
+        App.RaiseStateEvent("combat.fighting")
+    }
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
         App.RaiseStateEvent("combat.blocked",wildcards[0])
     }
@@ -33,8 +36,16 @@
         App.Next()
     }
     App.Core.Combat.Rest=function(){
+        App.NewCommand("rest").Push()
         App.Next()
     }
+    App.Core.Combat.OnLoot=function(name, output, wildcards){
+        let cmd=App.Data.Room.LootCmds[wildcards[0]]
+        if (cmd){
+            App.Send(cmd)
+        }
+    }
+    
     world.EnableTimer("App.Core.Combat.OnTick",false)
 
     App.RegisterState(new (Include("core/state/combat/combat.js"))())

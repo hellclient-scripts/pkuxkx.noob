@@ -16,6 +16,7 @@
         switch(event){
         case "combat.tick":
             App.Core.Combat.Current.Perform()
+            App.Send("dazuo -99")
             break
         case "combat.finish":
             App.Commands([
