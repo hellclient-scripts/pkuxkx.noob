@@ -7,7 +7,10 @@
     App.Core.Combat.Init=function(){
         App.Next()
     }
+    App.Core.Combat.Prepare=function(){
+        App.Next()
+    }
     App.Core.Combat.Rest=function(){
-        
+        App.Next()
     }
 })(App)

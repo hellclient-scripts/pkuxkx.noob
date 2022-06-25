@@ -1,6 +1,7 @@
 (function(){
     let Combat=function(){
         this.PerformCmd=""
+        this.Targets={}
     }
     Combat.prototype.SetCommands=function(cmds){
         let data=cmds.split("\n")

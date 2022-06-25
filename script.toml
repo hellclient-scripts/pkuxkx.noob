@@ -1563,7 +1563,36 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
-
+[[Triggers]]
+  ID = "d1duskgc44ua2i738cgr1k"
+  Name = "App.Core.OnMoveRain"
+  Enabled = true
+  Match = "^(.{1,10})在大雨的冲刷下，愈加难行！$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnMoveRain"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
 [[Triggers]]
   ID = "player_hp"
   Name = "player_hp"

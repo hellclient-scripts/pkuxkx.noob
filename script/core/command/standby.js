@@ -3,10 +3,10 @@
     let Rest=function(data){
         Command.call(this,data)
         this.ContextKey="Rest"
-        this.Transitions=["core.state.command.rest"]
+        this.Transitions=["core.state.command.standby"]
     }
     Rest.prototype = Object.create(Command.prototype)
-    Rest.prototype.CommandID="rest"
+    Rest.prototype.CommandID="standby"
     App.RegisterState(new (Include("core/state/command/standby.js"))())
     return Rest
 }(App))

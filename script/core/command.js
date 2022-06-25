@@ -37,7 +37,7 @@
     App.RegisterCommand(Include("core/command/quests.js"))
     App.RegisterCommand(Include("core/command/fullme.js"))
     App.RegisterCommand(Include("core/command/sleep.js"))
-    App.RegisterCommand(Include("core/command/rest.js"))
+    App.RegisterCommand(Include("core/command/standby.js"))
     App.RegisterCommand(Include("core/command/musthave.js"))
     App.RegisterCommand(Include("core/command/rollback.js"))
 

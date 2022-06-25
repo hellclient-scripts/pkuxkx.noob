@@ -66,7 +66,7 @@
             App.NewCommand('to',App.Options.NewWalk(location)),
             App.NewCommand('nobusy'),
             App.NewCommand('function',App.Quest.Study.Execute),
-            App.NewCommand('rest'),
+            App.NewCommand('standby'),
             App.NewCommand('do',"skills"),
         ]).Push()
         App.Next()
