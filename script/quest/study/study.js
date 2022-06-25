@@ -98,7 +98,7 @@
             App.NewCommand("do",cmd),
             App.NewCommand("nobusy"),
             App.NewCommand("do",App.Quest.Study.Current.After),
-            App.NewCommand("rest"),
+            App.NewCommand("standby"),
         ]).Push()
         App.Next()
     }

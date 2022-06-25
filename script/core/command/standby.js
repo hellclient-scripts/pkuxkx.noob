@@ -7,6 +7,6 @@
     }
     Rest.prototype = Object.create(Command.prototype)
     Rest.prototype.CommandID="rest"
-    App.RegisterState(new (Include("core/state/command/rest.js"))())
+    App.RegisterState(new (Include("core/state/command/standby.js"))())
     return Rest
 }(App))
