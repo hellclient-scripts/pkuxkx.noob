@@ -36,4 +36,5 @@
     }
     App.RegisterState(new (Include("core/state/quest/wd/zhen/zhen.js"))())
     App.RegisterState(new (Include("core/state/quest/wd/zhen/enter.js"))())
+    App.RegisterState(new (Include("core/state/quest/wd/zhen/enterfail.js"))())
 })(App)

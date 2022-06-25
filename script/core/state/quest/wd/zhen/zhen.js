@@ -10,7 +10,7 @@
         App.Quest.WD.Zhen.Back=App.Quest.WD.Zhen.Locations[App.Quest.WD.Zhen.Dir]
 
         App.Commands([
-            App.NewCommand("patrol",App.Options.NewPath(App.Quest.WD.Zhen.Dir),"","core.state.quest.wd.zhen.zhen"),
+            App.NewCommand("patrol",App.Options.NewPath(App.Quest.WD.Zhen.Dir),"","core.state.quest.wd.zhen.enterfail"),
             App.NewCommand("state","core.state.quest.wd.zhen.enter"),
             App.NewCommand("patrol",App.Options.NewPath(App.Quest.WD.Zhen.Back)),
             App.NewCommand("ask",App.Quest.WD.QuestionSuccess),
