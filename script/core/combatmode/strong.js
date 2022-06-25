@@ -12,7 +12,7 @@
         return basemode.OnBlocked(name)
     }
     CombatMode.prototype.GetWimpy=function(name){
-        return "75"
+        return "50"
     }
     return CombatMode
 })()

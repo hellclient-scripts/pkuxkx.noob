@@ -270,9 +270,9 @@
     App.Core.HUD.PickCombatMode = function () {
         var list = Userinput.newlist("请选择你要设置战斗模式", "战斗模式决定了机器一些战斗计算使用用的的参数")
         list.append("手无寸铁", "手无寸铁：尽可能的避免一切战斗，Wimpy85,新ID刚拜师没技能选择这个")
-        list.append("身强体壮", "身强体壮：避免可能战斗，Wimpy75,学了技能带没Full选这个")
-        list.append("外门弟子", "外门弟子：会接普通战斗任务，Wimpy65,Full了技能选这个")
-        list.append("核心弟子", "核心弟子：会接危险战斗任务，Wimpy55,有强力技能组合后选这个")
+        list.append("身强体壮", "身强体壮：避免可能战斗，Wimpy50,学了技能带没Full选这个")
+        list.append("外门弟子", "外门弟子：会接普通战斗任务，Wimpy40,Full了技能选这个")
+        list.append("核心弟子", "核心弟子：会接危险战斗任务，Wimpy30,有强力技能组合后选这个")
         list.publish("App.Core.HUD.OnCombatMode")
     }
     if (world.GetVariable("combat_mode")==""){

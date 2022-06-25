@@ -8,7 +8,7 @@
         return false
     }
     CombatMode.prototype.GetWimpy=function(name){
-        return "55"
+        return "30"
     }
     return CombatMode
 })()
