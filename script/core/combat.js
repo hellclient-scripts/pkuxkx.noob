@@ -16,6 +16,11 @@
         App.RaiseStateEvent("combat.fighting")
     }
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
+        let blocker=App.Info.Blockers[wildcards[0]]
+        Dump(blocker)
+        if (blocker && blocker.Exp<=App.Data.HP["exp"]){
+            App.Send(blocker.Cmd)
+        }
         App.RaiseStateEvent("combat.blocked",wildcards[0])
     }
     App.Core.Combat.ResetLooted=function(){

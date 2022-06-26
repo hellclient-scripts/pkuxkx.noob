@@ -7,6 +7,9 @@
     patrol.prototype.NextStep=function(){
         return this.Step
     }
+    patrol.prototype.Unshift=function(cmd){
+        this.Remain.Unshift(cmd)
+    }
     patrol.prototype.Move=function(){
         if (this.Remain.Length()==0){
             this.Step=null

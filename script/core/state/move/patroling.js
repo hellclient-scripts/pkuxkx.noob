@@ -29,6 +29,7 @@
         }
         switch(event){
             case "combat.blocked":
+                let move=App.GetContext("Move")
                 App.Automaton.Current().Insert([this.ID])
                 App.Core.Combat.NewBlockedCombat()
                 return 

@@ -40,6 +40,9 @@
     Path.prototype.Shift = function () {
         return this.Steps.shift()
     }
+    Path.prototype.Unshift = function (step) {
+        this.Steps.unshift(step)
+    }
     Path.prototype.First = function () {
         if (this.Steps.length == 0) {
             return null

@@ -6,7 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        App.Pop()
+        App.Automaton.Pop()
         App.ChangeState("core.state.quest.wd.zhen.zhen")
     }
     return State
