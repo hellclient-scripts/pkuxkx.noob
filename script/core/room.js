@@ -1,4 +1,5 @@
 (function (App) {
+    App.Core.RedBGExits=[]
     App.Data.Room = {
         ID: "",
         Name: "",
@@ -23,6 +24,7 @@
         MapLines: [],
     }
     App.Core.OnRoom = function (name, output, wildcards) {
+        App.Core.RedBGExits=[]
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -91,6 +93,13 @@
         world.EnableTrigger("room_desc", false)
         world.EnableTriggerGroup("roomexit", false)
         world.EnableTriggerGroup("roomobj", true)
+        
+        let line=JSON.parse(DumpOutput(1))[0]
+        line.Words.forEach(function(word){
+            if (word.Background=="Red"){
+                App.Core.RedBGExits.push(word.Text)
+            }
+        })
         if (name != "room_noexit") {
             var exits = wildcards[1].match(exitsre).sort()
             App.Data.Room.Exits = exits

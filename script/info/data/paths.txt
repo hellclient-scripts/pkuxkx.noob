@@ -73,8 +73,8 @@ ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
-wdj-jbq||bmz-zzhsdm||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n;e||w;s;s;se;eu;l 东南&&southeast;se;se;se;s
-bmz-zzhsdm||km||||w;w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;e;||50
+wdj-jbq||bmz||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
+bmz||km||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||50
 km||dl||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
 dl||dlch||||w||e
 dl||tls-sj||||n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s
@@ -88,7 +88,8 @@ wdj-swdsb-w||qmz||||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest
 qmz||ncsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||50
 mwd||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 mwd||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
-bmz-zzhsdm||wdj-swdsb-s||||w;w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e;e
+bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
+mwd||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
