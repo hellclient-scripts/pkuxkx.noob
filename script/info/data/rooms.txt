@@ -14,7 +14,7 @@ yzkd||扬州客店||||Landmark||Tianshen suicong
 yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
-yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。
+yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 
 qfsm||曲阜孔庙||||Station||孔庙
@@ -47,7 +47,7 @@ jksm||灵英观||||Station||灵英观
 jk-ngf||宁国府||||Station||宁国府
 
 la||大理寺||||Landmark||Jianghu tu
-lach||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招
+lach||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 
 la-yfm||岳飞墓||||Station||岳飞墓
 jx||嘉兴城||||Station||嘉兴城
@@ -59,10 +59,10 @@ wd-sqd||三清殿||||Station||三清殿
 wd||武当广场||||Station||武当广场
 wd-tzfx||天柱峰下||||Station||天柱峰下
 wd-fzg2f||复真观二层||||Station||复真观二层
-wd-kf||武当客房||||DescStart||这里是武当派招待远来客人暂时休息的地方。
+wd-kf||武当客房||||DescStart||这里是武当派招待远来客人暂时休息的地方。屋子里很暗，只能依稀看见一张大床，床上东倒西歪
 wd-jxg||武当静修阁||||Full||静修阁[门派]east,up
 wd-cw||武当崔老汉家||||Full||草屋[野外]east
-wd-xl||武当路口[土匪任务入口]||||RoomStart||双井子村中的小路，村子里只有稀稀落落的几
+wd-xl||武当路口[土匪任务入口]||||DescStart||双井子村中的小路，村子里只有稀稀落落的几件草屋，村子里只留下几个老人小孩，自从土匪在附
 wd-zl||武当土匪窝竹楼||||Full||竹楼[野外] [未定义]east
 
 hsc||打谷场||||Station||打谷场
@@ -96,7 +96,7 @@ wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]n
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 mwd||苗王殿||||Station||苗王殿
 qmz||青苗寨吊脚楼||||Full||吊脚楼[门派] [存盘点]north,up
-bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的
+bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的中心。
 hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wdj-swdsb-w||十万大山北山西出口||||Full||山前[门派] [存盘点]east,southwest
@@ -114,4 +114,4 @@ lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south
 //桃花
 gyz-dm||归云庄大门||||Station||归云庄大门
 gyz-gyt||归云亭||||Station||归云亭
-gyz||归云庄大厅||||DescStart||这里是归云庄的大厅，是庄主会客的地方，里
+gyz||归云庄大厅||||DescStart||这里是归云庄的大厅，是庄主会客的地方，里面站着两排卫士。正堂前挂着一块金匾(bian)，金匾

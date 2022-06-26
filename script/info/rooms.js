@@ -30,7 +30,11 @@
         return App.Data.Room.Name+App.Data.Room.Tags+App.Data.Room.Exits.join(",")
     }
     App.Info.RoomDescStart=function(){
-        return App.Core.RoomDesc.Desc.trim().slice(0,20)
+        let desc=App.Core.RoomDesc.Desc.split("\n",1)[0]
+        if (desc){
+            desc=desc.trim()
+        }
+        return desc
     }
     App.RegisterCallback("info.room.idlocate", function () {
         var id = App.Info.Stations[App.Data.Room.Name]||App.Info.Tags[App.Data.Room.Tags]||App.Info.Full[App.Info.RoomFull()]
