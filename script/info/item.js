@@ -21,7 +21,7 @@
         })
     }
     App.RegisterCallback("info.items.loaditems", function () {
-        App.Info.BuiltinItems= world.ReadLines("info/data/items.txt")
+        App.Info.BuiltinItems= App.Info.BuiltinItems.concat(world.ReadLines("info/data/items.txt"))
         if (world.HasHomeFile("data/items.txt")){
             App.Info.UserItems=world.ReadHomeLines("data/items.txt")
         }

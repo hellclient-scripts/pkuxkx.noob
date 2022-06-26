@@ -5,7 +5,7 @@
 
   
     App.RegisterCallback("info.paths.loadpaths", function () {
-        App.Info.BuiltinPaths= world.ReadLines("info/data/paths.txt")
+        App.Info.BuiltinPaths= App.Info.BuiltinPaths.concat(world.ReadLines("info/data/paths.txt"))
         if (world.HasHomeFile("data/paths.txt")){
             App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
         }

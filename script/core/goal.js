@@ -27,6 +27,10 @@
         this.Type = "known"
         return this
     }
+    Goal.prototype.FindRedBG = function () {
+        this.Type = "redbg"
+        return this
+    }
     Goal.prototype.CheckTarget=function(target){
         if (this.Found) {
             return
@@ -46,6 +50,9 @@
                 break
             case "known":
                 this.Found=(App.Data.Room.ID!="")
+                break
+            case "redbg":
+                this.Found=(App.Core.RedBGExits.length!=0)
                 break
         }
     }

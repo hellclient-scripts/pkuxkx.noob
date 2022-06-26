@@ -107,6 +107,7 @@
         List.append("objid", "寻找对象id")
         List.append("objname", "寻找对象名")
         List.append("desc", "寻找描述")
+        List.append("redbg", "寻找红底出口")
         List.publish("App.Core.Traversal.OnPickType")
     }
     App.Core.Traversal.OnPickType = function (name, id, code, data) {
@@ -134,6 +135,9 @@
                 break
             case "desc":
                 g.FindDesc()
+                break
+            case "redbg":
+                g.FindRedBG()
                 break
         }
         return g

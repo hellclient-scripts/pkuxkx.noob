@@ -480,6 +480,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1dsqn6aj6ul227178naki3"
+  Name = "room_exits3"
+  Enabled = false
+  Match = "^    这里明显的(方向|出口)有 ([^。]*\\n[^。]*\\n[^。]+)。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnRoomExits"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = true
+  LinesToMatch = 3
+  WildcardLowerCase = false
+  Group = "roomexit"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "d1dss1b9qcej1267ng67v"
   Name = "danlu"
   Enabled = true

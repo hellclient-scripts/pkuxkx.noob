@@ -26,7 +26,7 @@
         });
     }
     App.RegisterCallback("info.patrols.loadpatrols", function () {
-        App.Info.BuiltinPatrols= world.ReadLines("info/data/patrols.txt")
+        App.Info.BuiltinPatrols= App.Info.BuiltinPatrols.concat(world.ReadLines("info/data/patrols.txt"))
         if (world.HasHomeFile("data/patrols.txt")){
             App.Info.UserPatrols=world.ReadHomeLines("data/patrols.txt")
         }

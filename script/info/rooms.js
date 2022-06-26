@@ -51,7 +51,7 @@
 
     App.RegisterCallback("info.rooms.loadrooms", function () {
         world.Note("加载房间")
-        App.Info.BuiltinRooms = world.ReadLines("info/data/rooms.txt")
+        App.Info.BuiltinRooms = App.Info.BuiltinRooms.concat(world.ReadLines("info/data/rooms.txt"))
         if (world.HasHomeFile("data/rooms.txt")){
             App.Info.UserRooms=world.ReadHomeLines("data/rooms.txt")
         }
