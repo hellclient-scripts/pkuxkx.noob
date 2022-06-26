@@ -10,7 +10,7 @@
             let blocker={
                 Name:data[0],
                 Cmd:data[1],
-                Exp:data[2],
+                Exp:data[2]-0,
             }
             App.Info.Blockers[blocker.Name]=blocker
         })

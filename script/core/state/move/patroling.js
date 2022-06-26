@@ -20,6 +20,7 @@
         this.Move()
     }
     StatePatroling.prototype.Leave=function(context,newstatue){
+        world.DeleteTemporaryTimers()
         Move.prototype.Leave.call(this,context,newstatue)
     }
     StatePatroling.prototype.OnEvent=function(context,event,data){
@@ -30,6 +31,9 @@
         switch(event){
             case "combat.blocked":
                 let move=App.GetContext("Move")
+                if (move.Current){
+                    move.Context.Unshift(move.Current)
+                }
                 App.Automaton.Current().Insert([this.ID])
                 App.Core.Combat.NewBlockedCombat()
                 return 
