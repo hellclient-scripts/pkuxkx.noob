@@ -6,6 +6,7 @@
         App.Raise("quest.set","武当新人侠客任务")
         App.Commands([
             App.NewCommand("combatinit"),
+            App.NewCommand('prepare', App.PrapareFull),
             App.NewCommand("to",App.Options.NewWalk("wd-cw")),
             App.NewCommand("ask",App.Quest.WD.Xiake.Question),
             App.NewCommand("to",App.Options.NewWalk("wd-zl")),
