@@ -8,7 +8,7 @@ App.Quest.WD.Items=[
     App.Core.Puzzle.NewItem("zhen","阵法任务"),
     App.Core.Puzzle.NewItem("caiqi","采气任务"),
     App.Core.Puzzle.NewItem("chanting","诵经任务[需要事先准备路径]"),
-
+    App.Core.Puzzle.NewItem("xiake","侠客任务[注意设置好战斗指令]"),
 ]
 
 App.Quest.WD.QuestionSuccess=App.Options.NewQuestion("chongxu daozhang","success")

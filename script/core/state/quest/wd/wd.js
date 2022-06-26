@@ -43,7 +43,8 @@
                 }
                 break
             case "说道：「山下双井子村的崔老汉似乎有点麻烦，你现在下山一趟帮他解决麻烦。":
-                App.Quest.WD.Type = "tufei"
+                App.Quest.WD.Type = "xiake"
+                break
             default:
                 App.Core.Quest.Cooldown("wd", 30000)
                 App.Fail()
@@ -68,6 +69,9 @@
                             return
                         case "chanting":
                             App.Quest.WD.Chanting.Start(App.Quest.WD.Data.Location, App.Quest.WD.Data.Book, App.Quest.WD.Data.Label, App.Quest.WD.Data.Section)
+                            return
+                        case "xiake":
+                            App.Quest.WD.Xiake.Start()
                             return
                     }
                 }
