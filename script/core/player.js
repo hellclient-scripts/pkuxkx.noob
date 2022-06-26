@@ -2,6 +2,7 @@
     let check=Include("core/check/check.js")
     App.Data.Score={}
     App.Data.LastScore=0
+    App.Data.Exp=0
     App.Bind("Check","core.player.score")
     let checkScore=(new check("score")).WithLevel(App.CheckLevelBrief).WithCommand("score").WithIntervalParam("checkscoreinterval").WithLastID("LastScore")
     App.RegisterCallback("core.player.score",checkScore.Callback())
@@ -216,7 +217,7 @@
     App.Core.OnPlayerHP5=function(name, output, wildcards){
         App.Data.HP["drink"]=wildcards[0]-0
         App.Data.HP["drink_cap"]=wildcards[1]-0
-        App.Data.HP["exp"]=wildcards[3]-0
+        App.Data.Exp=wildcards[3]-0
     }
     App.Core.OnPlayerHP6=function(name, output, wildcards){
         App.Data.HP["status"]=wildcards[0]

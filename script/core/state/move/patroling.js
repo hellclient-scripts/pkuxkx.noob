@@ -30,12 +30,12 @@
         }
         switch(event){
             case "combat.blocked":
-                let move=App.GetContext("Move")
-                if (move.Current){
-                    move.Context.Unshift(move.Current)
-                }
-                App.Automaton.Current().Insert([this.ID])
-                App.Core.Combat.NewBlockedCombat()
+                let snap=App.Core.Snapshot.Take("move.retry")
+                App.Commands([
+                    App.NewCommand("function",App.Core.Combat.NewBlockedCombat),
+                    App.NewCommand("rollback",snap),
+                ]).Push()
+                App.Next()
                 return 
             case "move.retry":
                 this.Retry()

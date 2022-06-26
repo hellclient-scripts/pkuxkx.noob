@@ -17,8 +17,7 @@
     }
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
         let blocker=App.Info.Blockers[wildcards[0]]
-        Dump(blocker)
-        if (blocker && blocker.Exp<=App.Data.HP["exp"]){
+        if (blocker && blocker.Exp<=App.Data.Exp){
             App.Send(blocker.Cmd)
         }
         App.RaiseStateEvent("combat.blocked",wildcards[0])

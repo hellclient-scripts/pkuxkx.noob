@@ -6,10 +6,10 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        if (App.Data.HP["per_qixue"]<App.GetNumberParam("heal_below")){
-            App.Send("yun heal")
-        }else if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
+        if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
             App.Send("dazuo max")
+        }else if (App.Data.HP["per_qixue"]<App.GetNumberParam("heal_below")){
+            App.Send("yun heal")
         }else{
             App.Next()
             return
