@@ -1475,7 +1475,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duvh9bl42f84738dcuio"
   Name = "App.Core.Combat.OnLoot"
   Enabled = true
-  Match = "^([^【】]){1,10}死了。$"
+  Match = "^([^【】]{1,10})死了。$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -3186,7 +3186,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1duunbpck39tg738d1b43"
   Name = "App.Core.Combat.OnTick"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 0
   Second = 1.0

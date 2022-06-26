@@ -18,7 +18,6 @@
                 return[filter[i]]
             }
         }
-        Dump(App.Data.Room.Exits)
         return App.Data.Room.Exits.filter(function(e) { return e!="out"})
     }
     return Maze
