@@ -82,6 +82,8 @@ cd||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
 wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||50
 wdj-lgxs-e||wdj-lgds-w||||ed||w
+wdj-lgxs-w||bmz||||wd;nw;n;n||s;s;se;eu
+wdj-lgxs-w||wdj-lgxs-n||||wd;nw;ne;ne;e;su||nd;w;sw;sw;se;eu
 wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west||50
 wdj-swdsb-s||wdj-swdsb-w||||#maze 苗岭大山 north>山前[门派] [存盘点]east,southwest||#maze 苗岭大山 east>大树[门派] [存盘点]north,southdown||50
 wdj-swdsb-w||qmz||||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest;sw;nw;w;nw;w;w;w;w;w;w;ne;ne

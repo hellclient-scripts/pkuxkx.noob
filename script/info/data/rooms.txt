@@ -89,6 +89,8 @@ cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,nor
 //苗疆
 wdj-lgxs-s||雷公西山南入口||||Full||山间路[门派] [存盘点]north,southdown
 wdj-lgxs-e||雷公西山东入口||||Full||山间路[门派] [存盘点]eastdown,west
+wdj-lgxs-w||雷公西山西入口||||DescStart||这里就要进入雷公山了，东面的山脉(mountain)雄伟壮丽，让人心生敬佩。
+wdj-lgxs-n||雷公西山北入口||||DescStart||这里就要进入雷公山了，南面连绵的青山(mountain)起伏如一头怪兽一般。
 wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
 wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,south
 wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
@@ -100,6 +102,7 @@ bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个
 hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wdj-swdsb-w||十万大山北山西出口||||Full||山前[门派] [存盘点]east,southwest
+wdj-swdsb-e||十万大山北山东出口||||Full||山间路[门派] [存盘点]east,west
 wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
 wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
 wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
