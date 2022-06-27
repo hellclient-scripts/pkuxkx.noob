@@ -69,6 +69,7 @@
     StateLocating.prototype.tryExplore=function(data){
         let move=App.GetContext("Move")
         world.EnableTimer("steptimeout",true)
+        world.ResetTimer("steptimeout")
         move.Current=data
         App.Go(data.Command)
     }
