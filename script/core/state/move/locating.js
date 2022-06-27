@@ -16,6 +16,7 @@
         }
     }
     StateLocating.prototype.Leave=function(context,newstatue){
+        world.EnableTimer("steptimeout",false)
         Move.prototype.Leave.call(this,context,newstatue)
     }
     StateLocating.prototype.OnEvent=function(context,event,data){
