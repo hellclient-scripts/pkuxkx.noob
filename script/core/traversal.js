@@ -1,6 +1,6 @@
 (function (App) {
     App.Core.Traversal = {}
-    App.Data.Traversal={}
+    App.Data.Traversal = {}
     let pagesize = 10
     let publishgrid = function (grid, alldata) {
         let page = grid.getpage()
@@ -22,28 +22,28 @@
         grid.setmaxpage(Math.ceil(count / pagesize))
         grid.publish("")
     }
-    App.Core.Traversal.New=function(keyword){
-        App.Data.Traversal={
-            Key:keyword?keyword:""
+    App.Core.Traversal.New = function (keyword) {
+        App.Data.Traversal = {
+            Key: keyword ? keyword : ""
         }
     }
-    App.Traversal=function(){
+    App.Traversal = function () {
         App.Core.Traversal.New("core.traversal.manual")
         App.Core.Traversal.Prompt()
     }
-    App.Core.Traversal.Finish=function(full){
-        let g=App.NewGoal()
-        if (!full){
+    App.Core.Traversal.Finish = function (full) {
+        let g = App.NewGoal()
+        if (!full) {
             g.FindKnownRoom()
         }
         App.LastMove.WithData(g).Continue()
     }
-    App.Core.Traversal.Prompt=function(){
+    App.Core.Traversal.Prompt = function () {
         App.Push(["core.state.traversal.manual"])
         App.Next()
 
     }
-    App.Core.Traversal.Start=function(){
+    App.Core.Traversal.Start = function () {
         App.Push(["core.state.traversal.traversal"])
         App.Next()
     }
@@ -66,7 +66,7 @@
     }
     App.Core.Traversal.PromptTarget = function (title, desc, output) {
         App.Raise("traversal.prompttarget")
-        if (App.Data.Traversal.Silence){
+        if (App.Data.Traversal.Silence) {
             Note("静默模式")
             return
         }
@@ -76,11 +76,11 @@
     }
     App.Core.Traversal.PromptTargetText = function (title, desc, lines) {
         App.Raise("traversal.prompttarget")
-        if (App.Data.Traversal.Silence){
+        if (App.Data.Traversal.Silence) {
             Note("静默模式")
             return
         }
-        let vp = Userinput.newvisualprompt(title + " [ " + App.Data.Traversal.Key + " ]", desc, lines?lines:"")
+        let vp = Userinput.newvisualprompt(title + " [ " + App.Data.Traversal.Key + " ]", desc, lines ? lines : "")
         vp.setmediatype("text")
         vp.publish("App.Core.Traversal.OnTarget")
     }
@@ -98,11 +98,11 @@
     }
     App.Core.Traversal.PickType = function () {
         App.Raise("traversal.picktype")
-        if (App.Data.Traversal.Silence){
+        if (App.Data.Traversal.Silence) {
             Note("静默模式")
             return
         }
-        var List = Userinput.newlist("类型["+App.Data.Traversal.Key+"]", "请选择你的遍历类型", false)
+        var List = Userinput.newlist("类型[" + App.Data.Traversal.Key + "]", "请选择你的遍历类型", false)
         List.append("room", "寻找房间")
         List.append("objid", "寻找对象id")
         List.append("objname", "寻找对象名")
@@ -122,7 +122,7 @@
         App.RaiseStateEvent("core.traversal.type")
     }
     App.Core.Traversal.GetGoal = function () {
-        if (App.Data.Traversal.Goal){
+        if (App.Data.Traversal.Goal) {
             return App.Data.Traversal.Goal
         }
         let g = App.NewGoal(App.Data.Traversal.Target)
@@ -143,7 +143,7 @@
                 g.FindRedBG()
                 break
         }
-        App.Data.Traversal.Goal=g
+        App.Data.Traversal.Goal = g
         return g
     }
     App.Core.Traversal.Show = function (title, desc) {
@@ -152,11 +152,11 @@
         App.Data.Traversal.Desc = desc
         App.Data.Traversal.Answer = ""
         App.Raise("traversal.show")
-        if (App.Data.Traversal.Silence){
+        if (App.Data.Traversal.Silence) {
             Note("静默模式")
             return
         }
-        Grid = Userinput.newdatagrid(title + " [ " + App.Data.Traversal.Key+" ]", desc)
+        Grid = Userinput.newdatagrid(title + " [ " + App.Data.Traversal.Key + " ]", desc)
         Grid.setpage(1)
         Grid.setfilter("")
         Grid.setonpage("App.Core.Traversal.OnPage")
@@ -172,10 +172,36 @@
     App.Core.Traversal.OnAnswer = function (name, id, code, data) {
         Grid.hide()
         if (code == 0 && data) {
-            App.Core.Traversal.Answer(App.Info.PatrolsList[data-0])
+            App.Core.Traversal.Answer(App.Info.PatrolsList[data - 0])
         } else {
             App.Core.Traversal.Answer("")
         }
+    }
+    App.Core.Traversal.Combine = function (partols) {
+        let from = ""
+        let to = ""
+        let path = []
+        for (var i = 0; i < partols.length; i++) {
+            let data = partols[i].split("||")
+            let old = to
+            to = data[2]
+            if (!to) {
+                throw "不能组合没有终点的路径"
+            }
+            if (i == 0) {
+                from = data[1]
+            } else {
+                if (old != data[1]) {
+                    let walk = App.API.GetPath(old, [data[1]])
+                    if (walk == null) {
+                        throw "无法找到[" + old + "]到[" + data[1] + "]路线,无法组合路径"
+                    }
+                    path = path.concat(walk.Command.split(";"))
+                }
+            }
+            path = path.concat(data[3].split(";"))
+        }
+        return "||"+from+"||"+to+"||"+path.join(";")
     }
     App.RegisterState(new (Include("core/state/traversal/traversal.js"))())
     App.RegisterState(new (Include("core/state/traversal/arrive.js"))())

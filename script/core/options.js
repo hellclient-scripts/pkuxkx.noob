@@ -16,8 +16,8 @@
     App.Options.NewQuestion=function(npc,q,length){
         return new question(npc,q,length)
     }
-    App.Options.NewFind=function(path,goal,vehicle){
-        return new find(path,goal,vehicle)
+    App.Options.NewFind=function(path,goal,target,vehicle){
+        return new find(path,goal,target,vehicle)
     }
     App.Options.NewPrepare=function(level,items,group){
         return new prepare(level,items,group)

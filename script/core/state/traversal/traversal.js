@@ -11,7 +11,7 @@
         App.Commands([
             App.NewCommand("to",App.Options.NewWalk(data[1])),
             App.NewCommand("nobusy"),
-            App.NewCommand("find",App.Options.NewFind(data[3],App.Core.Traversal.GetGoal())),
+            App.NewCommand("find",App.Options.NewFind(data[3],App.Core.Traversal.GetGoal(),data[2])),
         ]).Push()
         App.Next()
     }

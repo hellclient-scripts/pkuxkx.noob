@@ -1,8 +1,8 @@
 (function(App){
-    let Walk=function(path,goal,vehicle){
-        this.Path=App.API.ConvertPath(path)
+    let Find=function(path,goal,target,vehicle){
+        this.Path=App.API.ConvertPath(path,target)
         this.Goal=goal
         this.Vehicle=vehicle?vehicle:""
     }
-    return Walk
+    return Find
 })(App)
