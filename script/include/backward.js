@@ -20,5 +20,6 @@
         "eastdown":"westup","ed":"wu",
         "southdown":"northup","sd":"nu",
         "westdown":"eastup","eu":"wd",
+        "climb down":"climb up"
     }
 })()

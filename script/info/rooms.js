@@ -8,6 +8,11 @@
     App.Info.DescStart={}
     App.Info.Tags={}
     App.Info.Full={}
+    App.Info.LocateExits={
+        "树枝上":["climb down"],
+        "树干上":["climb down"],
+        "树顶":["climb down"]
+    }
     App.Info.LoadSleepRooms=function(){
         App.Info.SleepRooms=[]
         let lines=world.ReadLines("info/data/sleeprooms.txt")
@@ -27,6 +32,9 @@
         }
     })
     App.Info.RoomFull=function(){
+        if (!App.Data.Room.Exits){
+            return ""
+        }
         return App.Data.Room.Name+App.Data.Room.Tags+App.Data.Room.Exits.join(",")
     }
     App.Info.RoomDescStart=function(){

@@ -27,10 +27,16 @@
     });
     return new Level(this.DFS,this.Level,filtered,this.DFS.GetBackward(this.Command))
    }
+   Next.prototype.Skip=function(){
+       return this.Level
+   }
    let Back=function(DFS,level,command){
     this.Level=level
     this.DFS=DFS
     this.Command=command
+   }
+   Back.prototype.Skip=function(){
+    return null
    }
    Back.prototype.Arrive=function(exits){
         return this.Level

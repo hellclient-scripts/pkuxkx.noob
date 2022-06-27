@@ -1,1 +1,1 @@
-土匪||killall tu fei||50000
+土匪||killall tu fei;killall tufei||50000

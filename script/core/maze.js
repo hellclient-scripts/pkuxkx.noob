@@ -8,6 +8,9 @@
     App.Core.Maze.LoadMaze=function(cmd){
         let last=App.Core.Maze.Last
         App.Core.Maze.Last=cmd
+        if (!cmd){
+            return null
+        }
         if (cmd.slice(0,6)!="#maze "){
             return null
         }

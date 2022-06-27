@@ -52,6 +52,9 @@
                 this.Found=(App.Data.Room.ID!="")
                 break
             case "redbg":
+                if (target!="*"&& target!=App.Data.Room.Name){
+                    return
+                }
                 this.Found=(App.Core.RedBGExits.length!=0)
                 break
         }

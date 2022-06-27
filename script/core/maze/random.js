@@ -37,7 +37,7 @@
     Maze.prototype.Explore=function(move){
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
-                App.Send("set brief 1")
+                App.Send("unset brief")
                 this.Command=DFS.New()
                 let level=this.Command.Arrive([this.EntryCmd()])
                 this.Command=level.Next()

@@ -1,6 +1,6 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
-    let locate = Include("include/locate.js")
+    let DFS = Include("include/dfs.js")
     let StateLocate=function(){
         basicstate.call(this)
         this.ID="locate"
@@ -12,8 +12,9 @@
     }
     StateLocate.prototype.Start=function(){
         let move=App.GetContext("Move")
-        move.Context=new locate(move.Target-0)
-        move.StartCmd="l"
+        let dfs=new DFS(move.Target-0)
+        move.Context=dfs.New()
+        move.StartCmd="unset brief;l"
         this.Locating()
     }
     StateLocate.prototype.Locating=function(){

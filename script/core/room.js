@@ -49,6 +49,7 @@
             MapLines: [],
         }
         world.EnableTriggerGroup("roomexit", true)
+        App.RaiseStateEvent("core.onroom")
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
     App.Core.OnRoomDesc = function (name, output, wildcards) {
@@ -93,12 +94,13 @@
         world.EnableTrigger("room_desc", false)
         world.EnableTriggerGroup("roomexit", false)
         world.EnableTriggerGroup("roomobj", true)
-        
-        let line=JSON.parse(DumpOutput(1))[0]
-        line.Words.forEach(function(word){
-            if (word.Background=="Red"){
-                App.Core.RedBGExits.push(word.Text)
-            }
+        let lines=JSON.parse(DumpOutput(wildcards[1].split("\n").length))
+        lines.forEach(function(line){
+            line.Words.forEach(function(word){
+                if (word.Background=="Red"){
+                    App.Core.RedBGExits.push(word.Text)
+                }
+            })
         })
         if (name != "room_noexit") {
             var exits = wildcards[1].match(exitsre).sort()
@@ -107,6 +109,7 @@
             App.Data.Room.Exits = []
         }
         App.Raise("OnRoomExits")
+        App.RaiseStateEvent("core.onroomexits")
     }
     App.Core.OnRoomObj = function (name, output, wildcards) {
         var obj = { ID: wildcards[1], Name: wildcards[0] }

@@ -45,5 +45,5 @@
     App.RegisterCommand(Include("core/command/kill.js"))
     App.RegisterCommand(Include("core/command/powerup.js"))
     App.RegisterCommand(Include("core/command/combatinit.js"))
-
+    App.RegisterCommand(Include("core/command/locate.js"))
 })(App)

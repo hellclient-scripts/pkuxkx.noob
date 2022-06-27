@@ -107,7 +107,7 @@
         List.append("objid", "寻找对象id")
         List.append("objname", "寻找对象名")
         List.append("desc", "寻找描述")
-        List.append("redbg", "寻找红底出口")
+        List.append("redbg", "寻找红底出口(输入房间名，*不指定房间)")
         List.publish("App.Core.Traversal.OnPickType")
     }
     App.Core.Traversal.OnPickType = function (name, id, code, data) {
@@ -122,6 +122,9 @@
         App.RaiseStateEvent("core.traversal.type")
     }
     App.Core.Traversal.GetGoal = function () {
+        if (App.Data.Traversal.Goal){
+            return App.Data.Traversal.Goal
+        }
         let g = App.NewGoal(App.Data.Traversal.Target)
         switch (App.Data.Traversal.Type) {
             case "room":
@@ -140,6 +143,7 @@
                 g.FindRedBG()
                 break
         }
+        App.Data.Traversal.Goal=g
         return g
     }
     App.Core.Traversal.Show = function (title, desc) {

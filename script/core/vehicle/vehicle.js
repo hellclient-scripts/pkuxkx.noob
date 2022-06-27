@@ -7,7 +7,7 @@
         this.RetryInterval=0.5
         this.Fly=false
         this.Sender=function(cmd){
-            App.SendToMoveBuff(cmd)
+            App.SendToMoveBuff(cmd+"; ")
         }
     }
     Vehicle.prototype.Send=function(cmd){

@@ -5,6 +5,13 @@
     App.NewGoal=function(target){
         return new Goal(target)
     }
+    App.Locate=function(depth){
+        if(!depth){
+            depth=8
+        }
+        App.NewCommand("locate",depth).Push()
+        App.Next()
+    }
     App.Move=function(path,data){
         if (!path){
             path=""

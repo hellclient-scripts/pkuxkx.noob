@@ -1,6 +1,6 @@
 (function (App) {
     let Move = Include("core/state/move/move.js")
-    var backward = Include("include/backward.js")
+    var step = Include("include/step.js")
     let StateLocating=function(){
         Move.call(this)
         this.ID="locating"
@@ -46,11 +46,17 @@
     }
     StateLocating.prototype.OnStepTimeout=function(){
         world.EnableTimer("steptimeout",false)
+        world.Note("移动超时，换个出口")
         let move=App.GetContext("Move")
-        let step=move.Context.Skip()
-        if (step){
-            world.Note("移动超时，换个出口")
-            this.tryExplore(step)
+        let level=move.Context.Skip()
+        if (!level){
+            App.Fail()
+        }
+        let next=level.Next()
+        if (next){
+            move.Context=next
+            move.Current=new step(next.Command)
+            this.tryExplore(move.Current)
         }else{
             this.Fail()
         }    
@@ -80,20 +86,20 @@
             return;
         }
         world.EnableTimer("steptimeout",false)
-        if (App.Data.Room.Name){
-            let rids=Mapper.getroomid(App.Data.Room.Name)
-            if (rids&& rids.length==1){
-                App.Data.Room.ID=rids[0]
-            }
-        }
         if (App.Data.Room.ID!==""){
             App.Next()
             return
         }
-        let step=move.Context.Enter(App.Data.Room.Exits)
-        if (step){
-            move.Current=step
-            this.tryExplore(step)
+        let exits=App.Data.Room.Exits
+        if (App.Info.LocateExits[App.Data.Room.Name]){
+            exits=App.Info.LocateExits[App.Data.Room.Name]
+        }
+        let level=move.Context.Arrive(exits)
+        let next=level.Next()
+        if (next){
+            move.Context=next
+            move.Current=new step(next.Command)
+            this.tryExplore(move.Current)
         }else{
             this.Fail()
         }
