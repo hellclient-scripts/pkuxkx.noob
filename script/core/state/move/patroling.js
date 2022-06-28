@@ -1,15 +1,15 @@
 (function (App) {
     let Move = Include("core/state/move/move.js")
-    let StatePatroling=function(){
+    let State=function(){
         Move.call(this)
         this.ID="patroling"
     }
-    StatePatroling.prototype = Object.create(Move.prototype)
-    StatePatroling.prototype.GetStateOnStep=function(){
+    State.prototype = Object.create(Move.prototype)
+    State.prototype.GetStateOnStep=function(){
         let move=App.GetContext("Move")
         return move.StateOnStep?move.StateOnStep:"patrolnobusy"
     }
-    StatePatroling.prototype.Enter=function(context,newstatue){
+    State.prototype.Enter=function(context,newstatue){
         Move.prototype.Enter.call(this,context,newstatue)
         let move=App.GetContext("Move")
         if (move.StartCmd){
@@ -19,17 +19,20 @@
         }
         this.Move()
     }
-    StatePatroling.prototype.Leave=function(context,newstatue){
+    State.prototype.Leave=function(context,newstatue){
         world.DeleteTemporaryTimers()
         Move.prototype.Leave.call(this,context,newstatue)
     }
-    StatePatroling.prototype.OnEvent=function(context,event,data){
+    State.prototype.OnEvent=function(context,event,data){
         let move=App.GetContext("Move")
+        if (!move){
+            return
+        }
         if (move.OnMazeStateEvent(this,event)){
             return
         }
         switch(event){
-            case "combat.blocked":
+            case "combat.blockkill":
                 let snap=App.Core.Snapshot.Take("move.retry")
                 App.Commands([
                     App.NewCommand("function",App.Core.Combat.NewBlockedCombat),
@@ -37,6 +40,9 @@
                 ]).Push()
                 App.Next()
                 return 
+            case "combat.blocked":
+                App.Fail()
+                break
             case "move.retry":
                 this.Retry()
             break
@@ -50,7 +56,7 @@
                 Move.prototype.OnEvent.call(this,context,event,data)
         }
     }
-    StatePatroling.prototype.Move=function(){
+    State.prototype.Move=function(){
         let move=App.GetContext("Move")
         if (move.Current){
             let maze=App.Core.Maze.LoadMaze(move.Current.Command)
@@ -70,22 +76,22 @@
         }
         this.TryMove()
     }
-    StatePatroling.prototype.Fail=function(){
+    State.prototype.Fail=function(){
         world.Note("行走失败")
         App.Automaton.Fail()
     }
 
-    StatePatroling.prototype.Finish=function(){
+    State.prototype.Finish=function(){
         world.Note("到达目的地")
         App.Next()
     }
-    StatePatroling.prototype.Retry=function(){
+    State.prototype.Retry=function(){
         world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.RaiseStateEvent("move.retrymove")', 12);
     }
-    StatePatroling.prototype.RetryMove=function(){
+    State.prototype.RetryMove=function(){
         this.TryMove()
     }
-    StatePatroling.prototype.OnRoomObjEnd=function(){
+    State.prototype.OnRoomObjEnd=function(){
         let move=App.GetContext("Move")
         if (move.Ignore){
             move.Ignore=false
@@ -98,5 +104,5 @@
         }
         App.ChangeState(this.GetStateOnStep())
     }
-    return StatePatroling
+    return State
 })(App)

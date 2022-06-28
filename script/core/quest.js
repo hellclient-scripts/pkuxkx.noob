@@ -50,11 +50,11 @@
         App.Core.Quest.StartQuests(wildcards[0].split("||"))
     }
     App.Core.Quest.StartVariable=function(){
-        let qusets=world.GetVariable("quests")
-        if (qusets==""){
+        let quests=world.GetVariable("quests").trim()
+        if (quests==""){
             Note("quests变量为空")
         }
-        App.Core.Quest.StartQuests(qusets.split("||"))
+        App.Core.Quest.StartQuests(quests.split("||"))
     }
     App.Core.OnQuestAliasStart = function (name, line, wildcards) {
         App.Core.Quest.StartVariable()

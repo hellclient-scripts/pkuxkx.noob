@@ -19,8 +19,10 @@
         let blocker=App.Info.Blockers[wildcards[0]]
         if (blocker && blocker.Exp<=App.Data.Exp){
             App.Send(blocker.Cmd)
+            App.RaiseStateEvent("combat.blockkill",wildcards[0])
+        }else{
+            App.RaiseStateEvent("combat.blocked",wildcards[0])
         }
-        App.RaiseStateEvent("combat.blocked",wildcards[0])
     }
     App.Core.Combat.ResetLooted=function(){
         App.Core.Combat.Looted={}
