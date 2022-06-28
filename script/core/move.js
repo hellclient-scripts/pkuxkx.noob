@@ -79,7 +79,7 @@
         }
     }
     App.Core.OnBuffFull=function(name, output, wildcards){
-        App.RaiseStateEvent("move.retry")
+        App.RaiseStateEvent("core.bufffull")
     }
     App.Core.OnMoveNotAllowed=function(name, output, wildcards){
         App.RaiseStateEvent("move.notallowed")
