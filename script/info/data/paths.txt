@@ -9,7 +9,6 @@ yz||yzkd||||n;e||w;s
 yz||yzsm||||n;n;w||e;s;s
 yz||yz-sczh||||s;s;s;w||e;n;n;n
 yzkd||yz-kd2f||||u;enter||out;d
-yz-sczh||home||||#home||out
 yztj||yz-dtpns||||s||n
 yz||qfsm||||n;n;n;n;n;n;n;n;n;w||e;s;s;s;s;s;s;s;s;s
 yz||xin-nwh||||w;w;w;w;nw;w;w;w;w;w;s;w||e;n;e;e;e;e;e;se;e;e;e;e
@@ -92,6 +91,7 @@ mwd||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 mwd||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
 mwd||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
+mwd||mwd-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se

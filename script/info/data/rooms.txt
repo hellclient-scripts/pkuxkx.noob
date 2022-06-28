@@ -97,6 +97,7 @@ wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,so
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 mwd||苗王殿||||Station||苗王殿
+mwd-sch||千户苗寨盛昌行||||Station||盛昌行苗寨分店
 qmz||青苗寨吊脚楼||||Full||吊脚楼[门派] [存盘点]north,up
 bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的中心。
 hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast

@@ -2,9 +2,25 @@
     let ipath = Include("include/path.js")
     App.Info.UserPaths=[]
     App.Info.BuiltinPaths=[]
-
+    let homere=/(\S+)(\s+(.+)){0,1}/
+    App.Info.LoadHomePath=function(){
+        let home=App.GetParamHome().trim()
+        if (home){
+            let data=home.match(homere)
+            if (data){
+                let path
+                if(data[3]){
+                    path=[data[1],App.Info.RoomHome,"","enter "+data[3],"out"]
+                }else{
+                    path=[App.Info.DefaultHomeLocation,App.Info.RoomHome,"","enter "+data[1],"out"]
+                }
+                App.Info.BuiltinPaths=[path.join("||")].concat(App.Info.BuiltinPaths)
+            }
+        }
+    }
   
     App.RegisterCallback("info.paths.loadpaths", function () {
+        App.Info.LoadHomePath()
         App.Info.BuiltinPaths= App.Info.BuiltinPaths.concat(world.ReadLines("info/data/paths.txt"))
         if (world.HasHomeFile("data/paths.txt")){
             App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")

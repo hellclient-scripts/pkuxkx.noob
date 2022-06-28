@@ -3437,7 +3437,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "home"
   Desc = "home名字"
-  Intro = "储存柜的名字"
+  Intro = "储存柜的名字,如有空格则认为空格前是柜子所在位置，否则默认为扬州总行\n\n例：\njarlyyn\nmwd-sch ppwdj\n\n重新加载后才能起效"
 
 [[RequiredParams]]
   Name = "neili_min"

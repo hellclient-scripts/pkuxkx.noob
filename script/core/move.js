@@ -104,11 +104,7 @@
     App.RegisterCallback("core.move.sail",function(){
         App.Raise("Waiting")
     })
-    App.RegisterCallback("core.move.home",function(){
-        App.Send("enter "+App.GetParamHome())
-    })
     App.RegisterAlias("sail","core.move.sail")
-    App.RegisterAlias("home","core.move.home")
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/locate.js"))())
     App.RegisterState(new (Include("core/state/move/locating.js"))())

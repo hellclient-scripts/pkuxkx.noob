@@ -13,6 +13,7 @@
         "树干上":["climb down"],
         "树顶":["climb down"]
     }
+    App.Info.DefaultHomeLocation="yz-sczh"
     App.Info.LoadSleepRooms=function(){
         App.Info.SleepRooms=[]
         let lines=world.ReadLines("info/data/sleeprooms.txt")
