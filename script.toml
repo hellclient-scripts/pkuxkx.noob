@@ -1565,6 +1565,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1dv97fc6au9b46nodblv"
+  Name = "App.Core.Combat.OnWield"
+  Enabled = true
+  Match = "^(你拿起青锋剑作武器。|你已经装备著了。)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.Combat.OnWield"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -1784,7 +1815,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -1815,7 +1846,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。)$"
   Send = ""
   ColourChangeType = 0
@@ -1846,7 +1877,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -3569,6 +3600,11 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "combat_boss"
   Desc = "对Boss战斗指令"
+  Intro = ""
+
+[[RequiredParams]]
+  Name = "combat_yun_recover"
+  Desc = "设置战斗时掉了多少气血开始yun recover,留空或0不yun recover"
   Intro = ""
 
 [[RequiredParams]]

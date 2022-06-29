@@ -10,14 +10,14 @@
         weapons.split(weaponsre).forEach(function(weapon){
             weapon=weapon.trim()
             if (weapon){
-                App.Send("wield "+weapon+" on right")
+                App.Send("wield "+weapon+" at right")
             }
         })
         weapons=world.GetVariable("weapons_left").trim()
         weapons.split(weaponsre).forEach(function(weapon){
             weapon=weapon.trim()
             if (weapon){
-                App.Send("wield "+weapon+" on right")
+                App.Send("wield "+weapon+" at left")
             }
         })
 

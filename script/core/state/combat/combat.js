@@ -6,6 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
+        world.ResetTimer("App.Core.Combat.OnTick")
         world.EnableTimer("App.Core.Combat.OnTick",true)
         App.Core.Combat.Current.Perform()
         App.Core.Combat.CheckFighting()
@@ -15,11 +16,17 @@
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
+        case "combat.disarm":
+            App.Core.Combat.Current.Disarmed=true
+            break
+        case "combat.wield":
+                App.Core.Combat.Current.Disarmed=false
+            break        
         case "combat.tick":
             App.Send("checkbusy")
             App.Core.Combat.CheckFighting()
             break
-        case "state.nobusy":
+        case "nobusy":
             App.Core.Combat.Current.Perform()
             break
         case "combat.finish":
