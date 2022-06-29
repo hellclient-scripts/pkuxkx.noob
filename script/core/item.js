@@ -43,7 +43,7 @@
         world.EnableTriggerGroup("equipment",false)
     }
     App.GetCash=function(){
-        let cashname=App.GetItemObj("Cash")
+        let cashname=App.GetItemObj("Thousand-cash")
         let cash=0
         let goldname =App.GetItemObj("Gold")
         let gold=0

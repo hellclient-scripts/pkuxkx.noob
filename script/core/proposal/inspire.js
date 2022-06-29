@@ -11,7 +11,7 @@
                     App.NewCommand("item",App.Options.NewItem("yangjing dan")),
                     App.NewCommand("nobusy"),
                     App.NewCommand("do","eat dan"),
-                ])
+                ]).Push()
             }else{
                 App.Commands([
                     App.NewCommand("to",App.Options.NewWalk(App.GetSleepRooms())),
