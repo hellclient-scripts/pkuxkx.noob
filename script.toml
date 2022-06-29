@@ -79,7 +79,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "busy_end"
   Name = "busy_end"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(指令格式 respirate\\|tuna <数量> 。|你吐纳完毕，睁开双眼，站了起来。|中央广场，禁止刷屏！|你不忙)$"
   Send = ""
   ColourChangeType = 0
@@ -3521,6 +3521,14 @@ Channel = "pkuxkx.noob"
   Intro = "手工设置容易出错，请通过帮助按钮设置"
 
 [[RequiredParams]]
+  Name = "weapons"
+  Desc = "逗号或换行分割的武器列表"
+  Intro = "逗号分割的武器列表，用于wield和修理"
+[[RequiredParams]]
+  Name = "weapons_left"
+  Desc = "逗号或换行分割的副手武器列表"
+  Intro = "逗号分割的副手武器列表，用于wield和修理。注意，盾牌请不要放在这里"
+[[RequiredParams]]
   Name = "combat"
   Desc = "战斗指令"
   Intro = ""
@@ -3528,11 +3536,6 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "combat_boss"
   Desc = "对Boss战斗指令"
-  Intro = ""
-
-[[RequiredParams]]
-  Name = "combat_multi"
-  Desc = "被群殴战斗指令"
   Intro = ""
 
 [[RequiredParams]]
