@@ -43,6 +43,7 @@
             case "combat.blocked":
                 App.Fail()
                 break
+            case "core.bufffull":
             case "move.retry":
                 this.Retry()
             break

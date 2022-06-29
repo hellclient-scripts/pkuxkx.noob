@@ -15,6 +15,10 @@
     App.Core.Combat.OnFighting=function(){
         App.RaiseStateEvent("combat.fighting")
     }
+    App.Core.Combat.OnDisarm=function(){
+        App.RaiseStateEvent("combat.disarm")
+    }
+
     App.Core.Combat.OnBlocked=function(name, output, wildcards){
         let blocker=App.Info.Blockers[wildcards[0]]
         if (blocker && blocker.Exp<=App.Data.Exp){

@@ -25,6 +25,7 @@
             return
         }
         switch(event){
+            case "core.bufffull":
             case "move.retry":
                 this.Retry()
             break

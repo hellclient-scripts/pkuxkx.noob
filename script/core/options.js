@@ -5,6 +5,7 @@
     let find=Include("include/option/find.js")
     let prepare=Include("include/option/prepare.js")
     let kill=Include("include/option/kill.js")
+    let item=Include("include/option/item.js")
 
     App.Options={}
     App.Options.NewWalk=function(target,vehicle){
@@ -24,5 +25,8 @@
     }
     App.Options.NewKill=function(name,type){
         return new kill(name,type)
+    }
+    App.Options.NewItem=function(id,amount){
+        return new item(id,amount)
     }
 }(App))

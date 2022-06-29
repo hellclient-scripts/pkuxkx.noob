@@ -8,7 +8,7 @@ App.Core.OnBusyEnd=function(name, output, wildcards){
     }
 }
 App.Core.OnBusyRetry=function(name){
-    App.Send("tuna")
+    App.Send("checkbusy")
 }
 App.CheckBusy=function(callback,data){
     world.EnableTriggerGroup("busy",true)
@@ -18,7 +18,7 @@ App.CheckBusy=function(callback,data){
         Callback:callback,
         Data:data,
     }
-    App.Send("tuna")
+    App.Send("checkbusy")
 }
 App.StateNoBusy=function(){
     App.CheckBusy("app.core.busynobusy")

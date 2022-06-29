@@ -57,6 +57,7 @@
     Include("core/proposal/drink.js")
     Include("core/proposal/neili.js")
     Include("core/proposal/heal.js")
+    Include("core/proposal/inspire.js")
     Include("core/proposal/prepare.js")
     App.RegisterState(new (Include("core/state/prepare/preparecheck.js"))())
     App.RegisterState(new (Include("core/state/prepare/prepareconfirm.js"))())
