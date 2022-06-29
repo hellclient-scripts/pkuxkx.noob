@@ -14,7 +14,11 @@
     }
     State.prototype.Enter=function(context,oldstatue){
         basicstate.prototype.Enter.call(this,context,oldstatue)
-        App.StateNoBusy()
+        world.EnableTimer("busy_retry",true)
+        world.ResetTimer("busy_retry")
+    }
+    State.prototype.Leave=function(context,oldstatue){
+        world.EnableTimer("busy_retry",false)
     }
     return State
 })(App)

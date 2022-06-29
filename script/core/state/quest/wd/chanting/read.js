@@ -24,15 +24,13 @@
                 return
             }
             App.Quest.WD.Chanting.ChantingCurrent()
-            App.CheckBusy("core.state.quest.wd.chanting.readfinish")
+            App.NewCommand("nobusy").Push()
+            App.Next()
             break;
         case "quest.wd.chanting.readfail":
             App.Next()
             break;
         }
     }
-    App.RegisterCallback("core.state.quest.wd.chanting.readfinish",function(){
-        App.Next()
-    })
     return State
 })(App)

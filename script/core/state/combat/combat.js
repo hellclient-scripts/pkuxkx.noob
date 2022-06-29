@@ -16,8 +16,11 @@
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
         case "combat.tick":
-            App.Core.Combat.Current.Perform()
+            App.Send("checkbusy")
             App.Core.Combat.CheckFighting()
+            break
+        case "state.nobusy":
+            App.Core.Combat.Current.Perform()
             break
         case "combat.finish":
             App.Commands([

@@ -9,6 +9,10 @@
     App.Core.Combat.OnTick=function(){
         App.RaiseStateEvent("combat.tick")
     }
+    App.Core.Combat.OnFlee=function(){
+        App.RaiseStateEvent("combat.flee")
+    }
+
     App.Core.Combat.OnFinish=function(){
         App.RaiseStateEvent("combat.finish")
     }
