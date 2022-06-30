@@ -58,6 +58,19 @@ var onBuffer=function(data){
     }
     return false
 }
+var OnSubneg=function(code,data){
+    if (!data){
+        return
+    }
+    switch(code){
+        case 201:
+            // Note("GMCP:"+data)
+            let cmd=SplitN(data," ",2)
+            let cmddata=cmd.length>1?JSON.parse(cmd[1]):null
+            App.Raise("GMCP."+cmd[0],cmddata)
+            return
+    }
+}
 var onHUDClick=function(x,y){
     App.Raise("onHUDClick",{X:x,Y:y})
 }

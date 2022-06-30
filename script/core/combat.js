@@ -65,7 +65,7 @@
         }
     }
     App.Core.Combat.CheckFighting=function(){
-        App.Send("dazuo -1")
+        // App.Send("dazuo -1")
     }
     App.Core.Combat.GetCommands=function(name){
         if (!name){

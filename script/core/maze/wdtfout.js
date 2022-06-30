@@ -3,6 +3,7 @@
     let Maze=function(param){
         Random.call(this,param)
         this.ID="武当土匪离开"
+        this.IgnoreArrived=true
     }
     Maze.prototype = Object.create(Random.prototype)
     Maze.prototype.CheckSuccess=function(){

@@ -233,4 +233,40 @@
     App.Core.OnNoNeili=function(name,output,wildcards){
         App.Data.HP["eff_neili"]=0
     }
+    App.Bind("GMCP.Char.Status.hpbrief","core.gmcp.hpbreif")
+    App.RegisterCallback("core.gmcp.hpbreif",function(data){
+        if(!data){
+            return
+        }
+        let info=data.split(",")
+        App.Data.HP["pot"]=info[1]
+        App.Data.HP["neili"]=info[2]
+        App.Data.HP["eff_neili"]=info[3]
+        App.Data.HP["jingli"]=info[4]
+        App.Data.HP["eff_jingli"]=info[5]
+        App.Data.HP["qixue_cap"]=info[6]
+        App.Data.HP["qixue"]=info[7]
+        App.Data.HP["eff_qixue"]=info[8]
+        App.Data.HP["per_qixue"]=100*App.Data.HP["qixue"]/App.Data.HP["qixue_cap"]
+        App.Data.HP["jing_cap"]=info[9]
+        App.Data.HP["jing"]=info[10]
+        App.Data.HP["eff_jing"]=info[11]
+        App.Data.HP["per_jing"]=100*App.Data.HP["jing"]/App.Data.HP["jing_cap"]
+        App.Data.HP["zhenqi"]=info[12]
+        App.Data.HP["zhanyi"]=info[13]
+        App.Data.HP["food"]=info[14]
+        App.Data.HP["drink"]=info[15]
+        App.Data.HP["fight"]=info[16]
+        App.Data.HP["busy"]=info[17]
+        if (App.Data.HP["busy"]=="1"){
+            App.RaiseStateEvent("gmcp.busy")
+        }else{
+            App.RaiseStateEvent("gmcp.nobusy")
+        }
+        if (App.Data.HP["fight"]=="1"){
+            App.RaiseStateEvent("combat.fighting")
+        }else{
+            App.RaiseStateEvent("combat.finish")
+        }
+    })
 })(App)

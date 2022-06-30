@@ -3,7 +3,7 @@
     let Neili= function(){
         proposal.call(this,"neili")
         this.Submit=function(){
-            return (App.GetParamNeiliMin()-0)>App.Data.HP["eff_neili"]
+            return (App.GetParamNeiliMin())>App.Data.HP["eff_neili"]
         }
         this.Execute=function(){
             if (App.Core.Sleep.CanSleep()){

@@ -20,7 +20,7 @@
         return world.GetVariable("home")?App.Info.RoomHome:App.Info.RoomSafe
     }
     App.GetParamNeiliMin=function(){
-        return world.GetVariable("neili_min")
+        return world.GetVariable("neili_min")-0
     }
     App.GetParamGoldMin=function(){
         let v=world.GetVariable("gold_min")

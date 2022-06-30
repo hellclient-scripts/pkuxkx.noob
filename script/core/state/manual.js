@@ -11,7 +11,7 @@
     }
     StateManual.prototype.OnEvent=function(context,event,data){
         switch(event){
-            case "combat.killed":
+            case "combat.fighting":
                 Note("被叫杀，自动反击")
                 App.Core.Combat.NewBlockedCombat()
                 break

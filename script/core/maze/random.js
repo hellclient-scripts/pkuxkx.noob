@@ -4,7 +4,7 @@
     var MazeBackward={...Backward}
     MazeBackward["xiaojing"]="xiaojing"
     MazeBackward["biandao"]="biandao"
-    let DFS=new(Include("include/dfs.js"))(maxlevel,MazeBackward)
+    let DFS=Include("include/dfs.js")
     let basicmaze=Include("include/maze.js")
     let Maze=function(param){
         basicmaze.call(this,param)
@@ -13,6 +13,8 @@
         this.Arrived={}
         this.Command=null
         this.Start=""
+        this.IgnoreArrived=false
+        this.MaxDepth=maxlevel
     }
     Maze.prototype = Object.create(basicmaze.prototype)
     Maze.prototype.CheckSuccess=function(){
@@ -38,7 +40,7 @@
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
                 App.Send("unset brief")
-                this.Command=DFS.New()
+                this.Command=(new DFS(this.MaxDepth,MazeBackward)).New()
                 let level=this.Command.Arrive([this.EntryCmd()])
                 this.Command=level.Next()
                 App.Go(this.Command.Command)
@@ -74,9 +76,18 @@
                    App.Fail()
                     return 
                 }
-                this.Arrived[info+App.Core.RoomDesc.Map]=true
+                if (!this.IgnoreArrived){
+                    this.Arrived[info+App.Core.RoomDesc.Map]=true
+                }
                 this.Command=level.Next()
                 break;
+                case "core.bufffull":
+                    if (this.Command==null){
+                        break
+                    }
+                    world.DoAfterSpecial(App.Vehicle.RetryInterval, 'App.Go("'+this.Command.Command+'")', 12);
+                    
+                break
         }
         return false
     }

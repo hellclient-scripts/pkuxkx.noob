@@ -23,15 +23,16 @@
                 App.Core.Combat.Current.Disarmed=false
             break        
         case "combat.tick":
-            App.Send("checkbusy")
+            // App.Send("checkbusy")
             App.Core.Combat.CheckFighting()
             break
-        case "nobusy":
+        // case "nobusy":
+        case "gmcp.nobusy":
             App.Core.Combat.Current.Perform()
             break
         case "combat.finish":
             App.Commands([
-                App.NewCommand("do","hpbrief"),
+                // App.NewCommand("do","hpbrief"),
                 App.NewCommand("nobusy"),
                 App.NewCommand("state","core.state.combat.rest"),
             ]).Push()
