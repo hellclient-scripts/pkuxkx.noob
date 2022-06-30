@@ -14,7 +14,9 @@
                 }
             break
             case "nobusy":
+                if (!this.Waiting){
                     App.Next()
+                }
             break
             case "busy":
                 this.Waiting=true
