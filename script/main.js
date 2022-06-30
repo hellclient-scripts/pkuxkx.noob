@@ -66,6 +66,10 @@ var OnSubneg=function(code,data){
         case 201:
             // Note("GMCP:"+data)
             let cmd=SplitN(data," ",2)
+            switch (cmd[0]){
+                case "Fight.Targets"://可能有无效的JOSN字符
+                return
+            }
             let cmddata=cmd.length>1?JSON.parse(cmd[1]):null
             App.Raise("GMCP."+cmd[0],cmddata)
             return

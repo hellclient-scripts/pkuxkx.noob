@@ -14,7 +14,7 @@
             App.NewCommand("ask",App.Quest.WD.Xiake.Question),
             App.NewCommand("to",App.Options.NewWalk("wd-zl")),
             App.NewCommand("function",App.Quest.WD.Xiake.SetLoot),
-            App.NewCommand("rest"),
+            App.NewCommand("combatinit"),
             App.NewCommand("powerup"),
             App.NewCommand("kill",App.Options.NewKill("kill "+world.GetVariable("id")+"'s tufeitou")),
             App.NewCommand("to",App.Options.NewWalk("wd-cw")),

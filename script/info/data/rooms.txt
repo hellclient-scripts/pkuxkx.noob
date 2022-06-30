@@ -17,8 +17,9 @@ yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 
-qfsm||曲阜孔庙||||Station||孔庙
-xin-nwh||信阳南湾湖||||Station||南湾湖
+haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
+qf||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
+xin||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 zy-xcc||许昌城||||Station||许昌城
 zy-nyc||南阳城||||Station||南阳城
 xydp||襄阳当铺||||Station||襄阳当铺
@@ -52,6 +53,7 @@ lach||临安车行||||DescStart||这里是临安府当地的一家马车行，�
 la-yfm||岳飞墓||||Station||岳飞墓
 jx||嘉兴城||||Station||嘉兴城
 sz||沧浪亭||||Station||沧浪亭
+sz-cg||茶馆||||DescStart||你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙桌一字排开，坐满了客人，或高
 
 //武当
 wd-sm||武当山门||||Station||武当山门

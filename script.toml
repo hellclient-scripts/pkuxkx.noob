@@ -12,7 +12,7 @@ OnAssist = "onAssist"
 OnBuffer = "onBuffer"
 OnSubneg = "OnSubneg"
 OnBufferMin = 2
-OnBufferMax = 30
+OnBufferMax = 0
 Channel = "pkuxkx.noob"
 
 [[Triggers]]
@@ -1507,7 +1507,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dv6m7vjmfnah6nn9hq2"
   Name = "App.Core.Combat.OnDisarm"
   Enabled = true
-  Match = "^[^【：『]{1,10}卸除了你的兵器.+。"
+  Match = "^([^【：『]{1,10}卸除了你的兵器.+。|你手上持有的武器并不能用来发动.+。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
