@@ -126,6 +126,7 @@ luoyang-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
 hb-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
 hb-baozhou||保州||||Station||保州
 hb-zdz||正定镇||||Station||正定镇
+hb-tgk||塘沽口||||Station||塘沽口
 daizhou||代州||||DescStart||这里是代州的府前大街，因北面是代州府衙而得名，西面就是著名的边靖楼了。
 jinyang-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
 jinyang||晋阳广场||||DescStart||这里是一处热闹的广场，游人如织。
@@ -156,3 +157,9 @@ gmmen||古墓断龙石||||DescStart||这儿有一块很大的石头，据说叫�
 
 //少林寺
 slsmen||少林寺门||||DescStart||一个巨大的牌坊横架在两片山壁之间，牌坊正上方刻着三个斗大的字：『少林寺』，字迹已有些剥
+
+//慕容
+mrmen||慕容湖边||||DescStart||你走到湖边，前面豁然一个大湖泊(hu)，水面光滑如镜，湖上停着艘小船(boat)，船头坐着一位绿
+
+//神龙岛
+sldmen||神龙岛码头||||DescStart||这里是神龙岛的码头，一条木板搭成的小桥通向深水区。不远处，还停留了几艘船(boat)，看样子
