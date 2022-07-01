@@ -24,6 +24,7 @@ zy-nyc||南阳城||||Station||南阳城
 xiangyang||襄阳||||DescStart||这里是襄阳的城中心。兵荒马乱的年月，这里早失去了往日的繁华，街边零零散散有些小商小贩在
 jingzhou||荆州||||DescStart||这里是荆州府城的中心，各色人等，摩肩接踵，沸沸扬扬，几乎没有一刻清静的时分。
 zy-rzc||汝州城||||Station||汝州城
+sysy||||嵩阳书院||DescStart||这里是书院大门，面阔三间，卷棚式硬山顶，门额黑底金字横匾(bian)，书“嵩阳书院”四字，为
 qufu-sms||石门寺||||Station||石门寺
 taishan-sjy||石经峪||||Station||石经峪
 hankou||汉口镇||||DescStart||这里是汉口镇的中心位置，各色商贩都在这里摆摊营业。
@@ -37,6 +38,7 @@ luoyang-wxl||望星楼||||Station||望星楼
 changan-thm||长安通化门||||DescStart||这里是长安东边的通化门。城墙上贴着告示(gaoshi)。东面正是东都洛阳。
 changan-mdm||长安明德门||||DescStart||这里是长安正南的明德门。城墙上贴着告示(gaoshi)。南面正是终南山。
 changan-jgm||长安金光门||||DescStart||这里是长安正西的金光门。城墙上贴着告示(gaoshi)。西面就是西北的茫茫戈壁。
+wst||往生堂广场||||Station||往生堂广场
 jiangzhou||江州||||DescStart||这里是江州的的城中心，可以容纳很多人一起集会的大广场。
 gb-sdnb||树洞内部||||Station||树洞内部
 gb-sdx||树洞下||||Station||树洞下
@@ -58,6 +60,7 @@ quanzhouch||泉州车行||||DescStart||这里是泉州当地的一家马车行�
 fuzhou||福州||||DescStart||这里是福州的城市中心，行人不断从这里经过。
 yds||燕荡山||||DescStart||初名佛掌，又名金掌。峰前有鸣玉溪潺潺流淌，四周是重峦叠嶂，环境颇为清幽。
 mingzhou||明州||||DescStart||这是明州城的鼓楼，东面是明州府衙驻地，明州最繁华的所在。
+
 //武当
 wdmen||武当山门||||Station||武当山门
 wd-sqd||三清殿||||Station||三清殿
@@ -144,3 +147,12 @@ gyz||归云庄大厅||||DescStart||这里是归云庄的大厅，是庄主会客
 
 //灵柩
 lingjiu||百丈涧||||DescStart||山道到此突然消失，在你面前是一条山涧，山涧之中云雾缭绕，你根本无法看清对面。一条铁索(tiesuo)
+
+//全真
+qzmen||全真宫门||||DescStart||这是全真派重阳宫的宫门，这里整个由大块的青石铺成，极为平坦。但因年代久远，都有些破损。
+
+//古墓
+gmmen||古墓断龙石||||DescStart||这儿有一块很大的石头，据说叫断龙石，以前这儿是古墓的入口。石头有点松动，不知好不好推开
+
+//少林寺
+slsmen||少林寺门||||DescStart||一个巨大的牌坊横架在两片山壁之间，牌坊正上方刻着三个斗大的字：『少林寺』，字迹已有些剥
