@@ -28,10 +28,13 @@ whw||dengzhou||||w;w;w;w;w;w;w;sw;sw;w;wd;sw;w;w;wd;w||e;eu;e;e;ne;eu;e;ne;ne;e;
 hankou||xinyang||||n;n;n;nu;nd;ne;ne;nu;n;n;n||s;s;s;sd;sw;sw;su;sd;s;s;s;
 zy-nyc||luoyang||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
 luoyang||luoyang-wxl||||n;w||e;s
-luoyang||changankd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
-changankd||changanyp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
-changanyp||changan-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
-changan-hz||chengdu||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||100
+
+changan-thm||luoyang||||e;e;se;e;e;e;e;e;ed;e;e;e||w;w;w;wu;w;w;w;w;w;nw;w;w
+changan-mdm||changan-thm||||n;n;e;n;n;n;n;n;n;e;e||w;w;s;s;s;s;s;s;w;s;s
+changan-mdm||chengdu||||s;s;sw;sw;sw;sw;w;w;su;sw;se;su;sd;s;s;s;s||n;n;n;n;nu;nd;nw;ne;nd;e;e;ne;ne;ne;ne;n;n||200
+changan-jgm||changan-mdm||||e;e;e;e;s;s;s;s||n;n;n;n;w;w;w;w
+changan-jgm||hzxz||||w;w;nu;ne;nw;nw||se;se;sw;sd;e;e;
+
 chengdu||yueyang||||se;se;e;e;ne;ne;nw;nw;ne;ed;e;n;e;e;e||w;w;w;s;w;wu;sw;se;se;sw;sw;w;w;nw;nw||200
 yueyang||jiangzhou||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
 xinyang||jiangzhou||sail||s;s;s;sd;se;s;ask shao gong about 过江&&enter;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;ask shao gong about 过江&&enter;#sail;n;nw;nu;n;n;n||40
@@ -126,7 +129,6 @@ datong||daizhou||||s;s;s;s;s;s;sw;sw;se;sd;s;s||n;n;nu;nw;ne;ne;n;n;n;n;n;n
 hengshanmen||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
 rymen||jinyang||||sd;sd;sw;s;sd;w;w;w;s;s||n;n;e;e;e;nu;n;ne;nu;nu
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
-hzxz||changanyp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
 lingzhou||lanzhou||sail||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||20
 huangzhong||lanzhou||||e;e;e;se;se;e;e;e;e||w;w;w;w;nw;nw;w;w;w
 xxmen||huangzhong||||eu;eu;e;se||nw;w;wd;wd

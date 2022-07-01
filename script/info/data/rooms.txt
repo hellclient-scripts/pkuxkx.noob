@@ -34,9 +34,9 @@ whw||威海卫||||DescStart||这里就是威海卫的中心，偶尔可以看到
 huashan||华山千尺幢||||DescStart||前面有一斜如天垂石梯的山阶，这就是赫赫有名的千尺幢，石阶倚一道陡峭岩脊的裂缝开凿而成，
 luoyang||洛阳中心广场||||Station||洛阳中心广场
 luoyang-wxl||望星楼||||Station||望星楼
-changankd||长安三秦客栈||||Station||三秦客栈
-changanyp||长安千金堂||||Station||千金堂
-changan-hz||汉中||||Station||汉中
+changan-thm||长安通化门||||DescStart||这里是长安东边的通化门。城墙上贴着告示(gaoshi)。东面正是东都洛阳。
+changan-mdm||长安明德门||||DescStart||这里是长安正南的明德门。城墙上贴着告示(gaoshi)。南面正是终南山。
+changan-jgm||长安金光门||||DescStart||这里是长安正西的金光门。城墙上贴着告示(gaoshi)。西面就是西北的茫茫戈壁。
 jiangzhou||江州||||DescStart||这里是江州的的城中心，可以容纳很多人一起集会的大广场。
 gb-sdnb||树洞内部||||Station||树洞内部
 gb-sdx||树洞下||||Station||树洞下
