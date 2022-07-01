@@ -80,6 +80,8 @@ dls-zpgc||赞普广场||||Station||赞普广场
 dlsmen||大轮寺山门||||Station||大轮寺山门
 dlsch||大轮寺马车店||||Full||马车店[城市]west
 
+rymen||日月教门小村庄||||DescStart||这是位于半山腰平坦之地的一个小村庄。据说日月神教的总堂－－黑木崖就在这座山上。这个村庄
+
 wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
@@ -117,10 +119,21 @@ wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
 wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
 wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
 
-
 luoyang-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
-jinyang-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
+hb-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
+hb-baozhou||保州||||Station||保州
+hb-zdz||正定镇||||Station||正定镇
+daizhou||代州||||DescStart||这里是代州的府前大街，因北面是代州府衙而得名，西面就是著名的边靖楼了。
 jinyang-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
+jinyang||晋阳广场||||DescStart||这里是一处热闹的广场，游人如织。
+beijing-yam||北京永安门||||DescStart||这是京城南面的门户，从南方经天津上京的人们多从这里进城。这里的守卫还是很严的，城门边上
+beijing-dsm||北京德胜门||||DescStart||这是京城西北角的德胜门。从这里往北就是通往蒙古，俄罗斯的大路。大路边的军营里操练的声音
+beijing-adm||北京安定门||||DescStart||这是京城正北的安定门。西边是德胜门，南边是去鼓楼的大道。这里远离闹市，只有些乡农来往运
+guanwai||关外老龙头||||DescStart||老龙头是万里长城最东端。澄海楼巍峨高踞城头，楼上“雄襟万里”的横匾居高临下，直俯大海。
+zjk||张家口||||DescStart||张家口是南北通道，塞外皮毛集散之地，人烟稠密，市肆繁盛。
+menggu||蒙古||||DescStart||道路渐渐变窄，只有一些商贩往返于此地，贩卖两地的必须物资。往北穿过科尔沁草原即可到达一
+datong||大同||||DescStart||这里是大同中心的魁星楼，希冀贤才辈出，广开云路，既要兴学育贤，又要魁楼以“邀灵通气”，
+hengshanmen||恒山||||DescStart||这里山势渐起，北面通往大同，南面就是恒山。
 lingzhou||灵州||||Full||城中心[大夏国] [都城]east,north,south,west
 lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south,west
 

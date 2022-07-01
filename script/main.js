@@ -69,6 +69,7 @@ var OnSubneg=function(code,data){
             let cmd=SplitN(data," ",2)
             switch (cmd[0]){
                 case "Fight.Targets"://可能有无效的JOSN字符
+                case "Char.Info":
                 return
                 case "Move.Info":
                 App.Core.RoomObjEnd()
