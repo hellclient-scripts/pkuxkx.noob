@@ -10,47 +10,50 @@ yz||yzsm||||n;n;w||e;s;s
 yz||yz-sczh||||s;s;s;w||e;n;n;n
 yzkd||yz-kd2f||||u;enter||out;d
 yztj||yz-dtpns||||s||n
-yz||qf||||n;n;n;n;n;n;n;n;n;n||s;s;s;s;s;s;s;s;s;s
-yz||xin||||w;w;w;w;nw;w;w;w;w;w||e;e;e;e;e;se;e;e;e;e
+yz||qufu||||n;n;n;n;n;n;n;n;n;n||s;s;s;s;s;s;s;s;s;s
+yz||xinyang||||w;w;w;w;nw;w;w;w;w;w||e;e;e;e;e;se;e;e;e;e
 yz||haozhou||||w;w;w;w;nw;w;n;n;nw;n;n||s;s;se;s;s;e;se;e;e;e;e
 yzqz||yz-jd||||s||n
 yzrbz||yzdp||||n||s
-xin||xin-xcz||||s;s;s;sd;se||nw;nu;n;n;b
 zy-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
 zy-xcc||zy-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
-zy-nyc||xydp||||sw;s;s;s;s;s;s;w;w;n||s;e;e;n;n;n;n;n;n;bo xiaolu&&ne
+zy-nyc||xiangyang||||sw;s;s;s;s;s;s||n;n;n;n;n;n;bo xiaolu&&ne
 zy-xcc||zy-rzc||||nw;nw||se;se
-qf||qf-sms||||s;e;ne;eu;enter||out;wd;sw;w;n
-qf||ts-sjy||||n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s
-zy-nyc||ly||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
-ly||ly-wxl||||n;w||e;s
-ly||cakd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
-cakd||cayp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
-cayp||ca-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
-ca-hz||cd||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||100
-cd||yy-yyl||||se;se;e;e;ne;.ne;.nw;.nw;.ne;ed;e;n||s;w;wu;sw;.se;.se;.sw;.sw;w;w;nw;nw
-xin-xcz||jz-xyl||sail||s;ask shao gong about 过江&&enter;#sail;se;se;s||n;nw;nw;ask shao gong about 过江&&enter;#sail;n||20
-jz-xyl||jzkd||||sw;sw;nw||se;ne;ne
-yy-yyl||jzkd||||e;e;e;e;e;e;ed;se;ed;e;ne;ne;ne;ne;ne;nw||se;sw;sw;sw;sw;sw;w;wu;nw;wu;w;w;w;w;w;w
+qufu||qufu-sms||||s;e;ne;eu;enter||out;wd;sw;w;n
+qufu||taishan-sjy||||n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s
+taishan||qufu||||s;s;sw;w;sw;s;s;s||n;n;n;ne;e;ne;n;n
+qingzhou||taishan||||sw;sw;w;sd;sw;w;w;wu;n;n||s;s;ed;e;e;ne;nu;e;ne;ne
+dengzhou||qingzhou||||s;su;s;su;sw;s;sw;sw;su||nd;ne;ne;n;ne;nd;n;nd;n
+whw||dengzhou||||w;w;w;w;w;w;w;sw;sw;w;wd;sw;w;w;wd;w||e;eu;e;e;ne;eu;e;ne;ne;e;e;e;e;e;e;e
+hankou||xinyang||||n;n;n;nu;nd;ne;ne;nu;n;n;n||s;s;s;sd;sw;sw;su;sd;s;s;s;
+zy-nyc||luoyang||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
+luoyang||luoyang-wxl||||n;w||e;s
+luoyang||changankd||||w;w;w;wu;w;w;w;w;w;nw;w;w;w;w;s;s;s;s;w||e;n;n;n;n;e;e;e;e;se;e;e;e;e;e;ed;e;e;e
+changankd||changanyp||||e;s;s;w;w;n;n;w||e;s;s;e;e;n;n;w
+changanyp||changan-hz||||e;n;n;n;w;w;w;w;sw;su;sd;se||nw;nu;nd;ne;e;e;e;e;s;s;s;w
+changan-hz||chengdu||||su;.sw;.se;.su;sd;s;s;s;s;||n;n;n;n;nu;nd;.nw;.ne;.nd||100
+chengdu||yueyang||||se;se;e;e;ne;ne;nw;nw;ne;ed;e;n;e;e;e||w;w;w;s;w;wu;sw;se;se;sw;sw;w;w;nw;nw||200
+yueyang||jiangzhou||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
+xinyang||jiangzhou||sail||s;s;s;sd;se;s;ask shao gong about 过江&&enter;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;ask shao gong about 过江&&enter;#sail;n;nw;nu;n;n;n||40
 yz||gb-sdnb||||enter shudong||out
 gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
 yz||yz-xjk||||d||u
 yz-xjk||yz-fds||||out||enter
-yy-yyl||yy-yyfy||||e;e;e;e;s;||n;w;w;w;w
-yy-yyfy||ncsy||||n;w;s;s;s;su;su;su;ed;nu;enter||out;sd;wu;nd;nd;nd;n;n;n;e;s
-ncsy||nckd||||out;sd;ed;ed;e;e;e;n;w||e;s;w;w;w;wu;wu;nu;enter
-nckd||jzkd||||e;n;n;nw;ne;w;n;n;n;n;n;ne;ne;nw||se;sw;sw;s;s;s;s;s;e;sw;se;s;s;w
-jing-jxl||jing-jm||||nd;w;w;s;w;w;w;n;n;n;n;ne;ne;ne;e;e;ne;nw||se;sw;;w;w;sw;sw;sw;s;s;s;s;e;e;e;n;e;e;su
-xydp||jing-jm||||s;e;e;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;;w;w;n
-xydp||wd-sm||||s;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;n
-jksm||jzkd||||w;w;wu;wu;wd;sw;w;w;sw;nw||se;ne;e;e;ne;eu;ed;ed;e;e
-jksm||jk-ngf||||s;e;e;e;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;w;w;w;n
-jk-ngf||la||||e;se;se;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;nw;nw;w
-la-yfm||la||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
-jx||la||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
-la||lach||||n;e;n||s;w;s
-sz||jx||||s;s;s;s;s;s;||n;n;n;n;n;n
-sz-cg||sz||||sw;n;n;||s;s;ne
+nanchangsy||nanchang||||out;sd;ed;ed;e;e;e||w;w;w;wu;wu;nu;enter
+jiangzhou||nanchang||||s;s;s;s;s;su;se;s;s;s||n;n;n;nw;nd;n;n;n;n;n
+xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;n;n;n;n
+xiangyang||wd-sm||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
+jiankang||jiangzhou||||s;se;s;s;s;s;s;w;w;w;nw;w;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;e;se;e;e;e;n;n;n;n;n;nw;n
+linan||jiankang||||n;n;n;n;n;ne;n;n;n;nw;nw;n;n;nw;w;s;w;w;w;n;n;n;n;n;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;s;s;s;s;s;e;e;e;n;e;se;s;s;se;se;s;s;s;sw;s;s;s;s;s
+linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
+jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
+linan||linanch||||n;e;n||s;w;s
+suzhou||jiaxing||||s;s;s;s;s;s;||n;n;n;n;n;n
+suzhou-cg||suzhou||||sw;n;n;||s;s;ne
+zhenjiang||suzhou||||e;e;e;e;se;se;s;sw;sw;s;se;s;s;s;s;s||n;n;n;n;n;nw;n;ne;ne;n;nw;nw;w;w;w;w
+quanzhou||quanzhouch||||w;n||s;e
+nanchang||quanzhou||||s;s;s;s;se;s;se;s;s||n;n;nw;n;nw;n;n;n;n
+quanzhou||fuzhou||||n;n;n;se;se;sd;s;s;s||n;n;n;nu;nw;nw;s;s;s
 wd||wd-sm||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
 wd-jxg||wd-sqd||||e;e;s||n;w;w
@@ -66,20 +69,21 @@ gb-sdx||wd-sm||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
 gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
-gb-sdx||ly-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
+gb-sdx||luoyang-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
 gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;e
 gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
-ly-hlg||ly||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
+hsc||huashan||||e;e;e;e;e;se;su;eu||wd;nd;nw;w;w;w;w;w
+luoyang-hlg||luoyang||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
 wdj-jbq||bmz||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
-bmz||km||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||50
-km||dl||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
-dl||dlch||||w||e
-dl||tls-sj||||n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s
-cd||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
+bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||50
+kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
+dali||dalich||||w||e
+dali||tls-sj||||n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s
+chengdu||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
 wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||50
 wdj-lgxs-e||wdj-lgds-w||||ed||w
@@ -88,27 +92,32 @@ wdj-lgxs-w||wdj-lgxs-n||||wd;nw;ne;ne;e;su||nd;w;sw;sw;se;eu
 wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west||50
 wdj-swdsb-s||wdj-swdsb-w||||#maze 苗岭大山 north>山前[门派] [存盘点]east,southwest||#maze 苗岭大山 east>大树[门派] [存盘点]north,southdown||50
 wdj-swdsb-w||qmz||||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest;sw;nw;w;nw;w;w;w;w;w;w;ne;ne
-qmz||ncsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||50
-mwd||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
-mwd||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
+qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||50
+qhmz||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
+qhmz||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
-mwd||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
-mwd||mwd-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
+qhmz||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
+qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
-ly||ly-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-ly-mjd||jy-jiyuan||sail||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||20
-jy-jiyuan||jy-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
+luoyang||luoyang-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
+luoyang-mjd||jinyang-jiyuan||sail||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||20
+jinyang-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
-hzxz||cayp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
+hzxz||changanyp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
 lingzhou||lanzhou||sail||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||20
-gyz-dm||sz||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
+gyz-dm||suzhou||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
 gyz-gyt||gyz-dm||||sd;sd;out||enter;nu;nu
 gyz-gyt||gyz||||e;e||w;w
 dls-hzd||dls-sm||||wu;nw||se;ed
 dls-sm||dlsch||||e||w
 
-dlsch||kmch||train||gu;qu kunming||gu;qu dalunsi||10
-dlsch||dlch||train||gu;qu dalichengzhong||gu;qu dalunsi||10
-dlsch||lach||train||gu;qu hangzhou||gu;qu dalunsi||15
+dlsch||kunmingch||train||gu;qu kunming||gu;qu dalunsi||10
+dlsch||dalich||train||gu;qu dalichengzhong||gu;qu dalunsi||10
+dlsch||linanch||train||gu;qu hangzhou||gu;qu dalunsi||15
+dlsch||quanzhouch||train||gu;qu quanzhou||gu;qu dalunsi||15
+
+linanch||quanzhouch||train||gu;qu quanzhou||gu;qu hangzhou||15
+
+lingjiu||hzxz||||sd;sd;s;s;sd||nu;n;n;nu;nu

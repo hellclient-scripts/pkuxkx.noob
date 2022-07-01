@@ -1628,6 +1628,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1dvcr25hhts1861fu3u0"
+  Name = "App.Core.OnMoveRideEnd"
+  Enabled = true
+  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnMoveRideEnd"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -1847,7 +1878,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -1878,8 +1909,8 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = false
-  Match = "^(> )*(你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。)$"
+  Enabled = true
+  Match = "^(> )*(只听得江面上隐隐传来：“别急嘛，这儿正忙着呐……”|你还在山中跋涉，一时半会恐怕走不出这六盘山！|你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -1909,7 +1940,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -3562,7 +3593,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "home"
   Desc = "home名字"
-  Intro = "储存柜的名字,如有空格则认为空格前是柜子所在位置，否则默认为扬州总行\n\n例：\njarlyyn\nmwd-sch ppwdj\n\n重新加载后才能起效"
+  Intro = "储存柜的名字,如有空格则认为空格前是柜子所在位置，否则默认为扬州总行\n\n例：\njarlyyn\nqhmz-sch ppwdj\n\n重新加载后才能起效"
 
 [[RequiredParams]]
   Name = "neili_min"

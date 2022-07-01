@@ -16,45 +16,46 @@ yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
-
 haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
-qf||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
-xin||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
+qufu||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
+xinyang||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 zy-xcc||许昌城||||Station||许昌城
 zy-nyc||南阳城||||Station||南阳城
-xydp||襄阳当铺||||Station||襄阳当铺
-jing-jxl||仲宣楼||||Station||仲宣楼
-jing-jm||荆门||||Station||荆门
+xiangyang||襄阳||||DescStart||这里是襄阳的城中心。兵荒马乱的年月，这里早失去了往日的繁华，街边零零散散有些小商小贩在
+jingzhou||荆州||||DescStart||这里是荆州府城的中心，各色人等，摩肩接踵，沸沸扬扬，几乎没有一刻清静的时分。
 zy-rzc||汝州城||||Station||汝州城
-qf-sms||石门寺||||Station||石门寺
-ts-sjy||石经峪||||Station||石经峪
-ly||洛阳中心广场||||Station||洛阳中心广场
-ly-wxl||望星楼||||Station||望星楼
-cakd||长安三秦客栈||||Station||三秦客栈
-cayp||长安千金堂||||Station||千金堂
-ca-hz||汉中||||Station||汉中
-yy-yyl||岳阳楼||||Station||岳阳楼
-jz-xyl||浔阳楼||||Station||浔阳楼
-xin-xcz||小池镇||||Station||小池镇
-jzkd||盈月客栈||||Station||盈月客栈
+qufu-sms||石门寺||||Station||石门寺
+taishan-sjy||石经峪||||Station||石经峪
+hankou||汉口镇||||DescStart||这里是汉口镇的中心位置，各色商贩都在这里摆摊营业。
+taishan||岱宗坊||||DescStart||位于泰安县城以北约一里，此处是登泰山的入口。相传当年碧霞元君被姜子牙戏弄，诱她投掷绣花
+qingzhou||青州府||||DescStart||这里是青州府的州治，西面通往泰山，向北就进入莱州湾了。
+dengzhou||登州||||DescStart||这里是登州城的中心，一座钟楼矗立在一侧，不时有军人经过。
+whw||威海卫||||DescStart||这里就是威海卫的中心，偶尔可以看到几个靠海谋生的人在这里拿着从海上捞起来的东西在卖，现
+huashan||华山千尺幢||||DescStart||前面有一斜如天垂石梯的山阶，这就是赫赫有名的千尺幢，石阶倚一道陡峭岩脊的裂缝开凿而成，
+luoyang||洛阳中心广场||||Station||洛阳中心广场
+luoyang-wxl||望星楼||||Station||望星楼
+changankd||长安三秦客栈||||Station||三秦客栈
+changanyp||长安千金堂||||Station||千金堂
+changan-hz||汉中||||Station||汉中
+jiangzhou||江州||||DescStart||这里是江州的的城中心，可以容纳很多人一起集会的大广场。
 gb-sdnb||树洞内部||||Station||树洞内部
 gb-sdx||树洞下||||Station||树洞下
 yz-xjk||销金窟||||Station||销金窟
 yz-fds||发呆室||||Station||发呆室
-yy-yyfy||岳阳府衙||||Station||岳阳府衙
-ncsy||岳麓书院||||Station||岳麓书院
-nckd||偃月楼||||Station||偃月楼
-jksm||灵英观||||Station||灵英观
-jk-ngf||宁国府||||Station||宁国府
-
-la||大理寺||||Landmark||Jianghu tu
-lach||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-
-la-yfm||岳飞墓||||Station||岳飞墓
-jx||嘉兴城||||Station||嘉兴城
-sz||沧浪亭||||Station||沧浪亭
-sz-cg||茶馆||||DescStart||你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙桌一字排开，坐满了客人，或高
-
+yueyang||岳阳||||DescStart||这里是岳阳城的城中心，路上行人摩肩接踵，络绎不绝。
+nanchang||南昌||||DescStart||这里是南昌城的城中心，南来北往的客流在这里交汇。
+nanchangsy||岳麓书院||||Station||岳麓书院
+jiankang||建康神策门||||DescStart||这里是建康府的正北面的神策门，往北过长江通往中原。
+linan||大理寺||||Landmark||Jianghu tu
+linanch||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+linan-yfm||岳飞墓||||Station||岳飞墓
+jiaxing||嘉兴城||||Station||嘉兴城
+suzhou||沧浪亭||||Station||沧浪亭
+suzhou-cg||茶馆||||DescStart||你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙桌一字排开，坐满了客人，或高
+zhenjiang||镇江||||DescStart||这里是一个小广场，平时人来人往，热闹非常。几个游客不知道正议论着什么。
+quanzhou||泉州||||DescStart||泉州是一个安静的港口城市。虽然这里是城中心，人们也只是脚步轻轻地过往，并不喧哗。东面是
+quanzhouch||泉州车行||||DescStart||这里是泉州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+fuzhou||福州||||DescStart||这里是福州的城市中心，行人不断从这里经过。
 //武当
 wd-sm||武当山门||||Station||武当山门
 wd-sqd||三清殿||||Station||三清殿
@@ -70,7 +71,7 @@ wd-zl||武当土匪窝竹楼||||Full||竹楼[野外] [未定义]east
 hsc||打谷场||||Station||打谷场
 yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
 hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west
-ly-hlg||虎牢关||||Station||虎牢关
+luoyang-hlg||虎牢关||||Station||虎牢关
 
 dls-hzd||猴子洞||||Station||猴子洞
 dls-zpgc||赞普广场||||Station||赞普广场
@@ -81,12 +82,12 @@ wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
 
-kmch||昆明车行||||DescStart||这里是昆明当地的一家马车行，挂着一个招牌
-km||昆明||||DescStart||这里是昆明城的城中心，鲜花遍地。
-dl||大理||||Full||中心广场[大理国] [都城]east,north,south,west
-dlch||大理车行||||DescStart||这里是大理城当地的一家马车行，挂着一个招
+kunmingch||昆明车行||||DescStart||这里是昆明当地的一家马车行，挂着一个招牌
+kunming||昆明||||DescStart||这里是昆明城的城中心，鲜花遍地。
+dali||大理||||Full||中心广场[大理国] [都城]east,north,south,west
+dalich||大理车行||||DescStart||这里是大理城当地的一家马车行，挂着一个招
 tls-sj||天龙寺山脚||||Station||天龙寺山脚
-cd||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
+chengdu||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
 
 //苗疆
 wdj-lgxs-s||雷公西山南入口||||Full||山间路[门派] [存盘点]north,southdown
@@ -98,8 +99,8 @@ wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,so
 wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
-mwd||苗王殿||||Station||苗王殿
-mwd-sch||千户苗寨盛昌行||||Station||盛昌行苗寨分店
+qhmz||苗王殿||||Station||苗王殿
+qhmz-sch||千户苗寨盛昌行||||Station||盛昌行苗寨分店
 qmz||青苗寨吊脚楼||||Full||吊脚楼[门派] [存盘点]north,up
 bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的中心。
 hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
@@ -111,9 +112,9 @@ wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
 wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
 
 
-ly-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
-jy-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
-jy-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
+luoyang-mjd||孟津渡||||Full||孟津渡[野外] east,southdown,west
+jinyang-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
+jinyang-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
 lingzhou||灵州||||Full||城中心[大夏国] [都城]east,north,south,west
 lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south,west
 
@@ -121,3 +122,6 @@ lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south
 gyz-dm||归云庄大门||||Station||归云庄大门
 gyz-gyt||归云亭||||Station||归云亭
 gyz||归云庄大厅||||DescStart||这里是归云庄的大厅，是庄主会客的地方，里面站着两排卫士。正堂前挂着一块金匾(bian)，金匾
+
+//灵柩
+lingjiu||百丈涧||||DescStart||山道到此突然消失，在你面前是一条山涧，山涧之中云雾缭绕，你根本无法看清对面。一条铁索(tiesuo)

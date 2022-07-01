@@ -101,6 +101,9 @@
         App.Send("halt")
         App.Go("out ")
     }
+    App.Core.OnMoveRideEnd=function(name, output, wildcards){
+        App.Send("halt")
+    }
     App.RegisterCallback("core.move.sail",function(){
         App.Raise("Waiting")
     })
