@@ -141,10 +141,10 @@ lingzhou||灵州||||Full||城中心[大夏国] [都城]east,north,south,west
 lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south,west
 
 //桃花
-gyz-dm||归云庄大门||||Station||归云庄大门
+gyzmdn||归云庄大门||||Station||归云庄大门
 gyz-gyt||归云亭||||Station||归云亭
 gyz||归云庄大厅||||DescStart||这里是归云庄的大厅，是庄主会客的地方，里面站着两排卫士。正堂前挂着一块金匾(bian)，金匾
-
+thdmen||桃花岛海滩||||DescStart||这是桃花岛的出海口，南面是海，向西是光秃秃的岩石，东面北面是花树，五色缤纷，不见尽头，
 //灵柩
 lingjiu||百丈涧||||DescStart||山道到此突然消失，在你面前是一条山涧，山涧之中云雾缭绕，你根本无法看清对面。一条铁索(tiesuo)
 

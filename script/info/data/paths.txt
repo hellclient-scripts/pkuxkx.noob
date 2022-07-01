@@ -62,6 +62,7 @@ nanchang||quanzhou||||s;s;s;s;se;s;se;s;s||n;n;nw;n;nw;n;n;n;n
 quanzhou||fuzhou||||n;n;n;se;se;sd;s;s;s||n;n;n;nu;nw;nw;s;s;s
 yds||fuzhou||||sd;sw;sw;sw;sw;su;sd;se;sd;sd;s;s;s||n;n;n;nu;nu;nw;nu;nd;ne;ne;ne;ne;nu
 mingzhou||yds||||s;sw;su;su;s;se;e;eu||wd;w;nw;n;nd;nd;ne;n
+thdmen||mingzhou||||enter boat;#sail;s;s||n;n;enter boat;#sail
 wd||wdmen||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
 wd-jxg||wd-sqd||||e;e;s||n;w;w
@@ -137,8 +138,8 @@ hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
 lingzhou||lanzhou||sail||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||20
 huangzhong||lanzhou||||e;e;e;se;se;e;e;e;e||w;w;w;w;nw;nw;w;w;w
 xxmen||huangzhong||||eu;eu;e;se||nw;w;wd;wd
-gyz-dm||suzhou||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
-gyz-gyt||gyz-dm||||sd;sd;out||enter;nu;nu
+gyzmdn||suzhou||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
+gyz-gyt||gyzmdn||||sd;sd;out||enter;nu;nu
 gyz-gyt||gyz||||e;e||w;w
 dls-hzd||dlsmen||||wu;nw||se;ed
 dlsmen||dlsch||||e||w
