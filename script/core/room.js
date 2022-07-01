@@ -6,6 +6,7 @@
         Tags: "",
         Objs: [],
         LootCmds:{},
+        ObjEnd:false
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -31,6 +32,7 @@
             Tags: wildcards[3],
             Objs: [],
             LootCmds:{},
+            ObjEnd:false,
         }
         App.Core.RoomDesc = {
             Mode: 0,
@@ -155,9 +157,15 @@
         }
         return true
     }
+    App.Core.RoomObjEnd=function(){
+        if (!App.Data.Room.ObjEnd){
+            App.Data.Room.ObjEnd=true
+            world.EnableTriggerGroup("roomobj", false)            
+            App.Raise("OnRoomEnd")
+        }
+    }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
-        world.EnableTriggerGroup("roomobj", false)
-        App.Raise("OnRoomEnd")
+        App.Core.RoomObjEnd()
     }
     App.SetLootCmd=function(name,cmd){
         App.Data.Room.LootCmds[name]=cmd

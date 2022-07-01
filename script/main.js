@@ -59,6 +59,7 @@ var onBuffer=function(data){
     return false
 }
 var OnSubneg=function(code,data){
+    
     if (!data){
         return
     }
@@ -68,6 +69,9 @@ var OnSubneg=function(code,data){
             let cmd=SplitN(data," ",2)
             switch (cmd[0]){
                 case "Fight.Targets"://可能有无效的JOSN字符
+                return
+                case "Move.Info":
+                App.Core.RoomObjEnd()
                 return
             }
             let cmddata=cmd.length>1?JSON.parse(cmd[1]):null
