@@ -29,7 +29,7 @@
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
-            Tags: wildcards[3],
+            Tags: wildcards[4],
             Objs: [],
             LootCmds:{},
             ObjEnd:false,
