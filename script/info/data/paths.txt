@@ -42,7 +42,7 @@ yz-xjk||yz-fds||||out||enter
 nanchangsy||nanchang||||out;sd;ed;ed;e;e;e||w;w;w;wu;wu;nu;enter
 jiangzhou||nanchang||||s;s;s;s;s;su;se;s;s;s||n;n;n;nw;nd;n;n;n;n;n
 xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;n;n;n;n
-xiangyang||wd-sm||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
+xiangyang||wdmen||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
 jiankang||jiangzhou||||s;se;s;s;s;s;s;w;w;w;nw;w;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;e;se;e;e;e;n;n;n;n;n;nw;n
 linan||jiankang||||n;n;n;n;n;ne;n;n;n;nw;nw;n;n;nw;w;s;w;w;w;n;n;n;n;n;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;s;s;s;s;s;e;e;e;n;e;se;s;s;se;se;s;s;s;sw;s;s;s;s;s
 linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
@@ -54,18 +54,20 @@ zhenjiang||suzhou||||e;e;e;e;se;se;s;sw;sw;s;se;s;s;s;s;s||n;n;n;n;n;nw;n;ne;ne;
 quanzhou||quanzhouch||||w;n||s;e
 nanchang||quanzhou||||s;s;s;s;se;s;se;s;s||n;n;nw;n;nw;n;n;n;n
 quanzhou||fuzhou||||n;n;n;se;se;sd;s;s;s||n;n;n;nu;nw;nw;s;s;s
-wd||wd-sm||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
+yds||fuzhou||||sd;sw;sw;sw;sw;su;sd;se;sd;sd;s;s;s||n;n;n;nu;nu;nw;nu;nd;ne;ne;ne;ne;nu
+mingzhou||yds||||s;sw;su;su;s;se;e;eu||wd;w;nw;n;nd;nd;ne;n
+wd||wdmen||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
 wd-jxg||wd-sqd||||e;e;s||n;w;w
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
 wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
 wd-kf||wd-sqd||||w;w||e;e
 wd-xl||wd-cw||||w||e
-wd-sm||wd-xl||||e;s;se||nw;n;w
+wdmen||wd-xl||||e;s;se||nw;n;w
 wd-xl||wd-zl||||#maze 武当土匪进入
 wd-zl||wd-xl||||#maze 武当土匪离开;n;nd;w;s;se
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
-gb-sdx||wd-sm||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
+gb-sdx||wdmen||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
 gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
@@ -79,11 +81,16 @@ wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
 wdj-jbq||bmz||||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
-bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||50
+bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
 kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
+pxwf||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n
 dali||dalich||||w||e
-dali||tls-sj||||n;n;n;n;n;n;ne;ne;ne;n;sw||ne;s;sw;sw;sw;s;s;s;s;s;s
-chengdu||tls-sj||||s;s;s;s;su;sw;sw;s;sw;sw;sw||ne;ne;ne;n;ne;ne;nd;n;n;n;n
+dali||tlsmen||||n;n;n;n;n;n;ne;ne;ne;n;sw;wu||ed;ne;s;sw;sw;sw;s;s;s;s;s;s
+chengdu||tlsmen||||s;s;s;s;su;sw;sw;s;sw;sw;sw;wu||ed;ne;ne;ne;n;ne;ne;nd;n;n;n;n
+chengdu||dls-zpgc||||nw;nw;w;w;wu;wu;wu;nw;nw;w;n;n;n||s;s;s;e;se;se;ed;ed;ed;e;e;se;se
+dls-zpgc||lingzhou||||n;n;ne;e;nd;e;n;n;ne;n;ne;n;n;n;n;n||s;s;s;s;s;sw;s;sw;s;s;w;su;w;sw;s;s||40
+lxcmen||dls-zpgc||||s;sd;sd;sw;sd;s;s;s||n;n;n;nu;ne;nu;nu;n
+emeimen||chengdu||||wd;sd;sd;wd;w;s;sd;sd;s;se;e;nd;nd;nd;n;n;n;n||s;s;s;s;su;su;su;w;nw;n;nu;nu;n;e;eu;nu;nu;eu
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
 wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||50
 wdj-lgxs-e||wdj-lgds-w||||ed||w
@@ -92,7 +99,7 @@ wdj-lgxs-w||wdj-lgxs-n||||wd;nw;ne;ne;e;su||nd;w;sw;sw;se;eu
 wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west||50
 wdj-swdsb-s||wdj-swdsb-w||||#maze 苗岭大山 north>山前[门派] [存盘点]east,southwest||#maze 苗岭大山 east>大树[门派] [存盘点]north,southdown||50
 wdj-swdsb-w||qmz||||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest;sw;nw;w;nw;w;w;w;w;w;w;ne;ne
-qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||50
+qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||400
 qhmz||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 qhmz||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
@@ -107,11 +114,13 @@ jinyang-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
 hzxz||changanyp||||se;se;sw;sd;e;e;e;e;s;s;s;w||e;n;n;n;w;w;w;w;nu;ne;nw;nw
 lingzhou||lanzhou||sail||w;w;nw;nw;ask shao gong about 过河&&enter;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;ask shao gong about 过河&&enter;#sail;se;se;e;e||20
+huangzhong||lanzhou||||e;e;e;se;se;e;e;e;e||w;w;w;w;nw;nw;w;w;w
+xxmen||huangzhong||||eu;eu;e;se||nw;w;wd;wd
 gyz-dm||suzhou||||w;w;w;w;w;w;w;w;w;s;e;s;nw;sw;se;e;e;e;e;e;e;ne||sw;w;w;w;w;w;w;nw;ne;se;n;w;n;e;e;e;e;e;e;e;e;e
 gyz-gyt||gyz-dm||||sd;sd;out||enter;nu;nu
 gyz-gyt||gyz||||e;e||w;w
-dls-hzd||dls-sm||||wu;nw||se;ed
-dls-sm||dlsch||||e||w
+dls-hzd||dlsmen||||wu;nw||se;ed
+dlsmen||dlsch||||e||w
 
 dlsch||kunmingch||train||gu;qu kunming||gu;qu dalunsi||10
 dlsch||dalich||train||gu;qu dalichengzhong||gu;qu dalunsi||10

@@ -2,7 +2,7 @@
     {
         "label":"抄经",
         "desc":"抄经队列",
-        "cmd":"#to qf-sms||#do report wrong||#do ask sengren about job||#to ts-sjy||#do write jing||#afterbusy||#delay 2000||#to qf-sms||#do ask sengren about done||#captcha 工号||#delay 1000||#loop"
+        "cmd":"#to qufu-sms||#do report wrong||#do ask sengren about job||#to taishan-sjy||#do write jing||#afterbusy||#delay 2000||#to qufu-sms||#do ask sengren about done||#captcha 工号||#delay 1000||#loop"
     }
     ,{
         "label":"做药",
