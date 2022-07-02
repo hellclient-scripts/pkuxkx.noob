@@ -58,19 +58,18 @@ var onBuffer=function(data){
     }
     return false
 }
-var OnSubneg=function(code,data){
-    
+let csi="\x1b"
+let replace=""
+var OnSubneg=function(code,data){ 
     if (!data){
         return
     }
     switch(code){
         case 201:
+            data=data.split(csi).join("\\u001b")
             // Note("GMCP:"+data)
             let cmd=SplitN(data," ",2)
             switch (cmd[0]){
-                case "Fight.Targets"://可能有无效的JOSN字符
-                case "Char.Info":
-                return
                 case "Move.Info":
                 App.Core.RoomObjEnd()
                 return
