@@ -246,4 +246,4 @@ hebeicart||hbch||taxi||qu puyang||gu||10
 hebeicart||rych||train||qu riyueshenjiao||gu||10
 hebeicart||daizhouch||taxi||qu daizhou||gu||10
 hebeicart||datongch||taxi||qu datong||gu||10
-hebeicart||datzjkchongch||taxi||qu zhangjiakou||gu||10
+hebeicart||zjkch||taxi||qu zhangjiakou||gu||10
