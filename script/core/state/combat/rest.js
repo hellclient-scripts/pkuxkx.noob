@@ -8,7 +8,7 @@
     State.prototype.Enter=function(context,oldstatue){
         if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
             App.Send("dazuo max;dazuo 10")
-        }else if (App.Data.HP["per_qixue"]<App.GetNumberParam("heal_below")){
+        }else if (App.Core.PerQixue()<App.GetNumberParam("heal_below")){
             App.Send("yun heal")
         }else{
             App.Next()

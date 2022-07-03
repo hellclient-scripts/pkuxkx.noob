@@ -44,7 +44,11 @@
                 App.Fail()
                 break
             case "core.bufffull":
-                break
+            break
+            case "move.door":
+                App.Send("open door")
+                this.Retry()
+            beak
             case "move.retry":
                 this.Retry()
             break

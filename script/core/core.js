@@ -37,6 +37,7 @@ App.Load("core/traversal.js")
 App.Load("core/shoppingmode.js")
 App.Load("core/combatmode.js")
 
+App.Load("core/gmcp.js")
 App.Load("core/quest.js")
 App.Load("core/hud.js")
 App.Load("core/help.js")

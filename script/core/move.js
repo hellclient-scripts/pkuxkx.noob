@@ -68,9 +68,13 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
-    App.Core.OnMovePlayGuard=function(name, output, wildcards){
+    App.Core.OnMoveGuard=function(name, output, wildcards){
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
+    }
+    App.Core.OnMoveDoor=function(){
+        moved.splice(-1)
+        App.RaiseStateEvent("move.door")
     }
     App.Core.OnMoveRain=function(name, output, wildcards){
         if (wildcards[0]==App.Data.Room.Name){

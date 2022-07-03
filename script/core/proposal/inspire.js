@@ -3,10 +3,10 @@
     let Heal= function(){
         proposal.call(this,"inspire")
         this.Submit=function(){
-            return App.Data.HP["per_jing"]<100
+            return App.Core.PerJing()<100
         }
         this.Execute=function(){
-            if (App.Data.HP["per_jing"]<=50){
+            if (App.Core.PerJing()<=50){
                 App.Commands([
                     App.NewCommand("item",App.Options.NewItem("yangjing dan")),
                     App.NewCommand("nobusy"),

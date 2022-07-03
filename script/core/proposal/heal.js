@@ -3,7 +3,7 @@
     let Heal= function(){
         proposal.call(this,"heal")
         this.Submit=function(){
-            return (App.Data.HP["per_qixue"])<App.GetNumberParam("heal_below")
+            return (App.Core.PerQixue())<App.GetNumberParam("heal_below")
         }
         this.Execute=function(){
                 App.Commands([

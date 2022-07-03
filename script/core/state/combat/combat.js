@@ -24,6 +24,7 @@
             break        
         case "combat.tick":
             // App.Send("checkbusy")
+            App.Core.Combat.Current.Perform()
             App.Core.Combat.CheckFighting()
             break
         // case "nobusy":

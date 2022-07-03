@@ -77,7 +77,7 @@ jiaxing||jiaxingch||||e;s;s;||n;n;w
 linan||linanch||||n;e;n||s;w;s
 suzhou||jiaxing||||s;s;s;s;s;s;||n;n;n;n;n;n
 suzhou-cg||suzhou||||sw;n;n;||s;s;ne
-suzhouch||suzhou||w;w;s||n;e;e
+suzhouch||suzhou||||w;w;s||n;e;e
 mrmen||suzhou||||n;e;e;e;e;e;ne||sw;w;w;w;w;w;;s
 zhenjiang||suzhou||||e;e;e;e;se;se;s;sw;sw;s;se;s;s;s;s;s||n;n;n;n;n;nw;n;ne;ne;n;nw;nw;w;w;w;w
 zhenjiang||zhenjiangch||||e;e;n||s;w;w
