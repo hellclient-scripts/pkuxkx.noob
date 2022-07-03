@@ -67,7 +67,6 @@
     App.RegisterState(new (Include("core/state/quests/success.js"))())
     App.RegisterState(new (Include("core/state/quests/fail.js"))())
 
-    App.RegisterQuest(new (Include("core/quest/fullme.js"))())
     App.RegisterQuest(new (Include("core/quest/dazuo.js"))())
     App.RegisterQuest(new (Include("core/quest/dz.js"))())
     App.RegisterQuest(new (Include("core/quest/tuna.js"))())

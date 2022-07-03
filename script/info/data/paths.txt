@@ -48,7 +48,7 @@ changan-jgm||hzxz||||w;w;nu;ne;nw;nw||se;se;sw;sd;e;e;
 changan-jgm||changanch||||e;n||s;w
 hzxz||hzxzch||||ne||sw
 chengdu||yueyang||||se;se;e;e;ne;ne;nw;nw;ne;ed;e;n;e;e;e||w;w;w;s;w;wu;sw;se;se;sw;sw;w;w;nw;nw||200
-yueyang||jiangzhou||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
+yueyang||jiangzhou||||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
 yueyang||yueyangch||||n;e||w;s
 tyx||yueyang||||ne;nd;n;e;e;e||w;w;w;s;su;sw
 tzf||tyx||||se;e;ne;n;ne||sw;s;sw;w;nw
