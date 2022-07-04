@@ -13,6 +13,7 @@ yzkd||yz-kd2f||||u;enter||out;d
 yztj||yz-dtpns||||s||n
 yz||qufu||||n;n;n;n;n;n;n;n;n;n||s;s;s;s;s;s;s;s;s;s
 yz||xinyang||||w;w;w;w;nw;w;w;w;w;w||e;e;e;e;e;se;e;e;e;e
+yz-tdm||yz||||s;s;w;w;w;w
 xinyang||xinyangch||||w;n||s;e
 yz||haozhou||||w;w;w;w;nw;w;n;n;nw;n;n||s;s;se;s;s;e;se;e;e;e;e
 wst||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
@@ -75,6 +76,8 @@ linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 jiaxing||jiaxingch||||e;s;s;||n;n;w
 linan||linanch||||n;e;n||s;w;s
+linan||xihu-djq||||w;w;w||e;e;e
+gsmz||xihu-djq||||ne;ne;ne;ne;n||s;sw;sw;sw;sw
 suzhou||jiaxing||||s;s;s;s;s;s;||n;n;n;n;n;n
 suzhou-cg||suzhou||||sw;n;n;||s;s;ne
 suzhouch||suzhou||||w;w;s||n;e;e
@@ -103,6 +106,7 @@ wd-zl||wd-xl||||#maze 武当土匪离开;n;nd;w;s;se
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
 gb-sdx||wdmen||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
+gb-sdx||qlc||||#maze 丐帮密道 1;n;nw;nw;nw;n;nw;u;e||w;enter dong;se;s;se;se;se;s;s
 gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
 gb-sdx||luoyang-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
@@ -157,7 +161,7 @@ wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
 luoyang||luoyang-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
 luoyang-mjd||hb-jiyuan||sail||ask shao gong about 过河&&enter;#sail;nu||sd;ask shao gong about 过河&&enter;#sail||20
 hb-puyang||hbch||||n;e||w;s
-hb-puyang||hb-juyuan||||sw;sw;sw;w;w;w||||e;e;e;ne;ne;ne
+hb-puyang||hb-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
 hb-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 jinyang||jinyang-xf||||sw;w;w;w;w;w;n;n;w||e;s;s;e;e;e;e;e;ne
 jinyang||jinyangch||||sw;w;w;ne||sw;e;e;ne
@@ -180,7 +184,7 @@ beijing-adm||beijing-dsm||||w;w;w||e;e;e
 guanwai||beijing-adm||||sw;sw;sw;sw;s;s;s||n;n;n;ne;ne;ne;ne;
 datong||daizhou||||s;s;s;s;s;s;sw;sw;se;sd;s;s||n;n;nu;nw;ne;ne;n;n;n;n;n;n
 datong||datongch||||s;e;e;e;n||s;w;w;w;n
-hengshanmen||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
+hengshan||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
 rymen||jinyang||||sd;sd;sw;s;sd;w;w;w;s;s||n;n;e;e;e;nu;n;ne;nu;nu
 rymen||rych||||se||nw
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd

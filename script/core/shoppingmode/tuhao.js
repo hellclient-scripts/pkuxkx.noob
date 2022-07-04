@@ -6,7 +6,7 @@
     }
     ShoppingMode.prototype = Object.create(basemode.prototype)
     ShoppingMode.prototype.Tags=function(){
-        return basemode.prototype.Tags().concat(["bus"])
+        return basemode.prototype.Tags().concat(["taxi"])
     }
     ShoppingMode.prototype.GoldMin=function(){
         return 100

@@ -36,6 +36,7 @@
                 let snap=App.Core.Snapshot.Take("move.retry")
                 App.Commands([
                     App.NewCommand("function",App.Core.Combat.NewBlockedCombat),
+                    App.NewCommand("rest"),
                     App.NewCommand("rollback",snap),
                 ]).Push()
                 App.Next()

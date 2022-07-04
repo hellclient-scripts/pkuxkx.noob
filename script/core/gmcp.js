@@ -28,10 +28,12 @@
                 map_status(data,"max_neili","neili")
                 map_status(data,"jingli","eff_jingli")
                 map_status(data,"max_jingli","jingli")
+                map_status(data,"vigour/yuan","zhenyuan")
                 map_status(data,"vigour/qi","zhenqi")
-                map_status(data,"vigour/yi","jingqi")
                 map_status(data,"water","water")
                 map_status(data,"food","food")
+                map_status(data,"potential","pot")
+                
             }else{
                 App.RaiseStateEvent("combat.fighting")
             }

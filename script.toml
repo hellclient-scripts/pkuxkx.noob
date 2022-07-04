@@ -1352,7 +1352,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duva9k5qgcbm738d8rc2"
   Name = "App.Core.Combat.OnBlocked"
   Enabled = true
-  Match = "^([^【：『]{1,10})(把路一挡，狞笑道|拦住你：|拦住了你的去路。)"
+  Match = "^([^【：『]{1,10})(把路一挡，狞笑道|拦住你：|拦住了你的去路。|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -1631,7 +1631,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvcr25hhts1861fu3u0"
   Name = "App.Core.OnMoveRideEnd"
   Enabled = true
-  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。)$"
+  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。|你沿着踏板走了上去。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -3746,12 +3746,12 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "weapons"
   Desc = "逗号或换行分割的武器列表"
-  Intro = "逗号分割的武器列表，用于wield和修理"
+  Intro = "逗号或换行分割的武器列表，用于wield和修理"
 
 [[RequiredParams]]
   Name = "weapons_left"
   Desc = "逗号或换行分割的副手武器列表"
-  Intro = "逗号分割的副手武器列表，用于wield和修理。注意，盾牌请不要放在这里"
+  Intro = "逗号或换行分割的副手武器列表，用于wield和修理。注意，盾牌请不要放在这里"
 
 [[RequiredParams]]
   Name = "combat"
