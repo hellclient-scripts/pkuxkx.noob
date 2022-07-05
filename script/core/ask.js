@@ -5,7 +5,10 @@
     App.Core.Ask.LastQuestion=""
     App.Data.Ask={}
     App.Core.Ask.MaxReply=10
-    App.Core.AskQuestion=function(npc,question){
+    App.Core.AskQuestion=function(npc,question){        
+        world.EnableTriggerGroup("core.ask.reply",false)
+        App.Data.Ask.Replies=[]
+        App.Data.Ask.Lines=[]
         App.Core.Ask.LastNPC=npc
         App.Core.Ask.LastQuestion=question
         App.Send("ask "+npc+" about "+question)
@@ -19,6 +22,7 @@
         }
     }
     App.Core.Ask.OnAskLater=function(name, output, wildcards){
+        Note("重新提问")
         world.DoAfterSpecial(1, 'App.Core.Ask.RetryAsk()', 12);
     }
     App.Core.Ask.OnAsk=function(name, output, wildcards){
@@ -32,6 +36,9 @@
         world.EnableTriggerGroup("core.ask.reply",true)
     }
     App.Core.Ask.OnReply=function(name, output, wildcards){
+        if (output=="你说话太快，对方听不懂，慢点说吧。"){
+            return
+        }
         if (App.Data.Ask.Replies.length>=App.Core.Ask.MaxReply){
             world.EnableTriggerGroup("core.ask.reply",false)
         }else{
