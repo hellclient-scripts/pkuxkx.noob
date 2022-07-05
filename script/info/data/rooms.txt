@@ -107,7 +107,7 @@ suzhouch||苏州车行||||DescStart||这里是苏州当地的一家马车行，�
 kunmingch||昆明车行||||DescStart||这里是昆明当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。地处偏
 kunming||昆明||||DescStart||这里是昆明城的城中心，鲜花遍地。
 dali||大理||||Full||中心广场[大理国] [都城]east,north,south,west
-dalich||大理车行||||DescStart||这里是大理城当地的一家马车行，挂着一个招
+dalich||大理车行||||DescStart||这里是大理城当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。地处
 tlsmen||天龙寺瑞鹤门||||DescStart||天龙寺是大理皇室的家庙，于全国诸寺之中最是尊荣。段氏历代祖先做皇帝的，往往避位为僧，都
 tlsch||天龙寺车行||||
 wls||无量玉璧||||Station||无量玉璧

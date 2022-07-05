@@ -8,6 +8,7 @@
     State.prototype.Enter=function(context,oldstatue){
         world.ResetTimer("App.Core.Combat.OnTick")
         world.EnableTimer("App.Core.Combat.OnTick",true)
+        App.Core.Weapon.Wield()
         App.Core.Combat.Current.Perform()
         App.Core.Combat.CheckFighting()
     }
@@ -34,6 +35,7 @@
         case "combat.finish":
             App.Commands([
                 // App.NewCommand("do","hpbrief"),
+                App.NewCommand("delay",1),
                 App.NewCommand("nobusy"),
                 App.NewCommand("state","core.state.combat.rest"),
             ]).Push()

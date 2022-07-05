@@ -43,6 +43,10 @@
     App.RaiseStateEvent=function(event,data){
         App.StateContext.OnEvent(event,data)
     }
+    App.OnStateLine=function(name,output,wildcards){
+        App.RaiseStateEvent("line",output)
+    }
+    world.EnableTriggerGroup("stateline",false)
     App.RegisterState(new (Include("core/state/init.js"))())
     App.RegisterState(new (Include("core/state/ready.js"))())
     App.RegisterState(new (Include("core/state/manual.js"))())

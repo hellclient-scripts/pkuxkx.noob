@@ -33,7 +33,7 @@
         }
         switch(event){
             case "combat.blockkill":
-                let snap=App.Core.Snapshot.Take("move.retry")
+                var snap=App.Core.Snapshot.Take("move.retry")
                 App.Commands([
                     App.NewCommand("function",App.Core.Combat.NewBlockedCombat),
                     App.NewCommand("rest"),
@@ -41,6 +41,14 @@
                 ]).Push()
                 App.Next()
                 return 
+            case "move.needrest":
+                var snap=App.Core.Snapshot.Take("move.retry")
+                App.Commands([
+                    App.NewCommand("rest"),
+                    App.NewCommand("rollback",snap),
+                ]).Push()
+                App.Next()
+                break
             case "combat.blocked":
                 App.Fail()
                 break
@@ -49,7 +57,11 @@
             case "move.door":
                 App.Send("open door")
                 this.Retry()
-            beak
+            break
+            case "move.nowield":
+                App.Send("unwield all")
+                this.Retry()
+            break
             case "move.retry":
                 this.Retry()
             break

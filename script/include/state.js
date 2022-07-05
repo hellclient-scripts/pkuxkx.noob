@@ -2,6 +2,7 @@
     var State=function(){
         this.ID=""
         this.Tags={}
+        this.Groups=[]
     }
     State.prototype.Enter=function(context,oldstatue){
     }

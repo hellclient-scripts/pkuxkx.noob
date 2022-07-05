@@ -68,6 +68,9 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
     }
+    App.Core.OnMoveNeedRest=function(name, output, wildcards){
+        App.RaiseStateEvent("move.needrest")
+    }
     App.Core.OnMoveGuard=function(name, output, wildcards){
         moved.splice(-1)
         App.RaiseStateEvent("move.retry")
@@ -87,6 +90,9 @@
     }
     App.Core.OnMoveNotAllowed=function(name, output, wildcards){
         App.RaiseStateEvent("move.notallowed")
+    }
+    App.Core.OnNoWield=function(name, output, wildcards){
+        App.RaiseStateEvent("move.nowield",wildcards[0])
     }
     App.Core.OnMoveIgnore=function(name, output, wildcards){
         moved.splice(-1)
@@ -112,6 +118,14 @@
         App.Raise("Waiting")
     })
     App.RegisterAlias("sail","core.move.sail")
+    App.RegisterCallback("core.move.ask",function(data){
+        let cmd=data.split(" about ")
+        if (cmd.length<2){
+            Note("#ask格式错误，应是 #ask xxxx about xxxx")
+        }
+        App.Core.AskQuestion(cmd[0],cmd[1])
+    })
+    App.RegisterAlias("ask","core.move.ask")    
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/locate.js"))())
     App.RegisterState(new (Include("core/state/move/locating.js"))())
