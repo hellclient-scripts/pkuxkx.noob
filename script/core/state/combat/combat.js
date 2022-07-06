@@ -33,12 +33,19 @@
             App.Core.Combat.Current.Perform()
             break
         case "combat.finish":
-            App.Commands([
-                // App.NewCommand("do","hpbrief"),
-                App.NewCommand("delay",1),
+            let cmds=[App.NewCommand("delay",1)]
+            if (App.Core.Combat.Current.After){
+                cmds=comds.concat([
+                    App.NewCommand("nobusy"),
+                    App.NewCommand("do",App.Core.Combat.Current.After),
+                ])
+            }
+            cmds=cmds.concat([              
                 App.NewCommand("nobusy"),
+                App.NewCommand("do","yun recover"),
                 App.NewCommand("state","core.state.combat.rest"),
-            ]).Push()
+            ])
+            App.Commands(cmds).Push()
             App.Next()
             break
         }

@@ -7,15 +7,17 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        this.Type=App.GetContext("type")
-        switch (this.Type){
+        switch (App.Data.CaptchaCurrentType){
             case "工号":
                 this.Cmd="report "
+                break
+            case "zone":
+                this.Cmd=null
                 break
             default:
                 this.Cmd="fullme "
         }
-        App.Core.CaptchaLoadURL(this.Type)
+        App.Core.CaptchaLoadURL(App.Data.CaptchaCurrentType)
         if (!App.Data.CaptchaCurrentURL){
             App.Fail()
             return
@@ -31,7 +33,11 @@
             case "captcha.submit":
                 let code=App.Data.CaptchaCode
                 if (code){
-                    App.Send(this.Cmd+code)
+                    if (this.Cmd){
+                        App.Send(this.Cmd+code)
+                    }else{
+                        App.Next()
+                    }
                 }else{
                     App.Data.CaptchaCountFail++
                     App.Fail()

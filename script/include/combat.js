@@ -4,6 +4,10 @@
         this.Targets={}
         this.Disarmed=false
         this.Recovery=-1
+        this.After=null
+    }
+    Combat.prototype.SetAfter=function(cmd){
+        this.After=cmd
     }
     Combat.prototype.SetCommands=function(cmds){
         let data=cmds.split("\n")

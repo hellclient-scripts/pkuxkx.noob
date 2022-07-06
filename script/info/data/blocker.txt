@@ -2,6 +2,7 @@
 采花子||killall caihua zi||50000
 号手首领||killall haoshou shouling||50000
 鼓手首领||killall gushou shouling||50000
-江百胜||killall Jiang baisheng||50000
+江百胜||killall jiang baisheng||50000
 门卫||killall men wei||50000
 红花会众||kill honghua huizhong||50000
+王府卫士||kill wei shi;kill weishi zhang||100000

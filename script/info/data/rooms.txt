@@ -3,7 +3,8 @@ home||玩家储存柜||||Tags||[玩家储物柜]
 yz||扬州广场||||Landmark||Rong shu
 yzqz||扬州钱庄||||Station||扬州钱庄
 yz-jd||扬州金店||||Station||扬州金店
-yzdp||扬州当铺||||Landmark||Tang nan
+yz-zhp||扬州杂货铺||||DescStart||这是一家小小的杂货铺，大箱小箱堆满了一地，都是一些日常用品。杨掌柜懒洋洋地躺在一只躺椅
+yzdp||扬州当铺||||DescStart||这里是扬州的一家当铺，五尺高的柜台挡在你的面前，柜台上挂着一只牌子(paizi)。
 yztj||扬州铁匠||||Landmark||Wang tiejiang
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
 yz-sczh||盛昌总行||||Station||盛昌总行
@@ -20,6 +21,7 @@ yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
 qufu||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
 qufuch||曲阜车行||||DescStart||这里是曲阜当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+qufu-qc||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年
 xinyang||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 xinyangch||信阳车行||||DescStart||这里是信阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 zy-xcc||许昌城||||Station||许昌城
@@ -66,6 +68,7 @@ jkf-cym||建康府朝阳门||||DescStart||这里是建康府的正东面的朝�
 jkf-qlm||建康府清凉门||||DescStart||这里是建康府的西面的清凉门，西面出城通往江州，南面有一片湖。
 jkfch||建康府车行||||DescStart||这里是建康府北城当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 linan||大理寺||||Landmark||Jianghu tu
+linan-sch||盛昌行临安府分店||||Station||盛昌行临安府分店
 linanch||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 gsmz||孤山梅庄||||DescStart||这里是一座朱门白墙的大庄院。大门(gate)外写着梅庄两个大字，旁边署着“虞允文题”四字。虞
 xihu-djq||西湖段家桥||||DescStart||这里是段家桥，西南面一条小路，沿路可以眺望西湖美景，北面一座宝塔耸立着，向东通往钱塘门
@@ -75,7 +78,7 @@ jiaxingch||嘉兴车行||||DescStart||这里是嘉兴当地的一家马车行，
 suzhou||沧浪亭||||Station||沧浪亭
 suzhou-cg||茶馆||||DescStart||你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙桌一字排开，坐满了客人，或高
 zhenjiang||镇江||||DescStart||这里是一个小广场，平时人来人往，热闹非常。几个游客不知道正议论着什么。
-zhenjiangch||镇江车行||||
+zhenjiangch||镇江车行||||DescStart||这里是镇江当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 quanzhou||泉州||||DescStart||泉州是一个安静的港口城市。虽然这里是城中心，人们也只是脚步轻轻地过往，并不喧哗。东面是
 quanzhouch||泉州车行||||DescStart||这里是泉州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 fuzhou||福州||||DescStart||这里是福州的城市中心，行人不断从这里经过。

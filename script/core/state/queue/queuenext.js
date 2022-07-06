@@ -39,7 +39,7 @@
                 break
             case "#move":
                 break
-            case "#afterbusy":
+            case "#nobusy":
                 App.NewCommand("nobusy").WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
@@ -52,7 +52,7 @@
                 if (isNaN(data) || (data - 0) <= 0) {
                     throw "delay 的秒数必须为正数"
                 }
-                let delay = (data - 0) / 1000
+                let delay = (data - 0)
                 App.NewCommand("delay", delay).WithFinalState("core.state.queue.next").Push()
                 App.Next()
 
@@ -66,6 +66,10 @@
                 break
             case "#captcha":
                 App.API.Captcha(current.Data, "core.state.queue.next", "core.state.queue.next")
+                break
+            case "#item":
+                App.NewCommand("item",App.Options.NewItem(current.Data)).WithFinalState("core.state.queue.next").Push()
+                App.Next()
                 break
             default:
                 App.NewCommand("do", str).WithFinalState("core.state.queue.next").Push()

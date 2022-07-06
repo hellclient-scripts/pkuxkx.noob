@@ -10,6 +10,13 @@
         let kill=App.GetContext("Kill")
         App.Core.Combat.Current=new combat()
         App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands(kill.Type))
+        if (kill.Before){
+            App.Send(kill.Before)    
+        }
+        if (kill.After){
+            App.Core.Combat.Current.SetAfter(kill.After)
+        }
+        App.Core.Weapon.Wield()
         App.Send(kill.Cmd)
         App.ChangeState("core.state.combat.combat")
     }

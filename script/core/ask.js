@@ -23,6 +23,7 @@
     }
     App.Core.Ask.OnAskLater=function(name, output, wildcards){
         Note("重新提问")
+        world.EnableTriggerGroup("core.ask.reply",false)
         world.DoAfterSpecial(1, 'App.Core.Ask.RetryAsk()', 12);
     }
     App.Core.Ask.OnAsk=function(name, output, wildcards){
@@ -39,14 +40,15 @@
         if (output=="你说话太快，对方听不懂，慢点说吧。"){
             return
         }
-        if (App.Data.Ask.Replies.length>=App.Core.Ask.MaxReply){
+        if (App.Data.Ask.Replies.length>App.Core.Ask.MaxReply){
             world.EnableTriggerGroup("core.ask.reply",false)
+            return
         }else{
             App.Data.Ask.Replies.push(output)
             App.Data.Ask.Lines.push(JSON.parse(DumpOutput(1))[0])
         }
         App.Raise("core.reply")
-        App.RaiseStateEvent("core.reply")
+        App.RaiseStateEvent("core.reply",output)
     }
     App.Core.Ask.NoMoreReply=function(){
         world.EnableTriggerGroup("core.ask.reply",false)

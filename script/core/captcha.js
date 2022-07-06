@@ -4,22 +4,30 @@
     App.Data.CaptchaCode=""
     App.Data.CaptchaCountSuccess=0
     App.Data.CaptchaCountFail=0
+    App.Data.CaptchaCurrent=0
     App.Data.CaptchaCurrentURL=""
+    App.Data.CaptchaCurrentType=""
     App.Data.CatpchaLastURL=""
     App.Core.CaptchaReq=null
 
     App.API.CaptchaSaveURL=function(type){
         App.Data.CaptchaURLs[type]=App.Data.CatpchaLastURL
     }
-    App.Core.CaptchaLoadURL=function(type){
-        App.Data.CaptchaCurrentURL=App.Data.CaptchaURLs[type]
+    App.Core.CaptchaLoadURL=function(){
+        App.Data.CaptchaCurrentURL=App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
     }
     App.API.Captcha=function(type,final,fail){
+        switch(type){
+            case "zone":
+                App.API.CaptchaSaveURL("zone")
+                break
+        }
         let a=App.Automaton.Push(["core.state.captcha.captcha"],final)
+        App.Data.CaptchaCurrent=0
+        App.Data.CaptchaCurrentType=type
         if (fail){
             a.WithFailState(fail)
         }
-        a.WithData("type",type)
         App.Next()
     }
     App.Core.CaptchaFullme=function(){
@@ -54,7 +62,15 @@
     App.Bind("Response.core.captchafullme","core.captchafullme")
 
     App.Core.CaptchaShow=function(url){
-        let vp=Userinput.newvisualprompt("验证码","忽略红色字符，如果是方向性文字，每对中括号内文字为一组",url)
+        let intro
+        switch(App.Data.CaptchaCurrentType){
+            case "zone":
+                intro="忽略红色字符，地名部分必须准确，房间名识别不出可留空"
+                break
+            default:
+                intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
+        }
+        let vp=Userinput.newvisualprompt("验证码",intro,url)
         vp.setrefreshcallback("App.Core.CatpchaRefresh")
         vp.publish("App.Core.OnCaptchaSubmit")
     }
