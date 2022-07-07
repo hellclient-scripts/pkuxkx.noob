@@ -7,7 +7,7 @@
         App.Core.Traversal.Prompt()
     }
     let check=function(){
-        if (App.GetItemByName(App.Quest.WD.Chanting.Quest.Book)){
+        if (App.GetItemByName(App.Quest.WD.Chanting.Quest.Book,true)){
             App.Next()
         }else{
             Note("借书失败")

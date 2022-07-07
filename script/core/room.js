@@ -104,7 +104,7 @@
                 }
             })
         })
-        if (name != "room_noexit") {
+        if (wildcards[1]) {
             var exits = wildcards[1].match(exitsre).sort()
             App.Data.Room.Exits = exits
         } else {

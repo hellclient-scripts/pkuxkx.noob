@@ -74,10 +74,12 @@
         for (var key in App.Data.Items){
             let itemname= App.Data.Items[key].Name
             if (convert){
-                itemname=CNumber.Split(itemname).Item
+                let i=CNumber.Split(itemname)
+                itemname=i.Item
+                App.Data.Items[key].Count=i.Count==0?1:i.Count
             }
             if (name==itemname){
-                return App.Data.Items[key].ID
+                return App.Data.Items[key]
             }
         }
         return null

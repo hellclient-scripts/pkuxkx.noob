@@ -47,6 +47,10 @@
                 App.NewCommand("do", current.Data).WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
+                case "#sleep":
+                    App.NewCommand("sleep").WithFinalState("core.state.queue.next").Push()
+                    App.Next()
+                break                
             case "#delay":
                 let data = current.Data
                 if (isNaN(data) || (data - 0) <= 0) {

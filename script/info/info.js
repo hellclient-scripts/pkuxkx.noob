@@ -6,5 +6,6 @@ App.Load("info/mapper.js")
 App.Load("info/item.js")
 App.Load("info/presets.js")
 App.Load("info/blocker.js")
+App.Load("info/sell.js")
 App.Load("info/ui/ui.js")
 

@@ -1876,6 +1876,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1dvr9vf1rd68863rsr9e"
+  Name = "room.wdj.shandong"
+  Enabled = false
+  Match = "^        山洞里黑乎乎的，你什么也看不清，你只记得来路()似乎是.+()。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnRoomExits"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "roomexit"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -2095,7 +2126,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -2126,7 +2157,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(^([^【：『]{1,6})几乎没有路了，你走不了那么快。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|青海湖畔美不胜收，你不由停下脚步，欣赏起了风景。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|只听得江面上隐隐传来：“别急嘛，这儿正忙着呐……”|你还在山中跋涉，一时半会恐怕走不出这六盘山！|你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。)$"
   Send = ""
   ColourChangeType = 0
@@ -2157,7 +2188,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0

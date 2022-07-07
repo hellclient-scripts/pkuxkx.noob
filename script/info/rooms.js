@@ -26,6 +26,7 @@
     }
     App.Info.RoomHome="home"
     App.Info.RoomSafe="yz-kd2f"
+    App.Info.RoomSell="yzdp"
     App.RegisterCallback("info.room.objlocate", function (data) {
         if (!App.Data.Room.ID && App.Info.Landmarks[data.ID]) {
             App.Data.Room.ID = App.Info.Landmarks[data.ID]

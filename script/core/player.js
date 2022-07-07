@@ -72,6 +72,11 @@
     App.Core.OnPlayerScoreEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("playerscore",false)
     }
+    App.RegisterCallback("core.player.inittags",function(){
+        Mapper.settag(App.Data.Score["family"],true)
+    })
+    App.Bind("PathInit","core.shoppingmode.inittags")
+
     App.Data.Skills={
         All:[],
     }
