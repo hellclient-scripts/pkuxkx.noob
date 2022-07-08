@@ -129,7 +129,8 @@ wdj-lgxs-e||雷公西山东入口||||Full||山间路[门派] [存盘点]eastdown
 wdj-lgxs-w||雷公西山西入口||||DescStart||这里就要进入雷公山了，东面的山脉(mountain)雄伟壮丽，让人心生敬佩。
 wdj-lgxs-n||雷公西山北入口||||DescStart||这里就要进入雷公山了，南面连绵的青山(mountain)起伏如一头怪兽一般。
 wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
-wdj-lgds-n||雷公东山北入口||||||山间路[门派] [存盘点]northdown,south
+wdj-lgds-n||雷公东山北入口||||Full||山间路[门派] [存盘点]northdown,south
+wdj-lgds-s||雷公东山南入口||||DescStart||渐渐走入雷公山东麓，行路越发艰难了，望着巍峨的高山(mountain)，心里难免产生敬畏之情。
 wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
@@ -233,3 +234,6 @@ rych||日月车行||||
 
 //百姓
 xiangyang-wg||太乙武馆||||DescStart||这里是太乙武馆的大厅，北墙挂着一块匾(bian)，倚墙放着一张太师椅，太师椅上坐着一个鹤发童
+
+//采药
+dtms||东天目山||||DescStart||这是一块几乎完全平整，十丈见方的石台，你不由感慨大自然的造化之力。

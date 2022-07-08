@@ -159,6 +159,7 @@ qhmz||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 qhmz||wdj-jbq||||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
 qhmz||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
+wdj-lgds-s||hmz||||sd;se;s;e;nw||se;w;n;nw;nu
 qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south

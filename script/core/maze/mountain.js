@@ -1,0 +1,28 @@
+(function (App) {
+    let Random=Include("core/maze/random.js")
+    let Rooms={
+        "陡坡":true,
+        "悬崖":true,
+        "峭壁":true,
+        "山腰":true,
+        "山路":true,
+        "枯藤":true,
+        "瀑布":true,
+        "山间平台":true,
+        
+    }
+    let Maze=function(param){
+        Random.call(this,param)
+        this.ID="大山"
+    }
+    Maze.prototype = Object.create(Random.prototype)
+    Maze.prototype.CheckSuccess=function(){
+        let info=App.Info.RoomFull()
+        let data=SplitN(this.Current,">",2)  
+        return info==data[1]      
+    }
+    Maze.prototype.CheckWrongway=function(){
+        return !Rooms[App.Data.Room.Name]
+    }
+    return Maze
+})(App)

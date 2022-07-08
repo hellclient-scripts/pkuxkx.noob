@@ -6,6 +6,7 @@
         Tags: "",
         Objs: [],
         LootCmds:{},
+        HasHerb:false,
         ObjEnd:false
     }
     App.Core.RoomDesc = {
@@ -31,6 +32,7 @@
             Name: wildcards[1],
             Tags: wildcards[4],
             Objs: [],
+            HasHerb:false,
             LootCmds:{},
             ObjEnd:false,
         }
@@ -166,6 +168,9 @@
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
         App.Core.RoomObjEnd()
+    }
+    App.Core.OnRoomHerb=function(){
+        App.Data.HasHerb=true
     }
     App.SetLootCmd=function(name,cmd){
         App.Data.Room.LootCmds[name]=cmd
