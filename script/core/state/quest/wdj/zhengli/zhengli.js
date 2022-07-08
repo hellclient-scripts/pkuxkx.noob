@@ -1,13 +1,18 @@
 (function (App) {
+    let re=/^书架上的书有点乱了，你要把它们按颜色整理\(zhengli <书名> to <位置>，比如zhengli 金瓶梅 to 2\)好。$/
     let basicstate = Include("core/state/basicstate.js")
     let State=function(){
         basicstate.call(this)
         this.ID="core.state.quest.wdj.zhengli.zhengli"
+        this.Groups = this.Groups.concat(["state.line"])
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
-        case "quest.wdj.shelf":
+        case "line":
+            if (data.match(re)==null){
+                return
+            }
             let lines=JSON.parse(DumpOutput(4,1))
             let books=[]
             for (var i=0;i<lines[0].Words.length;i++){
