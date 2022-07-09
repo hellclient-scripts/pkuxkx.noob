@@ -6,6 +6,7 @@ OnClose = "onClose"
 OnConnect = "onConnected"
 OnDisconnect = "onDisconnected"
 OnBroadcast = "onBroadcast"
+OnFocus = "OnFocus"
 OnHUDClick = "onHUDClick"
 OnResponse = "onResponse"
 OnAssist = "onAssist"
@@ -1165,7 +1166,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0

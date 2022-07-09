@@ -43,6 +43,9 @@
                     App.Fail()
                 }
                 break
+            case "focus":
+                App.Core.CaptchaLoad()
+                break
             case "captcha.success":
                 App.Data.CaptchaCountSuccess++
                 App.Next()

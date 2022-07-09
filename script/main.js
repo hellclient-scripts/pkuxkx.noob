@@ -78,6 +78,9 @@ var OnSubneg=function(code,data){
             return
     }
 }
+var OnFocus=function(){
+    App.RaiseStateEvent("focus")
+}
 var onHUDClick=function(x,y){
     App.Raise("onHUDClick",{X:x,Y:y})
 }
