@@ -6,6 +6,7 @@
             return App.Core.Sell.Check()
         }
         this.Execute=function(){
+            App.Core.Sell.Last=0
             App.Core.Sell.Go()
         }
     }

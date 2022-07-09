@@ -15,6 +15,7 @@
         "bank_location":"yzqz",
         "walkstep":"8",
         "heal_below":"100",
+        "item_load_max":"60",
         "checkhpinterval":"1000",
         "checkscoreinterval":"30000",
         "checkjifainterval":"60000",

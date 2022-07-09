@@ -1,6 +1,12 @@
 (function(App){
     App.Quest.Caiyao={}
-    App.Quest.Caiyao.Start=function(area){
+    App.Quest.Caiyao.Start=function(areas){
+        if (!areas){
+            Note("采药区域不可为空")
+            App.Fail()
+        }
+        let list=areas.split(",")
+        let area=RandomList(list)
         App.Raise("quest.set","采药")
         App.Push(["core.state.quest.caiyao.caiyao"])
         let path = App.Info.Patrols[area]
