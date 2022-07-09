@@ -62,7 +62,7 @@
                     break
                 }
                 let info=App.Info.RoomFull()
-                let giveup=this.Arrived[info+App.Core.RoomDesc.Map]||this.CheckWrongway()
+                let giveup=this.Arrived[info+App.Core.RoomDesc.Map+App.Core.RoomDesc.Desc]||this.CheckWrongway()
                 if (this.CheckWrongway() && info!=this.Start){
                     let to=this.Command.Level.Concat()
                     to.push(this.Command.Command)
@@ -77,7 +77,7 @@
                     return 
                 }
                 if (!this.IgnoreArrived){
-                    this.Arrived[info+App.Core.RoomDesc.Map]=true
+                    this.Arrived[info+App.Core.RoomDesc.Map+App.Core.RoomDesc.Desc]=true
                 }
                 this.Command=level.Next()
                 break;

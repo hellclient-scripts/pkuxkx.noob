@@ -32,6 +32,7 @@
     }
     Move.prototype.Continue = function (final) {
         App.Automaton.Push([], final)
+        if (this.Data.Skip){this.Data.Skip()}
         App.SetContext("Move", this)
         App.ChangeState(this.StateOnStep)
     }

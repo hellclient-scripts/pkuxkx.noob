@@ -38,6 +38,9 @@
         }
         App.LastMove.WithData(g).Continue()
     }
+    App.Core.Traversal.Continue = function () {
+        App.LastMove.Continue()
+    }
     App.Core.Traversal.Prompt = function () {
         App.Push(["core.state.traversal.manual"])
         App.Next()
@@ -108,6 +111,8 @@
         List.append("objname", "寻找对象名")
         List.append("desc", "寻找描述")
         List.append("redbg", "寻找红底出口(输入房间名，*不指定房间)")
+        List.append("herb", "寻找草药，输入随意非空文字")
+
         List.publish("App.Core.Traversal.OnPickType")
     }
     App.Core.Traversal.OnPickType = function (name, id, code, data) {
@@ -141,6 +146,9 @@
                 break
             case "redbg":
                 g.FindRedBG()
+                break
+            case "herb":
+                g.FindHerb()
                 break
         }
         App.Data.Traversal.Goal = g
@@ -201,9 +209,11 @@
             }
             path = path.concat(data[3].split(";"))
         }
-        return "||"+from+"||"+to+"||"+path.join(";")
+        return "||" + from + "||" + to + "||" + path.join(";")
     }
     App.RegisterState(new (Include("core/state/traversal/traversal.js"))())
     App.RegisterState(new (Include("core/state/traversal/arrive.js"))())
     App.RegisterState(new (Include("core/state/traversal/manual.js"))())
+    App.RegisterState(new (Include("core/state/traversal/look.js"))())
+
 })(App)

@@ -4,3 +4,4 @@ niurou tang||niurou tang||Niurou tang||牛肉汤||goods||luoyang-wxl||buy niurou
 yangjing dan||yangjing dan||Yangjing dan||养精丹||goods||yzyp||buy yangjing dan||||
 diaoyu gan||diaoyu gan||Diaoyu gan||钓鱼杆||goods||yz-zhp||buy diaoyu gan
 yuer||yuer||Yuer||鱼饵||goods||yz-zhp||buy yuer 100
+yao chu||yao chu||Yao chu||药锄||goods||dtms-e||buy yao chu

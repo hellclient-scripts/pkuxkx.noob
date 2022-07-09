@@ -170,7 +170,7 @@
         App.Core.RoomObjEnd()
     }
     App.Core.OnRoomHerb=function(){
-        App.Data.HasHerb=true
+        App.Data.Room.HasHerb=true
     }
     App.SetLootCmd=function(name,cmd){
         App.Data.Room.LootCmds[name]=cmd
