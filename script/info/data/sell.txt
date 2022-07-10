@@ -22,3 +22,11 @@
 枸杞||gouqi||drop
 胆南星||dan nanxing||sell
 薄荷||bo he||sell
+当归||dang gui||sell
+地骨皮||digu pi||sell
+蛇床子||shechuang zi||sell
+川贝||chuan bei||sell
+党参||dang shen||sell
+合欢||he huan||sell
+桑枝||sang zhi||sell
+鱼腥草||yuxing cao||sell

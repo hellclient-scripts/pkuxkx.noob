@@ -40,7 +40,7 @@
             let tags=data[2]
             let delay=0
             if (data.length>5){
-                delay=data[5]=0
+                delay=data[5]-0
             }
             let topath = parsepath(from,to,tags,data[3],delay)
             if (topath){

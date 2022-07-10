@@ -146,8 +146,8 @@ lxcmen||lxcch||||e||w
 emeimen||chengdu||||wd;sd;sd;wd;w;s;sd;sd;s;se;e;nd;nd;nd;n;n;n;n||s;s;s;s;su;su;su;w;nw;n;nu;nu;n;e;eu;nu;nu;eu
 emeimen||emeich||||wd;sd;sd;wd;w;s;e||w;n;e;eu;nu;nu;eu
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
-wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||100
-wdj-lgxs-s||wdj-lgxs-w||||#maze 苗岭大山 north>山间路[野外] [存盘点]east,westdown||#maze 苗岭大山 east>山间路[门派] [存盘点]north,southdown||100
+//wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||100
+//wdj-lgxs-s||wdj-lgxs-w||||#maze 苗岭大山 north>山间路[野外] [存盘点]east,westdown||#maze 苗岭大山 east>山间路[门派] [存盘点]north,southdown||100
 wdj-lgxs-e||wdj-lgds-w||||ed||w
 wdj-lgxs-w||bmz||||wd;nw;n;n||s;s;se;eu
 wdj-lgxs-w||wdj-lgxs-n||||wd;nw;ne;ne;e;su||nd;w;sw;sw;se;eu

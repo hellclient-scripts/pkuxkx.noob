@@ -1,5 +1,5 @@
 (function (App) {
-    App.Core.InitCmd="l;set custom_hp 1;set no_autosave 1;set area_detail 1;set hpbrief long"
+    App.Core.InitCmd="l;score;set custom_hp 1;set no_autosave 1;set area_detail 1;set hpbrief long"
     App.Core.Inited=false
     App.Core.Init=function(){
         App.Send(App.Core.InitCmd)

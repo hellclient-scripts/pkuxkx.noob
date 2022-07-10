@@ -16,7 +16,7 @@
                 return true
             }
         }
-        App.Core.Sell.Next = Now() + 300000
+        App.Core.Sell.Next = Now() + 1000*60*30
         return false
     }
     App.Core.Sell.Go = function () {
