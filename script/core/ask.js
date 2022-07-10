@@ -34,6 +34,7 @@
         App.Core.Ask.LastQuestion=""
         App.Data.Ask.NPC=wildcards[0]
         App.Data.Ask.Question=wildcards[1]
+        App.Raise("ask")
         world.EnableTriggerGroup("core.ask.reply",true)
     }
     App.Core.Ask.OnReply=function(name, output, wildcards){

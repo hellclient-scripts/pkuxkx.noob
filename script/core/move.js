@@ -125,7 +125,7 @@
         }
         App.Core.AskQuestion(cmd[0],cmd[1])
     })
-    App.RegisterAlias("ask","core.move.ask")    
+    App.RegisterAlias("ask","core.move.ask")        
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/locate.js"))())
     App.RegisterState(new (Include("core/state/move/locating.js"))())

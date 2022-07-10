@@ -7,7 +7,8 @@
         Objs: [],
         LootCmds:{},
         HasHerb:false,
-        ObjEnd:false
+        ObjEnd:false,
+        OnAsk:"",
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -33,6 +34,7 @@
             Tags: wildcards[4],
             Objs: [],
             HasHerb:false,
+            OnAsk:"",
             LootCmds:{},
             ObjEnd:false,
         }
@@ -175,4 +177,21 @@
     App.SetLootCmd=function(name,cmd){
         App.Data.Room.LootCmds[name]=cmd
     }
+    App.SetRoomOnAsk=function(cmd){
+        Note("设置OnAsk:"+cmd)
+        App.Data.Room.OnAsk=cmd
+    }
+    App.RegisterCallback("core.room.alias.onask",function(data){
+        App.SetRoomOnAsk(data)
+    })
+    App.RegisterAlias("onask","core.room.alias.onask")
+
+    App.RegisterCallback("core.room.onask",function(){
+        if (App.Data.Room.OnAsk){           
+            App.Send(App.Data.Room.OnAsk)
+            App.Data.Room.OnAsk=""
+        }
+    })
+
+    App.Bind("ask","core.room.onask")
 })(App)

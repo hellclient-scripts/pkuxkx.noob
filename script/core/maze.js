@@ -47,6 +47,7 @@
     App.RegisterMaze(new (Include("core/maze/wdtfout.js"))())
     App.RegisterMaze(new (Include("core/maze/mountain.js"))())
     App.RegisterMaze(new (Include("core/maze/dsg.js"))())
+    App.RegisterMaze(new (Include("core/maze/ssbglout.js"))())    
     App.RegisterMaze(new (Include("core/maze/wls.js"))())
 })(App)
     
