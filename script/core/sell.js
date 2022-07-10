@@ -4,7 +4,6 @@
     App.Core.Sell.Next = 0
     App.Core.Sell.Check = function () {
         if (App.Core.Sell.Next > Now() && App.Data.Load < App.GetNumberParam("item_load_max")) {
-            Dump("false")
             return false
         }
         App.Core.Sell.ToSell = null

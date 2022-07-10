@@ -1753,37 +1753,6 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
-  ID = "d1dvmfoo8lt1067306i9is"
-  Name = "boat"
-  Enabled = true
-  Match = "^你向.+打听有关『(过河|过江)』的消息。"
-  Send = "enter"
-  ColourChangeType = 0
-  Colour = 0
-  Wildcard = 0
-  SoundFileName = ""
-  SoundIfInactive = false
-  Script = ""
-  SendTo = 0
-  Sequence = 100
-  ExpandVariables = false
-  Temporary = false
-  OneShot = false
-  Regexp = true
-  Repeat = false
-  MultiLine = false
-  LinesToMatch = 0
-  WildcardLowerCase = false
-  Group = "system"
-  IgnoreCase = false
-  KeepEvaluating = true
-  OmitFromLog = false
-  OmitFromOutput = false
-  Inverse = false
-  Italic = false
-  Variable = ""
-
-[[Triggers]]
   ID = "d1dvmh1c1ocl7i7306ih76"
   Name = "App.Core.OnNoWield"
   Enabled = true

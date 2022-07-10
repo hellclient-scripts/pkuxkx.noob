@@ -56,7 +56,7 @@ yueyang||jiangzhou||||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
 yueyang||yueyangch||||n;e||w;s
 tyx||yueyang||||ne;nd;n;e;e;e||w;w;w;s;su;sw
 tzf||tyx||||se;e;ne;n;ne||sw;s;sw;w;nw
-xinyang||jiangzhou||sail||s;s;s;sd;se;s;#ask shao gong about 过江;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;#ask shao gong about 过江;#sail;n;nw;nu;n;n;n||40
+xinyang||jiangzhou||sail||s;s;s;sd;se;s;#onask enter&&#ask shao gong about 过江;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;#onask enter&&#ask shao gong about 过江;#sail;n;nw;nu;n;n;n||40
 yz||gb-sdnb||||enter shudong||out
 gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
 yz||yz-xjk||||d||u
@@ -72,8 +72,8 @@ jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n
 jkf-cym||zhenjiang||||e;ed;ne;ne;ne;e;e;e;e||w;w;w;w;sw;sw;sw;wu;w
 jkf-cym||jkf-scm||||nw;nw;sw;sw;w;w;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;e;e;ne;ne;se;se
 jkf-qlm||jkf-scm||||e;se;e;e;e;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;w;w;w;nw;w
-tgz||jkf-qlm||||ne;ne;n;e;ne;n;ne;ed||wu;sw;s;sw;w;s;sw;sw
-tgz||jiangzhou||||sw;s;sw;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;ne;n;ne
+tgs||jkf-qlm||||ne;ne;n;e;ne;n;ne;ed||wu;sw;s;sw;w;s;sw;sw
+tgs||jiangzhou||||sw;s;sw;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;ne;n;ne
 jkf-qlm||jkf-zym||||e;se;e;e;e;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;w;w;w;nw;w
 //jkf-qlm||jiangzhou||||wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed
 jkf-scm||jkfch||||n;nu;e;enter||out;w;sd;s
@@ -167,7 +167,7 @@ zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
 luoyang||luoyang-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-luoyang-mjd||hb-jiyuan||sail||#ask shao gong about 过河;#sail;nu||sd;#ask shao gong about 过河;#sail||20
+luoyang-mjd||hb-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
 hb-puyang||hbch||||n;e||w;s
 hb-puyang||hb-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
 hb-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
@@ -196,7 +196,7 @@ hengshan||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
 rymen||jinyang||||sd;sd;sw;s;sd;w;w;w;s;s||n;n;e;e;e;nu;n;ne;nu;nu
 rymen||rych||||se||nw
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
-lingzhou||lanzhou||sail||w;w;nw;nw;#ask shao gong about 过河;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;#ask shao gong about 过河;#sail;se;se;e;e||20
+lingzhou||lanzhou||sail||w;w;nw;nw;#onask enter&&#ask shao gong about 过河;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;#onask enter&&#ask shao gong about 过河;#sail;se;se;e;e||20
 lingzhou||lingzhouch||||s;w;w;||e;e;n
 lanzhouch||lanzhou||e;n||s;w
 huangzhong||lanzhou||||e;e;e;se;se;e;e;e;e||w;w;w;w;nw;nw;w;w;w
