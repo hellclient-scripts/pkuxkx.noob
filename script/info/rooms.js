@@ -37,7 +37,7 @@
         if (!App.Data.Room.Exits){
             return ""
         }
-        return App.Data.Room.Name+App.Data.Room.Tags+App.Data.Room.Exits.join(",")
+        return App.Data.Room.Name+App.Data.Room.Tags.trim()+App.Data.Room.Exits.join(",")
     }
     App.Info.RoomDescStart=function(){
         let desc=App.Core.RoomDesc.Desc.split("\n",1)[0]

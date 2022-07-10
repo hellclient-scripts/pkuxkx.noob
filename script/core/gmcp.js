@@ -20,7 +20,7 @@
     }
     App.RegisterCallback("core.gmcp.Status.status",function(data){
         if (data.gmcp_type=="status"){
-            if (data.id==GetVariable("id")){
+            if (data.id==""){
                 map_status(data,"combat_exp","exp")
                 map_status(data,"max_qi","qixue")
                 map_status(data,"qi","eff_qixue")

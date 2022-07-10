@@ -77,7 +77,7 @@ linan-yfm||岳飞墓||||Station||岳飞墓
 jiaxing||嘉兴城||||Station||嘉兴城
 jiaxingch||嘉兴车行||||DescStart||这里是嘉兴当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 suzhou||沧浪亭||||Station||沧浪亭
-suzhou-cg||茶馆||||DescStart||你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙桌一字排开，坐满了客人，或高
+suzhou-cg||茶馆||||Landmark||Murong fu
 zhenjiang||镇江||||DescStart||这里是一个小广场，平时人来人往，热闹非常。几个游客不知道正议论着什么。
 zhenjiangch||镇江车行||||DescStart||这里是镇江当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 quanzhou||泉州||||DescStart||泉州是一个安静的港口城市。虽然这里是城中心，人们也只是脚步轻轻地过往，并不喧哗。东面是
