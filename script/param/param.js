@@ -14,7 +14,7 @@
         "gold_min":"4",
         "bank_location":"yzqz",
         "walkstep":"8",
-        "heal_below":"100",
+        "heal_below":"95",
         "item_load_max":"60",
         "checkhpinterval":"1000",
         "checkscoreinterval":"30000",

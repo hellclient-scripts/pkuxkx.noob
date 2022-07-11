@@ -164,7 +164,7 @@
     App.Bind("Check","core.player.hp")
 
     App.Core.OnPlayerHpbrief=function(name, output, wildcards){
-        App.Data.HP={}
+        // App.Data.HP={}
         App.Data.HP["pot"]=world.GetTriggerWildcard(name,"pot")-0
         App.Data.HP["neili"]=world.GetTriggerWildcard(name,"neili")-0
         App.Data.HP["eff_neili"]=world.GetTriggerWildcard(name,"eff_neili")-0
@@ -190,8 +190,7 @@
     let checkHP=(new check("hp")).WithLevel(App.CheckLevelFull).WithCommand("yun recover;yun regenerate;hp").WithIntervalParam("checkhpinterval").WithLastID("LastHP")
     App.RegisterCallback("core.player.hp",checkHP.Callback())
     App.Core.OnPlayerHP=function(name, output, wildcards){
-        App.Data.HP={
-        }
+        // App.Data.HP={}
         world.EnableTriggerGroup("playerhp",true)
     }
     App.Core.OnPlayerHP1=function(name, output, wildcards){

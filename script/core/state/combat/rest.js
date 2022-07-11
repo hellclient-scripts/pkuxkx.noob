@@ -6,6 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
+        Note("内力:"+App.Data.HP["eff_neili"]+" 气血:"+App.Core.PerQixue())
         if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
             App.Send("dazuo max;dazuo 10")
         }else if (App.Core.PerQixue()<App.GetNumberParam("heal_below")){

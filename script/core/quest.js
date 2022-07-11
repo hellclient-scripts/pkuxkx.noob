@@ -72,6 +72,7 @@
     App.RegisterQuest(new (Include("core/quest/tuna.js"))())
     App.RegisterQuest(new (Include("core/quest/study.js"))())
     App.RegisterQuest(new (Include("core/quest/caiyao.js"))())
+    App.RegisterQuest(new (Include("core/quest/caiyaozhuanzhi.js"))())
     App.RegisterQuest(new (Include("core/quest/wd.js"))())
     App.RegisterQuest(new (Include("core/quest/wdj.js"))())
 

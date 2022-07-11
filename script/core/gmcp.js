@@ -1,7 +1,7 @@
 
 (function(App){
-    App.Bind("GMCP.Fight.Msg","core.gmcp.Fight.Msg")
-    App.Bind("GMCP.Status.status","core.gmcp.Status.status")
+    App.Bind("GMCP.GMCP.Combat","core.gmcp.Fight.Msg")
+    App.Bind("GMCP.GMCP.Status","core.gmcp.Status")
     App.RegisterCallback("core.gmcp.Fight.Msg",function(data){
         App.RaiseStateEvent("combat.fighting")
     })
@@ -18,12 +18,14 @@
             break
         }
     }
-    App.RegisterCallback("core.gmcp.Status.status",function(data){
-        if (data.gmcp_type=="status"){
-            if (data.id==""){
+    App.RegisterCallback("core.gmcp.Status",function(data){
+            if (!data.id){
                 map_status(data,"combat_exp","exp")
                 map_status(data,"max_qi","qixue")
                 map_status(data,"qi","eff_qixue")
+                map_status(data,"max_qi","qixue_cap")
+                map_status(data,"jing","jing")
+                map_status(data,"max_jing","jing_cap")
                 map_status(data,"neili","eff_neili")
                 map_status(data,"max_neili","neili")
                 map_status(data,"jingli","eff_jingli")
@@ -33,11 +35,10 @@
                 map_status(data,"water","water")
                 map_status(data,"food","food")
                 map_status(data,"potential","pot")
-                
-            }else{
-                App.RaiseStateEvent("combat.fighting")
             }
-        }
+    })
+    App.RegisterCallback("core.gmcp.Fight.Msg",function(){
+        App.RaiseStateEvent("combat.fighting")
     })
     // App.RegisterCallback("core.gmcp.hpbreif",function(data){
     //     if(!data){
