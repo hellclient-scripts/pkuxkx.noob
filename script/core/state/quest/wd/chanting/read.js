@@ -3,6 +3,7 @@
     let State=function(){
         basicstate.call(this)
         this.ID="core.state.quest.wd.chanting.read"
+        this.Groups = this.Groups.concat(["quest.wd"])
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){

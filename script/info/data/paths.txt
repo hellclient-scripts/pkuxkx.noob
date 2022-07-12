@@ -272,4 +272,4 @@ linan||dtms-e||||se;s;s;s;w;sw;w;jump west
 dsg-s||dtms-e||||su;su;se;se;ed;se;sheshui;ne;su;#maze 大山 south>大石[野外]westup||#maze 大山 westup>小溪[野外]southup,southwest;sw;sheshui;nw;wu;nw;nw;nd;nd
 dsg-w||dsg-s||||#maze 大石谷 east>静水潭[野外] [存盘点]north,southup||#maze 大石谷 north>青瓦院落[野外] [存盘点]east,west
 dsg-s||shezhai||||su;su;se;se;wu;nw;wd;sw;sw;enter||out;ne;ne;eu;se;ed;nw;nw;nd;nd
-shezhai||jishicart||||e;gu||
+shezhai||jishicart||||e;gu||||100

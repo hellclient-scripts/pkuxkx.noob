@@ -5,22 +5,29 @@
         basicstate.call(this)
         this.ID="core.state.quest.wdj.zhengli.zhengli"
         this.Groups = this.Groups.concat(["state.line"])
+        this.Lines=[]
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
-        case "line":
+        case "line":    
             if (data.match(re)==null){
                 return
             }
             let lines=JSON.parse(DumpOutput(4,1))
             let books=[]
-            for (var i=0;i<lines[0].Words.length;i++){
+            for (var i=0;i<lines[3].Words.length;i++){
                 books[i]={
-                    Name:(lines[0].Words[i].Text+lines[1].Words[i].Text+lines[2].Words[i].Text+lines[3].Words[i].Text).trim(),
-                    Color:lines[0].Words[i].Background
+                    Name:"",
+                    Color:lines[3].Words[i].Background
                 }
+                lines.forEach(function(line){
+                    if (line.Words.length==lines[3].Words.length && line.Words[i].Background==lines[3].Words[i].Background && line.Words[i].Text.length==1){
+                        books[i].Name=books[i].Name+line.Words[i].Text
+                    }
+                })
             }
+
             books.sort(function(a,b){
                 return a.Color<b.Color?-1:1
             })

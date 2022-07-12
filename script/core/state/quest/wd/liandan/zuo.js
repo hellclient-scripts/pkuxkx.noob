@@ -3,6 +3,7 @@
     let StateZuo=function(){
         basicstate.call(this)
         this.ID="core.state.quest.wd.liandan.zuo"
+        this.Groups = this.Groups.concat(["quest.wd"])
     }
     StateZuo.prototype = Object.create(basicstate.prototype)
     StateZuo.prototype.OnEvent=function(context,event,data){

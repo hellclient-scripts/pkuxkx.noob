@@ -3,6 +3,7 @@ App.Quest.WD={}
 App.Quest.WD.Data={
     Type:""
 }
+EnableTriggerGroup("quest.wd",false)
 App.Quest.WD.Items=[
     App.Core.Puzzle.NewItem("liandan","炼丹任务"),
     App.Core.Puzzle.NewItem("zhen","阵法任务"),
