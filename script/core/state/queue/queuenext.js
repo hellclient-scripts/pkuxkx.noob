@@ -47,10 +47,10 @@
                 App.NewCommand("do", current.Data).WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
-                case "#sleep":
-                    App.NewCommand("sleep").WithFinalState("core.state.queue.next").Push()
-                    App.Next()
-                break                
+            case "#sleep":
+                App.NewCommand("sleep").WithFinalState("core.state.queue.next").Push()
+                App.Next()
+                break
             case "#delay":
                 let data = current.Data
                 if (isNaN(data) || (data - 0) <= 0) {
@@ -72,7 +72,19 @@
                 App.API.Captcha(current.Data, "core.state.queue.next", "core.state.queue.next")
                 break
             case "#item":
-                App.NewCommand("item",App.Options.NewItem(current.Data)).WithFinalState("core.state.queue.next").Push()
+                var cdata=current.Data.split("::")
+                if (cdata.length==1){
+                    cdata.push(1)
+                }
+                App.NewCommand("item", App.Options.NewItem(cdata[0],cdata[1]-0)).WithFinalState("core.state.queue.next").Push()
+                App.Next()
+                break
+            case "#buy":
+                var cdata=current.Data.split("::")
+                if (cdata.length==1){
+                    cdata.push(1)
+                }
+                App.NewCommand("buy", App.Options.NewItem(cdata[0],cdata[1]-0)).WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
             default:

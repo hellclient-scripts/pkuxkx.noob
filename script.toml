@@ -3637,28 +3637,6 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
-[[Aliases]]
-  ID = "item"
-  Name = "item"
-  Enabled = true
-  Match = "^#item (.+)$"
-  Send = ""
-  Script = "App.Core.OnAliasItem"
-  SendTo = 0
-  Sequence = 0
-  ExpandVariables = false
-  Temporary = false
-  OneShot = false
-  Regexp = true
-  Group = ""
-  IgnoreCase = false
-  KeepEvaluating = false
-  Menu = false
-  OmitFromLog = false
-  Variable = ""
-  ReverseSpeedwalk = false
-  OmitFromOutput = false
-  OmitFromCommandHistory = false
 
 [[Aliases]]
   ID = "quests"
@@ -3687,7 +3665,7 @@ Channel = "pkuxkx.noob"
   ID = "queue"
   Name = "queue"
   Enabled = true
-  Match = "^#(to|do|delay|captcha|quest) .*$"
+  Match = "^#(to|do|delay|captcha|quest|item|buy) .*$"
   Send = ""
   Script = "App.Core.OnAliasQueue"
   SendTo = 0

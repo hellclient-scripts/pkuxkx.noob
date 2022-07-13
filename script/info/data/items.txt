@@ -5,3 +5,6 @@ yangjing dan||yangjing dan||Yangjing dan||养精丹||goods||yzyp||buy yangjing d
 diaoyu gan||diaoyu gan||Diaoyu gan||钓鱼杆||goods||yz-zhp||buy diaoyu gan
 yuer||yuer||Yuer||鱼饵||goods||yz-zhp||buy yuer 100
 yao chu||yao chu||Yao chu||药锄||goods||dtms-e||buy yao chu
+im_641||dang gui||Dang gui||当归||goods||yzdp||buy im_641
+im_10||xue jie||Xue jie||血竭||goods||yzdp||buy im_10
+im_25||dan nanxing||dan nanxing||胆南星||goods||yzdp||buy im_25

@@ -21,11 +21,11 @@
     App.RegisterCallback("core.gmcp.Status",function(data){
             if (!data.id){
                 map_status(data,"combat_exp","exp")
-                map_status(data,"max_qi","qixue")
-                map_status(data,"qi","eff_qixue")
+                map_status(data,"qi","qixue")
+                map_status(data,"eff_qi","eff_qixue")
                 map_status(data,"max_qi","qixue_cap")
-                map_status(data,"jing","jing")
-                map_status(data,"max_jing","jing_cap")
+                map_status(data,"eff_jing","jing")
+                map_status(data,"max_jing","jing")
                 map_status(data,"neili","eff_neili")
                 map_status(data,"max_neili","neili")
                 map_status(data,"jingli","eff_jingli")
