@@ -12,7 +12,7 @@
     Combat.prototype.SetOnline=function(Online){
         this.Online=Online
     }
-    Combat.prototype.SetYeild=function(y){
+    Combat.prototype.SetYield=function(y){
         this.Yield=y
     }
     Combat.prototype.SetAfter=function(cmd){

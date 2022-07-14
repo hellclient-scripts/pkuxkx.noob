@@ -6,7 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
-        let data=(App.GetContext("Yield")===false)
+        let data=(App.GetContext("Yield")!==false)
         App.SetRoomYieldYes(data)
         App.Next()
     }

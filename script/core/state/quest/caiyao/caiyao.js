@@ -11,7 +11,7 @@
         this.Last=""
     }
     State.prototype = Object.create(basicstate.prototype)
-    State.prototype.OnLine = function (line) {
+    State.prototype.Online = function (line) {
         if (line.match(rechat)){
             return
         }
@@ -50,7 +50,7 @@
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "line":
-                this.OnLine(data)
+                this.Online(data)
                 return
             case "busy":
             case "nobusy":

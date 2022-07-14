@@ -3,6 +3,7 @@
     let State=function(){
         basicstate.call(this)
         this.ID="core.state.combat.combat"
+        this.Groups = this.Groups.concat(["state.line"])
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
@@ -17,6 +18,11 @@
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
+        case "line":
+            if (App.Core.Combat.Current.Online){
+                App.Core.Combat.Current.Online(data)
+            }
+            break
         case "combat.disarm":
             App.Core.Combat.Current.Disarmed=true
             break
