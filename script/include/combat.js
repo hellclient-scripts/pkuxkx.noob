@@ -5,6 +5,15 @@
         this.Disarmed=false
         this.Recovery=-1
         this.After=null
+        this.Yield=false
+        this.Online=null
+        this.StartAt=Now()
+    }
+    Combat.prototype.SetOnline=function(Online){
+        this.Online=Online
+    }
+    Combat.prototype.SetYeild=function(y){
+        this.Yield=y
     }
     Combat.prototype.SetAfter=function(cmd){
         this.After=cmd
@@ -37,6 +46,9 @@
         }
         if (this.Disarmed){
             App.Core.Weapon.Wield()
+        }
+        if (this.Yield){
+            return
         }
         App.Send(this.PerformCmd)
     }

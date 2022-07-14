@@ -9,6 +9,7 @@
         HasHerb:false,
         ObjEnd:false,
         OnAsk:"",
+        YieldYes:false
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -35,6 +36,7 @@
             Objs: [],
             HasHerb:false,
             OnAsk:"",
+            YieldYes:false,
             LootCmds:{},
             ObjEnd:false,
         }
@@ -122,13 +124,16 @@
         App.Data.Room.Objs.push(obj)
         App.Raise("OnRoomObj", obj)
     }
-    App.HasRoomObjName = function (name) {
+    App.GetRoomObjByName = function (name) {
         for (var i in App.Data.Room.Objs) {
             if (App.Data.Room.Objs[i].Name === name) {
-                return true
+                return App.Data.Room.Objs[i].ID
             }
         }
-        return false
+        return ""
+    }
+    App.HasRoomObjName = function (name) {
+      return App.GetRoomObjByName(name)!=""
     }
     App.HasRoomObj = function (id, ci) {
         if (ci) {
@@ -180,6 +185,10 @@
     App.SetRoomOnAsk=function(cmd){
         Note("设置OnAsk:"+cmd)
         App.Data.Room.OnAsk=cmd
+    }
+    App.SetRoomYieldYes=function(data){
+        Note("设置YieldYes"+data)
+        App.Data.Room.YieldYes=data
     }
     App.RegisterCallback("core.room.alias.onask",function(data){
         App.SetRoomOnAsk(data)

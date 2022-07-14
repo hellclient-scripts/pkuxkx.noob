@@ -10,6 +10,9 @@
         let kill=App.GetContext("Kill")
         App.Core.Combat.Current=new combat()
         App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands(kill.Type))
+        App.Core.Combat.SetOnLine(kill.OnLIne)
+        App.Core.Combat.SetYield(App.Data.Room.YieldYes)
+        App.Data.Room.YieldYes=false
         if (kill.Before){
             App.Send(kill.Before)    
         }

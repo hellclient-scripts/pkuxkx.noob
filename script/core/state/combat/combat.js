@@ -34,8 +34,13 @@
             break
         case "combat.finish":
             let cmds=[App.NewCommand("delay",1)]
+            if (App.Core.Combat.Current.Yield){
+                cmds=cmds.concat([
+                    App.NewCommand("do","yield no"),
+                ])
+            }
             if (App.Core.Combat.Current.After){
-                cmds=comds.concat([
+                cmds=cmds.concat([
                     App.NewCommand("nobusy"),
                     App.NewCommand("do",App.Core.Combat.Current.After),
                 ])

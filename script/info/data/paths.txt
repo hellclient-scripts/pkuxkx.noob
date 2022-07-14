@@ -148,12 +148,12 @@ lxcmen||lxcch||||e||w
 emeimen||chengdu||||wd;sd;sd;wd;w;s;sd;sd;s;se;e;nd;nd;nd;n;n;n;n||s;s;s;s;su;su;su;w;nw;n;nu;nu;n;e;eu;nu;nu;eu
 emeimen||emeich||||wd;sd;sd;wd;w;s;e||w;n;e;eu;nu;nu;eu
 wdj-jbq||wdj-lgxs-s||||n;nd;nu||sd;su;s
-//wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||100
-//wdj-lgxs-s||wdj-lgxs-w||||#maze 苗岭大山 north>山间路[野外] [存盘点]east,westdown||#maze 苗岭大山 east>山间路[门派] [存盘点]north,southdown||100
+wdj-lgxs-s||wdj-lgxs-e||||#maze 苗岭大山 north>山间路[门派] [存盘点]eastdown,west||#maze 苗岭大山 west>山间路[门派] [存盘点]north,southdown||100
+wdj-lgxs-s||wdj-lgxs-w||||#maze 苗岭大山 north>山间路[野外] [存盘点]east,westdown||#maze 苗岭大山 east>山间路[门派] [存盘点]north,southdown||100
 wdj-lgxs-e||wdj-lgds-w||||ed||w
 wdj-lgxs-w||bmz||||wd;nw;n;n||s;s;se;eu
 wdj-lgxs-w||wdj-lgxs-n||||wd;nw;ne;ne;e;su||nd;w;sw;sw;se;eu
-wdj-lgds-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山沟[门派] [存盘点]east,west||100
+wdj-lgxs-w||wdj-lgds-n||||#maze 苗岭大山 east>山间路[门派] [存盘点]northdown,south||#maze 苗岭大山 south>山间路[野外] [存盘点]east,westdown||100
 wdj-swdsb-s||wdj-swdsb-w||||#maze 苗岭大山 north>山前[门派] [存盘点]east,southwest||#maze 苗岭大山 east>大树[门派] [存盘点]north,southdown||100
 wdj-swdsb-w||qmz||五毒教||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest;sw;nw;w;nw;w;w;w;w;w;w;ne;ne
 qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||400

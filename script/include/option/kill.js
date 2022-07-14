@@ -4,6 +4,7 @@
         this.Type=type
         this.Before=before
         this.After=after
+        this.OnLine=null
     }
     return Kill
 })(App)
