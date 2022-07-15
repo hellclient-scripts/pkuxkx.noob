@@ -4,7 +4,7 @@
     App.Core.Ask.LastNPC=""
     App.Core.Ask.LastQuestion=""
     App.Data.Ask={}
-    App.Core.Ask.MaxReply=10
+    App.Core.Ask.MaxReply=50
     App.Core.AskQuestion=function(npc,question){        
         world.EnableTriggerGroup("core.ask.reply",false)
         App.Data.Ask.Replies=[]

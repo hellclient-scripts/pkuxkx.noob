@@ -24,7 +24,8 @@
     }
     App.Core.Traversal.New = function (keyword) {
         App.Data.Traversal = {
-            Key: keyword ? keyword : ""
+            Key: keyword ? keyword : "",
+            State:"",
         }
     }
     App.Traversal = function () {
@@ -150,6 +151,9 @@
             case "herb":
                 g.FindHerb()
                 break
+        }
+        if (App.Data.Traversal.State){
+            g.State=App.Data.Traversal.State
         }
         App.Data.Traversal.Goal = g
         return g

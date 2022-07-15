@@ -19,7 +19,7 @@
                 App.NewCommand('prepare', App.PrapareFull).WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
-            case "#quest":
+            case "#questonce":
                 App.NewCommand('quest', current.Data).WithFinalState("core.state.queue.next").WithFailState("core.state.queue.next").Push()
                 App.Next()
                 break

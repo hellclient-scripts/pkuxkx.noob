@@ -17,6 +17,7 @@
     }
     App.InfoStartQuest=function(name,id,code,data){
         if (code==0 && data){
+            App.Core.Quest.StartQuests([data])
         }
     }
     App.RegisterAssistant("quest","任务",App.InfoUIQuest,30)
