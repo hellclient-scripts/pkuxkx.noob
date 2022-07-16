@@ -26,6 +26,15 @@
         let v=world.GetVariable("gold_min")
         return v?(v-0):App.Core.ShoppingMode.Current().GoldMin()
     }
+    App.GetParamGoldMax=function(){
+        let v=world.GetVariable("gold_max")-0
+        if (v){
+            return v
+        }else{
+            return 2*App.GetParamGoldMin()
+        }
+
+    }
     App.SetVariable=function(key,value){
         world.SetVariable(key,value)
         Userinput.Popup("", "设置修改", "设置修改已生效，记得保存游戏")

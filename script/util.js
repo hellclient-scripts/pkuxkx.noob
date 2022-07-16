@@ -65,7 +65,7 @@ var CNumber={
     },
     Split:function(str){
         var result=str.match(CNumber.re)
-        var count=result[2]?result[2]:""
+        var count=result[2]?result[2]:"一"
         var unit=result[4]?result[4]:""
         var item=result[5]
         return{

@@ -12,6 +12,7 @@
         "drink_min":"2",
         "drink_max":"10",
         "gold_min":"4",
+        "gold_max":"0",
         "bank_location":"yzqz",
         "walkstep":"8",
         "heal_below":"95",
