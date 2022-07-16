@@ -9,6 +9,7 @@
             list.append("finish","结束遍历")
             list.append("continue","继续遍历")
         }
+        list.append("locate","尝试定位。注意，可能有危险")
         list.publish("App.InfoUITraversalStart")
     }
     App.InfoUITraversalStart=function(name,id,code,data) {
@@ -25,6 +26,9 @@
                     let data=App.LastMove.Data
                     data.Found=false
                     App.LastMove.WithData(data).Continue();
+                break
+                case "locate":
+                    App.Locate()
                 break
             }
         }

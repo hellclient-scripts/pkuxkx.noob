@@ -608,7 +608,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dss1b9qcej1267ng67v"
   Name = "danlu"
-  Enabled = true
+  Enabled = false
   Match = "^炼丹炉旁边有一个坐垫让你盘膝而坐\\(zuo\\)看守\\(kan\\)丹炉，丹炉上有一个开关可以调节\\(change\\)炉火大小。$"
   Send = ""
   ColourChangeType = 0
@@ -639,7 +639,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dss768e1egom67njtgu"
   Name = "liandanfail"
-  Enabled = true
+  Enabled = false
   Match = "^(你没有看好丹炉，发现里面的丹药已经结块了，看来这炉丹药已经废了，到俞岱岩哪里领罚吧！|俞岱岩急急忙忙跑过喊道：我还没有开始炼丹呢，不要着急。)$"
   Send = ""
   ColourChangeType = 0
@@ -670,7 +670,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dssfsdu51etg67npavc"
   Name = "wd.liandan.success"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*丹炉里传出来一阵清香，看来已经成丹了！赶紧向俞岱岩报告！$"
   Send = ""
   ColourChangeType = 0
@@ -701,7 +701,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dt3u6pjv4dd573v36d4d"
   Name = "quest.wd.zouwei"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(阵法教习从远处跑过说到：今天练『[正反]五行阵』，请大家注意走位\\(zouwei\\)！|阵法教习挥了挥旗喊道：大家从自己现在的位置按照『[正反]五行阵』的要求往下走一步。|阵法教习挥挥了旗子喊道：正反五行变换开始，现在变为『[正反]五行阵』。)$"
   Send = ""
   ColourChangeType = 0
@@ -732,7 +732,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dt3umj54lbba73v36n73"
   Name = "quest.wd.zhenmove"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*清.按照『[正反]五行阵』的要求(从[金木水火土]位|开始)走向([金木水火土])位。$"
   Send = ""
   ColourChangeType = 0
@@ -763,7 +763,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dt3uo5qqqibj73v36o7j"
   Name = "quest.wd.zhensuccess"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*阵法教习挥了挥旗喊道：五行阵演练到此结束，大家走位都非常精确，看来以后有希望演练武当秘传的真武七截阵。$"
   Send = ""
   ColourChangeType = 0
@@ -794,7 +794,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dt4ft2rkcprb72akv23b"
   Name = "quest.wd.zhenfail"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(现在教习太紧张了，演习阵法的教习都在使用中！请到广场上排队吧。|房间中已经有人在演习阵法，请等对方演习结束再进去吧。)$"
   Send = ""
   ColourChangeType = 0
@@ -825,7 +825,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dtlot59dqrln72ev26av"
   Name = "wd.chanting.book"
-  Enabled = true
+  Enabled = false
   Match = "\\n(\\S{1,15})\\((\\d+)\\)\\n================================================================\\n((==\\s+\\S*\\s+==\\n){2,10})================================================================\\n(\\S{1,4}·\\S{1,9})\\s+第(.+)页/总(.+)页\\n上一页\\(pageup\\)/下一页\\(pagedown\\)\\s+诵经\\(chanting\\)$"
   Send = ""
   ColourChangeType = 0
@@ -887,7 +887,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dtqml4729l356tn69ph"
   Name = "wd.chanting.book2"
-  Enabled = true
+  Enabled = false
   Match = "\\n()第(.+)章.*\\n================================================================\\n((==\\s+\\S*\\s+==\\n){2,10})================================================================\\n(\\S+)\\s+第(.+)页/总(.+)页\\n上一页\\(pageup\\)/下一页\\(pagedown\\)\\s+诵经\\(chanting\\)$"
   Send = ""
   ColourChangeType = 0
@@ -918,7 +918,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dtsgkhlqijcu6tnurft"
   Name = "App.Quest.WD.Chanting.OnBookFail"
-  Enabled = true
+  Enabled = false
   Match = "^这本.+一共只有.+页！$"
   Send = ""
   ColourChangeType = 0
@@ -1104,7 +1104,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1du6ti4vlkch372r4mtpq"
   Name = "App.Quest.WD.Zhen.OnWrong"
-  Enabled = true
+  Enabled = false
   Match = "……你站错了方位，整个五行阵全都乱套了，大家只好都停下来！￥"
   Send = ""
   ColourChangeType = 0
@@ -3637,7 +3637,6 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
-
 [[Aliases]]
   ID = "quests"
   Name = "quests"
@@ -3769,6 +3768,29 @@ Channel = "pkuxkx.noob"
   Group = ""
   IgnoreCase = false
   KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
+[[Aliases]]
+  ID = "d1e0itlporniaf72g2tp86"
+  Name = "App.Core.OnAliasLocate"
+  Enabled = true
+  Match = "^#locate$"
+  Send = ""
+  Script = "App.Core.OnAliasLocate"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
   Menu = false
   OmitFromLog = false
   Variable = ""

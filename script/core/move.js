@@ -12,6 +12,10 @@
         App.NewCommand("locate",depth).Push()
         App.Next()
     }
+    App.Core.OnAliasLocate=function (name, line, wildcards){
+        App.Locate()
+    }
+
     App.Move=function(path,data){
         if (!path){
             path=""
