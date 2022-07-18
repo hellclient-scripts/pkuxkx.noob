@@ -7,11 +7,11 @@
         }
         this.Execute = function () {
             let num = Math.floor(App.GetCash()-App.GetParamGoldMax()+(App.GetParamGoldMax()-App.GetParamGoldMin())/2)
-            let cash = App.GetItemNumber("cash", true)
+            let cash = App.GetItemNumber("Thousand-cash", true)
             var cmd
             if (cash) {
-                let cashnum = cash > (num/10)?cash:Math.floor(num/10)
-                cmd = "cun " + cashnum + " gold"
+                let cashnum = cash<=(num/10)?cash:Math.floor(num/10)
+                cmd = "cun " + cashnum + " cash"
             } else {
                 cmd = "cun " + num + " gold"
             }

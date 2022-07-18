@@ -8,11 +8,27 @@
     Maze.prototype.IsEscaped = function (move) {
         return App.Data.Room.Name != "果林"
     }
-    Maze.prototype.Explore = function (move) {
-        if (App.HasRoomObjName("梨树")){
+    Maze.prototype.Next=function(){
+        if (App.Data.Room.Name == "大道"){
             App.Go("s")
+            App.Next()
             return
         }
-        App.Go("e")    }
+        App.Go("e")
+        App.Next()
+    }
+    Maze.prototype.Explore = function (move) {
+        let snap=App.Core.Snapshot.Take()
+        App.Commands([
+            App.NewCommand("delay",1),
+            App.NewCommand("do","l s"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",this.Next),
+            App.NewCommand("function",function(){
+                App.Core.Snapshot.Rollback(snap)
+            })
+        ]).Push()
+        App.Next()
+    }
     return Maze
 })(App)
