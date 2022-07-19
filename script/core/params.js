@@ -31,7 +31,7 @@
         if (v){
             return v
         }else{
-            return 2*App.GetParamGoldMin()
+            return (3*App.GetParamGoldMin()+5)
         }
 
     }

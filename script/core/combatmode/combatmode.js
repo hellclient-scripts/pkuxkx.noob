@@ -17,6 +17,9 @@
     CombatMode.prototype.OnGuarded=function(name){
         return false
     }
+    CombatMode.prototype.NoQuit=function(){
+        return false
+    }
     CombatMode.prototype.GetWimpy=function(name){
         return "85"
     }

@@ -13,6 +13,7 @@
         "drink_max":"10",
         "gold_min":"4",
         "gold_max":"0",
+        "poison_dazuo_num":"200",
         "bank_location":"yzqz",
         "walkstep":"8",
         "heal_below":"95",

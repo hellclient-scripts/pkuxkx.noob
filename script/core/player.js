@@ -159,6 +159,7 @@
     App.RegisterCallback("core.player.avatar",checkAvatar.Callback())
 
     App.Data.HP={
+        status:{},
     }
     App.Data.LastHP=0
     App.Bind("Check","core.player.hp")
@@ -227,7 +228,10 @@
         App.Data.Exp=wildcards[3]-0
     }
     App.Core.OnPlayerHP6=function(name, output, wildcards){
-        App.Data.HP["status"]=wildcards[0]
+        App.Data.HP["status"]={}
+        wildcards[0].split("、").forEach(function(data){
+            App.Data.HP["status"][data]=true
+        })
     }
     
     App.Core.OnPlayerHPEnd=function(name, output, wildcards){
@@ -245,5 +249,8 @@
     }
     App.Core.PerJing=function(){
         return App.Data.HP["per_jing"]
+    }
+    App.Core.OnPoisonMjzq=function(name, output, wildcards){
+        App.Data.HP["status"]["苗疆瘴气"]=true
     }
 })(App)
