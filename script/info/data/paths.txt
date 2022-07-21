@@ -128,9 +128,10 @@ gmmen||qzmen||||s;s;s;wu;eu;su;s;s;s;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;n;
 gmmen||gmch||||w||e
 luoyang-hlg||luoyang||||w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e
 qlc||luoyang||||e;s;sw;nw;w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e;se;ne;n;w
+wdj-ygf||wdj-jsdd||||w||e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||五毒教||n;enter;n;e;n;w;n;out
-wdj-jbq||wdh||||l 山壁&&enter;s;e;s;w;s;out;s
+wdj-jbq||wdj||||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
 wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
 bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400

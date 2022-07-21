@@ -43,6 +43,11 @@
         this.State = ""
         return this
     }
+    Goal.prototype.FindCustom = function () {
+        this.Type = "custom"
+        this.State = ""
+        return this
+    }
     Goal.prototype.FindHerb = function () {
         this.Type = "herb"
         this.State = "core.state.traversal.look"
@@ -53,6 +58,8 @@
             return
         }
         switch (this.Type) {
+            case "custom":
+                break
             case "room":
                 this.Found = (App.Data.Room.Name == target)
                 break

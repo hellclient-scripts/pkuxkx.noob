@@ -37,6 +37,7 @@
         if (!full) {
             g.FindKnownRoom()
         }
+        App.LastMove.StateOnStep="finding"
         App.LastMove.WithData(g).Continue()
     }
     App.Core.Traversal.Continue = function () {
@@ -150,6 +151,9 @@
                 break
             case "herb":
                 g.FindHerb()
+                break
+            case "custom":
+                g.FindCustom()
                 break
         }
         if (App.Data.Traversal.State){
