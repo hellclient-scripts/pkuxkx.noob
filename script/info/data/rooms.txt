@@ -130,9 +130,8 @@ wdj-lgxs-e||雷公西山东入口||||Full||山间路[门派] [存盘点]eastdown
 wdj-lgxs-w||雷公西山西入口||||DescStart||这里就要进入雷公山了，东面的山脉(mountain)雄伟壮丽，让人心生敬佩。
 wdj-lgxs-n||雷公西山北入口||||DescStart||这里就要进入雷公山了，南面连绵的青山(mountain)起伏如一头怪兽一般。
 wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
-wdj-lgds-n||雷公东山北入口||||Full||山间路[门派] [存盘点]northdown,south
+wdj-lgds-n||雷公东山北入口||||DescStart||这里眼看就要进入雷公山了。
 wdj-lgds-s||雷公东山南入口||||DescStart||渐渐走入雷公山东麓，行路越发艰难了，望着巍峨的高山(mountain)，心里难免产生敬畏之情。
-wdj-lgds-n||雷公西山西入口||||||山间路[门派] [存盘点]northdown,south
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
 wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 qhmz||苗王殿||||Station||苗王殿
