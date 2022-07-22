@@ -13,6 +13,7 @@
         this.FromRoom = ""
         this.Ignore = false
         this.Vehicle = ""
+        this.LastMaze=""
     }
     Move.prototype.Push = function (final) {
         App.Automaton.Push(["core.state.move.start"], final)

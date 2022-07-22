@@ -28,6 +28,7 @@
             State:"",
         }
     }
+    App.Core.Traversal.LastMove=null
     App.Traversal = function () {
         App.Core.Traversal.New("core.traversal.manual")
         App.Core.Traversal.Prompt()

@@ -4,10 +4,18 @@
     App.Core.Maze.Mazes={}
     App.Core.Maze.Info={}
     let re=/^(\S*)(\s+(.*)){0,1}$/
-    App.Core.Maze.Last=""
+    App.Core.Maze.SetLast=function(last){
+        if (App.LastMove){
+            App.LastMove.LastMaze=last
+        }
+    }
+    App.Core.Maze.GetLast=function(){
+        return App.LastMove?App.LastMove.LastMaze:""
+    }
+    
     App.Core.Maze.LoadMaze=function(cmd){
-        let last=App.Core.Maze.Last
-        App.Core.Maze.Last=cmd
+        let last=App.Core.Maze.GetLast()
+        App.Core.Maze.SetLast(cmd)
         if (!cmd){
             return null
         }

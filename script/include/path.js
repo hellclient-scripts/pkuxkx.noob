@@ -20,11 +20,13 @@
     }
     Path.prototype.PushCommands = function (commands, target) {
         var self = this
-        if (commands) {
+        if (commands.length!=0) {
             commands.forEach(function (cmd) {
                 self.Push(cmd)
             })
-            this.Steps[this.Steps.length - 1].SetTarget(target)
+            if (this.Steps[this.Steps.length - 1]){
+                this.Steps[this.Steps.length - 1].SetTarget(target)
+            }
         }
     }
     Path.prototype.Clone = function () {

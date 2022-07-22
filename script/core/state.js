@@ -2,7 +2,7 @@
     let globalstatecontext=Include("core/state/globalstatecontext.js")
     App.Data.State=""
     App.Data.StateHistory=[]
-    App.Data.StateHistoryMax=20
+    App.Data.StateHistoryMax=50
     App.States={}
     App.StateContext=new globalstatecontext()
     App.RegisterState=function(state){
