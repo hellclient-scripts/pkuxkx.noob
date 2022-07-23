@@ -1,4 +1,14 @@
 (function (App) {
+    let GetExits=function(){
+        return App.Data.Room.Exits
+    }
+    let GetLocateExits=function(){
+        let exits=App.Data.Room.Exits
+        if (App.Info.LocateExits[App.Data.Room.Name]){
+            exits=App.Info.LocateExits[App.Data.Room.Name]
+        }
+        return exits
+    }
     var Goal = function (target) {
         this.Type = ""
         if (!target) {
@@ -8,6 +18,7 @@
         this.Target = target.split("||")
         this.Skipped=false
         this.Found = false
+        this.GetExits=GetExits
     }
     Goal.prototype.Skip=function(){
         this.Skipped=true
@@ -16,26 +27,31 @@
     Goal.prototype.FindRoom = function () {
         this.Type = "room"
         this.State = ""
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.FindObjID = function () {
         this.Type = "objid"
         this.State = ""
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.FindObjName = function () {
         this.Type = "objname"
         this.State = ""
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.FindDesc = function () {
         this.Type = "desc"
         this.State = ""
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.FindKnownRoom = function () {
         this.Type = "known"
         this.State = ""
+        this.GetExits=GetLocateExits
         return this
     }
     Goal.prototype.FindRedBG = function () {
@@ -46,11 +62,13 @@
     Goal.prototype.FindCustom = function () {
         this.Type = "custom"
         this.State = ""
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.FindHerb = function () {
         this.Type = "herb"
         this.State = "core.state.traversal.look"
+        this.GetExits=GetExits
         return this
     }
     Goal.prototype.CheckTarget = function (target) {

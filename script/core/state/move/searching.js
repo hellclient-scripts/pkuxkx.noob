@@ -2,8 +2,8 @@
     let basicstate = Include("core/state/basicstate.js")
     let State = function () {
         basicstate.call(this)
-        this.ID = "finding"
-        this.MoveState = "patroling"
+        this.ID = "searching"
+        this.MoveState = "searchmoving"
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Check = function () {
@@ -17,6 +17,7 @@
                 this.Move()
                 return
             }
+            world.Note("搜索成功")
             App.Next()
             return
         }

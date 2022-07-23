@@ -38,6 +38,8 @@ App.Load("core/poison.js")
 App.Load("core/proposal.js")
 App.Load("core/puzzle.js")
 App.Load("core/traversal.js")
+App.Load("core/search.js")
+
 App.Load("core/shoppingmode.js")
 App.Load("core/combatmode.js")
 

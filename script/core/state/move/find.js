@@ -1,11 +1,11 @@
 (function (App) {
     let patrol = Include("core/state/move/patrol.js")
-    let StateFind = function () {
+    let State = function () {
         patrol.call(this)
         this.ID = "find"
     }
-    StateFind.prototype = Object.create(patrol.prototype)
-    StateFind.prototype.Enter = function (context, oldstatue) {
+    State.prototype = Object.create(patrol.prototype)
+    State.prototype.Enter = function (context, oldstatue) {
         let move = App.GetContext("Move")
         move.StateOnStep = "finding"
         let data = move.Data
@@ -14,5 +14,5 @@
         }
         patrol.prototype.Enter.call(this, context, oldstatue)
     }
-    return StateFind
+    return State
 })(App)
