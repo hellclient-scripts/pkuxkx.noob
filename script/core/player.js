@@ -3,6 +3,29 @@
     App.Data.Score={}
     App.Data.LastScore=0
     App.Data.Exp=0
+    App.Data.Special={}
+    App.Data.SpecialInUse={}
+    App.Core.SpecialStart=function(name, output, wildcards){
+        App.Data.Special={}
+        world.EnableTriggerGroup("playerspecial",true)
+    }
+    App.Core.OnSpecial=function(name, output, wildcards){
+        let special={
+            Enabled:wildcards[0]=="*",
+            Label:wildcards[1],
+            ID:wildcards[2],
+            Level:wildcards[3]=0,
+
+        }
+        App.Data.Special[special.ID]=special
+        if (special.Enabled){
+            App.Data.SpecialInUse[special.ID]=special
+        }
+    }
+    App.Core.SpecialEnd=function(name, output, wildcards){
+        world.EnableTriggerGroup("playerspecial",false)
+    }
+    world.EnableTriggerGroup("playerspecial",false)
     App.Bind("Check","core.player.score")
     let checkScore=(new check("score")).WithLevel(App.CheckLevelBrief).WithCommand("score").WithIntervalParam("checkscoreinterval").WithLastID("LastScore")
     App.RegisterCallback("core.player.score",checkScore.Callback())

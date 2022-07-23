@@ -135,7 +135,7 @@
     App.HasRoomObjName = function (name) {
       return App.GetRoomObjByName(name)!=""
     }
-    App.HasRoomObj = function (id, ci) {
+    App.GetRoomObj = function (id, ci) {
         if (ci) {
             id = id.toLowerCase()
         }
@@ -145,10 +145,13 @@
                 oid = oid.toLowerCase()
             }
             if (oid === id) {
-                return true
+                return App.Data.Room.Objs[i]
             }
         }
-        return false
+        return null
+    }
+    App.HasRoomObj = function (id, ci) {
+        return App.GetRoomObj(id,ci)!=null
     }
     App.HasRoomExit = function (exit) {
         for (var i in App.Data.Room.Exits) {

@@ -1877,6 +1877,99 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1e12s93d54eq87232puvr"
+  Name = "App.Core.SpecialStart"
+  Enabled = true
+  Match = "^你现在会以下这些特技：$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.SpecialStart"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1e12sav20pr2v7232q10o"
+  Name = "App.Core.SpecialEnd"
+  Enabled = true
+  Match = "^你共拥有特技积分(.*)点，最多可以同时激发(.*)个特技。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.SpecialEnd"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1e12sejddf9ks7232q7o8"
+  Name = "App.Core.OnSpecial"
+  Enabled = false
+  Match = "^([*| ])(\\S+)\\((\\S+)\\)\\s+LV(\\d+)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnSpecial"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "playerspecial"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -2654,7 +2747,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score1"
   Name = "player_score1"
-  Enabled = false
+  Enabled = true
   Match = "^│\\s*(.*)\\s+(\\S+)\\((.*)\\)\\s*│[^│]+│$"
   Send = ""
   ColourChangeType = 0
@@ -2685,7 +2778,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score10"
   Name = "player_score10"
-  Enabled = false
+  Enabled = true
   Match = "^│被杀：(\\d+)次\\s*│道德：(\\d+)\\s*│武学点：(\\d+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2716,7 +2809,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score11"
   Name = "player_score11"
-  Enabled = false
+  Enabled = true
   Match = "^│死亡：(\\d+)次\\s*│声望：(\\d+)\\s*│国家积分：(\\d+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2747,7 +2840,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score12"
   Name = "player_score12"
-  Enabled = false
+  Enabled = true
   Match = "^│杀气：(\\S+)\\s*│愿望：(\\d+)\\s*│实战经验：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2778,7 +2871,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score2"
   Name = "player_score2"
-  Enabled = false
+  Enabled = true
   Match = "^│ 膂力：\\[\\s*(\\d+)\\]  悟性：\\[\\s*(\\d+)\\]  根骨：\\[\\s*(\\d+)\\]  身法：\\[\\s*(\\d+)\\]\\s*│[^│]+│$"
   Send = ""
   ColourChangeType = 0
@@ -2809,7 +2902,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score3"
   Name = "player_score3"
-  Enabled = false
+  Enabled = true
   Match = "^│ 福缘：\\[\\s*(\\d+)\\]  容貌：\\[\\s*(\\d+)\\]  灵性：\\[\\s*(\\d+)\\]  胆识：\\[\\s*(\\S+)\\]\\s*│[^│]+│$"
   Send = ""
   ColourChangeType = 0
@@ -2840,7 +2933,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score4"
   Name = "player_score4"
-  Enabled = false
+  Enabled = true
   Match = "^│国籍：(\\S+)\\s*性别：(\\S+)\\s*│门派：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2871,7 +2964,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score5"
   Name = "player_score5"
-  Enabled = false
+  Enabled = true
   Match = "^│年龄：(\\S+)\\s*│师承：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2902,7 +2995,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score6"
   Name = "player_score6"
-  Enabled = false
+  Enabled = true
   Match = "^│性别：(\\S+)\\s*│门忠：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2933,7 +3026,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score7"
   Name = "player_score7"
-  Enabled = false
+  Enabled = true
   Match = "^│生日：(\\S+)\\s*│出师：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2964,7 +3057,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score8"
   Name = "player_score8"
-  Enabled = false
+  Enabled = true
   Match = "^│婚姻：(\\S+)\\s*│叛师：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2995,7 +3088,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_score9"
   Name = "player_score9"
-  Enabled = false
+  Enabled = true
   Match = "^│杀生：(\\d+)人\\s*│职业：(\\S+)\\s*│存款：((\\d+)(黄金|金锭)){0,1}\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -3026,7 +3119,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "player_scoreend"
   Name = "player_scoreend"
-  Enabled = false
+  Enabled = true
   Match = "^└────────────┴────────────┴────北大侠客行────┘$"
   Send = ""
   ColourChangeType = 0
