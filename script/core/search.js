@@ -1,6 +1,18 @@
 (function(App){
     App.Core.Search={}
     App.Data.Search={}
+    App.Core.Search.GetReturns=function(){
+        let move=App.Core.Search.LastMove
+        if (move==null||move.Context==null||move.Context.Level==null){
+            return []
+        }
+        return move.Context.ConcatBackward()
+    }
+    App.Core.Search.For=function(id,depth){
+        let goal=App.NewGoal(id).FindObjID()
+        App.Core.Search.Start(goal,depth)
+
+    }
     App.Core.Search.Locate=function(depth){
         let goal=App.NewGoal("").FindKnownRoom()
         App.Core.Search.Start(goal,depth)

@@ -41,6 +41,7 @@
             case "move.onRoomObjEnd":
                 this.OnRoomObjEnd()
             break
+            case "move.notallowed":
             case "move.stepTimeout":
                 this.OnStepTimeout()
             break
