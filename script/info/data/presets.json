@@ -17,6 +17,9 @@
         "label":"少林读石桌",
         "desc":"需要在西碑林下开始",
         "cmd":"#do yun regenerate||#do yun recover||#do dazuo max||#delay 2||#do halt||#do drink tang||#do eat gan liang||#do du table||#do du table||#do du table||#loop"
+    }    ,{
+        "label":"少林跳塔",
+        "desc":"需要在塔下开始",
+        "cmd":"#do eat gan liang||#do drink tang||yun recover||yun regenerate||enter||u||u||u||u||u||u||out||#nobusy||#loop"
     }
-
 ]

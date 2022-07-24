@@ -67,6 +67,8 @@ jiangzhou||jiangzhouch||||ne;ne;nw;w||e;se;sw;sw;
 xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;n;n;n;n
 xiangyang||wdmen||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
 wdmen||wdch||||s||n
+wd-zlxy||wd-bcm||||s;w;w||w;sw;s;se;e;ne;n;nw;sw;s;e;n
+wd-bcm||wd-sqd||||e;e;s;s;s||n;n;n;w;w
 jkf-zym||linan||||s;se;se;s;s;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;n;n;nw;nw;n
 jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;e;e;ne;ne;se;se
 jkf-cym||zhenjiang||||e;ed;ne;ne;ne;e;e;e;e||w;w;w;w;sw;sw;sw;wu;w
@@ -131,7 +133,7 @@ qlc||luoyang||||e;s;sw;nw;w;w;w;w;wu;wd;w;w;w||e;e;e;eu;ed;e;e;e;e;se;ne;n;w
 wdj-ygf||wdj-jsdd||||w||e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||五毒教||n;enter;n;e;n;w;n;out
-wdj-jbq||wdj||||l 山壁&&enter;s;e;s;w;s;out;s
+wdj-jbq||wdj||五毒教||l 山壁&&enter;s;e;s;w;s;out;s
 wdj||wdj-sf||||se||nw
 wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
 bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
