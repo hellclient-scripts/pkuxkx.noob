@@ -62,6 +62,7 @@ gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
 yz||yz-xjk||||d||u
 yz-xjk||yz-fds||||out||enter
 nanchangsy||nanchang||||out;sd;ed;ed;e;e;e||w;w;w;wu;wu;nu;enter
+nanchangsy||nanchang-xxs||||e||w
 jiangzhou||nanchang||||s;s;s;s;s;su;se;s;s;s||n;n;n;nw;nd;n;n;n;n;n
 jiangzhou||jiangzhouch||||ne;ne;nw;w||e;se;sw;sw;
 xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;n;n;n;n

@@ -93,9 +93,13 @@
             default:
                 throw "学习方式["+study.Type+"]未知"
         }
+        let cmds=[]
+        for(var i=0;i<study.Times;i++){
+            cmds.push(cmd)
+        }
         App.Commands([
             App.NewCommand("do",App.Quest.Study.Current.Before),
-            App.NewCommand("do",cmd),
+            App.NewCommand("do",cmds.join(";")),
             App.NewCommand("nobusy"),
             App.NewCommand("do",App.Quest.Study.Current.After),
             App.NewCommand("standby"),

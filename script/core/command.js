@@ -50,5 +50,6 @@
     App.RegisterCommand(Include("core/command/buy.js"))
     App.RegisterCommand(Include("core/command/locate.js"))
     App.RegisterCommand(Include("core/command/search.js"))
+    App.RegisterCommand(Include("core/command/eat.js"))
 
 })(App)
