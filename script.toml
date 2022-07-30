@@ -50,7 +50,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dvn4vk9l477m73074fio"
   Name = "App.OnStateLine"
-  Enabled = true
+  Enabled = false
   Match = "^.*$"
   Send = ""
   ColourChangeType = 0
@@ -1166,7 +1166,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1291,7 +1291,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duv7kco2ca8u738d67se"
   Name = "App.Core.Combat.OnFinish"
   Enabled = true
-  Match = "^(你的内功还没有达到那个境界！你至少需要十点的气来打坐！)"
+  Match = "^(你的内功还没有达到那个境界！你至少需要十点的气来打坐！|你请先用 enable 指令选择你要使用的内功。)"
   Send = ""
   ColourChangeType = 0
   Colour = 0

@@ -1,12 +1,14 @@
 (function(App){
     let study=Include("include/study.js")
     App.Quest.Study={}
+    App.Quest.Study.PerLoop=10
+    App.Quest.Study.Index=0
     App.Quest.Study.Plan=[]
     App.Quest.Study.Current=null
     App.Quest.Study.PickPlan=function(){
         let available=[]
         App.Quest.Study.Plan.forEach(p=>{
-            if (App.Data.HP["pot"]==0 && p.Type=="xue"){
+            if (App.Data.HP["pot"]<50 && p.Type=="xue"){
                 return
             }
             skill=App.Core.PlayerGetSkillByID(p.Skill)
@@ -65,9 +67,8 @@
         App.Commands([
             App.NewCommand('to',App.Options.NewWalk(location)),
             App.NewCommand('nobusy'),
+            App.NewCommand('do',"yun recover;yun regenerate"),
             App.NewCommand('function',App.Quest.Study.Execute),
-            App.NewCommand('standby'),
-            App.NewCommand('do',"skills"),
         ]).Push()
         App.Next()
     }
@@ -97,13 +98,17 @@
         for(var i=0;i<study.Times;i++){
             cmds.push(cmd)
         }
-        App.Commands([
-            App.NewCommand("do",App.Quest.Study.Current.Before),
-            App.NewCommand("do",cmds.join(";")),
-            App.NewCommand("nobusy"),
-            App.NewCommand("do",App.Quest.Study.Current.After),
-            App.NewCommand("standby"),
-        ]).Push()
+        let commands=[]
+        if (App.Quest.Study.Current.Before){
+            commands.push(App.NewCommand("do",App.Quest.Study.Current.Before),
+            )
+        }
+        commands.push(App.NewCommand("do",cmds.join(";")))
+        commands.push(App.NewCommand("nobusy"))
+        if (App.Quest.Study.Current.After){
+            commands.push(App.NewCommand("do",App.Quest.Study.Current.After))
+        }
+        App.Commands(commands).Push()
         App.Next()
     }
     App.Quest.Study.Xue=function(){
@@ -113,6 +118,17 @@
     }
     let re=/\n/g
     App.Quest.Study.Start=function(cmd){
+        App.Quest.Study.Index=0
+        App.Commands([
+            App.NewCommand('prepare',App.PrapareFull),
+            App.NewCommand('do',"skills"),
+            App.NewCommand('function',function(){
+                App.Quest.Study.Exec(cmd)
+            }),
+        ]).Push()
+        App.Next()        
+    }
+    App.Quest.Study.Exec=function(cmd){
         if (cmd==""){
             cmd=world.GetVariable("study").replace(re, ",")
         }
@@ -123,10 +139,20 @@
             }
         });
         App.Commands([
-            App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand('function',App.Quest.Study.PickPlan),
             App.NewCommand('function',App.Quest.Study.Move),            
+            App.NewCommand('function',function(){
+                App.Quest.Study.Loop(cmd)
+            }),
         ]).Push()
         App.Next()
+    }
+    App.Quest.Study.Loop=function(cmd){
+        if (App.Quest.Study.Index<App.Quest.Study.PerLoop){
+            App.Quest.Study.Index++
+            App.Quest.Study.Exec(cmd)
+        }else{
+            App.Next()
+        }
     }
 })(App)

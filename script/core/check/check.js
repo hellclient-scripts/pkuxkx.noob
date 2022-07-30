@@ -37,6 +37,7 @@
             }
         }
         this.Send()
+        App.Data[this.LastID]=Now()
         return true
     }
     Check.prototype.Callback = function () {

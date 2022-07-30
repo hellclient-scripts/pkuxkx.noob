@@ -75,12 +75,15 @@ jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n
 jkf-cym||zhenjiang||||e;ed;ne;ne;ne;e;e;e;e||w;w;w;w;sw;sw;sw;wu;w
 jkf-cym||jkf-scm||||nw;nw;sw;sw;w;w;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;e;e;ne;ne;se;se
 jkf-qlm||jkf-scm||||e;se;e;e;e;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;w;w;w;nw;w
+jkf||jkf-scm||||n;n;n;n;n;nw;n||s;se;s;s;s;s;s
+jkf||jkfyp||||s;s;s;w;w||e;e;n;n;n;
 tgs||jkf-qlm||||ne;ne;n;e;ne;n;ne;ed||wu;sw;s;sw;w;s;sw;sw
 tgs||jiangzhou||||sw;s;sw;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;ne;n;ne
 jkf-qlm||jkf-zym||||e;se;e;e;e;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;w;w;w;nw;w
 //jkf-qlm||jiangzhou||||wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed
 jkf-scm||jkfch||||n;nu;e;enter||out;w;sd;s
 linan||linan-sch||||se;s;s;w;n||s;e;n;n;nw
+linan||linanyp||||n;n;e;e;e;e||w;w;w;w;s;s;
 linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 jiaxing||jiaxingch||||e;s;s;||n;n;w
