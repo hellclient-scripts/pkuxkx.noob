@@ -133,6 +133,7 @@
             cmd=world.GetVariable("study").replace(re, ",")
         }
         let data=cmd.split(",")
+        App.Quest.Study.Plan=[]
         data.forEach(value => {
             if (value){
               App.Quest.Study.Plan.push(new study(value))

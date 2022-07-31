@@ -4,6 +4,8 @@
         Type:""
     }
     App.Quest.Lianyao.Formulas={
+        "*":{
+        },
         "金创药":{
             "xue jie":2,
             "dan nanxing":2,
