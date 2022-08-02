@@ -2,6 +2,9 @@
     let imgsrcre=/<img src="\.([^"]+)"/
     App.Data.CaptchaURLs={} 
     App.Data.CaptchaCode=""
+    App.Data.LastFullme=0
+    App.Data.LastFullmeSuccess=0
+    App.Data.IsLastFullmeSuccess=false
     App.Data.CaptchaCountSuccess=0
     App.Data.CaptchaCountFail=0
     App.Data.CaptchaCurrent=0
@@ -89,6 +92,7 @@
         App.Data.CatpchaLastURL=wildcards[0]
     }
     App.Core.CaptchaFullmeLater=function(name, output, wildcards){
+        App.Data.LastFullme=Now()-wildcards[2]*60000-wildcards[4]*6000
         App.Data.CatpchaLastURL=""
         App.Data.CaptchaURLs["fullme"]=""
     }

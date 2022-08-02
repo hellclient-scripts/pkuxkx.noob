@@ -48,10 +48,19 @@
                 break
             case "captcha.success":
                 App.Data.CaptchaCountSuccess++
+                if (this.Cmd=="fullme "){
+                    App.Data.LastFullme=Now()
+                    App.Data.IsLastFullmeSuccess=true
+                    App.Data.LastFullmeSuccess=Now()
+                }
                 App.Next()
                 break
             case "captcha.fail":
                 App.Data.CaptchaCountFail++
+                if (this.Cmd=="fullme "){
+                    App.Data.LastFullme=Now()
+                    App.Data.IsLastFullmeSuccess=false
+                }
                 App.Fail()
                 break
             case "stop":

@@ -19,7 +19,7 @@
         }
         let q=App.Core.Condition.MatchCmd(App.Core.Quest.Remain.shift())
         if (q==""){
-            App.ChangeState(this.ID)
+            App.NewCommand("state",this.ID).Push()
         }else{
             App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
         }

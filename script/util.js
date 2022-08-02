@@ -25,7 +25,7 @@ var After=function(time,duration){
 }
 var Before=function(time,duration){
     if (!time){
-        return fale
+        return false
     }
     if (duration){
         time=time+duration

@@ -1166,7 +1166,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2004,7 +2004,7 @@ Channel = "pkuxkx.noob"
   ID = "fullmefail"
   Name = "fullmefail"
   Enabled = true
-  Match = "^(你刚刚用过这个命令不久，还要.{1,10}才能再用。)$"
+  Match = "^(你刚刚用过这个命令不久，还要((\\d*)分钟){0,1}((\\d*)秒){0,1}才能再用。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
