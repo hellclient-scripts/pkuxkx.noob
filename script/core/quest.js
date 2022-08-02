@@ -42,6 +42,7 @@
         App.Core.Quest.Remain=[...App.Core.Quest.Queue]
     }
     App.Core.Quest.StartQuests=function(quests){
+        App.Core.Sell.Reset()
         App.Stopped=false
         App.NewCommand("quests",quests).Push()
         App.Next()

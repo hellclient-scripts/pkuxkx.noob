@@ -1,7 +1,14 @@
 (function (App) {
     App.Core.Sell = {}
+    App.Core.NoSell={}
     App.Core.Sell.ToSell = null
     App.Core.Sell.Next = 0
+    App.Core.Sell.SetNoSell=function(item){
+        App.Core.NoSell[item.toLowerCase()]=true
+    }
+    App.Core.Sell.Reset=function(){
+        App.Core.NoSell={}
+    }
     App.Core.Sell.Check = function () {
         if (App.Core.Sell.Next > Now() && App.Data.Load < App.GetNumberParam("item_load_max")) {
             return false
@@ -10,7 +17,7 @@
         for (var i = 0; i < App.Data.Items.length; i++) {
             let itemname = CNumber.Split(App.Data.Items[i].Name).Item
             let s = App.Info.Sell[itemname]
-            if (s != null) {
+            if (s != null && !App.Core.NoSell[App.Data.Items[i].ID.toLowerCase()]) {
                 App.Core.Sell.ToSell = s
                 return true
             }

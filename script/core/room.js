@@ -9,7 +9,8 @@
         HasHerb:false,
         ObjEnd:false,
         OnAsk:"",
-        YieldYes:false
+        YieldYes:false,
+        Looking:false,
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -29,8 +30,10 @@
     }
     App.Core.OnRoom = function (name, output, wildcards) {
         App.Core.RedBGExits=[]
+        let looking=App.Data.Room.Looking
+        let oid=App.Data.Room.ID
         App.Data.Room = {
-            ID: "",
+            ID:"",
             Name: wildcards[1],
             Tags: wildcards[4],
             Objs: [],
@@ -39,6 +42,10 @@
             YieldYes:false,
             LootCmds:{},
             ObjEnd:false,
+            Looking:false,
+        }
+        if (looking&&oid){
+            App.Data.Room.ID=oid
         }
         App.Core.RoomDesc = {
             Mode: 0,
@@ -188,6 +195,10 @@
     App.SetRoomOnAsk=function(cmd){
         Note("设置OnAsk:"+cmd)
         App.Data.Room.OnAsk=cmd
+    }
+    App.Look=function(){
+        App.Data.Room.Looking=true
+        App.Send("l")
     }
     App.SetRoomYieldYes=function(data){
         Note("设置YieldYes"+data)

@@ -53,14 +53,14 @@
         }
         if (App.GetItemNumber("huo zhezi", true) < 1) {
             Note("火折子用完了")
-            App.Fail()
+            App.Next()
             return
         }
         App.Send("unlock")
         for (var key in App.Quest.Lianyao.Formula) {
             if (App.GetItemNumber(key, true) < App.Quest.Lianyao.Formula[key]) {
                 Note(key + "用完了")
-                App.Fail()
+                App.Next()
                 return
             }
         }

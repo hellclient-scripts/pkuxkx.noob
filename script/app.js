@@ -64,6 +64,7 @@ App.Raise=function(event,data){
 }
 App.Stopped=true
 App.Stop=function(){
+    App.Core.Sell.Reset()
     Note("中止任务")
     App.Stopped=true
     App.RaiseStateEvent("stop")

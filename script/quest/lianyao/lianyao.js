@@ -3,6 +3,19 @@
     App.Quest.Lianyao.Data={
         Type:""
     }
+    App.Quest.Lianyao.Items={
+        "xue jie":["buy xue jie"],
+        "dan nanxing":["buy dan nanxing"],
+        "dan nanxing":["buy dang gui"],
+        "dang sheng":["buy dang sheng"],
+        "zhu sha":["buy zhu sha"],
+        "yuan zhi":["buy yuan zhi"],
+        "he huan":["buy he huan"],
+        "sang zhi":["buy he huan"],
+        "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
+        "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
+
+    }
     App.Quest.Lianyao.Formulas={
         "*":{
         },
@@ -62,6 +75,11 @@
             "zhu sha":1,
         }
     }
+    let Locations={
+        "jfk":"jkfyp",
+        "linan":"linanyp",
+        // "qhmz":
+    }
     App.Quest.Lianyao.Formula={}
     App.Quest.Lianyao.Start=function(formula){
         let f=App.Quest.Lianyao.Formulas[formula]
@@ -74,6 +92,31 @@
         App.Commands([
             App.NewCommand("eat"),
             App.NewCommand("do","i2"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("state","core.state.quest.lianyao.lianyao")
+        ]).Push()
+        App.Next()
+    }
+    App.Quest.Lianyao.Yaopu=function(area,formula){
+        let location=Locations[area]
+        if (!location){
+            Note("可用区域为 "+Object.keys(App.Quest.Lianyao.Locations).join(" | "))
+            throw("药铺配药需要指定具体药铺")
+        }
+        
+        let f=App.Quest.Lianyao.Formulas[formula]
+        if (f==null){
+            Note("可用配方为 "+Object.keys(App.Quest.Lianyao.Formulas).join(" | "))
+            throw("未知的配方:["+formula+"]")
+            return
+        }
+        App.Quest.Lianyao.Formula=f
+        App.Core.Sell.SetNoSell("Huo zhezi")
+        for (var key in f) {
+            App.Core.Sell.SetNoSell(key)
+        }
+        App.Commands([
+            App.NewCommand("prepare", App.PrapareFull),
             App.NewCommand("nobusy"),
             App.NewCommand("state","core.state.quest.lianyao.lianyao")
         ]).Push()

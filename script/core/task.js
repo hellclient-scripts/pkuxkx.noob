@@ -20,6 +20,7 @@
       if (!task){
           throw "Task [ "+ id +" ]未找到"
       }
+      
       if (!task.Avaliable()){
         return false
     }
@@ -31,6 +32,7 @@
       }
       App.CurrentTask=task
       App.Stopped=false
+      App.Core.Sell.Reset()
       task.Execute(data,onFinish,onFail)
       return true
   }
