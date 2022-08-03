@@ -141,6 +141,8 @@ wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 wdj-ygf||五毒教养蛊房||||DescStart||这里是五毒教养蛊的地方，也算闲人莫入了。
 qhmz||苗王殿||||Station||苗王殿
 qhmz-sch||千户苗寨盛昌行||||Station||盛昌行苗寨分店
+qhmzqz||千户苗寨钱庄||||
+qhmzyp||千户苗寨药铺||||
 qmz||青苗寨吊脚楼||||Full||吊脚楼[门派] [存盘点]north,up
 bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的中心。
 hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
@@ -249,3 +251,6 @@ dtms-e||东天目山东出口||||DescStart||这是一块几乎完全平整，十
 dsg-s||大石谷||||DescStart||这里是静水潭，瀑布冲下的水流在这里趋于平缓，碧绿的水面十分宁静。
 shezhai||畲寨||||DescStart||这里是畲寨的东广场，零零散散坐着几个老人。西面地势渐高，是一座祭坛。
 dsg-w||大石谷青瓦院落||||Full||青瓦院落[野外] [存盘点]east,west
+jkfypgj||建康府药铺隔间||||
+liananypgj||临安药铺隔间||||
+qhmzypgj||千户苗寨药铺隔间||||

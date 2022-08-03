@@ -4,6 +4,7 @@
         Type:""
     }
     App.Quest.Lianyao.Items={
+        "huo zhezi":["buy huo zhezi"],
         "xue jie":["buy xue jie"],
         "dan nanxing":["buy dan nanxing"],
         "dan nanxing":["buy dang gui"],
@@ -76,11 +77,12 @@
         }
     }
     let Locations={
-        "jfk":"jkfyp",
-        "linan":"linanyp",
+        "jkf":{"yp":"jkfyp","gj":"jkfypgj"},
+        "linan":{"yp":"linanyp","gj":"linanypgj"},
         // "qhmz":
     }
     App.Quest.Lianyao.Formula={}
+    App.Quest.Lianyao.Location=null
     App.Quest.Lianyao.Start=function(formula){
         let f=App.Quest.Lianyao.Formulas[formula]
         if (f==null){
@@ -97,10 +99,50 @@
         ]).Push()
         App.Next()
     }
+    App.Quest.Lianyao.Buy=function(item){
+        Note("补充"+item)
+        let itemcmds=App.Quest.Lianyao.Items[item]
+        if (!itemcmds){
+            throw("无法获取的道具["+item+"]")
+        }
+        let cmds=[
+            App.NewCommand("to",App.Options.NewWalk(App.Quest.Lianyao.Location["yp"])),
+        ]
+        for (var i=0;i<itemcmds.length;i++){
+            cmds.push(App.NewCommand("do",itemcmds[i]))
+            cmds.push(App.NewCommand("nobusy"))
+        }
+        cmds=cmds.concat([
+            App.NewCommand("do","i2"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",App.Quest.Lianyao.Check),
+        ])
+        App.Commands(cmds).Push()
+        App.Next()
+    }
+    App.Quest.Lianyao.Check=function(){
+        if (App.GetItemNumber("huo zhezi", true) < 1) {
+            App.Quest.Lianyao.Buy("huo zhezi")
+            return
+        }
+        for (var key in App.Quest.Lianyao.Formula) {
+            if (App.GetItemNumber(key, true) < App.Quest.Lianyao.Formula[key]) {
+                App.Quest.Lianyao.Buy(key)
+                return
+            }
+        }
+        App.Commands([
+            App.NewCommand("to",App.Options.NewWalk(App.Quest.Lianyao.Location["gj"])),
+            App.NewCommand("nobusy"),
+            App.NewCommand("state","core.state.quest.lianyao.lianyao")
+        ]).Push()
+        App.Next()
+
+    }
     App.Quest.Lianyao.Yaopu=function(area,formula){
         let location=Locations[area]
         if (!location){
-            Note("可用区域为 "+Object.keys(App.Quest.Lianyao.Locations).join(" | "))
+            Note("可用区域为 "+Object.keys(Locations).join(" | "))
             throw("药铺配药需要指定具体药铺")
         }
         
@@ -111,14 +153,14 @@
             return
         }
         App.Quest.Lianyao.Formula=f
+        App.Quest.Lianyao.Location=location
         App.Core.Sell.SetNoSell("Huo zhezi")
         for (var key in f) {
             App.Core.Sell.SetNoSell(key)
         }
         App.Commands([
             App.NewCommand("prepare", App.PrapareFull),
-            App.NewCommand("nobusy"),
-            App.NewCommand("state","core.state.quest.lianyao.lianyao")
+            App.NewCommand("function",App.Quest.Lianyao.Check),
         ]).Push()
         App.Next()
     }

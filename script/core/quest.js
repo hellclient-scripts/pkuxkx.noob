@@ -74,6 +74,7 @@
     App.RegisterQuest(new (Include("core/quest/study.js"))())
     App.RegisterQuest(new (Include("core/quest/caiyao.js"))())
     App.RegisterQuest(new (Include("core/quest/lianyao.js"))())
+    App.RegisterQuest(new (Include("core/quest/yaopulianyao.js"))())
     App.RegisterQuest(new (Include("core/quest/caiyaozhuanzhi.js"))())
     App.RegisterQuest(new (Include("core/quest/wd.js"))())
     App.RegisterQuest(new (Include("core/quest/wdj.js"))())

@@ -77,6 +77,7 @@ jkf-cym||jkf-scm||||nw;nw;sw;sw;w;w;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;e;e;ne;ne;se;
 jkf-qlm||jkf-scm||||e;se;e;e;e;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;w;w;w;nw;w
 jkf||jkf-scm||||n;n;n;n;n;nw;n||s;se;s;s;s;s;s
 jkf||jkfyp||||s;s;s;w;w||e;e;n;n;n;
+jkfyp||jkfypgj||||enter||out
 tgs||jkf-qlm||||ne;ne;n;e;ne;n;ne;ed||wu;sw;s;sw;w;s;sw;sw
 tgs||jiangzhou||||sw;s;sw;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;ne;n;ne
 jkf-qlm||jkf-zym||||e;se;e;e;e;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;w;w;w;nw;w
@@ -84,6 +85,7 @@ jkf-qlm||jkf-zym||||e;se;e;e;e;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;
 jkf-scm||jkfch||||n;nu;e;enter||out;w;sd;s
 linan||linan-sch||||se;s;s;w;n||s;e;n;n;nw
 linan||linanyp||||n;n;e;e;e;e||w;w;w;w;s;s;
+linanyp||linanypgj||||enter||out
 linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 jiaxing||jiaxingch||||e;s;s;||n;n;w
@@ -175,6 +177,9 @@ bmz||wdj-swdsb-s||||w;w;w;ne;eu;eu;ne;e;e;e;n;nu;||sd;s;w;w;w;sw;wd;wd;sw;e;e;e
 qhmz||hmz||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
 wdj-lgds-s||hmz||||sd;se;s;e;nw||se;w;n;nw;nu
 qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
+qhmz||qhmzqz||||nd;n;n;se;s||n;nw;s;s;su
+qhmz||qhmzyp||||nd;n;n;n;se;se;n||s;nw;nw;s;s;s;su
+qhmzyp||qhmzypgj||||enter||out
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
