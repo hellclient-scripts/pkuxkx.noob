@@ -3929,7 +3929,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "safe_room"
   Desc = "安全屋位置"
-  Intro = "不填默认为home,home未设置则为扬州客店二楼"
+  Intro = "不填默认为home,home未设置则为往生堂休息室"
 
 [[RequiredParams]]
   Name = "wait_cmd"

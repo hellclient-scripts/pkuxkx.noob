@@ -22,7 +22,9 @@
     App.API.Captcha=function(type,final,fail){
         switch(type){
             case "zone":
-                App.API.CaptchaSaveURL("zone")
+            case "zonestart":
+            case "zoneend":
+                App.API.CaptchaSaveURL(type)
                 break
         }
         let a=App.Automaton.Push(["core.state.captcha.captcha"],final)
@@ -70,6 +72,12 @@
             case "zone":
                 intro="忽略红色字符，地名部分必须准确，房间名识别不出可留空"
                 break
+            case "zonestart":
+                intro="忽略红色字符，请输入开始位置的区域名，地名部分必须准确，房间名识别不出可留空"
+                break
+            case "zoneend":
+                intro="忽略红色字符，请输入结束位置的区域名，地名部分必须准确，房间名识别不出可留空"
+                break
             default:
                 intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
         }
@@ -108,17 +116,6 @@
     }
     App.Core.CaptchaOnFail=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.fail")
-    }
-
-    App.Core.CaptchaResponse=function(msgtype,id,data){
-        let result=data.split("|")
-        if (result.length!=2){
-            return
-        }
-        if (App.Data.CaptchaCurrentURL==result[1]){
-            App.Data.CaptchaCode=result[0]
-            App.RaiseStateEvent("captcha.submit")
-        }
     }
 
     App.RegisterState(new (Include("core/state/captcha/captcha.js"))())

@@ -10,6 +10,7 @@ yz||yzsy||||e;n||s;w
 yz||yzkd||||n;e||w;s
 yz||yzsm||||n;n;w||e;s;s
 yz||yz-sczh||||s;s;s;w||e;n;n;n
+yz-sczh||wst-xxs||||e;s;su;wu;wu;n;n;n;w;n||s;e;s;s;s;ed;ed;nd;n;w
 yzkd||yz-kd2f||||u;enter||out;d
 yztj||yz-dtpns||||s||n
 yz||qufu||||n;n;n;n;n;n;n;n;n;n||s;s;s;s;s;s;s;s;s;s

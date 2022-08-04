@@ -51,6 +51,7 @@ changan-mdm||长安明德门||||DescStart||这里是长安正南的明德门。�
 changan-jgm||长安金光门||||DescStart||这里是长安正西的金光门。城墙上贴着告示(gaoshi)。西面就是西北的茫茫戈壁。
 changanch||长安车行||||DescStart||这里是长安当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 ssb-wst||往生堂广场||||Station||往生堂广场
+wst-xxs||往生堂休息室||||DescStart||这里是往生堂的休息室，无论是本帮弟子还是来客都可以在此休息。
 jiangzhou||江州||||DescStart||这里是江州的的城中心，可以容纳很多人一起集会的大广场。
 jiangzhouch||江州车行||||DescStart||这里是江州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 gb-sdnb||树洞内部||||Station||树洞内部

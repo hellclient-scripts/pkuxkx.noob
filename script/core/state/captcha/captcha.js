@@ -12,6 +12,8 @@
                 this.Cmd="report "
                 break
             case "zone":
+            case "zonestart":
+            case "zoneend":
                 this.Cmd=null
                 break
             default:
