@@ -57,8 +57,28 @@
         }
         App.Core.Quest.StartQuests(quests.split("||"))
     }
+    App.Core.Quest.StartVariable2=function(){
+        let quests=world.GetVariable("quests2").trim()
+        if (quests==""){
+            Note("quests2变量为空")
+        }
+        App.Core.Quest.StartQuests(quests.split("||"))
+    }
+    App.Core.Quest.StartVariable3=function(){
+        let quests=world.GetVariable("quests3").trim()
+        if (quests==""){
+            Note("quests3变量为空")
+        }
+        App.Core.Quest.StartQuests(quests.split("||"))
+    }
     App.Core.OnQuestAliasStart = function (name, line, wildcards) {
         App.Core.Quest.StartVariable()
+    }
+    App.Core.OnQuestAliasStart2 = function (name, line, wildcards) {
+        App.Core.Quest.StartVariable2()
+    }
+    App.Core.OnQuestAliasStart3 = function (name, line, wildcards) {
+        App.Core.Quest.StartVariable3()
     }
     if (world.GetVariable("quests")==""){
         Userinput.Popup("","quests变量未设置","设置quests变量后，可以通过#start命令直接开始执行命令")
