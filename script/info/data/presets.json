@@ -1,10 +1,14 @@
 [
     {
+        "label":"拿玄铁剑",
+        "desc":"去嘉兴拿玄铁剑，需要一定功夫",
+        "cmd":"#to jiaxing-gjc||#do catch fish||#to jiaxing-htx||#ask yu fu about 过河||#do give fish to yu fu||#do wear wear shui kao||swim river||pick sword||swim river"
+    },
+    {
         "label":"抄经",
         "desc":"抄经队列",
         "cmd":"#to qufu-sms||#do report wrong||#do ask sengren about job||#to taishan-sjy||#do write jing||#nobusy||#delay 2||#to qufu-sms||#do ask sengren about done||#captcha 工号||#delay 1||#loop"
-    }
-    ,{
+    },{
         "label":"做药",
         "desc":"做药队列",
         "cmd":"#prepare||#to yzyp||ask ping yizhi about 工作||n||peiyao||#nobusy||#delay 5||s||give cheng yao to ping yizhi||#loop"

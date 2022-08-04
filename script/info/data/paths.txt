@@ -89,6 +89,8 @@ linanyp||linanypgj||||enter||out
 linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
 jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 jiaxing||jiaxingch||||e;s;s;||n;n;w
+jiaxing||jiaxing-htx||||e;nd;ask chou diao about 独孤求败;nu||sd;sd;su;w
+jiaxing-htx||jiaxing-gjc||||se||nw
 linan||linanch||||n;e;n||s;w;s
 linan||xihu-djq||||w;w;w||e;e;e
 gsmz||xihu-djq||||ne;ne;ne;ne;n||s;sw;sw;sw;sw
@@ -240,7 +242,7 @@ jishicart||fuzhouch||train||qu fuzhou||gu||10
 jishicart||suzhouch||train||qu suzhou||gu||10
 jishicart||gyzch||taxi||qu guiyunzhuang||gu||10
 jishicart||zhenjiangch||taxi||qu zhenjiang||gu||10
-jishicart||jiaxingch||taxi||qu jixing||gu||10
+jishicart||jiaxingch||taxi||qu jiaxng||gu||10
 jishicart||jiangzhouch||taxi||qu jiangzhou||gu||10
 jishicart||yueyangch||taxi||qu yueyang||gu||10
 jishicart||nanchangch||taxi||qu nanchang||gu||10

@@ -79,6 +79,8 @@ gsmz||孤山梅庄||||DescStart||这里是一座朱门白墙的大庄院。大�
 xihu-djq||西湖段家桥||||DescStart||这里是段家桥，西南面一条小路，沿路可以眺望西湖美景，北面一座宝塔耸立着，向东通往钱塘门
 linan-yfm||岳飞墓||||Station||岳飞墓
 jiaxing||嘉兴城||||Station||嘉兴城
+jiaxing-gjc||挂剑祠||||Station||挂剑祠
+jiaxing-htx||虎跳峡||||Station||虎跳峡
 jiaxingch||嘉兴车行||||DescStart||这里是嘉兴当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 suzhou||沧浪亭||||Station||沧浪亭
 suzhou-cg||茶馆||||Landmark||Murong fu
