@@ -23,7 +23,7 @@
     App.API.Captcha=function(data,final,fail){
         if (typeof(data)=="string"){
             data={
-                type:"data",
+                type:data,
             }
         }
         let type=data.type

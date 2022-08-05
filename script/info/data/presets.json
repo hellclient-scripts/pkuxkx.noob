@@ -2,7 +2,7 @@
     {
         "label":"拿玄铁剑",
         "desc":"去嘉兴拿玄铁剑，需要一定功夫",
-        "cmd":"#to jiaxing-gjc||#do catch fish||#to jiaxing-htx||#ask yu fu about 过河||#do give fish to yu fu||#do wear wear shui kao||swim river||pick sword||swim river"
+        "cmd":"#to jiaxing-gjc||#do catch fish||#to jiaxing-htx||#ask yu fu about 过河||#do give fish to yu fu||#do wear shui kao||swim river||pick sword||swim river"
     },
     {
         "label":"抄经",

@@ -105,8 +105,11 @@
     world.EnableTrigger("room_desc", false)
     world.EnableTriggerGroup("roomexit", false)
     world.EnableTriggerGroup("roomobj", false)
-    App.Core.OnRoomExits = function (name, output, wildcards) {
+    App.Core.OnRoomExitsStart=function(name, output, wildcards){
         world.EnableTrigger("room_desc", false)
+        App.Data.Room.Exits=[]
+    }
+    App.Core.OnRoomExits = function (name, output, wildcards) {
         world.EnableTriggerGroup("roomexit", false)
         world.EnableTriggerGroup("roomobj", true)
         let lines=JSON.parse(DumpOutput(wildcards[1].split("\n").length))
@@ -201,7 +204,7 @@
         App.Send("l")
     }
     App.SetRoomYieldYes=function(data){
-        Note("设置YieldYes"+data)
+        Note("设置YieldYes:"+data)
         App.Data.Room.YieldYes=data
     }
     App.RegisterCallback("core.room.alias.onask",function(data){

@@ -110,6 +110,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1e249oflfh2ou72f8bvhs"
+  Name = "App.Core.OnRoomExitsStart"
+  Enabled = false
+  Match = "^    这里明显的(方向|出口)有"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnRoomExitsStart"
+  SendTo = 0
+  Sequence = 10
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "roomexit"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "d1dtmrdshqa8q072evclbd"
   Name = "core.ask.reply"
   Enabled = false
@@ -362,13 +393,13 @@ Channel = "pkuxkx.noob"
   Name = "mxpcheck"
   Enabled = true
   Match = "^<SUPPORT>$"
-  Send = "not supported"
+  Send = ""
   ColourChangeType = 0
   Colour = 0
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = ""
+  Script = "App.Core.OnMxpCheck"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -1961,6 +1992,37 @@ Channel = "pkuxkx.noob"
   LinesToMatch = 0
   WildcardLowerCase = false
   Group = "playerspecial"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1e24ardsp3vbh72f8c3dv"
+  Name = "App.Core.OnNewConnect"
+  Enabled = true
+  Match = "^目前权限：\\(player\\)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnNewConnect"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
@@ -3867,6 +3929,7 @@ Channel = "pkuxkx.noob"
   ReverseSpeedwalk = false
   OmitFromOutput = false
   OmitFromCommandHistory = false
+
 [[Aliases]]
   ID = "d1duech1v5bcaq6k1q6vj2"
   Name = "start"
@@ -3889,7 +3952,8 @@ Channel = "pkuxkx.noob"
   ReverseSpeedwalk = false
   OmitFromOutput = false
   OmitFromCommandHistory = false
- [[Aliases]]
+
+[[Aliases]]
   ID = "d1duech1v5bcaq6k1q6vj3"
   Name = "start"
   Enabled = true
@@ -3910,7 +3974,8 @@ Channel = "pkuxkx.noob"
   Variable = ""
   ReverseSpeedwalk = false
   OmitFromOutput = false
-  OmitFromCommandHistory = false 
+  OmitFromCommandHistory = false
+
 [[Aliases]]
   ID = "d1e0itlporniaf72g2tp86"
   Name = "App.Core.OnAliasLocate"
@@ -3963,7 +4028,6 @@ Channel = "pkuxkx.noob"
   Name = "quests3"
   Desc = "备用任务列表3"
   Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start3后使用这个列表进行任务"
-
 
 [[RequiredParams]]
   Name = "study"
@@ -4049,3 +4113,8 @@ Channel = "pkuxkx.noob"
   Name = "exp_limit"
   Desc = "exp限制"
   Intro = "用于计算的exp变量"
+
+[[RequiredParams]]
+  Name = "connect_cmd"
+  Desc = "连线指令"
+  Intro = "连线时发出的指令，比如reload"
