@@ -24,8 +24,8 @@
     App.Options.NewPrepare=function(level,items,group){
         return new prepare(level,items,group)
     }
-    App.Options.NewKill=function(name,type){
-        return new kill(name,type)
+    App.Options.NewKill=function(name,type,before,after){
+        return new kill(name,type,before,after)
     }
     App.Options.NewItem=function(id,amount){
         return new item(id,amount)
