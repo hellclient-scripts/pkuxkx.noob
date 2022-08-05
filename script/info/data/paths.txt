@@ -243,7 +243,7 @@ jishicart||fuzhouch||train||qu fuzhou||gu||10
 jishicart||suzhouch||train||qu suzhou||gu||10
 jishicart||gyzch||taxi||qu guiyunzhuang||gu||10
 jishicart||zhenjiangch||taxi||qu zhenjiang||gu||10
-jishicart||jiaxingch||taxi||qu jiaxng||gu||10
+jishicart||jiaxingch||taxi||qu jiaxing||gu||10
 jishicart||jiangzhouch||taxi||qu jiangzhou||gu||10
 jishicart||yueyangch||taxi||qu yueyang||gu||10
 jishicart||nanchangch||taxi||qu nanchang||gu||10

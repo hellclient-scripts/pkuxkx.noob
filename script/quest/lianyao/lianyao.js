@@ -8,11 +8,11 @@
         "xue jie":["buy xue jie"],
         "dan nanxing":["buy dan nanxing"],
         "dan nanxing":["buy dang gui"],
-        "dang sheng":["buy dang sheng"],
+        "dang shen":["buy dang shen"],
         "zhu sha":["buy zhu sha"],
         "yuan zhi":["buy yuan zhi"],
         "he huan":["buy he huan"],
-        "sang zhi":["buy he huan"],
+        "sang zhi":["buy sang zhi"],
         "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
         "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
 
@@ -26,7 +26,7 @@
             "dang gui":1,
         },
         "养精丹":{
-            "dang sheng":1,
+            "dang shen":1,
             "zhu sha":2,
             "yuan zhi":2,
         },
@@ -36,12 +36,12 @@
             "dang gui":4,
         },
         "上等养精丹":{
-            "dang sheng":4,
+            "dang shen":4,
             "zhu sha":6,
             "yuan zhi":6,
         },
         "雪参玉蟾丹":{
-            "dang sheng":3,
+            "dang shen":3,
             "he huan":2,
             "sang zhi":2
         },
@@ -59,7 +59,7 @@
             "dang gui":5,
         },
         "极品养精丹":{
-            "dang sheng":5,
+            "dang shen":5,
             "zhu sha":8,
             "yuan zhi":8,
         },
