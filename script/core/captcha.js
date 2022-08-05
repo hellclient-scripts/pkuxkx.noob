@@ -11,6 +11,7 @@
     App.Data.CaptchaCurrentURL=""
     App.Data.CaptchaCurrentType=""
     App.Data.CatpchaLastURL=""
+    App.Data.CaptchaCurrentData=null
     App.Core.CaptchaReq=null
 
     App.API.CaptchaSaveURL=function(type){
@@ -19,7 +20,13 @@
     App.Core.CaptchaLoadURL=function(){
         App.Data.CaptchaCurrentURL=App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
     }
-    App.API.Captcha=function(type,final,fail){
+    App.API.Captcha=function(data,final,fail){
+        if (typeof(data)=="string"){
+            data={
+                type:"data",
+            }
+        }
+        let type=data.type
         switch(type){
             case "zone":
             case "zonestart":
@@ -30,6 +37,7 @@
         let a=App.Automaton.Push(["core.state.captcha.captcha"],final)
         App.Data.CaptchaCurrent=0
         App.Data.CaptchaCurrentType=type
+        App.Data.CaptchaCurrentData=data
         if (fail){
             a.WithFailState(fail)
         }

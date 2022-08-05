@@ -113,7 +113,7 @@ dlsch||大轮寺马车店||||Full||马车店[城市]west
 wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
-
+wdj-xw||五毒小屋(拿石头)
 suzhouch||苏州车行||||DescStart||这里是苏州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 kunmingch||昆明车行||||DescStart||这里是昆明当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。地处偏
 kunming||昆明||||DescStart||这里是昆明城的城中心，鲜花遍地。
