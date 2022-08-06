@@ -14,6 +14,8 @@
     App.Eat=function(){
         App.Data.LastEat=Now()
         App.Send(App.EatCmd())
+        App.Send(App.EatCmd())
+        App.Send(App.EatCmd())
     }
     App.Bind("Check","core.food.eat")
     let checkFood=(new check("food")).WithLevel(App.CheckLevelBrief).WithIntervalParam("eatinterval").WithLastID("LastEat")

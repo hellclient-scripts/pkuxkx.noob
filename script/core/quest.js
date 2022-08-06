@@ -34,6 +34,13 @@
             App.Fail()
             return
         }
+        if (quest.Job){
+            let job=App.Data.Job[quest.Job]
+            if (job&&(job.Next>0)&&!After(job.Next)){
+                App.Fail()
+            return
+            }
+        }
         App.Stopped=false
         quest.Start(param)
     }
@@ -43,6 +50,7 @@
     }
     App.Core.Quest.StartQuests=function(quests){
         App.Core.Sell.Reset()
+        App.Send("jq")
         App.Stopped=false
         App.NewCommand("quests",quests).Push()
         App.Next()

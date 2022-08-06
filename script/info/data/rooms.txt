@@ -19,6 +19,8 @@ yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
+haozhou-mw||濠州茅屋||||DescStart||这里是茅屋里面，虽然不算四面透风，但陈设也相当简陋。
+xinyang-jpj||界牌集||||Station||界牌集
 qufu||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
 qufuch||曲阜车行||||DescStart||这里是曲阜当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 qufu-qc||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年

@@ -2,6 +2,7 @@
     App.Core.Poison={}
     App.Core.Poison.Poisons={
         "苗疆瘴气":"wait",
+        "星宿毒掌毒":"wait",
     }
     App.Core.Poison.Cure=function(){
         let type=App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]

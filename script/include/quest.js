@@ -3,6 +3,7 @@
         this.ID=""
         this.Desc=""
         this.Intro=""
+        this.Job=""
     }
     Quest.prototype.Start=function(param){
 

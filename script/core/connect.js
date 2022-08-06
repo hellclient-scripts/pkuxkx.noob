@@ -14,6 +14,7 @@ App.Core.OnConnectCharset=function(name, output, wildcards){
 }
 App.Core.ConnectInitCmd=""
 App.Core.OnNewConnect=function(name, output, wildcards){
+    App.Data.Room={}
     App.Core.ConnectInitCmd=GetVariable("connect_cmd")
 }
 App.Core.OnMxpCheck=function(name, output, wildcards){
