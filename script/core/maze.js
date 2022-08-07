@@ -2,6 +2,7 @@
 (function(App){
     App.Core.Maze={}
     App.Core.Maze.Mazes={}
+    App.Core.Maze.Data={}
     App.Core.Maze.Info={}
     let re=/^(\S*)(\s+(.*)){0,1}$/
     App.Core.Maze.SetLast=function(last){
@@ -57,5 +58,6 @@
     App.RegisterMaze(new (Include("core/maze/dsg.js"))())
     App.RegisterMaze(new (Include("core/maze/ssbglout.js"))())    
     App.RegisterMaze(new (Include("core/maze/wls.js"))())
+    App.RegisterMaze(new (Include("core/maze/hztdhfy.js"))())
 })(App)
     

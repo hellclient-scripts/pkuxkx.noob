@@ -1384,7 +1384,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duva9k5qgcbm738d8rc2"
   Name = "App.Core.Combat.OnBlocked"
   Enabled = true
-  Match = "^([^【：『]{1,10})(把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
+  Match = "^([^【：『]{1,10})(向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2096,7 +2096,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1e26aou14rmm66cor2c0"
   Name = "App.Core.Job.OnJob"
-  Enabled = true
+  Enabled = false
   Match = "^│\\[(\\d+)\\]\\s*│[^|]*│[^|]*│(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0

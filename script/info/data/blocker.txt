@@ -4,5 +4,8 @@
 鼓手首领||killall gushou shouling||50000
 江百胜||killall jiang baisheng||50000
 门卫||killall men wei||50000
+门子||killall men zi||50000
 红花会众||killall honghua huizhong||50000
 王府卫士||killall wei shi;kill weishi zhang||100000
+保镖||killall bao biao||500000
+黑甲军士||kilall heijia junshi||1000000

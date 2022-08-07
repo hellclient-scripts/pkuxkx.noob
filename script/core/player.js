@@ -9,12 +9,19 @@
         App.Data.Special={}
         world.EnableTriggerGroup("playerspecial",true)
     }
+    App.Core.HasSpecial=function(id,level){
+        let special=App.Data.SpecialInUse[id]
+        if (!special){
+            return false
+        }
+        return special.Level>=level
+    }
     App.Core.OnSpecial=function(name, output, wildcards){
         let special={
             Enabled:wildcards[0]=="*",
             Label:wildcards[1],
             ID:wildcards[2],
-            Level:wildcards[3]=0,
+            Level:wildcards[3]-0,
 
         }
         App.Data.Special[special.ID]=special

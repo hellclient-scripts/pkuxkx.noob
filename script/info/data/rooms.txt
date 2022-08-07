@@ -81,6 +81,7 @@ linanch||临安车行||||DescStart||这里是临安府当地的一家马车行�
 gsmz||孤山梅庄||||DescStart||这里是一座朱门白墙的大庄院。大门(gate)外写着梅庄两个大字，旁边署着“虞允文题”四字。虞
 xihu-djq||西湖段家桥||||DescStart||这里是段家桥，西南面一条小路，沿路可以眺望西湖美景，北面一座宝塔耸立着，向东通往钱塘门
 linan-yfm||岳飞墓||||Station||岳飞墓
+hztdhmen||提督府正门||||Station||提督府正门
 jiaxing||嘉兴城||||Station||嘉兴城
 jiaxing-gjc||挂剑祠||||Station||挂剑祠
 jiaxing-htx||虎跳峡||||Station||虎跳峡
@@ -126,7 +127,8 @@ tlsch||天龙寺车行||||
 wls||无量玉璧||||Station||无量玉璧
 chengdu||成都总督府门前||||Full||总督府门前[大宋国] [城市] enter,north,northwest,south,southeast
 chengduch||程度车行||||DescStart||这里是成都当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-pxwf||平西王府大门||||Station||平西王府大门
+pxwfmen||平西王府大门||||Station||平西王府大门
+pxwf||平西王府正厅||||Station||平西王府正厅
 emeimen||峨嵋山门||||DescStart||这里是峨嵋山的山门，迎面一座高大的汉白玉牌楼，石阶从山门下穿过，山门的后面是一座雄伟的
 emeich||峨嵋车行||||DescStart||这里是峨嵋当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 lxcmen||凌霄城门||||DescStart||深谷之上，一条铁索连接了两边的峭壁。铁索长倒不长，只是架在这高寒之地，不由得不让人心惊
@@ -182,10 +184,11 @@ menggu||蒙古||||DescStart||道路渐渐变窄，只有一些商贩往返于此
 mengguch||蒙古车行||||DescStart||这里是蒙古当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 datong||大同||||DescStart||这里是大同中心的魁星楼，希冀贤才辈出，广开云路，既要兴学育贤，又要魁楼以“邀灵通气”，
 datongch||大同车行||||DescStart||这里是大同当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+ygsk||第一窟||||Station||第一窟
 hengshan||恒山||||DescStart||这里山势渐起，北面通往大同，南面就是恒山。
 lingzhou||灵州||||Full||城中心[大夏国] [都城]east,north,south,west
 lingzhouch||灵州车行||||DescStart||这里是灵州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-lanzhou||府前广场||||Full||府前广场[大夏国] [城市] east,north,south,west
+lanzhou||府前广场||||Full||府前广场[大夏国] [城市]east,north,south,west
 huangzhongch||湟中车行||||DescStart||这里是湟中当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 lanzhouch||兰州车行||||DescStart||这里是兰州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 btsmen||白驼山门||||DescStart||这里是一块不小的广场，广场上堆着农家晒的谷物。往北方就是白驼山庄了。广场的东面有间小农
@@ -257,5 +260,5 @@ dsg-s||大石谷||||DescStart||这里是静水潭，瀑布冲下的水流在这�
 shezhai||畲寨||||DescStart||这里是畲寨的东广场，零零散散坐着几个老人。西面地势渐高，是一座祭坛。
 dsg-w||大石谷青瓦院落||||Full||青瓦院落[野外] [存盘点]east,west
 jkfypgj||建康府药铺隔间||||
-liananypgj||临安药铺隔间||||
+linanypgj||临安药铺隔间||||
 qhmzypgj||千户苗寨药铺隔间||||

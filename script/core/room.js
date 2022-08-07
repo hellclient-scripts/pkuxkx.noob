@@ -182,9 +182,9 @@
     App.Core.RoomObjEnd=function(){
         if (!App.Data.Room.ObjEnd){
             App.Data.Room.ObjEnd=true
-            world.EnableTriggerGroup("roomobj", false)            
             App.Raise("OnRoomEnd")
         }
+        world.EnableTriggerGroup("roomobj", false)            
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
         App.Core.RoomObjEnd()

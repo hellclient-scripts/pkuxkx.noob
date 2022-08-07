@@ -90,6 +90,7 @@ linan||linan-sch||||se;s;s;w;n||s;e;n;n;nw
 linan||linanyp||||n;n;e;e;e;e||w;w;w;w;s;s;
 linanyp||linanypgj||||enter||out
 linan-yfm||linan||||s;s;sw;w;s;sd;ne;ne;e;e;e||w;w;w;sw;sw;nu;n;e;ne;n;n
+linan||hztdhmen||||se;s;s;s;w;s;e;s;w||e;n;w;n;e;n;n;n;nw
 jiaxing||linan||||s;s;se;s;s;s;sw;sw;w;w;w;w;w;w;w||e;e;e;e;e;e;e;ne;ne;n;n;n;nw;n;n
 jiaxing||jiaxingch||||e;s;s;||n;n;w
 jiaxing||jiaxing-htx||||e;nd;ask chou diao about 独孤求败;nu||sd;sd;su;w
@@ -152,7 +153,8 @@ wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l �
 bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
 bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;zhai grass&&eat xiao cao&&eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||401
 kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
-pxwf||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n
+pxwfmen||pxwf||||#onask n&&#ask qin bingtou about 自立为王;n;n;n;n||s;s;s;s;s
+pxwfmen||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n
 dali||dalich||||w||e
 dali||tlsmen||||n;n;n;n;n;n;ne;ne;ne;n;sw;wu||ed;ne;s;sw;sw;sw;s;s;s;s;s;s
 chengdu||tlsmen||||s;s;s;s;su;sw;sw;s;sw;sw;sw;wu||ed;ne;ne;ne;n;ne;ne;nd;n;n;n;n
@@ -218,6 +220,7 @@ beijing-adm||beijing-dsm||||w;w;w||e;e;e
 guanwai||beijing-adm||||sw;sw;sw;sw;s;s;s||n;n;n;ne;ne;ne;ne;
 datong||daizhou||||s;s;s;s;s;s;sw;sw;se;sd;s;s||n;n;nu;nw;ne;ne;n;n;n;n;n;n
 datong||datongch||||s;e;e;e;n||s;w;w;w;n
+ygsk||datong||||sw;se;s;s;||n;n;nw;ne
 hengshan||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
 rymen||jinyang||||sd;sd;sw;s;sd;w;w;w;s;s||n;n;e;e;e;nu;n;ne;nu;nu
 rymen||rych||||se||nw
