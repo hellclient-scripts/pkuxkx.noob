@@ -11,7 +11,7 @@
         Note("Fullme链接"+App.Data.CaptchaURLs["fullme"])
         if (App.Data.CaptchaURLs["fullme"]==""){
             Note("Fullme链接为空")
-            App.Fail()
+            App.Next()
             return
         }
         let index=App.GetContext("index")

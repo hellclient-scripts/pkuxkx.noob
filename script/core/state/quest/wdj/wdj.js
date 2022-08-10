@@ -32,6 +32,7 @@
                 App.Quest.WDJ.Type = "zhengli"
                 break
             default:
+                App.Core.Quest.Cooldown("wdj", 3500*1000)
                 App.Fail()
                 return
         }

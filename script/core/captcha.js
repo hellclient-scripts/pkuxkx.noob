@@ -31,6 +31,7 @@
             case "zone":
             case "zonestart":
             case "zoneend":
+            case "scoped":
                 App.API.CaptchaSaveURL(type)
                 break
         }
@@ -86,6 +87,8 @@
             case "zoneend":
                 intro="忽略红色字符，请输入结束位置的区域名，地名部分必须准确，房间名识别不出可留空"
                 break
+            case "scoped":
+                break
             default:
                 intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
         }
@@ -119,13 +122,34 @@
     App.Core.CaptchaOnFullmeCmd=function(name, output, wildcards){
         App.API.CaptchaSaveURL("fullme")
     }
-    App.Core.CaptchaOnSuccess=function(name, output, wildcards){
+    App.Core.CaptchaOnGongHaoSuccess=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.success")
     }
-    App.Core.CaptchaOnFail=function(name, output, wildcards){
+    App.Core.CaptchaOnSuccess=function(name, output, wildcards){
+        App.Data.LastFullme=Now()
+        App.Data.IsLastFullmeSuccess=true
+        App.Data.LastFullmeSuccess=Now()
+        App.Core.CaptchaAlias()
+        App.RaiseStateEvent("captcha.success")
+
+    }
+    App.Core.CaptchaOnGonghaoFail=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.fail")
     }
+    App.Core.CaptchaOnFail=function(name, output, wildcards){
+        App.Data.LastFullme=Now()
+        App.Data.IsLastFullmeSuccess=false
+        App.Core.CaptchaAlias
+        App.RaiseStateEvent("captcha.fail")
 
+    }
+    App.Core.CaptchaAlias=function(){
+        App.Send("alias lastfullme "+App.Data.LastFullmeSuccess+"|"+App.Data.LastFullme)
+    }
+    App.Core.CaptchaOnAlias=function(name, output, wildcards){
+        App.Data.LastFullmeSuccess=wildcards[0]-0
+        App.Data.LastFullme=wildcards[1]-0
+    }
     App.RegisterState(new (Include("core/state/captcha/captcha.js"))())
     App.RegisterState(new (Include("core/state/captcha/fullme.js"))())
     App.RegisterState(new (Include("core/state/captcha/fullmestart.js"))())

@@ -4,15 +4,15 @@
         Type:""
     }
     App.Quest.Lianyao.Items={
-        "huo zhezi":["buy huo zhezi"],
-        "xue jie":["buy xue jie"],
-        "dan nanxing":["buy dan nanxing"],
-        "dan nanxing":["buy dang gui"],
-        "dang shen":["buy dang shen"],
-        "zhu sha":["buy zhu sha"],
-        "yuan zhi":["buy yuan zhi"],
-        "he huan":["buy he huan"],
-        "sang zhi":["buy sang zhi"],
+        "huo zhezi":["buy huo zhezi 5"],
+        "xue jie":["buy xue jie 20"],
+        "dan nanxing":["buy dan nanxing 20"],
+        "dang gui":["buy dang gui 10"],
+        "dang shen":["buy dang shen 10"],
+        "zhu sha":["buy zhu sha 20"],
+        "yuan zhi":["buy yuan zhi 20"],
+        "he huan":["buy he huan 10"],
+        "sang zhi":["buy sang zhi 10"],
         "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
         "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
 

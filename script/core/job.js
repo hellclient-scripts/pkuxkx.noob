@@ -7,7 +7,7 @@
         App.Data.Job={}
     }
     let calc=function(text){
-        if (text.startsWith("现在即可接到下个任务")){
+        if (text.startsWith("现在即可接到下个任务")||text.startsWith("任务正在进行中。")){
             return 0
         }
         let result=text.match(timere)
