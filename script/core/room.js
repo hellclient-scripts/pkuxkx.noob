@@ -1,16 +1,17 @@
 (function (App) {
-    App.Core.RedBGExits=[]
+    App.Core.RedBGExits = []
     App.Data.Room = {
         ID: "",
         Name: "",
         Tags: "",
         Objs: [],
-        LootCmds:{},
-        HasHerb:false,
-        ObjEnd:false,
-        OnAsk:"",
-        YieldYes:false,
-        Looking:false,
+        LootCmds: {},
+        HasHerb: false,
+        ObjEnd: false,
+        OnAsk: "",
+        YieldYes: false,
+        Looking: false,
+        Online: null,
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -29,23 +30,24 @@
         MapLines: [],
     }
     App.Core.OnRoom = function (name, output, wildcards) {
-        App.Core.RedBGExits=[]
-        let looking=App.Data.Room.Looking
-        let oid=App.Data.Room.ID
+        App.Core.RedBGExits = []
+        let looking = App.Data.Room.Looking
+        let oid = App.Data.Room.ID
         App.Data.Room = {
-            ID:"",
+            ID: "",
             Name: wildcards[1],
             Tags: wildcards[4],
             Objs: [],
-            HasHerb:false,
-            OnAsk:"",
-            YieldYes:false,
-            LootCmds:{},
-            ObjEnd:false,
-            Looking:false,
+            HasHerb: false,
+            OnAsk: "",
+            YieldYes: false,
+            LootCmds: {},
+            ObjEnd: false,
+            Looking: false,
+            Online: null,
         }
-        if (looking&&oid){
-            App.Data.Room.ID=oid
+        if (looking && oid) {
+            App.Data.Room.ID = oid
         }
         App.Core.RoomDesc = {
             Mode: 0,
@@ -105,17 +107,17 @@
     world.EnableTrigger("room_desc", false)
     world.EnableTriggerGroup("roomexit", false)
     world.EnableTriggerGroup("roomobj", false)
-    App.Core.OnRoomExitsStart=function(name, output, wildcards){
+    App.Core.OnRoomExitsStart = function (name, output, wildcards) {
         world.EnableTrigger("room_desc", false)
-        App.Data.Room.Exits=[]
+        App.Data.Room.Exits = []
     }
     App.Core.OnRoomExits = function (name, output, wildcards) {
         world.EnableTriggerGroup("roomexit", false)
         world.EnableTriggerGroup("roomobj", true)
-        let lines=JSON.parse(DumpOutput(wildcards[1].split("\n").length))
-        lines.forEach(function(line){
-            line.Words.forEach(function(word){
-                if (word.Background=="Red"){
+        let lines = JSON.parse(DumpOutput(wildcards[1].split("\n").length))
+        lines.forEach(function (line) {
+            line.Words.forEach(function (word) {
+                if (word.Background == "Red") {
                     App.Core.RedBGExits.push(word.Text)
                 }
             })
@@ -143,7 +145,7 @@
         return ""
     }
     App.HasRoomObjName = function (name) {
-      return App.GetRoomObjByName(name)!=""
+        return App.GetRoomObjByName(name) != ""
     }
     App.GetRoomObj = function (id, ci) {
         if (ci) {
@@ -161,7 +163,7 @@
         return null
     }
     App.HasRoomObj = function (id, ci) {
-        return App.GetRoomObj(id,ci)!=null
+        return App.GetRoomObj(id, ci) != null
     }
     App.HasRoomExit = function (exit) {
         for (var i in App.Data.Room.Exits) {
@@ -179,45 +181,53 @@
         }
         return true
     }
-    App.Core.RoomObjEnd=function(){
-        if (!App.Data.Room.ObjEnd){
-            App.Data.Room.ObjEnd=true
+    App.Core.RoomObjEnd = function () {
+        if (!App.Data.Room.ObjEnd) {
+            App.Data.Room.ObjEnd = true
             App.Raise("OnRoomEnd")
         }
-        world.EnableTriggerGroup("roomobj", false)            
+        world.EnableTriggerGroup("roomobj", false)
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
         App.Core.RoomObjEnd()
     }
-    App.Core.OnRoomHerb=function(){
-        App.Data.Room.HasHerb=true
+    App.Core.OnRoomHerb = function () {
+        App.Data.Room.HasHerb = true
     }
-    App.SetLootCmd=function(name,cmd){
-        App.Data.Room.LootCmds[name]=cmd
+    App.SetLootCmd = function (name, cmd) {
+        App.Data.Room.LootCmds[name] = cmd
     }
-    App.SetRoomOnAsk=function(cmd){
-        Note("设置OnAsk:"+cmd)
-        App.Data.Room.OnAsk=cmd
+    App.SetRoomOnAsk = function (cmd) {
+        Note("设置OnAsk:" + cmd)
+        App.Data.Room.OnAsk = cmd
     }
-    App.Look=function(){
-        App.Data.Room.Looking=true
+    App.Look = function () {
+        App.Data.Room.Looking = true
         App.Send("l")
     }
-    App.SetRoomYieldYes=function(data){
-        Note("设置YieldYes:"+data)
-        App.Data.Room.YieldYes=data
+    App.SetRoomYieldYes = function (data) {
+        Note("设置YieldYes:" + data)
+        App.Data.Room.YieldYes = data
     }
-    App.RegisterCallback("core.room.alias.onask",function(data){
+    App.SetRoomOnline = function (func) {
+        App.Data.Room.Online = func
+    }
+    App.Core.OnRoomLine = function (name, output, wildcards) {
+        if (App.Data.Room.Online) {
+            App.Data.Room.Online(output)
+        }
+    }
+    App.RegisterCallback("core.room.alias.onask", function (data) {
         App.SetRoomOnAsk(data)
     })
-    App.RegisterAlias("onask","core.room.alias.onask")
+    App.RegisterAlias("onask", "core.room.alias.onask")
 
-    App.RegisterCallback("core.room.onask",function(){
-        if (App.Data.Room.OnAsk){           
+    App.RegisterCallback("core.room.onask", function () {
+        if (App.Data.Room.OnAsk) {
             App.Send(App.Data.Room.OnAsk)
-            App.Data.Room.OnAsk=""
+            App.Data.Room.OnAsk = ""
         }
     })
 
-    App.Bind("ask","core.room.onask")
+    App.Bind("ask", "core.room.onask")
 })(App)
