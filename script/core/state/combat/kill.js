@@ -11,6 +11,7 @@
         App.Core.Combat.Current=new combat()
         App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands(kill.Type))
         App.Core.Combat.Current.SetOnline(kill.Online)
+        App.Core.Combat.Current.SetOnNpcFlee(kill.OnNpcFlee)
         App.Core.Combat.Current.SetYield(App.Data.Room.YieldYes)
         if (App.Data.Room.YieldYes){
             App.Send("yield yes")

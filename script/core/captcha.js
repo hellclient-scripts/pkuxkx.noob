@@ -31,7 +31,7 @@
             case "zone":
             case "zonestart":
             case "zoneend":
-            case "scoped":
+            case "tiangan":
                 App.API.CaptchaSaveURL(type)
                 break
         }
@@ -87,7 +87,8 @@
             case "zoneend":
                 intro="忽略红色字符，请输入结束位置的区域名，地名部分必须准确，房间名识别不出可留空"
                 break
-            case "scoped":
+            case "tiangan":
+                intro="忽略红色字符，请输入天干地支 甲乙丙丁戊己庚辛壬癸 子丑寅卯辰巳午未申酉戌亥"
                 break
             default:
                 intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"

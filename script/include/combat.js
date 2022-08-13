@@ -7,11 +7,16 @@
         this.After=null
         this.Yield=false
         this.Online=null
+        this.OnNpcFlee=null
         this.StartAt=Now()
     }
     Combat.prototype.SetOnline=function(Online){
         this.Online=Online
     }
+    Combat.prototype.SetOnNpcFlee=function(OnNpcFlee){
+        this.OnNpcFlee=OnNpcFlee
+    }
+    
     Combat.prototype.SetYield=function(y){
         this.Yield=y
     }

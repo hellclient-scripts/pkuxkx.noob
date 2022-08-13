@@ -5,6 +5,7 @@
         this.Before=before
         this.After=after
         this.Online=null
+        this.OnNpcFlee=null
     }
     return Kill
 })(App)
