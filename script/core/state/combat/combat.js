@@ -22,6 +22,7 @@
             if (line.endsWith("落荒而逃了。")) {
                 let result = line.match(fleere)
                 if (result) {
+                    Note("发现有人逃跑")
                     App.Core.Combat.Current.OnNpcFlee(result[1],result[2])
                 }
             }
@@ -32,6 +33,7 @@
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "line":
+                this.Online(data)
                 if (App.Core.Combat.Current.Online) {
                     App.Core.Combat.Current.Online(data)
                 }

@@ -5,7 +5,6 @@ yzqz||扬州钱庄||||Station||扬州钱庄
 yz-jd||扬州金店||||Station||扬州金店
 yz-zhp||扬州杂货铺||||DescStart||这是一家小小的杂货铺，大箱小箱堆满了一地，都是一些日常用品。杨掌柜懒洋洋地躺在一只躺椅
 yzdp||扬州当铺||||DescStart||这里是扬州的一家当铺，五尺高的柜台挡在你的面前，柜台上挂着一只牌子(paizi)。
-yztj||扬州铁匠||||Landmark||Wang tiejiang
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
 yz-sczh||盛昌总行||||Station||盛昌总行
 yz-cg||春来茶馆||||Station||春来茶馆
