@@ -12,6 +12,7 @@
         YieldYes: false,
         Looking: false,
         Online: null,
+        Data:{},
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -45,6 +46,7 @@
             ObjEnd: false,
             Looking: false,
             Online: null,
+            Data:{},
         }
         if (looking && oid) {
             App.Data.Room.ID = oid
@@ -211,6 +213,12 @@
     }
     App.SetRoomOnline = function (func) {
         App.Data.Room.Online = func
+    }
+    App.SetRoomData=function(key,value){
+        App.Data.Room.Data[key]=value
+    }
+    App.GetRoomData=function(key){
+        return App.Data.Room.Data[key]
     }
     App.Core.OnRoomLine = function (name, output, wildcards) {
         if (App.Data.Room.Online) {
