@@ -17,13 +17,13 @@
             App.Send("yield yes")
         }
         App.Data.Room.YieldYes=false
-        if (kill.Before){
-            App.Send(kill.Before)    
-        }
         if (kill.After){
             App.Core.Combat.Current.SetAfter(kill.After)
         }
         App.Core.Weapon.Wield()
+        if (kill.Before){
+            App.Send(kill.Before)    
+        }
         App.Send(kill.Cmd)
         App.ChangeState("core.state.combat.combat")
     }

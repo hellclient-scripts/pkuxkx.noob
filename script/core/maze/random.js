@@ -41,7 +41,11 @@
                 this.Start=App.Info.RoomFull()
                 App.Send("unset brief")
                 this.Command=(new DFS(this.MaxDepth,MazeBackward)).New()
-                let level=this.Command.Arrive([this.EntryCmd()])
+                let entrycmd=this.EntryCmd()
+                if (typeof(entrycmd)=="string"){
+                    entrycmd=[entrycmd]
+                }
+                let level=this.Command.Arrive(entrycmd)
                 this.Command=level.Next()
                 App.Go(this.Command.Command)
                 return;
