@@ -7,14 +7,15 @@ yz-zhp||扬州杂货铺||||DescStart||这是一家小小的杂货铺，大箱小
 yzdp||扬州当铺||||DescStart||这里是扬州的一家当铺，五尺高的柜台挡在你的面前，柜台上挂着一只牌子(paizi)。
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
 yz-sczh||盛昌总行||||Station||盛昌总行
-yz-cg||春来茶馆||||Station||春来茶馆
+yz-clcg||春来茶馆||||Station||春来茶馆
 yzch||扬州车行||||DescStart||这里是扬州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 yzyp||扬州药铺||||Landmark||Ping yizhi
 yzsy||扬州书院||||Landmark||Fu zi
 yzkd||扬州客店||||Landmark||Tianshen suicong
-yz-kd2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
+yz-kedian2f||扬州客店||||Full||客店二楼[大宋国] [城市]out
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
+yz-mrt||扬州名人堂||||DescStart||这里是北大侠客行的名人堂。在这里供奉的有大侠，也有魔头，也有不是大侠不是魔头的玩家。无论是哪一位，都
 yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的名家珍品，还时
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
@@ -257,7 +258,7 @@ qhmzqz||千户苗寨钱庄||||
 qhmzyp||千户苗寨药铺||||
 qmz||青苗寨吊脚楼||||Full||吊脚楼[门派] [存盘点]north,up
 bmz||白苗寨广场||||DescStart||这里是一片宽阔的广场，也是整个白苗村寨的中心。
-hmz||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
+miao-linqian||黑苗寨林前||||Full||林前[门派] [存盘点]north,southeast
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wdj-swdsb-w||十万大山北山西出口||||Full||山前[门派] [存盘点]east,southwest
 wdj-swdsb-e||十万大山北山东出口||||Full||山间路[门派] [存盘点]east,west
