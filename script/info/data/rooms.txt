@@ -250,7 +250,7 @@ wdj-lgds-w||雷公东山西入口||||Full||山沟[门派] [存盘点]east,west
 wdj-lgds-n||雷公东山北入口||||DescStart||这里眼看就要进入雷公山了。
 wdj-lgds-s||雷公东山南入口||||DescStart||渐渐走入雷公山东麓，行路越发艰难了，望着巍峨的高山(mountain)，心里难免产生敬畏之情。
 wdj-swdsn-s||十万大山南山南出口||||Full||入山道[门派] [存盘点]north,southdown
-wdj-sf||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
+wdj-shuifang||五毒教睡房||||Full||睡房[门派] [存盘点]northwest,west
 wdj-ygf||五毒教养蛊房||||DescStart||这里是五毒教养蛊的地方，也算闲人莫入了。
 qhmz||苗王殿||||Station||苗王殿
 qhmz-sch||千户苗寨盛昌行||||Station||盛昌行苗寨分店
@@ -269,4 +269,4 @@ wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
 wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
-wdj-xw||五毒小屋(拿石头)
+wdj-xiaowu||五毒小屋(拿石头)

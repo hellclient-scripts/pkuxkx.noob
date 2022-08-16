@@ -2,6 +2,6 @@ wst-xxs
 //武当客房
 wd-kf
 //五毒教睡房
-wdj-sf
+wdj-shuifang
 //南昌书院休息室
 nanchang-xxs
