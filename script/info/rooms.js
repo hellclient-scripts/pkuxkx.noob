@@ -6,6 +6,7 @@
     App.Info.Stations = {}
     App.Info.Landmarks = {}
     App.Info.DescStart={}
+    App.Info.Desc={}
     App.Info.Tags={}
     App.Info.Full={}
     App.Info.LocateExits={
@@ -33,18 +34,36 @@
             world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")
         }
     })
+    
     App.Info.RoomFull=function(){
         if (!App.Data.Room.Exits){
             return ""
         }
         return App.Data.Room.Name+App.Data.Room.Tags.trim()+App.Data.Room.Exits.join(",")
     }
+    App.RoomFull=function(){
+        Note(App.Info.RoomFull())
+    }
+    // App.Info.RoomDescStart=function(){
+    //     let desc=App.Core.RoomDesc.Desc.split("\n",1)[0]
+    //     if (desc){
+    //         desc=desc.trim()
+    //     }
+    //     return desc
+    // }
+    let re=/[\n\s\t]/g
+    App.Info.RoomDesc=function(){
+        let desc=App.Core.RoomDesc.Desc
+        return desc.replace(re, "")
+    }
+    App.RoomDesc=function(){
+        Note(App.Info.RoomDesc())
+    }
     App.Info.RoomDescStart=function(){
-        let desc=App.Core.RoomDesc.Desc.split("\n",1)[0]
-        if (desc){
-            desc=desc.trim()
-        }
-        return desc
+        return App.Info.RoomDesc().slice(0,50)
+    }
+    App.RoomDescStart=function(){
+        Note(App.Info.RoomDescStart())
     }
     App.RegisterCallback("info.room.idlocate", function () {
         var id = App.Info.Stations[App.Data.Room.Name]||App.Info.Tags[App.Data.Room.Tags]||App.Info.Full[App.Info.RoomFull()]

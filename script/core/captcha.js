@@ -32,6 +32,7 @@
             case "zonestart":
             case "zoneend":
             case "tiangan":
+            case "exits":
                 App.API.CaptchaSaveURL(type)
                 break
         }
@@ -90,6 +91,9 @@
             case "tiangan":
                 intro="忽略红色字符，请输入天干地支 甲乙丙丁戊己庚辛壬癸 子丑寅卯辰巳午未申酉戌亥"
                 break
+            case "exits":
+                intro="忽略红色字符，请依次输入用|分割的方向，比如 东北|东南|西|便道"
+                break
             default:
                 intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
         }
@@ -125,6 +129,7 @@
     }
     App.Core.CaptchaOnGongHaoSuccess=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.success")
+        App.Raise("captcha.success")
     }
     App.Core.CaptchaOnSuccess=function(name, output, wildcards){
         App.Data.LastFullme=Now()
@@ -132,7 +137,7 @@
         App.Data.LastFullmeSuccess=Now()
         App.Core.CaptchaAlias()
         App.RaiseStateEvent("captcha.success")
-
+        App.Raise("captcha.success")
     }
     App.Core.CaptchaOnGonghaoFail=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.fail")

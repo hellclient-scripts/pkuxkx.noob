@@ -98,6 +98,7 @@ App.Start=function(){
     App.Raise("Init")
     App.Raise("InitMod")
     App.Raise("Ready")
+    App.Raise("AfterReady")
 }
 App.DumpData=function(){
     Dump(App.Data,true)

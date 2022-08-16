@@ -1,67 +1,68 @@
 (function (App) {
-    let sep=/\|\|/
-    let parsepath=function(fr,to,taglist,str,delay){
+    let sep = /\|\|/
+    let parsepath = function (fr, to, taglist, str, delay) {
         let path = Mapper.newpath()
-        path.from=fr
-        path.to=to
-        path.command=str
-        path.delay = str.split(";").length+delay
-        let pathtags=[]
-        let pathexcludetags=[]
-        if (taglist){
-            let tags=taglist.split(",")
+        path.from = fr
+        path.to = to
+        path.command = str
+        path.delay = str.split(";").length + delay
+        let pathtags = []
+        let pathexcludetags = []
+        if (taglist) {
+            let tags = taglist.split(",")
 
-                tags.forEach(function(tag){
+            tags.forEach(function (tag) {
 
-                    if (tag.length>0){
+                if (tag.length > 0) {
 
-                        if (tag[0]=="!"){
-                            if (tag.length>1){
-                                pathexcludetags.push(tag.substr(1))
-                            }
-                            return
+                    if (tag[0] == "!") {
+                        if (tag.length > 1) {
+                            pathexcludetags.push(tag.substr(1))
                         }
-                        pathtags.push(tag)
+                        return
                     }
-                })
+                    pathtags.push(tag)
+                }
+            })
         }
-        path.tags=pathtags
-        path.excludetags=pathexcludetags
+        path.tags = pathtags
+        path.excludetags = pathexcludetags
         return path
     }
-    let loadpath=function (paths){
+    let loadpath = function (paths) {
         for (var key in paths) {
-            if (paths[key]==""||paths[key].slice(0,2)=="//"){
+            if (paths[key] == "" || paths[key].slice(0, 2) == "//") {
                 continue
             }
             let data = paths[key].split(sep)
             let from = data[0]
             let to = data[1]
-            let tags=data[2]
-            let delay=0
-            if (data.length>5){
-                delay=data[5]-0
+            let tags = data[2]
+            let delay = 0
+            if (data.length > 5) {
+                delay = data[5] - 0
             }
-            let topath = parsepath(from,to,tags,data[3],delay)
-            if (topath){
+            let topath = parsepath(from, to, tags, data[3], delay)
+            if (topath) {
                 Mapper.addpath(from, topath)
             }
-            if (data.length > 4 ) {
-                let frompath = parsepath(to,from,tags,data[4],delay)
-                if (frompath){
+            if (data.length > 4) {
+                let frompath = parsepath(to, from, tags, data[4], delay)
+                if (frompath) {
                     Mapper.addpath(to, frompath)
                 }
             }
         }
     }
-    let loadrooms=function(rooms) {
+
+    let loadrooms = function (rooms) {
         rooms.forEach(function (data) {
-            if (data==""||data.slice(0,2)=="//"){
+            if (data == "" || data.slice(0, 2) == "//") {
                 return
             }
-            let info = data.split(sep)
+            // let info = data.split(sep)
+            let info=SplitN(data,"||",5)
             let options = {
-                Desc: info[2],
             }
             switch (info[3]) {
                 case "Landmark":
@@ -74,15 +75,19 @@
                     options.Tags = info[4]
                     break
                 case "Full":
-                    options.Full=info[4]
+                    options.Full = info[4]
                     break
                 case "DescStart":
-                    options.DescStart=info[4]
-                    break       
+                    options.DescStart = info[4]
+                    break
+                case "Desc":
+                    options.Desc = info[4]
+                    break
             }
             addroom(info[0], info[1], options)
         });
     }
+    App.Info.loadrooms = loadrooms
     var addroom = function (id, name, data) {
         App.Info.Rooms[id] = {
             ID: id,
@@ -101,11 +106,14 @@
         if (data.Full) {
             App.Info.Full[data.Full] = id
         }
-        if (data.DescStart){
-            App.Info.DescStart[data.DescStart]=id
+        if (data.DescStart) {
+            App.Info.DescStart[data.DescStart] = id
+        }
+        if (data.Desc) {
+            App.Info.Desc[data.Desc] = id
         }
     }
-    App.API.ResetMapper=function(){
+    App.API.ResetMapper = function () {
         loadrooms(App.Info.BuiltinRooms)
         loadrooms(App.Info.UserRooms)
         Mapper.reset()

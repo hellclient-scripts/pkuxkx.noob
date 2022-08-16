@@ -15,6 +15,7 @@
             case "zonestart":
             case "zoneend":
             case "tiangan":
+            case "exits":
                 this.Cmd=null
                 break
             default:
