@@ -4185,29 +4185,6 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
-[[Aliases]]
-  ID = "d1e2ucjv1tfo2e6i13hdu"
-  Name = ""
-  Enabled = true
-  Match = "dsc"
-  Send = "App.RoomDescStart()"
-  Script = ""
-  SendTo = 12
-  Sequence = 100
-  ExpandVariables = false
-  Temporary = false
-  OneShot = false
-  Regexp = false
-  Group = ""
-  IgnoreCase = false
-  KeepEvaluating = false
-  Menu = false
-  OmitFromLog = false
-  Variable = ""
-  ReverseSpeedwalk = false
-  OmitFromOutput = false
-  OmitFromCommandHistory = false
-
 [[RequiredParams]]
   Name = "id"
   Desc = "用户ID"

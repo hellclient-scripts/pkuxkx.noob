@@ -47,9 +47,16 @@
             moved.push((new Date()).getTime())
         }
     })
+
+    App.Core.GetMovePerHalfSecond=function(){
+        if (App.Data.HP.eff_jingli>200&&(App.Data.HP.eff_jingli>(App.Data.HP.jingli*0.8))){
+            return 7
+        }
+        return 3
+    }
     App.SendToMoveBuff=function(cmd){
         gc()
-        if (moved.length<3){
+        if (moved.length<App.Core.GetMovePerHalfSecond()){
             App.Send(cmd)
             moved.push((new Date()).getTime())
         }else{

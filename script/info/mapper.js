@@ -118,7 +118,7 @@
         loadrooms(App.Info.UserRooms)
         Mapper.reset()
         for (var key in App.Info.Rooms) {
-            Mapper.clearroom(key)
+             Mapper.clearroom(key)
         }
         loadpath(App.Info.BuiltinPaths)
         loadpath(App.Info.UserPaths)

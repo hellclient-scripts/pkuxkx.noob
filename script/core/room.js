@@ -71,6 +71,15 @@
         App.RaiseStateEvent("core.onroom")
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
+    let blankWords=function(line,index){
+        let words=line.Words.slice(0,index)
+        for (var i=0;i<words.length;i++){
+            if (words[i].Text.trim()!=""){
+                return false
+            }
+        }
+        return true
+    }
     App.Core.OnRoomDesc = function (name, output, wildcards) {
         if (App.Data.Room.Exits != null) {
             return
@@ -90,7 +99,7 @@
         }
         switch (App.Core.RoomDesc.Mode) {
             case 0:
-                if (!(output.slice(0, 4) == "    " && output.slice(4, 5) != " ")) {
+                if ((output.slice(0, 8).trim() == "")&& !blankWords(line,5)) {
                     App.Core.RoomDesc.Map += output + "\n"
                     App.Core.RoomLines.MapLines.push(line)
                     break
