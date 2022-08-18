@@ -6,6 +6,7 @@
         path.to = to
         path.command = str
         path.delay = str.split(";").length + delay
+        path.delay=path.delay*2
         let pathtags = []
         let pathexcludetags = []
         if (taglist) {
@@ -42,7 +43,6 @@
             if (data.length > 5) {
                 delay = data[5] - 0
             }
-            delay=delay*2
             let topath = parsepath(from, to, tags, data[3], delay)
             if (topath) {
                 Mapper.addpath(from, topath)

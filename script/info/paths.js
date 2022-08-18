@@ -36,26 +36,35 @@
         MakeHomeFolder("data/")
         world.WriteHomeFile("data/paths.txt",data)
     })
-    App.RegisterAPI("GetPath", function (fr, tolist) {
-        App.Raise("PathInit")
-        var data = Mapper.getpath(fr, 1, tolist)
-        if (!data) {
-            return null
-        }
+    App.Info.CombinePath=function(data){
         let path = new ipath()
         let commands = []
         var result = {
             Delay: 0,
+            From:null,
+            To:null,
             Path: path,
             Command: ""
         }
         data.forEach(function (step) {
+            if (result.From===null){
+                result.From=step.from
+            }
+            result.To=step.to
             path.PushCommands(step.command.split(";"), step.to)
             result.Delay = result.Delay + (step.delay ? step.delay : 1)
             commands.push(step.command)
         })
         result.Command = commands.join(";")
         return result
+    }
+    App.RegisterAPI("GetPath", function (fr, tolist) {
+        App.Raise("PathInit")
+        var data = Mapper.getpath(fr, 1, tolist)
+        if (!data) {
+            return null
+        }
+        return App.Info.CombinePath(data)
     })
     App.Bind("Init", "info.paths.loadpaths")
 })(App)
