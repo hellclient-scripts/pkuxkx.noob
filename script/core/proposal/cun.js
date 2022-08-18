@@ -14,9 +14,9 @@
                 if (cashnum==0){
                     cashnum=1
                 }
-                cmd = "cun " + cashnum + " cash"
+                cmd = "cun " + cashnum + " cash;i2"
             } else {
-                cmd = "cun " + num + " gold"
+                cmd = "cun " + num + " gold;i2"
             }
             App.Commands([
                 App.NewCommand("to", App.Options.NewWalk(App.GetParam("bank_location"))),

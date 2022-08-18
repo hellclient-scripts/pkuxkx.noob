@@ -1261,13 +1261,13 @@ Channel = "pkuxkx.noob"
   Name = "cartxia"
   Enabled = true
   Match = "^大车停稳了下来，你可以下车\\(xia\\)了。$"
-  Send = "xia"
+  Send = ""
   ColourChangeType = 0
   Colour = 0
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = ""
+  Script = "App.Core.OnCartXia"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -1663,7 +1663,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvcr25hhts1861fu3u0"
   Name = "App.Core.OnMoveRideEnd"
   Enabled = true
-  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。|你沿着踏板走了上去。)$"
+  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。|你沿着踏板走了上去。|你朝船夫挥了挥手便跨上岸去。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2218,6 +2218,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1e32mp4nkgh7d71r7p2u1"
+  Name = "App.Core.OnCartShang"
+  Enabled = true
+  Match = "^马车缓缓开动，向着.*驶去。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnCartShang"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -2437,7 +2468,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -2468,7 +2499,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(^([^【：『]{1,6})几乎没有路了，你走不了那么快。|在这里还走这么快，肯定无法发现奸细。|吊桥还没有升起来，你就这样走了，可能会给外敌可乘之机的。|你沿着.+，一步一步地慢慢前行。|你沿着溪边，一步一步地离去。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|青海湖畔美不胜收，你不由停下脚步，欣赏起了风景。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|只听得江面上隐隐传来：“别急嘛，这儿正忙着呐……”|你还在山中跋涉，一时半会恐怕走不出这六盘山！|你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。|山路难行，你不小心给拌了一跤。|你观赏着.*，一步一步慢慢前行。|你忽然不辨方向，不知道该往哪里走了。|你因为忙着做别的事，没有爬过去。|你先忙完了再钻洞吧。.*)$"
   Send = ""
   ColourChangeType = 0
@@ -2499,7 +2530,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -4238,7 +4269,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "wait_cmd"
   Desc = "等待指令"
-  Intro = "等待时发送的指令，必须可以立刻halt"
+  Intro = "等待时发送的指令，必须可以立刻halt\n如无特殊需要，可以设置为tuna max 提升行走效率"
 
 [[RequiredParams]]
   Name = "jifa_cmd"

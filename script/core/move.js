@@ -50,7 +50,10 @@
 
     App.Core.GetMovePerHalfSecond=function(){
         if (App.Data.HP.eff_jingli>200&&(App.Data.HP.eff_jingli>(App.Data.HP.jingli*0.8))){
-            return 7
+            if (App.Data.HP.eff_jingli>(App.Data.HP.jingli)){
+                return 99
+            }
+            return 8
         }
         return 3
     }
@@ -109,6 +112,16 @@
         moved.splice(-1)
         App.RaiseStateEvent("move.ignore")
     }
+    App.Core.OnCartShang=function(name, output, wildcards){
+        App.Raise("Waiting")
+    }
+    App.Core.OnCartXia=function(name, output, wildcards){
+        App.Send("#halt;xia")
+    }
+    App.RegisterCallback("core.move.waiting",function(){
+        App.Send(App.GetParamWaitCmd())
+    })
+    App.Bind("Waiting","core.move.waiting")
     App.Core.OnMoveEnterBoat=function(name, output, wildcards){
         App.RaiseStateEvent("move.enterboat")
         if (App.Data.Move && !App.Data.Move.Paused && App.Data.Move.Current!=null) {
@@ -119,11 +132,11 @@
 
     }
     App.Core.OnMoveSailEnd=function(name, output, wildcards){
-        App.Send("halt")
+        App.Send("#halt")
         App.Go("out ")
     }
     App.Core.OnMoveRideEnd=function(name, output, wildcards){
-        App.Send("halt")
+        App.Send("#halt")
     }
     App.RegisterCallback("core.move.sail",function(){
         App.Raise("Waiting")
@@ -136,6 +149,15 @@
         }
         App.Core.AskQuestion(cmd[0],cmd[1])
     })
+    App.RegisterCallback("core.move.look",function(){
+        App.Look()
+    })
+    App.RegisterAlias("l","core.move.look")
+    App.RegisterCallback("core.move.halt",function(){
+        App.Send("halt;yun recover;yun regenerate")
+    })
+    App.RegisterAlias("halt","core.move.halt")
+
     App.RegisterAlias("ask","core.move.ask")        
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/patrol.js"))())

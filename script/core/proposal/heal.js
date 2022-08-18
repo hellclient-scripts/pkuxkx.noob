@@ -16,7 +16,7 @@
                 App.Commands([
                     App.NewCommand("to",App.Options.NewWalk(App.GetSleepRooms())),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("do","yun heal"),
+                    App.NewCommand("do","do 10 yun heal"),
                     App.NewCommand("nobusy"),
                 ]).Push()
             }

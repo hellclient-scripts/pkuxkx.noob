@@ -14,7 +14,7 @@
         let move = App.GetContext("Move")
         move.Context = new patrol(move.Target)
         if (!move.StartCmd) {
-            move.StartCmd = "l"
+            move.StartCmd = "#l"
         }
         this.Patroling()
     }
