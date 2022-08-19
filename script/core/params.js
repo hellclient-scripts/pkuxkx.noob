@@ -7,6 +7,9 @@
     App.GetParamHome=function(){
         return world.GetVariable("home")
     }
+    App.GetParamBangpai=function(){
+        return world.GetVariable("bangpai")
+    }
     App.GetSleepRooms=function(){
         let rooms=[(world.GetVariable("home")?App.Info.RoomHome:App.Info.RoomSafe)]
         rooms=rooms.concat(App.Info.SleepRooms)

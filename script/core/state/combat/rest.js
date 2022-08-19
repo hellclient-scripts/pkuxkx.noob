@@ -1,4 +1,6 @@
 (function (App) {
+    //你已经受伤过重，此时运功疗伤只怕立刻便有生命危险。
+
     let basicstate = Include("core/state/basicstate.js")
     let State=function(){
         basicstate.call(this)

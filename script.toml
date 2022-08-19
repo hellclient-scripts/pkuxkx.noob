@@ -1384,7 +1384,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duva9k5qgcbm738d8rc2"
   Name = "App.Core.Combat.OnBlocked"
   Enabled = true
-  Match = "^([^【：『]{1,10})(伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
+  Match = "^([^【：『]{1,10})(拦住了你的去路，大声喝到：干什么的？|伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2468,7 +2468,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -2499,7 +2499,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(^([^【：『]{1,6})几乎没有路了，你走不了那么快。|在这里还走这么快，肯定无法发现奸细。|吊桥还没有升起来，你就这样走了，可能会给外敌可乘之机的。|你沿着.+，一步一步地慢慢前行。|你沿着溪边，一步一步地离去。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|青海湖畔美不胜收，你不由停下脚步，欣赏起了风景。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|只听得江面上隐隐传来：“别急嘛，这儿正忙着呐……”|你还在山中跋涉，一时半会恐怕走不出这六盘山！|你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。|山路难行，你不小心给拌了一跤。|你观赏着.*，一步一步慢慢前行。|你忽然不辨方向，不知道该往哪里走了。|你因为忙着做别的事，没有爬过去。|你先忙完了再钻洞吧。.*)$"
   Send = ""
   ColourChangeType = 0
@@ -2530,7 +2530,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -4257,14 +4257,19 @@ Channel = "pkuxkx.noob"
   Intro = "储存柜的名字,如有空格则认为空格前是柜子所在位置，否则默认为扬州总行\n\n例：\njarlyyn\nqhmz-sch ppwdj\n\n重新加载后才能起效"
 
 [[RequiredParams]]
-  Name = "neili_min"
-  Desc = "最小内力"
-  Intro = "内力比这个小会去尝试睡觉或打坐"
+  Name = "bangpai"
+  Desc = "帮派信息"
+  Intro = "帮派的入口和口令，格式为 taishan-dyd 狐狸狐狸\n重新加载后才能起效\n"
 
 [[RequiredParams]]
   Name = "safe_room"
   Desc = "安全屋位置"
   Intro = "不填默认为home,home未设置则为往生堂休息室"
+
+[[RequiredParams]]
+  Name = "neili_min"
+  Desc = "最小内力"
+  Intro = "内力比这个小会去尝试睡觉或打坐"
 
 [[RequiredParams]]
   Name = "wait_cmd"

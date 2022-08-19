@@ -18,9 +18,23 @@
             }
         }
     }
-  
+    App.Info.LoadBangPaiPath=function(){
+        let loc=App.GetParamBangpai().trim()
+        if (loc){
+            let data=SplitN(loc," ",2)
+            if (data.length<2){
+                Note("帮派信息格式错误")
+            }else{
+                path=[data[0],"bangpaimen","","say "+data[1],"out"]
+                Note("发现帮派，位于"+data[0]+"，口令："+data[1])
+                App.Info.BuiltinRooms=[[data[0],"bangpai-entry"].join("||")].concat(App.Info.BuiltinRooms)
+                App.Info.BuiltinPaths=[path.join("||")].concat(App.Info.BuiltinPaths)
+            }
+        }
+    }
     App.RegisterCallback("info.paths.loadpaths", function () {
         App.Info.LoadHomePath()
+        App.Info.LoadBangPaiPath()
         App.Info.BuiltinPaths= App.Info.BuiltinPaths.concat(world.ReadLines("info/data/paths.txt"))
         if (world.HasHomeFile("data/paths.txt")){
             App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")

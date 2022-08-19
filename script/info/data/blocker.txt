@@ -9,4 +9,5 @@
 王府卫士||killall wei shi;kill weishi zhang||100000
 保镖||killall bao biao||500000
 侍卫||killall shi wei||500000
-黑甲军士||kilall heijia junshi||1000000
+黑甲军士||killall heijia junshi||1000000
+守军||killall shou jun||1000000

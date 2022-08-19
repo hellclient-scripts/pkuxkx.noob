@@ -28,8 +28,6 @@
             }
         }
     }
-    // 鲁二往西落荒而逃了。
-
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "line":
