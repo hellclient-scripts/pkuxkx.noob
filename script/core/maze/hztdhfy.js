@@ -23,15 +23,16 @@
     }
     Maze.prototype.Record=function(){
         let dir=App.Core.Maze.Data.hztdhfy.queue.shift()
-        if (App.Core.RoomDesc.Desc.indexOf("huacong")>-1){
+        let desc=App.Info.RoomDesc()
+        if (desc.indexOf("huacong")>-1){
             App.Core.Maze.Data.hztdhfy.huacong=dir
-        }else if(App.Core.RoomDesc.Desc.indexOf("有一股让人觉得很危险的气息")<0){
+        }else if(desc.indexOf("有一股让人觉得很危险的气息")<0){
             App.Core.Maze.Data.hztdhfy.safe.push(dir)    
         }
         App.Next()
     }
     Maze.prototype.Explore = function (move) {
-        if (App.Core.RoomDesc.Desc.indexOf("huacong")>-1){
+        if (App.Info.RoomDesc().indexOf("huacong")>-1){
             App.Send("bo huacong")
             App.Go("enter")
             return

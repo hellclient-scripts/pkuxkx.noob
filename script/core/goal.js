@@ -88,7 +88,7 @@
                 this.Found = App.HasRoomObjName(target)
                 break
             case "desc":
-                this.Found = (App.Core.RoomDesc.Desc.indexOf(target) >= 0)
+                this.Found = (App.Info.RoomDesc().indexOf(target) >= 0)
                 break
             case "known":
                 this.Found = (App.Data.Room.ID != "")
