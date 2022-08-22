@@ -105,6 +105,21 @@
     }
     App.RegisterCallback("core.player.inittags",function(){
         Mapper.settag(App.Data.Score["family"],true)
+        let dodge=App.Core.PlayerGetSkillByID("dodge")
+        if(dodge){
+            if (dodge.Level>=100){
+                Mapper.settag("dodge100",true)
+            }
+        }
+        let force=App.Core.PlayerGetSkillByID("force")
+        if(force){
+            if (force.Level>=200){
+                Mapper.settag("force200",true)
+            }
+            if (force.Level>=500){
+                Mapper.settag("force500",true)
+            }
+        }
     })
     App.Bind("PathInit","core.player.inittags")
 

@@ -1,6 +1,6 @@
 (function(App){
     App.InfoUIToShowList=function() {
-        var list=Userinput.newlist("请选择你的目标","选择你要前往的目标,可以进行模糊搜索",true)
+        var list=Userinput.newlist("请选择你的目标","选择你要前往的目标,可以进行模糊搜索。可以通过#to 房间ID 的方式前往地点，比如#to yz",true)
 
         for (var key in App.Info.Rooms) {
             var loc=App.Info.Rooms[key]

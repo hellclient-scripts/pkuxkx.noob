@@ -6,6 +6,7 @@
     App.Info.Stations = {}
     App.Info.Landmarks = {}
     App.Info.DescStart={}
+    App.Info.DescFirst={}
     App.Info.Desc={}
     App.Info.Tags={}
     App.Info.Full={}
@@ -59,6 +60,12 @@
     App.RoomDesc=function(){
         Note(App.Info.RoomDesc())
     }
+    App.Info.RoomDescFirst=function(){
+        return App.Info.RoomDesc().split("。",1)[0]
+    }
+    App.RoomDescFirst=function(){
+        Note(App.Info.App.Info.RoomDescFirst())
+    }
     App.Info.RoomDescStart=function(){
         return App.Info.RoomDesc().slice(0,50)
     }
@@ -73,6 +80,19 @@
                 id=App.Info.DescStart[descstart]
             }    
         }
+        if (!id){
+            let desc=App.Info.RoomDesc()
+            if (desc){
+                id=App.Info.Desc[desc]
+            }    
+        }
+        if (!id){
+            let desc=App.Info.RoomDescFirst()
+            if (desc){
+                id=App.Info.DescFirst[desc]
+            }    
+        }
+        
         if (id) {
             App.Data.Room.ID = id
             world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")

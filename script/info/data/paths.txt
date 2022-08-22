@@ -35,7 +35,7 @@ slsmen||slsch||||eu;e||w;wd
 sysy||zy-rzc||||ed;ne;ne||sw;sw;wu
 qufu||qufu-sms||||s;e;ne;eu;enter||out;wd;sw;w;n
 qufu||qufuch||||n;w;w||e;e;s
-qufu||qufu-qc||||s;s;s;s;w||e;n;n;n;n
+qufu||qufu-qingchi||||s;s;s;s;w||e;n;n;n;n
 qufu||taishan-sjy||||n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s
 taishan||qufu||||s;s;sw;w;sw;s;s;s||n;n;n;ne;e;ne;n;n
 qingzhou||taishan||||sw;sw;w;sd;sw;w;w;wu;n;n||s;s;ed;e;e;ne;nu;e;ne;ne
@@ -152,8 +152,8 @@ wdj-jbq||wdj||wdj.shitou||l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s
 wdj-jbq||wdj-xiaowu||||n;e||w;s
 wdj||wdj-shuifang||||se||nw
 wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
-bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
-bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;zhai grass&&eat xiao cao&&eu;#maze 苗岭山林 东;eu;eu;e;e;e;e;||401
+bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;enter;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
+bmz||kunming||||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;zhai grass&&eat xiao cao&&enter;#maze 苗岭山林 东;eu;eu;e;e;e;e;||401
 kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
 pxwfmen||pxwf||||#onask n&&#ask qin bingtou about 自立为王;n;n;n;n||s;s;s;s;s
 pxwfmen||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n

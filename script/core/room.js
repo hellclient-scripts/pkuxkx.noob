@@ -12,7 +12,7 @@
         YieldYes: false,
         Looking: false,
         Online: null,
-        Data:{},
+        Data: {},
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境
@@ -46,7 +46,7 @@
             ObjEnd: false,
             Looking: false,
             Online: null,
-            Data:{},
+            Data: {},
         }
         if (looking && oid) {
             App.Data.Room.ID = oid
@@ -71,10 +71,10 @@
         App.RaiseStateEvent("core.onroom")
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
-    let blankWords=function(line,index){
-        let words=line.Words.slice(0,index)
-        for (var i=0;i<words.length;i++){
-            if (words[i].Text.trim()!=""){
+    let blankWords = function (line, index) {
+        let words = line.Words.slice(0, index)
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].Text.trim() != "") {
                 return false
             }
         }
@@ -85,6 +85,14 @@
             return
         }
         let line = JSON.parse(DumpOutput(1))[0]
+        if (App.Core.RoomDesc.Mode == 1) {
+            let o = output.trim().slice(0, 5)
+            switch (o) {
+                case "「隆冬」:":
+                case "「初春」:":
+                    App.Core.RoomDesc.Mode = 2
+            }
+        }
         if (output.slice(0, 15) == "    你可以看看(look)") {
             App.Core.RoomDesc.Mode = 2
             App.Core.RoomDesc.Canlook = output
@@ -99,7 +107,7 @@
         }
         switch (App.Core.RoomDesc.Mode) {
             case 0:
-                if ((output.slice(0, 8).trim() == "")&& !blankWords(line,5)) {
+                if ((output.slice(0, 8).trim() == "") && !blankWords(line, 5)) {
                     App.Core.RoomDesc.Map += output + "\n"
                     App.Core.RoomLines.MapLines.push(line)
                     break
@@ -223,10 +231,10 @@
     App.SetRoomOnline = function (func) {
         App.Data.Room.Online = func
     }
-    App.SetRoomData=function(key,value){
-        App.Data.Room.Data[key]=value
+    App.SetRoomData = function (key, value) {
+        App.Data.Room.Data[key] = value
     }
-    App.GetRoomData=function(key){
+    App.GetRoomData = function (key) {
         return App.Data.Room.Data[key]
     }
     App.Core.OnRoomLine = function (name, output, wildcards) {

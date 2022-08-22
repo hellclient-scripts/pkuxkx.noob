@@ -15,7 +15,7 @@
     },{
         "label":"钓鱼",
         "desc":"钓鱼队列",
-        "cmd":"#prepare||#item diaoyu gan||#item yuer||#to qufu-qc||#do gua yuer||#do diao yu||#nobusy||#loop"
+        "cmd":"#prepare||#item diaoyu gan||#item yuer||#to qufu-qingchi||#do gua yuer||#do diao yu||#nobusy||#loop"
     }
     ,{
         "label":"少林读石桌",

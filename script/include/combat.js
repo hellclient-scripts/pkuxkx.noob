@@ -9,6 +9,14 @@
         this.Online=null
         this.OnNpcFlee=null
         this.StartAt=Now()
+        this.HaltWound=0
+        this.HaltCurrent=0
+    }
+    Combat.prototype.SetHaltCurrent=function(data){
+        this.HaltCurrent=data
+    }
+    Combat.prototype.SetHaltWound=function(data){
+        this.HaltWound=data
     }
     Combat.prototype.SetOnline=function(Online){
         this.Online=Online
@@ -42,6 +50,26 @@
         })
     }
     Combat.prototype.Perform=function(){
+        let effqixue=App.Data.HP["eff_qixue"]
+        let qixue=App.Data.HP["qixue"]
+        let qixuecap=App.Data.HP["qixue_cap"]
+        let currentqixue=effqixue/qixuecap
+        let perqixue=qixue/qixuecap
+        let effjing=App.Data.HP["eff_jing"]
+        let jing=App.Data.HP["jing"]
+        let jingcap=App.Data.HP["jing_cap"]
+        let currentjing=effjing/jingcap
+        let perjing=jing/jingcap
+        if(
+            currentqixue<this.HaltCurrent||
+            perqixue<this.HaltCurrent||
+            perqixue<this.HaltWound||
+            currentjing<this.HaltCurrent||
+            perjing<this.HaltCurrent||
+            perjing<this.HaltWound
+            ){
+                App.Send("halt")
+        }
         let recovery=this.Recovery
         if (recovery<0){
             recovery=world.GetVariable("combat_yun_recover")-0

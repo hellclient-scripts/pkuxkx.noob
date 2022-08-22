@@ -13,8 +13,13 @@
         App.Core.Combat.Current.SetOnline(kill.Online)
         App.Core.Combat.Current.SetOnNpcFlee(kill.OnNpcFlee)
         App.Core.Combat.Current.SetYield(App.Data.Room.YieldYes)
+        App.Core.Combat.Current.SetHaltCurrent(kill.HaltCurrent)
+        App.Core.Combat.Current.SetHaltWound(kill.HaltWound)    
+        App.Send("yun recover;yun regenerate")
         if (App.Data.Room.YieldYes){
             App.Send("yield yes")
+        }else{
+            App.Send("yield no")
         }
         App.Data.Room.YieldYes=false
         if (kill.After){

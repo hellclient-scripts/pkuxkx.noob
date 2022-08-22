@@ -23,7 +23,7 @@ haozhou-mw||濠州茅屋||||DescStart||这里是茅屋里面，虽然不算四�
 xinyang-jpj||界牌集||||Station||界牌集
 qufu||曲阜鼓楼||||DescStart||这里是曲阜的中心，很多人来拜祭文圣。
 qufuch||曲阜车行||||DescStart||这里是曲阜当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-qufu-qc||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年以上了。
+qufu-qingchi||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年以上了。
 xinyang||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 xinyangch||信阳车行||||DescStart||这里是信阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 zy-xcc||许昌城||||Station||许昌城

@@ -84,6 +84,9 @@
                 case "Desc":
                     options.Desc = info[4]
                     break
+                case "DescFirst":
+                    options.DescFirst=info[4]
+                    break
             }
             addroom(info[0], info[1], options)
         });
@@ -112,6 +115,9 @@
         }
         if (data.Desc) {
             App.Info.Desc[data.Desc] = id
+        }
+        if (data.DescFirst){
+            App.Info.DescFirst[data.DescFirst]=id
         }
     }
     App.API.ResetMapper = function () {
