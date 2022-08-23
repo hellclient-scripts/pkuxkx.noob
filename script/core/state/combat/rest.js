@@ -12,7 +12,7 @@
         if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
             App.Send("dazuo max;dazuo 10")
         }else if (App.Core.PerQixue()<App.GetNumberParam("heal_below")){
-            App.Send("yun heal")
+            App.Send("do 10 yun heal")
         }else{
             App.Next()
             return

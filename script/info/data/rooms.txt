@@ -134,7 +134,7 @@ xxmen||星宿派门巨岩||||DescStart||这里是星宿派的势力范围了，�
 huangzhong||湟中||||DescStart||这是湟中的城中心，平时里人倒不少。
 
 
-luoyang-mjd||孟津渡||||Station||孟津渡
+hhna-mjd||孟津渡||||Station||孟津渡
 hbch||河北车行||||DescStart||这里是河北当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 hb-puyang||濮阳||||Station||濮阳
 hb-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west

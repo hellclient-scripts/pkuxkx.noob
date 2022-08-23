@@ -90,6 +90,7 @@
             switch (o) {
                 case "「隆冬」:":
                 case "「初春」:":
+                case "「阳春」:":
                     App.Core.RoomDesc.Mode = 2
             }
         }

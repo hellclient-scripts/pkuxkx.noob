@@ -196,8 +196,8 @@ qhmzyp||qhmzypgj||||enter||out
 zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
 wssz-md-n||wssz-md-e||||#maze 万兽山庄 south>林间道[野外]southeast,west||#maze 万兽山庄 west>林间道[野外]northwest,south
 wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
-luoyang||luoyang-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-luoyang-mjd||hb-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
+luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
+hhna-mjd||hb-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
 hb-puyang||hbch||||n;e||w;s
 hb-puyang||hb-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
 hb-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
