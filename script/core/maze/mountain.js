@@ -24,7 +24,7 @@
     Maze.prototype = Object.create(Random.prototype)
     Maze.prototype.CheckSuccess=function(){
         let info=App.Info.RoomFull()
-        let data=SplitN(this.Current,">",2)  
+        let data=SplitN(this.Current,".",2)  
         return info==data[1]      
     }
     Maze.prototype.CheckWrongway=function(){

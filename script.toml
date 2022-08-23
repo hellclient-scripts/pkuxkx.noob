@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1818,7 +1818,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvn84mj4gf15730753uj"
   Name = "App.Core.OnMoveNeedRest"
   Enabled = true
-  Match = "^(你大吼一声“开！”，结果什么也没发生。看来你的内力不够强。)$"
+  Match = "^(你大吼一声“开！”，结果什么也没发生。看来你的内力不够强。|你走到石头前，乱旋一通，结果什么都没发生。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0

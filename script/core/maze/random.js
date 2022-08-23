@@ -20,7 +20,7 @@
     Maze.prototype.CheckSuccess=function(){
         //必须实现这个接口，判断是否成功
         // let info=App.Info.RoomFull()
-        // let data=SplitN(this.Current,">",2)  
+        // let data=SplitN(this.Current,".",2)  
         // return info==data[1]      
     }
     Maze.prototype.CheckWrongway=function(){
@@ -29,7 +29,7 @@
         return false
     }
     Maze.prototype.EntryCmd=function(){
-        let data=SplitN(this.Current,">",2)
+        let data=SplitN(this.Current,".",2)
         return data[0]
     }
     Maze.prototype.IsEscaped=function(move){
