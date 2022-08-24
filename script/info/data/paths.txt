@@ -57,8 +57,8 @@ hzxz||hzxzch||||ne||sw
 chengdu||yueyang||||se;se;e;e;ne;ne;nw;nw;ne;ed;e;n;e;e;e||w;w;w;s;w;wu;sw;se;se;sw;sw;w;w;nw;nw||200
 yueyang||jiangzhou||||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
 yueyang||yueyangch||||n;e||w;s
-tyx||yueyang||||ne;nd;n;e;e;e||w;w;w;s;su;sw
-tzf||tyx||||se;e;ne;n;ne||sw;s;sw;w;nw
+taoyuan||yueyang||||ne;nd;n;e;e;e||w;w;w;s;su;sw
+tzf||taoyuan||||se;e;ne;n;ne||sw;s;sw;w;nw
 xinyang||jiangzhou||sail||s;s;s;sd;se;s;#onask enter&&#ask shao gong about 过江;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;#onask enter&&#ask shao gong about 过江;#sail;n;nw;nu;n;n;n||40
 yz||gb-sdnb||||enter shudong||out
 gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
@@ -100,7 +100,7 @@ linan||linanch||||n;e;n||s;w;s
 linan||xihu-djq||||w;w;w||e;e;e
 gsmz||xihu-djq||||ne;ne;ne;ne;n||s;sw;sw;sw;sw
 suzhou||jiaxing||||s;s;s;s;s;s;||n;n;n;n;n;n
-suzhou-cg||suzhou||||sw;n;n;||s;s;ne
+suzhou-chaguan||suzhou||||sw;n;n;||s;s;ne
 suzhouch||suzhou||||w;w;s||n;e;e
 mrmen||suzhou||||n;e;e;e;e;e;ne||sw;w;w;w;w;w;;s
 zhenjiang||suzhou||||e;e;e;e;se;se;s;sw;sw;s;se;s;s;s;s;s||n;n;n;n;n;nw;n;ne;ne;n;nw;nw;w;w;w;w
