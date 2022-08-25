@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -4208,7 +4208,7 @@ Channel = "pkuxkx.noob"
   Regexp = true
   Group = ""
   IgnoreCase = false
-  KeepEvaluating = true
+  KeepEvaluating = false
   Menu = false
   OmitFromLog = false
   Variable = ""

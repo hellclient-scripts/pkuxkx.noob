@@ -86,16 +86,18 @@
         }
         let line = JSON.parse(DumpOutput(1))[0]
         if (App.Core.RoomDesc.Mode == 1) {
-            if (output.trim()=="炊烟不断地从路边的小屋里飘出。"){
+            if (output.trim() == "炊烟不断地从路边的小屋里飘出。") {
                 App.Core.RoomDesc.Mode = 2
             }
             let o = output.trim().slice(0, 5)
             switch (o) {
-                case "「隆冬」:":
                 case "「初春」:":
                 case "「阳春」:":
                 case "「初夏」:":
                 case "「盛夏」:":
+                case "「仲夏」:":
+                case "「初秋」:":
+                case "「隆冬」:":                    
                     App.Core.RoomDesc.Mode = 2
             }
         }
