@@ -15,7 +15,7 @@ yzkd||扬州客店||||Landmark||Tianshen suicong
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 yz-mrt||扬州名人堂||||DescStart||这里是北大侠客行的名人堂。在这里供奉的有大侠，也有魔头，也有不是大侠不是魔头的玩家。无论是哪一位，都
-yzrbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的名家珍品，还时
+yz-rbz||扬州荣宝斋||||DescStart||这里是京城里最有名的珠宝店在扬州的分店。店主人见多识广，收藏的宝物也颇不少，除了当世的名家珍品，还时
 yz-zxl2f||醉仙楼二楼||||Station||醉仙楼二楼
 haozhou||濠州广场||||DescStart||这里是濠州城中心，不少行人匆匆而过。
 haozhou-mw||濠州茅屋||||DescStart||这里是茅屋里面，虽然不算四面透风，但陈设也相当简陋。

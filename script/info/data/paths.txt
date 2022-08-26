@@ -21,7 +21,7 @@ xinyang-jpj||yz||||e;se;e;e;e;e;||w;w;w;w;nw;w
 xinyang-jpj||xinyang||||w;w;w;w||e;e;e;e
 ssb-wst||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
 yzqz||yz-jd||||s||n
-yzrbz||yzdp||||n||s
+yz-rbz||yzdp||||n||s
 xinyang||zy-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
 zy-xcc||zych||||n||s
 zy-xcc||zy-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne

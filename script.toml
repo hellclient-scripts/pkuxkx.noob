@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1384,7 +1384,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duva9k5qgcbm738d8rc2"
   Name = "App.Core.Combat.OnBlocked"
   Enabled = true
-  Match = "^([^【：『]{1,10})(拦住了你的去路，大声喝到：干什么的？|伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
+  Match = "^([^【：『]{1,10})(挡住了你。|拦住了你的去路，大声喝到：干什么的？|伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
   Send = ""
   ColourChangeType = 0
   Colour = 0

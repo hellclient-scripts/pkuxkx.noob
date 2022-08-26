@@ -97,7 +97,9 @@
                 case "「盛夏」:":
                 case "「仲夏」:":
                 case "「初秋」:":
-                case "「隆冬」:":                    
+                case "「高秋」:":
+                case "「深秋」:":
+                case "「隆冬」:":
                     App.Core.RoomDesc.Mode = 2
             }
         }

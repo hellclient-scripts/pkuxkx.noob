@@ -31,12 +31,10 @@
         }
         App.Next()
     }
-    Maze.prototype.Explore = function (move) {
-        if (App.Info.RoomDesc().indexOf("huacong")>-1){
-            App.Send("bo huacong")
-            App.Go("enter")
-            return
-        }
+    Maze.prototype.Init=function(){
+        App.Send("unset brief")
+    }
+    Maze.prototype.Searching=function(){
         App.Core.Maze.Data.hztdhfy={
             huacong:"",
             queue:["n","e","s","w"],
@@ -66,6 +64,41 @@
             })
         ]).Push()
         App.Next()
+    }
+    Maze.prototype.CheckEnter=function(){
+        if (App.Data.Room.Name="小道"){
+            let snap=App.Core.Snapshot.Take()
+            App.Commands([
+                App.NewCommand("do","bo huacong;enter"),
+                App.NewCommand("function",function(){
+                    App.Core.Snapshot.Rollback(snap)
+                })
+            ]).Push()
+            App.Next()
+        }else{
+            this.Searching()
+        }
+    }
+    Maze.prototype.Bo=function(){
+        let snap=App.Core.Snapshot.Take()
+        let self=this
+        App.Commands([
+            App.NewCommand("delay",1),
+            App.NewCommand("do","bo huacong;l enter"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",function(){
+                App.Core.Snapshot.Rollback(snap)
+                self.CheckEnter()
+            }),
+        ]).Push()
+        App.Next()
+    }
+    Maze.prototype.Explore = function (move) {
+        if (App.Info.RoomDesc().indexOf("huacong")>-1){
+            this.Bo()
+            return
+        }
+        this.Searching()
     }
     return Maze
 })(App)
