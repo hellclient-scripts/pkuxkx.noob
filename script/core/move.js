@@ -95,7 +95,6 @@
     }
     App.Core.OnMoveRain=function(name, output, wildcards){
         if (wildcards[0]==App.Data.Room.Name){
-            moved.splice(-1)
             App.RaiseStateEvent("move.retry")
         }
     }
@@ -131,6 +130,17 @@
         }
 
     }
+    App.Core.OnMoveAnswer=function(name, output, wildcards){
+        let answer=App.Info.Answers[output]
+        if (answer){
+            moved.splice(-1)
+            App.RaiseStateEvent("move.retry")    
+            App.Send(answer)
+        }else{
+            App.RaiseStateEvent("move.notallowed")
+        }
+    }
+
     App.Core.OnMoveSailEnd=function(name, output, wildcards){
         App.Send("#halt")
         App.Go("out ")

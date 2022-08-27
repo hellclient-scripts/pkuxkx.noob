@@ -1,0 +1,2 @@
+王府亲兵大声喝道：「哪里来的刁民，胆敢擅闯王府？」||ask qin bingtou about 自立为王
+没有经过通传，任何人等不得擅闯都统治府。||ask shiwei about 通传

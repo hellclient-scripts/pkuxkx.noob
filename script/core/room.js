@@ -99,6 +99,7 @@
                 case "「初秋」:":
                 case "「高秋」:":
                 case "「深秋」:":
+                case "「初冬」: ":
                 case "「隆冬」:":
                     App.Core.RoomDesc.Mode = 2
             }
