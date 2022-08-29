@@ -60,6 +60,7 @@
         let level=move.Context.Skip()
         if (!level){
             App.Fail()
+            return
         }
         let next=level.Next()
         if (next){

@@ -10,7 +10,7 @@
         let item=App.GetContext("Item")
         let amount=App.GetContext("Amount")
         App.Commands([
-            App.NewCommand("to",App.Options.NewWalk(item.Location)),
+            App.NewCommand("to",App.Options.NewWalk(item.Location.split(","))),
             App.NewCommand("nobusy"),
             App.NewCommand("do",item.Command),
             App.NewCommand("nobusy"),
