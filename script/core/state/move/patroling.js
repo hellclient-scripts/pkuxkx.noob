@@ -119,9 +119,9 @@
         if (move.Current&&move.Current.Target){
             if (App.Data.Room.ID==""){
                 App.Data.Room.ID=move.Current.Target
-
             }
         }
+        App.Raise("move.onstep")
         App.ChangeState(this.GetStateOnStep())
     }
     return State

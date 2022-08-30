@@ -11,3 +11,4 @@
 侍卫||killall shi wei||500000
 黑甲军士||killall heijia junshi||1000000
 守军||killall shou jun||1000000
+大内高手||killall danei gaoshou||5000000

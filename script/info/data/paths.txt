@@ -183,11 +183,11 @@ wdj-swdsb-w||qmz||五毒教||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&
 qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;zhai grass&&eat xiao cao&&su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||400
 qhmz||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 qhmz||wdj-jbq||五毒教||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
-qhmz||miao-linqian||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
+qhmz||miaojiang-linqian||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
 bmz||wdj-lgxs-n||||s;s;ne;ne;e;su;||nd;w;sw;sw;n;n
 wdj-lgxs-n||wdj-swdsb-s||||nd;n;e;e;e;n;nu||sd;s;w;w;w;s;su
 wdj-swdsb-s||qhmz||||sd;s;e;e;e;se;e;se;sw;su;s;s;s;s;s;su||nd;n;n;n;n;n;nd;ne;nw;w;nw;w;w;w;n;nu
-wdj-lgds-s||miao-linqian||||sd;se;s;e;nw||se;w;n;nw;nu
+wdj-lgds-s||miaojiang-linqian||||sd;se;s;e;nw||se;w;n;nw;nu
 qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 qhmz||qhmzqz||||nd;n;n;se;s||n;nw;s;s;su
 qhmz||qhmzyp||||nd;n;n;n;se;se;n||s;nw;nw;s;s;s;su

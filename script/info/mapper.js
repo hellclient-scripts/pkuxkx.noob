@@ -134,6 +134,18 @@
     App.RegisterCallback("info.mapper.reset", function () {
         App.API.ResetMapper()
     })
+    App.API.TraceExit=function(fr,cmd){
+        if (fr!=""){
+            let exits=Mapper.getexits(fr)
+            for (var i=0;i<exits.length;i++){
+                if (exits[i].command==cmd){
+                    return exits[i].to
+                }
+            }
+        }
+        return ""
+
+    }
     App.Bind("Ready", "info.mapper.reset")
 
 })(App)
