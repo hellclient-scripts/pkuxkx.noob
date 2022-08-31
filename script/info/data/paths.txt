@@ -180,7 +180,7 @@ wdj-swdsb-s||wdj-swdsb-w||||#maze 苗岭大山 north.山前[门派] [存盘点]e
 wdj-swdsb-e||wdj-swdsb-s||||#maze 苗岭大山 west.大树[门派] [存盘点]north,southdown||#maze 苗岭大山 north.山间路[门派] [存盘点]east,west||100
 wdj-swdsb-e||qmz||||e;ed;e;s;s;sw;s;se;s||n;nw;n;ne;n;n;w;wu;w
 wdj-swdsb-w||qmz||五毒教||sw;sw;e;e;e;e;e;e;se;e;se;ne;ne;se;s||n;nw;l path&&southwest;sw;nw;w;nw;w;w;w;w;w;w;ne;ne
-qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;zhai grass&&eat xiao cao&&su;#maze 苗岭山林 南;su;s;s;se;s;sw;s||400
+qmz||nanchangsy||||n;ne;n;nw;n;n;nd;enter;#maze 苗岭山林 北;ed;nu;enter||out;sd;wu;zhai grass&&eat xiao cao&&enter;#maze 苗岭山林 南;su;s;s;se;s;sw;s||400
 qhmz||wdj-swdsn-s||||nd;n;n;n;n;n;nd;n;nu||sd;s;su;s;s;s;s;s;su
 qhmz||wdj-jbq||五毒教||nd;n;se;sw;s;e;s;look 西&&west;w;w;w;su;s||n;nd;look 东&&east;e;e;e;n;w;n;ne;nw;s;su
 qhmz||miaojiang-linqian||||nd;n;se;sw;s;e;s||n;w;n;ne;nw;s;su
@@ -192,9 +192,9 @@ qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 qhmz||qhmzqz||||nd;n;n;se;s||n;nw;s;s;su
 qhmz||qhmzyp||||nd;n;n;n;se;se;n||s;nw;nw;s;s;s;su
 qhmzyp||qhmzypgj||||enter||out
-zy-xcc||wssz-md-e||||s;s;nw;nw||se;se;n;n
-wssz-md-n||wssz-md-e||||#maze 万兽山庄 south.林间道[野外]southeast,west||#maze 万兽山庄 west.林间道[野外]northwest,south
-wssz-md-n||wssz-hm||||nw;nd;w||e;su;se
+zy-xcc||wssz-migong-e||||s;s;nw;nw||se;se;n;n
+wssz-migong-n||wssz-migong-e||||#maze 万兽山庄 south.林间道[野外]southeast,west||#maze 万兽山庄 west.林间道[野外]northwest,south||50
+wssz-migong-n||wssz-houmen||||nw;nd;w||e;su;se
 luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
 hhna-mjd||hb-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
 hb-puyang||hbch||||n;e||w;s

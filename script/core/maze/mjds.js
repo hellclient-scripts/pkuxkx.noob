@@ -11,7 +11,7 @@
         return info==data[1]      
     }
     Maze.prototype.CheckWrongway=function(){
-        return App.Data.Room.Tags=="[门派] [存盘点]"
+        return App.Data.Room.Tags.indexOf("[门派]")>-1
     }
     return Maze
 })(App)

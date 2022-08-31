@@ -9,3 +9,5 @@ yao chu||yao chu||Yao chu||药锄||goods||dtms-e||buy yao chu
 im_641||dang gui||Dang gui||当归||goods||yzdp||buy im_641
 im_10||xue jie||Xue jie||血竭||goods||yzdp||buy im_10
 im_25||dan nanxing||dan nanxing||胆南星||goods||yzdp||buy im_25
+dulong bian||dulong bian||Dulong bian||毒龙鞭||goods||yzdp||buy wp_277
+wushi dao||wushi dao||Wushi dao||武士刀||goods||yzdp||buy wp_92

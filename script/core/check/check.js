@@ -9,7 +9,11 @@
         this.IntervalParam = ""
         this.LastID = ""
         this.Send=function(){
-            App.Send(this.Command)
+            if (typeof(this.Command)=="function"){
+                this.Command()
+            }else{
+                App.Send(this.Command)
+            }
         }
     }
     Check.prototype.WithLevel = function (level) {

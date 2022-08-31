@@ -22,7 +22,9 @@
         var self = this
         if (commands.length!=0) {
             commands.forEach(function (cmd) {
-                self.Push(cmd)
+                if (cmd.trim()!=""){
+                    self.Push(cmd)
+                }
             })
             if (this.Steps[this.Steps.length - 1]){
                 this.Steps[this.Steps.length - 1].SetTarget(target)

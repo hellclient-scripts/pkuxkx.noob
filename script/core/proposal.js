@@ -55,11 +55,13 @@
     Include("core/proposal/cash.js")
     Include("core/proposal/food.js")
     Include("core/proposal/drink.js")
+    Include("core/proposal/items.js")
     Include("core/proposal/neili.js")
     Include("core/proposal/heal.js")
     Include("core/proposal/inspire.js")
     Include("core/proposal/sell.js")
     Include("core/proposal/cun.js")
+    Include("core/proposal/repair.js")
     Include("core/proposal/prepare.js")
     Include("core/proposal/poison.js")
     

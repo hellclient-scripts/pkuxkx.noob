@@ -261,9 +261,9 @@ miaojiang-linqian||黑苗寨林前||||Full||林前[门派] [存盘点]north,sout
 wdj-swdsb-s||十万大山北山南出口||||Full||大树[门派] [存盘点]north,southdown
 wdj-swdsb-w||十万大山北山西出口||||Full||山前[门派] [存盘点]east,southwest
 wdj-swdsb-e||十万大山北山东出口||||Full||山间路[门派] [存盘点]east,west
-wssz-md-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
-wssz-md-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
-wssz-hm||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
+wssz-migong-e||万寿山庄迷宫东入口||||Full||林间道[野外]southeast,west
+wssz-migong-n||万寿山庄迷宫北入口||||Full||林间道[野外]northwest,south
+wssz-houmen||万寿山庄后门||||Full||山庄后门[村镇]east,enter,south,west
 
 wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
