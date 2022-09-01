@@ -6,7 +6,7 @@
     }
     App.Core.Sleep.OnWake=function(name, output, wildcards){
         App.Core.Sleep.Last=Now()
-        App.Data.HP['eff_neili']=App.Data.HP['neili']
+        App.Data.HP['eff_neili']=Math.floor(App.Data.HP['neili']*0.6)
         App.Data.HP['eff_qixue']=App.Data.HP['qixue']
         App.RaiseStateEvent("core.sleep.wake")
     }

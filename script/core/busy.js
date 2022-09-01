@@ -12,6 +12,7 @@ App.Core.OnBusyRetry=function(name){
 App.RegisterCallback("app.core.busyonconnected",function(){
     world.EnableTimer("busy_retry",false)
 })
+world.EnableTimer("busy_retry",false)
 App.Core.CheckBusy=function(){
     App.Send("checkbusy")
 }

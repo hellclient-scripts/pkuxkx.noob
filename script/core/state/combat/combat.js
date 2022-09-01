@@ -52,6 +52,10 @@
                 App.Core.Combat.Current.Perform()
                 break
             case "combat.finish":
+                let afterCombatCmd=GetVariable("after_combat_cmd")
+                if (afterCombatCmd){
+                    App.Send(afterCombatCmd)
+                }
                 let cmds = [App.NewCommand("delay", 1)]
                 if (App.Core.Combat.Current.Yield) {
                     cmds = cmds.concat([

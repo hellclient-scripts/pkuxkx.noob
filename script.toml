@@ -981,7 +981,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dtuqt48s7u5372l644vs"
   Name = "App.Core.Sleep.OnWake"
   Enabled = true
-  Match = "^你一觉醒来，精神抖擞地活动了几下手脚。$"
+  Match = "^(你一觉醒来，精神抖擞地活动了几下手脚。|你慢慢睁开眼睛，清醒了过来。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1384,7 +1384,7 @@ Channel = "pkuxkx.noob"
   ID = "d1duva9k5qgcbm738d8rc2"
   Name = "App.Core.Combat.OnBlocked"
   Enabled = true
-  Match = "^([^【：『]{1,10})(挡住了你。|拦住了你的去路，大声喝到：干什么的？|伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”)"
+  Match = "^([^【：『]{1,10})(挡住了你。|拦住了你的去路，大声喝到：|伸手拦住你朗声说道|向你吼道：小杂种，这也是你来的地方?|挡住了你的去路。|把路一挡，狞笑道|拦住你：|拦住了你的去路。|伸手拦住了你：|一言不发，闪身拦在你面前。|伸手拦住你说道：|把手一拦：|伸手拦住了你的去路|挡住了你：|说道：“阁下不是红花会弟子，最好不要进去。”|大叫道:竟敢擅闯风波亭)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -4098,7 +4098,7 @@ Channel = "pkuxkx.noob"
   ID = "queue"
   Name = "queue"
   Enabled = true
-  Match = "^#(to|do|delay|captcha|q|item|buy) .*$"
+  Match = "^#(to|do|delay|captcha|q|item|buy|neili) .*$"
   Send = ""
   Script = "App.Core.OnAliasQueue"
   SendTo = 0
@@ -4311,7 +4311,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "study"
   Desc = "学习列表"
-  Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数1\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\nfocre::lingwu\ntiyunzong::lian::::dodge\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
+  Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数1\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\ntaiji-shengong::xiulian::home::force\nfocre::lingwu::bangpai-lgf::taiji-shengong::9999::::::10\ntiyunzong::lian::::dodge\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
 
 [[RequiredParams]]
   Name = "home"
@@ -4389,11 +4389,6 @@ Channel = "pkuxkx.noob"
   Intro = ""
 
 [[RequiredParams]]
-  Name = "combat_boss"
-  Desc = "对Boss战斗指令"
-  Intro = ""
-
-[[RequiredParams]]
   Name = "combat_yun_recover"
   Desc = "设置战斗时掉了多少气血开始yun recover,留空或0不yun recover"
   Intro = ""
@@ -4412,3 +4407,8 @@ Channel = "pkuxkx.noob"
   Name = "connect_cmd"
   Desc = "连线指令"
   Intro = "连线时发出的指令，比如reload"
+
+[[RequiredParams]]
+  Name = "after_combat_cmd"
+  Desc = "战斗后命令"
+  Intro = "不要放有busy的指令"

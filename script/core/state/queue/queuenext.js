@@ -87,6 +87,10 @@
                 App.NewCommand("buy", App.Options.NewItem(cdata[0],cdata[1]-0)).WithFinalState("core.state.queue.next").Push()
                 App.Next()
                 break
+            case "#neili":
+                App.NewCommand("neili", current.Data-0).WithFinalState("core.state.queue.next").Push()
+                App.Next()
+                break
             default:
                 App.NewCommand("do", str).WithFinalState("core.state.queue.next").Push()
                 App.Next()

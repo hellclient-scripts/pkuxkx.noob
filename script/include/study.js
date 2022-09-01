@@ -1,7 +1,7 @@
 (function(){
     let Study=function(cmd){
         let data=cmd.split("::")
-        if (data.length<3){
+        if (data.length<2){
             throw "学习指令["+cmd+"]格式错误，应该为 技能名::学习类型::位置::目标(师傅名，书名等)::最大等级::开始指令::结束指令::连续次数,技能名，学习类型必填"
         }
         this.Skill=data[0]
