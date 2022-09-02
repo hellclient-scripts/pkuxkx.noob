@@ -11,7 +11,7 @@
             if (App.Data.HP["pot"] < 50 && p.Type == "xue") {
                 return
             }
-            if (p.Type=="xiuelian" && App.Data.HP["pot"]<p.Skill*5){
+            if (p.Type=="xiulian" && App.Data.HP["pot"]<p.Skill*5){
                 return
             }
             skill = App.Core.PlayerGetSkillByID(p.Skill)

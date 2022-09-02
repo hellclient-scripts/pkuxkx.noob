@@ -1,4 +1,5 @@
 (function (App) {
+    let chinesere = /[\u4e00-\u9fa5]/
     App.Core.RedBGExits = []
     App.Data.Room = {
         ID: "",
@@ -212,13 +213,16 @@
         return true
     }
     App.Core.RoomObjEnd = function () {
-        if (!App.Data.Room.ObjEnd) {
+       if (!App.Data.Room.ObjEnd) {
             App.Data.Room.ObjEnd = true
             App.Raise("OnRoomEnd")
         }
         world.EnableTriggerGroup("roomobj", false)
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
+        if (output&&output!="> "&&!output.match(chinesere)){
+            return
+        }
         App.Core.RoomObjEnd()
     }
     App.Core.OnRoomHerb = function () {
