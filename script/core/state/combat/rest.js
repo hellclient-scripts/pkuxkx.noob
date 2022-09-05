@@ -14,7 +14,7 @@
         }else if (App.Core.PerQixue()<App.GetNumberParam("heal_below")){
             App.Send("do 10 yun heal")
         }else if (App.Core.PerJing()<App.GetNumberParam("heal_below")){
-            App.Send("do 10 yun inspire")
+            App.Send("yun inspire")
         }else{
             App.Next()
             return

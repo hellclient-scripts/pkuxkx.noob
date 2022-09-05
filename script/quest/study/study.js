@@ -11,11 +11,11 @@
             if (App.Data.HP["pot"] < 50 && p.Type == "xue") {
                 return
             }
-            if (p.Type=="xiulian" && App.Data.HP["pot"]<p.Skill*5){
-                return
-            }
             skill = App.Core.PlayerGetSkillByID(p.Skill)
             if (skill != null) {
+                if (p.Type=="xiulian" && App.Data.HP["pot"]<skill.Level*5){
+                    return
+                }
                 let max = p.Max
                 if (max <= 0) {
                     max = skill.Max

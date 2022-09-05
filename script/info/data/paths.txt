@@ -19,7 +19,7 @@ yz||haozhou||||w;w;w;w;nw;w;n;n;nw;n;n||s;s;se;s;s;e;se;e;e;e;e
 xinyang-jpj||haozhou-mw||||nw;wu;act zuan to mao wu||out;ed;se;
 xinyang-jpj||yz||||e;se;e;e;e;e;||w;w;w;w;nw;w
 xinyang-jpj||xinyang||||w;w;w;w||e;e;e;e
-ssb-wst||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
+ssb||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
 yzqz||yz-jd||||s||n
 yz-rbz||yzdp||||n||s
 xinyang||zy-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
@@ -104,7 +104,8 @@ suzhouch||suzhou||||w;w;s||n;e;e
 mrmen||suzhou||||n;e;e;e;e;e;ne||sw;w;w;w;w;w;;s
 zhenjiang||suzhou||||e;e;e;e;se;se;s;sw;sw;s;se;s;s;s;s;s||n;n;n;n;n;nw;n;ne;ne;n;nw;nw;w;w;w;w
 zhenjiang||zhenjiangch||||e;e;n||s;w;w
-quanzhou||quanzhouch||||w;n||s;e
+quanzhou||quanzhouch||||w;w;w;n||s;e;e;e
+chaozhou||chaozhouch||||w;w;s||n;e;e
 nanchang||quanzhou||||s;s;s;s;se;s;se;s;s||n;n;nw;n;nw;n;n;n;n
 nanchang||nanchangch||||w;n||s;e
 quanzhou||fuzhou||||n;n;n;se;se;sd;s;s;s||n;n;n;nu;nw;nw;s;s;s
@@ -252,6 +253,8 @@ jishicart||kunmingch||train||qu kunming||gu||10
 jishicart||dalich||train||qu dalichengzhong||gu||10
 jishicart||linanch||taxi||qu hangzhou||gu||10
 jishicart||quanzhouch||taxi||qu quanzhou||gu||10
+jishicart||chaozhouch||taxi||qu chaozhou||gu||10
+
 jishicart||fuzhouch||train||qu fuzhou||gu||10
 jishicart||suzhouch||train||qu suzhou||gu||10
 jishicart||gyzch||taxi||qu guiyunzhuang||gu||10
@@ -265,6 +268,7 @@ jishicart||lxcch||taxi||qu lingxiaocheng||gu||10
 jishicart||jkfch||train||qu jiankangfu||gu||10
 jishicart||chengduch||train||qu chengdu||gu||10
 jishicart||emeich||taxi||qu emei||gu||
+
 //中原车行
 zhongyuancart||yzch||train||qu yangzhou||gu||10
 zhongyuancart||xinyangch||taxi||qu xinyang||gu||10
