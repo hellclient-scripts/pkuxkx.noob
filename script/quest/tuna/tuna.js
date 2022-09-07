@@ -2,8 +2,8 @@
     App.Quest.Tuna={}
     App.Quest.Tuna.Max=0
     App.Quest.Tuna.Check=function(){
-        if (App.Quest.Tuna.Max>0&&App.Data.HP["neili"]>=App.Quest.Tuna.Max){
-            App.Core.Quest.Cooldown("dazuo",900000)
+        if (App.Quest.Tuna.Max>0&&App.Data.HP["jingli"]>=App.Quest.Tuna.Max){
+            App.Core.Quest.Cooldown("tuna",900000)
             App.Fail()
             return
         }
