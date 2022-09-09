@@ -14,6 +14,7 @@
         switch (line) {
             case "你的任督二脉未通，先尝试dz吧。":
             case "请参考help，正确设定目标经脉set vein。你必须设定一个目标经脉。vein -h获得帮助。":
+            case "过多尝试通脉次数，有害无益。今天就到此为止吧。":
                 App.Quest.Vein.Data.Fail = true
                 break
             default:

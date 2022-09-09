@@ -4,8 +4,7 @@ App.Quest.Vein.Next="*"
 App.Quest.Vein.Data={
 }
 App.Quest.Vein.CoolDown=function(){
-    App.Core.Quest.Cooldown("dz",2*3600*1000)
-
+    App.Core.Quest.Cooldown("vein",2*3600*1000)
 }
 App.Quest.Vein.Start=function(cmd){
     App.Quest.Vein.Data={}
