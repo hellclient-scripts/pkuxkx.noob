@@ -7,21 +7,8 @@
         App.Core.Weapon.Wield()
     }
     App.Core.Weapon.Wield=function(){
-        let weapons=world.GetVariable("weapons").trim()
-        weapons.split(weaponsre).forEach(function(weapon){
-            weapon=weapon.trim()
-            if (weapon){
-                App.Send("wield "+weapon+" at right")
-            }
-        })
-        weapons=world.GetVariable("weapons_left").trim()
-        weapons.split(weaponsre).forEach(function(weapon){
-            weapon=weapon.trim()
-            if (weapon){
-                App.Send("wield "+weapon+" at left")
-            }
-        })
-
+        let cmd=world.GetVariable("wield").trim()
+        App.Send(cmd)
     }
     App.Core.Weapon.ToRepair=""
     App.Core.Weapon.LastDurability=0

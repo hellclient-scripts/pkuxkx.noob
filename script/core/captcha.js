@@ -116,7 +116,7 @@
         App.Data.CatpchaLastURL=wildcards[0]
     }
     App.Core.CaptchaFullmeLater=function(name, output, wildcards){
-        App.Data.LastFullme=Now()-wildcards[2]*60000-wildcards[4]*6000
+        App.Data.LastFullme=Now()-wildcards[2]*60000-wildcards[4]*1000
         App.Data.CatpchaLastURL=""
         App.Data.CaptchaURLs["fullme"]=""
     }

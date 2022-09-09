@@ -18,22 +18,23 @@
             //         App.Next()
             //     }
             // break
-            // case "busy":
-            //     this.Waiting=true
-            // break
+            case "busy":
+                world.ResetTimer("busy_retry")
+                world.DoAfterSpecial(1, 'App.Core.CheckBusy()', 12);
+                break
             case "nobusy":
-                    App.Next()
+                App.Next()
                 break
         }
     }
     State.prototype.Enter = function (context, oldstatue) {
         basicstate.prototype.Enter.call(this, context, oldstatue)
-        App.Core.CheckBusy()
-        world.EnableTimer("busy_retry",true)
         world.ResetTimer("busy_retry")
+        world.EnableTimer("busy_retry",true)
+        App.Core.CheckBusy()
     }
     State.prototype.Leave = function (context, oldstatue) {
-        world.EnableTimer("busy_retry", false)
+        world.EnableTimer("busy_retry",false)
     }
     return State
 })(App)

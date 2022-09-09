@@ -95,13 +95,14 @@
                 case "「初春」:":
                 case "「阳春」:":
                 case "「初夏」:":
-                case "「盛夏」:":
                 case "「仲夏」:":
+                case "「盛夏」:":
                 case "「初秋」:":
                 case "「高秋」:":
                 case "「深秋」:":
                 case "「初冬」: ":
                 case "「隆冬」:":
+                case "「寒冬」: ":    
                     App.Core.RoomDesc.Mode = 2
             }
         }
@@ -213,14 +214,14 @@
         return true
     }
     App.Core.RoomObjEnd = function () {
-       if (!App.Data.Room.ObjEnd) {
+        if (!App.Data.Room.ObjEnd) {
             App.Data.Room.ObjEnd = true
             App.Raise("OnRoomEnd")
         }
         world.EnableTriggerGroup("roomobj", false)
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
-        if (output&&output!="> "&&!output.match(chinesere)){
+        if (output && output != "> " && !output.match(chinesere)) {
             return
         }
         App.Core.RoomObjEnd()
