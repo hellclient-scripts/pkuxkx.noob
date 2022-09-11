@@ -116,7 +116,7 @@
             move.Ignore=false
             return;
         }
-        if (move.Current&&move.Current.Target){
+        if (move.Current&&!App.Core.Maze.InMaze()&&move.Current.Target){
             if (App.Data.Room.ID==""){
                 App.Data.Room.ID=move.Current.Target
             }

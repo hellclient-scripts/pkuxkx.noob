@@ -10,6 +10,9 @@
             App.LastMove.LastMaze=last
         }
     }
+    App.Core.Maze.InMaze=function(){
+        return App.Core.Maze.GetLast().startsWith("#maze ")
+    }
     App.Core.Maze.GetLast=function(){
         return App.LastMove?App.LastMove.LastMaze:""
     }
