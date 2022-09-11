@@ -32,11 +32,14 @@
         return this
     }
     Move.prototype.Continue = function (final) {
-        App.Automaton.Push([], final)
-        this.Data.Found=false
         if (this.Data.Skip){
             this.Data.Skip()
         }
+        this.Finish(final)
+    }
+    Move.prototype.Finish = function (final) {
+        this.Data.Found=false
+        App.Automaton.Push([], final)
         App.SetContext("Move", this)
         App.ChangeState(this.StateOnStep)
     }

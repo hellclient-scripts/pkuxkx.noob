@@ -39,7 +39,7 @@
             g.FindKnownRoom()
         }
         App.LastMove.StateOnStep="finding"
-        App.LastMove.WithData(g).Continue()
+        App.LastMove.WithData(g).Finish()
     }
     App.Core.Traversal.Continue = function () {
         App.LastMove.Continue()

@@ -164,7 +164,7 @@
         App.RaiseStateEvent("core.onroomexits")
     }
     App.Core.OnRoomObj = function (name, output, wildcards) {
-        var obj = { ID: wildcards[1], Name: wildcards[0] }
+        var obj = { ID: wildcards[1], Name: wildcards[0],Status:wildcards[3]}
         App.Data.Room.Objs.push(obj)
         App.Raise("OnRoomObj", obj)
     }

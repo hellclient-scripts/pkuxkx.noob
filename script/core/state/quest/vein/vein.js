@@ -1,5 +1,6 @@
 (function (App) {
     let re = /^现在你只能尝试往(.*)里灌注内力。$/
+    let zouhuore=/^你的真气在.+运行受阻，还是尽快想办法把受损的经脉恢复吧。/
     let basicstate = Include("core/state/basicstate.js")
     let State = function () {
         basicstate.call(this)
@@ -21,6 +22,12 @@
                 let result = line.match(re)
                 if (result) {
                     App.Quest.Vein.Next = result[1]
+                    return
+                }
+                let resultzouguo=line.match(zouhuore)
+                if (resultzouguo){
+                    App.Quest.Vein.Data.Fail = true
+                    return
                 }
         }
     }
