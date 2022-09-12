@@ -73,6 +73,7 @@
         return result
     }
     App.RegisterAPI("GetPath", function (fr, tolist) {
+        Mapper.flashtags()
         App.Raise("PathInit")
         var data = Mapper.getpath(fr, 1, tolist)
         if (!data) {

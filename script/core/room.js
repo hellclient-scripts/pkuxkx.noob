@@ -13,6 +13,7 @@
         YieldYes: false,
         Looking: false,
         Online: null,
+        WalkTags:[],
         Data: {},
     }
     App.Core.RoomDesc = {
@@ -35,6 +36,7 @@
         App.Core.RedBGExits = []
         let looking = App.Data.Room.Looking
         let oid = App.Data.Room.ID
+        let owalktags=App.Data.Room.WalkTags
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -47,10 +49,14 @@
             ObjEnd: false,
             Looking: false,
             Online: null,
+            WalkTags:[],
             Data: {},
         }
-        if (looking && oid) {
-            App.Data.Room.ID = oid
+        if (looking){
+            App.Data.Room.WalkTags=owalktags
+            if (oid){
+                App.Data.Room.ID = oid
+            }
         }
         App.Core.RoomDesc = {
             Mode: 0,
@@ -250,6 +256,15 @@
     App.SetRoomData = function (key, value) {
         App.Data.Room.Data[key] = value
     }
+    App.SetWalkTags = function (tags) {
+        App.Data.Room.WalkTags = tags
+    }
+    App.RegisterCallback("core.room.inittags",function(){
+        for(var i=0;i<App.Data.Room.WalkTags.length;i++){
+            Mapper.settag(App.Data.Room.WalkTags[i],true)
+        }
+    })
+    App.Bind("PathInit","core.room.inittags")
     App.GetRoomData = function (key) {
         return App.Data.Room.Data[key]
     }
