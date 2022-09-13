@@ -156,6 +156,14 @@
         App.Data.LastFullmeSuccess=wildcards[0]-0
         App.Data.LastFullme=wildcards[1]-0
     }
+
+    App.RegisterCallback("app.core.captcha.dummy",function(){
+        let dummy=GetVariable("dummy_id").trim()
+        if (dummy){
+            App.Send("tell "+dummy+" 要打码了！")
+        }
+    })
+    App.Bind("captcha","app.core.captcha.dummy")
     App.RegisterState(new (Include("core/state/captcha/captcha.js"))())
     App.RegisterState(new (Include("core/state/captcha/fullme.js"))())
     App.RegisterState(new (Include("core/state/captcha/fullmestart.js"))())

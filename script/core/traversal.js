@@ -88,6 +88,10 @@
         }
         let vp = Userinput.newvisualprompt(title + " [ " + App.Data.Traversal.Key + " ]", desc, lines ? lines : "")
         vp.setmediatype("text")
+        let target=GetVariable("__last__traversal__for")
+        if (target){
+            vp.SetValue(target)
+        }
         vp.publish("App.Core.Traversal.OnTarget")
     }
     App.Core.Traversal.Target = function (data) {
@@ -97,6 +101,7 @@
 
     App.Core.Traversal.OnTarget = function (name, id, code, data) {
         if (code == 0 && data) {
+            SetVariable("__last__traversal__for",data)
             App.Core.Traversal.Target(data)
         } else {
             App.Core.Traversal.Target("")

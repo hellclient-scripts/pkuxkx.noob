@@ -25,5 +25,9 @@
         "label":"少林跳塔",
         "desc":"需要在塔下开始",
         "cmd":"#do eat gan liang||#do drink tang||yun recover||yun regenerate||enter||u||u||u||u||u||u||out||#nobusy||#loop"
+    }    ,{
+        "label":"无内力id学读书写字",
+        "desc":"一般是低悟性id读射雕或楚氏",
+        "cmd":"#prepare||#to nanchangsy||xue zhu xi for literate 50||#to nanchang-xxs||#sleep||#loop"
     }
 ]

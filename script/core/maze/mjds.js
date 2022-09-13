@@ -15,7 +15,7 @@
         "山间平台":true,
         "一线天":true,
         "山脊":true,
-        "泉眼":true,     
+        "泉眼":true,
     }
     let Maze=function(param){
         Random.call(this,param)
