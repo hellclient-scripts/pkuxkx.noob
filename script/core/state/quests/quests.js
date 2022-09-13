@@ -6,6 +6,13 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
+        if (App.Core.Quest.Pending){
+            let q=App.Core.Quest.Pending
+            App.Core.Quest.Pending=""
+            App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
+            App.Next()
+            return
+        }
         if (App.Stopped||App.Core.Quest.Queue.length==0){
             App.Core.Quest.Queue=[]
             App.Core.Quest.Remain=[]

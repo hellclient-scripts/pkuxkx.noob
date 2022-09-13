@@ -46,8 +46,7 @@
         App.Next()
     }
     App.Core.CaptchaFullme=function(){
-     App.NewCommand("fullme").Push()
-     App.Next()
+        App.Core.Quest.InsertQuest("fullme")
     }
     App.Core.CaptchaLoad=function(){
         App.Core.CaptchaReq=HTTP.New("GET",App.Data.CaptchaCurrentURL)
@@ -138,6 +137,7 @@
         App.Core.CaptchaAlias()
         App.RaiseStateEvent("captcha.success")
         App.Raise("captcha.success")
+        App.Raise("HUDUpdate")
     }
     App.Core.CaptchaOnGonghaoFail=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.fail")
@@ -147,7 +147,7 @@
         App.Data.IsLastFullmeSuccess=false
         App.Core.CaptchaAlias
         App.RaiseStateEvent("captcha.fail")
-
+        App.Raise("HUDUpdate")
     }
     App.Core.CaptchaAlias=function(){
         App.Send("alias lastfullme "+App.Data.LastFullmeSuccess+"|"+App.Data.LastFullme)
@@ -155,6 +155,7 @@
     App.Core.CaptchaOnAlias=function(name, output, wildcards){
         App.Data.LastFullmeSuccess=wildcards[0]-0
         App.Data.LastFullme=wildcards[1]-0
+        App.Raise("HUDUpdate")
     }
 
     App.RegisterCallback("app.core.captcha.dummy",function(){

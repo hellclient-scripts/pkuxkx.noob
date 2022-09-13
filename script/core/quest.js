@@ -5,6 +5,7 @@
     App.Core.Quest.Cooldowns={}
     App.Core.Quest.Queue=[]
     App.Core.Quest.Remain=[]
+    App.Core.Quest.Pending=""
     App.RegisterQuest=function(quest){
         let id=quest.ID
         if (!id){
@@ -47,6 +48,17 @@
     App.Core.Quest.SetQuests=function(queue){
         App.Core.Quest.Queue=[...queue]
         App.Core.Quest.Remain=[...App.Core.Quest.Queue]
+    }
+    App.Core.Quest.InsertQuest=function(quest){
+        if (App.Core.Quest.Queue.length){
+            let info="任务正在执行中，将 "+quest+" 插入队列"
+            Note(info)
+            Userinput.Popup("", info,"info")
+            App.Core.Quest.Pending=quest
+        }else{
+            Note("任务队列为空，执行 "+quest)
+            App.Core.Quest.Start(quest)
+        }
     }
     App.Core.Quest.StartQuests=function(quests){
         App.Core.Sell.Reset()

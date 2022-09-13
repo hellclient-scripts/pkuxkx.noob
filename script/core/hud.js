@@ -108,6 +108,53 @@
             }
         }
     }
+    App.Core.HUD.UpdateStatus=function(){
+        let line = JSON.parse(NewLine())
+        let word = JSON.parse(NewWord("Fullme剩余 "))
+        word.Bold = true
+        word.Color = "White"
+        line.Words.push(word)
+        word = JSON.parse(NewWord(""))
+        let now=Now()
+        if (App.Data.LastFullmeSuccess>0){
+            let left=Math.floor((App.Data.LastFullmeSuccess+3600000-now)/60000)
+            if (left<0){
+                word.Text="已过期"
+                word.Color="Red"
+            }else{
+                word.Text=left+"分钟"
+                word.Color=left<20?"Yellow":"Green"
+            }
+            word.Bold=true
+        }else{
+            word.Text="-"
+            word.Color="white"
+        }
+        line.Words.push(word)
+        word = JSON.parse(NewWord(" 下次Fullme "))
+        word.Bold = true
+        word.Color = "White"
+        line.Words.push(word)
+        word = JSON.parse(NewWord(""))
+        if (App.Data.LastFullme>0){
+            let left=Math.floor((App.Data.LastFullme+900000-now)/60000)
+            if (left<0){
+                word.Text="随时"
+                word.Color="Green"
+            }else{
+                word.Text=left+"分钟"
+                word.Color="Yellow"
+            }
+            word.Bold=true
+        }else{
+            word.Text="-"
+            word.Color="white"
+        }
+        line.Words.push(word)
+        UpdateHUD(GetHUDSize()-1, JSON.stringify([line]))
+    }
+    App.RegisterCallback("core.hud.Update",App.Core.HUD.UpdateStatus)
+    App.Bind("HUDUpdate","core.hud.Update")
 
     App.Core.HUD.UpdateTitle = function () {
         let line = JSON.parse(NewLine())
@@ -155,7 +202,9 @@
             default:
                 SetHUDSize(2)
                 App.Core.HUD.UpdateTitle()
+                break
         }
+        App.Core.HUD.UpdateStatus()
     }
     App.Core.HUD.InitHUD()
 
