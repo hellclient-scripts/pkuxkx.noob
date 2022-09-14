@@ -46,6 +46,7 @@
         App.Next()
     }
     App.Core.CaptchaFullme=function(){
+        App.Core.Quest.Cooldowns["fullme"]=-1
         App.Core.Quest.InsertQuest("fullme")
     }
     App.Core.CaptchaLoad=function(){

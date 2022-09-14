@@ -41,6 +41,9 @@
         this.Data.Found=false
         App.Automaton.Push([], final)
         App.SetContext("Move", this)
+        if (this.Context){
+            Dump(this.Context.Remain)
+        }
         App.ChangeState(this.StateOnStep)
     }
     Move.prototype.Stop = function () {
