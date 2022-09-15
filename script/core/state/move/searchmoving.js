@@ -89,6 +89,14 @@
     State.prototype.Move=function(){
         let move=App.GetContext("Move")
         let exits=move.Data.GetExits()
+        
+
+        exits.filter(function(e) {
+            if (App.Core.Search.Blacklist[App.Data.Room.Name]){
+                return !App.Core.Search.Blacklist[App.Data.Room.Name][e]
+            }
+            return true
+        })
         let level=move.Context.Arrive(exits)
         let next=level.Next()
         if (next){

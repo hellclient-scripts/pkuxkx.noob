@@ -17,6 +17,7 @@
                 this.Move()
                 return
             }
+            move.LastRoomID=App.Data.Room.ID
             App.Next()
             return
         }

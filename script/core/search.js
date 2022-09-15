@@ -1,6 +1,10 @@
 (function(App){
     App.Core.Search={}
     App.Data.Search={}
+    App.Core.Search.Blacklist={
+        "苗岭边缘":{"enter":true},
+        "山间小路":{"enter":true},
+    }
     App.Core.Search.GetReturns=function(){
         let move=App.Core.Search.LastMove
         if (move==null||move.Context==null||move.Context.Level==null){

@@ -14,6 +14,7 @@
         this.Ignore = false
         this.Vehicle = ""
         this.LastMaze=""
+        this.LastRoomID=""
     }
     Move.prototype.Push = function (final) {
         App.Automaton.Push(["core.state.move.start"], final)
@@ -41,8 +42,8 @@
         this.Data.Found=false
         App.Automaton.Push([], final)
         App.SetContext("Move", this)
-        if (this.Context){
-            Dump(this.Context.Remain)
+        if (!App.Data.Room.ID){
+            App.Data.Room.ID=this.LastRoomID
         }
         App.ChangeState(this.StateOnStep)
     }
