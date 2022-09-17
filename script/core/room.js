@@ -99,6 +99,7 @@
             let o = output.trim().slice(0, 5)
             switch (o) {
                 case "「初春」:":
+                case "「早春」:":
                 case "「阳春」:":
                 case "「初夏」:":
                 case "「仲夏」:":

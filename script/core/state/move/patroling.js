@@ -122,6 +122,7 @@
             }
         }
         App.Raise("move.onstep")
+        move.LastRoomID=App.Data.Room.ID
         App.ChangeState(this.GetStateOnStep())
     }
     return State

@@ -10,7 +10,7 @@
                 App.Commands([
                     App.NewCommand("item",App.Options.NewItem("yangjing dan")),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("do","eat dan"),
+                    App.NewCommand("do","eat yangjing dan"),
                 ]).Push()
             }else{
                 App.Commands([
