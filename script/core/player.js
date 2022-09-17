@@ -88,17 +88,17 @@
     App.Core.OnPlayerScore10 = function (name, output, wildcards) {
         App.Data.Score["killed"] = wildcards[0] - 0
         App.Data.Score["morality"] = wildcards[1] - 0
-        App.Data.Score["wuxuepoint"] = wildcards[2] - 0
+        App.Data.Score["silver"] = wildcards[2]
     }
     App.Core.OnPlayerScore11 = function (name, output, wildcards) {
         App.Data.Score["deaths"] = wildcards[0] - 0
         App.Data.Score["reputation"] = wildcards[1] - 0
-        App.Data.Score["guojiapoint"] = wildcards[2] - 0
+        App.Data.Score["wuxuepoint"] = wildcards[2] - 0
     }
     App.Core.OnPlayerScore12 = function (name, output, wildcards) {
         App.Data.Score["shaqi"] = wildcards[0]
         App.Data.Score["wish"] = wildcards[1] - 0
-        App.Data.Score["shizhan"] = CNumber.Split(wildcards[2]).Count
+        App.Data.Score["guojiapoint"] = wildcards[2] - 0
     }
     App.Core.OnPlayerScoreEnd = function (name, output, wildcards) {
         world.EnableTriggerGroup("playerscore", false)
