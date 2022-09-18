@@ -1,7 +1,7 @@
 (function(App){
     App.Quest.WDJ.Jiaoshui={}
     App.Quest.WDJ.Jiaoshui.Start=function(){
-        App.Raise("quest.set","五毒教任务浇 菜")
+        App.Raise("quest.set","五毒教任务浇菜")
         App.Commands([
             App.NewCommand("do","zhao tong"),
             App.NewCommand("move",App.Options.NewPath("n")),

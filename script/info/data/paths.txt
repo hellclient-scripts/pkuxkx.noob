@@ -16,7 +16,7 @@ yz||qufu||||n;n;n;n;n;n;n;n;n;n||s;s;s;s;s;s;s;s;s;s
 yz-tdm||yz||||s;s;w;w;w;w
 xinyang||xinyangch||||w;n||s;e
 yz||haozhou||||w;w;w;w;nw;w;n;n;nw;n;n||s;s;se;s;s;e;se;e;e;e;e
-xinyang-jpj||haozhou-mw||||nw;wu;act zuan to mao wu||out;ed;se;
+xinyang-jpj||haozhou-maowu||||nw;wu;act zuan to mao wu||out;ed;se;
 xinyang-jpj||yz||||e;se;e;e;e;e;||w;w;w;w;nw;w
 xinyang-jpj||xinyang||||w;w;w;w||e;e;e;e
 ssb||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
