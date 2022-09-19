@@ -4333,6 +4333,11 @@ Channel = "pkuxkx.noob"
   Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数1\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\ntaiji-shengong::xiulian::home::force\nfocre::lingwu::bangpai-lgf::taiji-shengong::9999::::::10\ntiyunzong::lian::::dodge\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
 
 [[RequiredParams]]
+  Name = "queue"
+  Desc = "队列指令"
+  Intro = "队列指令，可以通过queue任务执行，用于穿插在quests里。\n\n注意原则上不该加#loop\n\n如#q queue或#quests xxxx||xxxx||queue"
+
+[[RequiredParams]]
   Name = "home"
   Desc = "home名字"
   Intro = "储存柜的名字,如有空格则认为空格前是柜子所在位置，否则默认为扬州总行\n\n例：\njarlyyn\nqhmz-sch ppwdj\n\n重新加载后才能起效"

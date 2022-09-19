@@ -120,5 +120,6 @@
     App.RegisterQuest(new (Include("core/quest/wdj.js"))())
     App.RegisterQuest(new (Include("core/quest/vein.js"))())
     App.RegisterQuest(new (Include("core/quest/fullme.js"))())
+    App.RegisterQuest(new (Include("core/quest/queue.js"))())
 
 })(App)
