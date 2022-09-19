@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -3994,7 +3994,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1duunbpck39tg738d1b43"
   Name = "App.Core.Combat.OnTick"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 0
   Second = 1.0
@@ -4431,3 +4431,13 @@ Channel = "pkuxkx.noob"
   Name = "dummy_id"
   Desc = "大米ID"
   Intro = "需要进行图片识别时会tell大米进行识别。其他功能还需陆续加入。"
+
+[[RequiredParams]]
+  Name = "mods_list"
+  Desc = "指定模块列表"
+  Intro = "根据mods_list_whitelist_mode的值决定以白名单或黑名单模式加载该列表。\n一行一个mod名"
+
+[[RequiredParams]]
+  Name = "mods_list_whitelist_mode"
+  Desc = "模块列表白名单模式"
+  Intro = "如果不为空，则以白名单模式加载mods_list\n否则以黑名单模式拦截mods_list"
