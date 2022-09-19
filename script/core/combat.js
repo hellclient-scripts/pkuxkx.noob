@@ -65,7 +65,7 @@
         }
     }
     App.Core.Combat.CheckFighting=function(){
-        App.Send("guard checkcombating")
+        App.Send("guard .")
     }
     App.Core.Combat.GetCommands=function(name){
         if (!name){
