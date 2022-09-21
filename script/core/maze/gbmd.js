@@ -19,6 +19,7 @@
             case "move.onRoomObjEnd":
                 switch (App.Data.Room.Name){
                     case "树洞内部":
+                        let snap=App.Core.Snapshot.Take()
                         App.Commands([
                             App.NewCommand("move",App.Options.NewPath("d")),
                             App.NewCommand("function",function(){

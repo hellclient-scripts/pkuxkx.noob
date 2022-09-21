@@ -17,7 +17,7 @@
         Data: {},
     }
     App.Core.RoomDesc = {
-        Mode: 0,//0:地图，1:描述,2:环境
+        Mode: 0,//0:地图，1:描述,2:环境,3:雾中
         Desc: "",
         Canlook: "",
         Canget: "",
@@ -91,6 +91,10 @@
         if (App.Data.Room.Exits != null) {
             return
         }
+        if (output.startsWith("    一片浓雾中，什么也看不清。")){
+            App.Core.RoomDesc.Mode = 3
+            return
+        }
         let line = JSON.parse(DumpOutput(1))[0]
         if (App.Core.RoomDesc.Mode == 1) {
             if (output.trim() == "炊烟不断地从路边的小屋里飘出。") {
@@ -141,6 +145,9 @@
                 App.Core.RoomDesc.Env += output + "\n"
                 App.Core.RoomLines.EnvLines.push(line)
                 break
+            case 3:
+                App.Data.Room.Exits=[]
+                return
         }
     }
     world.EnableTrigger("room_desc", false)
