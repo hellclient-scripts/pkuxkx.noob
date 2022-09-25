@@ -143,7 +143,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dtmrdshqa8q072evclbd"
   Name = "core.ask.reply"
-  Enabled = true
+  Enabled = false
   Match = "^(.*)$"
   Send = ""
   ColourChangeType = 0
@@ -461,7 +461,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.CaptchaOnFail"
+  Script = "App.Core.CaptchaOnGonghaoFail"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -3956,7 +3956,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 0
   Second = 20.0
@@ -4446,3 +4446,8 @@ Channel = "pkuxkx.noob"
   Name = "mods_list_whitelist_mode"
   Desc = "模块列表白名单模式"
   Intro = "如果不为空，则以白名单模式加载mods_list\n否则以黑名单模式拦截mods_list"
+
+[[RequiredParams]]
+  Name = "mods_config"
+  Desc = "扩展信息，用于自定的mod使用"
+  Intro = "一行一条数据，格式为\n\nMODVALUE=xxxx\nMODVALUE2=xxxx\n\n\n需要在mod中通过App.LoadModsConfig(Name)自行读取"

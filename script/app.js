@@ -75,6 +75,15 @@ App.onResponse = function (msgtype, id, data) {
 App.Load = function (name) {
     Include(name)
 }
+App.LoadModsConfig=function(name){
+    let config=GetVariable("mods_config").split("\n")
+    for (var i=0;i<config.length;i++){
+        if (config[i].startsWith(name+"=")){
+            return config[i].slice((name+"=").length)
+        }
+    }
+    return ""
+}
 App.LoadMods = function () {
     var mods = {}
     let white_list = GetVariable("mods_list_whitelist_mode").trim() != ""

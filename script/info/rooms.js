@@ -27,7 +27,7 @@
         })
     }
     App.Info.RoomHome="home"
-    App.Info.RoomSafe="wst-xxs"
+    App.Info.RoomSafe="ssb-xxs"
     App.Info.RoomSell="yzdp"
     App.RegisterCallback("info.room.objlocate", function (data) {
         if (!App.Data.Room.ID && App.Info.Landmarks[data.ID]) {

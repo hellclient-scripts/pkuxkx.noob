@@ -146,8 +146,9 @@
     App.Core.CaptchaOnFail=function(name, output, wildcards){
         App.Data.LastFullme=Now()
         App.Data.IsLastFullmeSuccess=false
-        App.Core.CaptchaAlias
+        App.Core.CaptchaAlias()
         App.RaiseStateEvent("captcha.fail")
+        App.Raise("captcha.fail")
         App.Raise("HUDUpdate")
     }
     App.Core.CaptchaAlias=function(){
