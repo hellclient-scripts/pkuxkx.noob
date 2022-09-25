@@ -2030,7 +2030,36 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
-
+[[Triggers]]
+  ID = "d1e25vlikh1fun6copv4f2"
+  Name = "App.Core.OnPoisonShedu"
+  Enabled = true
+  Match = "^你中的蛇毒发作了！$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnPoisonShedu"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
 [[Triggers]]
   ID = "d1e25vlikh1fun6copv4f"
   Name = "App.Core.OnPoisonXxdz"

@@ -313,9 +313,12 @@
         return App.Data.HP["per_jing"]
     }
     App.Core.OnPoisonMjzq = function (name, output, wildcards) {
-        App.Data.HP["status"]["苗疆瘴气"] = true
+        App.Data.HP["status"]["苗疆"] = true
     }
     App.Core.OnPoisonXxdz = function (name, output, wildcards) {
         App.Data.HP["status"]["星宿毒掌毒"] = true
+    }
+    App.Core.OnPoisonShedu = function (name, output, wildcards) {
+        App.Data.HP["status"]["蛇毒"] = true
     }
 })(App)
