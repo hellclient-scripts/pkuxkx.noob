@@ -303,6 +303,10 @@
         App.Data.HP["eff_qixue"] = App.Data.HP["qixue"] - 0
         App.Data.HP["per_qixue"] = 100
     }
+    App.Core.OnInspired = function (name, output, wildcards) {
+        App.Data.HP["eff_jing"] = App.Data.HP["jing"] - 0
+        App.Data.HP["per_jing"] = 100
+    }
     App.Core.OnNoNeili = function (name, output, wildcards) {
         App.Data.HP["eff_neili"] = 0
     }

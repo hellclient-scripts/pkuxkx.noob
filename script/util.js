@@ -70,7 +70,7 @@ var CNumber={
         var item=result[5]
         return{
             Count:CNumber.Convert(count),
-            Unut:unit,
+            Unit:unit,
             Item:item
         }
     }

@@ -40,7 +40,7 @@
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
-            Tags: wildcards[4],
+            Tags: wildcards[5],
             Objs: [],
             HasHerb: false,
             OnAsk: "",
@@ -99,6 +99,7 @@
         if (App.Core.RoomDesc.Mode == 1) {
             if (output.trim() == "炊烟不断地从路边的小屋里飘出。") {
                 App.Core.RoomDesc.Mode = 2
+                return
             }
             let o = output.trim().slice(0, 5)
             switch (o) {
@@ -111,10 +112,11 @@
                 case "「初秋」:":
                 case "「高秋」:":
                 case "「深秋」:":
-                case "「初冬」: ":
+                case "「初冬」:":
                 case "「隆冬」:":
-                case "「寒冬」: ":    
+                case "「寒冬」:":    
                     App.Core.RoomDesc.Mode = 2
+                    return
             }
         }
         if (output.slice(0, 15) == "    你可以看看(look)") {

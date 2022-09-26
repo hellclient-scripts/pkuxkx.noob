@@ -13,12 +13,17 @@
         let result=text.match(timere)
         if (result){
             let delay=0
+            let min=0
+            let second=0
             if (result[2]){
-                delay=delay+(CNumber.Convert(result[2])*60*1000)
+                min=CNumber.Convert(result[2])
+                delay=delay+(min*60*1000)
             }
             if (result[4]){
-                delay=delay+(CNumber.Convert(result[4])*1*1000)
+                second=CNumber.Convert(result[4])
+                delay=delay+(second*1*1000)
             }
+            Note("在" +min+" 分 "+ second+"秒后可接任务")
             return Now()+delay
         }
         return -1

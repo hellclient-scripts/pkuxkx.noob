@@ -267,7 +267,7 @@ jishicart||tlsch||taxi||qu tianlongsi||gu||10
 jishicart||lxcch||taxi||qu lingxiaocheng||gu||10
 jishicart||jkfch||train||qu jiankangfu||gu||10
 jishicart||chengduch||train||qu chengdu||gu||10
-jishicart||emch||taxi||qu em||gu||
+jishicart||emch||taxi||qu emei||gu||
 
 //中原车行
 zhongyuancart||yzch||train||qu yangzhou||gu||10

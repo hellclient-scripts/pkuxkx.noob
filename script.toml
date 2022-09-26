@@ -50,7 +50,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dvn4vk9l477m73074fio"
   Name = "App.OnStateLine"
-  Enabled = true
+  Enabled = false
   Match = "^.*$"
   Send = ""
   ColourChangeType = 0
@@ -1411,6 +1411,39 @@ Channel = "pkuxkx.noob"
   Italic = false
   Variable = ""
 
+
+
+[[Triggers]]
+  ID = "d1duvbveouedv4738dag4s2"
+  Name = "App.Core.OnInspired"
+  Enabled = true
+  Match = "^你根本就没有受伤，疗什么伤啊！$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnInspired"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "system"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
 [[Triggers]]
   ID = "d1duvbveouedv4738dag4s"
   Name = "App.Core.OnHealed"
@@ -2030,18 +2063,19 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
+
 [[Triggers]]
-  ID = "d1e25vlikh1fun6copv4f2"
-  Name = "App.Core.OnPoisonShedu"
+  ID = "d1e25vlikh1fun6copv4f"
+  Name = "App.Core.OnPoisonXxdz"
   Enabled = true
-  Match = "^你中的蛇毒发作了！$"
+  Match = "^(你一中掌，身子一晃，看来已经中了毒！|忽然一阵刺骨的奇寒袭来，你中的星宿毒掌毒发作了！)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.OnPoisonShedu"
+  Script = "App.Core.OnPoisonXxdz"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -2060,18 +2094,19 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
+
 [[Triggers]]
-  ID = "d1e25vlikh1fun6copv4f"
-  Name = "App.Core.OnPoisonXxdz"
+  ID = "d1e25vlikh1fun6copv4f2"
+  Name = "App.Core.OnPoisonShedu"
   Enabled = true
-  Match = "^(你一中掌，身子一晃，看来已经中了毒！|忽然一阵刺骨的奇寒袭来，你中的星宿毒掌毒发作了！)$"
+  Match = "^你中的蛇毒发作了！$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.OnPoisonXxdz"
+  Script = "App.Core.OnPoisonShedu"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -3645,7 +3680,7 @@ Channel = "pkuxkx.noob"
   ID = "room"
   Name = "room"
   Enabled = true
-  Match = "^(> )*((\\S{1,6} ){0,1}\\S{1,10})\\s{1,3}-\\s*((\\[.*\\]\\s*)+.*){0,1}(★|☆){0,1}$"
+  Match = "^(> )*((\\S{1,6} ){0,1}\\S{1,10})(\\[.+\\]){0,1}\\s{1,3}-\\s*((\\[.*\\]\\s*)+.*){0,1}(★|☆){0,1}$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -3985,7 +4020,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 0
   Second = 20.0
