@@ -1,3 +1,2 @@
-夫子||Fu zi||||Fixed||yzsy
-平一指||Ping yizhi||Fixed||yzyp
-王铁匠||Wang tiejiang||Fixed||yztj
+fu zi||fu zi||夫子||Fixed||yzsy
+ping yizhi||ping yizhi||平一指||Fixed||yzyp

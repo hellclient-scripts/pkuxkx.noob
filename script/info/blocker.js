@@ -17,7 +17,7 @@
     }
     App.RegisterCallback("info.presets.loadblockers", function () {
         world.Note("加载拦路人")
-        let data=world.ReadLines("info/data/blocker.txt")
+        let data=world.ReadLines("info/data/blockers.txt")
         App.Info.LoadBlockerLines(data)
     })
     App.Bind("Init", "info.presets.loadblockers")

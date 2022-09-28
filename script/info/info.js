@@ -7,6 +7,7 @@ App.Load("info/item.js")
 App.Load("info/presets.js")
 App.Load("info/blocker.js")
 App.Load("info/answer.js")
+App.Load("info/npc.js")
 App.Load("info/sell.js")
 App.Load("info/ui/ui.js")
 

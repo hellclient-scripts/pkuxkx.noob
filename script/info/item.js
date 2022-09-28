@@ -4,8 +4,11 @@
     App.Info.Items=[]
     App.Info.BuiltinItems=[]
     App.Info.UserItems=[]
-    let loaditems=function(data){
+    App.Info.Loaditems=function(data){
         data.forEach(function(line){
+            if (line.trim() == "" || line.slice(0, 2) == "//") {
+                return
+            }
             let i= new item()
             var data=line.split(sep)
             i.ID=data[0]
@@ -33,8 +36,8 @@
         world.WriteHomeFile("data/items.txt",data)
     })
     App.RegisterAPI("ResetItems",function(){
-        loaditems(App.Info.BuiltinItems)
-        loaditems(App.Info.UserItems)
+        App.Info.Loaditems(App.Info.BuiltinItems)
+        App.Info.Loaditems(App.Info.UserItems)
     })
     App.RegisterAPI("GetItem", function (id) {
         for (var key in App.Info.Items){

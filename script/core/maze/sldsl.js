@@ -12,7 +12,6 @@
         switch (this.Current) {
             case "e":
                 App.Go("e")
-                // App.Go((App.Data.Room.Tags.indexOf("野外") > -1) ? "s" : "e")
                 break
             default:
                 App.Go((App.Data.Room.Tags.indexOf("野外") > -1) ? "w" : "n")

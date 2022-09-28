@@ -11,7 +11,7 @@
     }
     App.RegisterCallback("info.presets.loadanswers", function () {
         world.Note("加载口令")
-        let data=world.ReadLines("info/data/answer.txt")
+        let data=world.ReadLines("info/data/answers.txt")
         App.Info.LoadAnswerLines(data)
     })
     App.Bind("Init", "info.presets.loadanswers")

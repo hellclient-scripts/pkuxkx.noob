@@ -14,3 +14,11 @@ sld-ndzjs
 sld-ndzjs2
 //桃花岛
 thd-xxs
+//明教
+mj-xxf
+//灵鹫宫
+ljg-xxs
+
+ry-neiting
+ry-xxs
+ry-xxs2

@@ -245,7 +245,7 @@ gyz-gyt||gyz||||e;e||w;w
 dls-hzd||dlsmen||||wu;nw||se;ed
 dlsmen||dlsch||||e||w
 
-lingjiu||hzxz||||sd;sd;s;s;sd||nu;n;n;nu;nu
+ljgmen||hzxz||||sd;sd;s;s;sd||nu;n;n;nu;nu
 
 //计氏车行
 jishicart||dlsch||train||qu dalunsi||gu||10
