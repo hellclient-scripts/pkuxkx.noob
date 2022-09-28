@@ -12,7 +12,8 @@ im_25||dan nanxing||dan nanxing||胆南星||goods||yzdp||buy im_25
 dulong bian||dulong bian||Dulong bian||毒龙鞭||goods||yzdp||buy wp_277
 wushi dao||wushi dao||Wushi dao||武士刀||goods||yzdp||buy wp_92
 fish||fish||Fish||鱼||goods||yzdp||buy im_377
-yayi cloth||yayi cloth||Yayi cloth||衙役服||yzdp||buy am_249
-fuchen||fuchen||Fuchen||拂尘||yzdp||buy wp_262
-shu||shu||Shu||说文解字||nanchangsy||buy shu
-mapi baodian||mapi baodian||mapi baodian||马屁宝典||nanchangsy||buy mapi baodian
+yayi cloth||yayi cloth||Yayi cloth||衙役服||goods||yzdp||buy am_249
+fuchen||fuchen||Fuchen||拂尘||goods||yzdp||buy wp_262
+shu||shu||Shu||说文解字||goods||nanchangsy||buy shu
+mapi baodian||mapi baodian||mapi baodian||马屁宝典||goods||nanchangsy||buy mapi baodian
+junfu||junfu||Junfu||军服||goods||yzdp||buy am_173
