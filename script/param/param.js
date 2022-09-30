@@ -23,6 +23,7 @@
         "checkjifainterval":"60000",
         "checkskillsinterval":"60000",
         "checkiteminterval":"10000",
+        "checklupidaiinterval":"10000",
         "checkavatarinterval":"60000",
         "checkdurabilityinterval":"60000",
         "charset":"2",
@@ -31,6 +32,8 @@
         "questsdelay":"1",
         "queuedelay":"1",
         "sleepdelay":"10500",
+        "lupidaicoin":"1000",
+        "lupidaiqucoin":"2000",
     }
     App.InitParam=function(name,val){
         App.Params[name]=val

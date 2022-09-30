@@ -70,7 +70,7 @@ jiangzhou||jiangzhouch||||ne;ne;nw;w||e;se;sw;sw;
 xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;n;n;n;n
 xiangyang||wdmen||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
 wdmen||wdch||||s||n
-wd-zlxy||wd-bcm||||s;w;w||w;sw;s;se;e;ne;n;nw;sw;s;e;n
+wd-xiaowu||wd-bcm||||s;w;w||w;sw;s;se;e;ne;n;nw;sw;s;e;n
 wd-bcm||wd-sqd||||e;e;s;s;s||n;n;n;w;w
 jkf-zym||linan||||s;se;se;s;s;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;n;n;nw;nw;n
 jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;e;e;ne;ne;se;se
@@ -120,11 +120,11 @@ wd-jxg||wd-sqd||||e;e;s||n;w;w
 wd-jxg||wd-jxg2f||||u||d
 wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
 wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
-wd-kf||wd-sqd||||w;w||e;e
-wd-xl||wd-cw||||w||e
-wdmen||wd-xl||||e;s;se||nw;n;w
-wd-xl||wd-zl||||#maze 武当土匪进入
-wd-zl||wd-xl||||#maze 武当土匪离开;n;nd;w;s;se
+wd-kefang||wd-sqd||||w;w||e;e
+wd-xiaolu||wd-caowu||||w||e
+wdmen||wd-xiaolu||||e;s;se||nw;n;w
+wd-xiaolu||wd-zl||||#maze 武当土匪进入
+wd-zl||wd-xiaolu||||#maze 武当土匪离开;n;nd;w;s;se
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
 gb-sdx||wdmen||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
@@ -136,8 +136,8 @@ gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;n
 gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||hscch||||s;s;e||w;n;n
 hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
-hsc||huashanmen||||e;e;e;e;e;se;su;eu||wd;nd;nw;w;w;w;w;w
-huashanmen||huashanch||||wd;nd;nw;ne||sw;se;su;eu
+hsc||hsmen||||e;e;e;e;e;se;su;eu||wd;nd;nw;w;w;w;w;w
+hsmen||hsch||||wd;nd;nw;ne||sw;se;su;eu
 qzmen||hsc||||sd;s;sd;sd;se;s;se;se;e;se;se||nw;nw;w;nw;nw;n;nw;nu;nu;n;nu
 qzmen||qzch||||e||w
 gmmen||qzmen||||s;s;s;wu;eu;su;s;s;s;s;s;s;s;s;s;s;s;s;s||n;n;n;n;n;n;n;n;n;n;n;n;n;nd;wd;ed;n;n;n
@@ -149,6 +149,7 @@ wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out
 wdj-jbq||wdj||五毒教||l 山壁&&enter;s;e;s;w;s;out;s
 wdj-jbq||wdj||wdj.shitou||l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s
+wdj-jbq||wdj||||n;e;get shitou&&i2&&w;s;l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s
 wdj-jbq||wdj-xiaowu||||n;e||w;s
 wdj||wdj-shuifang||||se||nw
 wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s
@@ -282,7 +283,7 @@ zhongyuancart||xiangyangch||taxi||qu xiangyang||gu||10
 zhongyuancart||wdch||taxi||qu wudangshan||gu||10
 zhongyuancart||slsch||taxi||qu shaolinsi||gu||10
 zhongyuancart||luoyangch||taxi||qu luoyang||gu||10
-zhongyuancart||huashanch||taxi||qu huashan||gu||10
+zhongyuancart||hsch||taxi||qu huashan||gu||10
 zhongyuancart||hscch||taxi||qu xiaoshancun||gu||10
 zhongyuancart||qzch||taxi||qu quanzhen||gu||10
 zhongyuancart||gmch||taxi||qu gumu||gu||10

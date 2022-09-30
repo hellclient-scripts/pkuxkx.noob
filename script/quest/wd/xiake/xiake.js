@@ -21,11 +21,11 @@
         App.Commands([
             App.NewCommand("combatinit"),
             App.NewCommand('prepare', App.PrapareFull),
-            App.NewCommand("to",App.Options.NewWalk("wd-cw")),
+            App.NewCommand("to",App.Options.NewWalk("wd-caowu")),
             App.NewCommand("ask",App.Quest.WD.Xiake.Question),
             App.NewCommand("to",App.Options.NewWalk("wd-zl")),
             App.NewCommand("function",App.Quest.WD.Xiake.Fight),
-            App.NewCommand("to",App.Options.NewWalk("wd-cw")),
+            App.NewCommand("to",App.Options.NewWalk("wd-caowu")),
             App.NewCommand("do","give yin zhuozi to cui laohan"),
             App.NewCommand("to",App.Options.NewWalk("wd")),
             App.NewCommand("ask",App.Quest.WD.QuestionSuccess),

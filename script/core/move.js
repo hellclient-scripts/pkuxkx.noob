@@ -7,7 +7,7 @@
     }
     App.Locate=function(depth){
         if(!depth){
-            depth=8
+            depth=15
         }
         App.NewCommand("locate",depth).Push()
         App.Next()

@@ -37,6 +37,8 @@
         let looking = App.Data.Room.Looking
         let oid = App.Data.Room.ID
         let owalktags=App.Data.Room.WalkTags
+        let oonliie=App.Data.Room.Online
+        let odata=App.Data.Room.Data
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -54,6 +56,8 @@
         }
         if (looking){
             App.Data.Room.WalkTags=owalktags
+            App.Data.Room.Online=oonliie
+            App.Data.Room.Data=odata
             if (oid){
                 App.Data.Room.ID = oid
             }
