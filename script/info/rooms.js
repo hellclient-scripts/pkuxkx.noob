@@ -45,13 +45,6 @@
     App.RoomFull=function(){
         Note(App.Info.RoomFull())
     }
-    // App.Info.RoomDescStart=function(){
-    //     let desc=App.Core.RoomDesc.Desc.split("\n",1)[0]
-    //     if (desc){
-    //         desc=desc.trim()
-    //     }
-    //     return desc
-    // }
     let re=/[\n\s\t]/g
     App.Info.RoomDesc=function(){
         let desc=App.Core.RoomDesc.Desc
