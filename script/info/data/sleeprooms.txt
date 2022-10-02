@@ -40,3 +40,4 @@ dls-zym
 sls-hsy3b
 sls-hsy5b
 em-qinshi
+xiangyang-xxs
