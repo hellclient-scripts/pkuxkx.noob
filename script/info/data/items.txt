@@ -24,6 +24,7 @@ red rose||red rose||Red rose||红玫瑰||goods||suzhoudp||buy am_351
 jing13||jing||Jing||道德经「第十三章」||goods||xiangyangdp||buy im_286
 jing18||jing||Jing||道德经「第十八章」||goods||xiangyangdp||buy im_252
 jing16||jing||Jing||道德经「第十六章」||goods||changandp||buy im_244
-sword book||sword book||Sword book||华山剑谱||goods||ssbdp||buy im_145
+sword book||sword book||Sword book||华山剑谱||goods||ssbdp||buy im_219
 bai yi||bai yi||Bai yi||白衣||goods||changandp||buy am_439
 claw book||claw book||Claw book||爪法入门||goods||luoyang-bjdm||buy claw book
+blade book||blade book||Blade book||飞沙走石十三式||goods||yzdp||buy im_234

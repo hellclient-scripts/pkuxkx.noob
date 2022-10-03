@@ -21,7 +21,7 @@
         switch (this.Current) {
             case "e":
                 if (App.Data.Room.Name == "大沙漠" && App.Data.Room.Exits.length < 4) {
-                    App.Go("3")
+                    App.Go("e")
                     return
                 }
                 if (this.Mode == 0) {

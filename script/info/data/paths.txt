@@ -71,7 +71,7 @@ xiangyang||jingzhou||||s;s;s;s;s;s;s;s;s;se;sw;s;s;s;s||n;n;n;n;ne;nw;n;n;n;n;n;
 xiangyang||wdmen||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne;n;e;e;e;e;e;e;e;e;e;e;e;e;e
 wdmen||wdch||||s||n
 wd-xiaowu||wd-bcm||||s;w;w||w;sw;s;se;e;ne;n;nw;sw;s;e;n
-wd-bcm||wd-sqd||||e;e;s;s;s||n;n;n;w;w
+wd-bcm||wd-sqd||武当派||e;e;s;s;s||n;n;n;w;w
 jkf-zym||linan||||s;se;se;s;s;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;n;n;nw;nw;n
 jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;e;e;ne;ne;se;se
 jkf-cym||zhenjiang||||e;ed;ne;ne;ne;e;e;e;e||w;w;w;w;sw;sw;sw;wu;w
@@ -116,10 +116,10 @@ mingzhou||linan||||n;w;w;nw;nw;w;ride north;#sail;e;ne;w;w;w;w;w;w;w;w||e;e;e;e;
 thdmen||mingzhou||||enter boat;#sail;s;s||n;n;enter boat;#sail
 wd||wdmen||||#maze 武当下山;sd;wd;wd;sd;sd;e;sd;sd;sd;ed||wu;nu;nu;nu;w;nu;nu;;eu;eu;nu;nu
 wd||wd-sqd||||n||s
-wd-jxg||wd-sqd||||e;e;s||n;w;w
+wd-jxg||wd-sqd||武当派||e;e;s||n;w;w
 wd-jxg||wd-jxg2f||||u||d
-wd-fzg2f||wd-sqd||||d;e;e;s;s||n;n;w;w;u
-wd-tzfx||wd-sqd||||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
+wd-fzg2f||wd-sqd||武当派||d;e;e;s;s||n;n;w;w;u
+wd-tzfx||wd-sqd||武当派||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze 武当密林 南;sd;wd;nd;ed;d;sd;s;s;s;s||n;n;n;n;nu;u;wu;su;eu;nu;nu;#maze 武当密林 北;u;wu;su;eu;nu;nu;nu;nu;nu;nu;nu;nu;nu;nu
 wd-kefang||wd-sqd||||w;w||e;e
 wd-xiaolu||wd-caowu||||w||e
 wdmen||wd-xiaolu||||e;s;se||nw;n;w
