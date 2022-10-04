@@ -14,3 +14,4 @@
 官兵们||killall guan bing||100000
 大内高手||killall danei gaoshou||5000000
 庄丁||killall zhuang ding||100000
+亲兵||killall qin bing||100000
