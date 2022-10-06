@@ -4,6 +4,7 @@
         "苗疆瘴气":"wait",
         "蛇毒":"wait",
         "星宿毒掌毒":"wait",
+        "冰魄寒毒":"wait",
     }
     App.Core.Poison.Cure=function(){
         let type=App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]

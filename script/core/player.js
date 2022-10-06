@@ -301,7 +301,16 @@
             App.Data.HP["status"][data] = true
         })
     }
-
+    App.Core.Dazuo=function(){
+        let num=App.Data.HP["qixue"]?(App.Data.HP["qixue"]/10):10
+        if (num>App.Data.HP["eff_qixue"]){
+            num=App.Data.HP["eff_qixue"]
+        }
+        if (num<10){
+            num=10
+        }
+        App.Send("dazuo "+num)
+    }
     App.Core.OnPlayerHPEnd = function (name, output, wildcards) {
         world.EnableTriggerGroup("playerhp", false)
     }
@@ -327,6 +336,9 @@
     }
     App.Core.OnPoisonXxdz = function (name, output, wildcards) {
         App.Data.HP["status"]["星宿毒掌毒"] = true
+    }
+    App.Core.OnPoisonBphd = function (name, output, wildcards) {
+        App.Data.HP["status"]["冰魄寒毒"] = true
     }
     App.Core.OnPoisonShedu = function (name, output, wildcards) {
         App.Data.HP["status"]["蛇毒"] = true

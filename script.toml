@@ -2466,6 +2466,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1e6rosqjegnir72vvolc3"
+  Name = "App.Core.OnPoisonBphd"
+  Enabled = true
+  Match = "^突然你打了个寒战，你中的冰魄寒毒发作了！$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnPoisonBphd"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -4606,3 +4637,13 @@ Channel = "pkuxkx.noob"
   Name = "mods_config"
   Desc = "扩展信息，用于自定的mod使用"
   Intro = "一行一条数据，格式为\n\nMODVALUE=xxxx\nMODVALUE2=xxxx\n\n\n需要在mod中通过App.LoadModsConfig(Name)自行读取"
+
+[[RequiredParams]]
+  Name = "after_move_cmd"
+  Desc = "移动后指令"
+  Intro = "在每次成功的#to移动和遍历后发送的指令"
+
+[[RequiredParams]]
+  Name = "manual_mode_cmd"
+  Desc = "手动模式指令"
+  Intro = "进入手动模式时自动执行的指令"

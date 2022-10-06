@@ -148,8 +148,8 @@ wdj-ygf||wdj-jsdd||||w||e
 wdj-jsdd||wdj||||nd;nd||su;su
 wdj||wdj-jbq||||n;enter;n;e;n;w;n;out
 wdj-jbq||wdj||五毒教||l 山壁&&enter;s;e;s;w;s;out;s
-wdj-jbq||wdj||wdj.shitou||l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s
-wdj-jbq||wdj||||n;e;get shitou&&i2&&w;s;l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s
+wdj-jbq||wdj||wdj.shitou||l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s||50
+wdj-jbq||wdj||||n;e;get shitou&&i2&&w;s;l 山壁&&enter;cuo shitou&&s;e;s;w;s;out;s||50
 wdj-jbq||wdj-xiaowu||||n;e||w;s
 wdj||wdj-shuifang||||se||nw
 wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l 东南&&southeast;se;se;se;s

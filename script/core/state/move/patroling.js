@@ -102,6 +102,10 @@
 
     State.prototype.Finish=function(){
         world.Note("到达目的地")
+        let cmd=GetVariable("after_move_cmd")
+        if (cmd){
+            App.Send(cmd)
+        }
         App.Next()
     }
     State.prototype.Retry=function(){

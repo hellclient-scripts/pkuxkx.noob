@@ -8,6 +8,10 @@
     StateManual.prototype.Enter=function(Context,newstatue){
         world.Note("进入手动模式")
         Userinput.Popup("","进入手动模式","可以点击输入框左侧的小人图标选择下一步的动作","info")
+        let cmd=GetVariable("manual_mode_cmd")
+        if (cmd){
+            App.Send(cmd)
+        }
     }
     StateManual.prototype.OnEvent=function(context,event,data){
         switch(event){

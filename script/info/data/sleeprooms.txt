@@ -14,6 +14,7 @@ sld-ndzjs
 sld-ndzjs2
 //桃花岛
 thd-xxs
+gyz-xxs
 //明教
 mj-xxf
 //灵鹫宫

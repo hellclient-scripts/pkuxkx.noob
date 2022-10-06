@@ -10,7 +10,7 @@
     State.prototype.Enter=function(context,oldstatue){
         Note("内力:"+App.Data.HP["eff_neili"]+" 气血:"+App.Core.PerQixue())
         if(App.Data.HP["eff_neili"]<App.GetParamNeiliMin()){
-            App.Send("dazuo max;dazuo 10")
+            App.Core.Dazuo()
         }else if (App.Core.PerQixue()<App.GetNumberParam("heal_below")){
             App.Send("do 10 yun heal")
         }else if (App.Core.PerJing()<App.GetNumberParam("heal_below")){
