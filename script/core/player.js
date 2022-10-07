@@ -302,7 +302,7 @@
         })
     }
     App.Core.Dazuo=function(){
-        let num=App.Data.HP["qixue"]?(App.Data.HP["qixue"]/10):10
+        let num=App.Data.HP["qixue"]?Math.floor((App.Data.HP["qixue"]/10)):10
         if (num>App.Data.HP["eff_qixue"]){
             num=App.Data.HP["eff_qixue"]
         }

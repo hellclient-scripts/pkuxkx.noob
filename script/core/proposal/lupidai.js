@@ -10,7 +10,7 @@
             return !(item && item.Count>App.GetNumberParam("lupidaicoin"))
         }
         this.Execute=function(){
-            let cmd="qu "+App.GetParam("lupidaiqucoin")+" coin;put coin_money in lupi dai;i2;l lupi dai"
+            let cmd="qu "+App.GetParam("lupidaiqucoin")+" coin;put coin_money in lupi dai;put 2000 coin_money in lupi dai;i2;l lupi dai"
             App.Commands([
                 App.NewCommand("to",App.Options.NewWalk(App.GetParam("bank_location"))),
                 App.NewCommand("nobusy"),

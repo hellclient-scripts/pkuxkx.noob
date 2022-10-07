@@ -8,7 +8,7 @@
     App.Data.Weapon=""
     App.Data.WeaponID=""
     App.Bind("Check","core.item.item")
-    let checkItem=(new check("item")).WithLevel(App.CheckLevelBrief).WithCommand("i2;l lupi dai").WithIntervalParam("checkiteminterval").WithLastID("LastItem")
+    let checkItem=(new check("item")).WithLevel(App.CheckLevelBrief).WithCommand("i2;put 2000 coin_money in lupi dai;l lupi dai").WithIntervalParam("checkiteminterval").WithLastID("LastItem")
     App.RegisterCallback("core.item.item",checkItem.Callback())
     App.Core.OnItem=function(name, output, wildcards){
         App.Data.Items=[]
