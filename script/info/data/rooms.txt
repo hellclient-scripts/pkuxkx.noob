@@ -125,7 +125,7 @@ tls||天龙寺瑞鹤门||||DescStart||天龙寺是大理皇室的家庙，于全
 tlsch||天龙寺车行||||
 wls||无量玉璧||||Station||无量玉璧
 chengdu||成都总督府门前||||Full||总督府门前[大宋国] [城市]enter,north,northwest,south,southeast
-chengduch||程度车行||||DescStart||这里是成都当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+chengduch||成都车行||||DescStart||这里是成都当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 pxwfmen||平西王府大门||||Station||平西王府大门
 pxwf||平西王府正厅||||Station||平西王府正厅
 emmen||峨嵋山门||||DescStart||这里是峨嵋山的山门，迎面一座高大的汉白玉牌楼，石阶从山门下穿过，山门的后面是一座雄伟的大殿。还有一位
