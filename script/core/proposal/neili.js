@@ -16,7 +16,14 @@
                 App.Commands([
                     App.NewCommand("to",App.Options.NewWalk(App.GetSleepRooms())),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("do","dazuo max"),
+                    App.NewCommand("function",function(){
+                        if (App.Data.HP["eff_neili"]<0){
+                            App.Core.Dazuo()
+                        }else{
+                            App.Send("dazuo max")
+                        }
+                        App.Next()
+                    }),
                     App.NewCommand("delay",1),
                     App.NewCommand("nobusy"),
                 ]).Push()
