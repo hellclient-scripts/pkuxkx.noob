@@ -2,7 +2,7 @@
 home||玩家储存柜||||Tags||[玩家储物柜]
 yz||扬州广场||||DescFirst||这里是扬州城的中心，一个很宽阔的广场，地面由青石铺就
 yzqz||扬州钱庄||||Station||扬州钱庄
-yz-jd||扬州金店||||Station||扬州金店
+yz-jindian||扬州金店||||Station||扬州金店
 yz-zhp||扬州杂货铺||||DescStart||这是一家小小的杂货铺，大箱小箱堆满了一地，都是一些日常用品。杨掌柜懒洋洋地躺在一只躺椅上，招呼着过往
 yzdp||扬州当铺||||DescStart||这里是扬州的一家当铺，五尺高的柜台挡在你的面前，柜台上挂着一只牌子(paizi)。
 yz-zxl||扬州醉仙楼||||Station||醉仙楼
@@ -11,7 +11,7 @@ yz-clcg||春来茶馆||||Station||春来茶馆
 yzch||扬州车行||||DescStart||这里是扬州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 yzyp||扬州药铺||||Landmark||Ping yizhi
 yzsy||扬州书院||||Landmark||Fu zi
-yzkd||扬州客店||||Landmark||Tianshen suicong
+yz-kedian||扬州客店||||Landmark||Tianshen suicong
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up
 yz-mrt||扬州名人堂||||DescStart||这里是北大侠客行的名人堂。在这里供奉的有大侠，也有魔头，也有不是大侠不是魔头的玩家。无论是哪一位，都
@@ -25,13 +25,13 @@ qufuch||曲阜车行||||DescStart||这里是曲阜当地的一家马车行，挂
 qufu-qingchi||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年以上了。
 xinyang||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 xinyangch||信阳车行||||DescStart||这里是信阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-zy-xcc||许昌城||||Station||许昌城
-zy-nyc||南阳城||||Station||南阳城
-zych||中原车行||||DescStart||这里是中原当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+zhongyuan-xcc||许昌城||||Station||许昌城
+zhongyuan-nyc||南阳城||||Station||南阳城
+zhongyuanch||中原车行||||DescStart||这里是中原当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 xiangyang||襄阳||||DescStart||这里是襄阳的城中心。兵荒马乱的年月，这里早失去了往日的繁华，街边零零散散有些小商小贩在叫卖，生意也不
 xiangyangch||襄阳车行||||DescStart||这里是襄阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 jingzhou||荆州||||DescStart||这里是荆州府城的中心，各色人等，摩肩接踵，沸沸扬扬，几乎没有一刻清静的时分。
-zy-rzc||汝州城||||Station||汝州城
+zhongyuan-rzc||汝州城||||Station||汝州城
 sysy||||嵩阳书院||DescStart||这里是书院大门，面阔三间，卷棚式硬山顶，门额黑底金字横匾(bian)，书“嵩阳书院”四字，为苏轼亲笔
 qufu-sms||石门寺||||Station||石门寺
 taishan-sjy||石经峪||||Station||石经峪
@@ -137,12 +137,12 @@ huangzhong||湟中||||DescStart||这是湟中的城中心，平时里人倒不�
 
 
 hhna-mjd||孟津渡||||Station||孟津渡
-hbch||河北车行||||DescStart||这里是河北当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-hb-puyang||濮阳||||Station||濮阳
-hb-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
-hb-baozhou||保州||||Station||保州
-hb-zdz||正定镇||||Station||正定镇
-hb-tgk||塘沽口||||Station||塘沽口
+hebeich||河北车行||||DescStart||这里是河北当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+hebei-puyang||濮阳||||Station||濮阳
+hebei-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
+hebei-baozhou||保州||||Station||保州
+hebei-zdz||正定镇||||Station||正定镇
+hebei-tgk||塘沽口||||Station||塘沽口
 daizhou||代州||||DescStart||这里是代州的府前大街，因北面是代州府衙而得名，西面就是著名的边靖楼了。
 daizhouch||代州车行||||DescStart||这里是代州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 jinyang-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east

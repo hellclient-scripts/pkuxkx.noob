@@ -7,7 +7,7 @@ yz-clcg||yzch||||w||e
 yz||yz-zhp||||e;s;||n;w
 yz||yzyp||||e;e;n||s;w;w
 yz||yzsy||||e;n||s;w
-yz||yzkd||||n;e||w;s
+yz||yz-kedian||||n;e||w;s
 yz||yzsm||||n;n;w||e;s;s
 yzsm||yz-mrt||||u||d
 yz||yz-sczh||||s;s;s;w||e;n;n;n
@@ -20,18 +20,18 @@ xinyang-jpj||haozhou-maowu||||nw;wu;act zuan to mao wu||out;ed;se;
 xinyang-jpj||yz||||e;se;e;e;e;e;||w;w;w;w;nw;w
 xinyang-jpj||xinyang||||w;w;w;w||e;e;e;e
 ssb||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
-yzqz||yz-jd||||s||n
+yzqz||yz-jindian||||s||n
 yz-rbz||yzdp||||n||s
-xinyang||zy-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
-zy-xcc||zych||||n||s
-zy-xcc||zy-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
-zy-nyc||xiangyang||||sw;s;s;s;s;s;s||n;n;n;n;n;n;bo xiaolu&&ne
+xinyang||zhongyuan-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
+zhongyuan-xcc||zhongyuanch||||n||s
+zhongyuan-xcc||zhongyuan-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
+zhongyuan-nyc||xiangyang||||sw;s;s;s;s;s;s||n;n;n;n;n;n;bo xiaolu&&ne
 xiangyang||xiangyangch||||s;s;s;e||w;n;n;n
 xiangyang||xiangyang-wg||||e;se;s;||n;nw;w
-zy-xcc||zy-rzc||||nw;nw||se;se
-slsmen||zy-rzc||||w;sd;sd;sd;ed;sd;sd;e||w;nu;nu;wu;nu;nu;nu;e
+zhongyuan-xcc||zhongyuan-rzc||||nw;nw||se;se
+slsmen||zhongyuan-rzc||||w;sd;sd;sd;ed;sd;sd;e||w;nu;nu;wu;nu;nu;nu;e
 slsmen||slsch||||eu;e||w;wd
-sysy||zy-rzc||||ed;ne;ne||sw;sw;wu
+sysy||zhongyuan-rzc||||ed;ne;ne||sw;sw;wu
 qufu||qufu-sms||||s;e;ne;eu;enter||out;wd;sw;w;n
 qufu||qufuch||||n;w;w||e;e;s
 qufu||qufu-qingchi||||s;s;s;s;w||e;n;n;n;n
@@ -43,7 +43,7 @@ dengzhou||dengzhouch||||s;eu||wd;n
 whw||dengzhou||||w;w;w;w;w;w;w;sw;sw;w;wd;sw;w;w;wd;w||e;eu;e;e;ne;eu;e;ne;ne;e;e;e;e;e;e;e
 whw||whwch||||w;w;s||n;e;e
 hankou||xinyang||||n;n;n;nu;nd;ne;ne;nu;n;n;n||s;s;s;sd;sw;sw;su;sd;s;s;s;
-zy-nyc||luoyang||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
+zhongyuan-nyc||luoyang||||n;n;n;n;n;n;n||s;s;s;s;s;s;s
 luoyang||luoyang-wxl||||n;w||e;s
 luoyang||luoyangch||||w;w;s;w||e;n;e;e
 changan-thm||luoyang||||e;e;se;e;e;e;e;e;ed;e;e;e||w;w;w;wu;w;w;w;w;w;nw;w;w
@@ -80,7 +80,7 @@ jkf-qlm||jkf-scm||||e;se;e;e;e;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;w;w;w;nw;w
 jkf||jkf-scm||||n;n;n;n;n;nw;n||s;se;s;s;s;s;s
 jkf||jkfyp||||s;s;s;w;w||e;e;n;n;n;
 jkfyp||jkfypgj||||enter||out
-jkf||jkfdf||||s;e;#onask e&&#ask shiwei about 通传;e;||w;w;w;n
+jkf||jkfdf||||s;e;e;e;||w;w;w;n
 tgs||jkf-qlm||||ne;ne;n;e;ne;n;ne;ed||wu;sw;s;sw;w;s;sw;sw
 tgs||jiangzhou||||sw;s;sw;wu;wu;wd;sw;w;w;sw;sw;sw||ne;ne;ne;e;e;ne;eu;ed;ed;ne;n;ne
 jkf-qlm||jkf-zym||||e;se;e;e;e;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;w;w;w;nw;w
@@ -129,13 +129,13 @@ gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
 gb-sdx||wdmen||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
 gb-sdx||qlc||||#maze 丐帮密道 1;n;nw;nw;nw;n;nw;u;e||w;enter dong;se;s;se;se;se;s;s
-gb-sdx||zy-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
+gb-sdx||zhongyuan-rzc||||#maze 丐帮密道 3;ne;ne;u;sw;e;sd;e;e||w;w;nu;w;ne;enter dong;sw;sw;sw
 gb-sdx||hzxz||||#maze 丐帮密道 4;w;w;w;nw||
 gb-sdx||luoyang-hlg||||#maze 丐帮密道 7;n;ne;ne;n;out;sw||ne;enter hole;s;sw;sw;s;s
 gb-sdx||dls-hzd||||#maze 丐帮密道 9;sw;s;sw;sw;sw;out;sw||ne;enter dong;ne;ne;ne;n;ne;e
 gb-sdx||dls-zpgc||||#maze 丐帮密道 9;sw;s;sw;sw;nw;out;wd;s;s;s||n;n;n;eu;enter dong;se;ne;ne;n;ne;e
 hsc||hscch||||s;s;e||w;n;n
-hsc||zy-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
+hsc||zhongyuan-nyc||||s;s;s;s;s;se||nw;n;n;n;n;n
 hsc||hsmen||||e;e;e;e;e;se;su;eu||wd;nd;nw;w;w;w;w;w
 hsmen||hsch||||wd;nd;nw;ne||sw;se;su;eu
 qzmen||hsc||||sd;s;sd;sd;se;s;se;se;e;se;se||nw;nw;w;nw;nw;n;nw;nu;nu;n;nu
@@ -156,7 +156,7 @@ wdj-jbq||bmz||五毒教||n;l 西北&&northwest;nw;nw;nw;wd;nw;n;n||s;s;se;eu;l �
 bmz||kunming||五毒教||w;w;w;w;wd;wd;enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;enter;#maze 苗岭山林 东;eu;eu;e;e;e;e;||400
 bmz||kunming||||w;w;w;w;wd;wd;eat xiao cao&&enter;#maze 苗岭山林 西;wd;wd;sw;w;w;w||e;e;e;ne;eu;eu;zhai grass&&eat xiao cao&&zhai grass&&enter;#maze 苗岭山林 东;eu;eu;e;e;e;e;||401
 kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
-pxwfmen||pxwf||||#onask n&&#ask qin bingtou about 自立为王;n;n;n;n||s;s;s;s;s
+pxwfmen||pxwf||||n;n;n;n;n||s;s;s;s;s
 pxwfmen||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n
 dali||dalich||||w||e
 dali||tlsmen||||n;n;n;n;n;n;ne;ne;ne;n;sw;wu||ed;ne;s;sw;sw;sw;s;s;s;s;s;s
@@ -194,26 +194,26 @@ qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 qhmz||qhmzqz||||nd;n;n;se;s||n;nw;s;s;su
 qhmz||qhmzyp||||nd;n;n;n;se;se;n||s;nw;nw;s;s;s;su
 qhmzyp||qhmzypgj||||enter||out
-zy-xcc||wssz-migong-e||||s;s;nw;nw||se;se;n;n
+zhongyuan-xcc||wssz-migong-e||||s;s;nw;nw||se;se;n;n
 wssz-migong-n||wssz-migong-e||||#maze 万兽山庄 south.林间道[野外]southeast,west||#maze 万兽山庄 west.林间道[野外]northwest,south||50
 wssz-migong-n||wssz-houmen||||nw;nd;w||e;su;se
 luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-hhna-mjd||hb-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
-hb-puyang||hbch||||n;e||w;s
-hb-puyang||hb-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
-hb-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
+hhna-mjd||hebei-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
+hebei-puyang||hebeich||||n;e||w;s
+hebei-puyang||hebei-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
+hebei-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 jinyang||jinyang-xf||||sw;w;w;w;w;w;n;n;w||e;s;s;e;e;e;e;e;ne
 jinyang||jinyangch||||sw;w;w;ne||sw;e;e;ne
 jinyangch||jinyang-xf||||sw;w;w;w;n;n;w||e;s;s;e;e;e;ne
-hb-tgk||hb-baozhou||||w;sw;w;w;w;sw;sw;nw;nw||se;se;ne;ne;e;e;e;ne;e
-sldmen||hb-tgk||||enter boat;#sail||enter boat;#sail
-hb-zdz||hb-baozhou||||ne;ne;ne;ne;ne||sw;sw;sw;sw;sw
-hb-zdz||jinyang||||w;wu;sw;sw;w;w;w;w;s;s||n;n;e;e;e;e;ne;ne;ed;e
-daizhou||hb-baozhou||||e;e;ne;ne;ne;e;ne;se;se;se;se;se;ne||sw;nw;nw;nw;nw;nw;sw;w;sw;sw;sw;w;w
+hebei-tgk||hebei-baozhou||||w;sw;w;w;w;sw;sw;nw;nw||se;se;ne;ne;e;e;e;ne;e
+sldmen||hebei-tgk||||enter boat;#sail||enter boat;#sail
+hebei-zdz||hebei-baozhou||||ne;ne;ne;ne;ne||sw;sw;sw;sw;sw
+hebei-zdz||jinyang||||w;wu;sw;sw;w;w;w;w;s;s||n;n;e;e;e;e;ne;ne;ed;e
+daizhou||hebei-baozhou||||e;e;ne;ne;ne;e;ne;se;se;se;se;se;ne||sw;nw;nw;nw;nw;nw;sw;w;sw;sw;sw;w;w
 daizhou||daizhouch||||s;s;s;w||e;n;n;n
 beijing||beijingch||||w;n||s;e
 beijing||beijing-yam||||s;s;s;s;s||n;n;n;n;n
-beijing-yam||hb-baozhou||||s;sw;sw;s;s;sw;sw;sw||ne;ne;ne;n;n;ne;ne;n
+beijing-yam||hebei-baozhou||||s;sw;sw;s;s;sw;sw;sw||ne;ne;ne;n;n;ne;ne;n
 beijing||kqwfmen||||w;w;w;w;n;se;s||n;nw;s;e;e;e;e
 beijing||zjcmen||||n||s
 beijing||tiantanmen||||s;s;s;e;e||w;w;n;n;n
@@ -278,7 +278,7 @@ zhongyuancart||hzxzch||taxi||qu huizuxiaozhen||gu||10
 zhongyuancart||qufuch||taxi||qu qufu||gu||10
 zhongyuancart||whwch||train||qu weihaiwei||gu||10
 zhongyuancart||dengzhouch||taxi||qu dengzhou||gu||10
-zhongyuancart||zych||taxi||qu zhongyuan||gu||10
+zhongyuancart||zhongyuanch||taxi||qu zhongyuan||gu||10
 zhongyuancart||xiangyangch||taxi||qu xiangyang||gu||10
 zhongyuancart||wdch||taxi||qu wudangshan||gu||10
 zhongyuancart||slsch||taxi||qu shaolinsi||gu||10
@@ -299,7 +299,7 @@ qingtangcart||mjch||train||qu mingjiao||gu||10
 //河北车行
 hebeicart||jinyangch||train||qu jinyang||gu||10
 hebeicart||beijingch||taxi||qu beijing||gu||10
-hebeicart||hbch||taxi||qu puyang||gu||10
+hebeicart||hebeich||taxi||qu puyang||gu||10
 hebeicart||rych||train||qu riyueshenjiao||gu||10
 hebeicart||daizhouch||taxi||qu daizhou||gu||10
 hebeicart||datongch||taxi||qu datong||gu||10
