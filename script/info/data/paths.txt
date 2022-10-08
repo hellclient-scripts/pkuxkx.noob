@@ -159,11 +159,11 @@ kunming||dali||||w;w;w;nw;w;nw;w;n;n;n;n||s;s;s;s;e;se;e;se;e;e;e
 pxwfmen||pxwf||||n;n;n;n;n||s;s;s;s;s
 pxwfmen||kunming||||s;s;s;s;s;s;s||n;n;n;n;n;n;n
 dali||dalich||||w||e
-dali||tlsmen||||n;n;n;n;n;n;ne;ne;ne;n;sw;wu||ed;ne;s;sw;sw;sw;s;s;s;s;s;s
-chengdu||tlsmen||||s;s;s;s;su;sw;sw;s;sw;sw;sw;wu||ed;ne;ne;ne;n;ne;ne;nd;n;n;n;n
+dali||tls||||n;n;n;n;n;n;ne;ne;ne;n;sw;wu||ed;ne;s;sw;sw;sw;s;s;s;s;s;s
+chengdu||tls||||s;s;s;s;su;sw;sw;s;sw;sw;sw;wu||ed;ne;ne;ne;n;ne;ne;nd;n;n;n;n
 chengduch||chengdu||||s;se;se;||nw;nw;n
-tlsmen||tlsch||||w||e
-tlsmen||wls||||ed;nw;nu;nu;nu;#maze 无量山;climb yafeng;s;s;sw;sw;sw;s;e;n;w;n||s;ne;ne;ne;s;push stone&&s;e;ed;ed;push men&&e;s;out;guo qiao;zou;s;se;wu
+tls||tlsch||||w||e
+tls||wls||||ed;nw;nu;nu;nu;#maze 无量山;climb yafeng;s;s;sw;sw;sw;s;e;n;w;n||s;ne;ne;ne;s;push stone&&s;e;ed;ed;push men&&e;s;out;guo qiao;zou;s;se;wu
 chengdu||dls-zpgc||||nw;nw;w;w;wu;wu;wu;nw;nw;w;n;n;n||s;s;s;e;se;se;ed;ed;ed;e;e;se;se
 dls-zpgc||lingzhou||||n;n;ne;e;nd;e;n;n;ne;n;ne;n;n;n;n;n||s;s;s;s;s;sw;s;sw;s;s;w;su;w;sw;s;s||80
 lxcmen||dls-zpgc||||s;sd;sd;sw;sd;s;s;s||n;n;n;nu;ne;nu;nu;n
