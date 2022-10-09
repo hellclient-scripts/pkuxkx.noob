@@ -74,8 +74,12 @@
         if (recovery<0){
             recovery=world.GetVariable("combat_yun_recover")-0
         }
-        if (recovery>0&&(App.Data.HP["qixue"]-App.Data.HP["eff_qixue"]>=recovery)){
-            App.Send("yun recover")
+        if (recovery>100){
+            Note("无效的 combat_yun_recover 变量，必须是0-100之间的整数")
+        }else{
+            if (recovery>0&&(100*effqixue/qixue<recovery)){
+                App.Send("yun recover")
+            }
         }
         if (this.Disarmed){
             App.Core.Weapon.Wield()
