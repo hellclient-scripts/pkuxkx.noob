@@ -125,6 +125,7 @@
                 App.Data.Room.ID=move.Current.Target
             }
         }
+        App.Core.Autoget.Execute()
         App.Raise("move.onstep")
         move.LastRoomID=App.Data.Room.ID
         App.ChangeState(this.GetStateOnStep())

@@ -179,4 +179,9 @@
     App.RegisterState(new (Include("core/state/move/searchmoving.js"))())
     App.RegisterState(new (Include("core/state/move/searching.js"))())
 
+
+//你从山上滚了下来，只觉得浑身无处不疼，还受了几处伤。
+//你一不小心脚下踏了个空，... 啊...！
+
+//独狼心生怯意，渐渐不敌，赶紧向牧场离去，你紧紧跟上。
 })(App)

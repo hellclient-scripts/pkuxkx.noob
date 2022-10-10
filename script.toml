@@ -1818,7 +1818,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvmh1c1ocl7i7306ih76"
   Name = "App.Core.OnNoWield"
   Enabled = true
-  Match = "^([^【：『]{1,10})(拦住你说道：站住，把.+留下再说！|拦住你说道：这位道长请放下兵刃。|说: 峨嵋非行凶之地，施主想要上山请解兵器。)"
+  Match = "^([^【：『]{1,10})(拦住你说道：站住，把.+留下再说！|拦住你说道：这位道长请放下兵刃。|说: 峨嵋非行凶之地，施主想要上山请解兵器。|伸手拦住了你：“什么人？胆敢私带兵刃，擅闯王府！？”)"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2716,7 +2716,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_ignore"
   Name = "move_ignore"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(走到这里，你被壮阔的景色所吸引，向.眺望，正是长江最险峻湍急之处。)$"
   Send = ""
   ColourChangeType = 0
@@ -2747,7 +2747,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_retry"
   Name = "move_retry"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(([^【：『]{1,6})几乎没有路了，你走不了那么快。|([^【：『]{1,6})已经挤满了人，你进不去了。|在这里还走这么快，肯定无法发现奸细。|吊桥还没有升起来，你就这样走了，可能会给外敌可乘之机的。|你沿着.+，一步一步地慢慢前行。|你沿着溪边，一步一步地离去。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|青海湖畔美不胜收，你不由停下脚步，欣赏起了风景。|你小心翼翼往前挪动，生怕一不在意就跌落山下。|只听得江面上隐隐传来：“别急嘛，这儿正忙着呐……”|你还在山中跋涉，一时半会恐怕走不出这六盘山！|你正忙着呢。|你的动作还没有完成，不能移动。|你不小心被什么东西绊了一下，差点摔个大跟头。|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|你还在山中跋涉，一时半会恐怕走不出这藏边群山！|你小心翼翼往前挪动，遇到艰险难行处，只好放慢脚步。|山路崎岖，你不得不停下来歇歇脚。|你逃跑失败。|山路难行，你不小心给拌了一跤。|你观赏着.*，一步一步慢慢前行。|你忽然不辨方向，不知道该往哪里走了。|此去往东是荒郊野岭，盗贼猛兽出没之地，我劝小兄弟*|你因为忙着做别的事，没有爬过去。|你先忙完了再钻洞吧。.*|竹篓里已经有人了，盛不下你)$"
   Send = ""
   ColourChangeType = 0
@@ -2778,7 +2778,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = true
+  Enabled = false
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -4616,12 +4616,17 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "after_combat_cmd"
   Desc = "战斗后命令"
-  Intro = "不要放有busy的指令"
+  Intro = "不要放有busy的指令\n\n比如人头喂蛊\n\ncut corpse;put shou ji in he"
 
 [[RequiredParams]]
   Name = "dummy_id"
   Desc = "大米ID"
   Intro = "需要进行图片识别时会tell大米进行识别。其他功能还需陆续加入。"
+
+[[RequiredParams]]
+  Name = "autoget"
+  Desc = "自动拾取"
+  Intro = "自动拾取列表，一行一类拾取对象。可用的拾取对象为:\n\n* 全部\nmoney 金钱\ngem 宝石\nzhangqi 苗疆瘴气(仅五毒教ID)\nmedicine 药物"
 
 [[RequiredParams]]
   Name = "mods_list"

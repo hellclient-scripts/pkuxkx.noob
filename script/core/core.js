@@ -45,6 +45,8 @@ App.Load("core/puzzle.js")
 App.Load("core/traversal.js")
 App.Load("core/search.js")
 
+App.Load("core/autoget.js")
+
 App.Load("core/shoppingmode.js")
 App.Load("core/combatmode.js")
 
