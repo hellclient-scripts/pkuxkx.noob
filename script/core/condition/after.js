@@ -9,7 +9,7 @@
         let now=new Date()
         let hour=(now.getHours()+"").padStart(2,"0")
         let min=(now.getMinutes()+"").padStart(2,"0")
-        return target<=(hour+min)
+        return (hour+min)>=target
     }
     return Condition
 })(App)
