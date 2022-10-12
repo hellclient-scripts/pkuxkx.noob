@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -4145,7 +4145,7 @@ Channel = "pkuxkx.noob"
   Enabled = false
   Hour = 0
   Minute = 0
-  Second = 1.0
+  Second = 20.0
   Send = ""
   Script = "App.Core.OnBusyRetry"
   AtTime = false
