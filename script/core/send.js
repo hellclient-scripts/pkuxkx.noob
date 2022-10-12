@@ -47,6 +47,7 @@
                 if (prefix=="#"){
                     //命令不能并在分组内
                     if (buf.length){
+                        App.Raise("Send",buf)
                         Metronome.push(buf, true, echo)
                         buf=[]
                     }
@@ -61,6 +62,7 @@
                         var times=directive-0
                         if (times>0){
                             for(var t=0;t<times;t++){
+                                App.Raise("Send",buf)
                                 Metronome.push([data], true, echo)
                             }
                             continue
@@ -77,6 +79,7 @@
             }
             //按组发送缓存
             if (buf.length){
+                App.Raise("Send",buf)
                 Metronome.push(buf, true, echo)
                 buf=[]
             }

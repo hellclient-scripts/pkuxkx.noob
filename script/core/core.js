@@ -53,5 +53,6 @@ App.Load("core/combatmode.js")
 App.Load("core/gmcp.js")
 App.Load("core/quest.js")
 App.Load("core/hud.js")
+App.Load("core/idle.js")
 App.Load("core/help.js")
 

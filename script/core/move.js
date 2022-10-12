@@ -74,6 +74,13 @@
     App.OnMoveStepTimeout = function (name) {
         App.RaiseStateEvent("move.stepTimeout")
     }
+    App.Core.MoveUnknownStart=function(move){
+        Note("当前房间未知，无法行走")
+    }
+    App.Core.MoveWrongWay=function(move){
+        Note("路径错误")
+        App.Fail()
+    }
     App.Core.OnMoveWrongWay=function(name, output, wildcards){
         App.Data.Room.ID=""
         App.RaiseStateEvent("move.wrongway")

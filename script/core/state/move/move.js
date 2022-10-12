@@ -20,8 +20,7 @@
                 App.LastMove=App.GetContext("Move")
             break
             case "move.wrongway":
-                Note("路径错误")
-                App.Fail()
+                App.Core.MoveWrongWay(App.GetContext("Move"))
             break
             case "move.ignore":
                 this.Ignore()
@@ -45,7 +44,7 @@
             step=move.Current
         }
         move.FromRoom=App.Data.Room.ID
-        App.Data.Room.ID=""
+        // App.Data.Room.ID=""
         let maze=App.Core.Maze.LoadMaze(step.Command)
         if (maze){
             maze.Explore(this)

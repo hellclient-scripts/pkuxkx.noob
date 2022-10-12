@@ -5,12 +5,20 @@
         this.ID="core.state.command.walk"
     }
     State.prototype = Object.create(basicstate.prototype)
+    State.prototype.OnEvent=function(context,event,data){
+        switch(event){
+            case "rollback":
+                this.Enter()
+            break
+        }
+    }
+
     State.prototype.Enter=function(context,oldstatue){
+        let move=App.GetContext("Move")
         if (!App.Data.Room.ID) {
-            App.Raise("MoveLost",this)
+            App.Core.MoveUnknownStart(move)
             return
         }
-        let move=App.GetContext("Move")
         let target=move.Target
         if (typeof (target) == "string") {
             target = [target]

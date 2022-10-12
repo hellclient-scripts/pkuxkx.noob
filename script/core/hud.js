@@ -207,8 +207,17 @@
         App.Core.HUD.UpdateStatus()
     }
     App.Core.HUD.InitHUD()
-
+    var blockedchannels={
+        "任务":true,
+        "本地":true,
+        "江湖":true,
+        "区域":true,
+        "求助":true,
+    }
     App.Core.HUD.OnChat = function (name, output, wildcards) {
+        if (blockedchannels[wildcards[0]]){
+            return
+        }
         App.Core.HUD.ChatHistory = App.Core.HUD.ChatHistory.concat(JSON.parse(DumpOutput(1)))
         if (App.Core.HUD.ChatHistory.length > App.Core.HUD.MaxChatHistory) {
             App.Core.HUD.ChatHistory = App.Core.HUD.ChatHistory.slice(-App.Core.HUD.MaxChatHistory)

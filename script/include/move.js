@@ -15,10 +15,22 @@
         this.Vehicle = ""
         this.LastMaze=""
         this.LastRoomID=""
+        this.Retried=0
+        this.FinalState=""
     }
     Move.prototype.Push = function (final) {
+        this.FinalState=final
         App.Automaton.Push(["core.state.move.start"], final)
         App.SetContext("Move", this)
+    }
+    Move.prototype.Retry=function(max){
+        if (this.Retried<max){
+            this.Retried++
+            App.Automaton.Push(["core.state.move.start"], this.FinalState)
+        }else{
+            Note("超过最大移动重试次数，放弃。")
+            App.Fail()
+        }
     }
     Move.prototype.Start = function (final) {
         this.Push(final)
