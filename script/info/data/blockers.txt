@@ -15,3 +15,4 @@
 庄丁||killall zhuang ding||100000
 亲兵||killall qin bing||100000
 严妈妈||killall yan mama||100000
+总管太监||killall zong guan||100000

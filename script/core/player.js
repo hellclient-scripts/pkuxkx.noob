@@ -133,7 +133,14 @@
                 Mapper.settag("neili" + i, true)
             }
         }
+        
         let exp=App.Data.Exp
+        for (var i = 100000; i <= 1000000; i += 100000) {
+            if (exp >= i) {
+                Mapper.settag("exp" + i, true)
+            }
+        }
+
         for (var i = 1000000; i <= 100000000; i += 1000000) {
             if (exp >= i) {
                 Mapper.settag("exp" + i, true)
