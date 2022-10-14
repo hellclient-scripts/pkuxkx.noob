@@ -1,13 +1,10 @@
 ssb-xxs
 //武当客房
-wd-kefang
+wd-kefang2
 //五毒教睡房
 wdj-shuifang
 //南昌书院休息室
 nanchang-xxs
-//帮派
-bangpai-xxf
-bangpai-dxf
 //神龙岛
 sld-xxs
 sld-ndzjs
@@ -28,7 +25,7 @@ lxc-xiaowu
 lxc-xxs
 lxc-xxs2
 qz-xxs
-fuzhou-sdx
+fuzhou-dsx
 hengshan-wofang
 hengshan-wofang2
 kqwf-xiangfang

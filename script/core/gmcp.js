@@ -8,12 +8,19 @@
     let map_status=function(data,source,target){
         if (data[source]){
             App.Data.HP[target]=data[source]
+        }else{
+            return
         }
         switch(target){
+            case "exp":
+                App.Data.Exp=data
+                break
             case "qixue":
+            case "qixue_cap":
                 App.Data.HP["per_qixue"]=100*App.Data.HP["qixue"]/App.Data.HP["qixue_cap"]
             break
             case "jing":
+            case "jing_cap":
                 App.Data.HP["per_jing"]=100*App.Data.HP["jing"]/App.Data.HP["jing_cap"]
             break
         }
