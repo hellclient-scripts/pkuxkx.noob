@@ -92,6 +92,7 @@ zhenjiang||镇江||||DescStart||这里是一个小广场，平时人来人往，
 zhenjiangch||镇江车行||||DescStart||这里是镇江当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 quanzhou||泉州||||DescStart||泉州是一个安静的港口城市。虽然这里是城中心，人们也只是脚步轻轻地过往，并不喧哗。东面是一个港口，从那
 quanzhouch||泉州车行||||DescStart||这里是泉州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
+guangzhouch||岭南马车分行||||Desc||这里是广州府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 chaozhou||中央广场||||Desc||这里是潮州的中央广场，四条最繁华的大街在此交汇，人流一直熙熙攘攘，络绎不绝，一个捕快站在中央。
 chaozhouch||潮州车行||||Desc||这里是潮州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 
@@ -272,3 +273,6 @@ wdj||五毒教广场||||Landmark||Gushen ta
 wdj-jsdd||金蛇大殿||||Station||金蛇大殿
 wdj-jbq||五毒绝壁前||||Full||绝壁前[门派] [存盘点]north
 wdj-xiaowu||五毒小屋(拿石头)
+
+huzhou||广场||||Desc||这里是湖州府城北一座热闹的广场，人来人往，络绎不绝。
+huzhouch||湖州马车行||||Desc||这里是湖州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。

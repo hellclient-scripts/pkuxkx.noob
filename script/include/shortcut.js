@@ -1,0 +1,22 @@
+(function(){
+    return {
+        "west":"w",
+        "north":"n",
+        "east":"e",
+        "south":"s",
+        "up":"u",
+        "down":"d",
+        "northeast":"ne",
+        "southeast":"se",
+        "southwest":"sw",
+        "northwest":"nw",
+        "northup":"nu",
+        "eastup":"eu",
+        "southup":"su",
+        "westup":"wu",
+        "northdown":"nd",
+        "eastdown":"ed",
+        "southdown":"sd",
+        "westdown":"wd",
+    }
+})()

@@ -72,9 +72,9 @@ xiangyang||wdmen||||w;w;w;w;w;w;w;w;w;w;w;w;w;s;sw;w;w;nw;w;w;w||e;e;e;se;e;e;ne
 wdmen||wdch||||s||n
 wd-xiaowu||wd-bcm||||s;w;w||w;sw;s;se;e;ne;n;nw;sw;s;e;n
 wd-bcm||wd-sqd||武当派||e;e;s;s;s||n;n;n;w;w
-jkf-zym||linan||||s;se;se;s;s;s;sw;s;s;s;s;s||n;n;n;n;n;ne;n;n;n;nw;nw;n
-jkf-cym||jkf-zym||||nw;nw;sw;sw;w;w;s;s;s;s;s;e;e;e;n;e;se;s||n;nw;w;s;w;w;w;n;n;n;n;n;e;e;ne;ne;se;se
-jkf-cym||zhenjiang||||e;ed;ne;ne;ne;e;e;e;e||w;w;w;w;sw;sw;sw;wu;w
+jkf-zym||linan||||south;southeast;southeast;east;northeast;eastdown;south;southeast;southeast;southeast;south;south;south;southwest;southwest;south;south;southwest;south;south;south;south;south||north;north;north;north;north;northeast;north;north;northeast;northeast;north;north;north;northwest;northwest;northwest;north;westup;southwest;west;northwest;northwest;north
+jkf-cym||jkf-zym||||northwest;northwest;southwest;southwest;west;west;south;south;south;south;south;east;east;east;north;east;southeast;south||north;northwest;west;south;west;west;west;north;north;north;north;north;east;east;northeast;northeast;southeast;southeast
+jkf-cym||zhenjiang||||east;eastdown;northeast;northeast;northeast;east;east;east;east||west;west;west;west;southwest;southwest;southwest;westup;west
 jkf-cym||jkf-scm||||nw;nw;sw;sw;w;w;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;e;e;ne;ne;se;se
 jkf-qlm||jkf-scm||||e;se;e;e;e;n;n;n;n;n;nw;n||s;se;s;s;s;s;s;w;w;w;nw;w
 jkf||jkf-scm||||n;n;n;n;n;nw;n||s;se;s;s;s;s;s
@@ -248,6 +248,8 @@ dlsmen||dlsch||||e||w
 
 ljgmen||hzxz||||sd;sd;s;s;sd||nu;n;n;nu;nu
 
+huzhou||huzhouch||||w||e
+
 //计氏车行
 jishicart||dlsch||train||qu dalunsi||gu||10
 jishicart||kunmingch||train||qu kunming||gu||10
@@ -269,6 +271,8 @@ jishicart||lxcch||taxi||qu lingxiaocheng||gu||10
 jishicart||jkfch||train||qu jiankangfu||gu||10
 jishicart||chengduch||train||qu chengdu||gu||10
 jishicart||emch||taxi||qu emei||gu||
+jishicart||guangzhouch||train||qu guangzhou||gu||10
+jishicart||huzhouch||taxi||qu huzhou||gu||10
 
 //中原车行
 zhongyuancart||yzch||train||qu yangzhou||gu||10

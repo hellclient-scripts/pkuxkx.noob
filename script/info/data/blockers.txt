@@ -18,3 +18,5 @@
 总管太监||killall zong guan||100000
 崔员外||killall cui yuanwai||100000
 衙役||killall ya yi||100000
+虚通||killall xu tong||100000
+虚明||killall xu ming||100000
