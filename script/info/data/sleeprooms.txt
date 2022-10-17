@@ -40,3 +40,4 @@ sls-hsy5b
 em-qinshi
 xiangyang-xxs
 mr-xxs
+luoyang-ceting2

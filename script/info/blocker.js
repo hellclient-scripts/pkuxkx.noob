@@ -2,7 +2,10 @@
     App.Info.Blockers={}
     App.Info.LoadBlockerLines=function(lines){
         lines.forEach(function(line){
-            
+            line=line.trim()
+            if (line==""||line.startsWith("//")){
+                return
+            }
             let data=line.split("||")
             if (data.length<3){
                 throw "blocker ["+line+"]格式错误"

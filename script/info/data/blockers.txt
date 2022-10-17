@@ -9,7 +9,7 @@
 保镖||killall bao biao||500000
 侍卫||killall shi wei||500000
 黑甲军士||killall heijia junshi||1000000
-守军||killall shou jun||1000000
+//守军||killall shou jun||1000000
 官兵们||killall guan bing||100000
 大内高手||killall danei gaoshou||5000000
 庄丁||killall zhuang ding||100000
