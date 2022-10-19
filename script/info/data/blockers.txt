@@ -20,3 +20,5 @@
 衙役||killall ya yi||100000
 虚通||killall xu tong||100000
 虚明||killall xu ming||100000
+土匪头||killall tufei tou||100000
+小道童||killall xiao daotong||1000000

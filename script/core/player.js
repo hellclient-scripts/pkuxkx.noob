@@ -1,5 +1,6 @@
 (function (App) {
     let check = Include("core/check/check.js")
+    App.Data.NoForce=false
     App.Data.Score = {}
     App.Data.LastScore = 0
     App.Data.Exp = 0
@@ -352,4 +353,11 @@
     App.Core.OnPoisonShedu = function (name, output, wildcards) {
         App.Data.HP["status"]["蛇毒"] = true
     }
+    App.Core.OnPlayerOnHealFail = function (name, output, wildcards) {
+        App.RaiseStateEvent("core.healfail")
+    }
+    App.Core.OnPlayerNoForce=function(name, output, wildcards){
+        App.Data.NoForce=true
+    }
+    
 })(App)

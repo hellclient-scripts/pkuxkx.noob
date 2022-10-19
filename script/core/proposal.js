@@ -58,7 +58,6 @@
     Include("core/proposal/items.js")
     Include("core/proposal/neili.js")
     Include("core/proposal/heal.js")
-    Include("core/proposal/inspire.js")
     Include("core/proposal/sell.js")
     Include("core/proposal/cun.js")
     Include("core/proposal/repair.js")

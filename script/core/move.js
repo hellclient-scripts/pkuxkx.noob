@@ -51,10 +51,10 @@
 
     App.Core.GetMovePerHalfSecond=function(){
         if (App.Data.HP.eff_jingli>200&&(App.Data.HP.eff_jingli>(App.Data.HP.jingli*0.8))){
-            if (App.Data.HP.eff_jingli>(App.Data.HP.jingli)){
+            if (App.Data.HP.eff_jingli>(App.Data.HP.jingli)&&App.Data.HP.eff_jingli>4000){
                 return 99
             }
-            return 8
+            return 6
         }
         return 3
     }
@@ -153,6 +153,11 @@
         App.Send("#halt")
         App.Go("out ")
     }
+    App.Core.OnMovedAway=function(name, output, wildcards){
+        App.Data.Room.ID=""
+        App.RaiseStateEvent("move.movedaway")
+
+    }
     App.Core.OnMoveRideEnd=function(name, output, wildcards){
         App.Send("#halt")
     }
@@ -197,20 +202,5 @@
     App.RegisterState(new (Include("core/state/move/search.js"))())
     App.RegisterState(new (Include("core/state/move/searchmoving.js"))())
     App.RegisterState(new (Include("core/state/move/searching.js"))())
-
-
-//你从山上滚了下来，只觉得浑身无处不疼，还受了几处伤。
-//你一不小心脚下踏了个空，... 啊...！
-
-//独狼心生怯意，渐渐不敌，赶紧向牧场离去，你紧紧跟上。
-
-// 突然一阵狂风夹着雪花扑面而来，你惊愕之下，心胆俱寒，
-// 禁不住脚下不稳，顺着山路摔了下去！
-
-// 突然你突然脚下踏了个空，向下一滑，身子登时堕下了去。
-// 你身在半空，双手乱挥，只盼能抓到什么东西，这么乱挥一阵，又下堕下百馀丈。
-// 突然间蓬一声，屁股撞上了什么物事，身子向上弹起，原来恰好撞到崖边伸出的一株
-// 古松。喀喇喇几声响，古松粗大的枝干登时断折，但下堕的巨力却也消了. 
-
 
 })(App)

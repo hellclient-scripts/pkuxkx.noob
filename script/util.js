@@ -11,6 +11,13 @@ var RandomList=function(list){
 var RandomKey=function(map){
    return RandomList(Object.keys(map))
 }
+var RandomSort=function(list){
+    let result=[]
+    while(list.length>0){
+        result.push(list.splice(RandomInt(list.length),1))
+    }
+    return result
+}
 var Now=function(){
     return (new Date()).getTime()
 }

@@ -298,6 +298,8 @@
             App.Data.Room.OnAsk = ""
         }
     })
-
+    App.Core.OnRoomNoAction = function (name, output, wildcards) {
+        App.RaiseStateEvent("core.noaction")
+    }
     App.Bind("ask", "core.room.onask")
 })(App)

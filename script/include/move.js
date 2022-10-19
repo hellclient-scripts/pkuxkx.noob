@@ -27,6 +27,7 @@
         if (this.Retried<max){
             this.Retried++
             App.Automaton.Push(["core.state.move.start"], this.FinalState)
+            App.Next()
         }else{
             Note("超过最大移动重试次数，放弃。")
             App.Fail()
