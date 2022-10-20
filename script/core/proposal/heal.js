@@ -41,7 +41,7 @@
             if (App.Core.PerQixue()<App.Core.PerJing()){
                 this.Heal()
             }else{
-                this.Inspire
+                this.Inspire()
             }
             App.Next()
         }

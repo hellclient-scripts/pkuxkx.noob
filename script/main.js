@@ -70,7 +70,7 @@ var OnSubneg=function(code,data){
             data=data.split(csi).join("\\u001b")
             let cmd=SplitN(data," ",2)
             switch (cmd[0]){
-                case "Room.Info":
+                case "GMCP.Move":
                 App.Core.RoomObjEnd()
                 return
             }
