@@ -8,7 +8,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
-        if (App.GetRoomData("state.rest.fail")){
+        if (App.GetRoomData("state.rest.fail")||App.Data.NoForce){
             App.Fail()
             return
         }
