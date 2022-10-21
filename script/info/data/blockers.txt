@@ -1,4 +1,4 @@
-土匪||killall tu fei;killall tufei||50000
+土匪||killall tu fei;killall tufei;killall tufei tou||50000
 采花子||killall caihua zi||50000
 号手首领||killall haoshou shouling||50000
 鼓手首领||killall gushou shouling||50000

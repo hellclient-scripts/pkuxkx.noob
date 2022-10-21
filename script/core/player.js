@@ -128,6 +128,18 @@
                 }
             }
         }
+        let sorcery=App.Core.PlayerGetSkillByID("sorcery")
+        if (sorcery) {
+            if (sorcery>49){
+                Mapper.settag("sorcery50")
+            }
+            if (sorcery>149){
+                Mapper.settag("sorcery150")
+            }
+            if (sorcery>200){
+                Mapper.settag("sorcery201")
+            }
+        }
         let neili=App.Data.HP["neili"]
         for (var i = 500; i <= 10000; i += 500) {
             if (neili >= i) {
