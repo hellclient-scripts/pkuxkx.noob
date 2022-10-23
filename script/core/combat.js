@@ -28,7 +28,7 @@
     App.Core.Combat.OnBlocked = function (name, output, wildcards) {
         let blocker = App.Info.Blockers[wildcards[0]]
         if (blocker) {
-            if (blocker.Exp>=0 && blocker.Exp <= App.Data.Exp) {
+            if (blocker.Exp >= 0 && blocker.Exp <= App.Data.Exp) {
                 App.Send(blocker.Cmd)
                 App.RaiseStateEvent("combat.blockkill", wildcards[0])
             } else {
@@ -44,8 +44,14 @@
     App.Core.Combat.OnKilled = function (name, output, wildcards) {
         App.RaiseStateEvent("combat.killed", wildcards[0])
     }
+    App.Core.Combat.NewCounterCombat = function () {
+        App.Core.Combat.Current = new combat(["counter"])
+        App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands())
+        App.Push(["core.state.combat.combat"])
+        App.Next()
+    }
     App.Core.Combat.NewBlockedCombat = function () {
-        App.Core.Combat.Current = new combat()
+        App.Core.Combat.Current = new combat(["blocker"])
         App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands())
         App.Push(["core.state.combat.combat"])
         App.Next()
@@ -79,6 +85,17 @@
         }
         return value
     }
+    App.Core.Combat.Intros = []
+    App.Core.Combat.List = function () {
+        for (var i=0;i<App.Core.Combat.Intros.length;i++){
+            Note(App.Core.Combat.Intros[i])
+        }
+    }
+    App.Core.Combat.Intro = function (name, comment) {
+        App.Core.Combat.Intros.push(name + " : " + comment)
+    }
+    App.Core.Combat.Intro("blocker", "被拦路时进行的策略")
+    App.Core.Combat.Intro("counter", "自动反击时进行的策略")
     world.EnableTimer("App.Core.Combat.OnTick", false)
 
     App.RegisterState(new (Include("core/state/combat/combat.js"))())

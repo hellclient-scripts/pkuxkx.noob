@@ -17,7 +17,7 @@
         switch (event) {
             case "combat.fighting":
                 Note("被叫杀，自动反击")
-                App.Core.Combat.NewBlockedCombat()
+                App.Core.Combat.NewCounterCombat()
                 break
             case "move.wrongway":
                 App.Data.Room.ID = ""

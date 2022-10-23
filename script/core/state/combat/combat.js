@@ -10,6 +10,7 @@
     State.prototype.Enter = function (context, oldstatue) {
         world.ResetTimer("App.Core.Combat.OnTick")
         world.EnableTimer("App.Core.Combat.OnTick", true)
+        Note("进入战斗，战斗策略为[ "+App.Core.Combat.Current.StrategyList.join(" , ")+" ]")
         App.Core.Weapon.Wield()
         App.Core.Combat.Current.Perform()
         App.Core.Combat.CheckFighting()

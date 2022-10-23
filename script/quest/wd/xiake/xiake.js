@@ -11,7 +11,7 @@
                 App.NewCommand("function",App.Quest.WD.Xiake.SetLoot),
                 App.NewCommand("combatinit"),
                 App.NewCommand("powerup"),
-                App.NewCommand("kill",App.Options.NewKill("kill "+world.GetVariable("id")+"'s tufeitou")),
+                App.NewCommand("kill",App.Options.NewKill("kill "+world.GetVariable("id")+"'s tufeitou").WithStrategyList(["wd.xiake.tifeitou"])),
             ]).Push()
         // }
         App.Next()

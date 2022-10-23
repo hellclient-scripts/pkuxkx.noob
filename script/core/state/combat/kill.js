@@ -8,7 +8,7 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
         let kill=App.GetContext("Kill")
-        App.Core.Combat.Current=new combat()
+        App.Core.Combat.Current=new combat(kill.StrategyList)
         App.Core.Combat.Current.SetCommands(App.Core.Combat.GetCommands(kill.Type))
         App.Core.Combat.Current.SetOnline(kill.Online)
         App.Core.Combat.Current.SetOnNpcFlee(kill.OnNpcFlee)

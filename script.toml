@@ -4657,6 +4657,29 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
+[[Aliases]]
+  ID = "d1e85uos8iljq071b7b7br"
+  Name = "App.Core.Combat.List"
+  Enabled = true
+  Match = "^#combatlist$"
+  Send = ""
+  Script = "App.Core.Combat.List"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
 [[RequiredParams]]
   Name = "id"
   Desc = "用户ID"
@@ -4766,6 +4789,11 @@ Channel = "pkuxkx.noob"
   Name = "combat"
   Desc = "战斗指令"
   Intro = ""
+
+[[RequiredParams]]
+  Name = "combat_strategy"
+  Desc = "战斗策略列表"
+  Intro = "通过 \n战斗名=策略名的方式来指定战斗策略\n战斗策略可以用来在combat/wield中使用，进行不同战斗的针对性配置\n战斗名可以通过#listcomabt指令列出\n"
 
 [[RequiredParams]]
   Name = "combat_yun_recover"

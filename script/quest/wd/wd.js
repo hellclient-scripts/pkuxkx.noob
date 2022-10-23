@@ -25,4 +25,6 @@ App.Quest.WD.Start=function(){
     App.Next()
 }
 App.RegisterState(new (Include("core/state/quest/wd/wd.js"))())
+App.Core.Combat.Intro("wd.xiake.tifeitou", "武当侠客任务土匪头")
+
 })(App)

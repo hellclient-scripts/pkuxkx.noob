@@ -1,5 +1,5 @@
 (function(){
-    let Combat=function(){
+    let Combat=function(strategylist){
         this.PerformCmd=""
         this.Targets={}
         this.Disarmed=false
@@ -11,6 +11,7 @@
         this.StartAt=Now()
         this.HaltWound=0
         this.HaltCurrent=0
+        this.StrategyList=strategylist || []
     }
     Combat.prototype.SetHaltCurrent=function(data){
         this.HaltCurrent=data
