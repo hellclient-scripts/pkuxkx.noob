@@ -35,11 +35,14 @@
     App.RegisterCallback("info.paths.loadpaths", function () {
         App.Info.LoadHomePath()
         App.Info.LoadBangPaiPath()
-        App.Info.BuiltinPaths= App.Info.BuiltinPaths.concat(world.ReadLines("info/data/paths.txt"))
+        App.Info.LoadBuiltinPaths()    
         if (world.HasHomeFile("data/paths.txt")){
             App.Info.UserPaths=world.ReadHomeLines("data/paths.txt")
         }
     })
+    App.Info.LoadBuiltinPaths=function(){
+        App.Info.BuiltinPaths= App.Info.BuiltinPaths.concat(world.ReadLines("info/data/paths.txt"))
+    }
     App.RegisterAPI("ConvertPath",function(path,target){
         let p = new ipath()
         p.PushCommands(path.split(";"),target?target:"")

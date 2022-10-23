@@ -130,13 +130,13 @@
         }
         let sorcery=App.Core.PlayerGetSkillByID("sorcery")
         if (sorcery) {
-            if (sorcery>49){
+            if (sorcery.Level>49){
                 Mapper.settag("sorcery50")
             }
-            if (sorcery>149){
+            if (sorcery.Level>149){
                 Mapper.settag("sorcery150")
             }
-            if (sorcery>200){
+            if (sorcery.Level>200){
                 Mapper.settag("sorcery201")
             }
         }

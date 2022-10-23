@@ -41,3 +41,4 @@ em-qinshi
 xiangyang-xxs
 mr-xxs
 luoyang-ceting2
+mj-xxs

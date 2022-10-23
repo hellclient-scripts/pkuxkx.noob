@@ -58,7 +58,7 @@ yueyang||jiangzhou||||e;e;e;ed;se;ed;e;ne;ne;ne||sw;sw;sw;w;wu;nw;wu;w;w;w
 yueyang||yueyangch||||n;e||w;s
 taoyuan||yueyang||||ne;nd;n;e;e;e||w;w;w;s;su;sw
 tzf||taoyuan||||se;e;ne;n;ne||sw;s;sw;w;nw
-xinyang||jiangzhou||sail||s;s;s;sd;se;s;#onask enter&&#ask shao gong about 过江;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;#onask enter&&#ask shao gong about 过江;#sail;n;nw;nu;n;n;n||40
+xinyang||jiangzhou||sail||s;s;s;sd;se;s;ask shao gong about 过江&&go enter;#sail;se;se;s;sw;sw;sw;sw||ne;ne;ne;ne;n;nw;nw;ask shao gong about 过江&&go enter;#sail;n;nw;nu;n;n;n||60
 yz||gb-sdnb||||enter shudong||out
 gb-sdnb||gb-sdx||||say 天堂有路你不走呀&&d||u
 yz||yz-xjk||||d||u
@@ -198,7 +198,7 @@ zhongyuan-xcc||wssz-migong-e||||s;s;nw;nw||se;se;n;n
 wssz-migong-n||wssz-migong-e||||#maze 万兽山庄 south.林间道[野外]southeast,west||#maze 万兽山庄 west.林间道[野外]northwest,south||50
 wssz-migong-n||wssz-houmen||||nw;nd;w||e;su;se
 luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
-hhna-mjd||hebei-jiyuan||sail||#onask enter&&#ask shao gong about 过河;#sail;nu||sd;#onask enter&&#ask shao gong about 过河;#sail||20
+hhna-mjd||hebei-jiyuan||sail||ask shao gong about 过河&&go enter;#sail;nu||sd;ask shao gong about 过河&&go enter;#sail||50
 hebei-puyang||hebeich||||n;e||w;s
 hebei-puyang||hebei-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
 hebei-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
@@ -231,7 +231,7 @@ hengshan||datong||||nd;nd;nw;w;w;w;n;||s;e;e;e;se;su;su
 rymen||jinyang||||sd;sd;sw;s;sd;w;w;w;s;s||n;n;e;e;e;nu;n;ne;nu;nu
 rymen||rych||||se||nw
 hzxz||lingzhou||||nu;n;w;w;w;w;w||e;e;e;e;e;s;sd
-lingzhou||lanzhou||sail||w;w;nw;nw;#onask enter&&#ask shao gong about 过河;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;#onask enter&&#ask shao gong about 过河;#sail;se;se;e;e||20
+lingzhou||lanzhou||sail||w;w;nw;nw;#onask enter&&#ask shao gong about 过河;#sail;sw;n;nw;w;w;w;w||e;e;e;e;se;s;ne;#onask enter&&#ask shao gong about 过河;#sail;se;se;e;e||50
 lingzhou||lingzhouch||||s;w;w;||e;e;n
 lanzhouch||lanzhou||e;n||s;w
 huangzhong||lanzhou||||e;e;e;se;se;e;e;e;e||w;w;w;w;nw;nw;w;w;w

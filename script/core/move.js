@@ -82,8 +82,11 @@
         Note("路径错误")
         App.Fail()
     }
+    App.Core.OnResetMoveRetried=function(name, output, wildcards){
+        App.Data.Room.MoveRetried=0
+    }
     App.Core.OnMoveWrongWay=function(name, output, wildcards){
-        App.Data.Room.ID=""
+        // App.Data.Room.ID=""
         App.RaiseStateEvent("move.wrongway")
     }
     App.Core.OnMoveRetry=function(name, output, wildcards){

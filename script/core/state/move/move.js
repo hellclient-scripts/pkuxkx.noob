@@ -20,7 +20,13 @@
                 App.LastMove=App.GetContext("Move")
             break
             case "move.wrongway":
-                App.Core.MoveWrongWay(App.GetContext("Move"))
+                if (App.Data.Room.MoveRetried>10){
+                    App.Data.Room.ID=""
+                    App.Core.MoveWrongWay(App.GetContext("Move"))
+                }else{
+                    App.Data.Room.MoveRetried++
+                    App.RaiseStateEvent("move.retry")
+                }
             break
             case "move.ignore":
                 this.Ignore()

@@ -15,6 +15,7 @@
         Online: null,
         WalkTags:[],
         Data: {},
+        MoveRetried:0
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境,3:雾中
@@ -39,6 +40,7 @@
         let owalktags=App.Data.Room.WalkTags
         let oonliie=App.Data.Room.Online
         let odata=App.Data.Room.Data
+        let oretry=App.Data.Room.MoveRetried
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -53,6 +55,7 @@
             Online: null,
             WalkTags:[],
             Data: {},
+            MoveRetried:0,
         }
         if (looking){
             App.Data.Room.WalkTags=owalktags
