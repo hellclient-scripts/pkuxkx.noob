@@ -48,7 +48,7 @@
             case "combat.blockkill":
                 var snap = App.Core.Snapshot.Take("move.retry")
                 App.Commands([
-                    App.NewCommand("function", App.Core.Combat.NewBlockedCombat),
+                    App.NewCommand("kill",App.Options.NewKill(data.Cmd).WithStrategyList(["blocker"])),
                     App.NewCommand("rest"),
                     App.NewCommand("rollback", snap),
                 ]).Push()

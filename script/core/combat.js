@@ -29,10 +29,9 @@
         let blocker = App.Info.Blockers[wildcards[0]]
         if (blocker) {
             if (blocker.Exp >= 0 && blocker.Exp <= App.Data.Exp) {
-                App.Send(blocker.Cmd)
-                App.RaiseStateEvent("combat.blockkill", wildcards[0])
+                App.RaiseStateEvent("combat.blockkill", blocker)
             } else {
-                App.RaiseStateEvent("combat.blocked", wildcards[0])
+                App.RaiseStateEvent("combat.blocked", blocker)
             }
         }
     }
@@ -91,7 +90,7 @@
                 for (var j = 0; j < list.length; j++) {
                     let name = list[j].trim()
                     if (strategies[name]) {
-                        combat.Strategy = name
+                        combat.Strategy = data[1]
                         return
                     }
                 }
