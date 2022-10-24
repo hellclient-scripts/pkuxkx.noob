@@ -7,8 +7,30 @@
         App.Core.Weapon.Wield()
     }
     App.Core.Weapon.Wield=function(){
-        let cmd=world.GetVariable("wield").trim()
-        App.Send(cmd)
+        let data=world.GetVariable("wield").trim().split("\n")
+        let result=[]
+        let defaultresult=[]
+        for(var i=0;i<data.length;i++){
+            let line=data[i]
+            if (line){
+                let cmd=SplitN(line,":",2)
+                if (cmd.length==1){
+                    defaultresult.push(line)
+                }else{
+                    if (cmd[0]==""){
+                        defaultresult.push(cmd[1])
+                    }else if(App.Core.Combat.Current!=null && cmd[0]==App.Core.Combat.Current.Strategy){
+                        result.push(cmd[1])
+                    }
+                }
+            }
+        }
+        if (result.length==0){
+            result=defaultresult
+        }
+        for(var i=0;i<result.length;i++){
+            App.Send(result[i])
+        }
     }
     App.Core.Weapon.ToRepair=""
     App.Core.Weapon.LastDurability=0

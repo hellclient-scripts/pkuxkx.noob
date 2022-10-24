@@ -12,6 +12,7 @@
     }
     Kill.prototype.WithStrategyList=function(strategyList){
         this.StrategyList=strategyList||[]
+        return this
     }
     return Kill
 })(App)

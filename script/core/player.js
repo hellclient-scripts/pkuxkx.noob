@@ -4,6 +4,7 @@
     App.Data.Score = {}
     App.Data.LastScore = 0
     App.Data.Exp = 0
+    App.Data.Exp.Qishi=0
     App.Data.Special = {}
     App.Data.SpecialInUse = {}
     App.Core.SpecialStart = function (name, output, wildcards) {
@@ -371,5 +372,11 @@
     App.Core.OnPlayerNoForce=function(name, output, wildcards){
         App.Data.NoForce=true
     }
-    
+    App.Core.OnPlayerQishi=function(name, output, wildcards){
+        App.Data.Qishi=wildcards[0]-0
+    }
+    App.Core.OnPlayerQishi2=function(name, output, wildcards){
+        App.Data.Qishi=wildcards[0]-0
+    }
+    world.EnableTriggerGroup("combat", false)
 })(App)

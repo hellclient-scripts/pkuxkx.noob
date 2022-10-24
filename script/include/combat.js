@@ -1,6 +1,6 @@
 (function(){
+    let Action = Include("include/combataction.js")
     let Combat=function(strategylist){
-        this.PerformCmd=""
         this.Targets={}
         this.Disarmed=false
         this.Recovery=-1
@@ -12,6 +12,27 @@
         this.HaltWound=0
         this.HaltCurrent=0
         this.StrategyList=strategylist || []
+        this.Strategy=""
+        this.Actions=[]
+    }
+    Combat.prototype.LoadActions=function(data){
+        let lines=data.split("\n")
+        let defaultresult=[]
+        let result=[]
+        result[this.Strategy]=[]
+        for(var i=0;i<lines.length;i++){
+            let line=lines[i].trim()
+            if (line){
+                let action=new Action(line)
+                if (this.Strategy==action.Strategy){
+                    result.push(action)
+                }
+                if (this.Strategy==""){
+                    defaultresult.push(action)
+                }
+            }
+        }
+        this.Actions=result.length>0?result:defaultresult
     }
     Combat.prototype.SetHaltCurrent=function(data){
         this.HaltCurrent=data
@@ -31,64 +52,6 @@
     }
     Combat.prototype.SetAfter=function(cmd){
         this.After=cmd
-    }
-    Combat.prototype.SetCommands=function(cmds){
-        let data=cmds.split("\n")
-        let self=this
-        data.forEach(function(cmd){
-            if (cmd==""){
-                return
-            }
-            if (cmd[0]!="#"){
-                cmd="#perform "+cmd
-            }
-            let cmddata=new Directive(cmd)
-            switch (cmddata.Command){
-                case "#perform":
-                    self.PerformCmd=cmddata.Data
-                break
-            }
-        })
-    }
-    Combat.prototype.Perform=function(){
-        let effqixue=App.Data.HP["eff_qixue"]
-        let qixue=App.Data.HP["qixue"]
-        let qixuecap=App.Data.HP["qixue_cap"]
-        let currentqixue=effqixue/qixuecap
-        let perqixue=qixue/qixuecap
-        let effjing=App.Data.HP["eff_jing"]
-        let jing=App.Data.HP["jing"]
-        let jingcap=App.Data.HP["jing_cap"]
-        let currentjing=effjing/jingcap
-        let perjing=jing/jingcap
-        if(
-            currentqixue<this.HaltCurrent||
-            perqixue<this.HaltCurrent||
-            perqixue<this.HaltWound||
-            currentjing<this.HaltCurrent||
-            perjing<this.HaltCurrent||
-            perjing<this.HaltWound
-            ){
-                App.Send("halt")
-        }
-        let recovery=this.Recovery
-        if (recovery<0){
-            recovery=world.GetVariable("combat_yun_recover")-0
-        }
-        if (recovery>100){
-            Note("无效的 combat_yun_recover 变量，必须是0-100之间的整数")
-        }else{
-            if (recovery>0&&(100*effqixue/qixue<recovery)){
-                App.Send("yun recover")
-            }
-        }
-        if (this.Disarmed){
-            App.Core.Weapon.Wield()
-        }
-        if (this.Yield){
-            return
-        }
-        App.Send(this.PerformCmd)
     }
     return Combat
 })()

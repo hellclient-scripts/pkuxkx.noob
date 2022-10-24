@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2500,7 +2500,7 @@ Channel = "pkuxkx.noob"
   ID = "d1e7rukjv5k3t06b23jk5"
   Name = "App.Core.OnRoomNoAction"
   Enabled = true
-  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。)$"
+  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。|养鸡人对你说道：别在这里练功，练出鸡胸怎办？)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2643,6 +2643,68 @@ Channel = "pkuxkx.noob"
   LinesToMatch = 0
   WildcardLowerCase = false
   Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1e86pnubj2pcv71b7c13s"
+  Name = "App.Core.OnPlayerQishi"
+  Enabled = false
+  Match = "^[^【：『]+\\(气势：(\\d+)%\\)$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnPlayerQishi"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "combat"
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
+  ID = "d1e86pqa4aebic71b7c153"
+  Name = "App.Core.OnPlayerQishi2"
+  Enabled = false
+  Match = "^你蓄势不足，目前只积累了(\\d+)%气势。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnPlayerQishi2"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = "combat"
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
@@ -4297,7 +4359,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 0
   Second = 20.0
@@ -4793,7 +4855,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "combat_strategy"
   Desc = "战斗策略列表"
-  Intro = "通过 \n战斗名=策略名的方式来指定战斗策略\n战斗策略可以用来在combat/wield中使用，进行不同战斗的针对性配置\n战斗名可以通过#listcomabt指令列出\n"
+  Intro = "通过 \n战斗名=策略名的方式来指定战斗策略\n如\n\ncounter=set1\ncounter,blocker=set2\n\n判断时会从上向下选择第一个符合条件的策略\n战斗策略可以用来在combat/wield中使用，进行不同战斗的针对性配置\n战斗名可以通过#listcomabt指令列出\n"
 
 [[RequiredParams]]
   Name = "combat_yun_recover"

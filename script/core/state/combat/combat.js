@@ -4,15 +4,18 @@
     let State = function () {
         basicstate.call(this)
         this.ID = "core.state.combat.combat"
-        this.Groups = this.Groups.concat(["state.line"])
+        this.Groups = this.Groups.concat(["state.line","combat"])
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
+        App.Core.Combat.CaclStrategy()
         world.ResetTimer("App.Core.Combat.OnTick")
         world.EnableTimer("App.Core.Combat.OnTick", true)
-        Note("进入战斗，战斗策略为[ "+App.Core.Combat.Current.StrategyList.join(" , ")+" ]")
+        App.Data.Qishi=0
+        Note("进入战斗，战斗ID为[ "+App.Core.Combat.Current.StrategyList.join(" , ")+" ],计算后的策略为["+App.Core.Combat.Current.Strategy+"]")
+        App.Core.Combat.Current.LoadActions(GetVariable("combat"))
         App.Core.Weapon.Wield()
-        App.Core.Combat.Current.Perform()
+        App.Core.Combat.Perform()
         App.Core.Combat.CheckFighting()
     }
     State.prototype.Leave = function (context, oldstatue) {
@@ -29,6 +32,15 @@
             }
         }
     }
+    
+    State.prototype.Tick=function(){
+        let msg=[]
+        msg.push("当前策略["+App.Core.Combat.Current.Strategy+"]")
+        msg.push("气势["+App.Data.Qishi+"]")
+        Note(msg.join(","))
+        App.Core.Combat.Perform()
+        App.Core.Combat.CheckFighting()
+    }
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "line":
@@ -44,13 +56,11 @@
                 App.Core.Combat.Current.Disarmed = false
                 break
             case "combat.tick":
-                // App.Send("checkbusy")
-                App.Core.Combat.Current.Perform()
-                App.Core.Combat.CheckFighting()
+                this.Tick()
                 break
             // case "nobusy":
             case "gmcp.nobusy":
-                App.Core.Combat.Current.Perform()
+                App.Core.Combat.Perform()
                 break
             case "combat.finish":
                 let afterCombatCmd=GetVariable("after_combat_cmd")
