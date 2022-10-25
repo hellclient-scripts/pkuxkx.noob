@@ -15,6 +15,7 @@
         Online: null,
         WalkTags:[],
         Data: {},
+        Died:{},
         MoveRetried:0
     }
     App.Core.RoomDesc = {
@@ -40,7 +41,6 @@
         let owalktags=App.Data.Room.WalkTags
         let oonliie=App.Data.Room.Online
         let odata=App.Data.Room.Data
-        let oretry=App.Data.Room.MoveRetried
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -54,6 +54,7 @@
             Looking: false,
             Online: null,
             WalkTags:[],
+            Died:{},
             Data: {},
             MoveRetried:0,
         }
@@ -251,6 +252,18 @@
     }
     App.Core.OnRoomHerb = function () {
         App.Data.Room.HasHerb = true
+    }
+    
+    App.Core.OnRoom.NPCDie=function(name){
+        let data=App.Data.Room.Died[name]
+        if (data==null){
+            data=0
+        }
+        data++
+        App.Data.Room.Died[name]=data
+    }
+    App.IsNPCDied=function(name){
+        return App.Data.Room.Died[name]
     }
     App.SetLootCmd = function (name, cmd) {
         App.Data.Room.LootCmds[name] = cmd

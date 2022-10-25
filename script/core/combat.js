@@ -64,6 +64,7 @@
     }
     App.Core.Combat.OnLoot = function (name, output, wildcards) {
         App.Core.Combat.Looted[wildcards[0]] = true
+        App.Core.OnRoom.NPCDie(wildcards[0])
         let cmd = App.Data.Room.LootCmds[wildcards[0]]
         if (cmd) {
             App.Send(cmd)

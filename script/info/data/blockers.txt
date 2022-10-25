@@ -22,3 +22,4 @@
 虚明||killall xu ming||100000
 土匪头||killall tufei tou||100000
 小道童||killall xiao daotong||1000000
+山贼||killall shan zei||1000000
