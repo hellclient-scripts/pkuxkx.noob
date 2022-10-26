@@ -7,9 +7,11 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
         if (App.GetRoomData("state.rest.fail")){
+            Note("放弃治疗")
             App.Fail()
             return
         }
+        App.SetRoomOnEvent(this.OnRoomEvent)
         Note("内力:" + App.Data.HP["eff_neili"] + " 气血:" + App.Core.PerQixue())
         let min=App.GetParamNeiliMin()
         if ((App.Data.HP["eff_neili"] < min)&&(min>=1)) {
@@ -37,7 +39,7 @@
         ]).Push()
         App.Next()
     }
-    State.prototype.OnEvent = function (context, event, data) {
+    State.prototype.OnRoomEvent = function (event, data) {
         switch (event) {
             case "core.healfail":
             case "core.noaction":

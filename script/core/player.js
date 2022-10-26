@@ -367,6 +367,7 @@
         App.Data.HP["status"]["蛇毒"] = true
     }
     App.Core.OnPlayerOnHealFail = function (name, output, wildcards) {
+        App.RaiseRoomEvent("core.healfail")
         App.RaiseStateEvent("core.healfail")
     }
     App.Core.OnPlayerNoForce=function(name, output, wildcards){

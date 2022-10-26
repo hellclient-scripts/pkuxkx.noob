@@ -32,8 +32,8 @@
         "questsdelay":"1",
         "queuedelay":"1",
         "sleepdelay":"10500",
-        "lupidaicoin":"1000",
-        "lupidaiqucoin":"2000",
+        "lupidaicoin":"500",
+        "lupidaiqucoin":"1000",
     }
     App.InitParam=function(name,val){
         App.Params[name]=val

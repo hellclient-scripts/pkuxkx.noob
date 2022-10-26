@@ -1,3 +1,3 @@
 (function (App) {
-    App.RegisterProposalGroup("prepare",["poison","cash","cun","food","drink","items","neili","heal","sell","repair","lupidai"])
+    App.RegisterProposalGroup("prepare",["poison","cash","cun","food","drink","items","neili","heal","sell","repair","lupidai","coin"])
 })(App)

@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2500,7 +2500,7 @@ Channel = "pkuxkx.noob"
   ID = "d1e7rukjv5k3t06b23jk5"
   Name = "App.Core.OnRoomNoAction"
   Enabled = true
-  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。|养鸡人对你说道：别在这里练功，练出鸡胸怎办？)$"
+  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。|养鸡人对你说道：别在这里练功，练出鸡胸怎办？|你看样子输红了眼，想施内功。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -4359,7 +4359,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 0
   Second = 20.0

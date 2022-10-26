@@ -13,6 +13,7 @@
         YieldYes: false,
         Looking: false,
         Online: null,
+        OnEvent:null,
         WalkTags:[],
         Data: {},
         Died:{},
@@ -39,7 +40,8 @@
         let looking = App.Data.Room.Looking
         let oid = App.Data.Room.ID
         let owalktags=App.Data.Room.WalkTags
-        let oonliie=App.Data.Room.Online
+        let oonline=App.Data.Room.Online
+        let oonevent=App.Data.Room.OnEvent
         let odata=App.Data.Room.Data
         App.Data.Room = {
             ID: "",
@@ -53,6 +55,7 @@
             ObjEnd: false,
             Looking: false,
             Online: null,
+            OnEvent:null,
             WalkTags:[],
             Died:{},
             Data: {},
@@ -60,8 +63,9 @@
         }
         if (looking){
             App.Data.Room.WalkTags=owalktags
-            App.Data.Room.Online=oonliie
+            App.Data.Room.Online=oonline
             App.Data.Room.Data=odata
+            App.Data.Room.OnEvent=oonevent
             if (oid){
                 App.Data.Room.ID = oid
             }
@@ -262,6 +266,11 @@
         data++
         App.Data.Room.Died[name]=data
     }
+    App.RaiseRoomEvent=function(event,data){
+        if (App.Data.Room.OnEvent){
+            App.Data.Room.OnEvent(event,data)
+        }
+    }
     App.IsNPCDied=function(name){
         return App.Data.Room.Died[name]
     }
@@ -282,6 +291,9 @@
     }
     App.SetRoomOnline = function (func) {
         App.Data.Room.Online = func
+    }
+    App.SetRoomOnEvent=function(func){
+        App.Data.Room.OnEvent=func
     }
     App.SetRoomData = function (key, value) {
         App.Data.Room.Data[key] = value
@@ -315,6 +327,7 @@
         }
     })
     App.Core.OnRoomNoAction = function (name, output, wildcards) {
+        App.RaiseRoomEvent("core.noaction")
         App.RaiseStateEvent("core.noaction")
     }
     App.Bind("ask", "core.room.onask")
