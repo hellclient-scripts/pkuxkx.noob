@@ -132,13 +132,13 @@
         let sorcery=App.Core.PlayerGetSkillByID("sorcery")
         if (sorcery) {
             if (sorcery.Level>49){
-                Mapper.settag("sorcery50")
+                Mapper.settag("sorcery50",true)
             }
             if (sorcery.Level>149){
-                Mapper.settag("sorcery150")
+                Mapper.settag("sorcery150",true)
             }
             if (sorcery.Level>200){
-                Mapper.settag("sorcery201")
+                Mapper.settag("sorcery201",true)
             }
         }
         let neili=App.Data.HP["neili"]

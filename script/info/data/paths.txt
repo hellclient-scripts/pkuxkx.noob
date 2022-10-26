@@ -27,7 +27,7 @@ zhongyuan-xcc||zhongyuanch||||n||s
 zhongyuan-xcc||zhongyuan-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
 zhongyuan-nyc||xiangyang||||sw;s;s;s;s;s;s||n;n;n;n;n;n;bo xiaolu&&ne
 xiangyang||xiangyangch||||s;s;s;e||w;n;n;n
-xiangyang||xiangyang-wg||||e;se;s;||n;nw;w
+xiangyang||xiangyang-wgdt||||e;se;s;||n;nw;w
 zhongyuan-xcc||zhongyuan-rzc||||nw;nw||se;se
 slsmen||zhongyuan-rzc||||w;sd;sd;sd;ed;sd;sd;e||w;nu;nu;wu;nu;nu;nu;e
 slsmen||slsch||||eu;e||w;wd
@@ -123,8 +123,8 @@ wd-tzfx||wd-sqd||武当派||sd;sd;sd;sd;sd;sd;sd;sd;sd;sd;wd;nd;ed;d;sd;#maze �
 wd-kefang||wd-sqd||||w;w||e;e
 wd-xiaolu||wd-caowu||||w||e
 wdmen||wd-xiaolu||||e;s;se||nw;n;w
-wd-xiaolu||wd-zl||||#maze 武当土匪进入
-wd-zl||wd-xiaolu||||#maze 武当土匪离开;n;nd;w;s;se
+wd-xiaolu||wd-zulou||||#maze 武当土匪进入
+wd-zulou||wd-xiaolu||||#maze 武当土匪离开;n;nd;w;s;se
 gb-sdx||hsc||||#maze 丐帮密道 1;n;n;u||
 gb-sdx||wdmen||||#maze 丐帮密道 5;sw;sw;out;nd;w;w||
 gb-sdx||yz-tdm||||#maze 丐帮密道 2;ne;ne;u||
