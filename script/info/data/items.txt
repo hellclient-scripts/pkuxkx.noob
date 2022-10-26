@@ -28,3 +28,5 @@ sword book||sword book||Sword book||华山剑谱||goods||ssbdp||buy im_219
 bai yi||bai yi||Bai yi||白衣||goods||changandp||buy am_439
 claw book||claw book||Claw book||爪法入门||goods||luoyang-bjdm||buy claw book
 blade book||blade book||Blade book||飞沙走石十三式||goods||yzdp||buy im_234
+pili dan||pili dan||Pili dan||霹雳弹||goods||chengdudp||buy wp_456 for 500
+shi zi||shi zi||Shi zi||玉石子||goods||linandp||buy wp_145 for 500

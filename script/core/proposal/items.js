@@ -22,7 +22,7 @@
         this.Submit = function () {
             let items = GetItmes()
             for (var i = 0; i < items.length; i++) {
-                if (App.GetItemNumber(App.API.GetItem(items[i].ID).Name, true) < items[i].Count) {
+                if (App.GetItemNumber(App.API.GetItem(items[i].ID).Name, true) + App.GetLupiDaiItemNumber(items[i].ID, true) < items[i].Count) {
                     return true
                 }
             }
@@ -31,7 +31,7 @@
         this.Execute = function () {
             let items = GetItmes()
             for (var i = 0; i < items.length; i++) {
-                if (App.GetItemNumber(App.API.GetItem(items[i].ID).Name, true) < items[i].Count) {
+                if (App.GetItemNumber(App.API.GetItem(items[i].ID).Name, true) + App.GetLupiDaiItemNumber(items[i].ID, true) < items[i].Count) {
                     App.Produce(items[i].ID, items[i].Count)
                     return
                 }

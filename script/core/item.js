@@ -146,5 +146,26 @@
         }
         return null
     }
-
+    App.GetLupiDaiItemObj=function(id,lowercase){
+        if (lowercase){
+            id=id.toLowerCase()
+        }
+        for (var key in App.Data.LupiDai){
+            let itemid= App.Data.LupiDai[key].ID
+            if (lowercase){
+                itemid=itemid.toLowerCase()
+            }
+            if (itemid==id){
+                return App.Data.LupiDai[key]
+            }
+        }
+        return null
+    }
+    App.GetLupiDaiItemNumber=function(id,lowercase){
+        let item=App.GetLupiDaiItemObj(id,lowercase)
+        if (!item){
+            return 0
+        }
+        return item.Count
+    }
 })(App)

@@ -64,6 +64,7 @@
     Include("core/proposal/prepare.js")
     Include("core/proposal/poison.js")
     Include("core/proposal/lupidai.js")
+    Include("core/proposal/throwing.js")
     Include("core/proposal/coin.js")
 
     App.RegisterState(new (Include("core/state/prepare/preparecheck.js"))())
