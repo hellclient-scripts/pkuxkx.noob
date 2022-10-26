@@ -14,6 +14,7 @@
         App.Data.Qishi=0
         Note("进入战斗，战斗ID为[ "+App.Core.Combat.Current.StrategyList.join(" , ")+" ],计算后的策略为["+App.Core.Combat.Current.Strategy+"]")
         App.Core.Combat.Current.LoadActions(GetVariable("combat"))
+        App.Core.Combat.Toggle()
         App.Core.Weapon.Wield()
         App.Core.Combat.Perform()
         App.Core.Combat.CheckFighting()
@@ -80,6 +81,8 @@
                     ])
                 }
                 cmds = cmds.concat([
+                    App.NewCommand("nobusy"),
+                    App.NewCommand("function",App.Core.Buff.AutoToggle),
                     App.NewCommand("nobusy"),
                     App.NewCommand("do", "yun recover"),
                     App.NewCommand("state", "core.state.combat.rest"),

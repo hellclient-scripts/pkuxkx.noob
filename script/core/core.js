@@ -14,6 +14,7 @@ App.Load("core/item.js")
 App.Load("core/pathitem.js")
 App.Load("core/sell.js")
 App.Load("core/npc.js")
+App.Load("core/buff.js")
 
 App.Load("core/job.js")
 
@@ -38,6 +39,7 @@ App.Load("core/weapon.js")
 
 App.Load("core/task/queue.js")
 App.Load("core/produce.js")
+
 
 App.Load("core/poison.js")
 App.Load("core/proposal.js")

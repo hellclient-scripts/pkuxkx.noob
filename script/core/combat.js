@@ -73,6 +73,15 @@
     App.Core.Combat.CheckFighting = function () {
         App.Send("guard .")
     }
+    App.DumpCombat=function(strategies){
+        let old=App.Core.Combat.Current
+        let current = new combat(strategies||[])
+        App.Core.Combat.Current=current
+        App.Core.Combat.CaclStrategy()
+        current.LoadActions(GetVariable("combat"))
+        Dump(current.Actions)
+        App.Core.Combat.Current=old
+    }
     App.Core.Combat.CaclStrategy = function () {
         let combat = App.Core.Combat.Current
         if (combat) {
@@ -98,16 +107,16 @@
             }
         }
     }
-    App.Core.Combat.GetCommands = function (name) {
-        if (!name) {
-            name = "combat"
-        }
-        let value = world.GetVariable(name)
-        if (!value) {
-            value = world.GetVariable("combat")
-        }
-        return value
-    }
+    // App.Core.Combat.GetCommands = function (name) {
+    //     if (!name) {
+    //         name = "combat"
+    //     }
+    //     let value = world.GetVariable(name)
+    //     if (!value) {
+    //         value = world.GetVariable("combat")
+    //     }
+    //     return value
+    // }
     App.Core.Combat.Intros = []
     App.Core.Combat.List = function () {
         for (var i = 0; i < App.Core.Combat.Intros.length; i++) {
@@ -120,52 +129,76 @@
     App.Core.Combat.Intro("blocker", "被拦路时进行的策略")
     App.Core.Combat.Intro("counter", "自动反击时进行的策略")
     world.EnableTimer("App.Core.Combat.OnTick", false)
-    App.Core.Combat.Conditions={}
-    App.Core.Combat.CheckConditions=function(conditions){
-        for (var i=0;i<conditions.length;i++){
-            let condition=conditions[i]
-            let checker=App.Core.Combat.Conditions[condition.Type]
-            if (checker==null){
+    App.Core.Combat.Conditions = {}
+    App.Core.Combat.CheckConditions = function (conditions) {
+        for (var i = 0; i < conditions.length; i++) {
+            let condition = conditions[i]
+            let checker = App.Core.Combat.Conditions[condition.Type]
+            if (checker == null) {
                 return false
             }
-            if (checker(condition.Data)==condition.Exclude){
+            if (checker(condition.Data) == condition.Exclude) {
                 return false
             }
         }
         return true
     }
-    App.Core.Combat.Conditions["qishi"]=function(data){
-        if (!data){
-            data=0
+    App.Core.Combat.Conditions["qishi"] = function (data) {
+        if (!data) {
+            data = 0
         }
-        return App.Data.Qishi>=data
+        return App.Data.Qishi >= data
     }
-    App.Core.Combat.ExecPerform=function(action){
-        if (!App.Core.Combat.CheckConditions(action.Conditions)){
+    App.Core.Combat.ExecPerform = function (action) {
+        if (!App.Core.Combat.CheckConditions(action.Conditions)) {
             return
         }
-        switch (action.Command){
+        switch (action.Command) {
             case "":
             case "#perfrom":
                 App.Send(action.Data)
                 break
         }
     }
-    App.Core.Combat.Touxi=function(target){
+    App.Core.Combat.Toggle = function () {
         let combat = App.Core.Combat.Current
         if (combat) {
-            for (var i=0;i<combat.Actions.length;i++){
-                App.Core.Combat.ExecTouxi(combat.Actions[i],target)
+            for (var i = 0; i < combat.Actions.length; i++) {
+                App.Core.Combat.ExecToggle(combat.Actions[i])
             }
         }
     }
-    App.Core.Combat.ExecTouxi=function(action,target){
-        if (!App.Core.Combat.CheckConditions(action.Conditions)){
+    App.Core.Combat.ExecToggle = function (action) {
+        if (!App.Core.Combat.CheckConditions(action.Conditions)) {
             return
         }
-        switch (action.Command){
+        if (!action.Data) {
+            return
+        }
+        switch (action.Command) {
+            case "#toggleon":
+                App.Toggle(action.Data, true)
+                break
+            case "#toggleoff":
+                App.Toggle(action.Data, false)
+                break
+        }
+    }
+    App.Core.Combat.Touxi = function (target) {
+        let combat = App.Core.Combat.Current
+        if (combat) {
+            for (var i = 0; i < combat.Actions.length; i++) {
+                App.Core.Combat.ExecTouxi(combat.Actions[i], target)
+            }
+        }
+    }
+    App.Core.Combat.ExecTouxi = function (action, target) {
+        if (!App.Core.Combat.CheckConditions(action.Conditions)) {
+            return
+        }
+        switch (action.Command) {
             case "#touxi":
-                App.Send(action.Data.replace("$1",target))
+                App.Send(action.Data.replace("$1", target))
                 break
         }
     }
@@ -209,7 +242,7 @@
             if (combat.Yield) {
                 return
             }
-            for (var i=0;i<combat.Actions.length;i++){
+            for (var i = 0; i < combat.Actions.length; i++) {
                 App.Core.Combat.ExecPerform(combat.Actions[i])
             }
         }
