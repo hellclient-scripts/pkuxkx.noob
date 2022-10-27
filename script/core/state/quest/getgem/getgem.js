@@ -24,7 +24,7 @@
                 let text=data[i].trim()
                 if (text){
                     var gem=text.match(gemre)
-                    if (gem){
+                    if (gem&&App.Quest.GetGem.Get.Filter(gem[1],gem[2],gem[3])){
                         let count=gem[5]
                         for (var k=0;k<count;k++){
                             App.Quest.GetGem.Get.Data.Commands.push("get "+gem[1]+gem[2]+gem[3]+" from "+App.Quest.GetGem.Get.Data.Pack)                            
