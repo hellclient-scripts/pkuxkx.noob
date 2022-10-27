@@ -122,5 +122,8 @@
     App.RegisterQuest(new (Include("core/quest/fullme.js"))())
     App.RegisterQuest(new (Include("core/quest/queue.js"))())
     App.RegisterQuest(new (Include("core/quest/idall.js"))())
+    App.RegisterQuest(new (Include("core/quest/combinegem.js"))())
+    App.RegisterQuest(new (Include("core/quest/packgem.js"))())
+    App.RegisterQuest(new (Include("core/quest/getgem.js"))())
 
 })(App)

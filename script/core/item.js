@@ -7,6 +7,9 @@
     App.Data.Load=0
     App.Data.Weapon=""
     App.Data.WeaponID=""
+    App.Data.ItemList={}
+    App.Data.ItemList.ID=""
+    App.Data.ItemList.Items=[]
     App.Bind("Check","core.item.item")
     let checkItem=(new check("item")).WithLevel(App.CheckLevelBrief).WithCommand("i2;l lupi dai").WithIntervalParam("checkiteminterval").WithLastID("LastItem")
     App.RegisterCallback("core.item.item",checkItem.Callback())
@@ -161,11 +164,60 @@
         }
         return null
     }
+    let itemlistre=/^\(\s*(\d+)\)\s*(\(绑\)){0,1}\s*(\(装\)){0,1}\s*([^()]+)\(([^()]+)\)(.*)$/
     App.GetLupiDaiItemNumber=function(id,lowercase){
         let item=App.GetLupiDaiItemObj(id,lowercase)
         if (!item){
             return 0
         }
         return item.Count
+    }
+    App.Data.ItemList.OnNoItemList=function(name, output, wildcards){
+        App.Data.ItemList.ID=wildcards[0]
+        App.Data.ItemList.Items=[]
+    
+    }
+    App.Data.ItemList.OnItemList=function(name, output, wildcards){
+        App.Data.ItemList.ID=wildcards[0]
+        App.Data.ItemList.Items=[]
+        world.EnableTriggerGroup("itemlist",true)
+    }
+    App.Data.ItemList.OnItemListItem=function(name, output, wildcards){
+        let result=output.match(itemlistre)
+        if (result){
+            let item={
+                Index:result[1]-0,
+                Binded:result[2]!=null,
+                Equiped:result[3]!=null,
+                Label:result[4],
+                ID:result[5],
+                Detail:result[6],
+            }
+            App.Data.ItemList.Items.push(item)
+        }else{
+            world.EnableTriggerGroup("itemlist",false)        
+        }
+    }
+    world.EnableTriggerGroup("itemlist",false)
+    App.Data.ItemList.Filter=function(name,filter){
+        App.Commands([
+            App.NewCommand("do","i "+name),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",function(){
+                for(var i=App.Data.ItemList.Items.length-1;i>-1;i--){
+                    filter(App.Data.ItemList.Items[i])
+                }
+                App.Next()
+            }),
+        ]).Push()
+        App.Next()
+    }
+    App.PackGem=function(cmd){
+        if (!cmd){
+            cmd="pack gem"
+        }
+        App.Data.ItemList.Filter("gem",function(item){
+            App.Send(cmd)
+        })
     }
 })(App)
