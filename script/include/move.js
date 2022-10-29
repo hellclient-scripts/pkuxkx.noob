@@ -1,5 +1,5 @@
 (function (App) {
-
+    const DefaultMax=3
     let Move = function (mode, target, data) {
         this.Mode = mode
         this.Target = target
@@ -24,9 +24,13 @@
         App.SetContext("Move", this)
     }
     Move.prototype.Retry=function(max){
+        if (max==null){
+            max=DefaultMax
+        }
         if (this.Retried<max){
             this.Retried++
             App.Automaton.Push(["core.state.move.start"], this.FinalState)
+            App.SetContext("Move",this)
             App.Next()
         }else{
             Note("超过最大移动重试次数，放弃。")

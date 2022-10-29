@@ -8,6 +8,7 @@
     Find.prototype = Object.create(Command.prototype)
     Find.prototype.ApplyData=function(automaton){
         let move=App.NewMove("find",this.Data.Path,this.Data.Goal)
+        move.Vehicle=this.Data.Vehicle
         App.Core.Traversal.LastMove=move
         automaton.WithData(this.ContextKey,move)
     }

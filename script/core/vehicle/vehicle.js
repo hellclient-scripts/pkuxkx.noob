@@ -1,7 +1,7 @@
 (function(App){
     let _drivepath=Include("include/drivepath.js")
     let Vehicle=function(){
-        this.TagDrive=false
+        this.Tags=null
         this.MultiStep=false
         this.ID=""
         this.RetryInterval=0.5

@@ -1,14 +1,10 @@
 (function(App){
     let run =Include("core/vehicle/run.js")
-    let go = Include("core/vehicle/go.js")
-    let cart = Include("core/vehicle/cart.js")
     let slow = Include("core/vehicle/slow.js")
 
     App.Vehicle=null
     App.Vehicles={
         Run:new run(),
-        Go:new go(),
-        Cart:new cart(),
         Slow:new slow(),
     }
     App.GetVehicle=function(id){
@@ -28,7 +24,11 @@
         App.Vehicle=App.GetVehicle(id)
     }
     App.RegisterCallback("core.vehicle.inittags",function(){
-        Mapper.settag("drive",App.Vehicle.TagDrive)
+        if (App.Vehicle.Tags){
+            for (var i=0;i<App.Vehicle.Tags.length;i++){
+                Mapper.settag(App.Vehicle.Tags[i],true)
+            }
+        }
     })
     App.Bind("PathInit","core.vehicle.inittags")
     App.Go=function(cmd){

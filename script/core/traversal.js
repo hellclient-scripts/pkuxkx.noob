@@ -25,6 +25,7 @@
     App.Core.Traversal.New = function (keyword) {
         App.Data.Traversal = {
             Key: keyword ? keyword : "",
+            Vehicle:null,
             State:"",
         }
     }
@@ -199,9 +200,9 @@
             App.Core.Traversal.Answer("")
         }
     }
-    App.Core.Traversal.Combine = function (partols) {
-        let from = ""
-        let to = ""
+    App.Core.Traversal.Combine = function (partols,startroom) {
+        let from = startroom||""
+        let to = startroom||""
         let path = []
         for (var i = 0; i < partols.length; i++) {
             let data = partols[i].split("||")
@@ -210,7 +211,7 @@
             if (!to) {
                 throw "不能组合没有终点的路径"
             }
-            if (i == 0) {
+            if (i == 0&& !from) {
                 from = data[1]
             } else {
                 if (old != data[1]) {

@@ -107,16 +107,6 @@
             }
         }
     }
-    // App.Core.Combat.GetCommands = function (name) {
-    //     if (!name) {
-    //         name = "combat"
-    //     }
-    //     let value = world.GetVariable(name)
-    //     if (!value) {
-    //         value = world.GetVariable("combat")
-    //     }
-    //     return value
-    // }
     App.Core.Combat.Intros = []
     App.Core.Combat.List = function () {
         for (var i = 0; i < App.Core.Combat.Intros.length; i++) {
@@ -148,6 +138,24 @@
             data = 0
         }
         return App.Data.Qishi >= data
+    }
+    App.Core.Combat.Conditions["myneili"] = function (data) {
+        if (App.Data.HP["neili"]=0){
+            return false
+        }
+        if (!data) {
+            data = 0
+        }
+        return App.Data.HP["eff_neili"]/App.Data.HP["neili"] >= data-0
+    }
+    App.Core.Combat.Conditions["myqixue"] = function (data) {
+        if (App.Data.HP["qixue"]=0){
+            return false
+        }
+        if (!data) {
+            data = 0
+        }
+        return App.Data.HP["eff_qixue"]/App.Data.HP["qixue"] >= data-0
     }
     App.Core.Combat.ExecPerform = function (action) {
         if (!App.Core.Combat.CheckConditions(action.Conditions)) {
