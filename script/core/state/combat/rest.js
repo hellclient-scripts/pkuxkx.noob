@@ -8,7 +8,7 @@
     State.prototype.Enter = function (context, oldstatue) {
         if (App.GetRoomData("state.rest.fail")){
             Note("放弃治疗")
-            App.Fail()
+            App.Next()
             return
         }
         App.SetRoomOnEvent(this.OnRoomEvent)
@@ -18,7 +18,7 @@
             App.Core.Dazuo()
         } else if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Data.NoForce){
-                App.Fail();
+                App.Next();
                 return
             }
             if (App.Core.PerJing() > App.Core.PerQixue()) {
