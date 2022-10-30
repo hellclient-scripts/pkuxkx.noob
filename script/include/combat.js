@@ -1,5 +1,5 @@
 (function(){
-    let Action = Include("include/combataction.js")
+    let Action = Include("include/action.js")
     let Combat=function(strategylist){
         this.Targets={}
         this.Disarmed=false

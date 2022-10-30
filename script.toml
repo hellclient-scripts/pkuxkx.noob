@@ -50,7 +50,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dvn4vk9l477m73074fio"
   Name = "App.OnStateLine"
-  Enabled = false
+  Enabled = true
   Match = "^.*$"
   Send = ""
   ColourChangeType = 0
@@ -2654,7 +2654,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1e86pnubj2pcv71b7c13s"
   Name = "App.Core.OnPlayerQishi"
-  Enabled = false
+  Enabled = true
   Match = "^[^【：『]+\\(气势：(\\d+)%\\)$"
   Send = ""
   ColourChangeType = 0
@@ -2685,7 +2685,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1e86pqa4aebic71b7c153"
   Name = "App.Core.OnPlayerQishi2"
-  Enabled = false
+  Enabled = true
   Match = "^你蓄势不足，目前只积累了(\\d+)%气势。$"
   Send = ""
   ColourChangeType = 0
@@ -4552,7 +4552,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1duunbpck39tg738d1b43"
   Name = "App.Core.Combat.OnTick"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 0
   Second = 1.0
@@ -4948,16 +4948,6 @@ Channel = "pkuxkx.noob"
   Intro = "帮派的入口和口令，格式为 taishan-dyd 狐狸狐狸\n重新加载后才能起效\n"
 
 [[RequiredParams]]
-  Name = "item_list"
-  Desc = "道具列表"
-  Intro = "回车分割的装备的道具列表\n\n如\n\nwushi dao\nxuejie dan::10"
-
-[[RequiredParams]]
-  Name = "repair_list"
-  Desc = "维修列表"
-  Intro = "需要维修的装备的列表，回车一行一个，暂时只支持系统道具在发呆室修理\n\n如\n\nxuantie sword\nwushi dao\n\n"
-
-[[RequiredParams]]
   Name = "safe_room"
   Desc = "安全屋位置"
   Intro = "不填默认为home,home未设置则为往生堂休息室"
@@ -4973,9 +4963,19 @@ Channel = "pkuxkx.noob"
   Intro = "等待时发送的指令，必须可以立刻halt\n如无特殊需要，可以设置为tuna max 提升行走效率"
 
 [[RequiredParams]]
-  Name = "jifa_cmd"
-  Desc = "激发指令"
-  Intro = "用于激发武功"
+  Name = "item_list"
+  Desc = "道具列表"
+  Intro = "回车分割的装备的道具列表\n\n如\n\nwushi dao\nxuejie dan::10"
+
+[[RequiredParams]]
+  Name = "item_assess"
+  Desc = "物品评估"
+  Intro = "根据给到的策略评估物品并进行自动处理"
+
+[[RequiredParams]]
+  Name = "repair_list"
+  Desc = "维修列表"
+  Intro = "需要维修的装备的列表，回车一行一个，暂时只支持系统道具在发呆室修理\n\n如\n\nxuantie sword\nwushi dao\n\n"
 
 [[RequiredParams]]
   Name = "food_max"
@@ -4996,6 +4996,11 @@ Channel = "pkuxkx.noob"
   Name = "combat_mode"
   Desc = " 战斗模式"
   Intro = "手工设置容易出错，请通过帮助按钮设置"
+
+[[RequiredParams]]
+  Name = "jifa_cmd"
+  Desc = "激发指令"
+  Intro = "用于激发武功"
 
 [[RequiredParams]]
   Name = "wield"

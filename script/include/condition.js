@@ -1,5 +1,5 @@
 (function(){
-    let CombatCondition=function(line){
+    let Condition=function(line){
         this.Type=""
         this.Data=""
         this.Exclude=false
@@ -10,5 +10,5 @@
         this.Type=data[0]
         this.Data=data.length>1?data[1]:""
     }
-    return CombatCondition
+    return Condition
 })()

@@ -33,6 +33,7 @@
             case "core.bufffull":
                 break
             case "move.retry":
+                ResetTimer("steptimeout")
                 this.Retry()
             break
             case "move.retrymove":

@@ -1,12 +1,12 @@
 (function(){
-    let Condition = Include("include/combatcondition.js")
+    let Condition = Include("include/condition.js")
 
-    let CombatAction=function(line){
+    let Action=function(line){
         this.Strategy=""
         this.Conditions=[]
         this.Command=""
+        this.Param=""
         this.Data=""
-
         let data=SplitN(line,":",2)
         let param
         if (data.length==1){
@@ -32,7 +32,9 @@
         if (cmd){
             if (cmd[0]=="#"){
                 data=SplitN(cmd," ",2)
-                this.Command=data[0]
+                let command=SplitN(data,".",2)
+                this.Command=command[0]
+                this.Param=command[1]
                 if (data.length>1){
                     this.Data=data[1]
                 }
@@ -41,5 +43,5 @@
             }
         }
     }
-    return CombatAction
+    return Action
 })()
