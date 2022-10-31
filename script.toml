@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -4961,17 +4961,17 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "quests"
   Desc = "任务列表"
-  Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start后使用这个列表进行任务"
+  Intro = "||或换行分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start后使用这个列表进行任务"
 
 [[RequiredParams]]
   Name = "quests2"
   Desc = "备用任务列表2"
-  Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start2后使用这个列表进行任务"
+  Intro = "||或换行分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start2后使用这个列表进行任务"
 
 [[RequiredParams]]
   Name = "quests3"
   Desc = "备用任务列表3"
-  Intro = "||分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start3后使用这个列表进行任务"
+  Intro = "||或换行分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start3后使用这个列表进行任务"
 
 [[RequiredParams]]
   Name = "study"

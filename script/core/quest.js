@@ -70,26 +70,27 @@
     App.Core.Quest.OnAliasQuests=function (name, line, wildcards){
         App.Core.Quest.StartQuests(wildcards[0].split("||"))
     }
+    let sep=/\|\||\n/
     App.Core.Quest.StartVariable=function(){
         let quests=world.GetVariable("quests").trim()
         if (quests==""){
             Note("quests变量为空")
         }
-        App.Core.Quest.StartQuests(quests.split("||"))
+        App.Core.Quest.StartQuests(quests.split(sep))
     }
     App.Core.Quest.StartVariable2=function(){
         let quests=world.GetVariable("quests2").trim()
         if (quests==""){
             Note("quests2变量为空")
         }
-        App.Core.Quest.StartQuests(quests.split("||"))
+        App.Core.Quest.StartQuests(quests.split(sep))
     }
     App.Core.Quest.StartVariable3=function(){
         let quests=world.GetVariable("quests3").trim()
         if (quests==""){
             Note("quests3变量为空")
         }
-        App.Core.Quest.StartQuests(quests.split("||"))
+        App.Core.Quest.StartQuests(quests.split(sep))
     }
     App.Core.OnQuestAliasStart = function (name, line, wildcards) {
         App.Raise("start")
