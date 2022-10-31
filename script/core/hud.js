@@ -153,8 +153,12 @@
         line.Words.push(word)
         if (App.Data.Afk){
             word = JSON.parse(NewWord(""))
-            word.Text=" 暂离"
-            word.Color="Yellow"
+            word.Text=" "
+            line.Words.push(word)
+            word = JSON.parse(NewWord(""))
+            word.Text="暂离"
+            word.Color="White"
+            word.Background="Red"
             line.Words.push(word)
         }
         UpdateHUD(GetHUDSize()-1, JSON.stringify([line]))

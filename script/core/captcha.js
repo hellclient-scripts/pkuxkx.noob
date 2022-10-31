@@ -33,6 +33,7 @@
             case "zoneend":
             case "tiangan":
             case "exits":
+            case "zoneroom":
                 App.API.CaptchaSaveURL(type)
                 break
         }
@@ -93,6 +94,9 @@
                 break
             case "exits":
                 intro="忽略红色字符，请依次输入用|分割的方向，比如 东北|东南|西|便道"
+                break
+            case "zoneroom":
+                intro="忽略红色字符，请输入空格分割的区域和房间名，如 扬州 客店"
                 break
             default:
                 intro="忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
