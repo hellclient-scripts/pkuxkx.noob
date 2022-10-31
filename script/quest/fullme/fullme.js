@@ -8,6 +8,10 @@
         App.Next()
     }
     App.Quest.Fullme.Start=function(){
+        if (App.Data.Afk){
+            App.Fail()
+            return
+        }
         if (Now()<(App.Data.LastFullme+App.Quest.Fullme.FullmeDelay)){
             App.Quest.Fullme.Cooldown()
             return

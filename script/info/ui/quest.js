@@ -17,6 +17,7 @@
     }
     App.InfoStartQuest=function(name,id,code,data){
         if (code==0 && data){
+            App.Raise("start")
             App.Core.Quest.StartQuests([data])
         }
     }

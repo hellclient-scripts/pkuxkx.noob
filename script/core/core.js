@@ -15,6 +15,7 @@ App.Load("core/pathitem.js")
 App.Load("core/sell.js")
 App.Load("core/npc.js")
 App.Load("core/buff.js")
+App.Load("core/afk.js")
 
 App.Load("core/job.js")
 

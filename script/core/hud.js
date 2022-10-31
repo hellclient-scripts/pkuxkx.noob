@@ -151,6 +151,12 @@
             word.Color="white"
         }
         line.Words.push(word)
+        if (App.Data.Afk){
+            word = JSON.parse(NewWord(""))
+            word.Text=" 暂离"
+            word.Color="Yellow"
+            line.Words.push(word)
+        }
         UpdateHUD(GetHUDSize()-1, JSON.stringify([line]))
     }
     App.RegisterCallback("core.hud.Update",App.Core.HUD.UpdateStatus)

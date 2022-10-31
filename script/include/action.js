@@ -32,7 +32,7 @@
         if (cmd){
             if (cmd[0]=="#"){
                 data=SplitN(cmd," ",2)
-                let command=SplitN(data,".",2)
+                let command=SplitN(data[0],".",2)
                 this.Command=command[0]
                 this.Param=command[1]
                 if (data.length>1){

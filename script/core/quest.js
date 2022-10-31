@@ -92,12 +92,15 @@
         App.Core.Quest.StartQuests(quests.split("||"))
     }
     App.Core.OnQuestAliasStart = function (name, line, wildcards) {
+        App.Raise("start")
         App.Core.Quest.StartVariable()
     }
     App.Core.OnQuestAliasStart2 = function (name, line, wildcards) {
+        App.Raise("start")
         App.Core.Quest.StartVariable2()
     }
     App.Core.OnQuestAliasStart3 = function (name, line, wildcards) {
+        App.Raise("start")
         App.Core.Quest.StartVariable3()
     }
     if (world.GetVariable("quests")==""){

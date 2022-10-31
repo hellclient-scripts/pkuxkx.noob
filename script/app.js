@@ -67,6 +67,7 @@ App.Stop = function () {
     App.Core.Sell.Reset()
     Note("中止任务")
     App.Stopped = true
+    App.Raise("stop")
     App.RaiseStateEvent("stop")
 }
 App.onResponse = function (msgtype, id, data) {
