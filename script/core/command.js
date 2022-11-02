@@ -51,6 +51,7 @@
     App.RegisterCommand(Include("core/command/locate.js"))
     App.RegisterCommand(Include("core/command/search.js"))
     App.RegisterCommand(Include("core/command/eat.js"))
+    App.RegisterCommand(Include("core/command/recover.js"))
     App.RegisterCommand(Include("core/command/neili.js"))
 
 })(App)

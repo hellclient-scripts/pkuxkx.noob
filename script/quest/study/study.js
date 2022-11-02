@@ -156,7 +156,7 @@
         App.Next()
     }
     App.Quest.Study.Loop = function (cmd) {
-        if (App.Quest.Study.Index < App.Quest.Study.PerLoop) {
+        if (App.Quest.Study.Index < App.Quest.Study.PerLoop&&!App.Stopped) {
             App.Quest.Study.Index++
             App.Quest.Study.Exec(cmd)
         } else {

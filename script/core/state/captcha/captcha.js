@@ -16,6 +16,7 @@
             case "zoneend":
             case "tiangan":
             case "exits":
+            case "zoneroom":
                 this.Cmd=null
                 break
             default:
