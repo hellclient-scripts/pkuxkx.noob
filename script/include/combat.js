@@ -14,6 +14,7 @@
         this.StrategyList=strategylist || []
         this.Strategy=""
         this.Actions=[]
+        this.StartAt=Now()
     }
     Combat.prototype.LoadActions=function(data){
         let lines=data.split("\n")
@@ -52,6 +53,9 @@
     }
     Combat.prototype.SetAfter=function(cmd){
         this.After=cmd
+    }
+    Combat.prototype.Duration=function(){
+        return (Now()-this.StartAt)/1000
     }
     return Combat
 })()

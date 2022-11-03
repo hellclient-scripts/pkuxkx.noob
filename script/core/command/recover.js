@@ -1,11 +1,11 @@
 (function(App){
     let Command = Include("include/command.js")
-    let Eat=function(data){
+    let Recover=function(data){
         Command.call(this,data)
         this.Transitions=["core.state.command.recover"]
     }
-    Eat.prototype = Object.create(Command.prototype)
-    Eat.prototype.CommandID="recover"
+    Recover.prototype = Object.create(Command.prototype)
+    Recover.prototype.CommandID="recover"
     App.RegisterState(new (Include("core/state/command/recover.js"))())
-    return Eat
+    return Recover
 }(App))

@@ -64,6 +64,7 @@
                 App.Core.Combat.Perform()
                 break
             case "combat.finish":
+                Note("战斗结束，用时："+App.Core.Combat.Current.Duration()+"秒")
                 let afterCombatCmd=GetVariable("after_combat_cmd")
                 if (afterCombatCmd){
                     App.Send(afterCombatCmd)

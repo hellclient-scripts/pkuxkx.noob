@@ -9,6 +9,7 @@
             }
             App.Data.Afk = enabeld
             App.Core.HUD.UpdateStatus()
+            App.Raise(enabeld?"here":"afk")
         }
     }
     App.Core.Afk.OnAliasAfk = function () {

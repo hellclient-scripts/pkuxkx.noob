@@ -71,7 +71,7 @@
         }
     }
     App.Core.Combat.CheckFighting = function () {
-        App.Send("guard .")
+        App.Send("qiecuo")
     }
     App.DumpCombat=function(strategies){
         let old=App.Core.Combat.Current

@@ -5,6 +5,7 @@
     App.Quest.Study.Index = 0
     App.Quest.Study.Plan = []
     App.Quest.Study.Current = null
+    App.Quest.Study.Pause=false
     App.Quest.Study.PickPlan = function () {
         let available = []
         App.Quest.Study.Plan.forEach(p => {
@@ -125,6 +126,7 @@
     }
     let re = /\n/g
     App.Quest.Study.Start = function (cmd) {
+        App.Quest.Study.Pause=false
         App.Quest.Study.Index = 0
         App.Commands([
             App.NewCommand('prepare', App.PrapareFull),
@@ -155,8 +157,12 @@
         ]).Push()
         App.Next()
     }
+    App.RegisterCallback("quest.study.pause",function(){
+        App.Quest.Study.Pause=true
+    })
+    App.Bind("here","quest.study.pause")
     App.Quest.Study.Loop = function (cmd) {
-        if (App.Quest.Study.Index < App.Quest.Study.PerLoop&&!App.Stopped) {
+        if (App.Quest.Study.Index < App.Quest.Study.PerLoop&&!(App.Stopped||App.Quest.Study.Pause)) {
             App.Quest.Study.Index++
             App.Quest.Study.Exec(cmd)
         } else {
