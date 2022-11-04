@@ -45,4 +45,6 @@
     App.Core.Condition.Register(new (Include("core/condition/before.js"))())
     App.Core.Condition.Register(new (Include("core/condition/after.js"))())
     App.Core.Condition.Register(new (Include("core/condition/fullmeok.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/here.js"))())
+
 })(App)

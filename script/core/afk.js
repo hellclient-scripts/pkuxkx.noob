@@ -1,7 +1,11 @@
 (function (App) {
     App.Data.Afk = false
+    App.Data.LastHere=Now()
     App.Core.Afk = {}
     App.SetAfk = function (enabeld) {
+        if (enabeld==false){
+            App.Data.LastHere=Now()
+        }
         if (enabeld != App.Data.Afk) {
             Note("暂离模式 " + (enabeld ? "开启" : "关闭"))
             if (enabeld) {
@@ -9,8 +13,8 @@
             }
             App.Data.Afk = enabeld
             App.Core.HUD.UpdateStatus()
-            App.Raise(enabeld?"here":"afk")
         }
+        App.Raise(enabeld?"afk":"here")
     }
     App.Core.Afk.OnAliasAfk = function () {
         App.SetAfk(true)

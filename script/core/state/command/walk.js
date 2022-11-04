@@ -15,6 +15,7 @@
 
     State.prototype.Enter=function(context,oldstatue){
         let move=App.GetContext("Move")
+        App.Drive(move.Vehicle)
         if (!App.Data.Room.ID) {
             App.Core.MoveUnknownStart(move)
             return

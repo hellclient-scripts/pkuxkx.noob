@@ -104,7 +104,7 @@ App.LoadMods = function () {
     if (mod.Exists) {
         mod.FolderList.forEach(function (mod) {
             if (HasModFile(mod + "/src/index.js")) {
-                if ((mods[mod] && white_list) || !mod[mod] && !white_list) {
+                if ((mods[mod] && white_list) || (!mods[mod] && !white_list)) {
                     Note("发现mod[" + mod + "],加载中")
                     Mod.Include(mod + "/src/index.js")
                 }
