@@ -1,9 +1,6 @@
 (function (App) {
     const maxlevel=200
     var Backward=Include("include/backward.js")
-    var MazeBackward={...Backward}
-    MazeBackward["xiaojing"]="xiaojing"
-    MazeBackward["biandao"]="biandao"
     let DFS=Include("include/dfs.js")
     let basicmaze=Include("include/maze.js")
     let Maze=function(param){

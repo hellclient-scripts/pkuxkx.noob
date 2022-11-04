@@ -20,12 +20,17 @@
             if (data.length==1){
                 data[1]=""
             }
+            var exclude=false
             data[1]=data[1].trim()
+            if (data[0].slice(0,1)=="!"){
+                data[0]=data[0].slice(1)
+                exclude=true
+            }
             let c=App.Core.Condition.Conditions[data[0]]
             if (!c){
                 throw "Condition id["+data[0]+"]找不到"
             }
-            if (!c.Match(data[1])){
+            if (c.Match(data[1])==exclude){
                 return false
             }
         }
@@ -46,5 +51,6 @@
     App.Core.Condition.Register(new (Include("core/condition/after.js"))())
     App.Core.Condition.Register(new (Include("core/condition/fullmeok.js"))())
     App.Core.Condition.Register(new (Include("core/condition/here.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/gu.js"))())
 
 })(App)

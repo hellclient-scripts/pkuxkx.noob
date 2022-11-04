@@ -32,16 +32,22 @@
         this.LastID = id
         return this
     }
+    Check.prototype.InCooldown=function(){
+        return !After(App.Data[this.LastID], App.GetNumberParam(this.IntervalParam))
+    }
+    Check.prototype.ResetCooldown=function(){
+        App.Data[this.LastID]=Now()
+    }
     Check.prototype.Execute = function (force) {
         if (!force) {
             if (this.IntervalParam && this.LastID) {
-                if (!After(App.Data[this.LastID], App.GetNumberParam(this.IntervalParam))) {
+                if (this.InCooldown()) {
                     return false
                 }
             }
         }
         this.Send()
-        App.Data[this.LastID]=Now()
+        this.ResetCooldown()
         return true
     }
     Check.prototype.Callback = function () {

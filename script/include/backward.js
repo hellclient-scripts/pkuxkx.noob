@@ -8,6 +8,8 @@
         "down":"up","d":"u",
         "enter":"out",
         "out":"enter",
+        "xiaojing":"xiaojing",
+        "biandao":"biandao",
         "northeast":"southwest","ne":"sw",
         "southeast":"northwest","se":"nw",
         "southwest":"northeast","sw":"ne",

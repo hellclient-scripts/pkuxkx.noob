@@ -85,5 +85,7 @@
             }
         }
     }
+    App.RegisterCallback("core.autoget.execute",App.Core.Autoget.Execute)
+    App.Bind("move.beforeonstep","core.autoget.execute")
     Init()
 })(App)

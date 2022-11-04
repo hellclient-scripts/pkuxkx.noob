@@ -1,6 +1,7 @@
 (function(App){
-    App.Core.Assess={}
+    let Action = Include("include/action.js")
 
+    App.Core.Assess={}
     App.Core.Assess.LoadActions=function(data){
         let lines=data.split("\n")
         let result=[]
@@ -11,7 +12,7 @@
                     result.push(action)
                 }
             }
-            return action
+            return result
     }
     let autoactions=[
         "#dang type=set",

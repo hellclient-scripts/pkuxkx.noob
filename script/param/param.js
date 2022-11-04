@@ -26,6 +26,7 @@
         "checklupidaiinterval":"10000",
         "checkavatarinterval":"60000",
         "checkdurabilityinterval":"60000",
+        "checkguinterval":"10000",
         "charset":"2",
         "echo":"t",
         "repair_below":"30",
