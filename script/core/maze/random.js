@@ -37,7 +37,7 @@
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
                 App.Send("unset brief")
-                this.Command=(new DFS(this.MaxDepth,MazeBackward)).New()
+                this.Command=(new DFS(this.MaxDepth,Backward)).New()
                 let entrycmd=this.EntryCmd()
                 if (typeof(entrycmd)=="string"){
                     entrycmd=[entrycmd]
@@ -69,7 +69,7 @@
                     to.push(this.Command.Command)
                     App.Core.Maze.Info[this.Start+"-"+info]=(to.join(";"))
                     let fr=this.Command.Level.ConcatBackward()
-                    fr.unshift(MazeBackward[this.Command.Command])
+                    fr.unshift(Backward[this.Command.Command])
                     App.Core.Maze.Info[info + "-" +this.Start]=(fr.join(";"))
                 }
                 let level=this.Command.Arrive(giveup?[]:this.GetExits())
