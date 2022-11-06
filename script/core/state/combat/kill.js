@@ -35,16 +35,18 @@
         let cmd1data = SplitN(cmd1, " ", 2)
         if (cmd1data.length == 2) {
             switch (cmd1data[0]) {
-                case "kill":
                 case "killall":
+                    App.Core.Combat.Current.SetMustKill(cmd1data[1])
+                    App.Core.Combat.Current.SetKillCmd(cmd1data[0]+" "+cmd1data[1])
+                case "kill":
                     App.Core.Combat.Touxi(cmd1data[1])
                     break
             }
         }
         App.Commands([
             App.NewCommand("nobusy"),
-            App.NewCommand("do",kill.Cmd),
-            App.NewCommand("state","core.state.combat.combat"),
+            App.NewCommand("do", kill.Cmd),
+            App.NewCommand("state", "core.state.combat.combat"),
         ]).Push()
         App.Next()
     }

@@ -62,6 +62,10 @@
         App.NewCommand("rest").Push()
         App.Next()
     }
+    App.Core.Combat.KillAgain=function(){
+        App.Send(App.Core.Combat.Current.KillCmd)
+        App.ChangeState("core.state.combat.combating")
+    }
     App.Core.Combat.OnLoot = function (name, output, wildcards) {
         App.Core.Combat.Looted[wildcards[0]] = true
         App.Core.OnRoom.NPCDie(wildcards[0])
@@ -255,7 +259,10 @@
             }
         }
     }
+
     App.RegisterState(new (Include("core/state/combat/combat.js"))())
+    App.RegisterState(new (Include("core/state/combat/combating.js"))())
+    App.RegisterState(new (Include("core/state/combat/finish.js"))())
     App.RegisterState(new (Include("core/state/combat/rest.js"))())
     App.RegisterState(new (Include("core/state/combat/kill.js"))())
 })(App)

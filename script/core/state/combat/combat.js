@@ -9,89 +9,13 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
         App.Core.Combat.CaclStrategy()
-        world.ResetTimer("App.Core.Combat.OnTick")
-        world.EnableTimer("App.Core.Combat.OnTick", true)
         App.Data.Qishi=0
         Note("进入战斗，战斗ID为[ "+App.Core.Combat.Current.StrategyList.join(" , ")+" ],计算后的策略为["+App.Core.Combat.Current.Strategy+"]")
         App.Core.Combat.Current.LoadActions(GetVariable("combat"))
         App.Core.Combat.Toggle()
         App.Core.Weapon.Wield()
         App.Core.Combat.Perform()
-        App.Core.Combat.CheckFighting()
-    }
-    State.prototype.Leave = function (context, oldstatue) {
-        world.EnableTimer("App.Core.Combat.OnTick", false)
-    }
-    State.prototype.Online = function (line) {
-        if (App.Core.Combat.Current.OnNpcFlee) {
-            if (line.endsWith("落荒而逃了。")) {
-                let result = line.match(fleere)
-                if (result) {
-                    Note("发现有人逃跑")
-                    App.Core.Combat.Current.OnNpcFlee(result[1],result[2])
-                }
-            }
-        }
-    }
-    
-    State.prototype.Tick=function(){
-        let msg=[]
-        msg.push("当前策略["+App.Core.Combat.Current.Strategy+"]")
-        msg.push("气势["+App.Data.Qishi+"]")
-        Note(msg.join(","))
-        App.Core.Combat.Perform()
-        App.Core.Combat.CheckFighting()
-    }
-    State.prototype.OnEvent = function (context, event, data) {
-        switch (event) {
-            case "line":
-                this.Online(data)
-                if (App.Core.Combat.Current.Online) {
-                    App.Core.Combat.Current.Online(data)
-                }
-                break
-            case "combat.disarm":
-                App.Core.Combat.Current.Disarmed = true
-                break
-            case "combat.wield":
-                App.Core.Combat.Current.Disarmed = false
-                break
-            case "combat.tick":
-                this.Tick()
-                break
-            // case "nobusy":
-            case "gmcp.nobusy":
-                App.Core.Combat.Perform()
-                break
-            case "combat.finish":
-                Note("战斗结束，用时："+App.Core.Combat.Current.Duration()+"秒")
-                let afterCombatCmd=GetVariable("after_combat_cmd")
-                if (afterCombatCmd){
-                    App.Send(afterCombatCmd)
-                }
-                let cmds = [App.NewCommand("delay", 1)]
-                if (App.Core.Combat.Current.Yield) {
-                    cmds = cmds.concat([
-                        App.NewCommand("do", "yield no"),
-                    ])
-                }
-                if (App.Core.Combat.Current.After) {
-                    cmds = cmds.concat([
-                        App.NewCommand("nobusy"),
-                        App.NewCommand("do", App.Core.Combat.Current.After),
-                    ])
-                }
-                cmds = cmds.concat([
-                    App.NewCommand("nobusy"),
-                    App.NewCommand("function",App.Core.Buff.AutoToggle),
-                    App.NewCommand("nobusy"),
-                    App.NewCommand("do", "yun recover"),
-                    App.NewCommand("state", "core.state.combat.rest"),
-                ])
-                App.Commands(cmds).Push()
-                App.Next()
-                break
-        }
+        App.ChangeState("core.state.combat.combating")
     }
     return State
 })(App)
