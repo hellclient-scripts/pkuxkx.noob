@@ -117,6 +117,7 @@
             commands.push(App.NewCommand("do", App.Quest.Study.Current.After))
         }
         App.Commands(commands).Push()
+        App.Raise("core.looping")
         App.Next()
     }
     App.Quest.Study.Xue = function () {

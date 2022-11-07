@@ -9,9 +9,20 @@
         }
         return ""
     }
+    App.Core.Gu.Count=0
     App.Core.Gu.List = []
     App.Core.Gu.Reset = function (name, output, wildcards) {
+        App.Core.Gu.Count=0
+        if (App.Data.ItemList.ID=="undeaded"){
+            App.Core.Gu.Count=App.Data.ItemList.Items.length
+        }
         App.Core.Gu.List = []
+    }
+    App.Core.Gu.Put=function(){
+        let offset=App.Core.Gu.Count-App.Core.Gu.List.length
+        for (var i=0;i<offset;i++){
+            App.Send("put undeaded in "+App.Core.Gu.Guhe())
+        }
     }
     App.Core.Gu.OnItem = function (name, output, wildcards) {
         let item = {
@@ -25,6 +36,7 @@
             AP: wildcards[7],
             APCap: wildcards[8],
         }
+        App.Core.Gu.Count++
         App.Core.Gu.List.push(item)
     }
     App.Core.Gu.CheckGu = function () {
@@ -34,7 +46,13 @@
             for (var i = 0; i < list.length; i++) {
                 App.Send("so feed " + list[i])
             }
-            App.Send("lookin " + he)
+            App.Send("i undeaded;lookin " + he)
+        }
+    }
+    App.Core.Gu.Lookin=function(){
+        let he = App.Core.Gu.Guhe()
+        if (he) {
+            App.Send("i undeaded;lookin " + he)
         }
     }
     let checkGu = (new check("gu")).WithLevel(App.CheckLevelFull).WithCommand(App.Core.Gu.CheckGu).WithIntervalParam("checkguinterval").WithLastID("LastGu")
@@ -89,5 +107,5 @@
     }
     App.RegisterCallback("core.gu.feed", App.Core.Gu.Feed)
     App.Bind("move.beforeonstep", "core.gu.feed")
-    App.Bind("quests.loop", "core.gu.feed")
+    App.Bind("core.looping", "core.gu.feed")
 })(App)

@@ -32,6 +32,7 @@
         }
         if (loop){
             App.Raise("quests.loop")
+            App.Raise("core.looping")
             App.NewCommand("delay",App.GetNumberParam("questsdelay")).Push()
         }
         App.Next()
