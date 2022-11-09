@@ -2,6 +2,9 @@
     let Asset=function(){
         this.Name=""
         this.ID=""
+        this.UNID=""
+        this.NeedLook=false
+        this.NeedIdentify=false
         this.Type={}
         this.Level=-1
         this.Grade=-1
@@ -9,6 +12,7 @@
         this.Value=-1
         this.Binded=false
         this.Identified=-1
+        this.Quality=-1
         this.Effect={}
         this.StoreType=""
         this.SellType=""

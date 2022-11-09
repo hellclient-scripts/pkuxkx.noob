@@ -7,6 +7,9 @@
     Basic.prototype.Value=function(obj,asset){
         asset.Name=obj.Name
         asset.ID=obj.ID
+        asset.UNID=obj.UNID||""
+        asset.Count=obj.Count
+        asset.Binded=obj.Binded
     }
     return Basic
 })()

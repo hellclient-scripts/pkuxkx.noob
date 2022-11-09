@@ -6,6 +6,8 @@
         this.Treasure = null
         this.Actions = []
         this.Keeper = null
+        this.Assets=[]
+        this.Index=0
     }
     Valuation.prototype.GetPreset = function () {
         for (var i = 0; i < this.Actions.length; i++) {
@@ -57,6 +59,14 @@
         }
         if (this.Keeper===null){
             this.Keeper=""
+        }
+    }
+    Valuation.prototype.CheckNeedValue=function(asset){
+        for (var i = 0; i < this.Actions.length; i++) {
+            let action = this.Actions[i]
+            if (action.Command == "") {
+                return action.Data
+            }
         }
     }
     return Valuation

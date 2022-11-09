@@ -22,7 +22,7 @@
                 asset.AddType(result[3])
                 asset.Grade=grades[result[1]]
                 asset.StoreType="pack"
-                asset.StoreType="jindian"
+                asset.SellType="jindian"
         }
     }
     return Gem

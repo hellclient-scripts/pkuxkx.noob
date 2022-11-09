@@ -120,8 +120,10 @@
                 if (atype){
                     asset.AddTypes(atype)
                 }
+                asset.NeedLook=true
+                asset.NeedIdentify=true
                 asset.StoreType="rbz"
-                asset.StoreType="rbz"
+                asset.SellType="rbz"
             }
 
         }
