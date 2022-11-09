@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2500,7 +2500,7 @@ Channel = "pkuxkx.noob"
   ID = "d1e7rukjv5k3t06b23jk5"
   Name = "App.Core.OnRoomNoAction"
   Enabled = true
-  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。|养鸡人对你说道：别在这里练功，练出鸡胸怎办？|你看样子输红了眼，想施内功。)$"
+  Match = "^(这里人来人往，这样很容易影响到别人。|青鬏龟童对你说道：大人在这里练功会损了您的龟寿。|中央广场，禁止刷屏！|对不起，比武场中请不要练功。|请不要在拱猪房里施用内功，谢谢。|养鸡人对你说道：别在这里练功，练出鸡胸怎办？|你看样子输红了眼，想施内功。|这里无法使用内功。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -2994,7 +2994,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1e95hchtslmig6he7qnl"
-  Name = "App.Core.Assess.OnItem"
+  Name = "App.Core.Asset.OnItem"
   Enabled = false
   Match = "^.*$"
   Send = ""
@@ -3003,7 +3003,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.Assess.OnItem"
+  Script = "App.Core.Asset.OnItem"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -3014,7 +3014,7 @@ Channel = "pkuxkx.noob"
   MultiLine = false
   LinesToMatch = 0
   WildcardLowerCase = false
-  Group = "core.assess.item"
+  Group = "core.asset.item"
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
@@ -4513,7 +4513,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1e95gubtc0psn6he7q2t"
-  Name = "App.Core.Assess.OnItemStart"
+  Name = "App.Core.Asset.OnItemStart"
   Enabled = true
   Match = "^├───────────────────────\\[(.+)\\]───────────────────────┤$"
   Send = ""
@@ -4522,7 +4522,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Core.Assess.OnItemStart"
+  Script = "App.Core.Asset.OnItemStart"
   SendTo = 0
   Sequence = 160
   ExpandVariables = false
@@ -5262,7 +5262,7 @@ Channel = "pkuxkx.noob"
   Intro = "回车分割的装备的道具列表\n\n如\n\nwushi dao\nxuejie dan::10"
 
 [[RequiredParams]]
-  Name = "item_assess"
+  Name = "valuing"
   Desc = "物品评估"
   Intro = "根据给到的策略评估物品并进行自动处理"
 
