@@ -188,7 +188,7 @@
             let item={
                 Index:result[1]-0,
                 Binded:result[2]!=null,
-                Equiped:result[3]!=null,
+                Equipped:result[3]!=null,
                 Label:result[4],
                 ID:result[5],
                 Detail:result[6],

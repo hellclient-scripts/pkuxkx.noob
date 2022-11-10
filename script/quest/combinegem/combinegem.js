@@ -52,7 +52,7 @@
             Note("合成宝石结束,收起所有宝石,进入冷却1秒")
             App.Core.Quest.Cooldown("combinegem",1000)
             let packloc=App.GetSafeRoom()
-            if (packloc=="home"){
+            if (App.Info.HomeRooms[packloc]){
                 packloc="yz-sczh"
             }
             App.Commands([

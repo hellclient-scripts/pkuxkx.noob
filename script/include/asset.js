@@ -11,6 +11,7 @@
         this.Hole=-1
         this.Value=-1
         this.Binded=false
+        this.Equipped=false
         this.Identified=-1
         this.Quality=-1
         this.Effect={}

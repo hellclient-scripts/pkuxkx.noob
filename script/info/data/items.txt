@@ -31,4 +31,4 @@ blade book||blade book||Blade book||飞沙走石十三式||goods||yzdp||buy im_2
 pili dan||pili dan||Pili dan||霹雳弹||goods||chengdudp||buy wp_456 for 500
 shi zi||shi zi||Shi zi||玉石子||goods||linandp||buy wp_145 for 500
 lupi dai||lupi dai||Lupi dai||鹿皮袋||goods||yz-zhp||buy lupi dai
-bao fu||bao fu||Bao fu||包袱||zy-zhp||goods||buy bao fu
+bao fu||bao fu||Bao fu||包袱||goods||yz-zhp||buy bao fu

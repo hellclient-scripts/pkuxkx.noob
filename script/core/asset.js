@@ -6,7 +6,7 @@
     let Valuation = Include("include/valuation.js")
     App.Core.Asset = {}
     App.Core.Asset.Conditions = {}
-
+    App.Core.Asset.Last = 0
     App.Data.AssetList = []
     App.Core.Asset.Valuation = null
     App.Core.Asset.Action = null
@@ -64,19 +64,20 @@
     }
 
     let defaultactions = App.Core.Asset.LoadActions([
-        "#weight 30",
+        "#weight 50",
         "#treasure 职业,随机,套装,技能书,宝石",
         "#store type=套装",
         "#store type=技能书",
         "hole 1,quality 4>#store type=职业",
         "!hole 2>#sell type=随机",
         "!hole 2>#sell type=职业",
-        "#keep puti zi,qiannian dan,long dan,nvwa shi",
-        "quit:#sell xue jiedan",
-        "relogin:#sell xue jiedan",
-        "#sell.5 xue jiedan",
+        "#keep puti zi,qiannian dan,long dan,nvwa shi,huolong dan",
+        "quit:#sell xuejie dan",
+        "relogin:#sell xuejie dan",
+        "#sell.5 xuejie dan",
         "#store type=宝石",
         "#sell nen cao,sui rouxie",
+        "#sell baicao dan,puti zi",
         "quit:#sell wushi dao,dulong bian",
         "#drop shi tan,xuan bing",
         "#keep type=随机",
@@ -96,7 +97,11 @@
                 world.EnableTriggerGroup("core.asset.item", true)
                 break
             case "食  物":
-                App.Core.Asset.CurrentType = "treasure"
+                App.Core.Asset.CurrentType = "food"
+                world.EnableTriggerGroup("core.asset.item", true)
+                break
+            case "药  物":
+                App.Core.Asset.CurrentType = "food"
                 world.EnableTriggerGroup("core.asset.item", true)
                 break
             case "其  它":
@@ -155,16 +160,21 @@
         v = App.Core.Asset.Load("")
         if (App.Data.Load && v.Weight) {
             if (App.Data.Load > v.Weight) {
+                Note("负重过重，超过"+v.Weight)
                 return true
             }
         }
         for (var i = 0; i < App.Data.AssetList.length; i++) {
-            for (var k = 0; k < v.Treasure; k++)
-                if (App.Data.AssetList.Type[v.Treasure[k]]) {
+            var asset=App.Data.AssetList[i]
+            if (asset.Equipped || asset.Binded){
+                continue
+            }
+            for (var k = 0; k < v.Treasure.length; k++)
+                if (asset.Type[v.Treasure[k]]) {
                     return true
                 }
         }
-        return false
+        return (Now() - App.Core.Asset.Last) > 10 * 60 * 1000
     }
     App.Core.Asset.Commands = {
         "#sell": true,
@@ -177,7 +187,7 @@
         let result = {}
         for (var i = 0; i < App.Data.AssetList.length; i++) {
             let asset = App.Data.AssetList[i]
-            if (asset.Binded || !asset.ID || result[asset.ID.toLowerCase()]) {
+            if (asset.Binded || asset.Equipped || !asset.ID || result[asset.ID.toLowerCase()]) {
                 continue
             }
             for (var k = 0; k < v.Actions.length; k++) {
@@ -196,11 +206,13 @@
         return
     }
     App.Core.Asset.Start = function (strategy) {
+        App.Core.Asset.Last = Now()
         App.Core.Asset.Prepare(strategy)
         App.Core.Asset.Execute()
     }
     App.Core.Asset.Finish = function () {
         Note("物品处理完毕")
+        App.Send("i")
         App.Next()
     }
     App.Core.Asset.Execute = function () {
@@ -235,63 +247,63 @@
         }
         return true
     }
-    App.Core.Asset.DoSell = function () {
-        switch(App.Core.Asset.Asset.SellType){
+    App.Core.Asset.DoSell = function (action) {
+        switch (App.Core.Asset.Asset.SellType) {
             case "jindian":
                 App.Commands([
-                    App.NewCommand("to",App.Options.NewWalk("yz-jindian")),
-                    App.NewCommand("do","sell "+App.Core.Asset.Asset.UNID),
+                    App.NewCommand("to", App.Options.NewWalk("yz-jindian")),
+                    App.NewCommand("do", "sell " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("function",function(){
+                    App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
                     }),
                 ]).Push()
                 App.Next()
                 break
-                case "rbz":
-                    App.Commands([
-                        App.NewCommand("to",App.Options.NewWalk("yz-rbz")),
-                        App.NewCommand("do","sell "+App.Core.Asset.Asset.UNID),
-                        App.NewCommand("nobusy"),
-                        App.NewCommand("function",function(){
-                            App.Core.Asset.Execute()
-                        }),
-                    ]).Push()
-                    App.Next()
-                    break
-                default:
-                    let cmd=(App.Core.Asset.Asset.Count>1)?App.Core.Asset.Asset.Count+" " +App.Core.Asset.Asset.UNID:App.Core.Asset.Asset.UNID
-                    App.Commands([
-                        App.NewCommand("to",App.Options.NewWalk("yz-ljz")),
-                        App.NewCommand("do","drop "+cmd),
-                        App.NewCommand("nobusy"),
-                        App.NewCommand("function",function(){
-                            App.Core.Asset.Execute()
-                        }),
-                    ]).Push()
-                    App.Next()
-                    break                    
+            case "rbz":
+                App.Commands([
+                    App.NewCommand("to", App.Options.NewWalk("yz-rbz")),
+                    App.NewCommand("do", "sell " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("nobusy"),
+                    App.NewCommand("function", function () {
+                        App.Core.Asset.Execute()
+                    }),
+                ]).Push()
+                App.Next()
+                break
+            default:
+                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param-0)): App.Core.Asset.Asset.UNID
+                App.Commands([
+                    App.NewCommand("to", App.Options.NewWalk("yzdp")),
+                    App.NewCommand("do", "sell " + cmd),
+                    App.NewCommand("nobusy"),
+                    App.NewCommand("function", function () {
+                        App.Core.Asset.Execute()
+                    }),
+                ]).Push()
+                App.Next()
+                break
 
         }
     }
-    App.Core.Asset.DoKeep = function () {
-        let cmd=(App.Core.Asset.Asset.Count>1)?App.Core.Asset.Asset.Count+" " +App.Core.Asset.Asset.UNID:App.Core.Asset.Asset.UNID
-        if (App.Core.Asset.Valuation.Keeper){
-            let data=SplitN(App.Core.Asset.Valuation.Keeper,"@",2)
-            if (data.length<2){data.push("yz-rbz")}
+    App.Core.Asset.DoKeep = function (action) {
+        let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.Count + " " + App.Core.Asset.Asset.UNID : App.Core.Asset.Asset.UNID
+        if (App.Core.Asset.Valuation.Keeper) {
+            let data = SplitN(App.Core.Asset.Valuation.Keeper, "@", 2)
+            if (data.length < 2) { data.push("yz-rbz") }
             App.Commands([
-                App.NewCommand("to",App.Options.NewWalk(data[1])),
-                App.NewCommand("do","give "+cmd+" to "+data[0]),
+                App.NewCommand("to", App.Options.NewWalk(data[1])),
+                App.NewCommand("do", "give " + cmd + " to " + data[0]),
                 App.NewCommand("nobusy"),
-                App.NewCommand("function",function(){
+                App.NewCommand("function", function () {
                     App.Core.Asset.Execute()
                 }),
             ]).Push()
-        }else{
+        } else {
             App.Commands([
-                App.NewCommand("do","put "+cmd+" in bao fu"),
+                App.NewCommand("do", "put " + cmd + " in bao fu"),
                 App.NewCommand("nobusy"),
-                App.NewCommand("function",function(){
+                App.NewCommand("function", function () {
                     App.Core.Asset.Execute()
                 }),
             ]).Push()
@@ -299,26 +311,25 @@
         App.Next()
 
     }
-    App.Core.Asset.DoDrop = function () {
-        let cmd=(App.Core.Asset.Asset.Count>1)?App.Core.Asset.Asset.UNID +" for "+App.Core.Asset.Asset.Count:App.Core.Asset.Asset.UNID
+    App.Core.Asset.DoDrop = function (action) {
+        let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.Count + " " + App.Core.Asset.Asset.UNID : App.Core.Asset.Asset.UNID
         App.Commands([
-            App.NewCommand("to",App.Options.NewWalk("yz-rbz")),
-            App.NewCommand("do","sell "+cmd),
+            App.NewCommand("do", "drop " + cmd),
             App.NewCommand("nobusy"),
-            App.NewCommand("function",function(){
+            App.NewCommand("function", function () {
                 App.Core.Asset.Execute()
             }),
         ]).Push()
         App.Next()
     }
-    App.Core.Asset.DoStore = function () {
-        switch(App.Core.Asset.Asset.StoreType){
+    App.Core.Asset.DoStore = function (action) {
+        switch (App.Core.Asset.Asset.StoreType) {
             case "rbz":
                 App.Commands([
-                    App.NewCommand("to",App.Options.NewWalk("yz-rbz")),
-                    App.NewCommand("do","dang "+App.Core.Asset.Asset.UNID),
+                    App.NewCommand("to", App.Options.NewWalk("yz-rbz")),
+                    App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("function",function(){
+                    App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
                     }),
                 ]).Push()
@@ -326,9 +337,9 @@
                 break
             case "pack":
                 App.Commands([
-                    App.NewCommand("do","pack "+App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "pack " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("function",function(){
+                    App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
                     }),
                 ]).Push()
@@ -336,10 +347,10 @@
                 break
             default:
                 App.Commands([
-                    App.NewCommand("to",App.Options.NewWalk("yzdp")),
-                    App.NewCommand("do","dang "+App.Core.Asset.Asset.UNID),
+                    App.NewCommand("to", App.Options.NewWalk("yzdp")),
+                    App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
-                    App.NewCommand("function",function(){
+                    App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
                     }),
                 ]).Push()
@@ -360,22 +371,23 @@
                     break
                 }
                 if (action.Command == "#sell" && action.Param) {
-                    if (asset.Count < (action.Param - 0)) {
+                    if (asset.Count <= (action.Param - 0)) {
                         continue
                     }
                 }
+                Note(action.Line)
                 switch (action.Command) {
                     case "#sell":
-                        App.Core.Asset.DoSell()
+                        App.Core.Asset.DoSell(action)
                         return
                     case "#keep":
-                        App.Core.Asset.DoKeep()
+                        App.Core.Asset.DoKeep(action)
                         return
                     case "#drop":
-                        App.Core.Asset.DoDrop()
+                        App.Core.Asset.DoDrop(action)
                         return
                     case "#store":
-                        App.Core.Asset.DoDrop()
+                        App.Core.Asset.DoStore(action)
                         return
                 }
             }
@@ -396,9 +408,10 @@
             let data = CNumber.Split(item.Label)
             let obj = {
                 Binded: item.Binded,
+                Equipped: item.Equipped,
                 Name: data.Item,
                 ID: item.ID,
-                UNID: App.Data.ItemList.ID + " " + (App.Core.Asset.Valuation.Index + 1),
+                UNID: App.Core.Asset.Valuation.Index==0?App.Data.ItemList.ID:(App.Data.ItemList.ID + " " + (App.Core.Asset.Valuation.Index + 1)),
                 Count: data.Count,
             }
             let asset = new Asset()
@@ -406,7 +419,7 @@
                 App.Core.Asset.Valuings[i].Value(obj, asset)
             }
             App.Core.Asset.Asset = asset
-            if (asset.NeedIdentify){
+            if (asset.NeedIdentify) {
                 App.Send("jianding " + asset.UNID)
             }
             if (asset.NeedLook) {

@@ -5,6 +5,9 @@
     App.Info.SleepRooms=[]
     App.Info.Stations = {}
     App.Info.Landmarks = {}
+    App.Info.HomeRooms={
+        "home":true
+    }
     App.Info.DescStart={}
     App.Info.DescFirst={}
     App.Info.Desc={}

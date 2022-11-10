@@ -7,6 +7,7 @@
         this.Command=""
         this.Param=""
         this.Data=""
+        this.Line=line
         let data=SplitN(line,":",2)
         let param
         if (data.length==1){

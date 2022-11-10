@@ -3,7 +3,11 @@
     let Food= function(){
         proposal.call(this,"food")
         this.Submit=function(){
-            return App.GetItemNumber(App.API.GetItem(App.GetParam("food")).Name,true)<App.GetNumberParam("food_min")
+            let food=App.GetNumberParam("food_min")
+            if (food>App.GetNumberParam("food_max")){
+                food=App.GetNumberParam("food_max")
+            }
+            return App.GetItemNumber(App.API.GetItem(App.GetParam("food")).Name,true)<food
         }
         this.Execute=function(){
             App.Produce(App.GetParam("food"),App.GetNumberParam("food_max"))
