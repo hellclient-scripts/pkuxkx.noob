@@ -1,0 +1,20 @@
+#weight 50
+#treasure 职业,随机,套装,技能书,宝石
+#store type=套装
+#store type=技能书
+hole 1,quality 4>#store type=职业
+!hole 3>#sell type=随机&type=防具
+!hole 2>#sell type=随机
+!hole 2>#sell type=职业
+#keep puti zi,qiannian dan,long dan,nvwa shi,huolong dan
+quit:#sell xuejie dan
+relogin:#sell xuejie dan
+#sell.5 xuejie dan
+#store type=宝石
+#sell nen cao,sui rouxie
+#sell baicao dan,puti zi
+quit:#sell wushi dao,dulong bian
+#drop shi tan,xuan bing
+#keep name=蓝田玉
+#keep type=随机
+#keep type=职业

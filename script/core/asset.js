@@ -63,33 +63,14 @@
         return asset.Effect(data)
     }
 
-    let defaultactions = App.Core.Asset.LoadActions([
-        "#weight 50",
-        "#treasure 职业,随机,套装,技能书,宝石",
-        "#store type=套装",
-        "#store type=技能书",
-        "hole 1,quality 4>#store type=职业",
-        "!hole 2>#sell type=随机",
-        "!hole 2>#sell type=职业",
-        "#keep puti zi,qiannian dan,long dan,nvwa shi,huolong dan",
-        "quit:#sell xuejie dan",
-        "relogin:#sell xuejie dan",
-        "#sell.5 xuejie dan",
-        "#store type=宝石",
-        "#sell nen cao,sui rouxie",
-        "#sell baicao dan,puti zi",
-        "quit:#sell wushi dao,dulong bian",
-        "#drop shi tan,xuan bing",
-        "#keep type=随机",
-        "#keep type=职业",
-
-    ].join("\n"))
-    let autoActions = [...defaultactions]
+    let autoActions = App.Core.Asset.LoadActions(world.ReadFile("info/data/assetpreset/auto.txt"))
     App.Core.Asset.OnItemStart = function (name, output, wildcards) {
         switch (wildcards[0]) {
             case "装  备":
                 App.Data.AssetList = []
                 App.Core.Asset.CurrentType = ""
+                App.Data.ItemList.ID=""
+                App.Data.ItemList.Items=[]        
                 world.EnableTriggerGroup("core.asset.item", false)
                 break
             case "财  宝":
@@ -272,7 +253,7 @@
                 App.Next()
                 break
             default:
-                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param-0)): App.Core.Asset.Asset.UNID
+                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param||0-0)): App.Core.Asset.Asset.UNID
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk("yzdp")),
                     App.NewCommand("do", "sell " + cmd),

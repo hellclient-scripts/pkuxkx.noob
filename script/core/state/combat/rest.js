@@ -26,13 +26,13 @@
             } else {
                 App.Send("yun inspire")
             }
-        } else {
+        }else if(App.Data.HP["qixue"]>=App.Data.HP["eff_qixue"]*0.9){
             App.Next()
             return
         }
         App.Commands([
             App.NewCommand("nobusy"),
-            App.NewCommand("do", "yun recover;yun regenerate"),
+            App.NewCommand("do", "yun recover;yun regenerate;so recover"),
             App.NewCommand("nobusy"),
             App.NewCommand("delay", 1),
             App.NewCommand("state", this.ID)

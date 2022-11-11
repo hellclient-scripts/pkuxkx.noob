@@ -244,7 +244,7 @@
             if (recovery > 100) {
                 Note("无效的 combat_yun_recover 变量，必须是0-100之间的整数")
             } else {
-                if (recovery > 0 && (100 * effqixue / qixue < recovery)) {
+                if (recovery > 0 && (((qixue-effqixue)) >= (qixuecap*recovery/100))) {
                     App.Send("yun recover")
                 }
             }
