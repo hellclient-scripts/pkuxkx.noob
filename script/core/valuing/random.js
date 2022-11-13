@@ -69,7 +69,7 @@
         if (data.length==2){
             let pro=prefix[data[0]]
             if (pro){
-                asset.AddType("职业")
+                asset.AddType("随机")
                 asset.AddType(pro[0])
                 asset.Level=pro[1]
                 let atype=suff[data[1]]

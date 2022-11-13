@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -5086,7 +5086,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 20
   Second = 0.0
@@ -5512,7 +5512,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "valuing"
   Desc = "物品评估"
-  Intro = "根据给到的策略评估物品并进行自动处理"
+  Intro = "根据给到的策略评估物品并进行自动处理\n\n默认可以使用\n\nauto\n\n或\n\nauto\n#keeper 大米ID@位置\n"
 
 [[RequiredParams]]
   Name = "repair_list"
