@@ -26,6 +26,7 @@
         App.RaiseStateEvent("combat.wield")
     }
     App.Core.Combat.OnBlocked = function (name, output, wildcards) {
+        Note(wildcards[0]+" 拦路")
         let blocker = App.Info.Blockers[wildcards[0]]
         if (blocker) {
             if (blocker.Exp >= 0 && blocker.Exp <= App.Data.Exp) {

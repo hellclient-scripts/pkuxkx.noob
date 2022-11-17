@@ -295,6 +295,7 @@
     App.Core.Asset.DoDrop = function (action) {
         let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.Count + " " + App.Core.Asset.Asset.UNID : App.Core.Asset.Asset.UNID
         App.Commands([
+            App.NewCommand("to", App.Options.NewWalk("yz-ljz")),
             App.NewCommand("do", "drop " + cmd),
             App.NewCommand("nobusy"),
             App.NewCommand("function", function () {

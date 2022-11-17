@@ -5,7 +5,7 @@
     }
     CombatMode.prototype = Object.create(basemode.prototype)
     CombatMode.prototype.CanAcceptDangerousQuest=function(){
-        return false
+        return true
     }
     CombatMode.prototype.GetWimpy=function(name){
         return "30"

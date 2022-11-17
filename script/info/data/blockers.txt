@@ -23,3 +23,6 @@
 土匪头||killall tufei tou||100000
 小道童||killall xiao daotong||1000000
 山贼||killall shan zei||1000000
+厚土旗众||killall qi zhong||100000
+小毛||killall xiao mao||100000
+王兴隆||killall wang xinglong||100000

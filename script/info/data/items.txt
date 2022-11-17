@@ -18,7 +18,7 @@ shu||shu||Shu||说文解字||goods||nanchangsy||buy shu
 mapi baodian||mapi baodian||mapi baodian||马屁宝典||goods||nanchangsy||buy mapi baodian
 junfu||junfu||Junfu||军服||goods||yzdp||buy am_173
 shedan||shedan||Shedan||毒蛇胆||goods||yzdp||buy im_658
-zhuye qing||zhuye qing||Zhuye qing||竹叶青||goods||yzdp||buy im_1
+zhuye qing||zhuye qing||Zhuye qing||竹叶青||goods||yz-jiudian||buy zhuye qing
 yuzhu zhang||yuzhu zhang||Yuzhu zhang||玉竹杖||goods||yzdp||buy wp_370
 red rose||red rose||Red rose||红玫瑰||goods||suzhoudp||buy am_351
 jing13||jing||Jing||道德经「第十三章」||goods||xiangyangdp||buy im_286
@@ -32,3 +32,4 @@ pili dan||pili dan||Pili dan||霹雳弹||goods||chengdudp||buy wp_456 for 500
 shi zi||shi zi||Shi zi||玉石子||goods||linandp||buy wp_145 for 500
 lupi dai||lupi dai||Lupi dai||鹿皮袋||goods||yz-zhp||buy lupi dai
 bao fu||bao fu||Bao fu||包袱||goods||yz-zhp||buy bao fu
+duanjian||duanjian||Duanjian||短剑||goods||yz-dtp||buy duanjian
