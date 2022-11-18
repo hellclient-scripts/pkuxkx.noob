@@ -64,7 +64,7 @@
             return
         }
         App.Commands([
-            App.NewCommand('prepare', App.PrapareFull),
+            App.NewCommand('prepare', App.PrapareFullExcept(["asset"])),
             App.NewCommand("neili", 1000),
             App.NewCommand("nobusy"),
             App.NewCommand("to", App.Options.NewWalk(App.GetSafeRoom())),

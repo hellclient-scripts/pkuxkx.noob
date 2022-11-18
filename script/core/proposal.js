@@ -11,8 +11,11 @@
         App.ProposalGroups[groupid] = proposals
     }
 
-    let try_proposals = function (proposals) {
+    let try_proposals = function (proposals,excluded_map) {
         for (var i in proposals) {
+            if (excluded_map&&excluded_map[proposals[i]]){
+                continue
+            }
             let proposal = App.Proposals[proposals[i]]
             if (!proposal) {
                 throw "提案 [" + proposals[i] + "] 没找到"
@@ -24,34 +27,44 @@
         }
         return null
     }
-    let try_proposalgroup = function (groupid) {
+    let try_proposalgroup = function (groupid,excluded_map) {
         let group = App.ProposalGroups[groupid]
         if (!group) {
             throw "提案组 [" + groupid + "] 没找到"
         }
-        return try_proposals(group)
+        return try_proposals(group,excluded_map)
 
     }
-    let try_proposalgroups = function (groups) {
+    let try_proposalgroups = function (groups,excluded_map) {
         for (var i in groups) {
             let group=groups[i]
-            let p=try_proposalgroup(group)
+            let p=try_proposalgroup(group,excluded_map)
             if (p){
                 return p
             }
         }
         return null
     }
-    App.TryProposalGroups = function (groups) {
-        return try_proposalgroups(groups)
+    App.TryProposalGroups = function (groups,excluded_list) {
+        return try_proposalgroups(groups,excluded_list)
     }
     App.TryProposalGroup = function (groupid) {
         return try_proposalgroup(groupid)
     }
-    App.TryProposals = function (proposals) {
-        return try_proposals(proposals)
+    App.TryProposals = function (proposals,excluded_list) {
+        return try_proposals(proposals,excluded_list)
     }
     App.PrapareFull=App.Options.NewPrepare(App.CheckLevelFull,["prepare"],true)
+    App.PrapareFullExcept=function(excepted){
+        let m={}
+        if (excepted){
+            for (var i=0;i<excepted.length;i++){
+                m[excepted[i]]=true
+            }
+        }
+        return App.Options.NewPrepare(App.CheckLevelFull,["prepare"],true,m)
+    }
+    
     Include("core/proposal/cash.js")
     Include("core/proposal/food.js")
     Include("core/proposal/drink.js")

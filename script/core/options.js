@@ -21,8 +21,8 @@
     App.Options.NewFind=function(path,goal,target,vehicle){
         return new find(path,goal,target,vehicle)
     }
-    App.Options.NewPrepare=function(level,items,group){
-        return new prepare(level,items,group)
+    App.Options.NewPrepare=function(level,items,group,exceptedmap){
+        return new prepare(level,items,group,exceptedmap)
     }
     App.Options.NewKill=function(name,type,before,after){
         return new kill(name,type,before,after)
