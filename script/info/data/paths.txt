@@ -35,7 +35,7 @@ sysy||zhongyuan-rzc||||ed;ne;ne||sw;sw;wu
 qufu||qufu-sms||||s;e;ne;eu;enter||out;wd;sw;w;n
 qufu||qufuch||||n;w;w||e;e;s
 qufu||qufu-qingchi||||s;s;s;s;w||e;n;n;n;n
-qufu||taishan-sjy||||n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s
+qufu||taishan-jsy||||n;n;n;ne;e;ne;n;n;nu;nu;nu;eu||wd;sd;sd;sd;s;s;sw;w;sw;s;s;s
 taishan||qufu||||s;s;sw;w;sw;s;s;s||n;n;n;ne;e;ne;n;n
 qingzhou||taishan||||sw;sw;w;sd;sw;w;w;wu;n;n||s;s;ed;e;e;ne;nu;e;ne;ne
 dengzhou||qingzhou||||s;su;s;su;sw;s;sw;sw;su||nd;ne;ne;n;ne;nd;n;nd;n

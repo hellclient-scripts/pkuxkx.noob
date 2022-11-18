@@ -7,7 +7,7 @@
     {
         "label":"抄经",
         "desc":"抄经队列",
-        "cmd":"#to qufu-sms||#do report wrong||#do ask sengren about job||#to taishan-sjy||#do write jing||#nobusy||#delay 2||#to qufu-sms||#do ask sengren about done||#captcha 工号||#delay 1||#loop"
+        "cmd":"#to qufu-sms||#do report wrong||#do ask sengren about job||#to taishan-jsy||#do write jing||#nobusy||#delay 2||#to qufu-sms||#do ask sengren about done||#captcha 工号||#delay 1||#loop"
     },{
         "label":"做药",
         "desc":"做药队列",
