@@ -204,8 +204,20 @@
         }
         return ""
     }
+    App.GetRoomObjIDByName = function (name) {
+        let obj=App.GetRoomObjByName(name)
+        return obj?obj.ID:""
+    }
+    App.GetRoomObjBySuff = function (suff) {
+        for (var i in App.Data.Room.Objs) {
+            if (App.Data.Room.Objs[i].Name.endsWith(suff)) {
+                return App.Data.Room.Objs[i]
+            }
+        }
+        return null
+    }
     App.HasRoomObjName = function (name) {
-        return App.GetRoomObjByName(name) != ""
+        return App.GetRoomObjIDByName(name) != ""
     }
     App.GetRoomObj = function (id, ci) {
         if (ci) {

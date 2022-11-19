@@ -115,7 +115,7 @@
         }
         let dodge = App.Core.PlayerGetSkillByID("dodge")
         if (dodge) {
-            for (var i = 100; i <= 2000; i += 100) {
+            for (var i = 100; i <= 2000; i += 50) {
                 if (dodge.Level >= i) {
                     Mapper.settag("dodge" + i, true)
                 }

@@ -150,6 +150,9 @@
             case "objname":
                 g.FindObjName()
                 break
+            case "objsuff":
+                g.FindObjSuff()
+                break
             case "desc":
                 g.FindDesc()
                 break
