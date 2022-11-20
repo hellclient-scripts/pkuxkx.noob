@@ -26,3 +26,4 @@
 厚土旗众||killall qi zhong||100000
 小毛||killall xiao mao||100000
 王兴隆||killall wang xinglong||100000
+总管||killall zong guan||100000

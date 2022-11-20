@@ -199,10 +199,10 @@
     App.GetRoomObjByName = function (name) {
         for (var i in App.Data.Room.Objs) {
             if (App.Data.Room.Objs[i].Name === name) {
-                return App.Data.Room.Objs[i].ID
+                return App.Data.Room.Objs[i]
             }
         }
-        return ""
+        return null
     }
     App.GetRoomObjIDByName = function (name) {
         let obj=App.GetRoomObjByName(name)
