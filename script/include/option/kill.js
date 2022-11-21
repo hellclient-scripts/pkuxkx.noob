@@ -5,6 +5,7 @@
         this.Before = before
         this.After = after
         this.Online = null
+        //战斗跳开自动判断，使用自定义结束行
         this.FinishLine=""
         this.OnNpcFlee = null
         this.HaltCurrent = 0

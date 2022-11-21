@@ -9,6 +9,7 @@
         this.Online = null
         this.KillCmd = ""
         this.MustKill = ""
+        //战斗跳开自动判断，使用自定义结束行
         this.FinishLine=""
         this.OnNpcFlee = null
         this.StartAt = Now()
