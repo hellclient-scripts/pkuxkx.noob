@@ -31,23 +31,30 @@
         if (kill.Before) {
             App.Send(kill.Before)
         }
+        if (kill.FinishLine) {
+            App.Core.Combat.Current.FinishLine = kill.FinishLine
+        }
         let cmd1 = kill.Cmd.split("\n")[0].trim()
         let cmd1data = SplitN(cmd1, " ", 2)
         if (cmd1data.length == 2) {
             switch (cmd1data[0]) {
                 case "killall":
                     App.Core.Combat.Current.SetMustKill(cmd1data[1])
-                    App.Core.Combat.Current.SetKillCmd(cmd1data[0]+" "+cmd1data[1])
+                    App.Core.Combat.Current.SetKillCmd(cmd1data[0] + " " + cmd1data[1])
                 case "kill":
                     App.Core.Combat.Touxi(cmd1data[1])
                     break
             }
         }
-        App.Commands([
-            App.NewCommand("nobusy"),
+        let cmds = []
+        if (!kill.FinishLine) {
+            cmds.push(App.NewCommand("nobusy"))
+        }
+        cmds = cmds.concat([
             App.NewCommand("do", kill.Cmd),
             App.NewCommand("state", "core.state.combat.combat"),
-        ]).Push()
+        ])
+        App.Commands(cmds).Push()
         App.Next()
     }
     return State

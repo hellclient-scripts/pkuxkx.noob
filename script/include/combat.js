@@ -9,6 +9,7 @@
         this.Online = null
         this.KillCmd = ""
         this.MustKill = ""
+        this.FinishLine=""
         this.OnNpcFlee = null
         this.StartAt = Now()
         this.HaltWound = 0
@@ -62,7 +63,11 @@
     Combat.prototype.SetKillCmd = function (cmd) {
         this.KillCmd = cmd
     }
+    Combat.prototype.SetFinishLine = function (FinishLine) {
+        this.FinishLine = finishline
+    }
 
+    
     Combat.prototype.Duration = function () {
         return (Now() - this.StartAt) / 1000
     }

@@ -208,6 +208,14 @@
         let obj=App.GetRoomObjByName(name)
         return obj?obj.ID:""
     }
+    App.GetRoomObjByPref = function (pref) {
+        for (var i in App.Data.Room.Objs) {
+            if (App.Data.Room.Objs[i].Name.startsWith(pref)) {
+                return App.Data.Room.Objs[i]
+            }
+        }
+        return null
+    }
     App.GetRoomObjBySuff = function (suff) {
         for (var i in App.Data.Room.Objs) {
             if (App.Data.Room.Objs[i].Name.endsWith(suff)) {

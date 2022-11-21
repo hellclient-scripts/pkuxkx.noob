@@ -17,6 +17,10 @@
         world.EnableTimer("App.Core.Combat.OnTick", false)
     }
     State.prototype.Online = function (line) {
+        if (App.Core.Combat.Current.FinishLine&&line==App.Core.Combat.Current.FinishLine){
+            App.RaiseStateEvent("combat.finish")
+            return
+        }
         if (App.Core.Combat.Current.OnNpcFlee) {
             if (line.endsWith("落荒而逃了。")) {
                 let result = line.match(fleere)
