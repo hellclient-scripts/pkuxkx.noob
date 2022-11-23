@@ -15,6 +15,6 @@ relogin:#sell xuejie dan
 #sell baicao dan,puti zi
 quit:#sell wushi dao,dulong bian
 #drop shi tan,xuan bing
-#keep name=蓝田玉
+#keep name=蓝田玉,岫岩玉
 #keep type=随机
 #keep type=职业

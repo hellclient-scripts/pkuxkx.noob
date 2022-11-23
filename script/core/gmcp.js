@@ -13,7 +13,7 @@
         }
         switch(target){
             case "exp":
-                App.Data.Exp=data
+                App.Data.Exp=data[source]
                 break
             case "qixue":
             case "qixue_cap":

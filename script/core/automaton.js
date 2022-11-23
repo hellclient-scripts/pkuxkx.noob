@@ -78,6 +78,7 @@
     App.GetState("ready").Handler=auto
     App.Return=App.Automaton.Finish
     App.Fail=App.Automaton.Fail
+    App.Break=App.Automaton.Pop
     App.RegisterState(new (Include("core/state/nobusy.js"))())
     App.Bind("Response.core.state.response","core.automaton.ready")
     App.ResponseReady=function(){
