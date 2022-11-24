@@ -146,7 +146,7 @@ hebei-zdz||正定镇||||Station||正定镇
 hebei-tgk||塘沽口||||Station||塘沽口
 daizhou||代州||||DescStart||这里是代州的府前大街，因北面是代州府衙而得名，西面就是著名的边靖楼了。
 daizhouch||代州车行||||DescStart||这里是代州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-jinyang-xf||萧府||||Full||萧府[大元国] [城市] [存盘点]east
+jinyang-xiaofu||萧府||||Full||萧府[大元国] [城市] [存盘点]east
 jinyang||晋阳广场||||DescStart||这里是一处热闹的广场，游人如织。
 jinyangch||晋阳车行||||DescStart||这里是晋阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 beijing||北京长安街||||Station||长安街

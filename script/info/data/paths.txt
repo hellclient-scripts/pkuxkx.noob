@@ -201,10 +201,10 @@ luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
 hhna-mjd||hebei-jiyuan||sail||ask shao gong about 过河&&go enter;#sail;nu||sd;ask shao gong about 过河&&go enter;#sail||50
 hebei-puyang||hebeich||||n;e||w;s
 hebei-puyang||hebei-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
-hebei-jiyuan||jinyang-xf||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
-jinyang||jinyang-xf||||sw;w;w;w;w;w;n;n;w||e;s;s;e;e;e;e;e;ne
+hebei-jiyuan||jinyang-xiaofu||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
+jinyang||jinyang-xiaofu||||sw;w;w;w;w;w;n;n;w||e;s;s;e;e;e;e;e;ne
 jinyang||jinyangch||||sw;w;w;ne||sw;e;e;ne
-jinyangch||jinyang-xf||||sw;w;w;w;n;n;w||e;s;s;e;e;e;ne
+jinyangch||jinyang-xiaofu||||sw;w;w;w;n;n;w||e;s;s;e;e;e;ne
 hebei-tgk||hebei-baozhou||||w;sw;w;w;w;sw;sw;nw;nw||se;se;ne;ne;e;e;e;ne;e
 sldmen||hebei-tgk||||enter boat;#sail||enter boat;#sail
 hebei-zdz||hebei-baozhou||||ne;ne;ne;ne;ne||sw;sw;sw;sw;sw

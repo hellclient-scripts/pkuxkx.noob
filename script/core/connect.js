@@ -3,7 +3,7 @@
 App.Data.LoginCallback=""
 App.Core.OnConnectCharset=function(name, output, wildcards){
     App.Send(App.GetParam("charset"))
-    let id=world.GetVariable("id")
+    let id=world.GetVariable("id").trim()
     if (id){
         App.Send(id)
     }
