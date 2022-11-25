@@ -14,6 +14,7 @@
         Looking: false,
         Online: null,
         OnEvent:null,
+        Place:"",
         WalkTags:[],
         Data: {},
         Died:{},
@@ -60,6 +61,7 @@
             Died:{},
             Data: {},
             MoveRetried:0,
+            Place:"",
         }
         if (looking){
             App.Data.Room.WalkTags=owalktags
@@ -98,6 +100,12 @@
             }
         }
         return true
+    }
+    let roomreplacre=/[\n\s━┃／＼]+/g
+    App.Core.OnRoomPlace=function(name, output, wildcards){
+        let str=[wildcards[0],wildcards[1],wildcards[2].replace(roomreplacre,"")].join(",")
+        App.Data.Room.Place=str
+        App.Raise("core.room.place")
     }
     App.Core.OnRoomDesc = function (name, output, wildcards) {
         if (App.Data.Room.Exits != null) {

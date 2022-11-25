@@ -18,6 +18,20 @@
 
     }
     App.Core.Search.Locate=function(depth){
+        App.Commands([
+            App.NewCommand("do","l;place"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",function(){
+                if (App.Data.Room.ID){
+                    App.Next()
+                }else{
+                    App.Core.Search.LocateSearch(depth)
+                }
+            }),
+        ]).Push()
+        App.Next()
+    }
+    App.Core.Search.LocateSearch=function(depth){
         let goal=App.NewGoal("").FindKnownRoom()
         App.Core.Search.Start(goal,depth)
     }

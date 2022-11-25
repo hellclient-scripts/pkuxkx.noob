@@ -72,6 +72,8 @@
     App.RegisterMaze(new (Include("core/maze/clambstiff.js"))())
     App.RegisterMaze(new (Include("core/maze/taihu.js"))())
     App.RegisterMaze(new (Include("core/maze/jwdj.js"))())
+    App.RegisterMaze(new (Include("core/maze/jqgenter.js"))())
+    App.RegisterMaze(new (Include("core/maze/jqgout.js"))())
 
 })(App)
     
