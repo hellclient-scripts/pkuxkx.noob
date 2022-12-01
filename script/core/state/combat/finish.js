@@ -17,8 +17,11 @@
                 App.NewCommand("do", "yield no"),
             ])
         }
+        if (App.Core.Combat.Current.FirstAid){
+            App.SetRoomData("combat.firstaid",true)
+        }
         if (App.Core.Combat.Current.After) {
-            if (!App.Core.Combat.Current.FinishLine) {
+            if (!App.Core.Combat.Current.Counter) {
                 cmds.push(App.NewCommand("nobusy"))
             }
             cmds = cmds.concat([

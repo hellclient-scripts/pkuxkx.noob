@@ -11,6 +11,7 @@
         App.Core.Combat.Current = new combat(kill.StrategyList)
         App.Core.Combat.Current.SetOnline(kill.Online)
         App.Core.Combat.Current.SetOnNpcFlee(kill.OnNpcFlee)
+        App.Core.Combat.Current.SetFirstAid(kill.SetFirstAid)
         App.Core.Combat.Current.SetYield(App.Data.Room.YieldYes)
         App.Core.Combat.Current.SetHaltCurrent(kill.HaltCurrent)
         App.Core.Combat.Current.SetHaltWound(kill.HaltWound)
@@ -34,6 +35,9 @@
         if (kill.FinishLine) {
             App.Core.Combat.Current.FinishLine = kill.FinishLine
         }
+        if (kill.Counter) {
+            App.Core.Combat.Current.Counter = kill.Counter
+        }
         let cmd1 = kill.Cmd.split("\n")[0].trim()
         let cmd1data = SplitN(cmd1, " ", 2)
         if (cmd1data.length == 2) {
@@ -47,7 +51,7 @@
             }
         }
         let cmds = []
-        if (!kill.FinishLine) {
+        if (!kill.Counter) {
             cmds.push(App.NewCommand("nobusy"))
         }
         cmds = cmds.concat([

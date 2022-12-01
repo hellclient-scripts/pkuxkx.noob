@@ -5,12 +5,17 @@
         this.Transitions=states?states:[]
         this.FailState=""
         this.State=""
+        this.Loop=""
     }
     Automaton.prototype.SetCurrentState=function(state){
         this.State=state
     }
     Automaton.prototype.WithFinalState=function(final){
         this.FinalState=final
+        return this
+    }
+    Automaton.prototype.WithLoop=function(loop){
+        this.Loop=loop
         return this
     }
     Automaton.prototype.WithFailState=function(final){

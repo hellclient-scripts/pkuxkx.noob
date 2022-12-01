@@ -11,6 +11,7 @@
         this.MustKill = ""
         //战斗跳开自动判断，使用自定义结束行
         this.FinishLine=""
+        this.FirstAid=false
         this.OnNpcFlee = null
         this.StartAt = Now()
         this.HaltWound = 0
@@ -64,10 +65,15 @@
     Combat.prototype.SetKillCmd = function (cmd) {
         this.KillCmd = cmd
     }
+    Combat.prototype.SetFirstAid = function (firstaid) {
+        this.FirstAid = firstaid
+    }
     Combat.prototype.SetFinishLine = function (FinishLine) {
         this.FinishLine = finishline
     }
-
+    Combat.prototype.SetCounter = function (counter) {
+        this.Counter = counter
+    }
     
     Combat.prototype.Duration = function () {
         return (Now() - this.StartAt) / 1000

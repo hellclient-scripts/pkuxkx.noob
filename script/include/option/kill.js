@@ -7,10 +7,20 @@
         this.Online = null
         //战斗跳开自动判断，使用自定义结束行
         this.FinishLine=""
+        this.Counter=false
         this.OnNpcFlee = null
         this.HaltCurrent = 0
         this.HaltWound = 0
+        this.FirstAid=false
         this.StrategyList=[]
+    }
+    Kill.prototype.WithCounter=function(counter){
+        this.Counter=counter
+        return this
+    }
+    Kill.prototype.WithFirstAid=function(firstaid){
+        this.FirstAid=firstaid
+        return this
     }
     Kill.prototype.WithFinishLine=function(finishline){
         this.FinishLine=finishline

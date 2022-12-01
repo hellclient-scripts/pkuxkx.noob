@@ -50,6 +50,31 @@
             App.ChangeState(fail)
         }
     }
+    App.Automaton.Loop=function(label){
+        if (!label){
+            label="defaultloop"
+        }
+        let a=new automaton(["ready"]).WithLoop(label)
+        App.Core.Automata.push(a)
+        return a
+    }
+    App.Automaton.Break=function(label){
+        if (!label){
+            label="defaultloop"
+        }
+        if (App.Core.Automata.length==0){
+            world.Note("自动任务失败")
+            App.ChangeState("manual")
+            return
+        }
+        let a=App.Automaton.Current()
+        App.Core.Automata.pop()
+        if (a.Loop!=label){
+            App.Automaton.Break(label)
+            return
+        }
+    }
+
     App.Automaton.Flush=function(){
         App.Core.Automata=[]
     }
@@ -78,7 +103,8 @@
     App.GetState("ready").Handler=auto
     App.Return=App.Automaton.Finish
     App.Fail=App.Automaton.Fail
-    App.Break=App.Automaton.Pop
+    App.Loop=App.Automaton.Loop
+    App.Break=App.Automaton.Break
     App.RegisterState(new (Include("core/state/nobusy.js"))())
     App.Bind("Response.core.state.response","core.automaton.ready")
     App.ResponseReady=function(){

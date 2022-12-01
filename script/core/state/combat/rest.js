@@ -6,18 +6,28 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
-        if (App.GetRoomData("state.rest.fail")){
-            Note("放弃治疗")
+        if (App.GetRoomData("combat.firstaid") && App.Core.Poison.NeedFirstAid()) {
+            App.Commands([
+                App.NewCommand("nobusy"),
+                App.NewCommand("function", App.Core.Poison.FirstAid),
+                App.NewCommand("nobusy"),
+                App.NewCommand("state", this.ID)
+            ]).Push()
             App.Next()
+            return
+        }
+        if (App.GetRoomData("state.rest.fail")) {
+            Note("放弃治疗")
+            App.Fail()
             return
         }
         App.SetRoomOnEvent(this.OnRoomEvent)
         Note("内力:" + App.Data.HP["eff_neili"] + " 气血:" + App.Core.PerQixue())
-        let min=App.GetParamNeiliMin()
-        if ((App.Data.HP["eff_neili"] < min)&&(min>=1)) {
+        let min = App.GetParamNeiliMin()
+        if ((App.Data.HP["eff_neili"] < min) && (min >= 1)) {
             App.Core.Dazuo()
         } else if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
-            if (App.Data.NoForce){
+            if (App.Data.NoForce) {
                 App.Next();
                 return
             }
@@ -26,7 +36,8 @@
             } else {
                 App.Send("yun inspire")
             }
-        }else if(App.Data.HP["qixue"]>=App.Data.HP["eff_qixue"]*0.9){
+        } else if (App.Data.HP["qixue"] >= App.Data.HP["eff_qixue"] * 0.9) {
+            App.SetRoomData("combat.firstaid",null)
             App.Next()
             return
         }
@@ -43,7 +54,7 @@
         switch (event) {
             case "core.healfail":
             case "core.noaction":
-                App.SetRoomData("state.rest.fail",true)
+                App.SetRoomData("state.rest.fail", true)
                 break
         }
     }
