@@ -28,7 +28,9 @@
         if (kill.After) {
             App.Core.Combat.Current.SetAfter(kill.After)
         }
-        App.Core.Weapon.ReWield()
+        if (!kill.Counter) {
+            App.Core.Weapon.ReWield()
+        }
         if (kill.Before) {
             App.Send(kill.Before)
         }
