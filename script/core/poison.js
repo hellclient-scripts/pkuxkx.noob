@@ -58,7 +58,7 @@
                     App.Commands([
                         App.NewCommand("do", "eat xuejie dan;i2"),
                         App.NewCommand("nobusy"),
-                        App.NewCommand("function".App.Core.Poison.FirstAid)
+                        App.NewCommand("function",App.Core.Poison.FirstAid)
                     ]).Push()
                     App.Next()
                     return
@@ -69,7 +69,7 @@
         }
         App.Next()
     }
-    App.Core.Poison.QuestionCore = App.Options.NewQuestion("ping yizhi", "cure", -1)
+    App.Core.Poison.QuestionCure = App.Options.NewQuestion("ping yizhi", "cure", -1)
 
     let pingre = /^[^【：『]{1,10}：.+两黄金。$/
     let pinggoldre = /^平一指说道：共需诊金(\d+)两黄金。$/
@@ -81,13 +81,13 @@
             if (line == "平一指伸出右手，搭在你手腕上。" || line == "过了片刻，平一指缓缓对你说道：各项明细如下，") {
                 continue
             }
-            if (line.match(pingre)) {
-                continue
-            }
             let result = line.match(pinggoldre)
             if (result) {
                 gold = result[1] - 0
                 break
+            }
+            if (line.match(pingre)) {
+                continue
             }
             break
         }
@@ -100,16 +100,16 @@
             }
             commands.push("nobusy")
         }
-        commands.push(App.NewCommand("function".App.Core.Poison.CureWait))
+        commands.push(App.NewCommand("function",App.Core.Poison.CureWait))
         App.Next()
     }
     App.Core.Poison.CurePing = function () {
         App.Commands([
             App.NewCommand("to", App.Options.NewWalk("yzyp")),
             App.NewCommand("nobusy"),
-            App.NewCommand("ask", App.Core.Poison.QuestionCore),
+            App.NewCommand("ask", App.Core.Poison.QuestionCure),
             App.NewCommand("nobusy"),
-            App.NewCommand("function".App.Core.Poison.CurePingNext)
+            App.NewCommand("function",App.Core.Poison.CurePingNext)
         ]).Push()
         App.Next()
 
@@ -119,7 +119,7 @@
             App.NewCommand("item", App.Options.NewItem("chan")),
             App.NewCommand("do", "eat chan;i2"),
             App.NewCommand("nobusy"),
-            App.NewCommand("function".App.Core.Poison.CureWait)
+            App.NewCommand("function",App.Core.Poison.CureWait)
         ]).Push()
         App.Next()
     }

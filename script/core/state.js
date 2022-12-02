@@ -49,6 +49,7 @@
     world.EnableTriggerGroup("stateline",false)
     App.RegisterState(new (Include("core/state/init.js"))())
     App.RegisterState(new (Include("core/state/ready.js"))())
+    App.RegisterState(new (Include("core/state/loop.js"))())
     App.RegisterState(new (Include("core/state/manual.js"))())
     App.RegisterState(new (Include("core/state/checkitem.js"))())
     App.RegisterState(new (Include("core/state/died.js"))())

@@ -54,7 +54,7 @@
         if (!label){
             label="defaultloop"
         }
-        let a=new automaton(["ready"]).WithLoop(label)
+        let a=new automaton(["loop"]).WithLoop(label)
         App.Core.Automata.push(a)
         return a
     }
@@ -62,13 +62,13 @@
         if (!label){
             label="defaultloop"
         }
+        App.Core.Automata.pop()
         if (App.Core.Automata.length==0){
             world.Note("自动任务失败")
             App.ChangeState("manual")
             return
         }
         let a=App.Automaton.Current()
-        App.Core.Automata.pop()
         if (a.Loop!=label){
             App.Automaton.Break(label)
             return
