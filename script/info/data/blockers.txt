@@ -27,3 +27,4 @@
 小毛||killall xiao mao||100000
 王兴隆||killall wang xinglong||100000
 总管||killall zong guan||100000
+清兵||killall qing bing||100000

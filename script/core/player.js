@@ -380,7 +380,10 @@
     App.Core.OnPoisonSsf = function (name, output, wildcards) {
         App.Data.HP["status"]["生死符"] = true
     }
-    // 突然你倒在地上，滚来滚去，双手抓脸，又撕烂了胸口衣服，跟着猛力撕抓胸口，竟似要挖出自己的心肺一般。
+    App.Core.OnPoisonHyd = function (name, output, wildcards) {
+        App.Data.HP["status"]["火焰刀"] = true
+    }
+
     App.Core.OnPlayerOnHealFail = function (name, output, wildcards) {
         App.RaiseRoomEvent("core.healfail")
         App.RaiseStateEvent("core.healfail")

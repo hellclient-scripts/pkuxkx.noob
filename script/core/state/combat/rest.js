@@ -16,6 +16,15 @@
             App.Next()
             return
         }
+        if (App.Core.Poison.NeedXuejie()&&App.GetItemNumber("xuejie dan", true)) {
+                App.Commands([
+                    App.NewCommand("do", "eat xuejie dan;i2"),
+                    App.NewCommand("nobusy"),
+                    App.NewCommand("state", this.ID)    
+                ]).Push()
+                App.Next()
+                return
+        }
         if (App.GetRoomData("state.rest.fail")) {
             Note("放弃治疗")
             App.Fail()
@@ -37,7 +46,7 @@
                 App.Send("yun inspire")
             }
         } else if (App.Data.HP["qixue"] >= App.Data.HP["eff_qixue"] * 0.9) {
-            App.SetRoomData("combat.firstaid",null)
+            App.SetRoomData("combat.firstaid", null)
             App.Next()
             return
         }

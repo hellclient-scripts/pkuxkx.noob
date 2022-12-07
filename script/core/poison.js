@@ -6,6 +6,7 @@
         "星宿毒掌毒": { "xuejie": true, "chan": true, "ping": true },
         "冰魄寒毒": { "xuejie": true, "chan": true, "ping": true },
         "生死符": { "xuejie": true, "chan": true, "ping": true },
+        "火焰刀":{},
     }
     App.Core.Poison.Cure = function () {
         let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
@@ -52,7 +53,7 @@
         return false
     }
     App.Core.Poison.FirstAid = function () {
-        if (App.Core.Poison.NeedFirstAid) {
+        if (App.Core.Poison.NeedFirstAid()) {
             if (App.GetItemNumber("xuejie dan", true)) {
                 if (App.Core.Poison.NeedXuejie()) {
                     App.Commands([
@@ -76,31 +77,34 @@
 
     App.Core.Poison.CurePingNext = function () {
         let gold = 0
-        for (var i = 0; i < App.Data.Ask.Replies; i++) {
+        for (var i = 0; i < App.Data.Ask.Replies.length; i++) {
             let line = App.Data.Ask.Replies[i]
             if (line == "平一指伸出右手，搭在你手腕上。" || line == "过了片刻，平一指缓缓对你说道：各项明细如下，") {
                 continue
             }
             let result = line.match(pinggoldre)
             if (result) {
+                Note("诊金"+result[1])
                 gold = result[1] - 0
                 break
             }
             if (line.match(pingre)) {
                 continue
             }
+            Note("问诊结束")
             break
         }
         var commands = []
         if (gold) {
             if (App.GetItemNumber("gold", true) > gold) {
-                commands.push("do", "give " + gold + " to ping yizhi;i2")
+                commands.push(App.NewCommand("do", "give " + gold + " gold to ping yizhi;i2"))
             } else {
-                commands.push("do", "give 1 cash to ping yizhi;i2")
+                commands.push(App.NewCommand("do", "give 1 cash to ping yizhi;i2"))
             }
-            commands.push("nobusy")
+            commands.push(App.NewCommand("nobusy"))
         }
         commands.push(App.NewCommand("function",App.Core.Poison.CureWait))
+        App.Commands(commands).Push()
         App.Next()
     }
     App.Core.Poison.CurePing = function () {
@@ -136,11 +140,4 @@
         App.Commands(commands).Push()
         App.Next()
     }
-
-
-    // 你向平一指打听有关『cure』的消息。
-    // 平一指伸出右手，搭在你手腕上。
-    // 过了片刻，平一指缓缓对你说道：各项明细如下，
-    // 星宿毒掌之毒：二两黄金。
-    // 平一指说道：共需诊金2两黄金。
 })(App)
