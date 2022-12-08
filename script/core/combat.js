@@ -57,7 +57,8 @@
     App.Core.Combat.Init = function () {
         App.Send(world.GetVariable("jifa_cmd"))
         App.Core.Weapon.ReWield()
-        App.Send("yield no;set wimpy " + App.Core.CombatMode.Current().GetWimpy())
+        let wimpy=App.Core.Combat.Current?App.Core.Combat.Current.GetWimpy():App.Core.CombatMode.Current().GetWimpy()
+        App.Send("yield no;set wimpy " + wimpy)
     }
     App.Core.Combat.Rest = function () {
         App.NewCommand("rest").Push()

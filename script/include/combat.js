@@ -15,6 +15,7 @@
         this.OnNpcFlee = null
         this.StartAt = Now()
         this.HaltWound = 0
+        this.Wimpy=-1
         this.HaltCurrent = 0
         this.StrategyList = strategylist || []
         this.Strategy = ""
@@ -52,7 +53,12 @@
     Combat.prototype.SetOnNpcFlee = function (OnNpcFlee) {
         this.OnNpcFlee = OnNpcFlee
     }
-
+    Combat.prototype.SetWimpy = function (wimpy) {
+        this.Wimpy = wimpy
+    }
+    Combat.prototype.GetWimpy=function(){
+        return this.Wimpy<0?App.Core.CombatMode.Current().GetWimpy():this.Wimpy
+    }
     Combat.prototype.SetYield = function (y) {
         this.Yield = y
     }

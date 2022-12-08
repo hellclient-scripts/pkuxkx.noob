@@ -28,6 +28,9 @@
         if (kill.After) {
             App.Core.Combat.Current.SetAfter(kill.After)
         }
+        if (kill.Wimpy>=0) {
+            App.Core.Combat.Current.SetWimpy(kill.Wimpy)
+        }
         if (!kill.Counter) {
             App.Core.Weapon.ReWield()
         }
