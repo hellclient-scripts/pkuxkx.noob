@@ -383,7 +383,9 @@
     App.Core.OnPoisonHyd = function (name, output, wildcards) {
         App.Data.HP["status"]["火焰刀"] = true
     }
-
+    App.Core.OnPoisonNxsz = function (name, output, wildcards) {
+        App.Data.HP["status"]["凝血神爪毒"] = true
+    }
     App.Core.OnPlayerOnHealFail = function (name, output, wildcards) {
         App.RaiseRoomEvent("core.healfail")
         App.RaiseStateEvent("core.healfail")
