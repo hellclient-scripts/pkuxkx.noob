@@ -9,6 +9,7 @@
         this.Sender=function(cmd){
             App.SendToMoveBuff(cmd)
         }
+        this.OnWrongway=null
     }
     Vehicle.prototype.Send=function(cmd){
         this.Sender(cmd)

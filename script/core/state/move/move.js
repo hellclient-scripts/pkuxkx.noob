@@ -20,6 +20,10 @@
                 App.LastMove=App.GetContext("Move")
             break
             case "move.wrongway":
+                if (App.Vehicle&&App.Vehicle.OnWrongway){
+                    App.Vehicle.OnWrongway()
+                    return
+                }
                 if (App.Data.Room.MoveRetried>10){
                     App.Data.Room.ID=""
                     App.Core.MoveWrongWay(App.GetContext("Move"))

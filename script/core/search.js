@@ -19,9 +19,14 @@
     }
     App.Core.Search.Locate=function(depth){
         App.Commands([
+            App.NewCommand("function",function(){
+                App.CheckWalkZone()
+                App.Next()
+            }),
             App.NewCommand("do","l;place"),
             App.NewCommand("nobusy"),
             App.NewCommand("function",function(){
+                App.Raise("core.locate")
                 if (App.Data.Room.ID){
                     App.Next()
                 }else{
@@ -49,5 +54,4 @@
         App.Next()
     }
     App.Core.Search.LastMove=null
-
 })(App)

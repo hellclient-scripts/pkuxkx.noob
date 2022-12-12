@@ -7,6 +7,7 @@
         "冰魄寒毒": { "xuejie": true, "chan": true, "ping": true },
         "生死符": { "xuejie": true, "chan": true, "ping": true },
         "凝血神爪毒":{ "xuejie": true, "chan": true, "ping": true },
+        "星宿火毒":{ "xuejie": true, "chan": true, "ping": true },
         "火焰刀":{},
     }
     App.Core.Poison.Cure = function () {

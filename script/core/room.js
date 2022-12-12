@@ -1,6 +1,7 @@
 (function (App) {
     let chinesere = /[\u4e00-\u9fa5]/
     App.Core.RedBGExits = []
+    App.Data.WalkZone=""
     App.Data.Room = {
         ID: "",
         Name: "",
@@ -359,4 +360,14 @@
         App.RaiseStateEvent("core.noaction")
     }
     App.Bind("ask", "core.room.onask")
+    App.CheckWalkZone=function(){
+        App.Data.WalkZone=""
+        App.Send("walk")
+    }
+    App.Core.OnRoomWalkZone=function(name, output, wildcards){
+        App.Data.WalkZone=wildcards[0]
+    }
+    App.Core.OnRoomWalkZone2=function(name, output, wildcards){
+        App.Data.WalkZone=wildcards[0]
+    }
 })(App)

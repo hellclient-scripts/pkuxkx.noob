@@ -371,6 +371,9 @@
     App.Core.OnPoisonXxdz = function (name, output, wildcards) {
         App.Data.HP["status"]["星宿毒掌毒"] = true
     }
+    App.Core.OnPoisonXxxd = function (name, output, wildcards) {
+        App.Data.HP["status"]["星宿火毒"] = true
+    }
     App.Core.OnPoisonBphd = function (name, output, wildcards) {
         App.Data.HP["status"]["冰魄寒毒"] = true
     }
