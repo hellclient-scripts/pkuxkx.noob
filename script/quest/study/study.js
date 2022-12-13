@@ -88,7 +88,7 @@
                 cmd = "lian " + study.Target + " 50"
                 break
             case "lingwu":
-                cmd = "lingwu " + study.Skill + " 50"
+                cmd = "lingwu " + study.Skill + " 100"
                 break
             case "read":
                 cmd = "du " + study.Target + " for 50"
