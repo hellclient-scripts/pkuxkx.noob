@@ -6,19 +6,18 @@
         "星宿毒掌毒": { "xuejie": true, "chan": true, "ping": true },
         "冰魄寒毒": { "xuejie": true, "chan": true, "ping": true },
         "生死符": { "xuejie": true, "chan": true, "ping": true },
-        "凝血神爪毒":{ "xuejie": true, "chan": true, "ping": true },
-        "星宿火毒":{ "xuejie": true, "chan": true, "ping": true },
-        "白驼蛇毒":{ "xuejie": true, "chan": true, "ping": true },
-        "火焰刀":{},
+        "凝血神爪毒": { "xuejie": true, "chan": true, "ping": true },
+        "星宿火毒": { "chan": true },
+        "白驼蛇毒": { "xuejie": true, "chan": true, "ping": true },
+        "火焰刀": {},
     }
     App.Core.Poison.Cure = function () {
-        let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
-        if (type["ping"] && App.GetCash() > 5) {
-            App.Core.Poison.CurePing()
+        if (type["chan"] && !type["ping"] && !type["xuejie"] && (App.GetCash() > 10 || App.GetItemByName("朱睛冰蟾", true))) {
+            App.Core.Poison.CureChan()
             return
         }
-        if (type["chan"] && App.GetCash() > 10) {
-            App.Core.Poison.CureChan()
+        if (type["ping"] && App.GetCash() > 5) {
+            App.Core.Poison.CurePing()
             return
         }
         App.Core.Poison.CureWait()
@@ -38,6 +37,22 @@
                     continue
                 }
                 return true
+            }
+        }
+        return false
+    }
+    App.Core.Poison.NeedChan = function () {
+        if (App.GetItemByName("朱睛冰蟾", true)) {
+            for (var i in App.Core.Poison.Poisons) {
+                if (App.Data.HP.status[i]) {
+                    if (App.Core.Poison.Poisons[i]["xuejie"]) {
+                        continue
+                    }
+                    if (!App.Core.Poison.Poisons[i]["chan"]) {
+                        continue
+                    }
+                    return true
+                }
             }
         }
         return false
@@ -62,7 +77,7 @@
                     App.Commands([
                         App.NewCommand("do", "eat xuejie dan;i2"),
                         App.NewCommand("nobusy"),
-                        App.NewCommand("function",App.Core.Poison.FirstAid)
+                        App.NewCommand("function", App.Core.Poison.FirstAid)
                     ]).Push()
                     App.Next()
                     return
@@ -87,7 +102,7 @@
             }
             let result = line.match(pinggoldre)
             if (result) {
-                Note("诊金"+result[1])
+                Note("诊金" + result[1])
                 gold = result[1] - 0
                 break
             }
@@ -106,7 +121,7 @@
             }
             commands.push(App.NewCommand("nobusy"))
         }
-        commands.push(App.NewCommand("function",App.Core.Poison.CureWait))
+        commands.push(App.NewCommand("function", App.Core.Poison.CureWait))
         App.Commands(commands).Push()
         App.Next()
     }
@@ -116,7 +131,7 @@
             App.NewCommand("nobusy"),
             App.NewCommand("ask", App.Core.Poison.QuestionCure),
             App.NewCommand("nobusy"),
-            App.NewCommand("function",App.Core.Poison.CurePingNext)
+            App.NewCommand("function", App.Core.Poison.CurePingNext)
         ]).Push()
         App.Next()
 
@@ -126,7 +141,7 @@
             App.NewCommand("item", App.Options.NewItem("chan")),
             App.NewCommand("do", "eat chan;i2"),
             App.NewCommand("nobusy"),
-            App.NewCommand("function",App.Core.Poison.CureWait)
+            App.NewCommand("function", App.Core.Poison.CureWait)
         ]).Push()
         App.Next()
     }

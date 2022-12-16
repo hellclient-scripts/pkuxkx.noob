@@ -16,6 +16,15 @@
             App.Next()
             return
         }
+        if (App.Core.Poison.NeedChan()){
+            App.Commands([
+                App.NewCommand("do", "eat chan;i2"),
+                App.NewCommand("nobusy"),
+                App.NewCommand("state", this.ID)    
+            ]).Push()
+            App.Next()
+            return
+        }
         if (App.Core.Poison.NeedXuejie()&&App.GetItemNumber("xuejie dan", true)) {
                 App.Commands([
                     App.NewCommand("do", "eat xuejie dan;i2"),
