@@ -6,9 +6,18 @@
     App.Quest.GetGem.Pack.Start = function (param) {
         let target = param.trim()
         let cmd = (target == "") ? "pack gem" : "put gem in " + target
-        App.PackGem(cmd)
-        Note("存放完毕，进入冷却1秒")
-        App.Core.Quest.Cooldown("packgem", 1000)
+        App.Commands([
+            App.NewCommand("function",function(){
+                App.PackGem(cmd)
+            }),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",function(){
+                Note("存放完毕，进入冷却1秒")
+                App.Core.Quest.Cooldown("packgem", 1000)
+                App.Next()                        
+            })
+        ]).Push()
+        App.Next()
     }
     App.Quest.GetGem.Get = {}
     App.Quest.GetGem.Get.Data = {
@@ -77,6 +86,7 @@
         App.Commands([
             App.NewCommand("state", "core.state.quest.getgem.getgem"),
             App.NewCommand("function", App.Quest.GetGem.Get.Exec),
+            App.NewCommand("nobusy")
         ]).Push()
         App.Next()
 
