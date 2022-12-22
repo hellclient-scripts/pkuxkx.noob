@@ -2777,7 +2777,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1e8f3fa16ssue72uc9eej"
-  Name = "App.Data.ItemList.OnNoItemList"
+  Name = "App.Core.ItemList.OnNoItemList"
   Enabled = true
   Match = "^你身上没有id为(.*)的东西。$"
   Send = ""
@@ -2786,7 +2786,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Data.ItemList.OnNoItemList"
+  Script = "App.Core.ItemList.OnNoItemList"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -2808,7 +2808,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1e8f3i1tbnavt72uc9ehe"
-  Name = "App.Data.ItemList.OnItemList"
+  Name = "App.Core.ItemList.OnItemList"
   Enabled = true
   Match = "^你身上id为(.+)的东西有下面这些：$"
   Send = ""
@@ -2817,7 +2817,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Data.ItemList.OnItemList"
+  Script = "App.Core.ItemList.OnItemList"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false
@@ -2839,7 +2839,7 @@ Channel = "pkuxkx.noob"
 
 [[Triggers]]
   ID = "d1e8f3ojjm7ict72uc9emq"
-  Name = "App.Data.ItemList.OnItemListItem"
+  Name = "App.Core.ItemList.OnItemListItem"
   Enabled = false
   Match = "^(.*)$"
   Send = ""
@@ -2848,7 +2848,7 @@ Channel = "pkuxkx.noob"
   Wildcard = 0
   SoundFileName = ""
   SoundIfInactive = false
-  Script = "App.Data.ItemList.OnItemListItem"
+  Script = "App.Core.ItemList.OnItemListItem"
   SendTo = 0
   Sequence = 100
   ExpandVariables = false

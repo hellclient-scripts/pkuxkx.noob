@@ -172,17 +172,18 @@
         }
         return item.Count
     }
-    App.Data.ItemList.OnNoItemList=function(name, output, wildcards){
+    App.Core.ItemList={}
+    App.Core.ItemList.OnNoItemList=function(name, output, wildcards){
         App.Data.ItemList.ID=wildcards[0]
         App.Data.ItemList.Items=[]
     
     }
-    App.Data.ItemList.OnItemList=function(name, output, wildcards){
+    App.Core.ItemList.OnItemList=function(name, output, wildcards){
         App.Data.ItemList.ID=wildcards[0]
         App.Data.ItemList.Items=[]
         world.EnableTriggerGroup("itemlist",true)
     }
-    App.Data.ItemList.OnItemListItem=function(name, output, wildcards){
+    App.Core.ItemList.OnItemListItem=function(name, output, wildcards){
         let result=output.match(itemlistre)
         if (result){
             let item={
@@ -199,7 +200,7 @@
         }
     }
     world.EnableTriggerGroup("itemlist",false)
-    App.Data.ItemList.Filter=function(name,filter){
+    App.Core.ItemList.Filter=function(name,filter){
         App.Commands([
             App.NewCommand("do","i "+name),
             App.NewCommand("nobusy"),
@@ -216,7 +217,7 @@
         if (!cmd){
             cmd="pack gem"
         }
-        App.Data.ItemList.Filter("gem",function(item){
+        App.Core.ItemList.Filter("gem",function(item){
             App.Send(cmd)
         })
     }

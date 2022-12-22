@@ -370,4 +370,11 @@
     App.Core.OnRoomWalkZone2=function(name, output, wildcards){
         App.Data.WalkZone=wildcards[0]
     }
+    App.Core.RoomLimited={"home":"yz-sczh"}
+    App.LeaveLimitedRoom=function(){
+        if (App.Core.RoomLimited[App.Data.Room.ID]){
+            App.NewCommand("to",App.Options.NewWalk(App.Core.RoomLimited[App.Data.Room.ID])).Push()
+        }
+        App.Next()
+    }
 })(App)

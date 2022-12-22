@@ -7,14 +7,16 @@
         let target = param.trim()
         let cmd = (target == "") ? "pack gem" : "put gem in " + target
         App.Commands([
-            App.NewCommand("function",function(){
+            App.NewCommand("function",App.LeaveLimitedRoom),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function", function () {
                 App.PackGem(cmd)
             }),
             App.NewCommand("nobusy"),
-            App.NewCommand("function",function(){
+            App.NewCommand("function", function () {
                 Note("存放完毕，进入冷却1秒")
                 App.Core.Quest.Cooldown("packgem", 1000)
-                App.Next()                        
+                App.Next()
             })
         ]).Push()
         App.Next()
@@ -42,17 +44,17 @@
         if (App.Quest.GetGem.Get.Data.Level != null) {
             switch (App.Quest.GetGem.Get.Data.Compare) {
                 case null:
-                    if (!((v2-0)==App.Quest.GetGem.Get.Data.Level)){
+                    if (!((v2 - 0) == App.Quest.GetGem.Get.Data.Level)) {
                         return false
                     }
                     break
                 case "+":
-                    if (!((v2-0)>=App.Quest.GetGem.Get.Data.Level)){
+                    if (!((v2 - 0) >= App.Quest.GetGem.Get.Data.Level)) {
                         return false
                     }
                     break
                 case "-":
-                    if (!((v2-0)<=App.Quest.GetGem.Get.Data.Level)){
+                    if (!((v2 - 0) <= App.Quest.GetGem.Get.Data.Level)) {
                         return false
                     }
                     break
@@ -92,5 +94,64 @@
 
     }
     App.RegisterState(new (Include("core/state/quest/getgem/getgem.js"))())
+    App.Quest.GetGem.Compress = {}
+    App.Quest.GetGem.Compress.Start = function (param) {
+        let limit = param ? param - 0 : 0
+        if (isNaN(limit)) {
+            throw "无效的compressgem参数 " + param
+        }
+        App.Quest.GetGem.Compress.Data = {
+            Limit: limit,
+        }
+        App.Quest.GetGem.Compress.Do()
+    }
+    App.Quest.GetGem.Compress.Do = function () {
+        App.Quest.GetGem.Compress.Data.Pack = ""
+        App.Quest.GetGem.Compress.Data.Min = ""
+        App.Quest.GetGem.Compress.Data.Max = ""
+        App.Quest.GetGem.Compress.Data.Target = ""
+        App.Quest.GetGem.Compress.Data.Level = ""
+        App.Commands([
+            App.NewCommand('prepare', App.PrapareFull),
+            App.NewCommand("state", "core.state.quest.getgem.compressgem"),
+            App.NewCommand("function", function () {
+                if (App.Quest.GetGem.Compress.Data.Target) {
+                    if (App.Quest.GetGem.Compress.Data.Limit > 0 && App.Quest.GetGem.Compress.Data.Limit < 1) {
+                        if (App.Quest.GetGem.Compress.Data.Min / App.Quest.GetGem.Compress.Data.Max > App.Quest.GetGem.Compress.Data.Limit) {
+                            App.Quest.GetGem.Compress.Combine()
+                            return
+                        }
+                    } else {
+                        if (App.Quest.GetGem.Compress.Data.Min >App.Quest.GetGem.Compress.Data.Limit) {
+                            App.Quest.GetGem.Compress.Combine()
+                            return
+                        }
+                    }
+                }
+                App.Core.Quest.Cooldown("compressgem", 10*60*1000)
+                App.Next()
+            }),
+        ]).Push()
+        App.Next()
+    }
+    App.Quest.GetGem.Compress.Combine = function () {
+        App.Commands([
+            App.NewCommand("nobusy"),
+            App.NewCommand("do","get "+App.Quest.GetGem.Compress.Data.Target.toLowerCase()+" from "+App.Quest.GetGem.Compress.Data.Pack.toLowerCase()),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do","get "+App.Quest.GetGem.Compress.Data.Target.toLowerCase()+" from "+App.Quest.GetGem.Compress.Data.Pack.toLowerCase()),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do","get "+App.Quest.GetGem.Compress.Data.Target.toLowerCase()+" from "+App.Quest.GetGem.Compress.Data.Pack.toLowerCase()),
+            App.NewCommand("nobusy"),
+            App.NewCommand("do","combine gem"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",App.LeaveLimitedRoom),
+            App.NewCommand("do","pack gem"),
+            App.NewCommand("function",App.Quest.GetGem.Compress.Do),
+        ]).Push()
+        App.Next()
+    }
+    App.RegisterState(new (Include("core/state/quest/getgem/compressgem.js"))())
+
 
 })(App)
