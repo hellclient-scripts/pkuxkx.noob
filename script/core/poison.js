@@ -12,6 +12,7 @@
         "火焰刀": {},
     }
     App.Core.Poison.Cure = function () {
+        let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
         if (type["chan"] && !type["ping"] && !type["xuejie"] && (App.GetCash() > 10 || App.GetItemByName("朱睛冰蟾", true))) {
             App.Core.Poison.CureChan()
             return

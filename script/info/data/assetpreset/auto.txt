@@ -1,5 +1,5 @@
 #weight 50
-#treasure 职业,随机,套装,技能书,宝石
+#treasure 职业,随机,套装,技能书,宝石,玉
 #store type=套装
 #store type=技能书
 hole 1,quality 4>#store type=职业
@@ -16,6 +16,7 @@ relogin:#sell xuejie dan
 quit:#sell wushi dao,dulong bian
 #drop shi tan,xuan bing,yun tie,huo tong
 #drop name=破钟
-#keep name=蓝田玉,岫岩玉
+#store name=青玉碎片,黄玉碎片,独山玉
+#keep type=玉
 #keep type=随机
 #keep type=职业

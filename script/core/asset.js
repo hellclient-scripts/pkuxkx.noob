@@ -500,4 +500,7 @@
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/pro.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/gem.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/random.js"))())
+    App.Core.Asset.RegisterValuing(new (Include("core/valuing/probook.js"))())
+    App.Core.Asset.RegisterValuing(new (Include("core/valuing/set.js"))())
+
 })(App)
