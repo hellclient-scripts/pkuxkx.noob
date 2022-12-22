@@ -129,5 +129,5 @@
     App.RegisterQuest(new (Include("core/quest/combinegem.js"))())
     App.RegisterQuest(new (Include("core/quest/packgem.js"))())
     App.RegisterQuest(new (Include("core/quest/getgem.js"))())
-
+    App.RegisterQuest(new (Include("core/quest/compressgem.js"))())
 })(App)
