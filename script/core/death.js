@@ -3,6 +3,7 @@
     App.Core.Death.OnReborn = null
     App.Core.Death.OnConscious=function(){
         App.Send(" ")
+        App.RaiseStateEvent("core.conscious")
     }
     App.Core.Death.OnDied = function () {
         DeleteTemporaryTimers()

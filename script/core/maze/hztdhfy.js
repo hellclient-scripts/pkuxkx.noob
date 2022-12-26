@@ -5,11 +5,18 @@
         basicmaze.call(this, param)
         this.ID = "杭州提督府花园"
     }
+    let Trapped=false
     Maze.prototype = Object.create(basicmaze.prototype)
     Maze.prototype.IsEscaped = function (move) {
         return App.Data.Room.Name != "花园"
     }
+    let Online=function(line){
+        if (line=="你一不小心，走进了清兵们设下的陷阱！"){
+            Trapped=true
+        }
+    }
     Maze.prototype.Next=function(){
+        App.SetRoomOnline(Online)
         if (App.Core.Maze.Data.hztdhfy.huacong){
             App.Go(App.Core.Maze.Data.hztdhfy.huacong)
         }else{
@@ -32,9 +39,14 @@
         App.Next()
     }
     Maze.prototype.Init=function(){
+        Trapped=false
         App.Send("unset brief")
     }
     Maze.prototype.Searching=function(){
+        if (Trapped){
+            App.Fail()
+            return
+        }
         App.Core.Maze.Data.hztdhfy={
             huacong:"",
             queue:["n","e","s","w"],

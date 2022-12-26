@@ -319,6 +319,7 @@
                 break
             case "pack":
                 App.Commands([
+                    App.NewCommand("function",App.LeaveLimitedRoom),
                     App.NewCommand("do", "pack " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
@@ -502,5 +503,6 @@
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/random.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/probook.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/set.js"))())
+    App.Core.Asset.RegisterValuing(new (Include("core/valuing/yu.js"))())
 
 })(App)

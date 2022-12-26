@@ -39,6 +39,9 @@
                 Note("无法通过")
                 App.Fail()
                 break
+            case "core.conscious":
+                App.Fail()
+                break
         }
     }
     StateMove.prototype.Ignore=function(){
