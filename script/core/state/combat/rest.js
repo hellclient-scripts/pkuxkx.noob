@@ -36,7 +36,11 @@
         }
         if (App.GetRoomData("state.rest.fail")) {
             Note("放弃治疗")
-            App.Fail()
+            if (App.GetRoomData("combat.firstaid")){
+                App.Fail()
+            }else{
+                App.Next()
+            }
             return
         }
         App.SetRoomOnEvent(this.OnRoomEvent)
