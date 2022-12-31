@@ -22,6 +22,8 @@
         "eastdown":"westup","ed":"wu",
         "southdown":"northup","sd":"nu",
         "westdown":"eastup","eu":"wd",
+        "biandao":"biandao",
+        "xiaojing":"xiaojing",
         "climb down":"climb up"
     }
 })()
