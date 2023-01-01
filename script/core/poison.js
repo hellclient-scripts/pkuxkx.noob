@@ -9,6 +9,7 @@
         "凝血神爪毒": { "xuejie": true, "chan": true, "ping": true },
         "星宿火毒": { "chan": true },
         "白驼蛇毒": { "xuejie": true, "chan": true, "ping": true },
+        "情毒":{ "xuejie": true, "chan": true, "ping": true },
         "火焰刀": {},
     }
     App.Core.Poison.Cure = function () {

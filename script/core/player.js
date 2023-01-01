@@ -392,6 +392,9 @@
     App.Core.OnPoisonBtsd = function (name, output, wildcards) {
         App.Data.HP["status"]["白驼蛇毒"] = true
     }
+    App.Core.OnPoisonQingdu = function (name, output, wildcards) {
+        App.Data.HP["status"]["情毒"] = true
+    }
     App.Core.OnPlayerOnHealFail = function (name, output, wildcards) {
         App.RaiseRoomEvent("core.healfail")
         App.RaiseStateEvent("core.healfail")
