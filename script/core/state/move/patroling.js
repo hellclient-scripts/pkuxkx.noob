@@ -32,18 +32,9 @@
             return
         }
         switch (event) {
+            case "core.conscious":
             case "move.movedaway":
-                let move = App.LastMove
-                if (move) {
-                    App.Commands([
-                        App.NewCommand("rest"),
-                        App.NewCommand("function", function () {
-                            App.LastMove=move
-                            move.Retry()
-                        }),
-                    ]).Push()
-                    App.Next()
-                }
+                App.Core.MoveRetry()
                 return
             case "combat.blockkill":
                 var snap = App.Core.Snapshot.Take("move.retry")

@@ -44,7 +44,7 @@
     }
     Maze.prototype.Searching=function(){
         if (Trapped){
-            App.Fail()
+            App.Core.MoveRetry()
             return
         }
         App.Core.Maze.Data.hztdhfy={

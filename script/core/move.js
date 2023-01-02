@@ -82,6 +82,19 @@
         Note("路径错误")
         App.Fail()
     }
+    App.Core.MoveRetry=function(){
+        let move = App.LastMove
+        if (move) {
+            App.Commands([
+                App.NewCommand("rest"),
+                App.NewCommand("function", function () {
+                    App.LastMove=move
+                    move.Retry()
+                }),
+            ]).Push()
+            App.Next()
+        }
+    }
     App.Core.OnResetMoveRetried=function(name, output, wildcards){
         App.Data.Room.MoveRetried=0
     }
@@ -151,7 +164,6 @@
             App.RaiseStateEvent("move.notallowed")
         }
     }
-
     App.Core.OnMoveSailEnd=function(name, output, wildcards){
         App.Send("#halt")
         App.Go("out ")
