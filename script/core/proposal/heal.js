@@ -3,7 +3,7 @@
     let Heal= function(){
         proposal.call(this,"heal")
         this.Submit=function(){
-            return App.Core.PerQixue()<App.GetNumberParam("heal_below")||App.Core.PerJing()<100
+            return App.Core.PerQixue()<App.GetNumberParam("heal_below")||App.Core.PerJing() < App.GetNumberParam("heal_below")
         }
         this.Heal=function(){
             if (App.Core.PerQixue()<=50||App.Data.NoForce){
