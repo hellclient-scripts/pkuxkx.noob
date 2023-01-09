@@ -278,6 +278,9 @@
         world.EnableTriggerGroup("roomobj", false)
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
+        if (output==""){
+            return
+        }
         if (output && output != "> " && !output.match(chinesere)) {
             return
         }

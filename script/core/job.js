@@ -37,6 +37,9 @@
         }
         App.Data.Job[job.ID]=job
     }
+    App.Core.Job.IsReady=function(id){
+        return App.Data.Job[id]&&App.Data.Job[id].Status.startsWith("现在即可接到下个任务")
+    }
     App.Core.Job.OnEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("job",false)
     }
