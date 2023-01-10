@@ -40,6 +40,12 @@
     App.Core.Job.IsReady=function(id){
         return App.Data.Job[id]&&App.Data.Job[id].Status.startsWith("现在即可接到下个任务")
     }
+    App.Core.Job.IsFail=function(id){
+        if (!App.Data.Job[id]){
+            return null
+        }
+        return App.Data.Job[id].Status.startsWith("任务已经失败。")||App.Data.Job[id].Status.startsWith("任务正在进行中。")
+    }
     App.Core.Job.OnEnd=function(name, output, wildcards){
         world.EnableTriggerGroup("job",false)
     }
