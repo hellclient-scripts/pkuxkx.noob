@@ -4,10 +4,16 @@
     App.Data.Score = {}
     App.Data.LastScore = 0
     App.Data.Exp = 0
-    App.Data.Exp.Qishi=0
+    App.Data.Qishi=0
+
     App.Data.Special = {}
     App.Data.SpecialInUse = {}
     App.Data.SpecialLast=0
+    
+    App.Bind("Check", "core.player.special")
+    let checkSpecial = (new check("score")).WithLevel(App.CheckLevelBrief).WithCommand("special").WithIntervalParam("checkspecialinterval").WithLastID("LastSpecial")
+    App.RegisterCallback("core.player.special", checkSpecial.Callback())
+
     App.Core.SpecialStart = function (name, output, wildcards) {
         App.Data.Special = {}
         world.EnableTriggerGroup("playerspecial", true)

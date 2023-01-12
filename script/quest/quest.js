@@ -13,3 +13,5 @@ App.Load("quest/queue/queue.js")
 App.Load("quest/idall/idall.js")
 App.Load("quest/combinegem/combinegem.js")
 App.Load("quest/getgem/getgem.js")
+App.Load("quest/changespecial/changespecial.js")
+

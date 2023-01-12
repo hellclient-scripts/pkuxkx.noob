@@ -21,6 +21,7 @@
         "checkhpinterval":"1000",
         "checkscoreinterval":"30000",
         "checkjifainterval":"60000",
+        "checkspecialinterval":"60000",
         "checkskillsinterval":"60000",
         "checkiteminterval":"10000",
         "checklupidaiinterval":"10000",
