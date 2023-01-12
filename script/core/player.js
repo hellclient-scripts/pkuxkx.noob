@@ -7,6 +7,7 @@
     App.Data.Exp.Qishi=0
     App.Data.Special = {}
     App.Data.SpecialInUse = {}
+    App.Data.SpecialLast=0
     App.Core.SpecialStart = function (name, output, wildcards) {
         App.Data.Special = {}
         world.EnableTriggerGroup("playerspecial", true)
@@ -32,6 +33,7 @@
         }
     }
     App.Core.SpecialEnd = function (name, output, wildcards) {
+        App.Data.SpecialLast=Now()
         world.EnableTriggerGroup("playerspecial", false)
     }
     world.EnableTriggerGroup("playerspecial", false)

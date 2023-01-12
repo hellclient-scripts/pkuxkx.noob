@@ -29,5 +29,14 @@
         "label":"无内力id学读书写字",
         "desc":"一般是低悟性id读射雕或楚氏",
         "cmd":"#prepare||#to nanchangsy||xue zhu xi for literate 50||#to nanchang-xxs||#sleep||#loop"
+    }    ,{
+        "label":"灵霄城看雪",
+        "desc":"",
+        "cmd":"#do cha||#prepare||#to lxc-xuepo||yun regenerate||l snow||xingzou snow||#nobusy||#loop"
+    }
+    ,{
+        "label":"绝情谷迷宫",
+        "desc":"第一次入绝情谷时的路径",
+        "cmd":"#do move zuo||#delay 3||#do move you||#delay 3||#do move qian||#delay 3||#do move hou||#delay 3||#loop"
     }
 ]

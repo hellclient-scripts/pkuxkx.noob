@@ -20,6 +20,9 @@
         if (App.Core.Maze.Data.hztdhfy.huacong){
             App.Go(App.Core.Maze.Data.hztdhfy.huacong)
         }else{
+            if (App.Core.Maze.Data.hztdhfy.safe.length==0){
+                App.Core.Maze.Data.hztdhfy.safe.push("west")
+            }
             App.Go(RandomList(App.Core.Maze.Data.hztdhfy.safe))
         }
         App.Next()
