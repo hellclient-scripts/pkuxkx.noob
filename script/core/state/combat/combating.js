@@ -37,6 +37,9 @@
         msg.push("当前策略["+App.Core.Combat.Current.Strategy+"]")
         msg.push("气势["+App.Data.Qishi+"]")
         Note(msg.join(","))
+        if (App.Core.Poison.NeedXuejie()&&App.GetItemNumber("xuejie dan", true)) {
+            App.Send("eat xuejie dan;i2")
+        }
         App.Core.Combat.Perform()
         App.Core.Combat.CheckFighting()
     }
