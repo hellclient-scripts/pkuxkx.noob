@@ -83,4 +83,8 @@
     //         App.RaiseStateEvent("combat.finish")
     //     }
     // })
+    App.Bind("GMCP.GMCP.Buff","core.gmcp.Buff")
+    App.RegisterCallback("core.gmcp.Buff",function(data){
+        App.RaiseStateEvent("combat.fighting",data)
+    })
 })(App)

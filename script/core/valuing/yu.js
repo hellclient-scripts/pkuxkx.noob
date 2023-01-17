@@ -8,10 +8,10 @@
         "岫岩玉":true,
         "和田玉":true,
         "蓝田玉":true,
-        "青玉碎片":true,
-        "黄玉碎片":true,
-        "墨玉碎片":true,
-        "赤玉碎片":true,
+        "青玉残片":true,
+        "黄玉残片":true,
+        "墨玉残片":true,
+        "赤玉残片":true,
     }
     Yu.prototype = Object.create(Valuing.prototype)
     Yu.prototype.Value=function(obj,asset){

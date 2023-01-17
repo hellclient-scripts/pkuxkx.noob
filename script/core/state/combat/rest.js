@@ -3,8 +3,22 @@
     let State = function () {
         basicstate.call(this)
         this.ID = "core.state.combat.rest"
+        this.Groups = this.Groups.concat(["state.line"])
     }
     State.prototype = Object.create(basicstate.prototype)
+    State.prototype.Online = function (line) {
+        switch (line) {
+            case "你要看什么？":
+                App.Next()
+                break
+            case "你现在是个瞎子,看不见东西。":
+                world.DoAfterSpecial(1, 'App.Send("l _")', 12);
+                break
+        }
+    }
+    State.prototype.Next = function () {
+        App.Send("l _")//检查是否目盲
+    }
     State.prototype.Enter = function (context, oldstatue) {
         if (App.GetRoomData("combat.firstaid") && App.Core.Poison.NeedFirstAid()) {
             App.Commands([
@@ -16,30 +30,30 @@
             App.Next()
             return
         }
-        if (App.Core.Poison.NeedChan()){
+        if (App.Core.Poison.NeedChan()) {
             App.Commands([
                 App.NewCommand("do", "eat chan;i2"),
                 App.NewCommand("nobusy"),
-                App.NewCommand("state", this.ID)    
+                App.NewCommand("state", this.ID)
             ]).Push()
             App.Next()
             return
         }
-        if (App.Core.Poison.NeedXuejie()&&App.GetItemNumber("xuejie dan", true)) {
-                App.Commands([
-                    App.NewCommand("do", "eat xuejie dan;i2"),
-                    App.NewCommand("nobusy"),
-                    App.NewCommand("state", this.ID)    
-                ]).Push()
-                App.Next()
-                return
+        if (App.Core.Poison.NeedXuejie() && App.GetItemNumber("xuejie dan", true)) {
+            App.Commands([
+                App.NewCommand("do", "eat xuejie dan;i2"),
+                App.NewCommand("nobusy"),
+                App.NewCommand("state", this.ID)
+            ]).Push()
+            App.Next()
+            return
         }
         if (App.GetRoomData("state.rest.fail")) {
             Note("放弃治疗")
-            if (App.GetRoomData("combat.firstaid")){
+            if (App.GetRoomData("combat.firstaid")) {
                 App.Fail()
-            }else{
-                App.Next()
+            } else {
+                this.Next()
             }
             return
         }
@@ -50,7 +64,7 @@
             App.Core.Dazuo()
         } else if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Data.NoForce) {
-                App.Next();
+                this.Next()
                 return
             }
             if (App.Core.PerJing() > App.Core.PerQixue()) {
@@ -60,7 +74,7 @@
             }
         } else if (App.Data.HP["qixue"] >= App.Data.HP["eff_qixue"] * 0.9) {
             App.SetRoomData("combat.firstaid", null)
-            App.Next()
+            this.Next()
             return
         }
         App.Commands([
@@ -80,5 +94,14 @@
                 break
         }
     }
+    State.prototype.OnEvent = function (context, event, data) {
+        switch (event) {
+            case "line":
+                this.Online(data)
+                break
+        }
+
+    }
+
     return State
 })(App)

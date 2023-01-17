@@ -18,7 +18,7 @@
             App.Core.Poison.CureChan()
             return
         }
-        if (type["ping"] && App.GetCash() > 5) {
+        if (type["ping"] && App.GetCash() >= 2) {
             App.Core.Poison.CurePing()
             return
         }
@@ -149,11 +149,13 @@
     }
     App.Core.Poison.CureWait = function () {
         var commands = []
-        if (App.Core.PerQixue() < App.GetNumberParam("heal_below")) {
-            commands.push(App.NewCommand("do", "yun heal"))
-        } else if (App.Core.PerJing() < App.GetNumberParam("heal_below")) {
-            commands.push(App.NewCommand("do", "yun inspire"))
-        } else {
+        if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
+            if (App.Core.PerJing() > App.Core.PerQixue()) {
+                commands.push(App.NewCommand("do", "yun heal"))
+            } else {
+                commands.push(App.NewCommand("do", "yun inspire"))
+            }
+        }else{
             commands.push(App.NewCommand("do", "dazuo " + App.GetNumberParam("poison_dazuo_num")))
         }
         commands.push(App.NewCommand("nobusy"))

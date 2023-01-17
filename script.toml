@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -3523,7 +3523,7 @@ Channel = "pkuxkx.noob"
   ID = "d1ebvok3mqe56o6ldsasi"
   Name = "App.Core.OnRoomWalkZone2"
   Enabled = true
-  Match = "^([^【：『]{1,10})内共有.+处内建玩家路径起点，分别在.+。$"
+  Match = "^([^【：『]{1,10})内共有.+处内建玩家路径起点，(在|分别在).+。$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
