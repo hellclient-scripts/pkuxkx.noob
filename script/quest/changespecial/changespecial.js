@@ -51,7 +51,7 @@
                 throw "特技[" + id + "]未学会"
             }
             if (!special.Enabled) {
-                Note("需要重联激活特技 " + special.Label)
+                Note("需要重新连线激活特技 " + special.Label)
                 App.Quest.ChangeSpecial.Change()
                 return
             }
