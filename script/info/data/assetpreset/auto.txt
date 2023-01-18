@@ -17,6 +17,6 @@ quit:#sell wushi dao,dulong bian
 #drop shi tan,xuan bing,yun tie,huo tong
 #drop name=破钟
 #store name=青玉残片,黄玉残片,独山玉,岫岩玉
-#keep type=玉
+#store type=玉
 #keep type=随机
 #keep type=职业
