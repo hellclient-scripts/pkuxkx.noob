@@ -14,6 +14,8 @@
         App.Core.Combat.Current.SetFirstAid(kill.SetFirstAid)
         App.Core.Combat.Current.SetYield(App.Data.Room.YieldYes)
         App.Core.Combat.Current.SetHaltCurrent(kill.HaltCurrent)
+        App.Core.Combat.Current.SetHaltAfter(kill.HaltAfter)
+
         App.Core.Combat.Current.SetHaltWound(kill.HaltWound)
         App.Core.Combat.CaclStrategy()
         App.Core.Combat.Current.LoadActions(GetVariable("combat"))

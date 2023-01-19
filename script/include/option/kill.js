@@ -10,6 +10,7 @@
         this.Counter=false
         this.OnNpcFlee = null
         this.HaltCurrent = 0
+        this.HaltAfter =0
         this.Wimpy=-1
         this.HaltWound = 0
         this.FirstAid=false

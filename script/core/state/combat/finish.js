@@ -45,7 +45,7 @@
         App.Next()
     }
     State.prototype.Enter = function (context, oldstatue) {
-        if (App.Core.Combat.Current.MustKill && App.Core.Combat.Current.KillCmd) {
+        if (App.Core.Combat.Current.MustKill && App.Core.Combat.Current.KillCmd&&!App.GetRoomData("core.nofight")) {
             App.Core.NPC.FindHere(App.Core.Combat.Current.MustKill)
         } else {
             this.Finish()

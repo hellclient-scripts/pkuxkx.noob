@@ -219,6 +219,11 @@
     App.Core.Combat.Perform = function () {
         let combat = App.Core.Combat.Current
         if (combat) {
+            if (combat.HaltAfter){
+                if (combat.Duration()>combat.HaltAfter){
+                    App.Send("halt")
+                }
+            }
             let effqixue = App.Data.HP["eff_qixue"]
             let qixue = App.Data.HP["qixue"]
             let qixuecap = App.Data.HP["qixue_cap"]

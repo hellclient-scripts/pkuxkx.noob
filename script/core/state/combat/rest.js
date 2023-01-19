@@ -8,16 +8,13 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Online = function (line) {
         switch (line) {
-            case "你要看什么？":
-                App.Next()
-                break
             case "你现在是个瞎子,看不见东西。":
-                world.DoAfterSpecial(1, 'App.Send("l _")', 12);
+                world.DoAfterSpecial(1, 'App.Look()', 12);
                 break
         }
     }
     State.prototype.Next = function () {
-        App.Send("l _")//检查是否目盲
+        App.Look()//检查是否目盲
     }
     State.prototype.Enter = function (context, oldstatue) {
         if (App.GetRoomData("combat.firstaid") && App.Core.Poison.NeedFirstAid()) {
@@ -98,6 +95,9 @@
         switch (event) {
             case "line":
                 this.Online(data)
+                break
+            case "move.onRoomObjEnd":
+                App.Next()
                 break
         }
 

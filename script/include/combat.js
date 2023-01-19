@@ -10,13 +10,14 @@
         this.KillCmd = ""
         this.MustKill = ""
         //战斗跳开自动判断，使用自定义结束行
-        this.FinishLine=""
-        this.FirstAid=false
+        this.FinishLine = ""
+        this.FirstAid = false
         this.OnNpcFlee = null
         this.StartAt = Now()
         this.HaltWound = 0
-        this.Wimpy=-1
+        this.Wimpy = -1
         this.HaltCurrent = 0
+        this.HaltAfter = 0
         this.StrategyList = strategylist || []
         this.Strategy = ""
         this.Actions = []
@@ -41,6 +42,9 @@
         }
         this.Actions = result.length > 0 ? result : defaultresult
     }
+    Combat.prototype.SetHaltAfter = function (data) {
+        this.HaltAfter = data
+    }
     Combat.prototype.SetHaltCurrent = function (data) {
         this.HaltCurrent = data
     }
@@ -56,8 +60,8 @@
     Combat.prototype.SetWimpy = function (wimpy) {
         this.Wimpy = wimpy
     }
-    Combat.prototype.GetWimpy=function(){
-        return this.Wimpy<0?App.Core.CombatMode.Current().GetWimpy():this.Wimpy
+    Combat.prototype.GetWimpy = function () {
+        return this.Wimpy < 0 ? App.Core.CombatMode.Current().GetWimpy() : this.Wimpy
     }
     Combat.prototype.SetYield = function (y) {
         this.Yield = y
@@ -80,7 +84,7 @@
     Combat.prototype.SetCounter = function (counter) {
         this.Counter = counter
     }
-    
+
     Combat.prototype.Duration = function () {
         return (Now() - this.StartAt) / 1000
     }

@@ -45,6 +45,7 @@
         let oonline=App.Data.Room.Online
         let oonevent=App.Data.Room.OnEvent
         let odata=App.Data.Room.Data
+        let odied=App.Data.Room.Died
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
@@ -68,6 +69,7 @@
             App.Data.Room.WalkTags=owalktags
             App.Data.Room.Online=oonline
             App.Data.Room.Data=odata
+            App.Data.Room.Died=odied
             App.Data.Room.OnEvent=oonevent
             if (oid){
                 App.Data.Room.ID = oid
@@ -358,6 +360,11 @@
             App.Data.Room.OnAsk = ""
         }
     })
+    App.Core.OnRoomNoFight= function (name, output, wildcards) {
+        App.SetRoomData("core.nofight",true)
+        App.RaiseRoomEvent("core.nofight")
+        App.RaiseStateEvent("core.nofight")
+    }
     App.Core.OnRoomNoAction = function (name, output, wildcards) {
         App.RaiseRoomEvent("core.noaction")
         App.RaiseStateEvent("core.noaction")
