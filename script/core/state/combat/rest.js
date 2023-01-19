@@ -8,6 +8,7 @@
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Online = function (line) {
         switch (line) {
+            case "你是一个瞎子，看不见东西。":
             case "你现在是个瞎子,看不见东西。":
                 world.DoAfterSpecial(1, 'App.Look()', 12);
                 break
