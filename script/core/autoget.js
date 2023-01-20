@@ -1,6 +1,9 @@
 (function (App) {
     App.Core.Autoget = {}
     App.Core.Autoget.Enabled = []
+    App.Core.Autoget.BlockedRooms={
+        "松树林":true,
+    }
     function Init() {
         let data = GetVariable("autoget").trim().split("\n")
         if (data.length) {
@@ -74,6 +77,9 @@
     }
     
     App.Core.Autoget.Execute = function () {
+        if (App.Core.Autoget.BlockedRooms[App.Data.Room.Name]){
+            return
+        }
         for (var i = 0; i < App.Core.Autoget.Enabled.length; i++) {
             let items = App.Core.Autoget.Enabled[i]
             for (var id in items) {
