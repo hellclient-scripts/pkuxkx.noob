@@ -59,6 +59,9 @@
                 App.Data.CaptchaCountFail++
                 App.Fail()
                 break
+            case "captcha.other":
+                App.Next()
+                break
         }
     }
     return State

@@ -147,6 +147,10 @@
     App.Core.CaptchaOnGonghaoFail=function(name, output, wildcards){
         App.RaiseStateEvent("captcha.fail")
     }
+    App.Core.CaptchaOnOther=function(name, output, wildcards){
+        App.RaiseStateEvent("captcha.other")
+    }
+
     App.Core.CaptchaOnFail=function(name, output, wildcards){
         App.Data.LastFullme=Now()
         App.Data.IsLastFullmeSuccess=false
