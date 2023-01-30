@@ -322,7 +322,7 @@
     }
     App.Core.OnPlayerHP3 = function (name, output, wildcards) {
         App.Data.HP["eff_zhenqi"] = wildcards[0] - 0
-        App.Data.HP["zhengqi"] = wildcards[1] - 0
+        App.Data.HP["zhenqi"] = wildcards[1] - 0
         App.Data.HP["eff_jingqi"] = wildcards[2] - 0
         App.Data.HP["jingqi"] = wildcards[3] - 0
         App.Data.HP["jingqi_status"] = wildcards[4]

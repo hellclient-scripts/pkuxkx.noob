@@ -82,9 +82,8 @@
     Include("core/proposal/throwing.js")
     Include("core/proposal/coin.js")
     Include("core/proposal/silver.js")
-
     Include("core/proposal/toggle.js")
-
+    Include("core/proposal/zhenqi.js")
     App.RegisterState(new (Include("core/state/prepare/preparecheck.js"))())
     App.RegisterState(new (Include("core/state/prepare/prepareconfirm.js"))())
 })(App)

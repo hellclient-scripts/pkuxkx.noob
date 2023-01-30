@@ -198,6 +198,42 @@
                 break
         }
     }
+    App.Core.Combat.Before = function (target) {
+        let combat = App.Core.Combat.Current
+        if (combat) {
+            for (var i = 0; i < combat.Actions.length; i++) {
+                App.Core.Combat.ExecBefore(combat.Actions[i])
+            }
+        }
+    }
+    App.Core.Combat.ExecBefore = function (action, target) {
+        if (!App.Core.Combat.CheckConditions(action.Conditions)) {
+            return
+        }
+        switch (action.Command) {
+            case "#before":
+                App.Send(action.Data)
+                break
+        }
+    }
+    App.Core.Combat.Ready = function (target) {
+        let combat = App.Core.Combat.Current
+        if (combat) {
+            for (var i = 0; i < combat.Actions.length; i++) {
+                App.Core.Combat.ExecReady(combat.Actions[i])
+            }
+        }
+    }
+    App.Core.Combat.ExecReady = function (action, target) {
+        if (!App.Core.Combat.CheckConditions(action.Conditions)) {
+            return
+        }
+        switch (action.Command) {
+            case "#ready":
+                App.Send(action.Data)
+                break
+        }
+    }
     App.Core.Combat.Touxi = function (target) {
         let combat = App.Core.Combat.Current
         if (combat) {

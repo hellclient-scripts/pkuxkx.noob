@@ -45,6 +45,7 @@
         if (kill.Counter) {
             App.Core.Combat.Current.Counter = kill.Counter
         }
+        App.Core.Combat.Before()
         let cmd1 = kill.Cmd.split("\n")[0].trim()
         let cmd1data = SplitN(cmd1, " ", 2)
         if (cmd1data.length == 2) {

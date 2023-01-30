@@ -5,16 +5,16 @@
     App.Quest.Study.Index = 0
     App.Quest.Study.Plan = []
     App.Quest.Study.Current = null
-    App.Quest.Study.Pause=false
+    App.Quest.Study.Pause = false
     App.Quest.Study.PickPlan = function () {
         let available = []
         App.Quest.Study.Plan.forEach(p => {
             if (App.Data.HP["pot"] < 50 && p.Type == "xue") {
                 return
             }
-            skill = App.Core.PlayerGetSkillByID(p.Skill)
+            let skill = App.Core.PlayerGetSkillByID(p.Skill)
             if (skill != null) {
-                if (p.Type=="xiulian" && App.Data.HP["pot"]<skill.Level*5){
+                if (p.Type == "xiulian" && App.Data.HP["pot"] < skill.Level * 5) {
                     return
                 }
                 let max = p.Max
@@ -127,7 +127,7 @@
     }
     let re = /\n/g
     App.Quest.Study.Start = function (cmd) {
-        App.Quest.Study.Pause=false
+        App.Quest.Study.Pause = false
         App.Quest.Study.Index = 0
         App.Commands([
             App.NewCommand('prepare', App.PrapareFull),
@@ -149,21 +149,23 @@
                 App.Quest.Study.Plan.push(new study(value))
             }
         });
-        App.Commands([
-            App.NewCommand('function', App.Quest.Study.PickPlan),
-            App.NewCommand('function', App.Quest.Study.Move),
-            App.NewCommand('function', function () {
-                App.Quest.Study.Loop(cmd)
-            }),
-        ]).Push()
+        if (!App.Stopped) {
+            App.Commands([
+                App.NewCommand('function', App.Quest.Study.PickPlan),
+                App.NewCommand('function', App.Quest.Study.Move),
+                App.NewCommand('function', function () {
+                    App.Quest.Study.Loop(cmd)
+                }),
+            ]).Push()
+        }
         App.Next()
     }
-    App.RegisterCallback("quest.study.pause",function(){
-        App.Quest.Study.Pause=true
+    App.RegisterCallback("quest.study.pause", function () {
+        App.Quest.Study.Pause = true
     })
-    App.Bind("here","quest.study.pause")
+    App.Bind("here", "quest.study.pause")
     App.Quest.Study.Loop = function (cmd) {
-        if (App.Quest.Study.Index < App.Quest.Study.PerLoop&&!(App.Stopped||App.Quest.Study.Pause)) {
+        if (App.Quest.Study.Index < App.Quest.Study.PerLoop && !(App.Stopped || App.Quest.Study.Pause)) {
             App.Quest.Study.Index++
             App.Quest.Study.Exec(cmd)
         } else {

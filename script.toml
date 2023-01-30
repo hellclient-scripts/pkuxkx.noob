@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -4112,7 +4112,7 @@ Channel = "pkuxkx.noob"
   ID = "player_hp3"
   Name = "player_hp3"
   Enabled = false
-  Match = "^│【真气】\\s+(\\d+)\\s+/\\s+(\\d+)\\s+\\[\\s*(\\d+)%\\]\\s+│【静气】\\s*(\\d+)%\\s*\\[(.+)\\]\\s*│$"
+  Match = "^│【真气】\\s+(-{0,1}\\d+)\\s+/\\s+(\\d+)\\s+\\[\\s*(\\d+)%\\]\\s+│【[^】]+】\\s*(\\d+)%\\s*\\[(.+)\\]\\s*│$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -5874,7 +5874,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "wait_cmd"
   Desc = "等待指令"
-  Intro = "等待时发送的指令，必须可以立刻halt\n如无特殊需要，可以设置为tuna max 提升行走效率"
+  Intro = "等待时发送的指令，必须可以立刻halt\n如无特殊需要，可以设置为tuna max 提升行走效率，或者设置为\ntuna max\ntuna 10\n来提升精力"
 
 [[RequiredParams]]
   Name = "item_list"
@@ -5938,7 +5938,7 @@ Channel = "pkuxkx.noob"
 
 [[RequiredParams]]
   Name = "combat_yun_recover"
-  Desc = "设置战斗时气血在百分之多少之下开始yun recover,留空或0不yun recover,有效为0-100之内的数字。"
+  Desc = "设置战斗时最少能恢复百分之多少才下开始yun recover,留空或0不yun recover,有效为0-100之内的数字。"
   Intro = ""
 
 [[RequiredParams]]

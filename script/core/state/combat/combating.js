@@ -10,6 +10,7 @@
     State.prototype.Enter = function (context, oldstatue) {
         world.ResetTimer("App.Core.Combat.OnTick")
         world.EnableTimer("App.Core.Combat.OnTick", true)
+        App.Core.Combat.Ready()
         App.Core.Combat.CheckFighting()
         App.Data.Qishi=0
     }
