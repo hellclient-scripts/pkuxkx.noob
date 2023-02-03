@@ -15,10 +15,11 @@
                 case 0:
                     cd = pfm.Cooldown
                 default:
-                    App.Core.Perform.Cooldown[id] = Now()+cd
+                    let next=Now()+cd*1000
+                    App.Core.Perform.Cooldown[id] = next
                     Note("绝招["+id+"]进入"+cd+"秒冷却")
                     if (pfm.Group) {
-                        App.Core.Perform.Cooldown[pfm.Group] = Now()+cd
+                        App.Core.Perform.Cooldown[pfm.Group] = next
                         Note("绝招组["+pfm.Group+"]进入"+cd+"秒冷却")
                     }
                     break
