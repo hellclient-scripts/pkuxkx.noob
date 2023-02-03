@@ -126,6 +126,7 @@ App.Start = function () {
     App.Raise("InitMod")
     App.Raise("Ready")
     App.Raise("AfterReady")
+    App.Raise("Intro")
 }
 App.DumpData = function () {
     Dump(App.Data, true)

@@ -1,74 +1,104 @@
-(function(App){
-    App.Core.Weapon={}
+(function (App) {
+    App.Core.Weapon = {}
     let check = Include("core/check/check.js")
-    let weaponsre=/[,\n]/
-    App.Core.Weapon.ReWield=function(){
-        App.Send("unwield all")
-        App.Core.Weapon.Wield()
-    }
-    App.Core.Weapon.Wield=function(){
-        let data=world.GetVariable("wield").trim().split("\n")
-        let result=[]
-        let defaultresult=[]
-        for(var i=0;i<data.length;i++){
-            let line=data[i]
-            if (line){
-                let cmd=SplitN(line,":",2)
-                if (cmd.length==1){
-                    defaultresult.push(line)
-                }else{
-                    if (cmd[0]==""){
-                        defaultresult.push(cmd[1])
-                    }else if(App.Core.Combat.Current!=null && cmd[0]==App.Core.Combat.Current.Strategy){
-                        result.push(cmd[1])
-                    }
+    let Action = Include("include/action.js")
+    App.Core.Weapon.LoadActions = function (data) {
+        let lines = data.split("\n")
+        let result = []
+        let defaultresult = []
+        for (var i = 0; i < lines.length; i++) {
+            let line = lines[i].trim()
+            if (line) {
+                let action = new Action(line)
+                if (App.Core.Combat.Current != null && action.Strategy == App.Core.Combat.Current.Strategy) {
+                    result.push(action)
+                    continue
+                }
+                if (action.Strategy == "") {
+                    defaultresult.push(action)
                 }
             }
         }
-        if (result.length==0){
-            result=defaultresult
+        if (result.length == 0) {
+            result = defaultresult
         }
-        for(var i=0;i<result.length;i++){
-            App.Send(result[i])
+        return result
+    }
+
+    App.Core.Weapon.Right = ""
+    App.Core.Weapon.Left = ""
+    App.Core.Weapon.ReWield = function () {
+        App.Send("unwield all")
+        App.Core.Weapon.Wield()
+    }
+    App.Core.Weapon.Send = function (action) {
+        App.Send(action.Data)
+    }
+    App.Core.Weapon.Left = function (action) {
+
+    }
+    App.Core.Weapon.Right = function (action) {
+
+    }
+    App.Core.Weapon.End = function () {
+
+    }
+    App.Core.Weapon.Wield = function () {
+        App.Core.Weapon.Right = ""
+        App.Core.Weapon.Left = ""
+        let actions = App.Core.Weapon.LoadActions(world.GetVariable("wield").trim())
+        for (var i = 0; i < actions.length; i++) {
+            let action = actions[i]
+            switch (action.Command) {
+                case "":
+                    App.Core.Weapon.Send(action)
+                    break
+                case "left":
+                    App.Core.Weapon.Left(action)
+                    break
+                case "right":
+                    App.Core.Weapon.Right(action)
+                    break
+            }
         }
     }
-    App.Core.Weapon.ToRepair=""
-    App.Core.Weapon.LastDurability=0
-    App.Core.Weapon.LastDurabilityMax=0
-    App.Core.Weapon.OnDurability=function(name, output, wildcards){
-        App.Core.Weapon.LastDurability=wildcards[0]-0
-        App.Core.Weapon.LastDurabilityMax=wildcards[1]-0
+    App.Core.Weapon.ToRepair = ""
+    App.Core.Weapon.LastDurability = 0
+    App.Core.Weapon.LastDurabilityMax = 0
+    App.Core.Weapon.OnDurability = function (name, output, wildcards) {
+        App.Core.Weapon.LastDurability = wildcards[0] - 0
+        App.Core.Weapon.LastDurabilityMax = wildcards[1] - 0
     }
-    App.RegisterCallback("core.weapon.durabilityend",function(data){
-        if (App.Core.Weapon.LastDurabilityMax>0&&App.Core.Weapon.LastDurability<App.GetNumberParam("repair_below")){
-            App.Core.Weapon.ToRepair=data
+    App.RegisterCallback("core.weapon.durabilityend", function (data) {
+        if (App.Core.Weapon.LastDurabilityMax > 0 && App.Core.Weapon.LastDurability < App.GetNumberParam("repair_below")) {
+            App.Core.Weapon.ToRepair = data
         }
     })
-    App.Core.Weapon.Check=function(id){
-        App.Core.Weapon.LastDurability=0
-        App.Core.Weapon.LastDurabilityMax=0
-        App.Send("l "+id)
-        App.Response("wepon","durability",id)
+    App.Core.Weapon.Check = function (id) {
+        App.Core.Weapon.LastDurability = 0
+        App.Core.Weapon.LastDurabilityMax = 0
+        App.Send("l " + id)
+        App.Response("wepon", "durability", id)
     }
-    App.Core.Weapon.CheckRandom=function(){
-        let repair_list=GetVariable("repair_list").trim()
-        if (repair_list){
-            let list=repair_list.split("\n")
+    App.Core.Weapon.CheckRandom = function () {
+        let repair_list = GetVariable("repair_list").trim()
+        if (repair_list) {
+            let list = repair_list.split("\n")
             App.Core.Weapon.Check(RandomList(list))
         }
     }
-    App.Bind("Response.wepon.durability","core.weapon.durabilityend")
-    App.Core.Weapon.Repair=function(){
-        if (App.Core.Weapon.ToRepair!=""){
+    App.Bind("Response.wepon.durability", "core.weapon.durabilityend")
+    App.Core.Weapon.Repair = function () {
+        if (App.Core.Weapon.ToRepair != "") {
             App.Commands([
-                App.NewCommand("to",App.Options.NewWalk("yz-fds")),
-                App.NewCommand("do","fix "+App.Core.Weapon.ToRepair),
+                App.NewCommand("to", App.Options.NewWalk("yz-fds")),
+                App.NewCommand("do", "fix " + App.Core.Weapon.ToRepair),
                 App.NewCommand("nobusy"),
-                App.NewCommand("function",function(){
-                    App.Core.Weapon.ToRepair=""
+                App.NewCommand("function", function () {
+                    App.Core.Weapon.ToRepair = ""
                     App.Next()
                 })
-            ]).Push()         
+            ]).Push()
         }
         App.Next()
     }

@@ -61,4 +61,4 @@ App.Load("core/quest.js")
 App.Load("core/hud.js")
 App.Load("core/idle.js")
 App.Load("core/help.js")
-
+App.Load("core/perform.js")

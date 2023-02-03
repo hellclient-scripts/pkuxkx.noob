@@ -18,6 +18,7 @@
         world.EnableTimer("App.Core.Combat.OnTick", false)
     }
     State.prototype.Online = function (line) {
+        App.Core.Perform.UpdateCooldown(line)
         if (App.Core.Combat.Current.FinishLine&&line==App.Core.Combat.Current.FinishLine){
             App.RaiseStateEvent("combat.finish")
             return

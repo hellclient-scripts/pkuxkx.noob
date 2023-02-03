@@ -3,6 +3,7 @@
 
     App.Core.Combat = {}
     App.Core.Combat.Current = null
+    App.Core.Combat.Performed=false
     App.Core.Combat.OnEscapeFail = function (name, output, wildcards) {
         App.RaiseStateEvent("move.retry")
     }
@@ -163,14 +164,19 @@
         }
         return App.Data.HP["eff_qixue"]/App.Data.HP["qixue"] >= data-0
     }
-    App.Core.Combat.ExecPerform = function (action) {
+    App.Core.Combat.ExecSend = function (action) {
         if (!App.Core.Combat.CheckConditions(action.Conditions)) {
             return
         }
         switch (action.Command) {
             case "":
-            case "#perfrom":
+            case "#send":
                 App.Send(action.Data)
+                break
+            case "#perform":
+                if (!App.Core.Combat.Performed){
+                    App.Core.Combat.Performed= App.Core.Perform.Execute(action.Data)
+                }
                 break
         }
     }
@@ -253,6 +259,7 @@
         }
     }
     App.Core.Combat.Perform = function () {
+        App.Core.Combat.Performed=false
         let combat = App.Core.Combat.Current
         if (combat) {
             if (combat.HaltAfter){
@@ -298,7 +305,7 @@
                 return
             }
             for (var i = 0; i < combat.Actions.length; i++) {
-                App.Core.Combat.ExecPerform(combat.Actions[i])
+                App.Core.Combat.ExecSend(combat.Actions[i])
             }
         }
     }
