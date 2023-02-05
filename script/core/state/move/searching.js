@@ -27,6 +27,7 @@
         this.Check()
     }
     State.prototype.Move = function () {
+        App.NeedRoomDesc()
         App.ChangeState(this.MoveState)
     }
     return State

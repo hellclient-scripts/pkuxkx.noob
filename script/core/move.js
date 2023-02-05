@@ -40,7 +40,10 @@
         })
         moved=newmoved
     }
-    
+    App.Data.NeedRoomDesc=false
+    App.NeedRoomDesc=function(){
+        App.Data.NeedRoomDesc=true
+    }
     App.RegisterCallback("core.move.gc", function () {
         gc()
         if (moved.length<3&&movebuff.length){
@@ -69,6 +72,11 @@
     }
     App.Bind("gc","core.move.gc")
     App.RegisterCallback("core.move.onroomobjend", function () {
+        if (App.Data.NeedRoomDesc){
+            App.Data.NeedRoomDesc=false
+            App.Look()
+            return
+        }
         App.RaiseStateEvent("move.onRoomObjEnd")
     })
     App.Bind("OnRoomEnd", "core.move.onroomobjend")

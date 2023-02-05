@@ -36,7 +36,7 @@
             App.Fail()
             return
         }
-        App.Send("set brief 2")
+        // App.Send("set brief 2")
         App.NewCommand("move",App.Options.NewPath(path.Path,move.Vehicle)).Push()
         App.Next()
     }

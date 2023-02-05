@@ -19,6 +19,7 @@
         this.Skipped = false
         this.Found = false
         this.GetExits = GetExits
+        this.NeedRoomDesc=false
     }
     Goal.prototype.Skip = function () {
         this.Skipped = true
@@ -52,6 +53,7 @@
         this.Type = "desc"
         this.State = ""
         this.GetExits = GetExits
+        this.NeedRoomDesc=true
         return this
     }
     Goal.prototype.FindKnownRoom = function () {
@@ -63,6 +65,7 @@
     Goal.prototype.FindRedBG = function () {
         this.Type = "redbg"
         this.State = ""
+        this.NeedRoomDesc=true
         return this
     }
     Goal.prototype.FindCustom = function () {

@@ -9,6 +9,7 @@
         return App.Data.Room.Name != "云海"
     }
     Maze.prototype.Explore = function (move) {
+        App.NeedRoomDesc()
         if (App.Info.RoomDesc().indexOf("有一条小道通向前方")>-1){
             App.Go("n")
             return
@@ -16,7 +17,8 @@
         App.Go("s")
     }
     Maze.prototype.Init=function(){
-        App.Send("unset brief")
+        App.NeedRoomDesc()
+        // App.Send("unset brief")
     }
     return Maze
 

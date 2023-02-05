@@ -36,7 +36,7 @@
     Maze.prototype.Explore=function(move){
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
-                App.Send("unset brief")
+                // App.Send("unset brief")
                 this.Command=(new DFS(this.MaxDepth,Backward)).New()
                 let entrycmd=this.EntryCmd()
                 if (typeof(entrycmd)=="string"){
@@ -44,10 +44,12 @@
                 }
                 let level=this.Command.Arrive(entrycmd)
                 this.Command=level.Next()
+                App.NeedRoomDesc()
                 App.Go(this.Command.Command)
                 return;
         }
         if (this.Command){
+            App.NeedRoomDesc()
             App.Go(this.Command.Command)
         }else{
             App.Fail()

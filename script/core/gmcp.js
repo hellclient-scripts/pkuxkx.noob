@@ -86,4 +86,11 @@
     App.Bind("GMCP.GMCP.Buff","core.gmcp.Buff")
     App.RegisterCallback("core.gmcp.Buff",function(data){
     })
+    App.Bind("GMCP.GMCP.Move","core.gmcp.move")
+    App.RegisterCallback("core.gmcp.move",function(data){
+        if (data[0].result=="true"){
+               App.Core.OnRoomGMCPMove(data[0].dir)
+        }
+    })
+
 })(App)

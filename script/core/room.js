@@ -22,7 +22,7 @@
         MoveRetried:0
     }
     App.Core.RoomDesc = {
-        Mode: 0,//0:地图，1:描述,2:环境,3:雾中
+        Mode: 0,//0:地图，1:描述,2:环境,3:雾中,4:对象
         Desc: "",
         Canlook: "",
         Canget: "",
@@ -64,6 +64,7 @@
             Data: {},
             MoveRetried:0,
             Place:"",
+            Exits:null,
         }
         if (looking){
             App.Data.Room.WalkTags=owalktags
@@ -93,6 +94,7 @@
         }
         world.EnableTriggerGroup("roomexit", true)
         App.RaiseStateEvent("core.onroom")
+        world.EnableTriggerGroup("roomobj", true)
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
     let blankWords = function (line, index) {
@@ -178,13 +180,15 @@
     world.EnableTrigger("room_desc", false)
     world.EnableTriggerGroup("roomexit", false)
     world.EnableTriggerGroup("roomobj", false)
+    world.EnableTriggerGroup("roomobjend", false)
+    
     App.Core.OnRoomExitsStart = function (name, output, wildcards) {
         world.EnableTrigger("room_desc", false)
         App.Data.Room.Exits = []
     }
     App.Core.OnRoomExits = function (name, output, wildcards) {
         world.EnableTriggerGroup("roomexit", false)
-        world.EnableTriggerGroup("roomobj", true)
+        world.EnableTriggerGroup("roomobjend", true)
         let lines = JSON.parse(DumpOutput(wildcards[1].split("\n").length))
         lines.forEach(function (line) {
             line.Words.forEach(function (word) {
@@ -202,7 +206,18 @@
         App.Raise("OnRoomExits")
         App.RaiseStateEvent("core.onroomexits")
     }
+    App.Core.OnRoomGMCPMove=function(exits){
+        App.Data.Room.Exits=exits.sort()
+        App.RaiseStateEvent("core.onroomgmcpexits")
+        App.Core.RoomObjEnd()
+        
+    }
     App.Core.OnRoomObj = function (name, output, wildcards) {
+        if (App.Data.Room.Exits===null){
+            App.Data.Room.Exits===[]
+            world.EnableTriggerGroup("roomexit", false)
+            world.EnableTriggerGroup("roomobjend", true)
+        }
         var obj = { ID: wildcards[1], Name: wildcards[0],Status:wildcards[3]}
         App.Data.Room.Objs.push(obj)
         App.Raise("OnRoomObj", obj)
@@ -235,6 +250,7 @@
         }
         return null
     }
+
     App.HasRoomObjName = function (name) {
         return App.GetRoomObjIDByName(name) != ""
     }
@@ -278,8 +294,13 @@
             App.Raise("OnRoomEnd")
         }
         world.EnableTriggerGroup("roomobj", false)
+        world.EnableTriggerGroup("roomexit", false)
+        world.EnableTriggerGroup("roomobjend", false)
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
+        if (App.Data.Room.Exits===null){
+            return
+        }
         if (output==""){
             return
         }

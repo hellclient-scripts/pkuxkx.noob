@@ -26,13 +26,14 @@
     }
     Maze.prototype.Explore = function (move) {
         if (App.HasRoomExit("out")) {
-            App.Go("out")
+            App.Go("go out")
             return
         }
         App.Go(RandomList(this.Dir()))
     }
     Maze.prototype.OnStateEvent = function (move, state, event, data) {
         switch (event) {
+            case "move.wrongway":
             case "move.notallowed":
                 let dir = this.Dir()
                 let exit = RandomList(dir)

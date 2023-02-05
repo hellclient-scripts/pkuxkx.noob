@@ -78,12 +78,13 @@ var OnSubneg = function (code, data) {
         case 201:
             data = data.split(csi).join("\\u001b")
             let cmd = SplitN(data, " ", 2)
-            switch (cmd[0]) {
-                case "GMCP.Move":
-                    App.Core.RoomObjEnd()
-                    return
-            }
             let cmddata = cmd.length > 1 ? JSON.parse(cmd[1]) : null
+            // switch (cmd[0]) {
+            //     case "GMCP.Move":
+            //         App.Raise("GMCP." + cmd[0], cmddata)
+            //         App.Core.RoomObjEnd()
+            //         return
+            // }
             App.Raise("GMCP." + cmd[0], cmddata)
             return
     }

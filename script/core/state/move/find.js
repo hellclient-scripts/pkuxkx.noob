@@ -7,7 +7,7 @@
     State.prototype = Object.create(patrol.prototype)
     State.prototype.Enter = function (context, oldstatue) {
         let move = App.GetContext("Move")
-        move.StartCmd="unset brief;#l"
+        move.StartCmd="#l"
         move.StateOnStep = "finding"
         let data = move.Data
         if (data && data.State) {

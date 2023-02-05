@@ -14,6 +14,9 @@
                 data.Check()
             }
             if (!data.Found) {
+                if (data.NeedRoomDesc){
+                    App.NeedRoomDesc()
+                }
                 this.Move()
                 return
             }

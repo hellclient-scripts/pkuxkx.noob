@@ -17,6 +17,7 @@
     }
     Maze.prototype.Next=function(){
         App.SetRoomOnline(Online)
+        App.NeedRoomDesc()
         if (App.Core.Maze.Data.hztdhfy.huacong){
             App.Go(App.Core.Maze.Data.hztdhfy.huacong)
         }else{
@@ -43,7 +44,7 @@
     }
     Maze.prototype.Init=function(){
         Trapped=false
-        App.Send("unset brief")
+        // App.Send("unset brief")
     }
     Maze.prototype.Searching=function(){
         if (Trapped){
