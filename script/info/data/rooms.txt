@@ -78,7 +78,7 @@ linan||大理寺||||Landmark||Jianghu tu
 linan-sch||盛昌行临安府分店||||Station||盛昌行临安府分店
 linanyp||临安药铺||||DescStart||这里是新近开的一家药铺，一进门左侧放了一座药王菩萨像(xiang)。
 linanch||临安车行||||DescStart||这里是临安府当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-gsmz||孤山梅庄||||DescStart||这里是一座朱门白墙的大庄院。大门(gate)外写着梅庄两个大字，旁边署着“虞允文题”四字。虞允文是南
+xxmz||孤山梅庄||||DescStart||这里是一座朱门白墙的大庄院。大门(gate)外写着梅庄两个大字，旁边署着“虞允文题”四字。虞允文是南
 xihu-djq||西湖段家桥||||DescStart||这里是段家桥，西南面一条小路，沿路可以眺望西湖美景，北面一座宝塔耸立着，向东通往钱塘门。
 ywm||岳飞墓||||Station||岳飞墓
 hztdfmen||提督府正门||||Station||提督府正门

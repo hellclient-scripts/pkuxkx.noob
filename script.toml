@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -5228,7 +5228,7 @@ Channel = "pkuxkx.noob"
   ID = "room_obj"
   Name = "room_obj"
   Enabled = false
-  Match = "^    (\\S.{0,23}\\S)\\(([A-Z][a-zA-Z0-9 ]+)\\)(\\s*((\\<.*\\>\\s*)*))$"
+  Match = "^    (\\S.{0,23}\\S)\\(([A-Z][a-zA-Z0-9 ']+)\\)(\\s*((\\<.*\\>\\s*)*))$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
