@@ -1,7 +1,11 @@
 (function (App) {
     App.Core.Poison = {}
     App.Core.Poison.Poisons = {
-        "苗疆瘴气": { "xuejie": true, "chan": true },
+        "苗疆瘴气": {
+            "xuejie": true, "chan": true, "Exclude": function () {
+                return App.Data.Score["family"] == "五毒教"
+            }
+        },
         "蛇毒": { "xuejie": true, "chan": true, "ping": true },
         "星宿毒掌毒": { "xuejie": true, "chan": true, "ping": true },
         "冰魄寒毒": { "xuejie": true, "chan": true, "ping": true },
@@ -9,7 +13,7 @@
         "凝血神爪毒": { "xuejie": true, "chan": true, "ping": true },
         "星宿火毒": { "chan": true },
         "白驼蛇毒": { "xuejie": true, "chan": true, "ping": true },
-        "情毒":{ "xuejie": true, "chan": true, "ping": true },
+        "情毒": { "xuejie": true, "chan": true, "ping": true },
         "火焰刀": {},
     }
     App.Core.Poison.Cure = function () {
@@ -27,6 +31,9 @@
     App.Core.Poison.GetCurrent = function () {
         for (var i in App.Core.Poison.Poisons) {
             if (App.Data.HP.status[i]) {
+                if (App.Data.HP.status[i].Exclude && App.Data.HP.status[i].Exclude()) {
+                    continue
+                }
                 return i
             }
         }
@@ -35,6 +42,9 @@
     App.Core.Poison.NeedFirstAid = function () {
         for (var i in App.Core.Poison.Poisons) {
             if (App.Data.HP.status[i]) {
+                if (App.Data.HP.status[i].Exclude && App.Data.HP.status[i].Exclude()) {
+                    continue
+                }
                 if (App.Core.Poison.Poisons[i]["xuejie"] && App.Data.HP.status["毒性压制"]) {
                     continue
                 }
@@ -47,6 +57,9 @@
         if (App.GetItemByName("朱睛冰蟾", true)) {
             for (var i in App.Core.Poison.Poisons) {
                 if (App.Data.HP.status[i]) {
+                    if (App.Data.HP.status[i].Exclude && App.Data.HP.status[i].Exclude()) {
+                        continue
+                    }
                     if (App.Core.Poison.Poisons[i]["xuejie"]) {
                         continue
                     }
@@ -65,6 +78,9 @@
         }
         for (var i in App.Core.Poison.Poisons) {
             if (App.Data.HP.status[i]) {
+                if (App.Data.HP.status[i].Exclude && App.Data.HP.status[i].Exclude()) {
+                    continue
+                }
                 if (App.Core.Poison.Poisons[i]["xuejie"]) {
                     return true
                 }
@@ -155,7 +171,7 @@
             } else {
                 commands.push(App.NewCommand("do", "yun inspire"))
             }
-        }else{
+        } else {
             commands.push(App.NewCommand("do", "dazuo " + App.GetNumberParam("poison_dazuo_num")))
         }
         commands.push(App.NewCommand("nobusy"))

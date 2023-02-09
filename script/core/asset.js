@@ -107,11 +107,12 @@
         let items = [...data.matchAll(itemre)]
         for (var i = 0; i < items.length; i++) {
             let itemraw = items[i]
+            let itemdata = CNumber.Split(itemraw[2])
             let item = {
                 Binded: itemraw[1] == "＊",
-                Name: itemraw[2],
+                Name: itemdata.Item,
                 ID: itemraw[5],
-                Count: itemraw[7] ? (itemraw[7] - 0) : 1,
+                Count: itemraw[7] ? (itemraw[7] - 0) :itemdata.Count,
             }
             App.Core.Asset.Convert(item)
         }

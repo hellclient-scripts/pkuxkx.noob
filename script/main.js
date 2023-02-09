@@ -30,6 +30,10 @@ var onResponse = function (msgtype, id, data) {
     App.onResponse(msgtype, id, data)
 }
 var onBuffer = function (data) {
+    if (data==null){
+        App.Raise("GA")
+        return
+    }
     if (data.length == 2) {
         //提示符
         return data == "> "

@@ -209,9 +209,12 @@
     App.Core.OnRoomGMCPMove=function(exits){
         App.Data.Room.Exits=exits.sort()
         App.RaiseStateEvent("core.onroomgmcpexits")
-        App.Core.RoomObjEnd()
-        
+        App.Core.RoomObjEnd()        
     }
+    App.RegisterCallback("core.room.ga",function(){
+        App.Core.RoomObjEnd()
+    })
+    App.Bind("GA","core.room.ga")
     App.Core.OnRoomObj = function (name, output, wildcards) {
         if (App.Data.Room.Exits===null){
             App.Data.Room.Exits===[]
