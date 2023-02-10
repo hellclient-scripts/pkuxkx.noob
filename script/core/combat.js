@@ -1,9 +1,11 @@
 (function (App) {
     let combat = Include("include/combat.js")
+    let enemies = Include("include/enemies.js")
 
     App.Core.Combat = {}
     App.Core.Combat.Current = null
-    App.Core.Combat.Performed=false
+    App.Core.Combat.Enemies = new enemies()
+    App.Core.Combat.Performed = false
     App.Core.Combat.OnEscapeFail = function (name, output, wildcards) {
         App.RaiseStateEvent("move.retry")
     }
@@ -27,7 +29,7 @@
         App.RaiseStateEvent("combat.wield")
     }
     App.Core.Combat.OnBlocked = function (name, output, wildcards) {
-        Note(wildcards[0]+" 拦路")
+        Note(wildcards[0] + " 拦路")
         let blocker = App.Info.Blockers[wildcards[0]]
         if (blocker) {
             if (blocker.Exp >= 0 && blocker.Exp <= App.Data.Exp) {
@@ -58,14 +60,14 @@
     App.Core.Combat.Init = function () {
         App.Send(world.GetVariable("jifa_cmd"))
         App.Core.Weapon.ReWield()
-        let wimpy=App.Core.Combat.Current?App.Core.Combat.Current.GetWimpy():App.Core.CombatMode.Current().GetWimpy()
+        let wimpy = App.Core.Combat.Current ? App.Core.Combat.Current.GetWimpy() : App.Core.CombatMode.Current().GetWimpy()
         App.Send("yield no;set wimpy " + wimpy)
     }
     App.Core.Combat.Rest = function () {
         App.NewCommand("rest").Push()
         App.Next()
     }
-    App.Core.Combat.KillAgain=function(){
+    App.Core.Combat.KillAgain = function () {
         App.Send(App.Core.Combat.Current.KillCmd)
         App.ChangeState("core.state.combat.combating")
     }
@@ -80,14 +82,14 @@
     App.Core.Combat.CheckFighting = function () {
         App.Send("qiecuo")
     }
-    App.DumpCombat=function(strategies){
-        let old=App.Core.Combat.Current
-        let current = new combat(strategies||[])
-        App.Core.Combat.Current=current
+    App.DumpCombat = function (strategies) {
+        let old = App.Core.Combat.Current
+        let current = new combat(strategies || [])
+        App.Core.Combat.Current = current
         App.Core.Combat.CaclStrategy()
         current.LoadActions(GetVariable("combat"))
         Dump(current.Actions)
-        App.Core.Combat.Current=old
+        App.Core.Combat.Current = old
     }
     App.Core.Combat.CaclStrategy = function () {
         let combat = App.Core.Combat.Current
@@ -147,22 +149,22 @@
         return App.Data.Qishi >= data
     }
     App.Core.Combat.Conditions["myneili"] = function (data) {
-        if (App.Data.HP["neili"]=0){
+        if (App.Data.HP["neili"] = 0) {
             return false
         }
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_neili"]/App.Data.HP["neili"] >= data-0
+        return App.Data.HP["eff_neili"] / App.Data.HP["neili"] >= data - 0
     }
     App.Core.Combat.Conditions["myqixue"] = function (data) {
-        if (App.Data.HP["qixue"]=0){
+        if (App.Data.HP["qixue"] = 0) {
             return false
         }
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_qixue"]/App.Data.HP["qixue"] >= data-0
+        return App.Data.HP["eff_qixue"] / App.Data.HP["qixue"] >= data - 0
     }
     App.Core.Combat.ExecSend = function (action) {
         if (!App.Core.Combat.CheckConditions(action.Conditions)) {
@@ -174,8 +176,8 @@
                 App.Send(action.Data)
                 break
             case "#perform":
-                if (!App.Core.Combat.Performed){
-                    App.Core.Combat.Performed= App.Core.Perform.Execute(action.Data)
+                if (!App.Core.Combat.Performed) {
+                    App.Core.Combat.Performed = App.Core.Perform.Execute(action.Data)
                 }
                 break
         }
@@ -259,11 +261,11 @@
         }
     }
     App.Core.Combat.Perform = function () {
-        App.Core.Combat.Performed=false
+        App.Core.Combat.Performed = false
         let combat = App.Core.Combat.Current
         if (combat) {
-            if (combat.HaltAfter){
-                if (combat.Duration()>combat.HaltAfter){
+            if (combat.HaltAfter) {
+                if (combat.Duration() > combat.HaltAfter) {
                     App.Send("halt")
                 }
             }
@@ -294,7 +296,7 @@
             if (recovery > 100) {
                 Note("无效的 combat_yun_recover 变量，必须是0-100之间的整数")
             } else {
-                if (recovery > 0 && (((qixue-effqixue)) >= (qixuecap*recovery/100))) {
+                if (recovery > 0 && (((qixue - effqixue)) >= (qixuecap * recovery / 100))) {
                     App.Send("yun recover")
                 }
             }

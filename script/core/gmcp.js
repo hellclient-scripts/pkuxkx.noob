@@ -1,53 +1,56 @@
 
-(function(App){
-    App.Bind("GMCP.GMCP.Combat","core.gmcp.Fight.Msg")
-    App.Bind("GMCP.GMCP.Status","core.gmcp.Status")
-    App.RegisterCallback("core.gmcp.Fight.Msg",function(data){
+(function (App) {
+    App.Bind("GMCP.GMCP.Combat", "core.gmcp.Fight.Msg")
+    App.Bind("GMCP.GMCP.Status", "core.gmcp.Status")
+    App.RegisterCallback("core.gmcp.Fight.Msg", function (data) {
         App.RaiseStateEvent("combat.fighting")
+        App.RaiseStateEvent("combat.gmcp", data)
     })
-    let map_status=function(data,source,target){
-        if (data[source]){
-            App.Data.HP[target]=data[source]
-        }else{
+    let map_status = function (data, source, target) {
+        if (data[source]) {
+            App.Data.HP[target] = data[source]
+        } else {
             return
         }
-        switch(target){
+        switch (target) {
             case "exp":
-                App.Data.Exp=data[source]
+                App.Data.Exp = data[source]
                 break
             case "qixue":
             case "qixue_cap":
-                App.Data.HP["per_qixue"]=100*App.Data.HP["qixue"]/App.Data.HP["qixue_cap"]
-            break
+                App.Data.HP["per_qixue"] = 100 * App.Data.HP["qixue"] / App.Data.HP["qixue_cap"]
+                break
             case "jing":
             case "jing_cap":
-                App.Data.HP["per_jing"]=100*App.Data.HP["jing"]/App.Data.HP["jing_cap"]
-            break
+                App.Data.HP["per_jing"] = 100 * App.Data.HP["jing"] / App.Data.HP["jing_cap"]
+                break
         }
     }
-    App.RegisterCallback("core.gmcp.Status",function(data){
-            if (!data.id){
-                map_status(data,"combat_exp","exp")
-                map_status(data,"eff_qi","qixue")
-                map_status(data,"qi","eff_qixue")
-                map_status(data,"max_qi","qixue_cap")
-                map_status(data,"eff_jing","jing")
-                map_status(data,"jing","eff_jing")
-                map_status(data,"max_jing","jing_cap")
-                map_status(data,"neili","eff_neili")
-                map_status(data,"max_neili","neili")
-                map_status(data,"jingli","eff_jingli")
-                map_status(data,"max_jingli","jingli")
-                map_status(data,"vigour/yuan","zhenyuan")
-                map_status(data,"vigour/qi","zhenqi")
-                map_status(data,"water","water")
-                map_status(data,"food","food")
-                map_status(data,"potential","pot")
-            }
+    App.RegisterCallback("core.gmcp.Status", function (data) {
+        if (!data.id) {
+            map_status(data, "combat_exp", "exp")
+            map_status(data, "eff_qi", "qixue")
+            map_status(data, "qi", "eff_qixue")
+            map_status(data, "max_qi", "qixue_cap")
+            map_status(data, "eff_jing", "jing")
+            map_status(data, "jing", "eff_jing")
+            map_status(data, "max_jing", "jing_cap")
+            map_status(data, "neili", "eff_neili")
+            map_status(data, "max_neili", "neili")
+            map_status(data, "jingli", "eff_jingli")
+            map_status(data, "max_jingli", "jingli")
+            map_status(data, "vigour/yuan", "zhenyuan")
+            map_status(data, "vigour/qi", "zhenqi")
+            map_status(data, "water", "water")
+            map_status(data, "food", "food")
+            map_status(data, "potential", "pot")
+        } else {
+            App.RaiseStateEvent("combat.npc", data)
+        }
     })
-    App.RegisterCallback("core.gmcp.Fight.Msg",function(){
-        App.RaiseStateEvent("combat.fighting")
-    })
+    // App.RegisterCallback("core.gmcp.Fight.Msg",function(){
+    //     App.RaiseStateEvent("combat.fighting")
+    // })
     // App.RegisterCallback("core.gmcp.hpbreif",function(data){
     //     if(!data){
     //         return
@@ -83,13 +86,13 @@
     //         App.RaiseStateEvent("combat.finish")
     //     }
     // })
-    App.Bind("GMCP.GMCP.Buff","core.gmcp.Buff")
-    App.RegisterCallback("core.gmcp.Buff",function(data){
+    App.Bind("GMCP.GMCP.Buff", "core.gmcp.Buff")
+    App.RegisterCallback("core.gmcp.Buff", function (data) {
     })
-    App.Bind("GMCP.GMCP.Move","core.gmcp.move")
-    App.RegisterCallback("core.gmcp.move",function(data){
-        if (data[0].result=="true"){
-               App.Core.OnRoomGMCPMove(data[0].dir)
+    App.Bind("GMCP.GMCP.Move", "core.gmcp.move")
+    App.RegisterCallback("core.gmcp.move", function (data) {
+        if (data[0].result == "true") {
+            App.Core.OnRoomGMCPMove(data[0].dir)
         }
     })
 
