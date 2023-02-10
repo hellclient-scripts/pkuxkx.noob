@@ -1,3 +1,30 @@
+var SubDumpLine=function(start,end){
+    return SubDump(JSON.parse(DumpOutput(1))[0],start,end)
+}
+var SubDump=function(dump,start,end){
+    return JSON.stringify(SplitDump(dump).slice(start,end))
+}
+var SplitDump=function(dump){
+    let result=[]
+    let words=dump.Words
+    for (var i=0;i<words.length;i++){
+        let word=words[i]
+        for (var charindex=0;charindex<word.Text.length;charindex++){
+            result.push(
+                {
+                    "Text":word.Text[charindex],
+                    "Color": word.Color,
+                    "Background": word.Background,
+                    "Bold": word.Bold,
+                    "Underlined": word.Underlined,
+                    "Blinking": word.Blinking,
+                    "Inverse": word.Inverse,
+                  }
+              )
+        }
+    }
+    return result
+}
 var RandomInt=function(max){
     if (max<1){
         throw "random error"

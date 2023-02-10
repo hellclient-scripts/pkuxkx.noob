@@ -50,6 +50,7 @@
             ID: "",
             Name: wildcards[1],
             Tags: wildcards[5],
+            NameDump:SubDumpLine(0,wildcards[1].length),
             Objs: [],
             HasHerb: false,
             OnAsk: "",
@@ -215,6 +216,7 @@
         App.Core.RoomObjEnd()
     })
     App.Bind("GA","core.room.ga")
+    let relast=/[ 」]/g
     App.Core.OnRoomObj = function (name, output, wildcards) {
         if (App.Data.Room.Exits===null){
             App.Data.Room.Exits===[]
@@ -222,6 +224,8 @@
             world.EnableTriggerGroup("roomobjend", true)
         }
         var obj = { ID: wildcards[1], Name: wildcards[0],Status:wildcards[3]}
+        obj.Last=wildcards[0].split(relast).slice(-1)[0]
+        obj.LastDump=SubDumpLine(4+wildcards[0].length-obj.Last.length,4+wildcards[0].length)
         App.Data.Room.Objs.push(obj)
         App.Raise("OnRoomObj", obj)
     }
