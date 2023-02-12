@@ -29,12 +29,16 @@ var onBroadcast = function (msg, global, channel) {
 var onResponse = function (msgtype, id, data) {
     App.onResponse(msgtype, id, data)
 }
-var onBuffer = function (data) {
+var onBuffer = function (data,bytes) {
     if (data==null){
         App.Raise("GA")
         return
     }
     if (data.length == 2) {
+        if (bytes[0]==255&&bytes[1]==249){
+            App.Raise("GA")
+            return true
+        }
         //提示符
         return data == "> "
     }
