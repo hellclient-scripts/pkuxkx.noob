@@ -32,14 +32,12 @@
     Perform.prototype.Execute=function(target){
         for (var i=0;i<this.Commands.length;i++){
             let command=this.Commands[i]
-            if (target){
-                if (command.OnTarget){
+            if (command.OnTarget){
+                if (target){
                     App.Send(command.Command.replace("$1", target))
                 }
             }else{
-                if (!command.OnTarget){
-                    App.Send(command.Command)
-                }
+                App.Send(command.Command.replace("$1", target))
             }
         }
     }

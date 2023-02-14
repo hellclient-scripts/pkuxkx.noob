@@ -148,16 +148,16 @@
         }
         return App.Data.Qishi >= data
     }
-    App.Core.Combat.Conditions["myneili"] = function (data) {
-        if (App.Data.HP["neili"] = 0) {
+    App.Core.Combat.Conditions["neili"] = function (data) {
+        if (App.Data.HP["neili"] <= 0) {
             return false
         }
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_neili"] / App.Data.HP["neili"] >= data - 0
+        return App.Data.HP["eff_neili"]  >= (data - 0)
     }
-    App.Core.Combat.Conditions["myqixue"] = function (data) {
+    App.Core.Combat.Conditions["perqixue"] = function (data) {
         if (App.Data.HP["qixue"] = 0) {
             return false
         }
@@ -173,11 +173,11 @@
         switch (action.Command) {
             case "":
             case "#send":
-                App.Send(action.Data)
+                App.Send(action.Data.replace("$1", App.Core.Combat.Current.Target))
                 break
             case "#perform":
                 if (!App.Core.Combat.Performed) {
-                    App.Core.Combat.Performed = App.Core.Perform.Execute(action.Data)
+                    App.Core.Combat.Performed = App.Core.Perform.Execute(action.Data,App.Core.Combat.Current.Target)
                 }
                 break
         }

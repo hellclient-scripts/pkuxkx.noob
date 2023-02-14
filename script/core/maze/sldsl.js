@@ -9,6 +9,7 @@
         return App.Data.Room.Name != "树林"
     }
     Maze.prototype.Explore = function (move) {
+        App.NeedRoomDesc()
         switch (this.Current) {
             case "e":
                 App.Go("e")

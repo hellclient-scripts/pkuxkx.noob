@@ -5,18 +5,23 @@
     let homere=/(\S+)(\s+(.+)){0,1}/
     App.Info.LoadHomePath=function(){
         let home=App.GetParamHome().trim()
+        let homeloc=App.Info.DefaultHomeLocation
         if (home){
             let data=home.match(homere)
             if (data){
                 let path
+                let homeid=data[1]
                 if(data[3]){
-                    path=[data[1],App.Info.RoomHome,"","enter "+data[3],"out"]
-                }else{
-                    path=[App.Info.DefaultHomeLocation,App.Info.RoomHome,"","enter "+data[1],"out"]
+                    homeloc=data[1]
+                    homeid=data[3]
                 }
+
+                path=[homeloc,App.Info.RoomHome,"","enter "+homeid,"out"]
                 App.Info.BuiltinPaths=[path.join("||")].concat(App.Info.BuiltinPaths)
             }
         }
+        let jxj=[homeloc,"jxj","","enter jianxinju","#leaveid","50","50"]
+        App.Info.BuiltinPaths=[jxj.join("||")].concat(App.Info.BuiltinPaths)
     }
     App.Info.LoadBangPaiPath=function(){
         let loc=App.GetParamBangpai().trim()

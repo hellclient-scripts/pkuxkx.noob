@@ -8,6 +8,8 @@
     State.prototype.Enter = function (Context, newstatue) {
         world.Note("挂了")
     }
+    State.prototype.Leave = function (Context, newstatue) {
+    }
     State.prototype.OnEvent = function (context, event, data) {
         switch (event) {
             case "busy":
@@ -16,7 +18,7 @@
             case "nobusy":
                 App.Core.Death.Reborn()
                 break
-            case "move.onRoomObjEnd":
+            case "core.conscious":
                 App.Core.CheckBusy()
                 break
         }

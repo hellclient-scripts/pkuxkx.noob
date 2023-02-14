@@ -187,6 +187,7 @@
     App.RegisterCallback("core.move.sail",function(){
         App.Raise("Waiting")
     })
+    App.RegisterAlias("sail","core.move.sail")
     App.ToShort=function(raw,silence){
         let cmds=raw.split(";")
         let result=[]
@@ -198,7 +199,7 @@
         Note(output)
         return output
     }
-    App.RegisterAlias("sail","core.move.sail")
+
     App.RegisterCallback("core.move.ask",function(data){
         let cmd=data.split(" about ")
         if (cmd.length<2){
@@ -206,6 +207,7 @@
         }
         App.Core.AskQuestion(cmd[0],cmd[1])
     })
+    App.RegisterAlias("ask","core.move.ask")        
     App.RegisterCallback("core.move.look",function(){
         App.Look()
     })
@@ -214,8 +216,11 @@
         App.Send("halt;yun recover;yun regenerate")
     })
     App.RegisterAlias("halt","core.move.halt")
+    App.RegisterCallback("core.move.leaveid",function(){
+        App.Send("leave "+GetVariable("id"))
+    })
+    App.RegisterAlias("leaveid","core.move.leaveid")
 
-    App.RegisterAlias("ask","core.move.ask")        
     App.RegisterState(new (Include("core/state/move/walking.js"))())
     App.RegisterState(new (Include("core/state/move/patrol.js"))())
     App.RegisterState(new (Include("core/state/move/patroling.js"))())

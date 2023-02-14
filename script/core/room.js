@@ -38,6 +38,8 @@
         MapLines: [],
     }
     App.Core.OnRoom = function (name, output, wildcards) {
+        world.ResetTimer("objend_timeout")
+        world.EnableTimer("objend_timeout",true)
         App.Core.RedBGExits = []
         let looking = App.Data.Room.Looking
         let oid = App.Data.Room.ID
@@ -182,7 +184,7 @@
     world.EnableTriggerGroup("roomexit", false)
     world.EnableTriggerGroup("roomobj", false)
     world.EnableTriggerGroup("roomobjend", false)
-    
+    world.EnableTimer("objend_timeout",false)
     App.Core.OnRoomExitsStart = function (name, output, wildcards) {
         world.EnableTrigger("room_desc", false)
         App.Data.Room.Exits = []
@@ -297,6 +299,7 @@
     }
     App.Core.RoomObjEnd = function () {
         if (!App.Data.Room.ObjEnd) {
+            world.EnableTimer("objend_timeout",false)
             App.Data.Room.ObjEnd = true
             App.Raise("OnRoomEnd")
         }
@@ -414,5 +417,20 @@
             App.NewCommand("to",App.Options.NewWalk(App.Core.RoomLimited[App.Data.Room.ID])).Push()
         }
         App.Next()
+    }
+    App.Core.OnLeaveInstance=function(name, output, wildcards){
+        App.RaiseStateEvent("core.leaveinstance",output)
+        App.Send("l")
+    }
+    //进入副本指令，一般发送look，触发objend。
+    App.Core.EnterInstanceCommands={
+        "你进入了剑心居。":"l",
+    }
+    App.Core.OnEnterInstance=function(name, output, wildcards){
+        App.RaiseStateEvent("core.enterinstance",output)
+        if (App.Core.EnterInstanceCommands[output]){
+            App.Send(App.Core.EnterInstanceCommands[output])
+        }
+        
     }
 })(App)

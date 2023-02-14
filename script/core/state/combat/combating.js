@@ -36,16 +36,7 @@
     }
 
     State.prototype.Tick = function () {
-        let msg = []
-        msg.push("当前策略[" + App.Core.Combat.Current.Strategy + "]")
-        msg.push("气势[" + App.Data.Qishi + "]")
-        msg.push(Math.floor(App.Core.Combat.Current.Duration()) + "秒")
-        Note(msg.join(","))
-        let list = App.Core.Combat.Enemies.ListTags(3)
-        for (var i = 0; i < list.length; i++) {
-            Note("目标[" + list[i] + "]信息:[" + list.Tags.join(","))
-        }
-        Note("总目标:" + App.Core.Combat.Enemies.IDList.length + " " + App.Core.Combat.Enemies.FormatID(6))
+        App.Core.Combat.Current.Target=App.Core.Combat.Enemies.Get()
         if (App.Core.Poison.NeedXuejie() && App.GetItemNumber("xuejie dan", true)) {
             App.Send("eat xuejie dan;i2")
         }
@@ -53,6 +44,18 @@
         if (App.Core.Combat.Enemies.CheckNeedLook(10)) {
             App.Look()
         }
+        let msg = []
+        msg.push("当前策略[" + App.Core.Combat.Current.Strategy + "]")
+        msg.push("气势[" + App.Data.Qishi + "]")
+        msg.push("首选目标["+App.Core.Combat.Current.Target+"]")
+        msg.push(Math.floor(App.Core.Combat.Current.Duration()) + "秒")
+        Note(msg.join(","))
+        let list = App.Core.Combat.Enemies.ListTags(3)
+        for (var i = 0; i < list.length; i++) {
+            Note("目标[" + list[i] + "]信息:[" + list.Tags.join(","))
+        }
+        Note("总目标:" + App.Core.Combat.Enemies.IDList.length + " " + App.Core.Combat.Enemies.FormatID(6))
+
         App.Core.Combat.CheckFighting()
     }
     State.prototype.OnGMCPFighting = function (datalist) {

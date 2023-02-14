@@ -100,7 +100,7 @@
             }
         }
         if (this.IDList.length) {
-            return this.IDList[0]
+            return this.IDList[0].ID
         }
         return ""
     }

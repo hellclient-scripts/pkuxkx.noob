@@ -1,14 +1,13 @@
 (function () {
     let Action = Include("include/action.js")
     let Combat = function (strategylist) {
-        this.Targets = {}
         this.Disarmed = false
         this.Recovery = -1
         this.After = null
         this.Yield = false
         this.Online = null
         this.KillCmd = ""
-        this.MustKill = ""
+        this.Target = ""
         //战斗跳开自动判断，使用自定义结束行
         this.FinishLine = ""
         this.FirstAid = false
@@ -69,8 +68,8 @@
     Combat.prototype.SetAfter = function (cmd) {
         this.After = cmd
     }
-    Combat.prototype.SetMustKill = function (id) {
-        this.MustKill = id
+    Combat.prototype.SetTarget = function (id) {
+        this.Target = id
     }
     Combat.prototype.SetKillCmd = function (cmd) {
         this.KillCmd = cmd

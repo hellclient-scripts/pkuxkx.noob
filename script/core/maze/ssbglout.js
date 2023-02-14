@@ -9,6 +9,7 @@
         return App.Data.Room.Name != "果林"
     }
     Maze.prototype.Next=function(){
+        App.NeedRoomDesc()
         if (App.Data.Room.Name == "大道"){
             App.Go("s")
             App.Next()
