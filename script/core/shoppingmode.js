@@ -24,5 +24,5 @@
     App.Core.ShoppingMode.Register(new (Include("core/shoppingmode/wenbao.js"))())
     App.Core.ShoppingMode.Register(new (Include("core/shoppingmode/zhongchan.js"))())
     App.Core.ShoppingMode.Register(new (Include("core/shoppingmode/tuhao.js"))())
-    App.Core.ShoppingMode.DefaultMode=App.Core.ShoppingMode.Modes["一穷二白"]
+    App.Core.ShoppingMode.DefaultMode=App.Core.ShoppingMode.Modes["中产阶级"]
 })(App)

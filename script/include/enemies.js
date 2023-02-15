@@ -1,5 +1,6 @@
 (function () {
     let Enemies = function () {
+        this.IDConverters=[]
         this.Reset()
     }
     Enemies.prototype.Reset = function () {
@@ -29,7 +30,7 @@
     }
     Enemies.prototype.FormatID = function (max) {
         let result = []
-        let more = max > this.IDList.length
+        let more = this.IDList.length > max
         for (var i = 0; i < this.IDList.length && i < max; i++) {
             result.push(this.IDList[i].Key)
         }
@@ -119,6 +120,9 @@
             if (item.Key == key) {
                 return
             }
+        }
+        for (var i=0;i<this.IDConverters.length;i++){
+            id=this.IDConverters(key,id)
         }
         Note("发现敌人:" + id)
         this.IDList.push({
