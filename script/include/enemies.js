@@ -122,7 +122,7 @@
             }
         }
         for (var i=0;i<this.IDConverters.length;i++){
-            id=this.IDConverters(key,id)
+            id=this.IDConverters[i](key,id)
         }
         Note("发现敌人:" + id)
         this.IDList.push({

@@ -1,4 +1,5 @@
 "use strict";
+var DebugLevel=0
 world.Note("加载pkuxkx.noob机器人")
 var onOpen = function () {
 
@@ -31,6 +32,9 @@ var onResponse = function (msgtype, id, data) {
 }
 var onBuffer = function (data,bytes) {
     if (data==null){
+        if (DebugLevel>0){
+            Note("-")
+        }
         App.Raise("GA")
         return
     }

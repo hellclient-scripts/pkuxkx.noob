@@ -85,6 +85,13 @@ App.LoadModsConfig=function(name){
     }
     return ""
 }
+function initmod(){
+    let dlevel=App.LoadModsConfig("loglevel")-0
+    if (!isNaN(dlevel)){
+        DebugLevel=dlevel
+    }
+}
+initmod()
 App.LoadMods = function () {
     var mods = {}
     let white_list = GetVariable("mods_list_whitelist_mode").trim() != ""
