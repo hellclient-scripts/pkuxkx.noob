@@ -305,8 +305,8 @@
     App.Core.OnPlayerHP1 = function (name, output, wildcards) {
         App.Data.HP["eff_jing"] = wildcards[0] - 0
         App.Data.HP["jing"] = wildcards[1] - 0
-        App.Data.HP["per_jing"] = wildcards[2] - 0
-        App.Data.HP["jing_cap"]=Math.floor(App.Data.HP["jing"]*100/App.Data.HP["per_jing"])
+        // App.Data.HP["per_jing"] = wildcards[2] - 0
+        // App.Data.HP["jing_cap"]=Math.floor(App.Data.HP["jing"]*100/App.Data.HP["per_jing"])
         App.Data.HP["eff_jingli"] = wildcards[3] - 0
         App.Data.HP["jingli"] = wildcards[4] - 0
         App.Data.HP["jiajing"] = wildcards[5] - 0
@@ -314,8 +314,8 @@
     App.Core.OnPlayerHP2 = function (name, output, wildcards) {
         App.Data.HP["eff_qixue"] = wildcards[0] - 0
         App.Data.HP["qixue"] = wildcards[1] - 0
-        App.Data.HP["per_qixue"] = wildcards[2] - 0
-        App.Data.HP["qixue_cap"]=Math.floor(App.Data.HP["qixue"]*100/App.Data.HP["per_qixue"])
+        // App.Data.HP["per_qixue"] = wildcards[2] - 0
+        // App.Data.HP["qixue_cap"]=Math.floor(App.Data.HP["qixue"]*100/App.Data.HP["per_qixue"])
         App.Data.HP["eff_neili"] = wildcards[3] - 0
         App.Data.HP["neili"] = wildcards[4] - 0
         App.Data.HP["jiali"] = wildcards[5] - 0

@@ -349,7 +349,7 @@
     App.Look = function () {
         App.Data.Room.Looking = true
         App.Send("l")
-        App.Send("perform")
+        // App.Send("perform")
     }
     App.SetRoomYieldYes = function (data) {
         Note("设置YieldYes:" + data)
