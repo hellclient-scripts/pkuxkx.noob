@@ -97,7 +97,7 @@ jiaxing||jiaxing-htx||||e;nd;ask chou diao about 独孤求败;nu||sd;sd;su;w
 jiaxing-htx||jiaxing-gjc||||se||nw
 linan||linanch||||n;e;n||s;w;s
 linan||xihu-djq||||w;w;w||e;e;e
-xxmz||xihu-djq||||ne;ne;ne;ne;n||s;sw;sw;sw;sw
+xhmz||xihu-djq||||ne;ne;ne;ne;n||s;sw;sw;sw;sw
 suzhou||jiaxing||||s;s;s;s;s;s;||n;n;n;n;n;n
 suzhou-chaguan||suzhou||||sw;n;n;||s;s;ne
 suzhouch||suzhou||||w;w;s||n;e;e

@@ -1,8 +1,9 @@
 (function (App) {
     App.Core.Death = {}
     App.Core.Death.OnReborn = null
-    App.Core.Death.OnConscious=function(){
+    App.Core.Death.OnConscious = function () {
         App.Send(" ")
+        App.Raise("core.conscious")
         App.RaiseStateEvent("core.conscious")
     }
     App.Core.Death.OnDied = function () {
@@ -16,6 +17,9 @@
         }
     }
     App.SetRoomOnReborn = function (cb) {
+        if (cb != null) {
+            Note("做好死亡处理准备")
+        }
         App.SetRoomData("core.onreborn", cb)
     }
     App.Core.Death.Reborn = function () {
