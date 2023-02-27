@@ -6,7 +6,7 @@
             return App.Core.PerQixue()<App.GetNumberParam("heal_below")||App.Core.PerJing() < App.GetNumberParam("heal_below")
         }
         this.Heal=function(){
-            if (App.Core.PerQixue()<=50||App.Data.NoForce){
+            if (App.Core.PerQixue()<=51||App.Data.NoForce){
                 App.Commands([
                     App.NewCommand("item",App.Options.NewItem("jinchuang yao")),
                     App.NewCommand("nobusy"),
@@ -22,7 +22,7 @@
             }
         }
         this.Inspire=function(){
-            if (App.Core.PerJing()<=50||App.Data.NoForce){
+            if (App.Core.PerJing()<=51||App.Data.NoForce){
                 App.Commands([
                     App.NewCommand("item",App.Options.NewItem("yangjing dan")),
                     App.NewCommand("nobusy"),
