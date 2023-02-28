@@ -59,7 +59,10 @@
             maze.Explore(this)
             return
         }
-        move.FromRoom=App.Data.Room.ID
+        if (!step.FromRoom){
+            step.FromRoom=App.Data.Room.ID
+        }
+        move.FromRoom=step.FromRoom
         this.Go(step.Command)
     }
     return StateMove

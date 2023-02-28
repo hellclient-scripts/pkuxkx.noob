@@ -29,7 +29,7 @@
     App.Core.Autoget.Items = {}
     App.Core.Autoget.Items.money = {}
     App.Core.Autoget.Items.money["Gold"] = function () {
-        App.Send("get gold")
+        App.Send("get gold_money")
     }
     App.Core.Autoget.Items.money["Silver"] = function () {
         App.Send("get silver")

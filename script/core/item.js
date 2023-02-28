@@ -22,7 +22,11 @@
         world.EnableTriggerGroup("item",true)
     }
     App.Core.OnItemObj=function(name, output, wildcards){
-        App.Data.Items.push({ID:wildcards[1],Name:wildcards[0]})
+        let item={ID:wildcards[1],Name:wildcards[0]}
+        if (item.Name.startsWith("(被卸)")){
+            item.Name=item.Name.slice(4)
+        }
+        App.Data.Items.push(item)
     }
     App.Core.OnItemObjEnd=function(name, output, wildcards){
         world.EnableTrigger("itemobj",false)

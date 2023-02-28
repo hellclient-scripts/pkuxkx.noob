@@ -133,7 +133,7 @@
         var commands = []
         if (gold) {
             if (App.GetItemNumber("gold", true) >= gold) {
-                commands.push(App.NewCommand("do", "give " + gold + " gold to ping yizhi;i2"))
+                commands.push(App.NewCommand("do", "give " + gold + " gold_money to ping yizhi;i2"))
             } else {
                 commands.push(App.NewCommand("do", "give 1 cash to ping yizhi;i2"))
             }
