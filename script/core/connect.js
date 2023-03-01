@@ -38,7 +38,7 @@ App.Core.OnMxpCheck=function(name, output, wildcards){
 
 App.RegisterCallback("core.ondisconnected",function(){
     if(App.Data.LoginCallback){
-        Connect()
+        world.DoAfterSpecial(11, 'Connect()', 12);
     }
 })
 App.Bind("Disconnected","core.ondisconnected")
