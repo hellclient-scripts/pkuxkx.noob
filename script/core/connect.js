@@ -1,6 +1,7 @@
 
 (function(App){
 App.Data.LoginCallback=""
+
 App.Core.OnConnectCharset=function(name, output, wildcards){
     App.Send(App.GetParam("charset"))
     let id=world.GetVariable("id").trim()
@@ -35,11 +36,53 @@ App.Core.OnMxpCheck=function(name, output, wildcards){
     }
 }
 
+App.Core.OnReconnect = function () {
+    world.EnableTimer("App.Core.OnReconnect",false)
+    Connect()
+}
+world.EnableTimer("App.Core.OnReconnect",false)
 
 App.RegisterCallback("core.ondisconnected",function(){
     if(App.Data.LoginCallback){
-        world.DoAfterSpecial(11, 'Connect()', 12);
+        world.ResetTimer("App.Core.OnReconnect")
+        world.EnableTimer("App.Core.OnReconnect",true)
+        Note("10秒后重连")
     }
 })
 App.Bind("Disconnected","core.ondisconnected")
+App.Quit=function(){
+    App.Commands([
+        App.NewCommand("asset", "quit"),
+        App.NewCommand("nobusy"),
+        App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+        App.NewCommand("nobusy"),
+        App.NewCommand("do", "quit;quit"),
+    ]).Push()
+    App.Next()
+}
+App.RegisterCallback("core.relogin", function () {
+    Note("恢复连接")
+    App.Commands([
+        App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+        App.NewCommand("nobusy"),
+        App.NewCommand("do", "get all"),
+        App.NewCommand("nobusy"),
+    ]).Push()
+    App.Next()
+})
+App.Relogin = function () {
+    App.Commands([
+        App.NewCommand("asset", "relogin"),
+        App.NewCommand("nobusy"),
+        App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+        App.NewCommand("nobusy"),
+        App.NewCommand("function", function () {
+            App.Core.BindLoginOnce("core.relogin")
+            App.Next()
+        }),
+        App.NewCommand("do", "quit;quit"),
+    ]).Push()
+    App.Next()
+}
+
 })(App)

@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -5551,7 +5551,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 20
   Second = 0.0
@@ -5579,6 +5579,25 @@ Channel = "pkuxkx.noob"
   AtTime = false
   SendTo = 0
   ActionWhenDisconnectd = false
+  Temporary = false
+  OneShot = false
+  Group = ""
+  Variable = ""
+  OmitFromLog = false
+  OmitFromOutput = false
+
+[[Timers]]
+  ID = "d1eibht16nhfdh724oib9p"
+  Name = "App.Core.OnReconnect"
+  Enabled = false
+  Hour = 0
+  Minute = 0
+  Second = 10.0
+  Send = ""
+  Script = "App.Core.OnReconnect"
+  AtTime = false
+  SendTo = 0
+  ActionWhenDisconnectd = true
   Temporary = false
   OneShot = false
   Group = ""
