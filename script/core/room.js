@@ -356,6 +356,8 @@
         App.Data.Room.Looking=false
     })
     App.Bind("core.conscious","core.resetlooking")
+    App.Bind("core.leaveinstance","core.resetlooking")
+    App.Bind("core.enterinstance","core.resetlooking")
     App.Bind("Connected","core.resetlooking")
     App.SetRoomYieldYes = function (data) {
         Note("设置YieldYes:" + data)
@@ -426,6 +428,7 @@
         App.Next()
     }
     App.Core.OnLeaveInstance = function (name, output, wildcards) {
+        App.Raise("core.leaveinstance", output)
         App.RaiseStateEvent("core.leaveinstance", output)
         App.Send("l")
     }
@@ -439,6 +442,7 @@
     }
 
     App.Core.OnEnterInstance = function (name, output, wildcards) {
+        App.Raise("core.enterinstance", output)
         App.RaiseStateEvent("core.enterinstance", output)
         if (App.Core.EnterInstanceCommands[output]) {
             App.Send(App.Core.EnterInstanceCommands[output])

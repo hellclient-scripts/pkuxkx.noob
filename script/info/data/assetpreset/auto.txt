@@ -8,6 +8,7 @@ hole 1,quality 4>#store type=职业
 !hole 2>#sell type=职业
 #keep puti zi,qiannian dan,long dan,nvwa shi,huolong dan
 quit:#sell xuejie dan
+quit:#sell chan
 relogin:#sell xuejie dan
 #sell.5 xuejie dan
 #store type=宝石
