@@ -24,7 +24,9 @@
         App.LoggingState=true
         logData=withdata
     }
-    App.LogState
+    App.ResetState=function(){
+        App.StateContext.State==App.GetState("ready")
+    }
     App.ChangeState=function(id){
         let state=App.GetState(id)
         if (App.LoggingState){

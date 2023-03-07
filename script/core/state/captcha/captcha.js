@@ -15,6 +15,7 @@
             case "zonestart":
             case "zoneend":
             case "tiangan":
+            case "flowers":
             case "exits":
             case "zoneroom":
                 this.Cmd=null

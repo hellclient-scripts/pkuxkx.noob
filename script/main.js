@@ -11,6 +11,7 @@ var onClose = function () {
 
 var onConnected = function () {
     Metronome.Discard(true)
+    App.ResetState()
     App.Raise("Connected")
 }
 

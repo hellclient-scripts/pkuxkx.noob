@@ -32,6 +32,7 @@
             case "zonestart":
             case "zoneend":
             case "tiangan":
+            case "flowers":
             case "exits":
             case "zoneroom":
                 App.API.CaptchaSaveURL(type)
@@ -91,6 +92,9 @@
                 break
             case "tiangan":
                 intro="忽略红色字符，请输入天干地支 甲乙丙丁戊己庚辛壬癸 子丑寅卯辰巳午未申酉戌亥"
+                break
+            case "flowers":
+                intro="忽略红色字符，请输入花名，用空格分隔 月季 牡丹"
                 break
             case "exits":
                 intro="忽略红色字符，请依次输入用|分割的方向，比如 东北|东南|西|便道"
