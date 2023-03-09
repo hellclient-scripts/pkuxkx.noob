@@ -353,6 +353,7 @@
         }
     }
     App.RegisterCallback("core.resetlooking",function(){
+        App.Data.NeedRoomDesc=false
         App.Data.Room.Looking=false
     })
     App.Bind("core.conscious","core.resetlooking")
