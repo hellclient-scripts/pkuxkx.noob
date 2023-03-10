@@ -17,6 +17,7 @@
             case "你的任督二脉未通，先尝试dz吧。":
             case "请参考help，正确设定目标经脉set vein。你必须设定一个目标经脉。vein -h获得帮助。":
             case "过多尝试通脉次数，有害无益。今天就到此为止吧。":
+            case "你现在修行经验不足，无法强行通脉！":
                 App.Quest.Vein.Data.Fail = true
                 break
             default:
