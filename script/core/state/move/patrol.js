@@ -1,6 +1,5 @@
 (function (App) {
     let basicstate = Include("core/state/basicstate.js")
-    let patrol = Include("include/patrol.js")
     let State = function () {
         basicstate.call(this)
         this.ID = "patrol"
@@ -12,7 +11,7 @@
     }
     State.prototype.Start = function () {
         let move = App.GetContext("Move")
-        move.Context = new patrol(move.Target)
+        move.Context = App.NewPatrol(move.Target)
         if (!move.StartCmd) {
             move.StartCmd = "#l"
         }

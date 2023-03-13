@@ -2,6 +2,7 @@
     let Move=Include("include/move.js")
     let Shortcut=Include("include/shortcut.js")
     let Goal=Include("core/goal.js")
+    let patrol = Include("include/patrol.js")
     App.LastMove=null
     App.NewGoal=function(target){
         return new Goal(target)
@@ -102,6 +103,9 @@
             ]).Push()
             App.Next()
         }
+    }
+    App.NewPatrol=function(target){
+        return new patrol(target)
     }
     App.Core.OnResetMoveRetried=function(name, output, wildcards){
         App.Data.Room.MoveRetried=0
