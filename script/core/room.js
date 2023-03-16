@@ -5,6 +5,7 @@
     App.Data.Room = {
         ID: "",
         Name: "",
+        Location:"",
         Tags: "",
         Objs: [],
         LootCmds: {},
@@ -51,6 +52,7 @@
         App.Data.Room = {
             ID: "",
             Name: wildcards[1],
+            Location:wildcards[3],
             Tags: wildcards[5],
             NameDump: SubDumpLine(0, wildcards[1].length),
             Objs: [],

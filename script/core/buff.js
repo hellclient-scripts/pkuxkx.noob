@@ -6,6 +6,17 @@
     App.Core.Buff.On = 3
     App.Core.Buff.ToggleValues = {}
     App.Core.Buff.ToggleCommands = {}
+    App.Core.Buff.Locks = {}
+    App.Core.Buff.LockDuration = 2000
+    App.Core.Buff.Lock = function (name) {
+        App.Core.Buff.Locks[name] = Now()
+    }
+    App.Core.Buff.Unlock = function (name) {
+        delete App.Core.Buff.Locks[name]
+    }
+    App.Core.Buff.IsLocked = function (name) {
+        return App.Core.Buff.Locks[name] && Before(App.Core.Buff.Locks[name], App.Core.Buff.LockDuration)
+    }
     let DefaultCondition = function () {
         return true
     }
@@ -23,30 +34,36 @@
         if (cmd && cmd.Condition()) {
             if (on) {
                 if (App.Core.Buff.ToggleValues[name] == App.Core.Buff.Off) {
-                    App.Send(cmd.CmdOn)
+                    if (!App.Core.Buff.IsLocked(name)) {
+                        App.Core.Buff.Lock(name)
+                        App.Send(cmd.CmdOn)
+                    }
                 }
             } else {
                 if (App.Core.Buff.ToggleValues[name] == App.Core.Buff.On) {
-                    App.Send(cmd.CmdOff)
+                    if (!App.Core.Buff.IsLocked(name)) {
+                        App.Core.Buff.Lock(name)
+                        App.Send(cmd.CmdOff)
+                    }
                 }
             }
         }
     }
     App.Core.Buff.AutoToggle = function () {
         for (var name in App.Core.Buff.ToggleCommands) {
-            if (App.Core.Buff.ToggleCommands[name].Condition() && App.Core.Buff.ToggleCommands[name].Auto!=null) {
-                App.Toggle(name, App.Core.Buff.ToggleCommands[name].Auto==App.Core.Buff.On)
+            if (App.Core.Buff.ToggleCommands[name].Condition() && App.Core.Buff.ToggleCommands[name].Auto != null) {
+                App.Toggle(name, App.Core.Buff.ToggleCommands[name].Auto == App.Core.Buff.On)
             }
         }
         App.Next()
     }
     let needauto = function (name) {
-        if (App.Core.Buff.ToggleCommands[name].Condition()&&App.Core.Buff.ToggleCommands[name].Auto!=null) {
+        if (App.Core.Buff.ToggleCommands[name].Condition() && App.Core.Buff.ToggleCommands[name].Auto != null) {
             switch (App.Core.Buff.ToggleValues[name]) {
                 case App.Core.Buff.On:
-                    return App.Core.Buff.ToggleCommands[name].Auto==App.Core.Buff.Off
+                    return App.Core.Buff.ToggleCommands[name].Auto == App.Core.Buff.Off
                 case App.Core.Buff.Off:
-                    return App.Core.Buff.ToggleCommands[name].Auto==App.Core.Buff.On
+                    return App.Core.Buff.ToggleCommands[name].Auto == App.Core.Buff.On
             }
         }
         return false
@@ -72,13 +89,17 @@
             App.Core.Buff.ToggleValues[data] = App.Core.Buff.Unavailable
         }
     })
+
     App.Core.Buff.OnToggleOn = function (name, output, wildcards) {
+        App.Core.Buff.Unlock(name)
         App.Core.Buff.ToggleValues[name.split(".").slice(-1)] = App.Core.Buff.On
     }
     App.Core.Buff.OnToggleOff = function (name, output, wildcards) {
+        App.Core.Buff.Unlock(name)
         App.Core.Buff.ToggleValues[name.split(".").slice(-1)] = App.Core.Buff.Off
     }
     App.Core.Buff.OnToggleUnavailable = function (name, output, wildcards) {
+        App.Core.Buff.Unlock(name)
         App.Core.Buff.ToggleValues[name.split(".").slice(-1)] = App.Core.Buff.Unavailable
     }
     App.Bind("Response.core.buffcheck", "core.buff.check")

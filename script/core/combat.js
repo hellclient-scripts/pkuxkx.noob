@@ -261,6 +261,7 @@
         }
     }
     App.Core.Combat.Perform = function () {
+        App.Core.Combat.Toggle()
         App.Core.Combat.Performed = false
         let combat = App.Core.Combat.Current
         if (combat) {
