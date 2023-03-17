@@ -61,7 +61,7 @@
             YieldYes: false,
             LootCmds: {},
             ObjEnd: false,
-            迷魂阵: false,
+            Looking: false,
             Online: null,
             OnEvent: null,
             WalkTags: [],
