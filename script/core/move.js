@@ -92,14 +92,24 @@
         App.Fail()
     }
     App.Core.MoveRetry=function(){
+        var snap = App.Core.Snapshot.Take("move.retry")
         let move = App.LastMove
         if (move) {
             App.Commands([
+                App.NewCommand("nobusy"),
                 App.NewCommand("rest"),
+                App.NewCommand("locate",10),
+                App.NewCommand("function",function(){
+                    if (move.FromRoom){
+                        App.NewCommand("to",App.Options.NewWalk(move.FromRoom)).Push()
+                    }
+                    App.Next()
+                }),
                 App.NewCommand("function", function () {
                     App.LastMove=move
-                    move.Retry()
+                    App.Next()
                 }),
+                App.NewCommand("rollback", snap),
             ]).Push()
             App.Next()
         }
@@ -183,7 +193,6 @@
     App.Core.OnMovedAway=function(name, output, wildcards){
         App.Data.Room.ID=""
         App.RaiseStateEvent("move.movedaway")
-
     }
     App.Core.OnMoveRideEnd=function(name, output, wildcards){
         App.Send("#halt")

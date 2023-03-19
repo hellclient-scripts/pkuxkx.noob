@@ -23,12 +23,14 @@
         MoveRetried: 0
     }
     App.Core.RoomDesc = {
-        Mode: 0,//0:地图，1:描述,2:环境,3:雾中,4:对象
+        Mode: 0,//0:地图，1:描述,2:环境,3:雾中,4:对象,5:图像,6:提示
         Desc: "",
         Canlook: "",
         Canget: "",
         Env: "",
         Map: "",
+        Picture:"",
+        Notice:"",
     }
     App.Core.RoomLines = {
         NameLane: null,
@@ -88,6 +90,8 @@
             Canget: "",
             Env: "",
             Map: "",
+            Picture:"",
+            Notice:"",
         }
         App.Core.RoomLines = {
             NameLine: JSON.parse(DumpOutput(1))[0],
@@ -112,12 +116,16 @@
         return true
     }
     let roomreplacre = /[\n\s━┃／＼]+/g
+    let renotice=/^\s+┌─+┐\s*$/
     App.Core.OnRoomPlace = function (name, output, wildcards) {
         let str = [wildcards[0], wildcards[1], wildcards[2].replace(roomreplacre, "")].join(",")
         App.Data.Room.Place = str
         App.Raise("core.room.place")
     }
     App.Core.OnRoomDesc = function (name, output, wildcards) {
+        if (output.startsWith("【闲聊】")){
+            return
+        }
         if (App.Data.Room.Exits != null) {
             return
         }
@@ -170,6 +178,14 @@
                 }
                 App.Core.RoomDesc.Mode = 1
             case 1:
+                if ((line.Words.length==0||line.Words.length==1)&&output.trim()==""){
+                    App.Core.RoomDesc.Mode=5
+                    return
+                }
+                if (output.match(renotice)){
+                    App.Core.RoomDesc.Mode=6
+                    return
+                }
                 App.Core.RoomDesc.Desc += output + "\n"
                 App.Core.RoomLines.DescLines.push(line)
                 break
@@ -179,6 +195,16 @@
                 break
             case 3:
                 App.Data.Room.Exits = []
+                return
+            case 5:
+                App.Core.RoomDesc.Picture += output + "\n"
+                return
+            case 6:
+                if (output.trim()==""){
+                    App.Core.RoomDesc.Mode=5
+                    return
+                }
+                App.Core.RoomDesc.Notice += output + "\n"
                 return
         }
     }

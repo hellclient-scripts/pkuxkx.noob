@@ -16,6 +16,14 @@
         "情毒": { "xuejie": true, "chan": true, "ping": true },
         "火焰刀": {},
     }
+    App.Core.Poison.CurePingFail=function(){
+        let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
+        if (type["chan"] && (App.GetCash() > 10 || App.GetItemByName("朱睛冰蟾", true))) {
+            App.Core.Poison.CureChan()
+            return
+        }
+        App.Core.Poison.CureWait()
+    }
     App.Core.Poison.Cure = function () {
         let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
         if (type["chan"] && !type["ping"] && !type["xuejie"] && (App.GetCash() > 10 || App.GetItemByName("朱睛冰蟾", true))) {
@@ -147,7 +155,7 @@
         App.Commands([
             App.NewCommand("to", App.Options.NewWalk("yzyp")),
             App.NewCommand("nobusy"),
-            App.NewCommand("ask", App.Core.Poison.QuestionCure),
+            App.NewCommand("ask", App.Core.Poison.QuestionCure,"","core.state.ping.pingfail"),
             App.NewCommand("nobusy"),
             App.NewCommand("function", App.Core.Poison.CurePingNext)
         ]).Push()
@@ -178,4 +186,6 @@
         App.Commands(commands).Push()
         App.Next()
     }
+    App.RegisterState(new (Include("core/state/poison/pingfail.js"))())
+
 })(App)
