@@ -175,9 +175,9 @@
         var commands = []
         if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Core.PerJing() > App.Core.PerQixue()) {
-                commands.push(App.NewCommand("do", "yun heal"))
+                commands.push(App.NewCommand("do", "yun heal;hp"))
             } else {
-                commands.push(App.NewCommand("do", "yun inspire"))
+                commands.push(App.NewCommand("do", "yun inspire;hp"))
             }
         } else {
             commands.push(App.NewCommand("do", "dazuo " + App.GetNumberParam("poison_dazuo_num")))

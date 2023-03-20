@@ -66,7 +66,7 @@
                 return
             }
             if (App.Core.PerJing() > App.Core.PerQixue()) {
-                App.Send("do 10 yun heal")
+                App.Send("do 10 yun heal;hp")
             } else {
                 App.Send("yun inspire")
             }
