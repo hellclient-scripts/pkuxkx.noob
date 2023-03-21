@@ -5,18 +5,16 @@
         basicmaze.call(this, param)
         this.ID = "杭州提督府花园"
     }
-    let Trapped = false
     Maze.prototype = Object.create(basicmaze.prototype)
     Maze.prototype.IsEscaped = function (move) {
-        return App.Data.Room.Name != "花园"
-    }
-    let Online = function (line) {
-        if (line == "你一不小心，走进了清兵们设下的陷阱！") {
-            Trapped = true
+        if  (App.Data.Room.Name != "花园"){
+            this.Snap=null
+            return true
         }
+        return false
     }
     Maze.prototype.Next = function () {
-        App.SetRoomOnline(Online)
+        App.SetRoomOnEvent(this.OnRoomEvent)
         App.NeedRoomDesc()
         if (App.Core.Maze.Data.hztdhfy.huacong) {
             App.Go(App.Core.Maze.Data.hztdhfy.huacong)
@@ -43,20 +41,17 @@
         App.Next()
     }
     Maze.prototype.Init = function () {
-        Trapped = false
+        this.Snap=null
         // App.Send("unset brief")
     }
     Maze.prototype.Searching = function () {
-        if (Trapped) {
-            App.Core.MoveRetry()
-            return
-        }
         App.Core.Maze.Data.hztdhfy = {
             huacong: "",
             queue: ["n", "e", "s", "w"],
             safe: [],
         }
-        let snap = App.Core.Snapshot.Take()
+        let self=this
+        this.Snap = App.Core.Snapshot.Take()
         App.Commands([
             App.NewCommand("delay", 1),
             App.NewCommand("function", this.Look),
@@ -76,7 +71,7 @@
             App.NewCommand("function", this.Record),
             App.NewCommand("function", this.Next),
             App.NewCommand("function", function () {
-                App.Core.Snapshot.Rollback(snap)
+                App.Core.Snapshot.Rollback(self.Snap)
             })
         ]).Push()
         App.Next()
@@ -99,6 +94,18 @@
             return
         }
         this.Searching()
+    }
+    Maze.prototype.MovedAway=function(){
+        App.Core.Snapshot.Rollback(this.Snap)
+        App.Core.MoveRetry()
+    }
+    Maze.prototype.OnRoomEvent = function (event, data) {
+        switch (event) {
+            case "move.movedaway":
+                Note("进入陷阱")
+                this.MovedAway()
+                break
+        }
     }
     return Maze
 })(App)

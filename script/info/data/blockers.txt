@@ -30,3 +30,4 @@
 清兵||killall qing bing||100000
 我大蒙古皇帝||killall meng ge||1000000
 猴子||killall lao monkey||1000000
+炼丹人||killall liandan ren||100000

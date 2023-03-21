@@ -95,8 +95,10 @@
         var snap = App.Core.Snapshot.Take("move.retry")
         let move = App.LastMove
         if (move) {
+            let fight = App.Options.NewKill("").WithStrategyList(["counter"])
             App.Commands([
                 App.NewCommand("nobusy"),
+                App.NewCommand("kill",fight),
                 App.NewCommand("rest"),
                 App.NewCommand("locate",10),
                 App.NewCommand("function",function(){
@@ -192,6 +194,8 @@
     }
     App.Core.OnMovedAway=function(name, output, wildcards){
         App.Data.Room.ID=""
+        Note("移动发生意外")
+        App.RaiseRoomEvent("move.movedaway")
         App.RaiseStateEvent("move.movedaway")
     }
     App.Core.OnMoveRideEnd=function(name, output, wildcards){

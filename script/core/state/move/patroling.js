@@ -34,6 +34,7 @@
         switch (event) {
             case "core.conscious":
             case "move.movedaway":
+                Note("进入重试移动流程")
                 App.Core.MoveRetry()
                 return
             case "combat.blockkill":
