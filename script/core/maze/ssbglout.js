@@ -19,6 +19,7 @@
         App.Next()
     }
     Maze.prototype.Explore = function (move) {
+        App.Data.NeedRoomDesc=false
         let snap=App.Core.Snapshot.Take()
         App.Commands([
             App.NewCommand("delay",1),

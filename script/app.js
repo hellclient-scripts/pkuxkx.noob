@@ -148,6 +148,7 @@ Dump = function (data, silence) {
     }
     return output
 }
+ShowJSON=Dump
 Debug = function () {
     Dump(App.Data)
 }

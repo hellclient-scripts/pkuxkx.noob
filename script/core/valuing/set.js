@@ -3,6 +3,7 @@
     let excluded={
         "阿修罗侍者之心":true,
         "阿修罗侍者之眼":true,
+        "垂丝海棠":true
     }
     let sets=[
         "帝释天",

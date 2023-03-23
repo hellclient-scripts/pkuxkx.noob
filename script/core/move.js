@@ -205,6 +205,12 @@
         App.Raise("Waiting")
     })
     App.RegisterAlias("sail","core.move.sail")
+    App.RegisterCallback("core.move.huilu",function(next){
+        App.Send("give 20 silver to yu zu;give 1 gold to yu zu")
+        world.DoAfterSpecial(2, 'App.Go("'+next+'")', 12);
+    })
+    App.RegisterAlias("huilu","core.move.huilu")
+    
     App.ToShort=function(raw,silence){
         let cmds=raw.split(";")
         let result=[]
