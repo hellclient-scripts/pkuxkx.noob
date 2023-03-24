@@ -3799,6 +3799,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1ejomuufacpap73ppbkfj"
+  Name = "App.Core.OnZhangsan"
+  Enabled = true
+  Match = "^如果你愿意和对方进行比试，请你也对张 三\\(zhang san\\)下一次"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnZhangsan"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -5352,7 +5383,7 @@ Channel = "pkuxkx.noob"
   ID = "room_obj"
   Name = "room_obj"
   Enabled = false
-  Match = "^    (\\S[^()]{0,40}\\S)(\\s.+\\s){0,1}\\(([A-Z][a-zA-Z0-9 ']+)\\)(\\s*((\\<.*\\>\\s*)*))(\\s*\\[任务发放\\]\\s(◆)+){0,1}$"
+  Match = "^    (\\S[^()]{0,40}\\S)(\\s.+\\s){0,1}\\(([A-Z][a-zA-Z0-9 ']+)\\)(\\s*((\\<.*\\>\\s*)*))(\\s*\\[(.*)\\]\\s*(◆)*){0,1}$"
   Send = ""
   ColourChangeType = 0
   Colour = 0

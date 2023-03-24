@@ -39,6 +39,11 @@
             App.Core.HUD.RenderQuestLine(App.Core.HUD.QuestLength - 2)
         }
     }
+    App.RegisterCallback("App.Core.HUD.ZhangSan", function (data) {
+        let output=App.Data.Room.Name+"["+App.Data.Room.ID+"] "+data
+        App.Core.HUD.SetNote(output)
+    })
+    App.Bind("core.zhangsan", "App.Core.HUD.ZhangSan")
     App.RegisterCallback("App.Core.HUD.SetQuest", function (data) {
         App.Core.HUD.SetQuset(data)
     })
@@ -283,10 +288,14 @@
         List.append("combatmode", "改变战斗模式")
         List.publish("App.Core.HUD.ChangeMode")
     })
+    App.Core.HUD.SetNote=function(data){
+        App.SetVariable("HUDNote", data)
+        App.Core.HUD.RenderQuestLine(6)
+
+    }
     App.Core.HUD.OnNote = function (name, id, code, data) {
         if (code == 0 && data) {
-            App.SetVariable("HUDNote", data)
-            App.Core.HUD.RenderQuestLine(6)
+            App.Core.HUD.SetNote(data)
         }
     }
     App.Core.HUD.ShowChatLog = function () {

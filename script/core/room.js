@@ -256,7 +256,7 @@
             world.EnableTriggerGroup("roomexit", false)
             world.EnableTriggerGroup("roomobjend", true)
         }
-        var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4],ProvideQuest:wildcards[6]!=""}
+        var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4],Comment:wildcards[7]}
         obj.Last = wildcards[0].split(relast).slice(-1)[0]
         obj.LastDump = SubDumpLine(4 + wildcards[0].length - obj.Last.length, 4 + wildcards[0].length)
         App.Data.Room.Objs.push(obj)
@@ -481,4 +481,8 @@
         }
 
     }
+    App.Core.OnZhangsan = function (name, output, wildcards) {
+        App.Raise("core.zhangsan", output)
+    }
+
 })(App)
