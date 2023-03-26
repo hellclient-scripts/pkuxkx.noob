@@ -69,6 +69,10 @@
         App.Data.Score["lx"] = wildcards[2] - 0
         App.Data.Score["ds"] = wildcards[3]
     }
+    App.Core.OnPlayerScoreLevel = function (name, output, wildcards) {
+        App.Data.Score["level"] = wildcards[0] - 0
+        App.Data.Score["levelmax"] = wildcards[1] - 0
+    }
     App.Core.OnPlayerScore4 = function (name, output, wildcards) {
         App.Data.Score["country"] = wildcards[0]
         App.Data.Score["gender"] = wildcards[1]
@@ -113,6 +117,7 @@
     App.Core.OnPlayerScoreEnd = function (name, output, wildcards) {
         world.EnableTriggerGroup("playerscore", false)
     }
+    world.EnableTriggerGroup("playerscore", false)
     App.RegisterCallback("core.player.inittags", function () {
         Mapper.settag(App.Data.Score["family"], true)
         Mapper.settag(App.Data.Score["gender"], true)
