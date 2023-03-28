@@ -15,6 +15,7 @@
         "神驼",
         "垂丝海棠",
         "剑歌",
+        "南海鳄神"
     ]
     let Set=function(){
         this.ID="set"
