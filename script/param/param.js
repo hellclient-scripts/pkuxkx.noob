@@ -2,9 +2,9 @@
     world.Note("加载系统参数");
     App.Params={
         "tick":"650",
-        "cmdlimit":"10",
+        "cmdlimit":"8",
         "cmdinterval":"50",
-        "eatinterval":"10",
+        "eatinterval":"10000",
         "food":"gan liang",
         "food_min":"10",
         "food_max":"30",
@@ -23,8 +23,8 @@
         "checkjifainterval":"60000",
         "checkspecialinterval":"60000",
         "checkskillsinterval":"60000",
-        "checkiteminterval":"10000",
-        "checklupidaiinterval":"10000",
+        "checkiteminterval":"30000",
+        "checklupidaiinterval":"30000",
         "checkavatarinterval":"60000",
         "checkdurabilityinterval":"60000",
         "checkguinterval":"10000",

@@ -13,7 +13,7 @@
         let move = App.GetContext("Move")
         move.Context = App.NewPatrol(move.Target)
         if (!move.StartCmd) {
-            move.StartCmd = "#l"
+            move.StartCmd = "#"
         }
         this.Patroling()
     }

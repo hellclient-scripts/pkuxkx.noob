@@ -20,23 +20,19 @@
                 world.DoAfterSpecial(1, 'App.Core.CheckBusy()', 12);
                 break
             case "nobusy":
+                App.Eat(true)
+                App.Eat(true)
                 switch (this.Current) {
                     case "e":
                         if (this.Mode == 0) {
-                            App.Eat()
-                            App.Eat()
                             App.Go("e")
                             this.Mode = 1
                         } else {
-                            App.Eat()
-                            App.Eat()
                             App.Go("s")
                             this.Mode = 0
                         }
                         break
                     default:
-                        App.Eat()
-                        App.Eat()
                         App.Go("w")
                         break
                 }

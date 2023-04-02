@@ -11,16 +11,19 @@
     App.EatCmd=function(){
         return "eat "+App.GetFood().Alias+";drink "+App.GetDrink().Alias
     }
-    App.Eat=function(){
-        App.Data.LastEat=Now()
-        App.Send(App.EatCmd())
-        App.Send(App.EatCmd())
-        App.Send(App.EatCmd())
+    App.Eat=function(force){
+        checkFood.Execute(force)
+        // App.Data.LastEat=Now()
+        // App.Send(App.EatCmd())
+        // App.Send(App.EatCmd())
+        // App.Send(App.EatCmd())
     }
     App.Bind("Check","core.food.eat")
     let checkFood=(new check("food")).WithLevel(App.CheckLevelBrief).WithIntervalParam("eatinterval").WithLastID("LastEat")
     checkFood.Send=function(){
-        App.Eat()
+        App.Send(App.EatCmd())
+        App.Send(App.EatCmd())
+        App.Send(App.EatCmd())
     }
     App.RegisterCallback("core.food.eat",checkFood.Callback())
     })(App)

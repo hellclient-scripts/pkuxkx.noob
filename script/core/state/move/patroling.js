@@ -13,8 +13,13 @@
         Move.prototype.Enter.call(this, context, newstatue)
         let move = App.GetContext("Move")
         if (move.StartCmd) {
-            App.Send(move.StartCmd)
-            move.StartCmd = ""
+            if (move.StartCmd == "#") {
+                move.StartCmd = ""
+                App.RaiseStateEvent("move.onRoomObjEnd")
+            } else {
+                App.Send(move.StartCmd)
+                move.StartCmd = ""
+            }
             return
         }
         this.Move()
@@ -40,7 +45,7 @@
             case "combat.blockkill":
                 var snap = App.Core.Snapshot.Take("move.retry")
                 App.Commands([
-                    App.NewCommand("kill",App.Options.NewKill(data.Cmd).WithStrategyList(["blocker"])),
+                    App.NewCommand("kill", App.Options.NewKill(data.Cmd).WithStrategyList(["blocker"])),
                     App.NewCommand("rest"),
                     App.NewCommand("rollback", snap),
                 ]).Push()

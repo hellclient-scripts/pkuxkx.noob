@@ -30,7 +30,7 @@
             Enabled: wildcards[0] == "*",
             Label: wildcards[1],
             ID: wildcards[2],
-            Level: wildcards[3] - 0,
+            Level: wildcards[3]?wildcards[3].length:0,
 
         }
         App.Data.Special[special.ID] = special

@@ -10,6 +10,9 @@
             this.Steps[this.Steps.length - 1].SetTarget(target)
         }
     }
+    Path.prototype.Pop = function () {
+        return this.Steps.pop()
+    }
     Path.prototype.Push = function (command, target) {
         this.PushStep(new Step(command, target))
     }

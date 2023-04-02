@@ -17,7 +17,7 @@
         for (var i = 0; i < App.Data.Items.length; i++) {
             let itemname = CNumber.Split(App.Data.Items[i].Name).Item
             let s = App.Info.Sell[itemname]
-            if (s != null && !App.Core.NoSell[App.Data.Items[i].ID.toLowerCase()]) {
+            if (s != null && !App.Core.NoSell[App.Data.Items[i].ID.toLowerCase()] && App.Data.Items[i].ID.toLowerCase()==s.ID.toLowerCase()) {
                 App.Core.Sell.ToSell = s
                 return true
             }

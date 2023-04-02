@@ -41,7 +41,7 @@
             App.Send("eat xuejie dan;i2")
         }
         App.Core.Combat.Perform()
-        if (App.Core.Combat.Enemies.CheckNeedLook(10)) {
+        if (App.Core.Combat.Enemies.CheckNeedLook(20)) {
             App.Look()
         }
         let msg = []
