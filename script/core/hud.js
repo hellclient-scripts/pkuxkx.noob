@@ -40,7 +40,7 @@
         }
     }
     App.RegisterCallback("App.Core.HUD.ZhangSan", function (data) {
-        let output=App.Data.Room.Name+"["+App.Data.Room.ID+"] "+data
+        let output = App.Data.Room.Name + "[" + App.Data.Room.ID + "] " + data
         App.Core.HUD.SetNote(output)
     })
     App.Bind("core.zhangsan", "App.Core.HUD.ZhangSan")
@@ -113,27 +113,27 @@
             }
         }
     }
-    App.Core.HUD.UpdateStatus=function(){
+    App.Core.HUD.UpdateStatus = function () {
         let line = JSON.parse(NewLine())
         let word = JSON.parse(NewWord("Fullme剩余 "))
         word.Bold = true
         word.Color = "White"
         line.Words.push(word)
         word = JSON.parse(NewWord(""))
-        let now=Now()
-        if (App.Data.LastFullmeSuccess>0){
-            let left=Math.floor((App.Data.LastFullmeSuccess+3600000-now)/60000)
-            if (left<0){
-                word.Text="已过期"
-                word.Color="Red"
-            }else{
-                word.Text=left+"分钟"
-                word.Color=left<20?"Yellow":"Green"
+        let now = Now()
+        if (App.Data.LastFullmeSuccess > 0) {
+            let left = Math.floor((App.Data.LastFullmeSuccess + 3600000 - now) / 60000)
+            if (left < 0) {
+                word.Text = "已过期"
+                word.Color = "Red"
+            } else {
+                word.Text = left + "分钟"
+                word.Color = left < 20 ? "Yellow" : "Green"
             }
-            word.Bold=true
-        }else{
-            word.Text="-"
-            word.Color="white"
+            word.Bold = true
+        } else {
+            word.Text = "-"
+            word.Color = "white"
         }
         line.Words.push(word)
         word = JSON.parse(NewWord(" 下次Fullme "))
@@ -141,35 +141,43 @@
         word.Color = "White"
         line.Words.push(word)
         word = JSON.parse(NewWord(""))
-        if (App.Data.LastFullme>0){
-            let left=Math.floor((App.Data.LastFullme+900000-now)/60000)
-            if (left<0){
-                word.Text="随时"
-                word.Color="Green"
-            }else{
-                word.Text=left+"分钟"
-                word.Color="Yellow"
+        if (App.Data.LastFullme > 0) {
+            let left = Math.floor((App.Data.LastFullme + 900000 - now) / 60000)
+            if (left < 0) {
+                word.Text = "随时"
+                word.Color = "Green"
+            } else {
+                word.Text = left + "分钟"
+                word.Color = "Yellow"
             }
-            word.Bold=true
-        }else{
-            word.Text="-"
-            word.Color="white"
+            word.Bold = true
+        } else {
+            word.Text = "-"
+            word.Color = "white"
         }
         line.Words.push(word)
-        if (App.Data.Afk){
+        if (App.Data.Afk) {
             word = JSON.parse(NewWord(""))
-            word.Text=" "
+            word.Text = " "
             line.Words.push(word)
             word = JSON.parse(NewWord(""))
-            word.Text="暂离"
-            word.Color="White"
-            word.Background="Red"
+            word.Text = "暂离"
+            word.Color = "White"
+            word.Background = "Red"
             line.Words.push(word)
         }
-        UpdateHUD(GetHUDSize()-1, JSON.stringify([line]))
+        word = JSON.parse(NewWord(" 水温 "))
+        line.Words.push(word)
+        word = JSON.parse(NewWord(""))
+        word.Text = "" + App.Core.Overheat.Value
+        word.Bold = true
+        word.Color = App.Core.Overheat.IsOverThreshold() ? "Red" : "Green"
+        line.Words.push(word)
+        UpdateHUD(GetHUDSize() - 1, JSON.stringify([line]))
     }
-    App.RegisterCallback("core.hud.Update",App.Core.HUD.UpdateStatus)
-    App.Bind("HUDUpdate","core.hud.Update")
+    App.RegisterCallback("core.hud.Update", App.Core.HUD.UpdateStatus)
+    App.Bind("HUDUpdate", "core.hud.Update")
+    App.Bind("core.overheat.updated", "core.hud.Update")
 
     App.Core.HUD.UpdateTitle = function () {
         let line = JSON.parse(NewLine())
@@ -184,6 +192,10 @@
         word.Color = "Bright-Green"
         line.Words.push(word)
         word = JSON.parse(NewWord(App.Core.CombatMode.Current().ID + " "))
+        word.Color = "Bright-Green"
+        line.Words.push(word)
+
+        word = JSON.parse(NewWord(App.Core.OverheatMode.Current().ID + " "))
         word.Color = "Bright-Green"
         line.Words.push(word)
         UpdateHUD(0, JSON.stringify([line]))
@@ -222,15 +234,15 @@
         App.Core.HUD.UpdateStatus()
     }
     App.Core.HUD.InitHUD()
-    var blockedchannels={
-        "任务":true,
-        "本地":true,
-        "江湖":true,
-        "区域":true,
-        "求助":true,
+    var blockedchannels = {
+        "任务": true,
+        "本地": true,
+        "江湖": true,
+        "区域": true,
+        "求助": true,
     }
     App.Core.HUD.OnChat = function (name, output, wildcards) {
-        if (blockedchannels[wildcards[0]]){
+        if (blockedchannels[wildcards[0]]) {
             return
         }
         App.Core.HUD.ChatHistory = App.Core.HUD.ChatHistory.concat(JSON.parse(DumpOutput(1)))
@@ -286,9 +298,10 @@
         List.append("note", "记录Note")
         List.append("shoppingmode", "改变消费模式")
         List.append("combatmode", "改变战斗模式")
+        List.append("overheatmode", "改变过热模式")
         List.publish("App.Core.HUD.ChangeMode")
     })
-    App.Core.HUD.SetNote=function(data){
+    App.Core.HUD.SetNote = function (data) {
         App.SetVariable("HUDNote", data)
         App.Core.HUD.RenderQuestLine(6)
 
@@ -329,6 +342,9 @@
                 case "shoppingmode":
                     App.Core.HUD.PickShoppingMode()
                     break
+                case "overheatmode":
+                    App.Core.HUD.PickOverheatMode()
+                    break
                 case "chat":
                 case "quest":
                 case "simple":
@@ -352,7 +368,7 @@
         list.append("核心弟子", "核心弟子：会接危险战斗任务，Wimpy30,有强力技能组合后选这个")
         list.publish("App.Core.HUD.OnCombatMode")
     }
-    if (world.GetVariable("combat_mode")==""){
+    if (world.GetVariable("combat_mode") == "") {
         Userinput.Popup("App.Core.HUD.PickCombatMode", "战斗模式", "你还没有选择您的战斗模式，点击HUD面板进行选择")
     }
     App.Core.HUD.PickShoppingMode = function () {
@@ -363,9 +379,17 @@
         list.append("土豪阶级", "土豪阶级：默认gold_min为100,较近的地方也会坐车")
         list.publish("App.Core.HUD.OnShoppingMode")
     }
-    if (world.GetVariable("shopping_mode")==""){
+    if (world.GetVariable("shopping_mode") == "") {
         Userinput.Popup("App.Core.HUD.PickShoppingMode", "消费模式", "你还没有选择您的消费模式，点击HUD面板进行选择")
     }
+    App.Core.HUD.PickOverheatMode = function () {
+        var list = Userinput.newlist("请选择你要设置过热模式", "过热模式决定了高强度运行后怎么对行为进行限制")
+        list.append("死宅男", "死宅男：过热时会休息30秒，不会进入高速移动")
+        list.append("体校生", "体校生:过热不会休息，但也不会进入高速移动")
+        list.append("磕药的", "磕药的：无视过热")
+        list.publish("App.Core.HUD.OnOverheatMode")
+    }
+
     App.Core.HUD.OnCombatMode = function (name, id, code, data) {
         if (code == 0 && data) {
             App.SetVariable("combat_mode", data)
@@ -378,4 +402,11 @@
             App.Core.HUD.UpdateTitle()
         }
     }
+    App.Core.HUD.OnOverheatMode = function (name, id, code, data) {
+        if (code == 0 && data) {
+            App.SetVariable("overheat_mode", data)
+            App.Core.HUD.UpdateTitle()
+        }
+    }
+
 })(App)

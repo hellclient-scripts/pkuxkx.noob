@@ -62,7 +62,7 @@
                         var times=directive-0
                         if (times>0){
                             for(var t=0;t<times;t++){
-                                App.Raise("Send",buf)
+                                App.Raise("Send",[data])
                                 Metronome.push([data], true, echo)
                             }
                             continue

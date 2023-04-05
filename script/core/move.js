@@ -54,7 +54,7 @@
     })
 
     App.Core.GetMovePerHalfSecond=function(){
-        if (App.Data.HP.eff_jingli>200&&(App.Data.HP.eff_jingli>(App.Data.HP.jingli*0.8))){
+        if (!App.Core.OverheatMode.Current().MoveLimited() && App.Data.HP.eff_jingli>200&&(App.Data.HP.eff_jingli>(App.Data.HP.jingli*0.8))){
             if (App.Data.HP.eff_jingli>(App.Data.HP.jingli)&&App.Data.HP.eff_jingli>4000){
                 return 8
             }
