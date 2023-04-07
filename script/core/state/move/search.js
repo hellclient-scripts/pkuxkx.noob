@@ -15,7 +15,7 @@
         let dfs=new DFS((move.Target-0)+1)
 
         move.Context=dfs.New()
-        // move.StartCmd="unset brief;#l"
+        move.StartCmd="unset brief;#l"
         move.StartCmd="#l"
         this.Searching()
     }

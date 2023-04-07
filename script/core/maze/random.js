@@ -36,7 +36,7 @@
     Maze.prototype.Explore=function(move){
         if (this.Command==null){
                 this.Start=App.Info.RoomFull()
-                // App.Send("unset brief")
+                App.Send("unset brief")
                 this.Command=(new DFS(this.MaxDepth,Backward)).New()
                 let entrycmd=this.EntryCmd()
                 if (typeof(entrycmd)=="string"){
@@ -93,6 +93,11 @@
                 break
         }
         return false
+    }
+    Maze.prototype.Leave=function(){
+        App.Send("set brief 3")
+        basicmaze.prototype.Leave.call(this)
+
     }
     Maze.prototype.Init=function(){
         App.Data.Room.ID=""

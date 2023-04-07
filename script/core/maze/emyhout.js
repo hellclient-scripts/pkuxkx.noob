@@ -18,7 +18,12 @@
     }
     Maze.prototype.Init=function(){
         App.NeedRoomDesc()
-        // App.Send("unset brief")
+        App.Send("unset brief")
+    }
+    Maze.prototype.Leave=function(){
+        App.Send("set brief 3")
+        basicmaze.prototype.Leave.call(this)
+
     }
     return Maze
 

@@ -10,9 +10,13 @@
         move.StartCmd="#l"
         move.StateOnStep = "finding"
         let data = move.Data
+        if (data && data.NeedRoomDesc){
+            move.StartCmd="unset brief;#l"
+        }
         if (data && data.State) {
             move.StateOnStep = data.State
         }
+        
         patrol.prototype.Enter.call(this, context, oldstatue)
     }
     return State

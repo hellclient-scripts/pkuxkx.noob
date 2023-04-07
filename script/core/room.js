@@ -228,6 +228,8 @@
                 }
             })
         })
+        //能看到exit说明有描述了。
+        App.Data.NeedRoomDesc=false
         if (wildcards[1]) {
             var exits = wildcards[1].match(exitsre).sort()
             App.Data.Room.Exits = exits

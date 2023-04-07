@@ -27,6 +27,7 @@
             Key: keyword ? keyword : "",
             Vehicle:null,
             State:"",
+            NeedRoomDesc:false,
         }
     }
     App.Core.Traversal.LastMove=null
@@ -168,6 +169,9 @@
         }
         if (App.Data.Traversal.State){
             g.State=App.Data.Traversal.State
+        }
+        if (App.Data.Traversal.NeedRoomDesc){
+            g.NeedRoomDesc=true
         }
         App.Data.Traversal.Goal = g
         return g

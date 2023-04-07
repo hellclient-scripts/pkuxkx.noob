@@ -36,3 +36,4 @@ chan||chan||Chan||朱睛冰蟾||goods||yzdp||buy im_11680
 xuejie dan||xuejie dan||Xuejie dan||牛黃血竭丹||goods||yzyp||buy xuejie dan
 tie bishou||tie bishou||Tie bishou||铁匕首||goods||yz-dtp||buy tie bishou
 hua chan||hua chan||Hua chan|||花铲||goods||yz-zhp||buy hua chan
+蒙面头巾||mask||Mask|||蒙面头巾||goods||yz-zqg||buy mask

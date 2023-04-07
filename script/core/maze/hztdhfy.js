@@ -42,7 +42,12 @@
     }
     Maze.prototype.Init = function () {
         this.Snap=null
-        // App.Send("unset brief")
+        App.Send("unset brief")
+    }
+    Maze.prototype.Leave=function(){
+        App.Send("set brief 3")
+        basicmaze.prototype.Leave.call(this)
+
     }
     Maze.prototype.Searching = function () {
         App.Core.Maze.Data.hztdhfy = {
