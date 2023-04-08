@@ -111,8 +111,10 @@
         App.Quest.GetGem.Compress.Data.Max = ""
         App.Quest.GetGem.Compress.Data.Target = ""
         App.Quest.GetGem.Compress.Data.Level = ""
+        let compressloc="jxj"
         App.Commands([
             App.NewCommand('prepare', App.PrapareFull),
+            App.NewCommand("to", App.Options.NewWalk(compressloc)),
             App.NewCommand("state", "core.state.quest.getgem.compressgem"),
             App.NewCommand("function", function () {
                 if (App.Quest.GetGem.Compress.Data.Target) {

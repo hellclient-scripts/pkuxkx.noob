@@ -48,17 +48,19 @@
         App.Next()
     }
     App.Quest.CombineGem.Check = function () {
+        let packloc="jxj"
+        let combineloc="jxj"
         if (App.Quest.CombineGem.Data.Todo.length == 0) {
             Note("合成宝石结束,收起所有宝石,进入冷却1秒")
             App.Core.Quest.Cooldown("combinegem",1000)
-            let packloc=App.GetSafeRoom()
-            if (App.Info.HomeRooms[packloc]){
-                packloc="yz-sczh"
-            }
+            // let packloc=App.GetSafeRoom()
+            // if (App.Info.HomeRooms[packloc]){
+            //     packloc="yz-sczh"
+            // }
             App.Commands([
                 App.NewCommand("to", App.Options.NewWalk(packloc)),
                 App.NewCommand("function",App.PackGem),
-                App.NewCommand("to", App.Options.NewWalk(App.GetSafeRoom())),
+                App.NewCommand("to", App.Options.NewWalk(combineloc)),
             ]).Push()
             App.Next()
             return
@@ -67,7 +69,7 @@
             App.NewCommand('prepare', App.PrapareFullExcept(["asset"])),
             App.NewCommand("neili", 1000),
             App.NewCommand("nobusy"),
-            App.NewCommand("to", App.Options.NewWalk(App.GetSafeRoom())),
+            App.NewCommand("to", App.Options.NewWalk(combineloc)),
             App.NewCommand("nobusy"),
             App.NewCommand("do","i gem"),
             App.NewCommand("nobusy"),
