@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -3861,6 +3861,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1el2lc09l45545jcu7c"
+  Name = "App.Core.Death.OnChoose"
+  Enabled = true
+  Match = "^阳寿未尽之人可以.+还阳。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.Death.OnChoose"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -6132,7 +6163,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "repair_list"
   Desc = "维修列表"
-  Intro = "需要维修的装备的列表，回车一行一个，暂时只支持系统道具在发呆室修理\n\n如\n\nxuantie sword\nwushi dao\n\n"
+  Intro = "需要维修的装备的列表，回车一行一个，暂时只支持系统道具在发呆室修理\n\n如\n\nxuantie sword\nwushi dao\n\n如果需要修理随机武器，需要指定#repair 指令\n\n比如\n\n#repair my sword\n#repair my sword 2\nwushi dao\n\n"
 
 [[RequiredParams]]
   Name = "sorcery"
@@ -6158,6 +6189,7 @@ Channel = "pkuxkx.noob"
   Name = "combat_mode"
   Desc = " 战斗模式"
   Intro = "手工设置容易出错，请通过帮助按钮设置"
+
 [[RequiredParams]]
   Name = "overheat_mode"
   Desc = "过热模式"

@@ -481,6 +481,7 @@
         if (App.Core.EnterInstanceCommands[output]) {
             App.Send(App.Core.EnterInstanceCommands[output])
         }
+        App.Core.SendConnectCommand()
 
     }
     App.Core.OnZhangsan = function (name, output, wildcards) {

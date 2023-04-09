@@ -70,15 +70,17 @@
         App.Core.Weapon.LastDurabilityMax = wildcards[1] - 0
     }
     App.RegisterCallback("core.weapon.durabilityend", function (data) {
+        let param=data.split("#")
+        Note("武器 "+param[1]+" 耐久度 "+(App.Core.Weapon.LastDurabilityMax>0?App.Core.Weapon.LastDurability:"未知"))
         if (App.Core.Weapon.LastDurabilityMax > 0 && App.Core.Weapon.LastDurability < App.GetNumberParam("repair_below")) {
             App.Core.Weapon.ToRepair = data
         }
     })
-    App.Core.Weapon.Check = function (id) {
+    App.Core.Weapon.Check = function (type,id) {
         App.Core.Weapon.LastDurability = 0
         App.Core.Weapon.LastDurabilityMax = 0
         App.Send("l " + id)
-        App.Response("wepon", "durability", id)
+        App.Response("wepon", "durability", type+"#"+id)
     }
     App.Core.Weapon.CheckRandom = function () {
         let repair_list = GetVariable("repair_list").trim()
@@ -87,23 +89,67 @@
             App.Core.Weapon.Check(RandomList(list))
         }
     }
+    App.Core.Weapon.LoadRepairList=function(){
+        return App.Core.Weapon.LoadActions(world.GetVariable("repair_list").trim())
+    }
+    App.Core.Weapon.CheckAll = function () {
+        let repair_list = App.Core.Weapon.LoadRepairList()
+        if (repair_list.length) {
+            for (var i=0;i<repair_list.length;i++){
+                let action=repair_list[i]
+                switch (action.Command){
+                    case "":
+                    case "#fix":
+                        Note("检查普通武器 "+ action.Data)
+                        App.Core.Weapon.Check("fix",action.Data)
+                        break
+                    case "#repair":
+                        Note("检查绑定武器 "+ action.Data)
+                        App.Core.Weapon.Check("repair",action.Data)
+                    break
+                    default:
+                        Note("未知的修理格式 "+action.Line)
+                }
+            }
+        }
+    }
     App.Bind("Response.wepon.durability", "core.weapon.durabilityend")
     App.Core.Weapon.Repair = function () {
         if (App.Core.Weapon.ToRepair != "") {
-            App.Commands([
-                App.NewCommand("to", App.Options.NewWalk("yz-fds")),
-                App.NewCommand("do", "fix " + App.Core.Weapon.ToRepair),
-                App.NewCommand("nobusy"),
-                App.NewCommand("function", function () {
-                    App.Core.Weapon.ToRepair = ""
-                    App.Next()
-                })
-            ]).Push()
+            let param=App.Core.Weapon.ToRepair.split("#")
+            switch (param[0]){
+                case "fix":
+                    App.Commands([
+                        App.NewCommand("to", App.Options.NewWalk("yz-fds")),
+                        App.NewCommand("do", "fix " + param[1]),
+                        App.NewCommand("function", function () {
+                            App.Core.Weapon.ToRepair = ""
+                            App.Core.Weapon.CheckAll()
+                            App.Next()
+                        }),
+                        App.NewCommand("nobusy"),
+                    ]).Push()
+                    break
+                    case "repair":
+                        App.Commands([
+                            App.NewCommand("to", App.Options.NewWalk("luoyang-dtp")),
+                            App.NewCommand("do", "fix " + param[1]),
+                            App.NewCommand("function", function () {
+                                App.Core.Weapon.ToRepair = ""
+                                App.Core.Weapon.CheckAll()
+                                App.Next()
+                            }),
+                            App.NewCommand("nobusy"),
+                        ]).Push()
+                        break
+                default:
+                    throw "未知的修理指令"+App.Core.Weapon.ToRepair
+            }
         }
         App.Next()
     }
     App.Bind("Check", "core.weapon.durability")
-    let checkDurability = (new check("durability")).WithLevel(App.CheckLevelFull).WithCommand(App.Core.Weapon.CheckRandom).WithIntervalParam("checkdurabilityinterval").WithLastID("LastDurability")
+    let checkDurability = (new check("durability")).WithLevel(App.CheckLevelFull).WithCommand(App.Core.Weapon.CheckAll).WithIntervalParam("checkdurabilityinterval").WithLastID("LastDurability")
     App.RegisterCallback("core.weapon.durability", checkDurability.Callback())
 
 }(App))
