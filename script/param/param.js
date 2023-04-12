@@ -31,7 +31,7 @@
         "checkguinterval":"10000",
         "charset":"2",
         "echo":"t",
-        "repair_below":"30",
+        "repair_below":"50",
         "questsdelay":"1",
         "queuedelay":"1",
         "sleepdelay":"10500",

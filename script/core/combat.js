@@ -155,7 +155,7 @@
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_neili"]  >= (data - 0)
+        return App.Data.HP["eff_neili"] >= (data - 0)
     }
     App.Core.Combat.Conditions["perqixue"] = function (data) {
         if (App.Data.HP["qixue"] = 0) {
@@ -177,8 +177,11 @@
                 break
             case "#perform":
                 if (!App.Core.Combat.Performed) {
-                    App.Core.Combat.Performed = App.Core.Perform.Execute(action.Data,App.Core.Combat.Current.Target)
+                    App.Core.Combat.Performed = App.Core.Perform.Execute(action.Data, App.Core.Combat.Current.Target)
                 }
+                break
+            case "#use":
+                App.Core.Weapon.ActionUse(action)
                 break
         }
     }
@@ -303,6 +306,8 @@
             }
             if (combat.Disarmed) {
                 App.Core.Weapon.Wield()
+            } else {
+                App.Core.Weapon.OnCombat()
             }
             if (combat.Yield) {
                 return

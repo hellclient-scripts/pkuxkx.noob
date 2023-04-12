@@ -32,7 +32,7 @@
                         }
                     }
                 }
-                if (p.Type == "lingwu") {
+                if (p.Type == "lingwu"||p.Type == "lingwu2") {
                     let high = App.Core.PlayerGetSkillByID(p.Target)
                     if (high != null) {
                         if (Math.floor(skill.Level) > Math.floor(high.Level)) {
@@ -60,8 +60,8 @@
                 case "xiulian":
                     location = App.GetSleepRooms()
                     break
-                case "lingwu":
-                    location = App.GetSleepRooms()
+                case "lingwu2":
+                case "lingwu": location = App.GetSleepRooms()
                     break
                 default:
                     throw "学习[" + type + "]位置不可为空"
@@ -89,6 +89,9 @@
                 break
             case "lingwu":
                 cmd = "lingwu " + study.Skill + " 100"
+                break
+            case "lingwu2":
+                cmd = "lingwu " + study.Skill
                 break
             case "read":
                 cmd = "du " + study.Target + " for 50"

@@ -15,36 +15,36 @@
                 case 0:
                     cd = pfm.Cooldown
                 default:
-                    let next=Now()+cd*1000
+                    let next = Now() + cd * 1000
                     App.Core.Perform.Cooldown[id] = next
-                    Note("绝招["+id+"]进入"+cd+"秒冷却")
+                    Note("绝招[" + id + "]进入" + cd + "秒冷却")
                     if (pfm.Group) {
                         App.Core.Perform.Cooldown[pfm.Group] = next
-                        Note("绝招组["+pfm.Group+"]进入"+cd+"秒冷却")
+                        Note("绝招组[" + pfm.Group + "]进入" + cd + "秒冷却")
                     }
                     break
             }
         }
     }
-    App.Core.Perform.Execute=function(id,target){
-        let pfm=App.Core.Perform.All[id]
-        if (!pfm){
-            Note("绝招["+id+"]未找到")
+    App.Core.Perform.Execute = function (id, target) {
+        let pfm = App.Core.Perform.All[id]
+        if (!pfm) {
+            Note("绝招[" + id + "]未找到")
             return false
         }
-        let cd=App.Core.Perform.Cooldown[id]||0
-        let gcd=pfm.Group?App.Core.Perform.Cooldown[pfm.Group]:0
-        if (!gcd){
-            gcd=0
+        let cd = App.Core.Perform.Cooldown[id] || 0
+        let gcd = pfm.Group ? App.Core.Perform.Cooldown[pfm.Group] : 0
+        if (!gcd) {
+            gcd = 0
         }
-        if (cd<gcd){
-            cd=gcd
+        if (cd < gcd) {
+            cd = gcd
         }
-        if (Now()<=cd){
-            Note("绝招["+id+"]冷却中")
+        if (Now() <= cd) {
+            Note("绝招[" + id + "]冷却中")
             return false
         }
-        Note("使用绝招["+id+"]")
+        Note("使用绝招[" + id + "]")
         pfm.Execute(target)
         return true
     }
@@ -117,6 +117,10 @@
                         perform.AddCommand(action.Data, true)
                         Note("绝招ID[" + id + "]添加带目标指令 " + action.Data)
                         continue
+                    case "use":
+                        perform.AddUse(action.Data, param[1])
+                        Note("绝招ID[" + id + "]添加高兵指令，将 " + action.Data + " 作为 " + param[1] + " 使用")
+                        break
                     case "trigger":
                         let tricd = 0
                         if (param.length > 1) {

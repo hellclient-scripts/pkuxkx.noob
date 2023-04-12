@@ -199,6 +199,7 @@
                 Detail:result[6],
             }
             App.Data.ItemList.Items.push(item)
+            App.Raise("core.onitemlist",item)
         }else{
             world.EnableTriggerGroup("itemlist",false)        
         }
