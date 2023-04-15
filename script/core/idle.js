@@ -4,7 +4,7 @@
         if (GetVariable("no_keep_idle").trim()){
             return
         }
-        App.Send("idle")
+        App.Send("put undeaded in he;put undeaded in he;")
     }
     EnableTimer("keepidle",true)
     App.RegisterCallback("app.core.idle.onsend",function(){

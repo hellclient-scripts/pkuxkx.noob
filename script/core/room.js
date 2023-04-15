@@ -357,6 +357,7 @@
     }
 
     App.Core.OnRoom.NPCDie = function (name) {
+        Note("Npc "+name+" 死亡。")
         let data = App.Data.Room.Died[name]
         if (data == null) {
             data = 0
@@ -474,8 +475,13 @@
         App.Data.Room.Looking=false
         App.RaiseStateEvent("core.blind", output)
     }
-
+    App.Core.CurrentInstance=""
     App.Core.OnEnterInstance = function (name, output, wildcards) {
+        App.Core.CurrentInstance=output
+        world.DoAfterSpecial(2, 'App.Core.OnEnterInstanceExecute()', 12);
+    }
+    App.Core.OnEnterInstanceExecute=function(){
+        let output=App.Core.CurrentInstance
         App.Raise("core.enterinstance", output)
         App.RaiseStateEvent("core.enterinstance", output)
         if (App.Core.EnterInstanceCommands[output]) {

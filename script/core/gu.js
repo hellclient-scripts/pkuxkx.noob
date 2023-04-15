@@ -9,19 +9,19 @@
         }
         return ""
     }
-    App.Core.Gu.Count=0
+    App.Core.Gu.Count = 0
     App.Core.Gu.List = []
     App.Core.Gu.Reset = function (name, output, wildcards) {
-        App.Core.Gu.Count=0
-        if (App.Data.ItemList.ID=="undeaded"){
-            App.Core.Gu.Count=App.Data.ItemList.Items.length
+        App.Core.Gu.Count = 0
+        if (App.Data.ItemList.ID == "undeaded") {
+            App.Core.Gu.Count = App.Data.ItemList.Items.length
         }
         App.Core.Gu.List = []
     }
-    App.Core.Gu.Put=function(){
-        let offset=App.Core.Gu.Count-App.Core.Gu.List.length
-        for (var i=0;i<offset;i++){
-            App.Send("put undeaded in "+App.Core.Gu.Guhe())
+    App.Core.Gu.Put = function () {
+        let offset = App.Core.Gu.Count - App.Core.Gu.List.length
+        for (var i = 0; i < offset; i++) {
+            App.Send("put undeaded in " + App.Core.Gu.Guhe())
         }
     }
     App.Core.Gu.OnItem = function (name, output, wildcards) {
@@ -43,13 +43,15 @@
         let he = App.Core.Gu.Guhe()
         if (he) {
             let list = App.Core.Gu.GetFeedList()
-            for (var i = 0; i < list.length; i++) {
-                App.Send("so feed " + list[i])
+            if (!App.Core.Gu.FeedRoom || App.Core.Gu.FeedRoom == App.Data.Room.ID) {
+                for (var i = 0; i < list.length; i++) {
+                    App.Send("so feed " + list[i])
+                }
             }
             App.Send("i undeaded;lookin " + he)
         }
     }
-    App.Core.Gu.Lookin=function(){
+    App.Core.Gu.Lookin = function () {
         let he = App.Core.Gu.Guhe()
         if (he) {
             App.Send("i undeaded;lookin " + he)
@@ -87,6 +89,7 @@
         }
         return Object.keys(result)
     }
+    App.Core.Gu.FeedRoom = ""
     App.Core.Gu.LoadActions = function (data) {
         let lines = data.split("\n")
         let result = []
@@ -94,6 +97,11 @@
             let line = lines[i].trim()
             if (line) {
                 let action = new Action(line)
+                switch (action.Command) {
+                    case "#feedroom":
+                        App.Core.Gu.FeedRoom = action.Data
+                        break
+                }
                 result.push(action)
             }
         }

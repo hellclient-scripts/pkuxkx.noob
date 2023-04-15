@@ -131,5 +131,7 @@
     App.RegisterQuest(new (Include("core/quest/getgem.js"))())
     App.RegisterQuest(new (Include("core/quest/compressgem.js"))())
     App.RegisterQuest(new (Include("core/quest/changespecial.js"))())
+    App.RegisterQuest(new (Include("core/quest/standby.js"))())
+    App.RegisterQuest(new (Include("core/quest/idle.js"))())
 
 })(App)
