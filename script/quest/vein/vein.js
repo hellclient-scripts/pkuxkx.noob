@@ -18,6 +18,7 @@ App.Quest.Vein.Start=function(cmd){
     ]
     if (App.Data.Score["family"] == "五毒教"&&App.Data.HP["neili"]<10000){
         cmds.push(App.NewCommand("function",Wudu))
+        cmds.push(App.NewCommand("neili",2000))
     }else{
         cmds.push(App.NewCommand("neili",20000))
     }

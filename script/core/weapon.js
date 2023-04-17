@@ -104,7 +104,7 @@
                         Note("检查绑定武器 " + action.Data)
                         App.Core.Weapon.Check("repair", action.Data)
                         break
-                    case "#norepiir":
+                    case "#norepair":
                         break
                     default:
                         Note("未知的修理格式 " + action.Line)

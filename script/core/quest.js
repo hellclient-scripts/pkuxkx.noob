@@ -6,6 +6,16 @@
     App.Core.Quest.Queue = []
     App.Core.Quest.Remain = []
     App.Core.Quest.Pending = ""
+    App.Core.Quest.Online = null
+    App.Core.Quest.SetOnline = function (cb) {
+        App.Core.Quest.Online = cb
+    }
+    App.RegisterCallback("core.quest.online", function (data) {
+        if (App.Core.Quest.Online) {
+            App.Core.Quest.Online(data)
+        }
+    })
+    App.Bind("core.online", "core.quest.online")
     App.RegisterQuest = function (quest) {
         let id = quest.ID
         if (!id) {
@@ -43,6 +53,7 @@
             }
         }
         App.Stopped = false
+        App.Core.Quest.SetOnline(null)
         quest.Start(param)
     }
     App.Core.Quest.SetQuests = function (queue) {

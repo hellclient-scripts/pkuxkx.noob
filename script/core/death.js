@@ -33,16 +33,17 @@
         }
         Note("意外死亡。")
         App.Automaton.Flush()
-        Note("退出")
-        App.Send("quit;quit")
+        // Note("退出")
+        // App.Send("quit;quit")
     }
     App.Core.Death.OnChoose = function () {
         if (App.Core.Death.OnReborn) {
             Note("有准备的死亡，继续执行。")
             App.Send("enter")
         }else{
-            Note("退出")
-            App.Send("quit;quit")
+            Note("意外死亡。")
+            Disconnect()
+            // App.Send("quit;quit")
         }
     }
 })(App)

@@ -44,8 +44,10 @@
         if (he) {
             let list = App.Core.Gu.GetFeedList()
             if (!App.Core.Gu.FeedRoom || App.Core.Gu.FeedRoom == App.Data.Room.ID) {
-                for (var i = 0; i < list.length; i++) {
-                    App.Send("so feed " + list[i])
+                if (App.Core.Gu.NoFeedRoom == "" || App.Core.Gu.NoFeedRoom !== App.Data.Room.ID) {
+                    for (var i = 0; i < list.length; i++) {
+                        App.Send("so feed " + list[i])
+                    }
                 }
             }
             App.Send("i undeaded;lookin " + he)
@@ -90,6 +92,7 @@
         return Object.keys(result)
     }
     App.Core.Gu.FeedRoom = ""
+    App.Core.Gu.NoFeedRoom = ""
     App.Core.Gu.LoadActions = function (data) {
         let lines = data.split("\n")
         let result = []
@@ -101,6 +104,10 @@
                     case "#feedroom":
                         App.Core.Gu.FeedRoom = action.Data
                         break
+                    case "#nofeedroom":
+                        App.Core.Gu.NoFeedRoom = action.Data
+                        break
+
                 }
                 result.push(action)
             }

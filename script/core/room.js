@@ -423,6 +423,7 @@
         if (App.Data.Room.Online) {
             App.Data.Room.Online(output)
         }
+        App.Raise("core.online",output)
     }
     App.RegisterCallback("core.room.alias.onask", function (data) {
         App.SetRoomOnAsk(data)

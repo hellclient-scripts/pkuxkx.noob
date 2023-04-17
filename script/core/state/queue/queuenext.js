@@ -6,6 +6,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter = function (context, oldstatue) {
+        App.Core.Quest.SetOnline(null)
         basicstate.prototype.Enter.call(this, context, oldstatue)
         let queue = App.GetContext("Queue")
         if (App.Stopped || queue.Remain.length === 0) {
