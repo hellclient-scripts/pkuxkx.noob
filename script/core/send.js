@@ -21,6 +21,9 @@
             App.Send(data)
         }
     })
+    App.SetBeats=function(){
+        Metronome.setbeats(App.GetNumberParam("cmdlimit"))
+    }
     //发送命令
     App.Send=function(str,grouped){
         if (!str){
@@ -29,7 +32,7 @@
         if (grouped){
             str=App.GroupCmds(str)
         }
-        Metronome.setbeats(App.GetNumberParam("cmdlimit"))
+        App.SetBeats()
         var echo=App.GetBoolParam("echo")
         //本组命令
         var buf=[]

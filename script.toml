@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -5599,7 +5599,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 0
   Second = 20.0
@@ -5675,7 +5675,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 20
   Second = 0.0
@@ -6118,7 +6118,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "study"
   Desc = "学习列表"
-  Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数1\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\ntaiji-shengong::xiulian::home::force\nfocre::lingwu::bangpai-lgf::taiji-shengong::9999::::::10\ntiyunzong::lian::::dodge\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
+  Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1::每次次数1::循环次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数2::每次次数2::循环次数2\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\ntaiji-shengong::xiulian::home::force\nfocre::lingwu::bangpai-lgf::taiji-shengong::9999::::::10\ntiyunzong::lian::::dodge\ndodge::lingwu::bangpai-lgf::tiyunzong::9999::::::10::200\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
 
 [[RequiredParams]]
   Name = "queue"

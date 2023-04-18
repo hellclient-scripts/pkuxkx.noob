@@ -19,12 +19,15 @@
         }
         App.Core.Gu.List = []
     }
-    App.Core.Gu.Put = function () {
+    App.Core.Gu.Put = function (check) {
         let offset = App.Core.Gu.Count - App.Core.Gu.List.length
         if (offset) {
             App.Send("shougu from "+world.GetVariable("id").trim())
             for (var i = 0; i < offset; i++) {
                 App.Send("put undeaded in " + App.Core.Gu.Guhe())
+            }
+            if (check){
+                App.Send("i undeaded;lookin " + he)
             }
         }
     }
@@ -107,21 +110,34 @@
         }
         return Object.keys(result)
     }
-    App.Core.Gu.Yonggu = function () {
+    App.Core.Gu.Env={}
+    App.Core.Gu.Yonggu = function (env) {
         let he = App.Core.Gu.Guhe()
         if (he) {
+            if (env){
+                App.Core.Gu.Env=env
+            }else{
+                App.Core.Gu.Env={}
+            }
             for (var i = 0; i < App.Core.Gu.YongguList.length; i++) {
                 if (App.Core.Gu.GetJingXue(App.Core.Gu.YongguList[i].ID) >= MinJingXue) {
-                    App.Send("yonggu " + App.Core.Gu.YongguList[i].ID)
+                    if (App.Core.Gu.CheckConditions(App.Core.Gu.YongguList[i].Action.Conditions)){
+                        App.Send("yonggu " + App.Core.Gu.YongguList[i].ID)
+                    }
                 }
             }
             App.Send("i undeaded;lookin " + he)
         }
     }
     App.RegisterCallback("core.gu.oncombatready",function(){
-        App.Core.Gu.Yonggu()
+        App.Core.Gu.Yonggu({"type":"combat"})
     })
     App.Bind("combat.ready","core.gu.oncombatready")
+    App.RegisterCallback("core.gu.onmanual",function(data){
+        App.Core.Gu.Put(true)
+    })
+    App.Bind("manual","core.gu.onmanual")
+
     App.Core.Gu.NeedYonggu = function () {
         if (Now() - App.Core.Gu.LastIn > MaxYongGu) {
             return false
@@ -129,6 +145,7 @@
         if (App.Core.Gu.YongguList.length && App.Data.HP["per_qixue"] < 149) {
             return true
         }
+        return false
     }
     App.Core.Gu.GetJingXue = function (id) {
         for (var k = 0; k < App.Core.Gu.List.length; k++) {
@@ -158,7 +175,7 @@
                         App.Core.Gu.NoFeedRoom = action.Data
                         break
                     case "#yonggu":
-                        App.Core.Gu.YongguList.push({ "ID": action.Data })
+                        App.Core.Gu.YongguList.push({ "ID": action.Data,"Action":action})
                         break
                 }
                 result.push(action)
@@ -172,6 +189,46 @@
             checkGu.ResetCooldown()
         }
     }
+    App.Core.Gu.CheckConditions = function (conditions) {
+        for (var i = 0; i < conditions.length; i++) {
+            let condition = conditions[i]
+            let checker = App.Core.Gu.Conditions[condition.Type]
+            if (checker == null) {
+                return false
+            }
+            if (checker(condition.Data) == condition.Exclude) {
+                return false
+            }
+        }
+        return true
+    }
+    App.Core.Gu.Conditions={}
+    App.Core.Gu.Conditions["fullmeok"] = function (data) {
+        let p=data -0
+        if (p==NaN){
+            p=0
+        }
+        return Before(App.Data.LastFullmeSuccess+60*60*1000-p*60*1000)
+    }
+    App.Core.Gu.Conditions["combat"] = function (data) {
+        if (App.Core.Gu.Env.type !="combat"){
+            return false
+        }
+        if (!App.Core.Combat.Current){
+            return false
+        }
+        if (data){
+            let strategies=data.split(",")
+            for (var i=0;i<strategies.length;i++){
+                if (App.Core.Combat.Current.Strategy==strategies[i]){
+                    return true
+                }
+            }
+            return false
+        }
+        return true
+    }
+
     App.RegisterCallback("core.gu.feed", App.Core.Gu.Feed)
     App.Bind("move.beforeonstep", "core.gu.feed")
     App.Bind("core.looping", "core.gu.feed")

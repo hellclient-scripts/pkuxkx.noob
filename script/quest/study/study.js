@@ -32,7 +32,7 @@
                         }
                     }
                 }
-                if (p.Type == "lingwu"||p.Type == "lingwu2") {
+                if (p.Type == "lingwu" || p.Type == "lingwu2") {
                     let high = App.Core.PlayerGetSkillByID(p.Target)
                     if (high != null) {
                         if (Math.floor(skill.Level) > Math.floor(high.Level)) {
@@ -85,16 +85,16 @@
                 cmd = App.Quest.Study.Xue()
                 break
             case "lian":
-                cmd = "lian " + study.Target + " 50"
+                cmd = "lian " + study.Target + " " + (study.Per ? study.Per : "50")
                 break
             case "lingwu":
-                cmd = "lingwu " + study.Skill + " 100"
+                cmd = "lingwu " + study.Skill + " " + (study.Per ? study.Per : "100")
                 break
             case "lingwu2":
                 cmd = "lingwu " + study.Skill
                 break
             case "read":
-                cmd = "du " + study.Target + " for 50"
+                cmd = "du " + study.Target + " for " + (study.Per ? study.Per : "50")
                 break
             case "cmd":
                 cmd = study.Target
@@ -105,19 +105,26 @@
             default:
                 throw "学习方式[" + study.Type + "]未知"
         }
-        let cmds = []
-        for (var i = 0; i < study.Times; i++) {
-            cmds.push(cmd)
-        }
         let commands = []
-        if (App.Quest.Study.Current.Before) {
-            commands.push(App.NewCommand("do", App.Quest.Study.Current.Before),
-            )
+        for (var loop = 0; loop < study.Loop; loop++) {
+            let cmds = []
+            for (var i = 0; i < study.Times; i++) {
+                cmds.push(cmd)
+            }
+            if (App.Quest.Study.Current.Before) {
+                commands.push(App.NewCommand("do", App.Quest.Study.Current.Before),
+                )
+            }
+            commands.push(App.NewCommand("do", cmds.join(";")))
+            if (!study.Loop > 1) {
+                commands.push(App.NewCommand("nobusy"))
+            }
         }
-        commands.push(App.NewCommand("do", cmds.join(";")))
-        commands.push(App.NewCommand("nobusy"))
         if (App.Quest.Study.Current.After) {
             commands.push(App.NewCommand("do", App.Quest.Study.Current.After))
+        }
+        if (study.Loop > 1) {
+            commands.push(App.NewCommand("nobusy"))
         }
         App.Commands(commands).Push()
         App.Raise("core.looping")

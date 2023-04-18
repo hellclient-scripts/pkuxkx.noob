@@ -60,9 +60,9 @@
     }
     App.Quest.ChangeSpecial.Change = function () {
         App.Commands([
-            App.NewCommand("asset", "relogin"),
-            App.NewCommand("nobusy"),
-            App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+            // App.NewCommand("asset", "relogin"),
+            // App.NewCommand("nobusy"),
+            // App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
             App.NewCommand("nobusy"),
             App.NewCommand("function", function () {
                 App.Core.BindLoginOnce("quest.changespecial.login")
@@ -92,10 +92,10 @@
     }
     App.RegisterCallback("quest.changespecial.login", function () {
         App.Commands([
-            App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
-            App.NewCommand("nobusy"),
-            App.NewCommand("do", "get all"),
-            App.NewCommand("nobusy"),
+            // App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+            // App.NewCommand("nobusy"),
+            // App.NewCommand("do", "get all"),
+            // App.NewCommand("nobusy"),
             App.NewCommand("function",App.Quest.ChangeSpecial.Login),
             App.NewCommand("nobusy"),
         ]).Push()
