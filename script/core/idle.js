@@ -4,6 +4,7 @@
         if (GetVariable("no_keep_idle").trim()){
             return
         }
+        App.Send("shougu from "+world.GetVariable("id").trim())
         App.Send("put undeaded in he;put undeaded in he;")
     }
     EnableTimer("keepidle",true)

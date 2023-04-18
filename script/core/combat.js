@@ -230,6 +230,7 @@
     App.Core.Combat.Ready = function (target) {
         let combat = App.Core.Combat.Current
         if (combat) {
+            App.Raise("combat.ready")
             for (var i = 0; i < combat.Actions.length; i++) {
                 App.Core.Combat.ExecReady(combat.Actions[i])
             }

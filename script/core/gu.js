@@ -1,7 +1,8 @@
 (function (App) {
     let check = Include("core/check/check.js")
     let Action = Include("include/action.js")
-
+    const MinJingXue = 75
+    const MaxYongGu = 5 * 60 * 1000
     App.Core.Gu = {}
     App.Core.Gu.Guhe = function () {
         if (App.GetItemByName("如意盒")) {
@@ -20,8 +21,11 @@
     }
     App.Core.Gu.Put = function () {
         let offset = App.Core.Gu.Count - App.Core.Gu.List.length
-        for (var i = 0; i < offset; i++) {
-            App.Send("put undeaded in " + App.Core.Gu.Guhe())
+        if (offset) {
+            App.Send("shougu from "+world.GetVariable("id").trim())
+            for (var i = 0; i < offset; i++) {
+                App.Send("put undeaded in " + App.Core.Gu.Guhe())
+            }
         }
     }
     App.Core.Gu.OnItem = function (name, output, wildcards) {
@@ -39,17 +43,29 @@
         App.Core.Gu.Count++
         App.Core.Gu.List.push(item)
     }
+    App.Core.Gu.LastIn = 0
     App.Core.Gu.CheckGu = function () {
         let he = App.Core.Gu.Guhe()
         if (he) {
+            if (!App.Core.Gu.NeedYonggu()) {
+                if ((App.Core.Gu.Count - App.Core.Gu.List.length) && !App.Core.Gu.NeedYonggu()) {
+                    App.Core.Gu.Put()
+                }
+            } else {
+                App.Core.Gu.Yonggu()
+                return
+            }
             let list = App.Core.Gu.GetFeedList()
-            if (!App.Core.Gu.FeedRoom || App.Core.Gu.FeedRoom == App.Data.Room.ID) {
-                if (App.Core.Gu.NoFeedRoom == "" || App.Core.Gu.NoFeedRoom !== App.Data.Room.ID) {
-                    for (var i = 0; i < list.length; i++) {
-                        App.Send("so feed " + list[i])
+            if (!App.Core.Gu.NeedYonggu()) {
+                if (!App.Core.Gu.FeedRoom || App.Core.Gu.FeedRoom == App.Data.Room.ID) {
+                    if (App.Core.Gu.NoFeedRoom == "" || App.Core.Gu.NoFeedRoom !== App.Data.Room.ID) {
+                        for (var i = 0; i < list.length; i++) {
+                            App.Send("so feed " + list[i])
+                        }
                     }
                 }
             }
+            App.Core.Gu.LastIn = Now()
             App.Send("i undeaded;lookin " + he)
         }
     }
@@ -91,11 +107,45 @@
         }
         return Object.keys(result)
     }
+    App.Core.Gu.Yonggu = function () {
+        let he = App.Core.Gu.Guhe()
+        if (he) {
+            for (var i = 0; i < App.Core.Gu.YongguList.length; i++) {
+                if (App.Core.Gu.GetJingXue(App.Core.Gu.YongguList[i].ID) >= MinJingXue) {
+                    App.Send("yonggu " + App.Core.Gu.YongguList[i].ID)
+                }
+            }
+            App.Send("i undeaded;lookin " + he)
+        }
+    }
+    App.RegisterCallback("core.gu.oncombatready",function(){
+        App.Core.Gu.Yonggu()
+    })
+    App.Bind("combat.ready","core.gu.oncombatready")
+    App.Core.Gu.NeedYonggu = function () {
+        if (Now() - App.Core.Gu.LastIn > MaxYongGu) {
+            return false
+        }
+        if (App.Core.Gu.YongguList.length && App.Data.HP["per_qixue"] < 149) {
+            return true
+        }
+    }
+    App.Core.Gu.GetJingXue = function (id) {
+        for (var k = 0; k < App.Core.Gu.List.length; k++) {
+            let gu = App.Core.Gu.List[k]
+            if (gu.Index == id || gu.Alias == id) {
+                return gu.JingXue
+            }
+        }
+        return 0
+    }
+    App.Core.Gu.YongguList = []
     App.Core.Gu.FeedRoom = ""
     App.Core.Gu.NoFeedRoom = ""
     App.Core.Gu.LoadActions = function (data) {
         let lines = data.split("\n")
         let result = []
+        App.Core.Gu.YongguList = []
         for (var i = 0; i < lines.length; i++) {
             let line = lines[i].trim()
             if (line) {
@@ -107,7 +157,9 @@
                     case "#nofeedroom":
                         App.Core.Gu.NoFeedRoom = action.Data
                         break
-
+                    case "#yonggu":
+                        App.Core.Gu.YongguList.push({ "ID": action.Data })
+                        break
                 }
                 result.push(action)
             }
