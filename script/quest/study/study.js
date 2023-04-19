@@ -1,7 +1,7 @@
 (function (App) {
     let study = Include("include/study.js")
     App.Quest.Study = {}
-    App.Quest.Study.PerLoop = 10
+    App.Quest.Study.PerLoop = 1
     App.Quest.Study.Index = 0
     App.Quest.Study.Plan = []
     App.Quest.Study.Current = null
@@ -144,6 +144,18 @@
             App.NewCommand('do', "skills"),
             App.NewCommand('function', function () {
                 App.Quest.Study.Exec(cmd)
+            }),
+        ]).Push()
+        App.Next()
+    }
+    App.Quest.Study.Start2 = function () {
+        App.Quest.Study.Pause = false
+        App.Quest.Study.Index = 0
+        App.Commands([
+            App.NewCommand('prepare', App.PrapareFull),
+            App.NewCommand('do', "skills"),
+            App.NewCommand('function', function () {
+                App.Quest.Study.Exec(world.GetVariable("study2").replace(re, ","))
             }),
         ]).Push()
         App.Next()

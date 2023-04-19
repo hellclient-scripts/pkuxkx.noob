@@ -1,6 +1,6 @@
 (function () {
     let Enemies = function () {
-        this.IDConverters=[]
+        this.IDConverters = []
         this.Reset()
     }
     Enemies.prototype.Reset = function () {
@@ -121,8 +121,8 @@
                 return
             }
         }
-        for (var i=0;i<this.IDConverters.length;i++){
-            id=this.IDConverters[i](key,id)
+        for (var i = 0; i < this.IDConverters.length; i++) {
+            id = this.IDConverters[i](key, id)
         }
         Note("发现敌人:" + id)
         this.IDList.push({
@@ -141,5 +141,4 @@
         }
     }
     return Enemies
-
 })()

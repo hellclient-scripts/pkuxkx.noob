@@ -237,7 +237,7 @@ Channel = "pkuxkx.noob"
   ID = "busy_end"
   Name = "busy_end"
   Enabled = true
-  Match = "^(> )*(你不忙)$"
+  Match = "^[> ]*(你不忙)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1663,7 +1663,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvavetdmpgs861fbjp0"
   Name = "App.Core.OnBusy"
   Enabled = true
-  Match = "^(> )*(你正忙)$"
+  Match = "^[> ]*(你正忙)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -3892,6 +3892,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1elq3ktk86uq571sd5acg"
+  Name = "App.OnRoomLookFail"
+  Enabled = true
+  Match = "^风景要慢慢的看。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.OnRoomLookFail"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -5599,7 +5630,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "busy_retry"
   Name = "busy_retry"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 0
   Second = 20.0
@@ -6119,6 +6150,11 @@ Channel = "pkuxkx.noob"
   Name = "study"
   Desc = "学习列表"
   Intro = "回车或逗号分割的学习列表，格式为 \n技能1::学习类型1::位置1::对象1::最大等级1::开始前指令1::结束后指令1::连续次数1::每次次数1::循环次数1\n技能2::学习指令2::位置2::对象2::最大等级2::开始前指令2::结束后指令2::连续次数2::每次次数2::循环次数2\n\n如\n\ntaiji-shengong::xue::wd-sqd::song yuanqiao::::::::5\ntaiji-shengong::xiulian::home::force\nfocre::lingwu::bangpai-lgf::taiji-shengong::9999::::::10\ntiyunzong::lian::::dodge\ndodge::lingwu::bangpai-lgf::tiyunzong::9999::::::10::200\ntaoiom::read::::jing\ntaiji-sword::lian::::sword::::wield sword::unwield sword\ntaiji-quan::lian::::cuff::::unwield sword\nparry::cmd::qhmz::read shediao 5"
+
+[[RequiredParams]]
+  Name = "study2"
+  Desc = "备用学习列表"
+  Intro = "通过#quests study2执行"
 
 [[RequiredParams]]
   Name = "queue"

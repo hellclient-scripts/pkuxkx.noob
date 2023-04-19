@@ -20,8 +20,11 @@
         "sociability": NotNeedUse,
         "spirituality": NeedUse,
     }
-
+    
     App.Quest.ChangeSpecial = {}
+    App.Quest.ChangeSpecial.Commands={
+        "jxj":App.NewCommand("move", App.Options.NewPath("leave "+world.GetVariable("id").trim()+"&&"+"leave "+world.GetVariable("id").trim())),
+    }
     App.Quest.ChangeSpecial.Data = {}
     App.Quest.ChangeSpecial.Start = function (params) {
         let data = params.split(",")
@@ -63,6 +66,14 @@
             // App.NewCommand("asset", "relogin"),
             // App.NewCommand("nobusy"),
             // App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function", function () {
+                let cmd=App.Quest.ChangeSpecial.Commands[App.Data.Room.ID]
+                if (cmd){
+                    cmd.Push()
+                }
+                App.Next()
+            }),
             App.NewCommand("nobusy"),
             App.NewCommand("function", function () {
                 App.Core.BindLoginOnce("quest.changespecial.login")

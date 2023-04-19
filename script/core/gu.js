@@ -27,6 +27,7 @@
                 App.Send("put undeaded in " + App.Core.Gu.Guhe())
             }
             if (check){
+                let he = App.Core.Gu.Guhe()
                 App.Send("i undeaded;lookin " + he)
             }
         }

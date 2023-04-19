@@ -386,6 +386,16 @@
             App.Send("l")
         }
     }
+    App.LookAgain=function(){
+        if (App.Data.Room.Looking) {
+            App.Send("l")
+        }
+    }
+    App.OnRoomLookFail=function(name,output,wildcards){
+        if (App.Data.Room.Looking) {
+            world.DoAfterSpecial(1, 'App.LookAgain()', 12);
+        }
+    }
     App.RegisterCallback("core.resetlooking",function(){
         App.Data.NeedRoomDesc=false
         App.Data.Room.Looking=false
