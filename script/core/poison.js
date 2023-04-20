@@ -39,7 +39,7 @@
     App.Core.Poison.GetCurrent = function () {
         for (var i in App.Core.Poison.Poisons) {
             if (App.Data.HP.status[i]) {
-                if (App.Data.HP.status[i].Exclude && App.Data.HP.status[i].Exclude()) {
+                if (App.Core.Poison.Poisons[i].Exclude && App.Core.Poison.Poisons[i].Exclude()) {
                     continue
                 }
                 return i
