@@ -17,7 +17,8 @@
     App.Info.LocateExits = {
         "树枝上": ["climb down"],
         "树干上": ["climb down"],
-        "树顶": ["climb down"]
+        "树顶": ["climb down"],
+        "马车":["xia"],
     }
     App.Info.DefaultHomeLocation = "yz-sczh"
     App.Info.LoadSleepRooms = function () {

@@ -6204,7 +6204,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "sorcery"
   Desc = "蛊"
-  Intro = "针对蛊的设置"
+  Intro = "针对蛊的设置,一行一条设置。\n\n单独数字为喂养低于这个等级的蛊。#feedroom和#nofeedroom指定喂蛊和不喂蛊的房间。#yonggu可以指定气血不满150%或战斗时使用的蛊。条件combat和fullmeok可以用来指定战斗用蛊和Fullme(任务)状态用蛊。\n\n9\n#feedroom home\n#nofeedroom jxj\n#yonggu 虫一\ncombat<#yonggu 虫二\ncombat>#yonggu 虫三\nfullmeok>#yonggu 虫四\n"
 
 [[RequiredParams]]
   Name = "food_max"

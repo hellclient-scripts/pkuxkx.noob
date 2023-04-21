@@ -91,7 +91,7 @@
         let actions = App.Core.Gu.LoadActions(GetVariable("sorcery"))
         for (var i = 0; i < actions.length; i++) {
             let action = actions[i]
-            if (action.Command == "" || action.Command == "feed") {
+            if (action.Command == "" || action.Command == "#feed") {
                 let data = SplitN(action.Data.trim(), " ", 2)
                 for (var k = 0; k < App.Core.Gu.List.length; k++) {
                     let gu = App.Core.Gu.List[k]

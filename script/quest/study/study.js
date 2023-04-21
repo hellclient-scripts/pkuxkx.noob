@@ -116,7 +116,7 @@
                 )
             }
             commands.push(App.NewCommand("do", cmds.join(";")))
-            if (!study.Loop > 1) {
+            if (!(study.Loop > 1)) {
                 commands.push(App.NewCommand("nobusy"))
             }
         }
