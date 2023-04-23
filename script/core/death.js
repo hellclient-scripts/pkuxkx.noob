@@ -25,7 +25,6 @@
     App.Core.Death.Reborn = function () {
         App.Raise("reborn")
         if (App.Core.Death.OnReborn) {
-            App.Send("yun recover;yun regenerate")
             Note("有准备的死亡，继续执行。")
             let cb = App.Core.Death.OnReborn
             App.Core.Death.OnReborn = null
