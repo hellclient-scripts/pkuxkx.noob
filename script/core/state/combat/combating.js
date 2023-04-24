@@ -36,7 +36,7 @@
     }
 
     State.prototype.Tick = function () {
-        App.Core.Combat.Current.Target=App.Core.Combat.Enemies.Get()
+        App.Core.Combat.Current.Target = App.Core.Combat.Enemies.Get()
         if (App.Core.Poison.NeedXuejie() && App.GetItemNumber("xuejie dan", true)) {
             App.Send("eat xuejie dan;i2")
         }
@@ -47,7 +47,7 @@
         let msg = []
         msg.push("当前策略[" + App.Core.Combat.Current.Strategy + "]")
         msg.push("气势[" + App.Data.Qishi + "]")
-        msg.push("首选目标["+App.Core.Combat.Current.Target+"]")
+        msg.push("首选目标[" + App.Core.Combat.Current.Target + "]")
         msg.push(Math.floor(App.Core.Combat.Current.Duration()) + "秒")
         Note(msg.join(","))
         let list = App.Core.Combat.Enemies.ListTags(3)
@@ -61,19 +61,24 @@
     State.prototype.OnGMCPFighting = function (datalist) {
         for (var i = 0; i < datalist.length; i++) {
             let data = datalist[i]
-            if (data["enemy_out"]) {
-                Note("Npc" + data.name + "[" + data.id + "]脱离战斗")
-                App.Core.Combat.Enemies.RemoveID(data.id, data.id.split("#")[0])
-                return
-            }
             if (data["enemy_in"]) {
-                Note("Npc" + data.name + "[" + data.id + "]加入战斗")
-                App.Core.Combat.Enemies.InsertID(data.id, data.id.split("#")[0])
-                return
+                App.RaiseStateEvent("combat.fighting")
             }
-            if (data["id"]) {
-                App.Core.Combat.Enemies.InsertID(data.id, data.id.split("#")[0])
-                return
+            if (data.id) {
+                if (data["enemy_out"]) {
+                    Note("Npc" + data.name + "[" + data.id + "]脱离战斗")
+                    App.Core.Combat.Enemies.RemoveID(data.id, data.id.split("#")[0])
+                    return
+                }
+                if (data["enemy_in"]) {
+                    Note("Npc" + data.name + "[" + data.id + "]加入战斗")
+                    App.Core.Combat.Enemies.InsertID(data.id, data.id.split("#")[0])
+                    return
+                }
+                if (data["id"]) {
+                    App.Core.Combat.Enemies.InsertID(data.id, data.id.split("#")[0])
+                    return
+                }
             }
         }
     }

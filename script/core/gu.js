@@ -131,6 +131,7 @@
         }
     }
     App.RegisterCallback("core.gu.oncombatready",function(){
+        App.Core.Gu.LoadActions(GetVariable("sorcery"))
         App.Core.Gu.Yonggu({"type":"combat"})
     })
     App.Bind("combat.ready","core.gu.oncombatready")
