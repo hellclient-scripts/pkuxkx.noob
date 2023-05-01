@@ -8,6 +8,8 @@
         App.Core.Sleep.Last=Now()
         App.Data.HP['eff_neili']=Math.floor(App.Data.HP['neili']*0.6)
         App.Data.HP['eff_qixue']=App.Data.HP['qixue']
+        //有时候昏迷有Bug
+        App.Core.Death.OnConscious()
         App.RaiseStateEvent("core.sleep.wake")
     }
     App.Core.Sleep.OnLater=function(name, output, wildcards){

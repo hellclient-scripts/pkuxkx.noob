@@ -96,6 +96,22 @@
         }
         return null
     }
+    App.GetItemObjs=function(id,lowercase){
+        if (lowercase){
+            id=id.toLowerCase()
+        }
+        let result=[]
+        for (var key in App.Data.Items){
+            let itemid= App.Data.Items[key].ID
+            if (lowercase){
+                itemid=itemid.toLowerCase()
+            }
+            if (itemid==id){
+                result.push(App.Data.Items[key])
+            }
+        }
+        return result
+    }
     App.GetItemByName=function(name,convert){
         for (var key in App.Data.Items){
             let itemname= App.Data.Items[key].Name
@@ -120,11 +136,15 @@
         return false
     }
     App.GetItemNumber=function(id,lowercase){
-        let label=App.GetItemObj(id,lowercase)
-        if (!label){
+        let items=App.GetItemObjs(id,lowercase)
+        if (!items.length){
             return 0
         }
-        return CNumber.Split(label.Name).Count
+        let sum=0
+        for (var i=0;i<items.length;i++){
+            sum+=CNumber.Split(items[i].Name).Count
+        }
+        return sum
     }
 
 
