@@ -10,7 +10,7 @@
         this.Target=data.length>3?data[3]:""
         this.Max=0
         if (data.length>4){
-            this.Max=(data[4]-0)
+            this.Max=data[4]
         }        
         this.Before=data.length>5?data[5]:""
         this.After=data.length>6?data[6]:""

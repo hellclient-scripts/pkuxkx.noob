@@ -16,7 +16,8 @@
         if (App.Stopped||App.Core.Quest.Queue.length==0){
             App.Core.Quest.Queue=[]
             App.Core.Quest.Remain=[]
-            App.Return()
+            App.Automaton.Flush()
+            App.Next()
             return
         }
         let loop=false

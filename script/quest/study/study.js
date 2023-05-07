@@ -17,7 +17,27 @@
                 if (p.Type == "xiulian" && App.Data.HP["pot"] < skill.Level * 5) {
                     return
                 }
-                let max = p.Max
+                let max = p.Max-0
+                if (isNaN(max)&&p.Max){
+                    let maxskill=p.Max
+                    let offset=0
+                    switch(maxskill[0]){
+                        case "<":
+                            maxskill=maxskill.slice(1)
+                            offset=-1
+                            break
+                        case ">":
+                            maxskill=maxskill.slice(1)
+                            offset=1
+                            break
+                    }
+                    let sk=App.Core.PlayerGetSkillByID(maxskill)
+                    if (sk){
+                        max=sk.Level+offset
+                    }else{
+                        max=0
+                    }
+                }
                 if (max <= 0) {
                     max = skill.Max
                 }
