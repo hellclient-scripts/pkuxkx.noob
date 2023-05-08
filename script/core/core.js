@@ -56,6 +56,7 @@ App.Load("core/autoget.js")
 App.Load("core/shoppingmode.js")
 App.Load("core/combatmode.js")
 App.Load("core/overheatmode.js")
+App.Load("core/gamemode.js")
 
 
 App.Load("core/gmcp.js")
@@ -66,3 +67,5 @@ App.Load("core/hud.js")
 App.Load("core/idle.js")
 App.Load("core/help.js")
 App.Load("core/perform.js")
+
+App.Load("core/ui/ui.js")

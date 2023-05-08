@@ -3,7 +3,7 @@
     App.Quest.Fullme.SuccessFullmeDelay=15*60*1000
     App.Quest.Fullme.FullmeDelay=15*60*1000
     App.Quest.Fullme.Cooldown=function(){
-        let delay=App.Data.IsLastFullmeSuccess?App.Quest.Fullme.SuccessFullmeDelay:App.Quest.Fullme.FullmeDelay
+        let delay=App.Data.IsLastFullmeSuccess?App.Core.GameMode.Current.SuccessFullmeDelay():App.Quest.Fullme.FullmeDelay
         App.Core.Quest.Cooldown("fullme",(App.Data.LastFullme+delay)-Now())
         App.Next()
     }

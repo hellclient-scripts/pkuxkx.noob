@@ -5686,13 +5686,13 @@ Channel = "pkuxkx.noob"
 
 [[Timers]]
   ID = "d1e53f7rtbmgi473t5bmkv"
-  Name = "App.Core.HUD.UpdateStatus"
+  Name = "App.UIRender.OnTicker"
   Enabled = true
   Hour = 0
   Minute = 0
   Second = 60.0
   Send = ""
-  Script = "App.Core.HUD.UpdateStatus"
+  Script = "App.UIRender.OnTicker"
   AtTime = false
   SendTo = 0
   ActionWhenDisconnectd = true
@@ -6116,6 +6116,29 @@ Channel = "pkuxkx.noob"
   OmitFromOutput = false
   OmitFromCommandHistory = false
 
+[[Aliases]]
+  ID = "d1en9ie8hdib7b62amlnt"
+  Name = "App.Core.Afk.OnAliasTurbo"
+  Enabled = true
+  Match = "^#turbo(.*)$"
+  Send = ""
+  Script = "App.Core.Afk.OnAliasTurbo"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
 [[RequiredParams]]
   Name = "id"
   Desc = "用户ID"
@@ -6217,21 +6240,6 @@ Channel = "pkuxkx.noob"
   Intro = "补充饮水的最大值，默认值是10.偏远地区如五毒可以适当调高"
 
 [[RequiredParams]]
-  Name = "shopping_mode"
-  Desc = "消费模式"
-  Intro = "请通过助理按钮设置"
-
-[[RequiredParams]]
-  Name = "combat_mode"
-  Desc = " 战斗模式"
-  Intro = "手工设置容易出错，请通过帮助按钮设置"
-
-[[RequiredParams]]
-  Name = "overheat_mode"
-  Desc = "过热模式"
-  Intro = "手工设置容易出错，请通过帮助按钮设置"
-
-[[RequiredParams]]
   Name = "jifa_cmd"
   Desc = "激发指令"
   Intro = "用于激发武功"
@@ -6320,3 +6328,23 @@ Channel = "pkuxkx.noob"
   Name = "no_keep_idle"
   Desc = "是否禁用防发呆掉线功能"
   Intro = "留空会定时发送idle指令到服务器。\n\n否则不发送"
+
+[[RequiredParams]]
+  Name = "shopping_mode"
+  Desc = "消费模式"
+  Intro = "请通过助理按钮设置"
+
+[[RequiredParams]]
+  Name = "combat_mode"
+  Desc = " 战斗模式"
+  Intro = "手工设置容易出错，请通过帮助按钮设置"
+
+[[RequiredParams]]
+  Name = "overheat_mode"
+  Desc = "过热模式"
+  Intro = "手工设置容易出错，请通过帮助按钮设置"
+
+[[RequiredParams]]
+  Name = "game_mode"
+  Desc = "游戏模式"
+  Intro = "手工设置容易出错，请通过帮助按钮设置"

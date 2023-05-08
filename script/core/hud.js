@@ -113,6 +113,7 @@
             }
         }
     }
+
     App.Core.HUD.UpdateStatus = function () {
         let line = JSON.parse(NewLine())
         let word = JSON.parse(NewWord("Fullme剩余 "))
@@ -156,7 +157,16 @@
             word.Color = "white"
         }
         line.Words.push(word)
-        if (App.Data.Afk) {
+        if (App.Core.Afk.IsTurbo()){
+            word = JSON.parse(NewWord(""))
+            word.Text = " "
+            line.Words.push(word)
+            word = JSON.parse(NewWord(""))
+            word.Text = "超频("+Math.round((App.Core.Afk.TurboBefore-Now())/60000)+"m)"
+            word.Color = "White"
+            word.Background = "Green"
+            line.Words.push(word)
+        }else if (App.Data.Afk) {
             word = JSON.parse(NewWord(""))
             word.Text = " "
             line.Words.push(word)
@@ -176,6 +186,8 @@
         UpdateHUD(GetHUDSize() - 1, JSON.stringify([line]))
     }
     App.RegisterCallback("core.hud.Update", App.Core.HUD.UpdateStatus)
+    App.RegisterCallback("ui.render.ticker", App.Core.HUD.UpdateStatus)
+    
     App.Bind("HUDUpdate", "core.hud.Update")
     App.Bind("core.overheat.updated", "core.hud.Update")
 
@@ -194,8 +206,10 @@
         word = JSON.parse(NewWord(App.Core.CombatMode.Current().ID + " "))
         word.Color = "Bright-Green"
         line.Words.push(word)
-
         word = JSON.parse(NewWord(App.Core.OverheatMode.Current().ID + " "))
+        word.Color = "Bright-Green"
+        line.Words.push(word)
+        word = JSON.parse(NewWord(App.Core.GameMode.Current().ID + " "))
         word.Color = "Bright-Green"
         line.Words.push(word)
         UpdateHUD(0, JSON.stringify([line]))
@@ -299,6 +313,7 @@
         List.append("shoppingmode", "改变消费模式")
         List.append("combatmode", "改变战斗模式")
         List.append("overheatmode", "改变过热模式")
+        List.append("gamemode", "改变游戏模式")
         List.publish("App.Core.HUD.ChangeMode")
     })
     App.Core.HUD.SetNote = function (data) {
@@ -345,6 +360,9 @@
                 case "overheatmode":
                     App.Core.HUD.PickOverheatMode()
                     break
+                    case "gamemode":
+                        App.Core.HUD.PickGameMode()
+                        break                    
                 case "chat":
                 case "quest":
                 case "simple":
@@ -389,6 +407,14 @@
         list.append("磕药的", "磕药的：无视过热")
         list.publish("App.Core.HUD.OnOverheatMode")
     }
+    App.Core.HUD.PickGameMode = function () {
+        var list = Userinput.newlist("请选择你要设置游戏模式", "游戏模式决定了Fullme冷却和其他游戏节奏的设置")
+        list.append("随意", "随意：一切采用默认值")
+        list.append("急性子", "急性子：Fullme cd 15分钟")
+        list.append("休闲", "休闲:Fullme cd 30分钟")
+        list.append("懒鬼", "休闲:Fullme cd 59分钟")
+        list.publish("App.Core.HUD.OnGameMode")
+    }
 
     App.Core.HUD.OnCombatMode = function (name, id, code, data) {
         if (code == 0 && data) {
@@ -408,5 +434,10 @@
             App.Core.HUD.UpdateTitle()
         }
     }
-
+    App.Core.HUD.OnGameMode = function (name, id, code, data) {
+        if (code == 0 && data) {
+            App.SetVariable("game_mode", data)
+            App.Core.HUD.UpdateTitle()
+        }
+    }
 })(App)

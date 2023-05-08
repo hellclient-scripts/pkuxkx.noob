@@ -52,5 +52,7 @@
     App.Core.Condition.Register(new (Include("core/condition/fullmeok.js"))())
     App.Core.Condition.Register(new (Include("core/condition/here.js"))())
     App.Core.Condition.Register(new (Include("core/condition/gu.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/turbo.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/shaqi.js"))())
 
 })(App)
