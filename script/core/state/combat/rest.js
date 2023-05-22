@@ -41,6 +41,7 @@
             App.Commands([
                 App.NewCommand("do", "eat xuejie dan;i2"),
                 App.NewCommand("nobusy"),
+                App.NewCommand("delay", 1),
                 App.NewCommand("state", this.ID)
             ]).Push()
             App.Next()
@@ -70,7 +71,7 @@
             } else {
                 App.Send("yun inspire")
             }
-        } else if (App.Data.HP["qixue"] >= App.Data.HP["eff_qixue"] * 0.9) {
+        } else if (App.Data.HP["eff_qixue"] >= (App.Data.HP["qixue"] * 0.9)) {
             App.SetRoomData("combat.firstaid", null)
             this.Next()
             return
