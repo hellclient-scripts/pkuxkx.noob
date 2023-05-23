@@ -165,6 +165,9 @@
     App.Core.OnCartXia=function(name, output, wildcards){
         App.Send("#halt;xia")
     }
+    App.Core.OnNeedYellBoat=function(name, output, wildcards){
+        App.Send("yell boat;go enter")
+    }
     App.RegisterCallback("core.move.waiting",function(){
         App.Send(App.GetParamWaitCmd())
     })
@@ -190,7 +193,7 @@
     }
     App.Core.OnMoveSailEnd=function(name, output, wildcards){
         App.Send("#halt")
-        App.Go("out ")
+        App.Go("out")
     }
     App.Core.OnMovedAway=function(name, output, wildcards){
         App.Data.Room.ID=""

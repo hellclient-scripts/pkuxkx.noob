@@ -3923,6 +3923,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1eoe8am8f4b7q6q476c1"
+  Name = "App.Core.OnNeedYellBoat"
+  Enabled = true
+  Match = "^松花江化冻了，你喊\\(yell\\)条船过江吧。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.OnNeedYellBoat"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -4204,7 +4235,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "move_sailend"
   Name = "move_sailend"
-  Enabled = false
+  Enabled = true
   Match = "^(> )*(艄公说“到啦，上岸吧”，随即把一块踏脚板搭上堤岸。)$"
   Send = ""
   ColourChangeType = 0
@@ -4223,7 +4254,7 @@ Channel = "pkuxkx.noob"
   MultiLine = false
   LinesToMatch = 0
   WildcardLowerCase = false
-  Group = "move"
+  Group = ""
   IgnoreCase = false
   KeepEvaluating = true
   OmitFromLog = false
