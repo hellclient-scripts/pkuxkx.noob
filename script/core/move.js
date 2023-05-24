@@ -156,7 +156,7 @@
         App.RaiseStateEvent("move.nowield",wildcards[0])
     }
     App.Core.OnMoveIgnore=function(name, output, wildcards){
-        moved.splice(-1)
+        // moved.splice(-1)
         App.RaiseStateEvent("move.ignore")
     }
     App.Core.OnCartShang=function(name, output, wildcards){
