@@ -55,7 +55,7 @@
     App.RegisterState(new (Include("core/state/manual.js"))())
     App.RegisterState(new (Include("core/state/checkitem.js"))())
     App.RegisterState(new (Include("core/state/died.js"))())
-
+    App.RegisterState(new (Include("core/state/reborn.js"))())
     App.RegisterCallback("core.state.init",function(){
         App.ChangeState("init")
     })

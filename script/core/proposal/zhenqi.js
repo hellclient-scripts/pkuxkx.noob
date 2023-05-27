@@ -3,6 +3,9 @@
     let Zhenqi = function () {
         proposal.call(this, "zhenqi")
         this.Submit = function () {
+            if (!App.Core.Neili.Zhenqi){
+                return false
+            }
             return App.Data.HP["zhenqi"]>0&&((App.Data.HP["eff_zhenqi"]*100/App.Data.HP["zhenqi"])<App.GetNumberParam("heal_below"))
         }
         this.Execute = function () {

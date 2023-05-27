@@ -1,5 +1,6 @@
 (function(App){
     let Command = Include("include/command.js")
+    //特别的，当传入的目标为null时。移动直接结束。
     let To=function(data){
         Command.call(this,data)
         this.ID="move"

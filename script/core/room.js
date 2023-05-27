@@ -74,6 +74,7 @@
             Exits: null,
         }
         if (looking) {
+            Note("正在观察当前房间信息")
             App.Data.Room.WalkTags = owalktags
             App.Data.Room.Online = oonline
             App.Data.Room.Data = odata

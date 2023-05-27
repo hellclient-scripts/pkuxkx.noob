@@ -15,9 +15,8 @@
 
     State.prototype.Enter=function(context,oldstatue){
         let move=App.GetContext("Move")
-        App.Drive(move.Vehicle)
-        if (!App.Data.Room.ID) {
-            App.Core.MoveUnknownStart(move)
+        if (move===null){
+            App.Next()
             return
         }
         let target=move.Target
@@ -30,6 +29,13 @@
                 return 
             }   
         }
+        App.Drive(move.Vehicle)
+        if (!App.Data.Room.ID) {
+            App.Core.MoveUnknownStart(move)
+            return
+        }
+        
+
         var path = App.API.GetPath(App.Data.Room.ID, target,App.GetVehicle(move.Vehicle).Fly)
         if (path == null) {
             world.Note("无法找到从[" + App.Data.Room.ID + "]到[" + target.join(",") + "]的路径")

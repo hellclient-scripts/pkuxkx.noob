@@ -2,6 +2,9 @@
     App.Core.Sleep={}
     App.Core.Sleep.Last=0
     App.Core.Sleep.CanSleep=function(){
+        if (App.Core.Neili.NoSleep){
+            return false
+        }
         return After(App.Core.Sleep.Last,App.GetNumberParam('sleepdelay'))
     }
     App.Core.Sleep.OnWake=function(name, output, wildcards){

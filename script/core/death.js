@@ -9,12 +9,13 @@
     App.Core.Death.OnDied = function () {
         DeleteTemporaryTimers()
         App.Raise("dead")
-        App.ChangeState("died")
         let cb = App.GetRoomData("core.onreborn")
         if (cb) {
             App.Core.Death.OnReborn = cb
+            Note("预计中的死亡")
             App.SetRoomData("core.onreborn", null)
         }
+        App.ChangeState("died")
     }
     App.SetRoomOnReborn = function (cb) {
         if (cb != null) {
@@ -24,26 +25,20 @@
     }
     App.Core.Death.Reborn = function () {
         App.Raise("reborn")
-        if (App.Core.Death.OnReborn) {
-            Note("有准备的死亡，继续执行。")
-            let cb = App.Core.Death.OnReborn
-            App.Core.Death.OnReborn = null
-            cb()
-            return
-        }
-        Note("意外死亡。")
-        App.Automaton.Flush()
-        // Note("退出")
-        // App.Send("quit;quit")
+        Note("有准备的死亡，继续执行。")
+        let cb = App.Core.Death.OnReborn
+        App.Core.Death.OnReborn = null
+        cb()
+        return
     }
     App.Core.Death.OnChoose = function () {
-        if (App.Core.Death.OnReborn) {
-            Note("有准备的死亡，继续执行。")
-            App.Send("enter")
-        }else{
-            Note("意外死亡。")
-            Disconnect()
-            // App.Send("quit;quit")
-        }
+        App.RaiseStateEvent("core.deathchoose")
     }
+    App.Core.Death.Disconnect = function () {
+        Note("意外死亡。")
+        Disconnect()
+        App.Automaton.Flush()
+    }
+
+
 })(App)

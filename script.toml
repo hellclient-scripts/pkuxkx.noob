@@ -50,7 +50,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1dvn4vk9l477m73074fio"
   Name = "App.OnStateLine"
-  Enabled = false
+  Enabled = true
   Match = "^.*$"
   Send = ""
   ColourChangeType = 0
@@ -6233,7 +6233,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "neili_min"
   Desc = "最小内力"
-  Intro = "内力比这个小会去尝试睡觉或打坐\n\n如果设置为小于1的小数，会进入无内力模式，气血或精神小于neili_min会尝试睡觉。"
+  Intro = "内力比这个小会去尝试睡觉或打坐\n如果设置为小于1的小数，会进入无内力模式，气血或精神小于neili_min会尝试睡觉。\n\n加入指令式支持，支持的指令包括\n#nosleep 设置不去睡觉回复内力\n#dazuoroom xxx 设置打坐的房间，不指定房间为就地打坐\n#cmd [command] 指定内力不足时执行指定指令。\n#cmd.[percent] [command] 指定内力不足指定百分比时执行指定指令。\n#zhenqi 这是在真气消耗会补满真气。"
 
 [[RequiredParams]]
   Name = "wait_cmd"

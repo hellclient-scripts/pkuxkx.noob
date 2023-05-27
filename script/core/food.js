@@ -12,6 +12,7 @@
         return "eat "+App.GetFood().Alias+";drink "+App.GetDrink().Alias
     }
     App.Eat=function(force){
+        App.Core.Neili.Exec()
         checkFood.Execute(force)
         // App.Data.LastEat=Now()
         // App.Send(App.EatCmd())

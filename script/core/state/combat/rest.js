@@ -58,8 +58,7 @@
         }
         App.SetRoomOnEvent(this.OnRoomEvent)
         Note("内力:" + App.Data.HP["eff_neili"] + " 气血:" + App.Core.PerQixue())
-        let min = App.GetParamNeiliMin()
-        if ((App.Data.HP["eff_neili"] < min) && (min >= 1)) {
+        if (App.Core.Neili.NeedDazuo()){
             App.Core.Dazuo()
         } else if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Data.NoForce) {

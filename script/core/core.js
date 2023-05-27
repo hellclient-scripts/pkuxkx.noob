@@ -67,5 +67,5 @@ App.Load("core/hud.js")
 App.Load("core/idle.js")
 App.Load("core/help.js")
 App.Load("core/perform.js")
-
+App.Load("core/neili.js")
 App.Load("core/ui/ui.js")
