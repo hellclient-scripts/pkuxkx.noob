@@ -481,16 +481,25 @@
     }
     //进入副本指令，一般发送look，触发objend。
     App.Core.EnterInstanceCommands = {
-        "你进入了剑心居。": "l",
+        "剑心居": "l",
     }
     App.Core.OnBlind = function (name, output, wildcards) {
         App.Data.Room.Looking=false
         App.RaiseStateEvent("core.blind", output)
     }
     App.Core.CurrentInstance=""
+    App.Core.OnTryEnterInstance= function (name, output, wildcards) {
+        Note("发现进入副本 "+wildcards[0]+" 中。")
+        App.SetRoomData("core.tryenterinstance",wildcards[0])
+    }
     App.Core.OnEnterInstance = function (name, output, wildcards) {
-        App.Core.CurrentInstance=output
-        world.DoAfterSpecial(2, 'App.Core.OnEnterInstanceExecute()', 12);
+        let instance=App.GetRoomData("core.tryenterinstance")
+        if (instance&&instance==wildcards[0]){
+            Note("进入了副本 "+wildcards[0]+" 。")
+            App.Core.CurrentInstance=wildcards[0]
+            world.DoAfterSpecial(2, 'App.Core.OnEnterInstanceExecute()', 12);
+        }
+
     }
     App.Core.OnEnterInstanceExecute=function(){
         let output=App.Core.CurrentInstance
