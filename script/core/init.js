@@ -1,5 +1,5 @@
 (function (App) {
-    App.Core.InitCmd="unset table_pattern;l;set brief 3;i undeaded;lookin he;i2;score;cha;special;alias;set custom_hp 1;set no_autosave 1;set area_detail 1;yield no;set hpbrief long,report;tune gmcp Status off;hpbrief;hp;tune gmcp Status on;tune gmcp Move on;tune gmcp Combat on;tune gmcp BUFF on"
+    App.Core.InitCmd="unset table_pattern;l;set brief 3;i undeaded;lookin he;i2;score;cha;special;alias;set custom_hp 1;set no_autosave 1;set area_detail 1;yield no;set hpbrief long,report;tune gmcp Status off;hpbrief;hp;tune gmcp Status on;tune gmcp Move on;tune gmcp Combat on;tune gmcp BUFF on;time;"
     App.Core.Inited=false
     App.Core.Init=function(){
         App.Core.Buff.CheckAll()

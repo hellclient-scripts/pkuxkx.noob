@@ -4,6 +4,12 @@
     let Throwing= function(){
         proposal.call(this,"throwing")
         this.Submit=function(){
+            if (!App.Data.Room.ID){
+                return false
+            }
+            if (App.Core.RoomLimited[App.Data.Room.ID]){
+                return false
+            }
             if (!App.GetEquipmentObj("Lupi dai")){
                 return false
             }

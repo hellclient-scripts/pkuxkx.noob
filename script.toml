@@ -1197,7 +1197,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -3985,6 +3985,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1ep1gaeaooe0o72j4jr44"
+  Name = "App.Core.Time.OnTime"
+  Enabled = true
+  Match = "^│[^│]+│北京时间((?P<year>\\d+)年)?((?P<month>\\d+)月)?((?P<day>\\d+)日)?\\s*((?P<hour>\\d+)时)?((?P<minute>\\d+)分)?((?P<second>\\d+)秒)?，重启后约((?P<lastday>[零一二三四五六七八九十百]+)天)((?P<lasthour>[零一二三四五六七八九十百]+)小时)?((?P<lastminute>[零一二三四五六七八九十百]+)分钟)?。\\s+│$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.Time.OnTime"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -5290,7 +5321,7 @@ Channel = "pkuxkx.noob"
   ID = "room"
   Name = "room"
   Enabled = true
-  Match = "^(> )*(([^ \\[]{1,6} ){0,1}[^ \\[]{1,16})(\\[.+\\]){0,1}\\s{1,3}-\\s*((\\[.*\\]\\s*)+.*){0,1}(★|☆){0,1}$"
+  Match = "^(> )*(([^ \\[]{1,6} ){0,1}[^ \\[]{1,16})(\\[.+\\]){0,1}\\s{1,3}-\\s*((\\[.*\\]\\s*)+){0,1}(★|☆){0,1}(.+[⑩⑨⑧⑦⑥⑤④③②①]){0,1}$"
   Send = ""
   ColourChangeType = 0
   Colour = 0

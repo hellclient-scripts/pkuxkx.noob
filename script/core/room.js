@@ -3,6 +3,7 @@
     App.Core.RedBGExits = []
     App.Data.WalkZone = ""
     App.Data.Room = {
+        Markdown:"",
         ID: "",
         Name: "",
         Location:"",
@@ -52,6 +53,7 @@
         let odata = App.Data.Room.Data
         let odied = App.Data.Room.Died
         App.Data.Room = {
+            Markdown:wildcards[7],
             ID: "",
             Name: wildcards[1],
             Location:wildcards[3],

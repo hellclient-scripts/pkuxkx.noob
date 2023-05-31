@@ -39,6 +39,7 @@ App.Load("core/task.js")
 App.Load("core/command.js")
 App.Load("core/weapon.js")
 App.Load("core/gu.js")
+App.Load("core/time.js")
 
 App.Load("core/task/queue.js")
 App.Load("core/produce.js")
