@@ -78,7 +78,6 @@
     App.RegisterMaze(new (Include("core/maze/sld.js"))())
     App.RegisterMaze(new (Include("core/maze/hztdhfy.js"))())
     App.RegisterMaze(new (Include("core/maze/emyhout.js"))())
-    App.RegisterMaze(new (Include("core/maze/sldsl.js"))())
     App.RegisterMaze(new (Include("core/maze/sldmd.js"))())
     App.RegisterMaze(new (Include("core/maze/mjdsm.js"))())
     App.RegisterMaze(new (Include("core/maze/sczldsm.js"))())

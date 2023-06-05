@@ -57,7 +57,7 @@ App.Quit=function(){
         App.NewCommand("nobusy"),
         App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
         App.NewCommand("nobusy"),
-        App.NewCommand("do", "quit;quit"),
+        App.NewCommand("quit")
     ]).Push()
     App.Next()
 }
@@ -77,11 +77,7 @@ App.Relogin = function () {
         App.NewCommand("nobusy"),
         App.NewCommand("to", App.Options.NewWalk(Object.keys(App.Info.HomeRooms))),
         App.NewCommand("nobusy"),
-        App.NewCommand("function", function () {
-            App.Core.BindLoginOnce("core.relogin")
-            App.Next()
-        }),
-        App.NewCommand("do", "quit;quit"),
+        App.NewCommand("quit","core.relogin")
     ]).Push()
     App.Next()
 }

@@ -1,4 +1,6 @@
 (function(App){
+    let check=Include("core/check/check.js")
+
     App.Core.Time={}
     //客户端时间与服务器时间的偏差，单位为秒
     App.Core.Time.OffsetSeconds=null
@@ -33,4 +35,8 @@
         }
         return offset<=BootIndexTolerance
     }
+    App.Bind("Check", "core.time.time")
+    let checkScore = (new check("time")).WithLevel(App.CheckLevelBrief).WithCommand("time").WithIntervalParam("checktimeinterval").WithLastID("LastTime")
+    App.RegisterCallback("core.time.time", checkScore.Callback())
+
 }(App))

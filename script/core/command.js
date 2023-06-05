@@ -56,5 +56,5 @@
     App.RegisterCommand(Include("core/command/neili.js"))
     App.RegisterCommand(Include("core/command/asset.js"))
     App.RegisterCommand(Include("core/command/roomonline.js"))
-
+    App.RegisterCommand(Include("core/command/quit.js"))
 })(App)

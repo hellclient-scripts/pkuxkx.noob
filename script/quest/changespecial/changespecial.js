@@ -75,10 +75,7 @@
                 App.Next()
             }),
             App.NewCommand("nobusy"),
-            App.NewCommand("function", function () {
-                App.Core.BindLoginOnce("quest.changespecial.login")
-                App.Send("quit;quit")
-            }),
+            App.NewCommand("quit","quest.changespecial.login")
         ]).Push()
         App.Next()
     }
