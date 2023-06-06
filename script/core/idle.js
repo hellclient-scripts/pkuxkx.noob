@@ -6,6 +6,7 @@
         }
         App.Send("shougu from "+world.GetVariable("id").trim())
         App.Send("put undeaded in he;put undeaded in he;")
+        App.Core.Autorun.Run()
     }
     EnableTimer("keepidle",true)
     App.RegisterCallback("app.core.idle.onsend",function(){

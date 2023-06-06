@@ -28,7 +28,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk("yzsm")),
                     App.NewCommand("delay", 30),
-                    App.NewCommand("nobusy"),
+                    App.NewCommand("function",function(){App.Fail()}),
                 ]).Push()
             }
             App.Next()

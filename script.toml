@@ -6441,3 +6441,8 @@ Channel = "pkuxkx.noob"
   Name = "game_mode"
   Desc = "游戏模式"
   Intro = "手工设置容易出错，请通过帮助按钮设置"
+
+[[RequiredParams]]
+  Name = "autorun"
+  Desc = "大米自动启动指令"
+  Intro = "该变量不为空时，会进入大米模式。\n\n大米模式时遇到意外会自动重连，登陆后和发呆时会发送指定指令"

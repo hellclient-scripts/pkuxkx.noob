@@ -31,6 +31,7 @@ App.Core.OnMxpCheck=function(name, output, wildcards){
     if(App.Core.ConnectInitCmd){
         App.Send(App.Core.ConnectInitCmd)
     }
+    App.Core.Autorun.BindLogin()
     if (App.Data.LoginCallback){
         App.ExecuteCallback(App.Data.LoginCallback)
         App.Data.LoginCallback=""
@@ -44,6 +45,7 @@ App.Core.OnReconnect = function () {
 world.EnableTimer("App.Core.OnReconnect",false)
 
 App.RegisterCallback("core.ondisconnected",function(){
+    App.Core.Autorun.BindLogin()
     if(App.Data.LoginCallback){
         world.ResetTimer("App.Core.OnReconnect")
         world.EnableTimer("App.Core.OnReconnect",true)
