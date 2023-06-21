@@ -3,10 +3,10 @@
     App.Core.RedBGExits = []
     App.Data.WalkZone = ""
     App.Data.Room = {
-        Markdown:"",
+        Markdown: "",
         ID: "",
         Name: "",
-        Location:"",
+        Location: "",
         Tags: "",
         Objs: [],
         LootCmds: {},
@@ -30,8 +30,8 @@
         Canget: "",
         Env: "",
         Map: "",
-        Picture:"",
-        Notice:"",
+        Picture: "",
+        Notice: "",
     }
     App.Core.RoomLines = {
         NameLane: null,
@@ -53,10 +53,10 @@
         let odata = App.Data.Room.Data
         let odied = App.Data.Room.Died
         App.Data.Room = {
-            Markdown:wildcards[7],
+            Markdown: wildcards[7],
             ID: "",
             Name: wildcards[1],
-            Location:wildcards[3],
+            Location: wildcards[3],
             Tags: wildcards[5],
             NameDump: SubDumpLine(0, wildcards[1].length),
             Objs: [],
@@ -93,8 +93,8 @@
             Canget: "",
             Env: "",
             Map: "",
-            Picture:"",
-            Notice:"",
+            Picture: "",
+            Notice: "",
         }
         App.Core.RoomLines = {
             NameLine: JSON.parse(DumpOutput(1))[0],
@@ -119,14 +119,14 @@
         return true
     }
     let roomreplacre = /[\n\s━┃／＼]+/g
-    let renotice=/^\s+┌─+┐\s*$/
+    let renotice = /^\s+┌─+┐\s*$/
     App.Core.OnRoomPlace = function (name, output, wildcards) {
         let str = [wildcards[0], wildcards[1], wildcards[2].replace(roomreplacre, "")].join(",")
         App.Data.Room.Place = str
         App.Raise("core.room.place")
     }
     App.Core.OnRoomDesc = function (name, output, wildcards) {
-        if (output.startsWith("【闲聊】")){
+        if (output.startsWith("【闲聊】")) {
             return
         }
         if (App.Data.Room.Exits != null) {
@@ -181,12 +181,12 @@
                 }
                 App.Core.RoomDesc.Mode = 1
             case 1:
-                if ((line.Words.length==0||line.Words.length==1)&&output.trim()==""){
-                    App.Core.RoomDesc.Mode=5
+                if ((line.Words.length == 0 || line.Words.length == 1) && output.trim() == "") {
+                    App.Core.RoomDesc.Mode = 5
                     return
                 }
-                if (output.match(renotice)){
-                    App.Core.RoomDesc.Mode=6
+                if (output.match(renotice)) {
+                    App.Core.RoomDesc.Mode = 6
                     return
                 }
                 App.Core.RoomDesc.Desc += output + "\n"
@@ -203,8 +203,8 @@
                 App.Core.RoomDesc.Picture += output + "\n"
                 return
             case 6:
-                if (output.trim()==""){
-                    App.Core.RoomDesc.Mode=5
+                if (output.trim() == "") {
+                    App.Core.RoomDesc.Mode = 5
                     return
                 }
                 App.Core.RoomDesc.Notice += output + "\n"
@@ -232,7 +232,7 @@
             })
         })
         //能看到exit说明有描述了。
-        App.Data.NeedRoomDesc=false
+        App.Data.NeedRoomDesc = false
         if (wildcards[1]) {
             var exits = wildcards[1].match(exitsre).sort()
             App.Data.Room.Exits = exits
@@ -252,8 +252,8 @@
     })
     App.Bind("GA", "core.room.ga")
     let relast = /[ 」]/g
-    App.Core.OnRoomOther=function(name, output, wildcards){
-        
+    App.Core.OnRoomOther = function (name, output, wildcards) {
+
     }
     App.Core.OnRoomObj = function (name, output, wildcards) {
         if (App.Data.Room.Exits === null) {
@@ -261,7 +261,7 @@
             world.EnableTriggerGroup("roomexit", false)
             world.EnableTriggerGroup("roomobjend", true)
         }
-        var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4],Comment:wildcards[7]}
+        var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4], Comment: wildcards[7] }
         obj.Last = wildcards[0].split(relast).slice(-1)[0]
         obj.LastDump = SubDumpLine(4 + wildcards[0].length - obj.Last.length, 4 + wildcards[0].length)
         App.Data.Room.Objs.push(obj)
@@ -360,7 +360,7 @@
     }
 
     App.Core.OnRoom.NPCDie = function (name) {
-        Note("Npc "+name+" 死亡。")
+        Note("Npc " + name + " 死亡。")
         let data = App.Data.Room.Died[name]
         if (data == null) {
             data = 0
@@ -389,24 +389,24 @@
             App.Send("l")
         }
     }
-    App.LookAgain=function(){
+    App.LookAgain = function () {
         if (App.Data.Room.Looking) {
             App.Send("l")
         }
     }
-    App.OnRoomLookFail=function(name,output,wildcards){
+    App.OnRoomLookFail = function (name, output, wildcards) {
         if (App.Data.Room.Looking) {
             world.DoAfterSpecial(1, 'App.LookAgain()', 12);
         }
     }
-    App.RegisterCallback("core.resetlooking",function(){
-        App.Data.NeedRoomDesc=false
-        App.Data.Room.Looking=false
+    App.RegisterCallback("core.resetlooking", function () {
+        App.Data.NeedRoomDesc = false
+        App.Data.Room.Looking = false
     })
-    App.Bind("core.conscious","core.resetlooking")
-    App.Bind("core.leaveinstance","core.resetlooking")
-    App.Bind("core.enterinstance","core.resetlooking")
-    App.Bind("Connected","core.resetlooking")
+    App.Bind("core.conscious", "core.resetlooking")
+    App.Bind("core.leaveinstance", "core.resetlooking")
+    App.Bind("core.enterinstance", "core.resetlooking")
+    App.Bind("Connected", "core.resetlooking")
     App.SetRoomYieldYes = function (data) {
         Note("设置YieldYes:" + data)
         App.Data.Room.YieldYes = data
@@ -436,7 +436,7 @@
         if (App.Data.Room.Online) {
             App.Data.Room.Online(output)
         }
-        App.Raise("core.online",output)
+        App.Raise("core.online", output)
     }
     App.RegisterCallback("core.room.alias.onask", function (data) {
         App.SetRoomOnAsk(data)
@@ -484,27 +484,28 @@
     //进入副本指令，一般发送look，触发objend。
     App.Core.EnterInstanceCommands = {
         "剑心居": "l",
+        "[蛊神塔]": "l",
     }
     App.Core.OnBlind = function (name, output, wildcards) {
-        App.Data.Room.Looking=false
+        App.Data.Room.Looking = false
         App.RaiseStateEvent("core.blind", output)
     }
-    App.Core.CurrentInstance=""
-    App.Core.OnTryEnterInstance= function (name, output, wildcards) {
-        Note("发现进入副本 "+wildcards[0]+" 中。")
-        App.SetRoomData("core.tryenterinstance",wildcards[0])
+    App.Core.CurrentInstance = ""
+    App.Core.OnTryEnterInstance = function (name, output, wildcards) {
+        Note("发现进入副本 " + wildcards[0] + " 中。")
+        App.SetRoomData("core.tryenterinstance", wildcards[0])
     }
     App.Core.OnEnterInstance = function (name, output, wildcards) {
-        let instance=App.GetRoomData("core.tryenterinstance")
-        if (instance&&instance==wildcards[0]){
-            Note("进入了副本 "+wildcards[0]+" 。")
-            App.Core.CurrentInstance=wildcards[0]
+        let instance = App.GetRoomData("core.tryenterinstance")
+        if (instance && instance == wildcards[0]) {
+            Note("进入了副本 " + wildcards[0] + " 。")
+            App.Core.CurrentInstance = wildcards[0]
             world.DoAfterSpecial(2, 'App.Core.OnEnterInstanceExecute()', 12);
         }
 
     }
-    App.Core.OnEnterInstanceExecute=function(){
-        let output=App.Core.CurrentInstance
+    App.Core.OnEnterInstanceExecute = function () {
+        let output = App.Core.CurrentInstance
         App.Raise("core.enterinstance", output)
         App.RaiseStateEvent("core.enterinstance", output)
         if (App.Core.EnterInstanceCommands[output]) {
