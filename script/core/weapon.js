@@ -136,7 +136,7 @@
         }
     }
     App.Core.Weapon.CheckEquipped = function () {
-        App.Core.Weapon.Equipped = {}
+        // App.Core.Weapon.Equipped = {}
         App.Core.Weapon.EquippedChecking = {}
         let needcheck = {}
         let repair_list = App.Core.Weapon.LoadRepairList()
@@ -151,12 +151,21 @@
             }
         }
         let items = Object.keys(needcheck)
+        if (items.length){
+            App.Response("core","weaponcheck")
+        }
         for (var i = 0; i < items.length; i++) {
             App.Core.Weapon.EquippedChecking[items[i]] = true
             App.Send("i " + items[i])
         }
         App.Core.Weapon.LastCheckEquipped = Now()
     }
+    App.RegisterCallback("core.weapononcheck",function(){
+        Note("检查武器装备情况")
+        App.Core.Weapon.Equipped = {}
+    })
+    App.Bind("Response.core.weaponcheck", "core.weapononcheck")
+
     App.RegisterCallback("core.weapononitem", function (item) {
         if (App.Core.Weapon.EquippedChecking[App.Data.ItemList.ID]) {
             let id = App.Data.ItemList.ID
