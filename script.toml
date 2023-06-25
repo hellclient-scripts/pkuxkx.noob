@@ -4016,6 +4016,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1eqqoigl324f372dsel0v"
+  Name = "App.Core.Wuxue.OnXiuxingDian"
+  Enabled = true
+  Match = "^┃【修 行 点】(\\d+)\\s+【武 学 点】.*┃$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.Core.Wuxue.OnXiuxingDian"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true

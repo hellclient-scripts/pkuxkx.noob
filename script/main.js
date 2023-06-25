@@ -31,6 +31,14 @@ var onBroadcast = function (msg, global, channel) {
 var onResponse = function (msgtype, id, data) {
     App.onResponse(msgtype, id, data)
 }
+let MsgsMissReturn={}
+MsgsMissReturn[String.fromCharCode(27)+"[2;37;0m牧民打着手势对你说：请到我家里坐一坐吧？."]=true
+MsgsMissReturn[String.fromCharCode(27)+"[2;37;0m牧民憨厚地对你笑者。"]=true
+MsgsMissReturn["牧民打着手势对你说：请到我家里坐一坐吧？."]=true
+MsgsMissReturn["牧民憨厚地对你笑者。"]=true
+MsgsMissReturn[String.fromCharCode(27)+"吕大人,您再喝两杯吧!"]=true
+MsgsMissReturn["吕大人,您再喝两杯吧!"]=true
+
 var onBuffer = function (data,bytes) {
     if (data==null){
         if (DebugLevel>0){
@@ -78,6 +86,9 @@ var onBuffer = function (data,bytes) {
         if (data.substr(0, 7) == "== 未完继续" && data.substr(-6, 6) == "继续下一页)") {
             return true
         }
+    }
+    if (MsgsMissReturn[data]){
+        return true
     }
     return false
 }

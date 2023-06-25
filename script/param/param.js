@@ -24,6 +24,7 @@
         "checkspecialinterval":"60000",
         "checkskillsinterval":"60000",
         "checkiteminterval":"30000",
+        "checkbiguaninterval":"30000",
         "checklupidaiinterval":"30000",
         "checkavatarinterval":"60000",
         "checktimeinterval":"60000",

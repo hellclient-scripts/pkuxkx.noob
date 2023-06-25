@@ -145,5 +145,6 @@
     App.RegisterQuest(new (Include("core/quest/changespecial.js"))())
     App.RegisterQuest(new (Include("core/quest/standby.js"))())
     App.RegisterQuest(new (Include("core/quest/idle.js"))())
+    App.RegisterQuest(new (Include("core/quest/biguan.js"))())
 
 })(App)

@@ -16,4 +16,5 @@ App.Load("quest/getgem/getgem.js")
 App.Load("quest/changespecial/changespecial.js")
 App.Load("quest/standby/standby.js")
 App.Load("quest/standby/idle.js")
+App.Load("quest/biguan/biguan.js")
 

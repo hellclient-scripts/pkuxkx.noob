@@ -104,7 +104,7 @@ mingzhou||明州||||DescStart||这是明州城的鼓楼，东面是明州府衙�
 taoyuan||桃源县||||DescStart||这里是通往桃源县境的一个凉亭。过往行人大都在这儿休息。
 tzf||铁掌峰||||DescStart||这里便是铁掌山的山脚。抬头望去，山分五峰，且排列得就和五根手指一模一样，中间的最高，两
 
-hsc||华山村打谷场||||Station||打谷场
+hsc||华山村打谷场||||Desc||这里是村子的中心，一个平坦的广场，每年秋收打谷就在这。广场东角有棵大槐树，平日茶余饭後村里的男女老少都爱聚在这里谈天说地。角上有几个大谷堆 (gudui)。
 hscch||华山村车行||||DescStart||这里是小山村当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 yz-tdm||土地庙||||Full||土地庙[大宋国] [门派] [存盘点]enter,south
 hzxz||回族小镇||||Full||小镇[大夏国] [百花谷势力范围]east,northeast,northup,northwest,southeast,west
