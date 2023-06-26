@@ -238,6 +238,21 @@
         App.Look()
     })
     App.RegisterAlias("l","core.move.look")
+    //group 为组内未发送命令
+    App.RegisterCallback("core.move.nobusy",function(data,group){
+        let snap=App.Core.Snapshot.Take()
+        App.Commands([
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",function(){
+                App.Core.Snapshot.Rollback(snap)
+                App.Send(group.join("&&"))
+            })
+        ]).Push()
+        App.Next()
+        return true
+    })
+    App.RegisterAlias("nobusy","core.move.nobusy")
+
     App.RegisterCallback("core.move.halt",function(){
         App.Send("halt;yun recover;yun regenerate")
     })
