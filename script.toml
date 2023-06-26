@@ -5042,7 +5042,7 @@ Channel = "pkuxkx.noob"
   ID = "player_score5"
   Name = "player_score5"
   Enabled = false
-  Match = "^│年龄：(\\S+)\\s*│师承：(\\S+)\\s*│$"
+  Match = "^│身高：(\\S+)\\s*体重：(\\S+)\\s*│师承：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -5073,7 +5073,7 @@ Channel = "pkuxkx.noob"
   ID = "player_score6"
   Name = "player_score6"
   Enabled = false
-  Match = "^│性别：(\\S+)\\s*│门忠：(\\S+)\\s*│$"
+  Match = "^│体型：(\\S+)\\s*姻缘：(\\S+)\\s*│门忠：(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -6302,6 +6302,11 @@ Channel = "pkuxkx.noob"
   Name = "study2"
   Desc = "备用学习列表"
   Intro = "通过#quests study2执行"
+
+[[RequiredParams]]
+  Name = "study3"
+  Desc = "备用学习列表"
+  Intro = "通过#quests study3执行"
 
 [[RequiredParams]]
   Name = "queue"

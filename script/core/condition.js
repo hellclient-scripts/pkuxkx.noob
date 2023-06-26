@@ -54,6 +54,8 @@
     App.Core.Condition.Register(new (Include("core/condition/gu.js"))())
     App.Core.Condition.Register(new (Include("core/condition/turbo.js"))())
     App.Core.Condition.Register(new (Include("core/condition/shaqi.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/pot.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/menzhong.js"))())
     App.Core.Condition.Register(new (Include("core/condition/xiuxingdian.js"))())
 
 })(App)

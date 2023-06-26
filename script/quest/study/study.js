@@ -180,6 +180,19 @@
         ]).Push()
         App.Next()
     }
+    App.Quest.Study.Start3 = function () {
+        App.Quest.Study.Pause = false
+        App.Quest.Study.Index = 0
+        App.Commands([
+            App.NewCommand('prepare', App.PrapareFull),
+            App.NewCommand('do', "skills"),
+            App.NewCommand('function', function () {
+                App.Quest.Study.Exec(world.GetVariable("study3").replace(re, ","))
+            }),
+        ]).Push()
+        App.Next()
+    }
+
     App.Quest.Study.Exec = function (cmd) {
         if (cmd == "") {
             cmd = world.GetVariable("study").replace(re, ",")

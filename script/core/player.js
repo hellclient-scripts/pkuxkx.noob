@@ -80,11 +80,10 @@
     }
     App.Core.OnPlayerScore5 = function (name, output, wildcards) {
         // App.Data.Score["age"]=CNumber.Split(wildcards[0]).Count
-        // App.Data.Score["teacher"]=wildcards[1]
+        App.Data.Score["teacher"]=wildcards[2]
     }
     App.Core.OnPlayerScore6 = function (name, output, wildcards) {
-        // App.Data.Score["gender"]=wildcards[0]
-        // App.Data.Score["loyalty"]=CNumber.Convert(wildcards[1])
+        App.Data.Score["menzhong"]=wildcards[2]-0
     }
     App.Core.OnPlayerScore7 = function (name, output, wildcards) {
         // App.Data.Score["birthday"]=wildcards[0]
@@ -121,6 +120,7 @@
     App.RegisterCallback("core.player.inittags", function () {
         Mapper.settag(App.Data.Score["family"], true)
         Mapper.settag(App.Data.Score["gender"], true)
+        Mapper.settag("teacher-"+App.Data.Score["teacher"],true)
         if (App.Data.Score["morality"]>0){
             Mapper.settag("正神", true)
         }else if(App.Data.Score["morality"]<0){
