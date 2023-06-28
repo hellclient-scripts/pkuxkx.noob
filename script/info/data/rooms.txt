@@ -26,7 +26,7 @@ qufuch||曲阜车行||||DescStart||这里是曲阜当地的一家马车行，挂
 qufu-qingchi||曲阜清池||||DescStart||这里是曲阜城南的一处水潭，水质清澈，让人忍不住想尝一口，潭边一棵老柳树估计至少生长百年以上了。
 xinyang||信阳小广场||||DescStart||这里是信阳城的中心，一个黄土压实铺就成的小广场。
 xinyangch||信阳车行||||DescStart||这里是信阳当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-zhongyuan-xcc||许昌城||||Station||许昌城
+zhongyuan||许昌城||||Station||许昌城
 zhongyuan-nyc||南阳城||||Station||南阳城
 zhongyuanch||中原车行||||DescStart||这里是中原当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 xiangyang||襄阳||||DescStart||这里是襄阳的城中心。兵荒马乱的年月，这里早失去了往日的繁华，街边零零散散有些小商小贩在叫卖，生意也不
@@ -140,7 +140,7 @@ huangzhong||湟中||||DescStart||这是湟中的城中心，平时里人倒不�
 
 hhna-mjd||孟津渡||||Station||孟津渡
 hebeich||河北车行||||DescStart||这里是河北当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
-hebei-puyang||濮阳||||Station||濮阳
+hebei||濮阳||||Station||濮阳
 hebei-jiyuan||济源||||Full||济源[大元国] [村镇] [存盘点]east,southdown,west
 hebei-baozhou||保州||||Station||保州
 hebei-zdz||正定镇||||Station||正定镇

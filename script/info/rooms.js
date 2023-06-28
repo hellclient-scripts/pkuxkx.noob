@@ -6,6 +6,7 @@
     App.Info.Stations = {}
     App.Info.Landmarks = {}
     App.Info.Places = {}
+    App.Info.NameDescPlaces = {}
     App.Info.HomeRooms = {
         "home": true
     }
@@ -81,6 +82,9 @@
         ]).Push()
         App.Next()
     }
+    App.Info.NameDescPlace=function(){
+        return [App.Data.Room.Name,App.Info.RoomDesc(),App.Data.Room.Place].join("-")
+    }
     App.RegisterCallback("info.room.place", function () {
         if (!App.Data.Room.ID) {
             var id = App.Info.Places[App.Data.Room.Place]
@@ -89,6 +93,16 @@
                 world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")
                 return
             }
+            
+        }
+        if (!App.Data.Room.ID) {
+            var id = App.Info.NameDescPlaces[App.Info.NameDescPlace()]
+            if (id) {
+                App.Data.Room.ID = id
+                world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")
+                return
+            }
+            
         }
     })
     App.Bind("core.room.place","info.room.place")
@@ -112,7 +126,6 @@
                 id = App.Info.DescFirst[desc]
             }
         }
-
         if (id) {
             App.Data.Room.ID = id
             world.Note("定位成功，位于 " + App.Info.Rooms[App.Data.Room.ID].Name + "(" + App.Data.Room.ID + ")")

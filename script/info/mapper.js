@@ -89,7 +89,8 @@
                     break
                 case "Place":
                     options.Place=info[4]
-
+                case "NameDescPlace":
+                    options.NameDescPlace=info[4]
             }
             addroom(info[0], info[1], options)
         });
@@ -124,6 +125,9 @@
         }
         if (data.Place){
             App.Info.Places[data.Place]=id
+        }
+        if (data.NameDescPlace){
+            App.Info.NameDescPlaces[data.NameDescPlace]=id
         }
     }
     App.API.ResetMapper = function () {

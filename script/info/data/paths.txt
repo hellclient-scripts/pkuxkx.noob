@@ -22,13 +22,13 @@ xinyang-jpj||xinyang||||w;w;w;w||e;e;e;e
 ssb||xinyang||||w;w;nw;n;n;n||s;s;s;se;e;e;
 yzqz||yz-jindian||||s||n
 yz-rbz||yzdp||||n||s
-xinyang||zhongyuan-xcc||||n;n;n;n;n;n||s;s;s;s;s;s
-zhongyuan-xcc||zhongyuanch||||n||s
-zhongyuan-xcc||zhongyuan-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
+xinyang||zhongyuan||||n;n;n;n;n;n||s;s;s;s;s;s
+zhongyuan||zhongyuanch||||n||s
+zhongyuan||zhongyuan-nyc||||sw;sw;w;s;sw;sw||ne;ne;n;e;ne;ne
 zhongyuan-nyc||xiangyang||||sw;s;s;s;s;s;s||n;n;n;n;n;n;bo xiaolu&&ne
 xiangyang||xiangyangch||||s;s;s;e||w;n;n;n
 xiangyang||xiangyang-wgdt||||e;se;s;||n;nw;w
-zhongyuan-xcc||zhongyuan-rzc||||nw;nw||se;se
+zhongyuan||zhongyuan-rzc||||nw;nw||se;se
 slsmen||zhongyuan-rzc||||w;sd;sd;sd;ed;sd;sd;e||w;nu;nu;wu;nu;nu;nu;e
 slsmen||slsch||||eu;e||w;wd
 sysy||zhongyuan-rzc||||ed;ne;ne||sw;sw;wu
@@ -194,13 +194,13 @@ qhmz||qhmz-sch||||nd;n;n;n;se;n;n||s;s;nw;s;s;s;su
 qhmz||qhmzqz||||nd;n;n;se;s||n;nw;s;s;su
 qhmz||qhmzyp||||nd;n;n;n;se;se;n||s;nw;nw;s;s;s;su
 qhmzyp||qhmzypgj||||enter||out
-zhongyuan-xcc||wssz-migong-e||||s;s;nw;nw||se;se;n;n
+zhongyuan||wssz-migong-e||||s;s;nw;nw||se;se;n;n
 wssz-migong-n||wssz-migong-e||||#maze 万兽山庄 south.林间道[野外]southeast,west||#maze 万兽山庄 west.林间道[野外]northwest,south||50
 wssz-migong-n||wssz-houmen||||nw;nd;w||e;su;se
 luoyang||hhna-mjd||||n;n;n;nu;nd;n;n;nu||sd;s;s;su;sd;s;s;s;
 hhna-mjd||hebei-jiyuan||sail||ask shao gong about 过河&&go enter;#sail;nu||sd;ask shao gong about 过河&&go enter;#sail||50
-hebei-puyang||hebeich||||n;e||w;s
-hebei-puyang||hebei-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
+hebei||hebeich||||n;e||w;s
+hebei||hebei-jiyuan||||sw;sw;sw;w;w;w||e;e;e;ne;ne;ne
 hebei-jiyuan||jinyang-xiaofu||||w;nw;w;nw;nd;n;n;nu;nd;ne;n;n;ne;ne;n;ne;e;n;n;w||e;s;s;w;sw;s;sw;sw;s;s;sw;su;sd;s;s;su;se;e;se;e
 jinyang||jinyang-xiaofu||||sw;w;w;w;w;w;n;n;w||e;s;s;e;e;e;e;e;ne
 jinyang||jinyangch||||sw;w;w;ne||sw;e;e;ne

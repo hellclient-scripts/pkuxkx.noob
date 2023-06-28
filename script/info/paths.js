@@ -26,9 +26,9 @@
     App.Info.LoadBangPaiPath=function(){
         let loc=App.GetParamBangpai().trim()
         if (loc){
-                path=[data[0],"bangpaimen","","huibang","out"]
-                Note("发现帮派，位于"+data[0])
-                App.Info.BuiltinRooms=[[data[0],"bangpai-entry"].join("||")].concat(App.Info.BuiltinRooms)
+                path=[loc,"bangpaimen","","huibang","out"]
+                Note("发现帮派，位于"+loc)
+                App.Info.BuiltinRooms=[[loc,"bangpai-entry"].join("||")].concat(App.Info.BuiltinRooms)
                 App.Info.BuiltinPaths=[path.join("||")].concat(App.Info.BuiltinPaths)
         }
     }
