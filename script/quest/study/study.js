@@ -17,25 +17,38 @@
                 if (p.Type == "xiulian" && App.Data.HP["pot"] < skill.Level * 5) {
                     return
                 }
-                let max = p.Max-0
-                if (isNaN(max)&&p.Max){
-                    let maxskill=p.Max
-                    let offset=0
-                    switch(maxskill[0]){
-                        case "<":
-                            maxskill=maxskill.slice(1)
-                            offset=-1
+                let max = p.Max - 0
+                if (isNaN(max) && p.Max) {
+                    let maxskill = p.Max
+                    let offset = 0
+                    switch (maxskill[0]) {
+                        case "-":
+                            var data = maxskill.slice(1).trim().split(" ")
+                            if (data.length > 2) {
+                                maxskill=data[1]
+                                offset = 0-(data[0])
+                            } else {
+                                maxskill=data[0]
+                                offset = -1
+                            }
+
                             break
-                        case ">":
-                            maxskill=maxskill.slice(1)
-                            offset=1
+                        case "+":
+                            var data = maxskill.slice(1).trim().split(" ")
+                            if (data.length > 2) {
+                                maxskill=data[1]
+                                offset = 0+(data[0])
+                            } else {
+                                maxskill=data[0]
+                                offset = +1
+                            }
                             break
                     }
-                    let sk=App.Core.PlayerGetSkillByID(maxskill)
-                    if (sk){
-                        max=sk.Level+offset
-                    }else{
-                        max=0
+                    let sk = App.Core.PlayerGetSkillByID(maxskill)
+                    if (sk) {
+                        max = sk.Level + offset
+                    } else {
+                        max = 0
                     }
                 }
                 if (max <= 0) {

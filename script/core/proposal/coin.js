@@ -3,6 +3,9 @@
     let Coin= function(){
         proposal.call(this,"coin")
         this.Submit=function(){
+            if (!App.Data.Room.ID){
+                return false
+            }
             if (!App.GetEquipmentObj("Lupi dai")){
                 return false
             }
@@ -15,6 +18,7 @@
         this.Execute=function(){
             let cmd="put coin_money in lupi dai;i2;l lupi dai"
             App.Commands([
+                App.NewCommand("function",App.LeaveLimitedRoom),
                 App.NewCommand("do",cmd),
             ]).Push()
             App.Next()
