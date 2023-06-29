@@ -15,7 +15,7 @@
             App.NewCommand("do",item.Command),
             App.NewCommand("nobusy"),
             App.NewCommand("do","i2"),
-            App.NewCommand("standby"),
+            App.NewCommand("delay",1),
             App.NewCommand("function",function(){
                 App.Push(["core.produce.goodscheck"]).WithData("Item",item).WithData("Amount",amount)
                 App.Next()

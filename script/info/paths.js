@@ -21,6 +21,7 @@
             }
         }
         let jxj=[homeloc,"jxj","","enter jianxinju","#leaveid","50","50"]
+        App.Data.HomeLoc=homeloc
         App.Info.BuiltinPaths=[jxj.join("||")].concat(App.Info.BuiltinPaths)
     }
     App.Info.LoadBangPaiPath=function(){

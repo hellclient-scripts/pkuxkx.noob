@@ -10,7 +10,7 @@
             if (item && item.Count>App.GetParam("lupidaiqucoin")){
                 return false
             }
-            return App.GetItemByName("铜板")!=null
+            return App.GetItemByName("铜板",true)!=null
         }
         this.Execute=function(){
             let cmd="put coin_money in lupi dai;i2;l lupi dai"
