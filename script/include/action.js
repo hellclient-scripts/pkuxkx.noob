@@ -4,6 +4,7 @@
     let Action = function (line) {
         this.Strategy = ""
         this.Conditions = []
+        this.ConditionsLine=""
         this.Command = ""
         this.Param = ""
         this.Data = ""
@@ -21,7 +22,8 @@
         if (data.length == 1) {
             cmd = param
         } else {
-            let conditions = data[0].trim().split(",")
+            this.ConditionsLine=data[0].trim()
+            let conditions = this.ConditionsLine.split(",")
             for (var i = 0; i < conditions.length; i++) {
                 let c = conditions[i].trim()
                 if (c) {

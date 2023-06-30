@@ -7,7 +7,7 @@
     let kill=Include("include/option/kill.js")
     let item=Include("include/option/item.js")
     let search=Include("include/option/search.js")
-
+    let planevent=Include("include/option/planevent.js")
     App.Options={}
     App.Options.NewWalk=function(target,vehicle){
         return new walk(target,vehicle)
@@ -32,5 +32,8 @@
     }
     App.Options.NewSearch=function(goal,depth,vehicle){
         return new search(goal,depth,vehicle)
+    }
+    App.Options.NewPlanEvent=function(id,details){
+        return new planevent(id,details)
     }
 }(App))

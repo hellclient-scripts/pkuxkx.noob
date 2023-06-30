@@ -5830,7 +5830,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 20
   Second = 0.0
@@ -6292,6 +6292,11 @@ Channel = "pkuxkx.noob"
   Name = "quests3"
   Desc = "备用任务列表3"
   Intro = "||或换行分割的任务列表，有先后顺序，前面一个失败的话执行下一个\n\n#start3后使用这个列表进行任务"
+
+[[RequiredParams]]
+  Name = "plan"
+  Desc = "计划，针对游戏中不同的事件做不同的响应"
+  Intro = "针对 游戏中触发的 事件 和细节(detail)，执行预先设定的计划。只会发送第一条匹配的指令。\n\n格式为 \n\ndetail [细节1] [细节2]>#[事件] [要发送的指令]\n\n条件部分与quest通用"
 
 [[RequiredParams]]
   Name = "study"

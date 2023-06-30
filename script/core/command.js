@@ -57,4 +57,6 @@
     App.RegisterCommand(Include("core/command/asset.js"))
     App.RegisterCommand(Include("core/command/roomonline.js"))
     App.RegisterCommand(Include("core/command/quit.js"))
+    App.RegisterCommand(Include("core/command/planevent.js"))
+
 })(App)
