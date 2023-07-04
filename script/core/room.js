@@ -21,7 +21,8 @@
         WalkTags: [],
         Data: {},
         Died: {},
-        MoveRetried: 0
+        MoveRetried: 0,
+        IDMap:{}
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境,3:雾中,4:对象,5:图像,6:提示
@@ -74,6 +75,7 @@
             MoveRetried: 0,
             Place: "",
             Exits: null,
+            IDMap:{},
         }
         if (looking) {
             Note("正在观察当前房间信息")
@@ -262,6 +264,11 @@
             world.EnableTriggerGroup("roomobjend", true)
         }
         var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4], Comment: wildcards[7] }
+        uid=obj.ID.toLowerCase()
+        let uidIndex=App.Data.Room.IDMap[uid]||0
+        uidIndex++
+        App.Data.Room.IDMap[uid]=uidIndex
+        obj.UNID=uid+" "+uidIndex
         obj.Last = wildcards[0].split(relast).slice(-1)[0]
         obj.LastDump = SubDumpLine(4 + wildcards[0].length - obj.Last.length, 4 + wildcards[0].length)
         App.Data.Room.Objs.push(obj)

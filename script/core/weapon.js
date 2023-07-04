@@ -77,7 +77,7 @@
         App.Core.Weapon.LastDurability = 0
         App.Core.Weapon.LastDurabilityMax = 0
         App.Send("l " + id)
-        App.Response("wepon", "durability", type + "#" + id)
+        App.Response("weapon", "durability", type + "#" + id)
     }
     App.Core.Weapon.CheckRandom = function () {
         let repair_list = GetVariable("repair_list").trim()
@@ -180,7 +180,7 @@
         }
     })
     App.Bind("core.onitemlist", "core.weapononitem")
-    App.Bind("Response.wepon.durability", "core.weapon.durabilityend")
+    App.Bind("Response.weapon.durability", "core.weapon.durabilityend")
     App.Core.Weapon.Repair = function () {
         if (App.Core.Weapon.ToRepair != "") {
             let param = App.Core.Weapon.ToRepair.split("#")
