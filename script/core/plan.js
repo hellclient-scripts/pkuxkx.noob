@@ -23,11 +23,11 @@
         }
         return result
     }
-    App.Core.Plan.Execute = function (event, details) {
+    App.Core.Plan.Execute = function (event, details,defaultcmd) {
         if (!details) {
             details = []
         }
-        Note("执行plan 事件[" + event + "] 细节detail [" + details.join(",") + "]")
+        Note("执行plan 事件[" + event + "] 细节detail[" + details.join(",") + "]"+(defaultcmd?(" 默认动作["+ defaultcmd+"]"):"")+"。")
         App.Core.Plan.Current = event
         App.Core.Plan.Details = {}
         for (var i = 0; i < details.length; i++) {
@@ -41,8 +41,17 @@
             if (action.Command==event&&App.Core.Plan.Match(action.ConditionsLine)){
                 Note("匹配到计划" + action.Line)
                 App.Send(action.Data)
-                return
+                return true
             }
         }
+        if (defaultcmd){
+            App.Send(defaultcmd)
+        }
+        return false
+    }
+
+
+    App.Core.Plan.OnXiejie=function (name, output, wildcards) {
+        App.Core.Plan.Execute("#xiejie",[],"wear my armor")
     }
 })(App)
