@@ -39,4 +39,4 @@ blade||blade||Blade||钢刀||goods||yz-dtp||buy blade
 hua chan||hua chan||Hua chan|||花铲||goods||yz-zhp||buy hua chan
 蒙面头巾||mask||Mask|||蒙面头巾||goods||yz-zqg||buy mask
 yugou||yugou||Yugou||鱼钩||goods||yz-zhp||buy yugou
-huo zhezi||huo zhezi||Huo zhezi||火折子||linanyp||buy huo zhezi
+huo zhezi||huo zhezi||Huo zhezi||火折子||goods||linanyp||buy huo zhezi

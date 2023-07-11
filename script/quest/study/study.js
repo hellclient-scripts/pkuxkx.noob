@@ -130,7 +130,7 @@
                 cmd = "du " + study.Target + " for " + (study.Per ? study.Per : "50")
                 break
             case "cmd":
-                cmd = study.Target
+                cmd = study.Target+""
                 break
             case "xiulian":
                 cmd = "xiulian " + study.Skill

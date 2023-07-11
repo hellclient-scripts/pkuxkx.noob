@@ -18,6 +18,7 @@
             case "flowers":
             case "exits":
             case "zoneroom":
+            case "2words":
                 this.Cmd=null
                 break
             default:
