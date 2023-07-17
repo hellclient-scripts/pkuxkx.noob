@@ -1,15 +1,15 @@
 (function (App) {
     let check = Include("core/check/check.js")
-    App.Data.NoForce=false
+    App.Data.NoForce = false
     App.Data.Score = {}
     App.Data.LastScore = 0
     App.Data.Exp = 0
-    App.Data.Qishi=0
+    App.Data.Qishi = 0
 
     App.Data.Special = {}
     App.Data.SpecialInUse = {}
-    App.Data.SpecialLast=0
-    
+    App.Data.SpecialLast = 0
+
     App.Bind("Check", "core.player.special")
     let checkSpecial = (new check("score")).WithLevel(App.CheckLevelBrief).WithCommand("special").WithIntervalParam("checkspecialinterval").WithLastID("LastSpecial")
     App.RegisterCallback("core.player.special", checkSpecial.Callback())
@@ -30,7 +30,7 @@
             Enabled: wildcards[0] == "*",
             Label: wildcards[1],
             ID: wildcards[2],
-            Level: wildcards[3]?wildcards[3].length:0,
+            Level: wildcards[3] ? wildcards[3].length : 0,
 
         }
         App.Data.Special[special.ID] = special
@@ -39,7 +39,7 @@
         }
     }
     App.Core.SpecialEnd = function (name, output, wildcards) {
-        App.Data.SpecialLast=Now()
+        App.Data.SpecialLast = Now()
         world.EnableTriggerGroup("playerspecial", false)
     }
     world.EnableTriggerGroup("playerspecial", false)
@@ -80,10 +80,10 @@
     }
     App.Core.OnPlayerScore5 = function (name, output, wildcards) {
         // App.Data.Score["age"]=CNumber.Split(wildcards[0]).Count
-        App.Data.Score["teacher"]=wildcards[2]
+        App.Data.Score["teacher"] = wildcards[2]
     }
     App.Core.OnPlayerScore6 = function (name, output, wildcards) {
-        App.Data.Score["menzhong"]=wildcards[2]-0
+        App.Data.Score["menzhong"] = wildcards[2] - 0
     }
     App.Core.OnPlayerScore7 = function (name, output, wildcards) {
         // App.Data.Score["birthday"]=wildcards[0]
@@ -120,10 +120,10 @@
     App.RegisterCallback("core.player.inittags", function () {
         Mapper.settag(App.Data.Score["family"], true)
         Mapper.settag(App.Data.Score["gender"], true)
-        Mapper.settag("teacher-"+App.Data.Score["teacher"],true)
-        if (App.Data.Score["morality"]>0){
+        Mapper.settag("teacher-" + App.Data.Score["teacher"], true)
+        if (App.Data.Score["morality"] > 0) {
             Mapper.settag("正神", true)
-        }else if(App.Data.Score["morality"]<0){
+        } else if (App.Data.Score["morality"] < 0) {
             Mapper.settag("负神", true)
         }
         let dodge = App.Core.PlayerGetSkillByID("dodge")
@@ -142,26 +142,26 @@
                 }
             }
         }
-        let sorcery=App.Core.PlayerGetSkillByID("sorcery")
+        let sorcery = App.Core.PlayerGetSkillByID("sorcery")
         if (sorcery) {
-            if (sorcery.Level>49){
-                Mapper.settag("sorcery50",true)
+            if (sorcery.Level > 49) {
+                Mapper.settag("sorcery50", true)
             }
-            if (sorcery.Level>149){
-                Mapper.settag("sorcery150",true)
+            if (sorcery.Level > 149) {
+                Mapper.settag("sorcery150", true)
             }
-            if (sorcery.Level>200){
-                Mapper.settag("sorcery201",true)
+            if (sorcery.Level > 200) {
+                Mapper.settag("sorcery201", true)
             }
         }
-        let neili=App.Data.HP["neili"]
+        let neili = App.Data.HP["neili"]
         for (var i = 500; i <= 10000; i += 500) {
             if (neili >= i) {
                 Mapper.settag("neili" + i, true)
             }
         }
-        
-        let exp=App.Data.Exp
+
+        let exp = App.Data.Exp
         for (var i = 100000; i <= 1000000; i += 100000) {
             if (exp >= i) {
                 Mapper.settag("exp" + i, true)
@@ -290,13 +290,13 @@
         App.Data.LastHP = Now()
     }
 
-    let checkrecover=function(){
+    let checkrecover = function () {
         App.Recover()
         App.Send("hp")
     }
-    App.Recover=function(){
-        let sorcery=App.Core.PlayerGetSkillByID("sorcery")
-        if (sorcery&&sorcery.Level>60) {
+    App.Recover = function () {
+        let sorcery = App.Core.PlayerGetSkillByID("sorcery")
+        if (sorcery && sorcery.Level > 60) {
             App.Send("so recover")
         }
         App.Send("yun recover;yun regenerate")
@@ -348,15 +348,15 @@
             App.Data.HP["status"][data] = true
         })
     }
-    App.Core.Dazuo=function(){
-        let num=App.Data.HP["qixue"]?Math.floor((App.Data.HP["qixue"]/10)):10
-        if (num>App.Data.HP["eff_qixue"]){
-            num=App.Data.HP["eff_qixue"]
+    App.Core.Dazuo = function () {
+        let num = App.Data.HP["qixue"] ? Math.floor((App.Data.HP["qixue"] / 10)) : 10
+        if (num > App.Data.HP["eff_qixue"]) {
+            num = App.Data.HP["eff_qixue"]
         }
-        if (num<10){
-            num=10
+        if (num < 10) {
+            num = 10
         }
-        App.Send("dazuo "+num)
+        App.Send("dazuo " + num)
     }
     App.Core.OnPlayerHPEnd = function (name, output, wildcards) {
         world.EnableTriggerGroup("playerhp", false)
@@ -412,14 +412,20 @@
         App.RaiseRoomEvent("core.healfail")
         App.RaiseStateEvent("core.healfail")
     }
-    App.Core.OnPlayerNoForce=function(name, output, wildcards){
-        App.Data.NoForce=true
+    App.Core.OnPlayerOnLifehealFail = function (name, output, wildcards) {
+        if (wildcards[0] == App.Data.Score.name) {
+            App.RaiseRoomEvent("core.healfail")
+            App.RaiseStateEvent("core.healfail")
+        }
     }
-    App.Core.OnPlayerQishi=function(name, output, wildcards){
-        App.Data.Qishi=wildcards[0]-0
+    App.Core.OnPlayerNoForce = function (name, output, wildcards) {
+        App.Data.NoForce = true
     }
-    App.Core.OnPlayerQishi2=function(name, output, wildcards){
-        App.Data.Qishi=wildcards[0]-0
+    App.Core.OnPlayerQishi = function (name, output, wildcards) {
+        App.Data.Qishi = wildcards[0] - 0
+    }
+    App.Core.OnPlayerQishi2 = function (name, output, wildcards) {
+        App.Data.Qishi = wildcards[0] - 0
     }
     world.EnableTriggerGroup("combat", false)
 })(App)

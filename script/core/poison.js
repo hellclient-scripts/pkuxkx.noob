@@ -175,7 +175,11 @@
         var commands = []
         if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Core.PerJing() > App.Core.PerQixue()) {
-                commands.push(App.NewCommand("do", "yun heal;hp"))
+                if (App.Core.PerQixue() >= 51){
+                    commands.push(App.NewCommand("do", "yun heal;hp"))
+                }else{
+                    commands.push(App.NewCommand("do", "yun lifeheal " + GetVariable("id").trim() + ";hp"))
+                }
             } else {
                 commands.push(App.NewCommand("do", "yun inspire;hp"))
             }

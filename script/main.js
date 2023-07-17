@@ -38,7 +38,9 @@ MsgsMissReturn["牧民打着手势对你说：请到我家里坐一坐吧？."]=
 MsgsMissReturn["牧民憨厚地对你笑者。"]=true
 MsgsMissReturn[String.fromCharCode(27)+"吕大人,您再喝两杯吧!"]=true
 MsgsMissReturn["吕大人,您再喝两杯吧!"]=true
-
+let MsgsMissRe={
+    "泼皮一把":/^泼皮一把拦住.+：要向从此过，留下买路财！$/
+}
 var onBuffer = function (data,bytes) {
     if (data==null){
         if (DebugLevel>0){
