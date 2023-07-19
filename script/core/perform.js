@@ -44,6 +44,10 @@
             Note("绝招[" + id + "]冷却中")
             return false
         }
+        if (App.Core.Combat.Current.Weapon && pfm.Weapon && (pfm.Weapon != App.Core.Combat.Current.Weapon) && App.Core.Combat.Current.WeaponCooldown > 0) {
+            Note("绝招[" + id + "]兵器 " + pfm.Weapon + " 冲突")
+            return false
+        }
         Note("使用绝招[" + id + "]")
         pfm.Execute(target)
         return true
@@ -120,6 +124,10 @@
                     case "use":
                         perform.AddUse(action.Data, param[1])
                         Note("绝招ID[" + id + "]添加高兵指令，将 " + action.Data + " 作为 " + param[1] + " 使用")
+                        break
+                    case "weapon":
+                        perform.SetWeapon(action.Data, param[1]?(param[1]-0):0)
+                        Note("绝招ID[" + id + "]添加武器指令，高兵使用主武器为 " + action.Data + " 并锁定 " + (param[1]?param[1]:0) + " 秒。")
                         break
                     case "trigger":
                         let tricd = 0

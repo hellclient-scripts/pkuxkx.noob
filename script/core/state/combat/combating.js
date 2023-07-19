@@ -40,6 +40,13 @@
         if (App.Core.Poison.NeedXuejie() && App.GetItemNumber("xuejie dan", true)) {
             App.Send("eat xuejie dan;i2")
         }
+        if (App.Core.Combat.Current.WeaponCooldown > 0) {
+            App.Core.Combat.Current.WeaponCooldown--
+            if (App.Core.Combat.Current.WeaponCooldown) {
+                Note("武器锁定" + App.Core.Combat.Current.Weapon + " 剩余 " + App.Core.Combat.Current.WeaponCooldown + "秒")
+            }
+        }
+        App.Core.Combat.Current.LastWeapon = App.Core.Combat.Current.Weapon
         App.Core.Combat.Perform()
         if (App.Core.Combat.Enemies.CheckNeedLook(20)) {
             App.Look()

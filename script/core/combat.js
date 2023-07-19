@@ -183,7 +183,18 @@
             case "#use":
                 App.Core.Weapon.ActionUse(action)
                 break
+            case "#weapon":
+                App.Core.Combat.UpdateWeapon(action)
+                break
         }
+    }
+    App.Core.Combat.UpdateWeapon=function(action){
+        if (App.Core.Combat.Current.WeaponCooldown<=0&&(App.Core.Combat.Current.LastWeapon==App.Core.Combat.Current.Weapon)){
+            App.Core.Weapon.UseRight(action.Data)
+            App.Core.Combat.Current.Weapon=action.Data
+            App.Core.Combat.Current.WeaponCooldown=1
+        }
+
     }
     App.Core.Combat.Toggle = function () {
         let combat = App.Core.Combat.Current
@@ -230,7 +241,7 @@
     App.Core.Combat.Ready = function (target) {
         let combat = App.Core.Combat.Current
         if (combat) {
-            App.Raise("combat.ready",combat)
+            App.Raise("combat.ready", combat)
             for (var i = 0; i < combat.Actions.length; i++) {
                 App.Core.Combat.ExecReady(combat.Actions[i])
             }

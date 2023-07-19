@@ -30,18 +30,28 @@
         return result
     }
 
-    App.Core.Weapon.Right = ""
-    App.Core.Weapon.Left = ""
+    App.Core.Weapon.Right = []
+    App.Core.Weapon.Left = []
     App.Core.Weapon.ReWield = function () {
         App.Send("unwield all")
         App.Core.Weapon.Wield()
     }
+    let rewieldcmd=/^\s*wield (.+) at (left|right)\s*$/
     App.Core.Weapon.Send = function (action) {
+        let result=action.Data.match(rewieldcmd)
+        if (result){
+            if (result[2]=="right"){
+                App.Core.Weapon.Right.push(result[1])
+            }else{
+                App.Core.Weapon.Left.push(result[1])
+            }
+        }
         App.Send(action.Data)
     }
+    
     App.Core.Weapon.Wield = function () {
-        App.Core.Weapon.Right = ""
-        App.Core.Weapon.Left = ""
+        App.Core.Weapon.Right = []
+        App.Core.Weapon.Left = []
         let actions = App.Core.Weapon.LoadActions(world.GetVariable("wield").trim())
         for (var i = 0; i < actions.length; i++) {
             let action = actions[i]
@@ -114,6 +124,11 @@
     }
     App.Core.Weapon.NeedWield = function () {
         return App.Core.Weapon.Weapons > Object.keys(App.Core.Weapon.Equipped).length
+    }
+    App.Core.Weapon.UseRight=function(type){
+        for(var i=0;i<App.Core.Weapon.Right.length;i++){
+            App.Core.Weapon.Use(App.Core.Weapon.Right[i],type)
+        }
     }
     App.Core.Weapon.Use = function (id, type) {
         if (App.Core.Weapon.Equipped[id]) {

@@ -19,6 +19,9 @@
         this.HaltAfter = 0
         this.StrategyList = strategylist || []
         this.Strategy = ""
+        this.LastWeapon=""
+        this.Weapon=""
+        this.WeaponCooldown=0
         this.Actions = []
         this.StartAt = Now()
     }
