@@ -51,12 +51,16 @@
         if (App.Core.Combat.Enemies.CheckNeedLook(20)) {
             App.Look()
         }
+        let dur=App.Core.Combat.Current.Duration()
         let msg = []
         msg.push("当前策略[" + App.Core.Combat.Current.Strategy + "]")
         msg.push("气势[" + App.Data.Qishi + "]")
         msg.push("首选目标[" + App.Core.Combat.Current.Target + "]")
-        msg.push(Math.floor(App.Core.Combat.Current.Duration()) + "秒")
+        msg.push(Math.floor(dur) + "秒")
         Note(msg.join(","))
+        if (dur>1){
+            Note("输出    D: "+Math.round(App.Core.Combat.Current.QiDamage/dur)+"/"+App.Core.Combat.Current.QiDamage+"    W:"+Math.round(App.Core.Combat.Current.QiWound/dur)+"/"+App.Core.Combat.Current.QiWound)
+        }
         let list = App.Core.Combat.Enemies.ListTags(3)
         for (var i = 0; i < list.length; i++) {
             Note("目标[" + list[i] + "]信息:[" + list.Tags.join(","))
@@ -72,6 +76,18 @@
                 App.RaiseStateEvent("combat.fighting")
             }
             if (data.id) {
+                if (data["qi_damage"]){
+                    App.Core.Combat.Current.QiDamage+=data["qi_damage"]
+                }
+                if (data["qi_wound"]){
+                    App.Core.Combat.Current.QiWound+=data["qi_wound"]
+                }
+                if (data["jing_damage"]){
+                    App.Core.Combat.Current.QiDamage+=data["jing_damage"]
+                }
+                if (data["jing_wound"]){
+                    App.Core.Combat.Current.QiWound+=data["jing_wound"]
+                }
                 if (data["enemy_out"]) {
                     Note("Npc" + data.name + "[" + data.id + "]脱离战斗")
                     App.Core.Combat.Enemies.RemoveID(data.id, data.id.split("#")[0])

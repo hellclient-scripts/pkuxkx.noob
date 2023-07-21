@@ -6,7 +6,12 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Finish = function () {
-        Note("战斗结束，用时：" + App.Core.Combat.Current.Duration() + "秒")
+        let dur=App.Core.Combat.Current.Duration()
+        if (dur<=0){
+            dur=1
+        }
+        Note("战斗结束，用时：" + dur + "秒  每秒Damage:"+Math.round(App.Core.Combat.Current.QiDamage/dur)+"  总Damage:"+App.Core.Combat.Current.QiDamage+"  每秒Wound:"+Math.round(App.Core.Combat.Current.QiWound/dur)+"  总Wound:"+App.Core.Combat.Current.QiWound)
+
         let afterCombatCmd = GetVariable("after_combat_cmd")
         if (afterCombatCmd) {
             App.Send(afterCombatCmd)

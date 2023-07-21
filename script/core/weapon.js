@@ -29,7 +29,23 @@
         }
         return result
     }
-
+    let weapons={
+        "剑":"sword",
+        "鞭":"whip",
+        "刀":"blade",
+        "匕":"dagger",
+        "杖":"staff",
+        "斧":"axe",
+        "锤":"hammer",
+        "戟":"halberd",
+        "枪":"spear",
+    }
+    App.Core.Weapon.OnWeaponsUse=function(name, output, wildcards){
+        let weapon=weapons[wildcards[1]]
+        if (weapon){
+            App.Raise("core.weaponsuse",weapon)
+        }
+    }
     App.Core.Weapon.Right = []
     App.Core.Weapon.Left = []
     App.Core.Weapon.ReWield = function () {

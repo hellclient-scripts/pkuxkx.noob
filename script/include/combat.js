@@ -24,6 +24,10 @@
         this.WeaponCooldown=0
         this.Actions = []
         this.StartAt = Now()
+        this.JingWound=0
+        this.QiWound=0
+        this.QiDamage=0
+        this.JingDamage=0
     }
     Combat.prototype.LoadActions = function (data) {
         let lines = data.split("\n")

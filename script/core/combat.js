@@ -191,8 +191,8 @@
     App.Core.Combat.UpdateWeapon=function(action){
         if (App.Core.Combat.Current.WeaponCooldown<=0&&(App.Core.Combat.Current.LastWeapon==App.Core.Combat.Current.Weapon)){
             App.Core.Weapon.UseRight(action.Data)
-            App.Core.Combat.Current.Weapon=action.Data
-            App.Core.Combat.Current.WeaponCooldown=1
+            // App.Core.Combat.Current.Weapon=action.Data
+            // App.Core.Combat.Current.WeaponCooldown=1
         }
 
     }

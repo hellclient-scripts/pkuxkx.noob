@@ -52,6 +52,16 @@
         pfm.Execute(target)
         return true
     }
+    const WeaponsUseCooldown=3
+    App.RegisterCallback("core.perform.onweaponsuse",function(weapon){
+        if (App.Core.Combat.Current){
+            if (App.Core.Combat.Current.WeaponCooldown<WeaponsUseCooldown){
+                App.Core.Combat.Current.WeaponCooldown=WeaponsUseCooldown
+            }
+            App.Core.Combat.Current.Weapon=weapon
+        }
+    })
+    App.Bind("core.weaponsuse","core.perform.onweaponsuse")
     App.Core.Perform.LoadActions = function (data) {
         let lines = data.split("\n")
         let result = []

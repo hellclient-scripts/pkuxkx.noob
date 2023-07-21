@@ -44,7 +44,9 @@
             if (line.match(this.Triggers[i].Trigger)) {
                 if (this.WeaponCooldown) {
                     Note("Perform成功，锁定武器 " + this.Weapon + " " + this.WeaponCooldown + "秒")
-                    App.Core.Combat.Current.WeaponCooldown = this.WeaponCooldown
+                    if (App.Core.Combat.Current.WeaponCooldown<this.WeaponCooldown){
+                        App.Core.Combat.Current.WeaponCooldown = this.WeaponCooldown
+                    }
                 }
                 return this.Triggers[i].Cooldown
             }
