@@ -245,5 +245,6 @@
         App.Core.ItemList.Filter("gem",function(item){
             App.Send(cmd)
         })
+        App.Send("i2")
     }
 })(App)
