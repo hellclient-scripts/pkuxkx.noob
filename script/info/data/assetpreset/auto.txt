@@ -21,3 +21,5 @@ quit:#sell wushi dao,dulong bian
 #keep type=玉
 #keep type=随机
 #keep type=职业
+#keep type=古董
+#drop type=任务物品
