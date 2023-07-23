@@ -16,6 +16,7 @@
         this.Level = level
         this.DFS = DFS
         this.Command = command
+        this.IsBack=false
     }
     Next.prototype.Arrive = function (exits) {
         let filtered = []
@@ -34,6 +35,7 @@
         this.Level = level
         this.DFS = DFS
         this.Command = command
+        this.IsBack=true
     }
     Next.prototype.ConcatBackward = function () {
         let result = (this.Level == null) ? [] : this.Level.ConcatBackward()

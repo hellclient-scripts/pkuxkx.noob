@@ -139,7 +139,7 @@
             return
         }
         let line = JSON.parse(DumpOutput(1))[0]
-        if (App.Core.RoomDesc.Mode == 1) {
+        if (App.Core.RoomDesc.Mode == 1||App.Core.RoomDesc.Mode == 5) {
             if (output.trim() == "炊烟不断地从路边的小屋里飘出。") {
                 App.Core.RoomDesc.Mode = 2
                 return
@@ -159,7 +159,7 @@
                 case "「隆冬」:":
                 case "「寒冬」:":
                     App.Core.RoomDesc.Mode = 2
-                    return
+                    // return
             }
         }
         if (output.slice(0, 15) == "    你可以看看(look)") {
@@ -405,6 +405,7 @@
         if (App.Data.Room.Looking) {
             world.DoAfterSpecial(1, 'App.LookAgain()', 12);
         }
+        App.RaiseStateEvent("core.lookfail")
     }
     App.RegisterCallback("core.resetlooking", function () {
         App.Data.NeedRoomDesc = false
