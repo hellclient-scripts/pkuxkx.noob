@@ -5923,7 +5923,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = true
+  Enabled = false
   Hour = 0
   Minute = 20
   Second = 0.0
@@ -6479,7 +6479,7 @@ Channel = "pkuxkx.noob"
 [[RequiredParams]]
   Name = "performs"
   Desc = "预定义绝招"
-  Intro = "对绝招(perform)主要时绝招的冷却进行管理\n由于一个心跳只能发出一个绝招，管理后可以避免法送过多指令。\n绝招定义后在combat中使用，修改后重启生效\n范例:\n\n#lian perform ^你使用了太极剑连字诀.*$\n#lian.cd 6\n#lian.use.sword my blade\n#lian.send perform sword.lian\n#lian.sendon perform sword.lian $1\n#lian.use.blade my blade\n#lian.group taiji-jian\n#lian.trigger ^你使用太极剑连字诀成功.*$\n#lian.trigger.15 ^你使用太极剑连字诀失败.*$\n"
+  Intro = "对绝招(perform)主要时绝招的冷却进行管理\n由于一个心跳只能发出一个绝招，管理后可以避免法送过多指令。\n绝招定义后在combat中使用，修改后重启生效\n范例:\n\n#lian ^你使用了太极剑连字诀.*$\n#lian.cd 6\n#lian.use.sword my blade\n#lian.send perform sword.lian\n#lian.sendon perform sword.lian $1\n#lian.use.blade my blade\n#lian.group taiji-jian\n#lian.trigger ^你使用太极剑连字诀成功.*$\n#lian.trigger.15 ^你使用太极剑连字诀失败.*$\n"
 
 [[RequiredParams]]
   Name = "combat"

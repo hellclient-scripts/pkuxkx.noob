@@ -1,4 +1,6 @@
 (function (App) {
+    const DefaultTimeout = 300
+    const DefaultMaxImages = 5
     let imgsrcre = /<img src="\.([^"]+)"/
     App.Data.CaptchaURLs = {}
     App.Data.CaptchaCode = ""
@@ -13,7 +15,9 @@
     App.Data.CatpchaLastURL = ""
     App.Data.CaptchaCurrentData = null
     App.Core.CaptchaReq = null
-
+    App.Core.CaptchaImages = []
+    App.Core.CaptchaImagesRemain = 0
+    App.Data.CaptchaTimeoutInSecounds = DefaultTimeout
     App.API.CaptchaSaveURL = function (type) {
         App.Data.CaptchaURLs[type] = App.Data.CatpchaLastURL
     }
@@ -25,6 +29,11 @@
             data = {
                 type: data,
             }
+        }
+        if (!data.timeout) {
+            App.Data.CaptchaTimeoutInSecounds = DefaultTimeout
+        } else {
+            App.Data.CaptchaTimeoutInSecounds = data.timeout
         }
         let type = data.type
         switch (type) {
@@ -46,29 +55,62 @@
         if (fail) {
             a.WithFailState(fail)
         }
-        App.Next()
+        App.Core.CaptchaLoadURL(App.Data.CaptchaCurrentType)
+        if (!App.Data.CaptchaCurrentURL) {
+            App.Fail()
+            return
+        }
+        App.Core.CaptchaImages = []
+        App.Core.CaptchaImagesRemain = DefaultMaxImages
+        App.Core.CaptchaLoad()
     }
     App.Core.CaptchaFullme = function () {
         App.Core.Quest.Cooldowns["fullme"] = -1
         App.Core.Quest.InsertQuest("fullme")
     }
     App.Core.CaptchaLoad = function () {
-        App.Core.CaptchaReq = HTTP.New("GET", App.Data.CaptchaCurrentURL)
-        App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
+        App.Core.CaptchaImagesRemain--
+        if (App.Core.CaptchaImagesRemain >= 0) {
+            App.Core.CaptchaReq = HTTP.New("GET", App.Data.CaptchaCurrentURL)
+            App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
+        } else {
+            App.Next()
+        }
     }
     App.Core.CatpchaParseHTML = function (name, id, code, data) {
         if (code != 0) {
-            throw data
+            App.Core.CaptchaLoad()
+            return
         }
         if (code == 0) {
             let result = imgsrcre.exec(App.Core.CaptchaReq.ResponseBody())
             if (result == null) {
-                throw "无法匹配图片地址"
+                Note("无法匹配图片地址")
+                App.Core.CaptchaLoad()
+                return
             }
             let url = "http://fullme.pkuxkx.net" + result[1]
-            App.Core.CaptchaShow(url)
+            App.Core.LoadImage(url)
         }
     }
+    App.Core.LoadImage = function (url) {
+        Note("正在加载Fullme图片 " + url)
+        App.Core.CaptchaReq = HTTP.New("GET", url)
+        App.Core.CaptchaReq.AsyncExecute("App.Core.LoadImageLoaded")
+    }
+    App.Core.LoadImageLoaded = function (name, id, code, data) {
+        if (code != 0) {
+            Note("加载失败")
+            Note("剩余 " + App.Core.CaptchaImagesRemain + " 张图片")
+            App.Core.CaptchaLoad()
+        } else {
+            Note("剩余 " + App.Core.CaptchaImagesRemain + " 张图片")
+            let data = Binary.Base64Encode(App.Core.CaptchaReq.ResponseBodyArrayBuffer())
+            App.Core.CaptchaImages.push("data:image/jpeg;base64, " + data)
+            App.Core.CaptchaLoad()
+        }
+    }
+
     App.Core.SendFullme = function () {
         App.Data.CaptchaURLs["fullme"] = ""
         App.Send("fullme 1;fullme 1;fullme 1;fullme")
@@ -79,7 +121,7 @@
     })
     App.Bind("Response.core.captchafullme", "core.captchafullme")
 
-    App.Core.CaptchaShow = function (url) {
+    App.Core.CaptchaShow = function () {
         let intro
         switch (App.Data.CaptchaCurrentType) {
             case "zone":
@@ -110,15 +152,15 @@
             default:
                 intro = "忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
         }
-        let vp = Userinput.newvisualprompt("验证码", intro, url)
-        vp.setrefreshcallback("App.Core.CatpchaRefresh")
+        let vp = Userinput.newvisualprompt("验证码", intro, App.Core.CaptchaImages.join("|"))
+        vp.SetMediaType("base64slide")
         vp.publish("App.Core.OnCaptchaSubmit")
     }
-    App.Core.CatpchaRefresh = function (name, id, code, data) {
-        if (code == 0) {
-            App.Core.CaptchaLoad()
-        }
-    }
+    // App.Core.CatpchaRefresh = function (name, id, code, data) {
+    //     if (code == 0) {
+    //         App.Core.CaptchaLoad()
+    //     }
+    // }
     App.Core.OnCaptchaSubmit = function (name, id, code, data) {
         if (code == 0 && data) {
             App.Data.CaptchaCode = data

@@ -7,6 +7,7 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
+        App.Raise("captcha")
         switch (App.Data.CaptchaCurrentType){
             case "工号":
                 this.Cmd="report "
@@ -24,16 +25,12 @@
             default:
                 this.Cmd="fullme "
         }
-        App.Core.CaptchaLoadURL(App.Data.CaptchaCurrentType)
-        if (!App.Data.CaptchaCurrentURL){
-            App.Fail()
-            return
-        }
-        App.Raise("captcha")
-        App.Core.CaptchaLoad()
+        App.Core.CaptchaShow()
+        world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds, 'App.RaiseStateEvent("core.captcha.timeout")', 12);
     }
     State.prototype.Leave=function(context,newstatue){
         Userinput.hideall()
+        DeleteTemporaryTimers()
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
@@ -51,7 +48,7 @@
                 }
                 break
             case "focus":
-                App.Core.CaptchaLoad()
+                App.Core.CaptchaShow()
                 break
             case "captcha.success":
                 App.Data.CaptchaCountSuccess++
@@ -62,6 +59,11 @@
                 App.Fail()
                 break
             case "captcha.other":
+                App.Next()
+                break
+            case "core.captcha.timeout":
+                Note("等待打码超过"+App.Data.CaptchaTimeoutInSecounds+"秒，进入暂离模式")
+                App.SetAfk(true)
                 App.Next()
                 break
         }
