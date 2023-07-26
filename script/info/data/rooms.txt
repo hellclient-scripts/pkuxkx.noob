@@ -11,7 +11,6 @@ yz-sczh||盛昌总行||||Station||盛昌总行
 yz-clcg||春来茶馆||||Station||春来茶馆
 yzch||扬州车行||||DescStart||这里是扬州当地的一家马车行，挂着一个招牌(paizi)，店里的马车(che)停得满满当当的。
 yzyp||扬州药铺||||Landmark||Ping yizhi
-yzsy||扬州书院||||Landmark||Fu zi
 yz-kedian||扬州客店||||Landmark||Tianshen suicong
 yz-dtpns||扬州打铁铺内室||||Station||打铁铺内室
 yzsm||扬州武庙||||Full||武庙[大宋国] [城市]down,east,northwest,up

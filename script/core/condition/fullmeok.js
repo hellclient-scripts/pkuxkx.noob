@@ -5,9 +5,6 @@
     }
     Condition.prototype = Object.create(BaseCondition.prototype)
     Condition.prototype.Match=function(param){
-        if (App.Data.Afk){
-            return false
-        }
         let p=param -0
         if (p==NaN){
             p=0

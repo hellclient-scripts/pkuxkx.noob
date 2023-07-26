@@ -78,6 +78,8 @@
             App.SetRoomData("combat.firstaid", null)
             this.Next()
             return
+        }else{
+            App.Send("hp")
         }
         App.Commands([
             App.NewCommand("nobusy"),
