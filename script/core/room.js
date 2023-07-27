@@ -407,6 +407,9 @@
         }
         App.RaiseStateEvent("core.lookfail")
     }
+    App.OnRoomLookFog=function(name,out,wildcards){
+        App.RaiseStateEvent("core.lookfail")
+    }
     App.RegisterCallback("core.resetlooking", function () {
         App.Data.NeedRoomDesc = false
         App.Data.Room.Looking = false

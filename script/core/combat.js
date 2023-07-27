@@ -88,7 +88,7 @@
         App.Core.Combat.Current = current
         App.Core.Combat.CaclStrategy()
         current.LoadActions(GetVariable("combat"))
-        Dump(current.Actions)
+        NoteJSON(current.Actions)
         App.Core.Combat.Current = old
     }
     App.Core.Combat.CaclStrategy = function () {

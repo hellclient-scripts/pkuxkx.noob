@@ -148,6 +148,10 @@ Dump = function (data, silence) {
     }
     return output
 }
+NoteJSON=function(data){
+    let output = JSON.stringify(data, null, 2)
+    world.Note(output)
+}
 ShowJSON=Dump
 Debug = function () {
     Dump(App.Data)

@@ -186,10 +186,10 @@
         UpdateHUD(GetHUDSize() - 1, JSON.stringify([line]))
     }
     App.RegisterCallback("core.hud.Update", App.Core.HUD.UpdateStatus)
-    App.RegisterCallback("ui.render.ticker", App.Core.HUD.UpdateStatus)
     
     App.Bind("HUDUpdate", "core.hud.Update")
     App.Bind("core.overheat.updated", "core.hud.Update")
+    App.Bind("ui.render.ticker", "core.hud.Update")
 
     App.Core.HUD.UpdateTitle = function () {
         let line = JSON.parse(NewLine())
@@ -440,4 +440,19 @@
             App.Core.HUD.UpdateTitle()
         }
     }
+    App.Core.HUD.Summary=function(){
+        var line1=JSON.parse(NewLine())
+        let words1=[]
+        if (App.Core.HUD.CurrentQuest){
+            words1.push(wordCurrentQuest)
+            words1.push(NewWord(App.Core.HUD.CurrentQuest))
+        }else{
+            words1.push(wordCurrentNoQuest)
+        }
+        line1.Words=words1
+        SetSummary(JSON.stringify([line1]))
+    }
+    App.RegisterCallback("core.hud.summary", App.Core.HUD.Summary)
+    App.Bind("ui.render.ticker", "core.hud.summary")
+
 })(App)

@@ -4140,6 +4140,37 @@ Channel = "pkuxkx.noob"
   Variable = ""
 
 [[Triggers]]
+  ID = "d1ete8ls84qqp07162qa7b"
+  Name = "App.OnRoomLookFog"
+  Enabled = true
+  Match = "^雾气太大了，视野只可及几尺之内。$"
+  Send = ""
+  ColourChangeType = 0
+  Colour = 0
+  Wildcard = 0
+  SoundFileName = ""
+  SoundIfInactive = false
+  Script = "App.OnRoomLookFog"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Repeat = false
+  MultiLine = false
+  LinesToMatch = 0
+  WildcardLowerCase = false
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = true
+  OmitFromLog = false
+  OmitFromOutput = false
+  Inverse = false
+  Italic = false
+  Variable = ""
+
+[[Triggers]]
   ID = "fullme"
   Name = "fullme"
   Enabled = true
@@ -5923,7 +5954,7 @@ Channel = "pkuxkx.noob"
 [[Timers]]
   ID = "d1e7a3554q3sqo723ner45"
   Name = "keepidle"
-  Enabled = false
+  Enabled = true
   Hour = 0
   Minute = 20
   Second = 0.0

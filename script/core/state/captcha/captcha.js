@@ -25,16 +25,19 @@
             default:
                 this.Cmd="fullme "
         }
+        SetPriority(2)
         App.Core.CaptchaShow()
         world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds, 'App.RaiseStateEvent("core.captcha.timeout")', 12);
     }
     State.prototype.Leave=function(context,newstatue){
         Userinput.hideall()
+        SetPriority(0)
         DeleteTemporaryTimers()
     }
     State.prototype.OnEvent=function(context,event,data){
         switch(event){
             case "captcha.submit":
+                App.SetAfk(false)
                 let code=App.Data.CaptchaCode
                 if (code){
                     if (this.Cmd){
