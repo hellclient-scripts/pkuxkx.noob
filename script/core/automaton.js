@@ -18,6 +18,16 @@
         App.Core.Automata.push(a)
         return a
     }
+    App.Automaton.Append=function(state){
+        let a=App.Automaton.Current()
+        a.Append(state)
+        return a
+    }
+    App.Automaton.Insert=function(state){
+        let a=App.Automaton.Current()
+        a.Insert(state)
+        return a
+    }
     App.Push=App.Automaton.Push
     App.Automaton.GetContext=function(key){
         return App.Automaton.Current().Context[key]
@@ -105,6 +115,9 @@
     App.Fail=App.Automaton.Fail
     App.Loop=App.Automaton.Loop
     App.Break=App.Automaton.Break
+    //循环调用必须通过App.Append和App.Insert来插入state,使用Push会产生大量空Auatomaton造成内存泄漏。
+    App.Append=App.Automaton.Append
+    App.Insert=App.Automaton.Insert
     App.RegisterState(new (Include("core/state/nobusy.js"))())
     App.Bind("Response.core.state.response","core.automaton.ready")
     App.ResponseReady=function(){

@@ -54,6 +54,7 @@
         }
         App.Stopped = false
         App.Core.Quest.SetOnline(null)
+        App.Raise("quest.set",quest.Summary)
         quest.Start(param)
     }
     App.Core.Quest.SetQuests = function (queue) {

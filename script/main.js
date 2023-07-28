@@ -144,14 +144,5 @@ var Include = function (file) {
 Include("util.js")
 Include("app.js")
 
-//compatibility
-var _compatibility=function(){
-    if (!SetPriority){
-        SetPriority=function(){}
-    }
-    if (!SetSummary){
-        SetSummary=function(){}
-    }
-}
-_compatibility()
+SetPriority(0)
 App.Start()

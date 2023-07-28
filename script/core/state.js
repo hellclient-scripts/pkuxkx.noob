@@ -39,6 +39,10 @@
     App.CurrentState=function(){
         return App.StateContext.State
     }
+    App.CurrentStateID=function(){
+        let state=App.CurrentState()
+        return state?state.ID:""
+    }
     App.LastState=function(){
         return App.StateContext.LastState
     }

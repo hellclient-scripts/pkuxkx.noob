@@ -31,6 +31,7 @@
         "checkdurabilityinterval":"60000",
         "overheat_threshold":"200",
         "checkguinterval":"10000",
+        "checkexpinterval":"180000",
         "charset":"2",
         "echo":"t",
         "repair_below":"50",

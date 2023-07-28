@@ -1,7 +1,6 @@
 (function (App) {
     App.Quest.WDJ.Weizhu = {}
     App.Quest.WDJ.Weizhu.Start = function () {
-        App.Raise("quest.set", "五毒教任务喂猪")
         App.Commands([
             App.NewCommand("do", "zhao kuang"),
             App.NewCommand("move", App.Options.NewPath("n;w")),

@@ -3,6 +3,7 @@
     let Quest=function(){
         basicquest.call(this)
         this.ID="caiyaozhuanzhi"
+        this.Summary="采药专职"
         this.Desc="采药专职,只负责采药，需要手工处理其他"
     }
     Quest.prototype.Start=function(param){

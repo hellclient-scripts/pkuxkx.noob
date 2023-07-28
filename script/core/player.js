@@ -5,7 +5,7 @@
     App.Data.LastScore = 0
     App.Data.Exp = 0
     App.Data.Qishi = 0
-
+    App.Data.HourExp=0
     App.Data.Special = {}
     App.Data.SpecialInUse = {}
     App.Data.SpecialLast = 0
@@ -427,5 +427,22 @@
     App.Core.OnPlayerQishi2 = function (name, output, wildcards) {
         App.Data.Qishi = wildcards[0] - 0
     }
+
+    App.Core.OnNoHourExp = function (name, output, wildcards) {
+        if (App.Data.Room.ID&&App.Data.Room.Location){
+            App.Data.HourExp=0
+        }
+    }
+    App.Core.OnHourExp = function (name, output, wildcards) {
+        if (App.Data.Room.ID&&!App.Data.Room.Location){
+            App.Data.HourExp=wildcards[2]-0
+        }
+    }
+
+    App.Bind("Check", "core.player.exp")
+    let checkExp = (new check("exp")).WithLevel(App.CheckLevelFull).WithCommand("exp").WithIntervalParam("checkexpinterval").WithLastID("LastEXP")
+    App.RegisterCallback("core.player.exp", checkExp.Callback())
+
     world.EnableTriggerGroup("combat", false)
+    
 })(App)

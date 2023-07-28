@@ -6,8 +6,9 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Enter=function(context,oldstatue){
+        App.Raise("quest.set","")
         App.Core.Quest.SetOnline(null)
-        App.ChangeState("core.state.quests.quests")        
+        App.Next()
     }
     return State
 })(App)

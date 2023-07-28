@@ -268,6 +268,12 @@
 
         }
     }
+    let regive=/^你给.+一.+。$/
+    App.Core.Asset.OnlineGive=function(line){
+        if (line.match(regive)){
+            App.SetRoomData("assets.give",true)
+        }
+    }
     App.Core.Asset.DoKeep = function (action) {
         let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.Count + " " + App.Core.Asset.Asset.UNID : App.Core.Asset.Asset.UNID
         if (App.Core.Asset.Valuation.Keeper) {
@@ -275,8 +281,21 @@
             if (data.length < 2) { data.push("yz-rbz") }
             App.Commands([
                 App.NewCommand("to", App.Options.NewWalk(data[1])),
+                App.NewCommand("function", function(){
+                    App.SetRoomData("assets.give",false)
+                    App.SetRoomOnline(App.Core.Asset.OnlineGive)
+                    App.Next()
+                }),
                 App.NewCommand("do", "give " + cmd + " to " + data[0]),
                 App.NewCommand("nobusy"),
+                App.NewCommand("function",function(){
+                    App.SetRoomOnline(null)
+                    if (!App.GetRoomData("assets.give")){
+                        Note("give 失败，等待30秒")
+                        App.NewCommand("delay",30).Push()
+                    }
+                    App.Next()
+                }),
                 App.NewCommand("function", function () {
                     App.Core.Asset.Execute()
                 }),

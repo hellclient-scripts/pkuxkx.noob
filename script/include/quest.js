@@ -4,6 +4,7 @@
         this.Desc=""
         this.Intro=""
         this.Job=""
+        this.Summary=""
     }
     Quest.prototype.Start=function(param){
 

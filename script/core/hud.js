@@ -26,6 +26,8 @@
             App.Core.HUD.Avatar[i] = [msk2, msk1, msk2, msk1, msk2, msk1]
         }
     }
+    let wordCurrentQuestManual = JSON.parse(NewWord("待命"))
+    wordCurrentQuestManual.Color = "Bright-Cyan"
     let wordCurrentQuest = JSON.parse(NewWord("当前任务:"))
     wordCurrentQuest.Color = "Bright-Cyan"
     let wordCurrentNoQuest = JSON.parse(NewWord("没有任务。"))
@@ -46,6 +48,7 @@
     App.Bind("core.zhangsan", "App.Core.HUD.ZhangSan")
     App.RegisterCallback("App.Core.HUD.SetQuest", function (data) {
         App.Core.HUD.SetQuset(data)
+        App.Core.HUD.Summary()
     })
     App.Bind("quest.set", "App.Core.HUD.SetQuest")
     App.RegisterCallback("App.Core.HUD.OnReply", function () {
@@ -157,16 +160,16 @@
             word.Color = "white"
         }
         line.Words.push(word)
-        if (App.Core.Afk.IsTurbo()){
+        if (App.Core.Afk.IsTurbo()) {
             word = JSON.parse(NewWord(""))
             word.Text = " "
             line.Words.push(word)
             word = JSON.parse(NewWord(""))
-            word.Text = "超频("+Math.round((App.Core.Afk.TurboBefore-Now())/60000)+"m)"
+            word.Text = "超频(" + Math.round((App.Core.Afk.TurboBefore - Now()) / 60000) + "m)"
             word.Color = "White"
             word.Background = "Green"
             line.Words.push(word)
-        }else if (App.Data.Afk) {
+        } else if (App.Data.Afk) {
             word = JSON.parse(NewWord(""))
             word.Text = " "
             line.Words.push(word)
@@ -186,7 +189,7 @@
         UpdateHUD(GetHUDSize() - 1, JSON.stringify([line]))
     }
     App.RegisterCallback("core.hud.Update", App.Core.HUD.UpdateStatus)
-    
+
     App.Bind("HUDUpdate", "core.hud.Update")
     App.Bind("core.overheat.updated", "core.hud.Update")
     App.Bind("ui.render.ticker", "core.hud.Update")
@@ -360,9 +363,9 @@
                 case "overheatmode":
                     App.Core.HUD.PickOverheatMode()
                     break
-                    case "gamemode":
-                        App.Core.HUD.PickGameMode()
-                        break                    
+                case "gamemode":
+                    App.Core.HUD.PickGameMode()
+                    break
                 case "chat":
                 case "quest":
                 case "simple":
@@ -440,19 +443,91 @@
             App.Core.HUD.UpdateTitle()
         }
     }
-    App.Core.HUD.Summary=function(){
-        var line1=JSON.parse(NewLine())
-        let words1=[]
-        if (App.Core.HUD.CurrentQuest){
+
+    let summaryLabelSep=JSON.parse(NewWord("  "))
+    let summaryLabelHourexp= JSON.parse(NewWord("效率:"))
+    let summaryLabelOverHeat= JSON.parse(NewWord("水温:"))
+    let summaryLabelFullme= JSON.parse(NewWord("福米:"))
+    let summaryLabelAfk= JSON.parse(NewWord("暂离:"))
+    let summaryLabelLoad= JSON.parse(NewWord("负重:"))
+
+
+    App.Core.HUD.Summary = function () {
+        var line1 = JSON.parse(NewLine())
+        let words1 = []
+        if (GetPriority()>0&&App.Core.HUD.WarningMessage){
+            let wordpriority=JSON.parse(NewWord(App.Core.HUD.WarningMessage))
+            wordpriority.Bold=true
+            wordpriority.Color="Red"
+            words1.push(wordpriority)
+            words1.push(summaryLabelSep)
+        }
+
+        if (App.CurrentStateID() == "manual") {
+            words1.push(wordCurrentQuestManual)
+        } else if (App.Core.HUD.CurrentQuest) {
             words1.push(wordCurrentQuest)
-            words1.push(NewWord(App.Core.HUD.CurrentQuest))
-        }else{
+            words1.push(JSON.parse(NewWord(App.Core.HUD.CurrentQuest)))
+        } else {
             words1.push(wordCurrentNoQuest)
         }
-        line1.Words=words1
-        SetSummary(JSON.stringify([line1]))
+        line1.Words = words1
+        var line2 = JSON.parse(NewLine())
+        let words2 = []
+        words2.push(summaryLabelHourexp)
+        let wordhourxp=JSON.parse(NewWord(FormatNumber(App.Data.HourExp)))
+        wordhourxp.Bold=true
+        wordhourxp.Color=(App.Data.HourExp>=0)?"Green":"Red"
+        words2.push(wordhourxp)
+        words2.push(summaryLabelSep)
+
+        words2.push(summaryLabelOverHeat)
+        let wordoverheat=JSON.parse(NewWord(App.Core.Overheat.Value))
+        wordoverheat.Bold=true
+        wordoverheat.Color=App.Core.Overheat.IsOverThreshold() ? "Red" : "Green"
+        words2.push(wordoverheat)
+        words2.push(summaryLabelSep)
+
+        words2.push(summaryLabelFullme)
+        let now = Now()
+        let wordfullme=JSON.parse(NewWord(""))
+        if (App.Data.LastFullmeSuccess > 0) {
+            let left = Math.floor((App.Data.LastFullmeSuccess + 3600000 - now) / 60000)
+            if (left < 0) {
+                wordfullme.Text = "无"
+                wordfullme.Color = "Red"
+            } else {
+                wordfullme.Text = left+""
+                wordfullme.Color = left < 20 ? "Yellow" : "Green"
+            }
+            wordfullme.Bold = true
+        } else {
+            wordfullme.Text = "-"
+            wordfullme.Color = "white"
+        }
+        words2.push(wordfullme)
+        words2.push(summaryLabelSep)
+
+        words2.push(summaryLabelAfk)
+        let wordafk=JSON.parse(NewWord(App.Data.Afk?"是":"否"))
+        wordafk.Color=(!App.Data.Afk)?"Green":"Red"
+        words2.push(wordafk)
+        words2.push(summaryLabelSep)
+
+        words2.push(summaryLabelLoad)
+        let wordload=JSON.parse(NewWord(App.Data.Load))
+        wordafk.Color=(App.Data.Load<50)?"Green":"Red"
+        words2.push(wordload)
+        words2.push(summaryLabelSep)
+    
+
+        line2.Words=words2
+        SetSummary(JSON.stringify([line1,line2]))
     }
+    App.Core.HUD.WarningMessage=""
     App.RegisterCallback("core.hud.summary", App.Core.HUD.Summary)
     App.Bind("ui.render.ticker", "core.hud.summary")
+    App.Bind("manual", "core.hud.summary")
+    App.Core.HUD.Summary()
 
 })(App)

@@ -17,7 +17,6 @@
         App.Next()
     }
     App.Quest.WD.Xiake.Start=function(){
-        App.Raise("quest.set","武当新人侠客任务")
         App.Commands([
             App.NewCommand("combatinit"),
             App.NewCommand('prepare', App.PrapareFull),

@@ -3,7 +3,6 @@
     App.Quest.WD.Zhen.NPC=""
     App.Quest.WD.Zhen.Free={}
     App.Quest.WD.Zhen.Start=function(){
-        App.Raise("quest.set","武当新人任务过阵")
         App.ChangeState("core.state.quest.wd.zhen.zhen")
     }
     App.Quest.WD.Zhen.Items=[

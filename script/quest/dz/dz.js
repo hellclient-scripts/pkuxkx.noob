@@ -14,11 +14,6 @@
         max=data[0]
         location=data.length>1?data[1]:App.GetSafeRoom()
         App.Quest.DZ.Max=max?(max-0):0
-        if (max){
-            App.Raise("quest.set","Dz内力到"+max)
-        }else{
-            App.Raise("quest.set","Dz内力")
-        }
         App.Commands([
             App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("function",App.Quest.DZ.Check),

@@ -2,7 +2,6 @@
     App.Quest.WD.Liandan={}
     App.Quest.WD.Liandan.Danlu="[]"
     App.Quest.WD.Liandan.Start=function(){
-        App.Raise("quest.set","武当新人任务炼丹")
         App.ChangeState("core.state.quest.wd.liandan.liandan")
     }
     App.Quest.WD.Liandan.Items=[

@@ -26,11 +26,6 @@
         max=data[0]
         location=data.length>1?data[1]:App.GetSleepRooms()
         App.Quest.Tuna.Max=max?(max-0):0
-        if (max){
-            App.Raise("quest.set","Tuna精力到"+max)
-        }else{
-            App.Raise("quest.set","Tuna精力")
-        }
         App.Commands([
             App.NewCommand('prepare',App.PrapareFull),
             App.NewCommand("function",App.Quest.Tuna.Check),

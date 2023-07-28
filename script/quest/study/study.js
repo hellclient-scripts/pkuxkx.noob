@@ -101,7 +101,6 @@
                     break
             }
         }
-        App.Raise("quest.set", "学习 " + App.Quest.Study.Current.Type + " " + App.Quest.Study.Current.Skill + "@" + location)
         App.Commands([
             App.NewCommand('to', App.Options.NewWalk(location)),
             App.NewCommand('nobusy'),

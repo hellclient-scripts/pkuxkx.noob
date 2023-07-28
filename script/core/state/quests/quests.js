@@ -9,6 +9,7 @@
         if (App.Core.Quest.Pending){
             let q=App.Core.Quest.Pending
             App.Core.Quest.Pending=""
+            App.Insert([this.ID])
             App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
             App.Next()
             return
@@ -25,18 +26,16 @@
             App.Core.Quest.Remain=[...App.Core.Quest.Queue]
             loop=true
         }
+        App.Insert([this.ID])
         let delay=App.Core.OverheatMode.Current().Delay()
         if (delay>0){
             Note("水温过高，进入冷却"+delay+"秒。")
-            App.NewCommand("state",this.ID).Push()
             App.NewCommand("delay",delay).Push()
             App.Next()
             return
         }
         let q=App.Core.Condition.MatchCmd(App.Core.Quest.Remain.shift())
-        if (q==""){
-            App.NewCommand("state",this.ID).Push()
-        }else{
+        if (q!=""){
             App.NewCommand("quest",q,"core.state.quests.success","core.state.quests.fail").Push()
         }
         if (loop){

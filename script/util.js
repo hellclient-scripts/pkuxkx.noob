@@ -185,3 +185,21 @@ var Recorder=function(){
     }
     return new Recorder()
 }()
+
+var FormatNumber=function(data){
+    let result=""
+    if (data<0){
+        result="-"
+        data=-data
+    }
+    if (data>1000000000){
+        result+=(data/1000000000).toFixed(2)+"B"
+    }else if (data>1000000){
+        result+=(data/1000000).toFixed(2)+"M"
+    }else if (data>1000){
+        result+=(data/1000).toFixed(2)+"K"
+    }else{
+        result+=data.toFixed(2)
+    }
+    return result
+}

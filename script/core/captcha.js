@@ -22,7 +22,12 @@
         App.Data.CaptchaURLs[type] = App.Data.CatpchaLastURL
     }
     App.Core.CaptchaLoadURL = function () {
-        App.Data.CaptchaCurrentURL = App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
+        let url=App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
+        if (url !=App.Data.CaptchaCurrentURL){
+            App.Core.CaptchaImages = []
+            App.Core.CaptchaImagesRemain = DefaultMaxImages    
+            App.Data.CaptchaCurrentURL = url
+        }
     }
     App.API.Captcha = function (data, final, fail) {
         if (typeof (data) == "string") {
@@ -60,8 +65,6 @@
             App.Fail()
             return
         }
-        App.Core.CaptchaImages = []
-        App.Core.CaptchaImagesRemain = DefaultMaxImages
         App.Core.CaptchaLoad()
     }
     App.Core.CaptchaFullme = function () {

@@ -43,7 +43,6 @@
         App.Next()
     }
     App.Quest.Caiyao.Zhuanzhi = function () {
-        App.Raise("quest.set", "采药专职")
         let path = App.Info.Patrols["药师专职"]
         App.Core.Traversal.New()
         App.Data.Traversal.Target = "*"

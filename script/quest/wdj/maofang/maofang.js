@@ -1,7 +1,6 @@
 (function (App) {
     App.Quest.WDJ.Maofang = {}
     App.Quest.WDJ.Maofang.Start = function () {
-        App.Raise("quest.set", "五毒教任务茅房")
         App.Commands([
             App.NewCommand("move", App.Options.NewPath("w")),
             App.NewCommand("do", "zhao 净桶"),
