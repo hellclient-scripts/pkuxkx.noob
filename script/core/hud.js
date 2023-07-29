@@ -27,7 +27,7 @@
         }
     }
     let wordCurrentQuestManual = JSON.parse(NewWord("待命"))
-    wordCurrentQuestManual.Color = "Bright-Cyan"
+    wordCurrentQuestManual.Color = "Bright-Green"
     let wordCurrentQuest = JSON.parse(NewWord("当前任务:"))
     wordCurrentQuest.Color = "Bright-Cyan"
     let wordCurrentNoQuest = JSON.parse(NewWord("没有任务。"))
@@ -444,7 +444,7 @@
         }
     }
 
-    let summaryLabelSep=JSON.parse(NewWord("  "))
+    let summaryLabelSep=JSON.parse(NewWord(" "))
     let summaryLabelHourexp= JSON.parse(NewWord("效率:"))
     let summaryLabelOverHeat= JSON.parse(NewWord("水温:"))
     let summaryLabelFullme= JSON.parse(NewWord("福米:"))

@@ -16,6 +16,29 @@ App.Init = function () {
     }
     App.Mods = {}
 }
+App.KeyMap = {
+    "NumpadDivide": "inventory",
+    "NumpadMultiply": "score",
+    "NumpadSubtract": "u",
+    "NumpadAdd": "d",
+    "NumpadDecimal": "out",
+    "Numpad0": "look",
+    "Numpad1": "sw",
+    "Numpad2": "s",
+    "Numpad3": "se",
+    "Numpad4": "w",
+    "Numpad5": "enter",
+    "Numpad6": "e",
+    "Numpad7": "nw",
+    "Numpad8": "n",
+    "Numpad9": "ne",
+}
+App.OnKeyUp=function(key){
+    let cmd=App.KeyMap[key]
+    if (cmd){
+        App.Send(cmd)
+    }
+}
 App.OnTimerGC = function (name) {
     App.Raise("gc")
 }
@@ -76,19 +99,19 @@ App.onResponse = function (msgtype, id, data) {
 App.Load = function (name) {
     Include(name)
 }
-App.LoadModsConfig=function(name){
-    let config=GetVariable("mods_config").split("\n")
-    for (var i=0;i<config.length;i++){
-        if (config[i].startsWith(name+"=")){
-            return config[i].slice((name+"=").length)
+App.LoadModsConfig = function (name) {
+    let config = GetVariable("mods_config").split("\n")
+    for (var i = 0; i < config.length; i++) {
+        if (config[i].startsWith(name + "=")) {
+            return config[i].slice((name + "=").length)
         }
     }
     return ""
 }
-function initmod(){
-    let dlevel=App.LoadModsConfig("loglevel")-0
-    if (!isNaN(dlevel)){
-        DebugLevel=dlevel
+function initmod() {
+    let dlevel = App.LoadModsConfig("loglevel") - 0
+    if (!isNaN(dlevel)) {
+        DebugLevel = dlevel
     }
 }
 initmod()
@@ -148,11 +171,11 @@ Dump = function (data, silence) {
     }
     return output
 }
-NoteJSON=function(data){
+NoteJSON = function (data) {
     let output = JSON.stringify(data, null, 2)
     world.Note(output)
 }
-ShowJSON=Dump
+ShowJSON = Dump
 Debug = function () {
     Dump(App.Data)
 }

@@ -96,7 +96,7 @@ var onBuffer = function (data,bytes) {
 }
 let csi = "\x1b"
 let replace = ""
-var OnSubneg = function (code, data) {
+var onSubneg = function (code, data) {
     if (!data) {
         return
     }
@@ -115,11 +115,14 @@ var OnSubneg = function (code, data) {
             return
     }
 }
-var OnFocus = function () {
+var onFocus = function () {
     App.RaiseStateEvent("focus")
 }
 var onHUDClick = function (x, y) {
     App.Raise("onHUDClick", { X: x, Y: y })
+}
+var onKeyUp=function(key){
+    App.OnKeyUp(key)
 }
 var loader = function () {
     this.Loaded = {}

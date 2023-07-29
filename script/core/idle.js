@@ -1,6 +1,10 @@
 (function (App) {
     App.Core.Idle={}
     App.Core.Idle.OnTimeout=function(){
+        if (App.CurrentStateID() != "manual"){
+            App.Core.HUD.WarningMessage="发呆了"
+            SetPriority(2)
+        }
         if (GetVariable("no_keep_idle").trim()){
             return
         }

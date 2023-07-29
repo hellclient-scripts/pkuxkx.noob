@@ -4,6 +4,7 @@
         this.Items=items
         this.Group=group
         this.Excepted=exceptedmap
+        this.StartAt=0
     }
     Prepare.prototype.Try=function(){
         if (this.Group){

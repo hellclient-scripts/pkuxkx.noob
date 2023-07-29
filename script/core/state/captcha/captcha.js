@@ -25,8 +25,8 @@
             default:
                 this.Cmd="fullme "
         }
-        SetPriority(2)
         App.Core.HUD.WarningMessage="需要打码"
+        SetPriority(2)
         App.Core.CaptchaShow()
         world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds, 'App.RaiseStateEvent("core.captcha.timeout")', 12);
     }
