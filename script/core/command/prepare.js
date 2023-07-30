@@ -4,6 +4,7 @@
     let Prepare=function(data){
         Command.call(this,data)
         this.ContextKey="Prepare"
+        data.StartAt=Now()
         this.Transitions=["core.state.prepare.check","core.state.prepare.confirm"]
     }
     Prepare.prototype = Object.create(Command.prototype)

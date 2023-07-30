@@ -525,6 +525,10 @@
         SetSummary(JSON.stringify([line1,line2]))
     }
     App.Core.HUD.WarningMessage=""
+    App.Core.HUD.SetWarningMessage=function(msg){
+        App.Core.HUD.WarningMessage=msg
+        App.Core.HUD.Summary()
+    }
     App.RegisterCallback("core.hud.summary", App.Core.HUD.Summary)
     App.Bind("ui.render.ticker", "core.hud.summary")
     App.Bind("manual", "core.hud.summary")

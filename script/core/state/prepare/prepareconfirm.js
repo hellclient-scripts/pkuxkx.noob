@@ -14,7 +14,7 @@
             p.Execute()
         }else{
             if (App.Core.HUD.WarningMessage=="准备时间过长"&&(GetPriority()==2)){
-                App.Core.HUD.WarningMessage=""
+                App.Core.HUD.SetWarningMessage("")
                 SetPriority(0)
             }
             App.Next()

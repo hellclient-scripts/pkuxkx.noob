@@ -25,15 +25,15 @@
             default:
                 this.Cmd="fullme "
         }
-        App.Core.HUD.WarningMessage="需要打码"
         SetPriority(2)
+        App.Core.HUD.SetWarningMessage("需要打码")
         App.Core.CaptchaShow()
         world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds, 'App.RaiseStateEvent("core.captcha.timeout")', 12);
     }
     State.prototype.Leave=function(context,newstatue){
         Userinput.hideall()
         SetPriority(0)
-        App.Core.HUD.WarningMessage=""
+        App.Core.HUD.SetWarningMessage("")
         DeleteTemporaryTimers()
     }
     State.prototype.OnEvent=function(context,event,data){
