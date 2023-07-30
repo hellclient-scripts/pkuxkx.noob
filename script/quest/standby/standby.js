@@ -30,7 +30,7 @@
                 App.NewCommand("nobusy"),
                 App.NewCommand("do",App.Quest.Standby.Command),
                 App.NewCommand("nobusy"),
-                App.NewCommand('delay', App.Quest.Standby.Delay),
+                App.NewCommand('idle', App.Quest.Standby.Delay),
                 App.NewCommand("function", function () {
                     App.Raise("quests.loop")
                     App.Raise("core.looping")

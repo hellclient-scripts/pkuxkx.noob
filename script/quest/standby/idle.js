@@ -19,7 +19,7 @@ App.Quest.Idle.Start=function(cmd){
     }
     App.Commands([
         App.NewCommand('to', App.Options.NewWalk(App.Quest.Idle.Location)),
-        App.NewCommand('delay',App.Quest.Idle.Delay),
+        App.NewCommand('idle',App.Quest.Idle.Delay),
         App.NewCommand("function",function(){
             App.Raise("quests.loop")
             App.Raise("core.looping")

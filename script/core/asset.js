@@ -244,7 +244,7 @@
                 break
             case "rbz":
                 App.Commands([
-                    App.NewCommand("to", App.Options.NewWalk("yz-rbz")),
+                    App.NewCommand("to", App.Options.NewWalk(App.Info.RoomRbz)),
                     App.NewCommand("do", "sell " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
@@ -256,7 +256,7 @@
             default:
                 let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param||0-0)): App.Core.Asset.Asset.UNID
                 App.Commands([
-                    App.NewCommand("to", App.Options.NewWalk("yzdp")),
+                    App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "sell " + cmd),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
@@ -291,8 +291,8 @@
                 App.NewCommand("function",function(){
                     App.SetRoomOnline(null)
                     if (!App.GetRoomData("assets.give")){
-                        Note("give 失败，等待30秒")
-                        App.NewCommand("delay",30).Push()
+                        Note("give 失败，等待10秒")
+                        App.NewCommand("delay",10).Push()
                     }
                     App.Next()
                 }),
@@ -328,7 +328,7 @@
         switch (App.Core.Asset.Asset.StoreType) {
             case "rbz":
                 App.Commands([
-                    App.NewCommand("to", App.Options.NewWalk("yz-rbz")),
+                    App.NewCommand("to", App.Options.NewWalk(App.Info.RoomRbz)),
                     App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
@@ -350,7 +350,7 @@
                 break
             default:
                 App.Commands([
-                    App.NewCommand("to", App.Options.NewWalk("yzdp")),
+                    App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {

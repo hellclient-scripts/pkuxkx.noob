@@ -19,7 +19,7 @@
                 cmd = "cun " + num + " gold;i2"
             }
             App.Commands([
-                App.NewCommand("to", App.Options.NewWalk(App.GetParam("bank_location"))),
+                App.NewCommand("to", App.Options.NewWalk(App.Info.RoomBank)),
                 App.NewCommand("nobusy"),
                 App.NewCommand("do", cmd),
                 App.NewCommand("nobusy"),

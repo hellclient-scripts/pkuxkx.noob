@@ -3,6 +3,7 @@
     let Quest=function(){
         basicquest.call(this)
         this.ID="idle"
+        this.Summary="发呆"
         this.Desc="发呆，在指定位置发呆等待指定时间，不会进行准备。格式为 #quests idle home 或者 #quests idle home::120"
     }
     Quest.prototype.Start=function(param){

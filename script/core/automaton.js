@@ -128,5 +128,7 @@
         App.Next()        
     }
     App.RegisterState(new (Include("core/state/wait.js"))())
+    App.RegisterState(new (Include("core/state/idle.js"))())
+
 
 })(App)

@@ -32,7 +32,7 @@
             App.NewCommand("function",function(){
                 Note("鉴定完毕，sell all记得设置rbz_filter,如")
                 Note("set rbz_filter hole:2|damage:200|armor:200|suit:1")
-                App.Next
+                App.Next()
             })
         ]).Push()
         App.Next()

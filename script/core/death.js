@@ -25,17 +25,19 @@
     }
     App.Core.Death.Reborn = function () {
         App.Raise("reborn")
-        Note("有准备的死亡，继续执行。")
         let cb = App.Core.Death.OnReborn
-        App.Core.Death.OnReborn = null
-        cb()
+        if (cb) {
+            Note("有准备的死亡，继续执行。")
+            App.Core.Death.OnReborn = null
+            cb()
+        }
         return
     }
     App.Core.Death.OnChoose = function () {
         App.RaiseStateEvent("core.deathchoose")
     }
     App.Core.Death.Disconnect = function () {
-        SetPriority(2)
+        SetPriority(1)
         App.Core.HUD.SetWarningMessage("挂了")
 
         Note("意外死亡。")

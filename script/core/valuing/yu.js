@@ -12,7 +12,6 @@
         "黄玉残片":true,
         "墨玉残片":true,
         "赤玉残片":true,
-        "天珠":true,
     }
     Yu.prototype = Object.create(Valuing.prototype)
     Yu.prototype.Value=function(obj,asset){

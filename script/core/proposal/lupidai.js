@@ -15,7 +15,7 @@
         this.Execute=function(){
             let cmd="qu "+App.GetParam("lupidaiqucoin")+" coin;put "+App.GetParam("lupidaiqucoin")+" coin_money in lupi dai;i2;l lupi dai"
             App.Commands([
-                App.NewCommand("to",App.Options.NewWalk(App.GetParam("bank_location"))),
+                App.NewCommand("to",App.Options.NewWalk(App.Info.RoomBank)),
                 App.NewCommand("nobusy"),
                 App.NewCommand("do",cmd),
                 App.NewCommand("nobusy"),
