@@ -83,12 +83,11 @@
         this.Explore(move)
     }
     Maze.prototype.TestArrived = function () {
-        let key = this.PendingKeys[0].split("-")[0]
+        let key = this.PendingKeys[0]
         Note("观察 " + key + "方向，确定是否来过本房间")
         this.Room = App.Data.Room
         this.CoreRoomDesc=App.Core.RoomDesc
         App.Send("l " + key)
-        
     }
     Maze.prototype.CheckArrived = function () {
 
@@ -100,8 +99,8 @@
         if (this.CoreRoomDesc){
             App.Core.RoomDesc=this.CoreRoomDesc
         }
-        let key = this.PendingKeys[0].split("-")[0]
-        if (this.Arrived[this.RoomDesc]&&this.Arrived[this.RoomDesc][key + "-" + roomdesc]) {
+        let key = this.PendingKeys[0]
+        if (this.Arrived[this.RoomDesc]&&this.Arrived[this.RoomDesc][key][roomdesc]) {
             Note("曾经来过本房间")
             this.Visited = true
             this.Mode = ModeReady
@@ -129,8 +128,11 @@
                 if (this.Arrived[this.RoomDesc] == undefined) {
                     this.Arrived[this.RoomDesc] = {}
                 }
+                if (this.Arrived[this.RoomDesc][Backward[this.LastCommand.Command]] == undefined) {
+                    this.Arrived[this.RoomDesc][Backward[this.LastCommand.Command]] = {}
+                }
                 //A通过w到达B,所以B房间的e是A说明到达过
-                this.Arrived[this.RoomDesc][Backward[this.LastCommand.Command] + "-" + this.LastRoomDesc] = true
+                this.Arrived[this.RoomDesc][Backward[this.LastCommand.Command]][this.LastRoomDesc] = true
             }
         }
         let giveup = (!this.Retry && this.Visited) || this.CheckWrongway()

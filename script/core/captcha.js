@@ -73,7 +73,6 @@
     }
     App.Core.CaptchaLoad = function () {
         App.Core.CaptchaImagesRemain--
-        Dump(App.Core.CaptchaImagesRemain)
         if (App.Core.CaptchaImagesRemain >= 0) {
             App.Core.CaptchaReq = HTTP.New("GET", App.Data.CaptchaCurrentURL)
             App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")

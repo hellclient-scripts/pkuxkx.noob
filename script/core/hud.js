@@ -48,7 +48,6 @@
     App.Bind("core.zhangsan", "App.Core.HUD.ZhangSan")
     App.RegisterCallback("App.Core.HUD.SetQuest", function (data) {
         App.Core.HUD.SetQuset(data)
-        App.Core.HUD.Summary()
     })
     App.Bind("quest.set", "App.Core.HUD.SetQuest")
     App.RegisterCallback("App.Core.HUD.OnReply", function () {
@@ -526,8 +525,10 @@
     }
     App.Core.HUD.WarningMessage=""
     App.Core.HUD.SetWarningMessage=function(msg){
-        App.Core.HUD.WarningMessage=msg
-        App.Core.HUD.Summary()
+        if (msg!=App.Core.HUD.WarningMessage){
+            App.Core.HUD.WarningMessage=msg
+            App.Core.HUD.Summary()
+        }
     }
     App.RegisterCallback("core.hud.summary", App.Core.HUD.Summary)
     App.Bind("ui.render.ticker", "core.hud.summary")

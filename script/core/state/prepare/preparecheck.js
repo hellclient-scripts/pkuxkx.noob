@@ -8,7 +8,7 @@
     StatePrepareCheck.prototype.Enter = function (context, oldstatue) {
         basicstate.prototype.Enter.call(this, context, oldstatue)
         let prepare = App.GetContext("Prepare")
-        if ((Now() - prepare.StartAt) > 5 * 60 * 100) {
+        if ((Now() - prepare.StartAt) > 5 * 60 * 100 && GetPriority()==0) {
             SetPriority(1)
             App.Core.HUD.SetWarningMessage("准备时间过长")
         }
