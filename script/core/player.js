@@ -153,6 +153,9 @@
             if (sorcery.Level > 200) {
                 Mapper.settag("sorcery201", true)
             }
+            if (sorcery.Level >= 250) {
+                Mapper.settag("sorcery250", true)
+            }
         }
         let neili = App.Data.HP["neili"]
         for (var i = 500; i <= 10000; i += 500) {

@@ -1198,7 +1198,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = false
+  Enabled = true
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -6464,6 +6464,11 @@ Channel = "pkuxkx.noob"
   Name = "gold_min"
   Desc = "最小黄金数"
   Intro = "低于这个金额回去取钱"
+  
+[[RequiredParams]]
+  Name = "walk_tags"
+  Desc = "行走标签"
+  Intro = "行走时的特殊标签，一般用于解索解秘后的特殊路径。\n\n比如 纯五毒教的近出苗疆就是wdj-shortcut\n\n一行一个标签"
 
 [[RequiredParams]]
   Name = "quests"
@@ -6674,3 +6679,4 @@ Channel = "pkuxkx.noob"
   Name = "autorun"
   Desc = "大米自动启动指令"
   Intro = "该变量不为空时，会进入大米模式。\n\n大米模式时遇到意外会自动重连，登陆后和发呆时会发送指定指令"
+

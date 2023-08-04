@@ -40,4 +40,16 @@
         Userinput.Popup("", "设置修改", "设置修改已生效，记得保存游戏")
     }
 
+    App.RegisterCallback("core.params.walktags",function(){
+        let data=world.GetVariable("walk_tags").split("\n")
+        for (var i=0;i<data.length;i++){
+            var tag=data[i].trim()
+            if (tag){
+                Mapper.settag(tag,true)
+            }
+        }
+
+    })
+    App.Bind("PathInit", "core.params.walktags")
+
 })(App)
