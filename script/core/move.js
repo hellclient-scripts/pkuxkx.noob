@@ -238,6 +238,11 @@
         App.Look()
     })
     App.RegisterAlias("l","core.move.look")
+    App.RegisterCallback("core.move.retry",function(data){
+        App.Data.Room.MoveRetried=0
+        App.Send(data)
+    })
+    App.RegisterAlias("retry","core.move.retry")        
     //group 为组内未发送命令
     App.RegisterCallback("core.move.nobusy",function(data,group){
         let snap=App.Core.Snapshot.Take()

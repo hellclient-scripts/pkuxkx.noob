@@ -1198,7 +1198,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -1695,7 +1695,7 @@ Channel = "pkuxkx.noob"
   ID = "d1dvcr25hhts1861fu3u0"
   Name = "App.Core.OnMoveRideEnd"
   Enabled = true
-  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。|你沿着踏板走了上去。|你朝船夫挥了挥手便跨上岸去。|你终于一步步的终于挨到了桥头.|你定了定神，走了出来。|番僧不耐烦的道：“都下来吧，吓傻了动弹不了啦？”)$"
+  Match = "^(你从小船上跳了下来，到了.+。|你终于来到了对面，心里的石头终于落地。|你沿着踏板走了上去。|你朝船夫挥了挥手便跨上岸去。|你终于一步步的终于挨到了桥头.|你定了定神，走了出来。|番僧不耐烦的道：“都下来吧，吓傻了动弹不了啦？”|在船离岸之际，你赶紧跳了下去。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -6464,7 +6464,7 @@ Channel = "pkuxkx.noob"
   Name = "gold_min"
   Desc = "最小黄金数"
   Intro = "低于这个金额回去取钱"
-  
+
 [[RequiredParams]]
   Name = "walk_tags"
   Desc = "行走标签"
@@ -6679,4 +6679,3 @@ Channel = "pkuxkx.noob"
   Name = "autorun"
   Desc = "大米自动启动指令"
   Intro = "该变量不为空时，会进入大米模式。\n\n大米模式时遇到意外会自动重连，登陆后和发呆时会发送指定指令"
-
