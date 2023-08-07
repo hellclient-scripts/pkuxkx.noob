@@ -75,6 +75,7 @@
         App.Core.CaptchaImagesRemain--
         if (App.Core.CaptchaImagesRemain >= 0) {
             App.Core.CaptchaReq = HTTP.New("GET", App.Data.CaptchaCurrentURL)
+            App.Core.CaptchaReq.SetProxy(WorldProxy().trim())
             App.Core.CaptchaReq.AsyncExecute("App.Core.CatpchaParseHTML")
         } else {
             App.Next()
@@ -99,6 +100,7 @@
     App.Core.LoadImage = function (url) {
         Note("正在加载Fullme图片 " + url)
         App.Core.CaptchaReq = HTTP.New("GET", url)
+        App.Core.CaptchaReq.SetProxy(WorldProxy().trim())
         App.Core.CaptchaReq.AsyncExecute("App.Core.LoadImageLoaded")
     }
     App.Core.LoadImageLoaded = function (name, id, code, data) {
