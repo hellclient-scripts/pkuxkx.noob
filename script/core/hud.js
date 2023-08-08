@@ -43,7 +43,9 @@
     }
     App.RegisterCallback("App.Core.HUD.ZhangSan", function (data) {
         let output = App.Data.Room.Name + "[" + App.Data.Room.ID + "] " + data
-        App.Core.HUD.SetNote(output)
+        let line=[]
+        line.push(JSON.parse(NewWord(output)))
+        App.Core.HUD.SetNote(JSON.stringify(line))
     })
     App.Bind("core.zhangsan", "App.Core.HUD.ZhangSan")
     App.RegisterCallback("App.Core.HUD.SetQuest", function (data) {
