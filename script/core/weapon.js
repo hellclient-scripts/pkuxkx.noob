@@ -230,7 +230,7 @@
                     break
                 case "repair":
                     App.Commands([
-                        App.NewCommand("to", App.Options.NewWalk("luoyang-dtp")),
+                        App.NewCommand("to", App.Options.NewWalk(App.Info.RoomFix)),
                         App.NewCommand("do", "fix " + param[1]),
                         App.NewCommand("function", function () {
                             App.Core.Weapon.ToRepair = ""

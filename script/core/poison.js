@@ -16,7 +16,7 @@
         "情毒": { "xuejie": true, "chan": true, "ping": true },
         "火焰刀": {},
     }
-    App.Core.Poison.CurePingFail=function(){
+    App.Core.Poison.CurePingFail = function () {
         let type = App.Core.Poison.Poisons[App.Core.Poison.GetCurrent()]
         if (type["chan"] && (App.GetCash() > 10 || App.GetItemByName("朱睛冰蟾", true))) {
             App.Core.Poison.CureChan()
@@ -114,22 +114,36 @@
         }
         App.Next()
     }
-    App.Core.Poison.QuestionCure = App.Options.NewQuestion("ping yizhi", "cure", -1)
+    let docters = {
+        "yzyp": "ping yizhi",
+        "chengduyp": "tianzhu seng",
+    }
 
     let pingre = /^[^【：『]{1,10}：.+两黄金。$/
-    let pinggoldre = /^平一指说道：共需诊金(\d+)两黄金。$/
-
+    let pinggoldre = /^(平一指|天竺僧)说道：共需诊金(\d+)两黄金。$/
+    App.Core.Poison.GetNpcID = function () {
+        let npcid = docters[App.Data.Room.ID]
+        if (npcid == null) {
+            npcid = "ping yizhi"
+        }
+        return npcid
+    }
     App.Core.Poison.CurePingNext = function () {
+        let npcid = App.Core.Poison.GetNpcID()
+
         let gold = 0
         for (var i = 0; i < App.Data.Ask.Replies.length; i++) {
             let line = App.Data.Ask.Replies[i]
             if (line == "平一指伸出右手，搭在你手腕上。" || line == "过了片刻，平一指缓缓对你说道：各项明细如下，") {
                 continue
             }
+            if (line == "天竺僧伸出右手，搭在你手腕上。" || line == "天竺僧缓缓对你说道：各项明细如下，") {
+                continue
+            }
             let result = line.match(pinggoldre)
             if (result) {
-                Note("诊金" + result[1])
-                gold = result[1] - 0
+                Note("诊金" + result[2])
+                gold = result[2] - 0
                 break
             }
             if (line.match(pingre)) {
@@ -141,9 +155,9 @@
         var commands = []
         if (gold) {
             if (App.GetItemNumber("gold", true) >= gold) {
-                commands.push(App.NewCommand("do", "give " + gold + " gold_money to ping yizhi;i2"))
+                commands.push(App.NewCommand("do", "give " + gold + " gold_money to " + npcid + ";i2"))
             } else {
-                commands.push(App.NewCommand("do", "give 1 cash to ping yizhi;i2"))
+                commands.push(App.NewCommand("do", "give 1 cash to " + npcid + ";i2"))
             }
             commands.push(App.NewCommand("nobusy"))
         }
@@ -152,10 +166,15 @@
         App.Next()
     }
     App.Core.Poison.CurePing = function () {
+
         App.Commands([
-            App.NewCommand("to", App.Options.NewWalk("yzyp")),
+            App.NewCommand("to", App.Options.NewWalk(App.Info.RoomCure)),
             App.NewCommand("nobusy"),
-            App.NewCommand("ask", App.Core.Poison.QuestionCure,"","core.state.ping.pingfail"),
+            App.NewCommand("function", function () {
+                let question = App.Options.NewQuestion(App.Core.Poison.GetNpcID(), "cure", -1)
+                App.NewCommand("ask", question, "", "core.state.ping.pingfail").Push()
+                App.Next()
+            }),
             App.NewCommand("nobusy"),
             App.NewCommand("function", App.Core.Poison.CurePingNext)
         ]).Push()
@@ -175,9 +194,9 @@
         var commands = []
         if (App.Core.PerQixue() < App.GetNumberParam("heal_below") || App.Core.PerJing() < App.GetNumberParam("heal_below")) {
             if (App.Core.PerJing() > App.Core.PerQixue()) {
-                if (App.Core.PerQixue() >= 51){
+                if (App.Core.PerQixue() >= 51) {
                     commands.push(App.NewCommand("do", "yun heal;hp"))
-                }else{
+                } else {
                     commands.push(App.NewCommand("do", "yun lifeheal " + GetVariable("id").trim() + ";hp"))
                 }
             } else {

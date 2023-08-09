@@ -35,8 +35,12 @@
     App.Info.RoomHome = "home"
     App.Info.RoomSafe = "ssb-xxs"
     App.Info.RoomSell = ["yzdp"]
+    App.Info.RoomCure = ["yzyp"]
     App.Info.RoomBank=["yzqz"]
+    App.Info.RoomFix=["luoyang-dtp"]
     App.Info.RoomRbz=["yz-rbz"]
+    App.Info.RoomDrop=["yz-ljz"]
+    
     App.RegisterCallback("info.room.objlocate", function (data) {
         if (!App.Data.Room.ID && App.Info.Landmarks[data.ID]) {
             App.Data.Room.ID = App.Info.Landmarks[data.ID]
