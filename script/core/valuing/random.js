@@ -36,7 +36,7 @@
         "面具":["护面","防具"],
         "护腕":["护腕","防具"],
         "披风":["披风","防具"],
-        "护手":["手套","防具"],
+        "手套":["手套","防具"],
         "护肩":["护肩","防具"],
         "布甲":["布甲","防具"],
         "板甲":["铠甲","防具"],
@@ -71,11 +71,11 @@
             let pro=prefix[data[0]]
             if (pro){
                 asset.AddType("随机")
-                asset.AddType(pro[0])
-                asset.Level=pro[1]
+                asset.AddType(data[0])
+                asset.Level=pro
                 let atype=suff[data[1]]
                 if (atype){
-                    asset.AddTypes(atype)
+                        asset.AddTypes(atype)
                 }
                 asset.NeedLook=true
                 asset.NeedIdentify=true

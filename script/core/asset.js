@@ -69,8 +69,8 @@
             case "装  备":
                 App.Data.AssetList = []
                 App.Core.Asset.CurrentType = ""
-                App.Data.ItemList.ID=""
-                App.Data.ItemList.Items=[]        
+                App.Data.ItemList.ID = ""
+                App.Data.ItemList.Items = []
                 world.EnableTriggerGroup("core.asset.item", false)
                 break
             case "财  宝":
@@ -112,7 +112,7 @@
                 Binded: itemraw[1] == "＊",
                 Name: itemdata.Item,
                 ID: itemraw[5],
-                Count: itemraw[7] ? (itemraw[7] - 0) :itemdata.Count,
+                Count: itemraw[7] ? (itemraw[7] - 0) : itemdata.Count,
             }
             App.Core.Asset.Convert(item)
         }
@@ -142,13 +142,13 @@
         v = App.Core.Asset.Load("")
         if (App.Data.Load && v.Weight) {
             if (App.Data.Load > v.Weight) {
-                Note("负重过重，超过"+v.Weight)
+                Note("负重过重，超过" + v.Weight)
                 return true
             }
         }
         for (var i = 0; i < App.Data.AssetList.length; i++) {
-            var asset=App.Data.AssetList[i]
-            if (asset.Equipped || asset.Binded){
+            var asset = App.Data.AssetList[i]
+            if (asset.Equipped || asset.Binded) {
                 continue
             }
             for (var k = 0; k < v.Treasure.length; k++)
@@ -254,7 +254,7 @@
                 App.Next()
                 break
             default:
-                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param||0-0)): App.Core.Asset.Asset.UNID
+                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param || 0 - 0)) : App.Core.Asset.Asset.UNID
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "sell " + cmd),
@@ -268,12 +268,25 @@
 
         }
     }
-    let regive=/^你给.+一.+。$/
-    App.Core.Asset.OnlineGive=function(line){
-        if (line.match(regive)){
-            App.SetRoomData("assets.give",true)
+    let regive = /^你给.+一.+。$/
+    App.Core.Asset.OnlineGive = function (line) {
+        if (line.match(regive)) {
+            App.SetRoomData("assets.give", true)
         }
     }
+    let reput = /^你将一.+放进包袱。$/
+    let refail1 = /^[^【：『]{1,10}对包袱而言太重了。$/
+    App.Core.Asset.OnlinePut = function (line) {
+        if (line.match(reput)) {
+            App.SetRoomData("assets.put", true)
+            return
+        }
+        if (line.match(refail1)) {
+            App.SetRoomData("assets.fail1", true)
+            return
+        }
+    }
+
     App.Core.Asset.DoKeep = function (action) {
         let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.Count + " " + App.Core.Asset.Asset.UNID : App.Core.Asset.Asset.UNID
         if (App.Core.Asset.Valuation.Keeper) {
@@ -281,18 +294,18 @@
             if (data.length < 2) { data.push("yz-rbz") }
             App.Commands([
                 App.NewCommand("to", App.Options.NewWalk(data[1])),
-                App.NewCommand("function", function(){
-                    App.SetRoomData("assets.give",false)
+                App.NewCommand("function", function () {
+                    App.SetRoomData("assets.give", false)
                     App.SetRoomOnline(App.Core.Asset.OnlineGive)
                     App.Next()
                 }),
                 App.NewCommand("do", "give " + cmd + " to " + data[0]),
                 App.NewCommand("nobusy"),
-                App.NewCommand("function",function(){
+                App.NewCommand("function", function () {
                     App.SetRoomOnline(null)
-                    if (!App.GetRoomData("assets.give")){
+                    if (!App.GetRoomData("assets.give")) {
                         Note("give 失败，等待10秒")
-                        App.NewCommand("delay",10).Push()
+                        App.NewCommand("delay", 10).Push()
                     }
                     App.Next()
                 }),
@@ -302,8 +315,28 @@
             ]).Push()
         } else {
             App.Commands([
+                App.NewCommand("function", function () {
+                    App.SetRoomData("assets.put", false)
+                    App.SetRoomData("assets.fail1", false)
+                    App.SetRoomOnline(App.Core.Asset.OnlinePut)
+                    App.Next()
+                }),
                 App.NewCommand("do", "put " + cmd + " in bao fu"),
                 App.NewCommand("nobusy"),
+                App.NewCommand("function", function () {
+                    App.SetRoomOnline(null)
+                    if (!App.GetRoomData("assets.put")) {
+                        if (App.GetRoomData("assets.fail1")) {
+                            Note("包袱满了，买新的")
+                            App.Produce("bao fu", 1)
+                        } else {
+                            Note("put 失败，等待10秒")
+                            App.NewCommand("delay", 10).Push()
+                        }
+                    }
+                    App.Next()
+                }),
+
                 App.NewCommand("function", function () {
                     App.Core.Asset.Execute()
                 }),
@@ -339,7 +372,7 @@
                 break
             case "pack":
                 App.Commands([
-                    App.NewCommand("function",App.LeaveLimitedRoom),
+                    App.NewCommand("function", App.LeaveLimitedRoom),
                     App.NewCommand("do", "pack " + App.Core.Asset.Asset.UNID),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
@@ -364,6 +397,9 @@
     App.Core.Asset.Process = function () {
         var v = App.Core.Asset.Valuation
         var asset = App.Core.Asset.Asset
+        if (App.Core.Asset.Valuation&&App.Core.Asset.Valuation.Debug){
+            NoteJSON(asset)
+        }
         for (var k = 0; k < v.Actions.length; k++) {
             var action = v.Actions[k]
             if ((action.Strategy == "" || action.Strategy == App.Core.Asset.Valuation.Strategy) && App.Core.Asset.ProcessCommand[action.Command] && action.Filter.Filter(asset)) {
@@ -414,7 +450,7 @@
                 Equipped: item.Equipped,
                 Name: data.Item,
                 ID: item.ID,
-                UNID: App.Core.Asset.Valuation.Index==0?App.Data.ItemList.ID:(App.Data.ItemList.ID + " " + (App.Core.Asset.Valuation.Index + 1)),
+                UNID: App.Core.Asset.Valuation.Index == 0 ? App.Data.ItemList.ID : (App.Data.ItemList.ID + " " + (App.Core.Asset.Valuation.Index + 1)),
                 Count: data.Count,
             }
             let asset = new Asset()

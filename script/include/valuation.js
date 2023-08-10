@@ -7,6 +7,7 @@
         this.Actions = []
         this.Keeper = null
         this.Assets=[]
+        this.Debug=false
         this.Index=0
     }
     Valuation.prototype.GetPreset = function () {
@@ -23,6 +24,9 @@
             let action = this.Actions[i]
             if (action.Strategy == this.Strategy || action.Strategy == "") {
                 switch (action.Command) {
+                    case "#debug":
+                        this.Debug=true
+                        break
                     case "#weight":
                         if (this.Weight === null) {
                             this.Weight = action.Data - 0

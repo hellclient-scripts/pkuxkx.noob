@@ -154,6 +154,9 @@
         App.Next()
     }
     App.RegisterState(new (Include("core/state/quest/getgem/compressgem.js"))())
-
+    App.RegisterCallback("quests.getgem.compress.reset",function(){
+        App.Core.Quest.Cooldown("compressgem", 0)
+    })
+    App.Bind("start", "quests.getgem.compress.reset")
 
 })(App)

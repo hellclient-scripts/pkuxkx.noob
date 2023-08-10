@@ -149,4 +149,6 @@
     App.RegisterQuest(new (Include("core/quest/idle.js"))())
     App.RegisterQuest(new (Include("core/quest/biguan.js"))())
     App.RegisterQuest(new (Include("core/quest/keeper.js"))())
+    App.RegisterQuest(new (Include("core/quest/cleanbaofu.js"))())
+    
 })(App)
