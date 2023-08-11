@@ -30,7 +30,7 @@
         let delay=App.Core.OverheatMode.Current().Delay()
         if (delay>0){
             Note("水温过高，进入冷却"+delay+"秒。")
-            App.NewCommand("delay",delay).Push()
+            App.NewCommand("idle",delay).Push()
             App.Next()
             return
         }

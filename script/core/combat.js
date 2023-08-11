@@ -158,14 +158,24 @@
         return App.Data.HP["eff_neili"] >= (data - 0)
     }
     App.Core.Combat.Conditions["perqixue"] = function (data) {
-        if (App.Data.HP["qixue"] = 0) {
+        if (App.Data.HP["qixue_cap"] == 0) {
             return false
         }
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_qixue"] / App.Data.HP["qixue"] >= data - 0
+        return App.Data.HP["eff_qixue"] / App.Data.HP["qixue_cap"] >= data - 0
     }
+    App.Core.Combat.Conditions["qixuewound"] = function (data) {
+        if (App.Data.HP["qixue_cap"] == 0) {
+            return false
+        }
+        if (!data) {
+            data = 0
+        }
+        return App.Data.HP["qixue"] / App.Data.HP["qixue_cap"] >= data - 0
+    }
+
     App.Core.Combat.ExecSend = function (action) {
         if (!App.Core.Combat.CheckConditions(action.Conditions)) {
             return
