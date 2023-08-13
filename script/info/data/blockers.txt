@@ -31,3 +31,6 @@
 我大蒙古皇帝||killall meng ge||1000000
 猴子||killall lao monkey||1000000
 炼丹人||killall liandan ren||100000
+流氓||killall liu mang||50000
+地痞||killall di pi||50000
+无赖||killall wu lai||50000

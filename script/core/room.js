@@ -109,6 +109,7 @@
         world.EnableTriggerGroup("roomexit", true)
         App.RaiseStateEvent("core.onroom")
         world.EnableTriggerGroup("roomobj", true)
+        world.EnableTriggerGroup("roomobjend", false)
     }
     var exitsre = new RegExp("[a-z]*[^、 和\n]", "g");
     let blankWords = function (line, index) {
