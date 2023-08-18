@@ -164,7 +164,7 @@
         if (!data) {
             data = 0
         }
-        return App.Data.HP["eff_qixue"] / App.Data.HP["qixue_cap"] >= data - 0
+        return (App.Data.HP["eff_qixue"] / App.Data.HP["qixue_cap"]) >= (data - 0)
     }
     App.Core.Combat.Conditions["qixuewound"] = function (data) {
         if (App.Data.HP["qixue_cap"] == 0) {
@@ -173,7 +173,7 @@
         if (!data) {
             data = 0
         }
-        return App.Data.HP["qixue"] / App.Data.HP["qixue_cap"] >= data - 0
+        return (App.Data.HP["qixue"] / App.Data.HP["qixue_cap"]) >= (data - 0)
     }
 
     App.Core.Combat.ExecSend = function (action) {
