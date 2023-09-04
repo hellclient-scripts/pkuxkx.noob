@@ -31,7 +31,7 @@
         App.Commands([
             App.NewCommand('do', "set no_accept"),
             App.NewCommand('prepare', App.Quest.KeeperPrapareFull),
-            App.NewCommand('to', App.Options.NewWalk(App.Quest.Keeper.Location)),
+            App.NewCommand('to', App.Options.NewWalk("yz-rbz")),
             App.NewCommand('do', "unset no_accept"),
             App.NewCommand('idle', App.Quest.Keeper.Delay),
             App.NewCommand("function", function () {

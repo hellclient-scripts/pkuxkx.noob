@@ -20,10 +20,11 @@
     App.Core.Search.Locate=function(depth){
         App.Commands([
             App.NewCommand("function",function(){
-                App.CheckWalkZone()
                 App.Next()
             }),
-            App.NewCommand("do","l;place"),
+            App.NewCommand("do","l"),
+            App.NewCommand("do","response core.place start;place;response core.place end"),
+            App.NewCommand("do","lm;q"),
             App.NewCommand("nobusy"),
             App.NewCommand("function",function(){
                 App.Raise("core.locate")

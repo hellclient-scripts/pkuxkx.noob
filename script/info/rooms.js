@@ -79,7 +79,7 @@
     }
     App.RoomPlace = function () {
         App.Commands([
-            App.NewCommand("do", "place"),
+            App.NewCommand("do", "response core.place start;place;response core.place end"),
             App.NewCommand("nobusy"),
             App.NewCommand("function", function () {
                 Note(App.Data.Room.Place)

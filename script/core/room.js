@@ -1,7 +1,6 @@
 (function (App) {
     let chinesere = /[\u4e00-\u9fa5]/
     App.Core.RedBGExits = []
-    App.Data.WalkZone = ""
     App.Data.Room = {
         Markdown: "",
         ID: "",
@@ -22,7 +21,9 @@
         Data: {},
         Died: {},
         MoveRetried: 0,
-        IDMap:{}
+        LMTitle: "",
+        IDMap: {}
+
     }
     App.Core.RoomDesc = {
         Mode: 0,//0:地图，1:描述,2:环境,3:雾中,4:对象,5:图像,6:提示
@@ -75,7 +76,8 @@
             MoveRetried: 0,
             Place: "",
             Exits: null,
-            IDMap:{},
+            LMTitle: "",
+            IDMap: {},
         }
         if (looking) {
             Note("正在观察当前房间信息")
@@ -121,12 +123,29 @@
         }
         return true
     }
-    let roomreplacre = /[\n\s━┃／＼]+/g
+    let roomsep = /[\n\s━┃／＼]+/g
     let renotice = /^\s+┌─+┐\s*$/
     App.Core.OnRoomPlace = function (name, output, wildcards) {
-        let str = [wildcards[0], wildcards[1], wildcards[2].replace(roomreplacre, "")].join(",")
+
+        let lines = wildcards[0].split("\n")
+        let rooms = []
+        for (var i = 0; i < lines.length; i++) {
+            let line = lines[i]
+            if (line.startsWith("  ")) {
+                rooms = rooms.concat(line.split(roomsep).filter(function (v) { return v.length > 0 }))
+            }
+        }
+        let str = rooms.join(",")
         App.Data.Room.Place = str
         App.Raise("core.room.place")
+    }
+    App.Core.OnRoomLM = function (name, output, wildcards) {
+        if (!App.Data.Room.LMTitle) {
+            App.Data.Room.LMTitle = wildcards[0]
+        }
+    }
+    App.Core.OnRoomNoLM = function (name, output, wildcards) {
+        App.Data.Room.LMTitle = "-"
     }
     App.Core.OnRoomDesc = function (name, output, wildcards) {
         if (output.startsWith("【闲聊】")) {
@@ -140,7 +159,7 @@
             return
         }
         let line = JSON.parse(DumpOutput(1))[0]
-        if (App.Core.RoomDesc.Mode == 1||App.Core.RoomDesc.Mode == 5) {
+        if (App.Core.RoomDesc.Mode == 1 || App.Core.RoomDesc.Mode == 5) {
             if (output.trim() == "炊烟不断地从路边的小屋里飘出。") {
                 App.Core.RoomDesc.Mode = 2
                 return
@@ -160,7 +179,7 @@
                 case "「隆冬」:":
                 case "「寒冬」:":
                     App.Core.RoomDesc.Mode = 2
-                    // return
+                // return
             }
         }
         if (output.slice(0, 15) == "    你可以看看(look)") {
@@ -265,11 +284,11 @@
             world.EnableTriggerGroup("roomobjend", true)
         }
         var obj = { ID: wildcards[2], Name: wildcards[0], Status: wildcards[4], Comment: wildcards[7] }
-        uid=obj.ID.toLowerCase()
-        let uidIndex=App.Data.Room.IDMap[uid]||0
+        uid = obj.ID.toLowerCase()
+        let uidIndex = App.Data.Room.IDMap[uid] || 0
         uidIndex++
-        App.Data.Room.IDMap[uid]=uidIndex
-        obj.UNID=uid+" "+uidIndex
+        App.Data.Room.IDMap[uid] = uidIndex
+        obj.UNID = uid + " " + uidIndex
         obj.Last = wildcards[0].split(relast).slice(-1)[0]
         obj.LastDump = SubDumpLine(4 + wildcards[0].length - obj.Last.length, 4 + wildcards[0].length)
         App.Data.Room.Objs.push(obj)
@@ -408,7 +427,7 @@
         }
         App.RaiseStateEvent("core.lookfail")
     }
-    App.OnRoomLookFog=function(name,out,wildcards){
+    App.OnRoomLookFog = function (name, out, wildcards) {
         App.RaiseStateEvent("core.lookfail")
     }
     App.RegisterCallback("core.resetlooking", function () {
@@ -471,16 +490,6 @@
         App.RaiseStateEvent("core.noaction")
     }
     App.Bind("ask", "core.room.onask")
-    App.CheckWalkZone = function () {
-        App.Data.WalkZone = ""
-        App.Send("walk")
-    }
-    App.Core.OnRoomWalkZone = function (name, output, wildcards) {
-        App.Data.WalkZone = wildcards[0]
-    }
-    App.Core.OnRoomWalkZone2 = function (name, output, wildcards) {
-        App.Data.WalkZone = wildcards[0]
-    }
     App.Core.RoomLimited = { "home": "yz-sczh" }
     App.LeaveLimitedRoom = function () {
         if (App.Core.RoomLimited[App.Data.Room.ID]) {

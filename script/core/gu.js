@@ -8,6 +8,10 @@
         if (App.GetItemByName("如意盒")) {
             return "ruyi he"
         }
+        if (App.GetItemByName("锦盒")) {
+            return "jin he"
+        }
+        
         return ""
     }
     App.Core.Gu.Count = 0
