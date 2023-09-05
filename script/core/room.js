@@ -152,6 +152,7 @@
             return
         }
         if (App.Data.Room.Exits != null) {
+            world.EnableTriggerGroup("roomobjend", true)
             return
         }
         if (output.startsWith("    一片浓雾中，什么也看不清。")) {
@@ -369,6 +370,12 @@
         world.EnableTriggerGroup("roomobj", false)
         world.EnableTriggerGroup("roomexit", false)
         world.EnableTriggerGroup("roomobjend", false)
+    }
+    App.Core.OnRoomObjEndTimer=function(){
+        if (App.Data.Room.Exits === null) {
+            App.Data.Room.Exits =[]
+        }
+        Send("perform")
     }
     App.Core.OnRoomObjEnd = function (name, output, wildcards) {
         if (App.Data.Room.Exits === null) {

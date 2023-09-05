@@ -13,6 +13,7 @@
             let list = data.split(re)
             let q=new queue(list)
             App.Look()
+            App.Send("i2")
             App.Automaton.Push(["core.state.queue.next"]).WithData("Queue",q)
             App.ResponseReady()
         }
