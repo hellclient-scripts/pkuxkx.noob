@@ -20,7 +20,12 @@ App.Quest.Vein.Start=function(cmd){
         cmds.push(App.NewCommand("function",Wudu))
         cmds.push(App.NewCommand("neili",2000))
     }else{
-        cmds.push(App.NewCommand("neili",20000))
+        let n=20000
+        let n2=Math.floor(App.Data.HP["neili"]*21/20)+1
+        if (n2>n){
+            n=n2
+        }
+        cmds.push(App.NewCommand("neili",n))
     }
     cmds=cmds.concat([
         App.NewCommand("nobusy"),
