@@ -24,29 +24,29 @@
                     switch (maxskill[0]) {
                         case "-":
                             var data = maxskill.slice(1).trim().split(" ")
-                            if (data.length > 2) {
-                                maxskill=data[1]
-                                offset = 0-(data[0])
+                            if (data.length > 1) {
+                                maxskill = data[1]
+                                offset = 0 - (data[0])
                             } else {
-                                maxskill=data[0]
+                                maxskill = data[0]
                                 offset = -1
                             }
 
                             break
                         case "+":
                             var data = maxskill.slice(1).trim().split(" ")
-                            if (data.length > 2) {
-                                maxskill=data[1]
-                                offset = 0+(data[0])
+                            if (data.length > 1) {
+                                maxskill = data[1]
+                                offset = 1 * (data[0])
                             } else {
-                                maxskill=data[0]
-                                offset = +1
+                                maxskill = data[0]
+                                offset = 1
                             }
                             break
                     }
                     let sk = App.Core.PlayerGetSkillByID(maxskill)
                     if (sk) {
-                        max = sk.Level + offset
+                        max = Math.floor(sk.Level) + offset
                     } else {
                         max = 0
                     }
@@ -129,7 +129,7 @@
                 cmd = "du " + study.Target + " for " + (study.Per ? study.Per : "50")
                 break
             case "cmd":
-                cmd = study.Target+""
+                cmd = study.Target + ""
                 break
             case "xiulian":
                 cmd = "xiulian " + study.Skill

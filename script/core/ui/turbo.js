@@ -6,6 +6,9 @@
         list.append("120", "2小时")
         list.append("240", "4小时")
         list.append("480", "8小时")
+        list.append("960", "12小时")
+        list.append("1440", "24小时")
+        list.append("2880", "48小时")
         list.publish("App.CoreUITurbo")
     }
     App.CoreUITurbo = function (name, id, code, data) {
