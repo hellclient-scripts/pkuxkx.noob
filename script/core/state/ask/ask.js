@@ -22,9 +22,17 @@
                 }
                 break;
             case "core.nothere":
+                if (App.GetContext("Question").NoFail){
+                    App.Core.Ask.NoMoreReply()
+                    return
+                }
                 App.Fail()
                 break
             case "core.ask.faint":
+                if (App.GetContext("Question").NoFail){
+                    App.Core.Ask.NoMoreReply()
+                    return
+                }
                 App.Fail()
                 break
         }
