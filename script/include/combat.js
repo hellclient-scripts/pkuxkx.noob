@@ -7,6 +7,7 @@
         this.Yield = false
         this.Online = null
         this.KillCmd = ""
+        this.KillAgainCmd=""
         this.Target = ""
         //战斗跳开自动判断，使用自定义结束行
         this.FinishLine = ""
@@ -28,6 +29,7 @@
         this.QiWound=0
         this.QiDamage=0
         this.JingDamage=0
+        this.LastTarget=""
     }
     Combat.prototype.LoadActions = function (data) {
         let lines = data.split("\n")
@@ -90,7 +92,9 @@
     Combat.prototype.SetCounter = function (counter) {
         this.Counter = counter
     }
-
+    Combat.prototype.SetLastTarget=function(target){
+        this.LastTarget=target
+    }
     Combat.prototype.Duration = function () {
         return (Now() - this.StartAt) / 1000
     }

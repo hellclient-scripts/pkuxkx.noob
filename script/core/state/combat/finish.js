@@ -6,11 +6,11 @@
     }
     State.prototype = Object.create(basicstate.prototype)
     State.prototype.Finish = function () {
-        let dur=App.Core.Combat.Current.Duration()
-        if (dur<=0){
-            dur=1
+        let dur = App.Core.Combat.Current.Duration()
+        if (dur <= 0) {
+            dur = 1
         }
-        Note("战斗结束，用时：" + dur + "秒  每秒Damage:"+Math.round(App.Core.Combat.Current.QiDamage/dur)+"  总Damage:"+App.Core.Combat.Current.QiDamage+"  每秒Wound:"+Math.round(App.Core.Combat.Current.QiWound/dur)+"  总Wound:"+App.Core.Combat.Current.QiWound)
+        Note("战斗结束，用时：" + dur + "秒  每秒Damage:" + Math.round(App.Core.Combat.Current.QiDamage / dur) + "  总Damage:" + App.Core.Combat.Current.QiDamage + "  每秒Wound:" + Math.round(App.Core.Combat.Current.QiWound / dur) + "  总Wound:" + App.Core.Combat.Current.QiWound)
 
         let afterCombatCmd = GetVariable("after_combat_cmd")
         if (afterCombatCmd) {
@@ -22,8 +22,8 @@
                 App.NewCommand("do", "yield no"),
             ])
         }
-        if (App.Core.Combat.Current.FirstAid){
-            App.SetRoomData("combat.firstaid",true)
+        if (App.Core.Combat.Current.FirstAid) {
+            App.SetRoomData("combat.firstaid", true)
         }
         if (App.Core.Combat.Current.After) {
             if (!App.Core.Combat.Current.Counter) {
@@ -41,7 +41,7 @@
                 App.NewCommand("do", "yun recover"),
                 App.NewCommand("state", "core.state.combat.rest"),
             ])
-        }else{
+        } else {
             cmds = cmds.concat([
                 App.NewCommand("function", App.Core.Buff.AutoToggle),
             ])
@@ -50,11 +50,18 @@
         App.Next()
     }
     State.prototype.Enter = function (context, oldstatue) {
-        if (App.Core.Combat.Current.Target && App.Core.Combat.Current.KillCmd&&!App.GetRoomData("core.nofight")) {
-            App.Core.NPC.FindHere(App.Core.Combat.Current.Target)
-        } else {
-            this.Finish()
+        if (!App.GetRoomData("core.nofight")) {
+            let killagaincmd=App.Core.Combat.GetKillAgainCmd()
+            if (App.Core.Combat.Current.LastTarget && killagaincmd) {
+                App.Core.NPC.FindHere(App.Core.Combat.Current.LastTarget)
+                return
+            }
+            if (App.Core.Combat.Current.Target && killagaincmd) {
+                App.Core.NPC.FindHere(App.Core.Combat.Current.Target)
+                return
+            }
         }
+        this.Finish()
 
     }
     State.prototype.OnEvent = function (context, event, data) {

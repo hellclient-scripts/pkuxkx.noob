@@ -1,6 +1,7 @@
 (function (App) {
     let Kill = function (cmd, type, before, after) {
         this.Cmd = cmd
+        this.KillAgainCmd=""
         this.Type = type
         this.Before = before
         this.After = after
@@ -15,6 +16,7 @@
         this.HaltWound = 0
         this.FirstAid=false
         this.StrategyList=[]
+        this.LastTarget=""
     }
     Kill.prototype.WithCounter=function(counter){
         this.Counter=counter
@@ -34,6 +36,14 @@
     }
     Kill.prototype.WithStrategyList=function(strategyList){
         this.StrategyList=strategyList||[]
+        return this
+    }
+    Kill.prototype.WithLastTarget=function(target){
+        this.LastTarget=target
+        return this
+    }
+    Kill.prototype.WithKillAgainCmd=function(cmd){
+        this.KillAgainCmd=cmd
         return this
     }
     return Kill

@@ -76,7 +76,7 @@
     App.Core.OnPlayerScore4 = function (name, output, wildcards) {
         App.Data.Score["country"] = wildcards[0]
         App.Data.Score["gender"] = wildcards[1]
-        App.Data.Score["family"] = wildcards[2]
+        App.Data.Score["family"] = wildcards[3]
     }
     App.Core.OnPlayerScore5 = function (name, output, wildcards) {
         // App.Data.Score["age"]=CNumber.Split(wildcards[0]).Count

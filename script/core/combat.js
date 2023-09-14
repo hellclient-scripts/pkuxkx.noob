@@ -67,8 +67,11 @@
         App.NewCommand("rest").Push()
         App.Next()
     }
+    App.Core.Combat.GetKillAgainCmd=function(){
+        return App.Core.Combat.Current.KillAgainCmd?App.Core.Combat.Current.KillAgainCmd:App.Core.Combat.Current.KillCmd
+    }
     App.Core.Combat.KillAgain = function () {
-        App.Send(App.Core.Combat.Current.KillCmd)
+        App.Send(App.Core.Combat.GetKillAgainCmd())
         App.ChangeState("core.state.combat.combating")
     }
     App.Core.Combat.OnLoot = function (name, output, wildcards) {
