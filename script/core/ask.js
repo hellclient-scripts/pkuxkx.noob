@@ -57,6 +57,17 @@
         App.Raise("core.reply")
         App.RaiseStateEvent("core.reply", output)
     }
+    App.Core.Ask.OnAnimalReply=function(name, output, wildcards){
+        App.Data.Ask.Replies = []
+        App.Data.Ask.Lines = []
+        App.Data.Ask.Time = Now()
+        App.Core.Ask.LastNPC = ""
+        App.Core.Ask.LastQuestion = ""
+        App.Data.Ask.NPC = wildcards[0]
+        App.Data.Ask.Question = ""
+        world.EnableTriggerGroup("core.ask.reply", false)
+        App.RaiseStateEvent("core.reply.animal", output)
+    }
     App.Core.Ask.NoMoreReply = function () {
         world.EnableTriggerGroup("core.ask.reply", false)
     }

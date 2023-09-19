@@ -145,12 +145,27 @@
         }
         return true
     }
+    App.Core.Combat.Conditions["duration"] = function (data) {
+        if (!data) {
+            data = 1
+        }
+        let combat = App.Core.Combat.Current
+        if (!combat) {
+            return false
+        }
+        return App.Data.Qishi >= combat.Duration()
+    }
+
     App.Core.Combat.Conditions["qishi"] = function (data) {
         if (!data) {
             data = 0
         }
         return App.Data.Qishi >= data
     }
+    App.Core.Combat.Conditions["ok"] = function (data) {
+        return (!App.Core.Perform.Cooldown[data])||App.Core.Perform.Cooldown[data]>=Now()
+    }
+    
     App.Core.Combat.Conditions["neili"] = function (data) {
         if (App.Data.HP["neili"] <= 0) {
             return false

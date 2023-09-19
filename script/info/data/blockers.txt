@@ -26,7 +26,7 @@
 厚土旗众||killall qi zhong||100000
 小毛||killall xiao mao||100000
 王兴隆||killall wang xinglong||100000
-总管||killall zong guan||100000
+总管||killall zong guan||50000
 清兵||killall qing bing||100000
 我大蒙古皇帝||killall meng ge||1000000
 猴子||killall lao monkey||1000000

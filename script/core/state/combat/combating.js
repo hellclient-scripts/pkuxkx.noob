@@ -103,6 +103,10 @@
                     return
                 }
             }
+            if (data["perform_cd"]&&data["perform_id"]){
+                App.Core.Perform.Cooldown[data["perform_id"]]=Now() +(data["perform_cd"]* 1000)
+                Note("绝招 "+data["perform_id"]+" 进入 "+data["perform_cd"]+" CD")
+            }
         }
     }
     State.prototype.OnGMCPNpc = function (data) {
