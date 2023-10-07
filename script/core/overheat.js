@@ -2,6 +2,11 @@
     const max = 30
     App.Core.Overheat = {}
     App.Core.Overheat.Last = []
+    App.Core.Overheat.LasfBuffFull=Now()
+    App.Bind("core.bufffull","core.overhead.onbufffull")
+    App.RegisterCallback("core.overhead.onbufffull",function(){
+        App.Core.Overheat.LasfBuffFull=Now()
+    })
     App.Core.Overheat.Commands = {
         "west": 11,
         "w": 11,

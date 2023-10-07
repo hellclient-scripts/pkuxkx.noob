@@ -163,7 +163,7 @@
         return App.Data.Qishi >= data
     }
     App.Core.Combat.Conditions["ok"] = function (data) {
-        return (!App.Core.Perform.Cooldown[data])||App.Core.Perform.Cooldown[data]>=Now()
+        return (!App.Core.Perform.Cooldown[data])||App.Core.Perform.Cooldown[data]<=Now()
     }
     
     App.Core.Combat.Conditions["neili"] = function (data) {
@@ -303,11 +303,21 @@
                 break
         }
     }
+    App.Core.Combat.SetPendingCmd=function(cmd){
+        let combat = App.Core.Combat.Current
+        if (combat) {
+            combat.PendingCmd=cmd
+        }
+    }
     App.Core.Combat.Perform = function () {
         App.Core.Combat.Toggle()
         App.Core.Combat.Performed = false
         let combat = App.Core.Combat.Current
         if (combat) {
+            if (combat.PendingCmd){
+                App.Send(combat.PendingCmd)
+                combat.PendingCmd=""
+            }
             if (combat.HaltAfter) {
                 if (combat.Duration() > combat.HaltAfter) {
                     App.Send("halt")
@@ -349,9 +359,10 @@
             } else {
                 App.Core.Weapon.OnCombat()
             }
-            if (combat.Yield) {
-                return
-            }
+            // if (combat.Yield) {
+            //     return
+            // }
+
             for (var i = 0; i < combat.Actions.length; i++) {
                 App.Core.Combat.ExecSend(combat.Actions[i])
             }

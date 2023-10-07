@@ -2,6 +2,7 @@
     const DefaultTimeout = 300
     const DefaultMaxImages = 5
     let imgsrcre = /<img src="\.([^"]+)"/
+    App.Data.FailMessage=""
     App.Data.CaptchaURLs = {}
     App.Data.CaptchaCode = ""
     App.Data.LastFullme = 0
@@ -198,6 +199,7 @@
         App.Core.CaptchaAlias()
         App.RaiseStateEvent("captcha.success")
         App.Raise("captcha.success")
+        App.Raise("captcha.fullmeok")
         App.Raise("HUDUpdate")
     }
     App.Core.CaptchaOnGonghaoFail = function (name, output, wildcards) {
@@ -214,6 +216,9 @@
         App.RaiseStateEvent("captcha.fail")
         App.Raise("captcha.fail")
         App.Raise("HUDUpdate")
+        if ( output.indexOf("再来一次")<0){
+            App.Raise("captcha.fullmefail")
+        }
     }
     App.Core.CaptchaAlias = function () {
         App.Send("alias lastfullme " + App.Data.LastFullmeSuccess + "|" + App.Data.LastFullme)

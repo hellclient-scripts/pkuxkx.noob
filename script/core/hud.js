@@ -43,7 +43,7 @@
     }
     App.RegisterCallback("App.Core.HUD.ZhangSan", function (data) {
         let output = App.Data.Room.Name + "[" + App.Data.Room.ID + "] " + data
-        let line=[]
+        let line = []
         line.push(JSON.parse(NewWord(output)))
         App.Core.HUD.SetNote(JSON.stringify(line))
     })
@@ -186,6 +186,17 @@
         word.Text = "" + App.Core.Overheat.Value
         word.Bold = true
         word.Color = App.Core.Overheat.IsOverThreshold() ? "Red" : "Green"
+        line.Words.push(word)
+        word = JSON.parse(NewWord(" 冷却时长 "))
+        line.Words.push(word)
+        let coolduration = Math.floor((Now()-App.Core.Overheat.LasfBuffFull)/ 60000)
+        if (coolduration > 99) {
+            coolduration = "99+"
+        }
+        word = JSON.parse(NewWord(""))
+        word.Text = coolduration > 99 ? "99+" : (coolduration + "")
+        word.Bold = true
+        word.Color = coolduration < 20 ? "Red" : "Green"
         line.Words.push(word)
         UpdateHUD(GetHUDSize() - 1, JSON.stringify([line]))
     }
@@ -407,7 +418,7 @@
     App.Core.HUD.PickOverheatMode = function () {
         var list = Userinput.newlist("请选择你要设置过热模式", "过热模式决定了高强度运行后怎么对行为进行限制")
         list.append("死宅男", "死宅男：过热时会休息30秒，不会进入高速移动")
-        list.append("体校生", "体校生:过热不会休息，但也不会进入高速移动")
+        list.append("体校生", "体校生:冷却时长超过20分钟等于磕药的，不然等于死宅男")
         list.append("磕药的", "磕药的：无视过热")
         list.publish("App.Core.HUD.OnOverheatMode")
     }
@@ -445,21 +456,21 @@
         }
     }
 
-    let summaryLabelSep=JSON.parse(NewWord(" "))
-    let summaryLabelHourexp= JSON.parse(NewWord("效率:"))
-    let summaryLabelOverHeat= JSON.parse(NewWord("水温:"))
-    let summaryLabelFullme= JSON.parse(NewWord("福米:"))
-    let summaryLabelAfk= JSON.parse(NewWord("暂离:"))
-    let summaryLabelLoad= JSON.parse(NewWord("负重:"))
+    let summaryLabelSep = JSON.parse(NewWord(" "))
+    let summaryLabelHourexp = JSON.parse(NewWord("效率:"))
+    let summaryLabelOverHeat = JSON.parse(NewWord("水温:"))
+    let summaryLabelFullme = JSON.parse(NewWord("福米:"))
+    let summaryLabelAfk = JSON.parse(NewWord("暂离:"))
+    let summaryLabelLoad = JSON.parse(NewWord("负重:"))
 
 
     App.Core.HUD.Summary = function () {
         var line1 = JSON.parse(NewLine())
         let words1 = []
-        if (GetPriority()>0&&App.Core.HUD.WarningMessage){
-            let wordpriority=JSON.parse(NewWord(App.Core.HUD.WarningMessage))
-            wordpriority.Bold=true
-            wordpriority.Color="Red"
+        if (GetPriority() > 0 && App.Core.HUD.WarningMessage) {
+            let wordpriority = JSON.parse(NewWord(App.Core.HUD.WarningMessage))
+            wordpriority.Bold = true
+            wordpriority.Color = "Red"
             words1.push(wordpriority)
             words1.push(summaryLabelSep)
         }
@@ -476,29 +487,29 @@
         var line2 = JSON.parse(NewLine())
         let words2 = []
         words2.push(summaryLabelHourexp)
-        let wordhourxp=JSON.parse(NewWord(FormatNumber(App.Data.HourExp)))
-        wordhourxp.Bold=true
-        wordhourxp.Color=(App.Data.HourExp>=0)?"Green":"Red"
+        let wordhourxp = JSON.parse(NewWord(FormatNumber(App.Data.HourExp)))
+        wordhourxp.Bold = true
+        wordhourxp.Color = (App.Data.HourExp >= 0) ? "Green" : "Red"
         words2.push(wordhourxp)
         words2.push(summaryLabelSep)
 
         words2.push(summaryLabelOverHeat)
-        let wordoverheat=JSON.parse(NewWord(App.Core.Overheat.Value))
-        wordoverheat.Bold=true
-        wordoverheat.Color=App.Core.Overheat.IsOverThreshold() ? "Red" : "Green"
+        let wordoverheat = JSON.parse(NewWord(App.Core.Overheat.Value))
+        wordoverheat.Bold = true
+        wordoverheat.Color = App.Core.Overheat.IsOverThreshold() ? "Red" : "Green"
         words2.push(wordoverheat)
         words2.push(summaryLabelSep)
 
         words2.push(summaryLabelFullme)
         let now = Now()
-        let wordfullme=JSON.parse(NewWord(""))
+        let wordfullme = JSON.parse(NewWord(""))
         if (App.Data.LastFullmeSuccess > 0) {
             let left = Math.floor((App.Data.LastFullmeSuccess + 3600000 - now) / 60000)
             if (left < 0) {
                 wordfullme.Text = "无"
                 wordfullme.Color = "Red"
             } else {
-                wordfullme.Text = left+""
+                wordfullme.Text = left + ""
                 wordfullme.Color = left < 20 ? "Yellow" : "Green"
             }
             wordfullme.Bold = true
@@ -510,25 +521,25 @@
         words2.push(summaryLabelSep)
 
         words2.push(summaryLabelAfk)
-        let wordafk=JSON.parse(NewWord(App.Data.Afk?"是":"否"))
-        wordafk.Color=(!App.Data.Afk)?"Green":"Red"
+        let wordafk = JSON.parse(NewWord(App.Data.Afk ? "是" : "否"))
+        wordafk.Color = (!App.Data.Afk) ? "Green" : "Red"
         words2.push(wordafk)
         words2.push(summaryLabelSep)
 
         words2.push(summaryLabelLoad)
-        let wordload=JSON.parse(NewWord(App.Data.Load))
-        wordafk.Color=(App.Data.Load<50)?"Green":"Red"
+        let wordload = JSON.parse(NewWord(App.Data.Load))
+        wordafk.Color = (App.Data.Load < 50) ? "Green" : "Red"
         words2.push(wordload)
         words2.push(summaryLabelSep)
-    
 
-        line2.Words=words2
-        SetSummary(JSON.stringify([line1,line2]))
+
+        line2.Words = words2
+        SetSummary(JSON.stringify([line1, line2]))
     }
-    App.Core.HUD.WarningMessage=""
-    App.Core.HUD.SetWarningMessage=function(msg){
-        if (msg!=App.Core.HUD.WarningMessage){
-            App.Core.HUD.WarningMessage=msg
+    App.Core.HUD.WarningMessage = ""
+    App.Core.HUD.SetWarningMessage = function (msg) {
+        if (msg != App.Core.HUD.WarningMessage) {
+            App.Core.HUD.WarningMessage = msg
             App.Core.HUD.Summary()
         }
     }

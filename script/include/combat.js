@@ -30,6 +30,7 @@
         this.QiDamage=0
         this.JingDamage=0
         this.LastTarget=""
+        this.PendingCmd=""
     }
     Combat.prototype.LoadActions = function (data) {
         let lines = data.split("\n")

@@ -59,5 +59,7 @@
     App.Core.Condition.Register(new (Include("core/condition/xiuxingdian.js"))())
     App.Core.Condition.Register(new (Include("core/condition/detail.js"))())
     App.Core.Condition.Register(new (Include("core/condition/never.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/jobred.js"))())
+    App.Core.Condition.Register(new (Include("core/condition/joballok.js"))())
 
 })(App)
