@@ -39,6 +39,10 @@
                 App.NewCommand("function", App.Core.Buff.AutoToggle),
                 App.NewCommand("nobusy"),
                 App.NewCommand("do", "yun recover"),
+                App.NewCommand("function",function(){
+                    App.Core.Combat.BeforeRest=App.Core.Combat.Current
+                    App.Next()
+                }),
                 App.NewCommand("state", "core.state.combat.rest"),
             ])
         } else {

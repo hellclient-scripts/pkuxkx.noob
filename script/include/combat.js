@@ -13,6 +13,8 @@
         this.FinishLine = ""
         this.FirstAid = false
         this.OnNpcFlee = null
+        this.OnRestInterrupted = null
+
         this.StartAt = Now()
         this.HaltWound = 0
         this.Wimpy = -1
@@ -65,6 +67,9 @@
     }
     Combat.prototype.SetOnNpcFlee = function (OnNpcFlee) {
         this.OnNpcFlee = OnNpcFlee
+    }
+    Combat.prototype.SetOnRestInterrupted = function (OnRestInterrupted) {
+        this.OnRestInterrupted = OnRestInterrupted
     }
     Combat.prototype.SetWimpy = function (wimpy) {
         this.Wimpy = wimpy

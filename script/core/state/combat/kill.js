@@ -11,6 +11,7 @@
         App.Core.Combat.Current = new combat(kill.StrategyList)
         App.Core.Combat.Current.SetOnline(kill.Online)
         App.Core.Combat.Current.SetOnNpcFlee(kill.OnNpcFlee)
+        App.Core.Combat.Current.SetOnRestInterrupted(kill.OnRestInterrupted)
         App.Core.Combat.Current.SetFirstAid(kill.SetFirstAid)
         App.Core.Combat.Current.SetYield(App.Data.Room.YieldYes)
         App.Core.Combat.Current.SetHaltCurrent(kill.HaltCurrent)

@@ -90,6 +90,9 @@
         ]).Push()
         App.Next()
     }
+    State.prototype.Leave = function (context, oldstatue) {
+        App.Core.Combat.BeforeRest=null
+    }
     State.prototype.OnRoomEvent = function (event, data) {
         switch (event) {
             case "core.healfail":
@@ -105,6 +108,13 @@
                 break
             case "move.onRoomObjEnd":
                 App.Next()
+                break
+            case "combat.restinterrupted":
+                if (App.Core.Combat.BeforeRest&&App.Core.Combat.BeforeRest.OnRestInterrupted){
+                    App.Core.Combat.BeforeRest.OnRestInterrupted()
+                    return
+                }
+                App.Core.Combat.OnRestInterrupted()
                 break
         }
 

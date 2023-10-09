@@ -10,6 +10,7 @@
         this.FinishLine=""
         this.Counter=false
         this.OnNpcFlee = null
+        this.OnRestInterrupted=null
         this.HaltCurrent = 0
         this.HaltAfter =0
         this.Wimpy=-1

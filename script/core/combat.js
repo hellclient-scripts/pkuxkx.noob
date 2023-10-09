@@ -4,6 +4,7 @@
 
     App.Core.Combat = {}
     App.Core.Combat.Current = null
+    App.Core.Combat.BeforeRest=null
     App.Core.Combat.Enemies = new enemies()
     App.Core.Combat.Performed = false
     App.Core.Combat.OnEscapeFail = function (name, output, wildcards) {
@@ -43,7 +44,9 @@
         App.Core.Combat.Looted = {}
     }
     App.Core.Combat.Looted = {}
-
+    App.Core.Combat.OnRestFail = function (name, output, wildcards) {
+        App.RaiseStateEvent("combat.restinterrupted", output)
+    }
     App.Core.Combat.OnKilled = function (name, output, wildcards) {
         App.RaiseStateEvent("combat.killed", wildcards[0])
     }
@@ -130,6 +133,8 @@
     }
     App.Core.Combat.Intro("blocker", "被拦路时进行的策略")
     App.Core.Combat.Intro("counter", "自动反击时进行的策略")
+    App.Core.Combat.Intro("restinterrupted", "休整被打断时进行的策略")
+    
     world.EnableTimer("App.Core.Combat.OnTick", false)
     App.Core.Combat.Conditions = {}
     App.Core.Combat.CheckConditions = function (conditions) {
@@ -368,7 +373,12 @@
             }
         }
     }
+    App.Core.Combat.OnRestInterrupted=function(){
+        App.Core.Combat.Current = new combat(["counter","restinterrupted"])
+        App.Push(["core.state.combat.combat"])
+        App.Next()
 
+    }
     App.RegisterState(new (Include("core/state/combat/combat.js"))())
     App.RegisterState(new (Include("core/state/combat/combating.js"))())
     App.RegisterState(new (Include("core/state/combat/finish.js"))())
