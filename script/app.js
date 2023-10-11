@@ -151,6 +151,7 @@ App.Start = function () {
     App.Load("info/info.js")
     App.Load("alias/alias.js")
     App.Load("quest/quest.js")
+    App.Load("help/help.js")
     App.Raise("BeforeInit")
     App.Raise("Init")
     App.Raise("InitMod")

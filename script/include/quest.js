@@ -5,6 +5,7 @@
         this.Intro=""
         this.Job=""
         this.Summary=""
+        this.MarkdownHelp=""
     }
     Quest.prototype.Start=function(param){
 
