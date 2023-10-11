@@ -44,7 +44,16 @@
     App.Automaton.Finish=function(){
         let final=App.Automaton.Current().FinalState
         App.Core.Automata.pop()
-        App.ChangeState(final?final:"ready")
+        if (!final){
+            App.ChangeState("ready")
+            
+        }else{
+            if (typeof(final)=="function"){
+                final()
+            }else{
+                App.ChangeState(final)
+            }
+        }        
     }
     App.Automaton.Fail=function(){
         if (App.Core.Automata.length==0){
@@ -57,7 +66,11 @@
         if (!fail){
             App.Automaton.Fail()
         }else{
-            App.ChangeState(fail)
+            if (typeof(fail)=="function"){
+                fail()
+            }else{
+                App.ChangeState(fail)
+            }
         }
     }
     App.Automaton.Loop=function(label){

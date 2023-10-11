@@ -1,8 +1,10 @@
 (function(){
     let Automaton=function(states,final){
+        //最终结束状态，如果是函数，会调用函数并等待next/fail
         this.FinalState=final
         this.Context={}
         this.Transitions=states?states:[]
+        //
         this.FailState=""
         this.State=""
         this.Loop=""
@@ -11,6 +13,7 @@
         this.State=state
     }
     Automaton.prototype.WithFinalState=function(final){
+        //最终失败状态，如果是函数，会调用函数并等待next/fail
         this.FinalState=final
         return this
     }
