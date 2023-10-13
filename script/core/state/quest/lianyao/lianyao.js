@@ -1,5 +1,4 @@
 (function (App) {
-    let re = /^书架上的书有点乱了，你要把它们按颜色整理\(zhengli <书名> to <位置>，比如zhengli 金瓶梅 to 2\)好。$/
     let basicstate = Include("core/state/basicstate.js")
     let State = function () {
         basicstate.call(this)

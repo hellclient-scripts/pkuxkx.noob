@@ -79,6 +79,7 @@
     let Locations={
         "jkf":{"yp":"jkfyp","gj":"jkfypgj"},
         "linan":{"yp":"linanyp","gj":"linanypgj"},
+        "home":{"yp":"linanyp","gj":"home-linan"},
         // "qhmz":
     }
     App.Quest.Lianyao.Formula={}
