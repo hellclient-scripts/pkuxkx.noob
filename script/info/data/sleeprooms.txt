@@ -29,8 +29,6 @@ fuzhou-dsx
 hengshan-wofang
 hengshan-wofang2
 kqwf-xiangfang
-tls-kefang
-tls-shuifang
 lanzhou-wufang
 wssz-shuifang
 //dls-qxs
@@ -49,3 +47,6 @@ home-linan
 jqg-shuifang
 hs-hsxxs
 jxj
+dcs-sengshe
+dcs-kefang
+dcs-shuifang

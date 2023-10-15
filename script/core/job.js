@@ -32,7 +32,7 @@
         let job={
             ID:wildcards[0],
             Status:wildcards[1],
-            Color:JSON.parse(DumpOutput(1))[0]["Words"][7].Color,
+            Color:JSON.parse(DumpOutput(1))[0]["Words"][6].Color,
             Next:calc(wildcards[1])
         }
         App.Data.Job[job.ID]=job

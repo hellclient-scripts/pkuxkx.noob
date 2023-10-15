@@ -15,7 +15,19 @@
         "sang zhi":["buy sang zhi 10"],
         "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
         "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
-
+    }
+    App.Quest.Lianyao.ItemsHome={
+        "huo zhezi":["buy huo zhezi"],
+        "xue jie":["buy xue jie"],
+        "dan nanxing":["buy dan nanxing"],
+        "dang gui":["buy dang gui"],
+        "dang shen":["buy dang shen"],
+        "zhu sha":["buy zhu sha"],
+        "yuan zhi":["buy yuan zhi"],
+        "he huan":["buy he huan"],
+        "sang zhi":["buy sang zhi"],
+        "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
+        "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
     }
     App.Quest.Lianyao.Formulas={
         "*":{
@@ -79,7 +91,7 @@
     let Locations={
         "jkf":{"yp":"jkfyp","gj":"jkfypgj"},
         "linan":{"yp":"linanyp","gj":"linanypgj"},
-        "home":{"yp":"linanyp","gj":"home-linan"},
+        "home":{"yp":"linanyp","gj":"home-linan","home":true},
         // "qhmz":
     }
     App.Quest.Lianyao.Formula={}
@@ -102,7 +114,7 @@
     }
     App.Quest.Lianyao.Buy=function(item){
         Note("补充"+item)
-        let itemcmds=App.Quest.Lianyao.Items[item]
+        let itemcmds=App.Quest.Lianyao.Location.home?App.Quest.Lianyao.ItemsHome[item]:App.Quest.Lianyao.Items[item]
         if (!itemcmds){
             throw("无法获取的道具["+item+"]")
         }
@@ -121,7 +133,20 @@
         App.Commands(cmds).Push()
         App.Next()
     }
+    App.Quest.Lianyao.Drop=function(){
+        App.Commands([
+            App.NewCommand("to",App.Options.NewWalk(App.Quest.Lianyao.Location["yp"])),
+            App.NewCommand("do","drop lu zha;i2"),
+            App.NewCommand("nobusy"),
+            App.NewCommand("function",App.Quest.Lianyao.Check),
+        ]).Push()
+        App.Next()
+    }
     App.Quest.Lianyao.Check=function(){
+        if (App.GetItemNumber("lu zha", true) >0 ) {
+            App.Quest.Lianyao.Drop()
+            return
+        }
         if (App.GetItemNumber("huo zhezi", true) < 1) {
             App.Quest.Lianyao.Buy("huo zhezi")
             return
