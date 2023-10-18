@@ -4,30 +4,30 @@
         Type:""
     }
     App.Quest.Lianyao.Items={
-        "huo zhezi":["buy huo zhezi 5"],
-        "xue jie":["buy xue jie 20"],
-        "dan nanxing":["buy dan nanxing 20"],
-        "dang gui":["buy dang gui 10"],
-        "dang shen":["buy dang shen 10"],
-        "zhu sha":["buy zhu sha 20"],
-        "yuan zhi":["buy yuan zhi 20"],
-        "he huan":["buy he huan 10"],
-        "sang zhi":["buy sang zhi 10"],
-        "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
-        "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
+        "huo zhezi":{cmd:["buy huo zhezi 5"]},
+        "xue jie":{cmd:["buy xue jie 20"]},
+        "dan nanxing":{cmd:["buy dan nanxing 20"]},
+        "dang gui":{cmd:["buy dang gui 10"]},
+        "dang shen":{cmd:["buy dang shen 10"]},
+        "zhu sha":{cmd:["buy zhu sha 20"]},
+        "yuan zhi":{cmd:["buy yuan zhi 20"]},
+        "he huan":{cmd:["buy he huan 10"]},
+        "sang zhi":{cmd:["buy sang zhi 10"]},
+        "qiannian renshenpian":{cmd:["buy qiannian renshen","qie qiannian renshen"],loc:"jkfyp"},
+        "qiannian lingzhipian":{cmd:["buy ling zhi","qie ling zhi"],loc:"jkfyp"},
     }
     App.Quest.Lianyao.ItemsHome={
-        "huo zhezi":["buy huo zhezi"],
-        "xue jie":["buy xue jie"],
-        "dan nanxing":["buy dan nanxing"],
-        "dang gui":["buy dang gui"],
-        "dang shen":["buy dang shen"],
-        "zhu sha":["buy zhu sha"],
-        "yuan zhi":["buy yuan zhi"],
-        "he huan":["buy he huan"],
-        "sang zhi":["buy sang zhi"],
-        "qiannian renshenpian":["buy qiannian renshen","qie qiannian renshen"],
-        "qiannian lingzhipian":["buy ling zhi","qie ling zhi"]
+        "huo zhezi":{cmd:["buy huo zhezi"]},
+        "xue jie":{cmd:["buy xue jie"]},
+        "dan nanxing":{cmd:["buy dan nanxing"]},
+        "dang gui":{cmd:["buy dang gui"]},
+        "dang shen":{cmd:["buy dang shen"]},
+        "zhu sha":{cmd:["buy zhu sha"]},
+        "yuan zhi":{cmd:["buy yuan zhi"]},
+        "he huan":{cmd:["buy he huan"]},
+        "sang zhi":{cmd:["buy sang zhi"]},
+        "qiannian renshenpian":{cmd:["buy qiannian renshen","qie qiannian renshen"],loc:"jkfyp"},
+        "qiannian lingzhipian":{cmd:["buy ling zhi","qie ling zhi"],loc:"jkfyp"},
     }
     App.Quest.Lianyao.Formulas={
         "*":{
@@ -119,10 +119,10 @@
             throw("无法获取的道具["+item+"]")
         }
         let cmds=[
-            App.NewCommand("to",App.Options.NewWalk(App.Quest.Lianyao.Location["yp"])),
+            App.NewCommand("to",App.Options.NewWalk(itemcmds.loc?itemcmds.loc:App.Quest.Lianyao.Location["yp"])),
         ]
-        for (var i=0;i<itemcmds.length;i++){
-            cmds.push(App.NewCommand("do",itemcmds[i]))
+        for (var i=0;i<itemcmds.cmd.length;i++){
+            cmds.push(App.NewCommand("do",itemcmds.cmd[i]))
             cmds.push(App.NewCommand("nobusy"))
         }
         cmds=cmds.concat([
