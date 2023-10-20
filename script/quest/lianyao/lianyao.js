@@ -15,6 +15,14 @@
         "sang zhi":{cmd:["buy sang zhi 10"]},
         "qiannian renshenpian":{cmd:["buy qiannian renshen","qie qiannian renshen"],loc:"jkfyp"},
         "qiannian lingzhipian":{cmd:["buy ling zhi","qie ling zhi"],loc:"jkfyp"},
+        "yuxing cao":{cmd:["buy im_84"],loc:"suzhoudp"},
+        "fu ling":{cmd:["buy im_319"],loc:"suzhoudp"},
+        "ding xiang":{cmd:["buy im_75"],loc:"suzhoudp"},
+        "jixue teng":{cmd:["buy im_892"],loc:"suzhoudp"},
+        "chang shan":{cmd:["buy im_78"],loc:"suzhoudp"},
+        "fupen zi":{cmd:["buy im_14"],loc:"linandp"},
+        "jing jie":{cmd:["buy im_463"],loc:"linandp"},
+
     }
     App.Quest.Lianyao.ItemsHome={
         "huo zhezi":{cmd:["buy huo zhezi"]},
@@ -28,6 +36,23 @@
         "sang zhi":{cmd:["buy sang zhi"]},
         "qiannian renshenpian":{cmd:["buy qiannian renshen","qie qiannian renshen"],loc:"jkfyp"},
         "qiannian lingzhipian":{cmd:["buy ling zhi","qie ling zhi"],loc:"jkfyp"},
+        "jixue teng":{cmd:["buy im_892"],loc:"suzhoudp"},
+        "chang shan":{cmd:["buy im_78"],loc:"suzhoudp"},
+        "bo he":{cmd:["buy im_10"],loc:"linandp"},
+        "yuxing cao":{cmd:["buy im_84"],loc:"suzhoudp"},
+        "fu ling":{cmd:["buy im_319"],loc:"suzhoudp"},
+        "ding xiang":{cmd:["buy im_75"],loc:"suzhoudp"},
+        "fupen zi":{cmd:["buy im_14"],loc:"linandp"},
+        "jing jie":{cmd:["buy im_463"],loc:"linandp"},
+        "feng jia":{cmd:["pickgem x4a;pickgem q4b"],loc:"linandp"},
+        "feng gu":{cmd:["pickgem g4a;pickgem g4b"],loc:"linandp"},
+        "lei jiao":{cmd:["pickgem q5a;pickgem q5b"],loc:"linandp"},
+        "lei yu":{cmd:["pickgem f5a;pickgem f5b"],loc:"linandp"},
+        "shui bing":{cmd:["pickgem b3a"],loc:"linandp"},
+        "shui sui":{cmd:["pickgem s3c"],loc:"linandp"},
+        "feng sui":{cmd:["pickgem s4c"],loc:"linandp"},
+        "feng bing":{cmd:["pickgem b4a"],loc:"linandp"},
+
     }
     App.Quest.Lianyao.Formulas={
         "*":{
@@ -86,6 +111,36 @@
         "毒草类初级解药":{
             "qiannian renshenpian":1,
             "zhu sha":1,
+        },
+        "毒草类初级解药":{
+            "qiannian renshenpian":1,
+            "zhu sha":1,
+        },
+        "冰麟丹":{
+            "bo he":1,
+            "jixue teng":1,
+            "lei jiao":1,
+            "shui bing":1,
+        },
+        "天羽丸":{
+            "fu lin":1,
+            "yuxing cao":1,
+            "lei yu":1,
+            "shui sui":1,
+        },
+        "冰龙散":{
+            "fupen zi":1,
+            "dang gui":1,
+            "feng gu":1,
+            "feng bing":1,
+        },
+        "集气散":{
+            "ding xaing":1,
+            "he huan":1,
+            "feng jia":1,
+            "feng sui":1,
+        },
+        "手动":{
         }
     }
     let Locations={

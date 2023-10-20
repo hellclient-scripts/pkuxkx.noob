@@ -64,8 +64,15 @@
 
                 break
             case "#loop":
-                if (!App.Stopped) {
-                    queue.Remain = CloneArray(queue.Queue)
+                queue.Loops++
+                if (!App.Stopped ) {
+                    let max=current.Data-0
+                    if (max){
+                        Note("Loop:"+queue.Loops+"/"+max)
+                    }
+                    if ((!max)||max>queue.Loops){
+                        queue.Remain = CloneArray(queue.Queue)
+                    }
                 }
                 App.NewCommand("delay", App.GetNumberParam("queuedelay")).Push()
                 App.Next()
