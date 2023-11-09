@@ -17,6 +17,7 @@
         "qiannian lingzhipian":{cmd:["buy ling zhi","qie ling zhi"],loc:"jkfyp"},
         "yuxing cao":{cmd:["buy im_84"],loc:"suzhoudp"},
         "fu ling":{cmd:["buy im_319"],loc:"suzhoudp"},
+        "shedan":{cmd:["buy im_745"],loc:"suzhoudp"},
         "ding xiang":{cmd:["buy im_75"],loc:"suzhoudp"},
         "jixue teng":{cmd:["buy im_892"],loc:"suzhoudp"},
         "chang shan":{cmd:["buy im_78"],loc:"suzhoudp"},
@@ -44,6 +45,8 @@
         "ding xiang":{cmd:["buy im_75"],loc:"suzhoudp"},
         "fupen zi":{cmd:["buy im_14"],loc:"linandp"},
         "jing jie":{cmd:["buy im_463"],loc:"linandp"},
+        "shedan":{cmd:["buy im_745"],loc:"suzhoudp"},
+        "pipa ye":{cmd:["buy im_610"],loc:"linandp"},
         "feng jia":{cmd:["pickgem x4a;pickgem q4b"],loc:"linandp"},
         "feng gu":{cmd:["pickgem g4a;pickgem g4b"],loc:"linandp"},
         "lei jiao":{cmd:["pickgem q5a;pickgem q5b"],loc:"linandp"},
@@ -52,7 +55,7 @@
         "shui sui":{cmd:["pickgem s3c"],loc:"linandp"},
         "feng sui":{cmd:["pickgem s4c"],loc:"linandp"},
         "feng bing":{cmd:["pickgem b4a"],loc:"linandp"},
-
+        "chuan bei":{cmd:["buy im_11"],loc:"linandp"},
     }
     App.Quest.Lianyao.Formulas={
         "*":{
@@ -90,15 +93,20 @@
             "yuan zhi":2,
             "qiannian renshenpian":1,
         },
+        "极品养精丹":{
+            "dang shen":5,
+            "zhu sha":8,
+            "yuan zhi":8,
+        },
         "极品金创药":{
             "xue jie":8,
             "dan nanxing":8,
             "dang gui":5,
         },
-        "极品养精丹":{
-            "dang shen":5,
-            "zhu sha":8,
-            "yuan zhi":8,
+        "蛇胆川贝枇杷膏":{
+            "chuan bei":1,
+            "shedan":1,
+            "pipa ye":1,
         },
         "青龙丹":{
             "qiannian lingzhipian":1,

@@ -151,7 +151,7 @@
         App.RaiseStateEvent("core.bufffull")
     }
     App.Core.OnTopCmd=function(name, output, wildcards){
-        App.RaiseStateEvent("core.topcmd")
+        App.Raise("core.topcmd")
     }
 
     App.Core.OnMoveNotAllowed=function(name, output, wildcards){

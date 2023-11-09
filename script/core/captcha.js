@@ -1,6 +1,10 @@
 (function (App) {
     const DefaultTimeout = 300
     const DefaultMaxImages = 5
+    var MaxImages={
+        "exits":9,
+        "flowers":9,
+    }
     let imgsrcre = /<img src="\.([^"]+)"/
     App.Data.FailMessage=""
     App.Data.CaptchaURLs = {}
@@ -26,7 +30,7 @@
         let url=App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
         if (url !=App.Data.CaptchaCurrentURL){
             App.Core.CaptchaImages = []
-            App.Core.CaptchaImagesRemain = DefaultMaxImages    
+            App.Core.CaptchaImagesRemain = MaxImages[App.Data.CaptchaCurrentType]?MaxImages[App.Data.CaptchaCurrentType]:DefaultMaxImages
             App.Data.CaptchaCurrentURL = url
         }
     }
