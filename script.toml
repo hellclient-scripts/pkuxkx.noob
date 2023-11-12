@@ -2284,7 +2284,7 @@ Channel = "pkuxkx.noob"
   ID = "d1e2fka4a6lii373u8ghah"
   Name = "App.Core.CaptchaOnAlias"
   Enabled = true
-  Match = "^lastfullme    = (\\d+)\\|(\\d+)$"
+  Match = "^│lastfullme\\s+│(\\d+)\\|(\\d+)\\s+│$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
