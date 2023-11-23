@@ -21,7 +21,7 @@
             return
         }
         App.SetContext("index",index+1)
-        App.API.Captcha("fullme",null,this.ID)
+        App.API.Captcha({type:"fullme",timeout:15*60*1000},null,this.ID)
     }
     return StateFullme
 })(App)

@@ -18,4 +18,11 @@
         ]).Push()
         App.Next()
     }
+    App.Quest.Fullme.Show=function(){
+        App.Commands([
+            App.NewCommand("function",App.API.ShowFullme),
+        ]).Push()
+        App.Next()
+
+    }
     })(App)

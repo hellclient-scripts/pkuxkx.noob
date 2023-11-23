@@ -20,6 +20,7 @@
             case "exits":
             case "zoneroom":
             case "2words":
+            case "show":
                 this.Cmd=null
                 break
             default:

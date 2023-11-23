@@ -1,12 +1,12 @@
 (function (App) {
     const DefaultTimeout = 300
     const DefaultMaxImages = 5
-    var MaxImages={
-        "exits":9,
-        "flowers":9,
+    var MaxImages = {
+        "exits": 9,
+        "flowers": 9,
     }
     let imgsrcre = /<img src="\.([^"]+)"/
-    App.Data.FailMessage=""
+    App.Data.FailMessage = ""
     App.Data.CaptchaURLs = {}
     App.Data.CaptchaCode = ""
     App.Data.LastFullme = 0
@@ -27,12 +27,30 @@
         App.Data.CaptchaURLs[type] = App.Data.CatpchaLastURL
     }
     App.Core.CaptchaLoadURL = function () {
-        let url=App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
-        if (url !=App.Data.CaptchaCurrentURL){
+        let url = App.Data.CaptchaURLs[App.Data.CaptchaCurrentType]
+        if (url != App.Data.CaptchaCurrentURL) {
             App.Core.CaptchaImages = []
-            App.Core.CaptchaImagesRemain = MaxImages[App.Data.CaptchaCurrentType]?MaxImages[App.Data.CaptchaCurrentType]:DefaultMaxImages
+            App.Core.CaptchaImagesRemain = MaxImages[App.Data.CaptchaCurrentType] ? MaxImages[App.Data.CaptchaCurrentType] : DefaultMaxImages
             App.Data.CaptchaCurrentURL = url
         }
+    }
+    App.API.ShowFullme = function () {
+        if (App.Data.CatpchaLastURL) {
+            App.Commands([
+                App.NewCommand("function", function () { App.API.Captcha({ type: "show", timeout: 60 * 60 * 1000 }) }),
+                App.NewCommand("function", function () {
+                    if (App.Data.CaptchaCode) {
+                        Note("输入的识别内容为“" + App.Data.CaptchaCode + "”");
+                        Note("内容保存在内容为show_content的变量内。");
+                        SetVariable("show_content", App.Data.CaptchaCode);
+                    }
+                    App.Next();
+                }),
+            ]).Push();
+        } else {
+            Note("无fullme信息");
+        }
+        App.Next()
     }
     App.API.Captcha = function (data, final, fail) {
         if (typeof (data) == "string") {
@@ -54,6 +72,7 @@
             case "flowers":
             case "exits":
             case "2words":
+            case "show":
             case "zoneroom":
                 App.API.CaptchaSaveURL(type)
                 break
@@ -76,6 +95,10 @@
         App.Core.Quest.Cooldowns["fullme"] = -1
         App.Core.Quest.InsertQuest("fullme")
     }
+    App.Core.CaptchaShowFullme = function () {
+        App.Core.Quest.InsertQuest("showfullme")
+    }
+
     App.Core.CaptchaLoad = function () {
         App.Core.CaptchaImagesRemain--
         if (App.Core.CaptchaImagesRemain >= 0) {
@@ -158,6 +181,9 @@
             case "2words":
                 intro = "忽略红色字符，请输入图中的两个词语。如果有空格将会分多次发送。"
                 break
+            case "show":
+                intro = "展示模式,结果存放在变量show_content内。"
+                break
 
             default:
                 intro = "忽略红色字符，如果是方向性文字，每对中括号内文字为一组"
@@ -220,7 +246,7 @@
         App.RaiseStateEvent("captcha.fail")
         App.Raise("captcha.fail")
         App.Raise("HUDUpdate")
-        if ( output.indexOf("再来一次")<0){
+        if (output.indexOf("再来一次") < 0) {
             App.Raise("captcha.fullmefail")
         }
     }

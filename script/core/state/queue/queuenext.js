@@ -65,12 +65,12 @@
                 break
             case "#loop":
                 queue.Loops++
-                if (!App.Stopped ) {
-                    let max=current.Data-0
-                    if (max){
-                        Note("Loop:"+queue.Loops+"/"+max)
+                if (!App.Stopped) {
+                    let max = current.Data - 0
+                    if (max) {
+                        Note("Loop:" + queue.Loops + "/" + max)
                     }
-                    if ((!max)||max>queue.Loops){
+                    if ((!max) || max > queue.Loops) {
                         queue.Remain = CloneArray(queue.Queue)
                     }
                 }
@@ -81,23 +81,23 @@
                 App.API.Captcha(current.Data, "", "core.state.queue.next")
                 break
             case "#item":
-                var cdata=current.Data.split("::")
-                if (cdata.length==1){
+                var cdata = current.Data.split("::")
+                if (cdata.length == 1) {
                     cdata.push(1)
                 }
-                App.NewCommand("item", App.Options.NewItem(cdata[0],cdata[1]-0)).Push()
+                App.NewCommand("item", App.Options.NewItem(cdata[0], cdata[1] - 0)).Push()
                 App.Next()
                 break
             case "#buy":
-                var cdata=current.Data.split("::")
-                if (cdata.length==1){
+                var cdata = current.Data.split("::")
+                if (cdata.length == 1) {
                     cdata.push(1)
                 }
-                App.NewCommand("buy", App.Options.NewItem(cdata[0],cdata[1]-0)).Push()
+                App.NewCommand("buy", App.Options.NewItem(cdata[0], cdata[1] - 0)).Push()
                 App.Next()
                 break
             case "#neili":
-                App.NewCommand("neili", current.Data-0).Push()
+                App.NewCommand("neili", current.Data - 0).Push()
                 App.Next()
                 break
             default:
