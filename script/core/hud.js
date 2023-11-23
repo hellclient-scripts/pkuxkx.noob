@@ -457,9 +457,9 @@
     }
 
     let summaryLabelSep = JSON.parse(NewWord(" "))
-    let summaryLabelHourexp = JSON.parse(NewWord("效率:"))
+    let summaryLabelHourexp = JSON.parse(NewWord("   效率:"))
     let summaryLabelOverHeat = JSON.parse(NewWord("水温:"))
-    let summaryLabelFullme = JSON.parse(NewWord("福米:"))
+    let summaryLabelFullme = JSON.parse(NewWord("|福米"))
     let summaryLabelAfk = JSON.parse(NewWord("暂离:"))
     let summaryLabelLoad = JSON.parse(NewWord("负重:"))
 
@@ -475,6 +475,25 @@
             words1.push(summaryLabelSep)
         }
 
+        let now = Now()
+        let wordfullme = JSON.parse(NewWord(""))
+        if (App.Data.LastFullmeSuccess > 0) {
+            let left = Math.floor((App.Data.LastFullmeSuccess + 3600000 - now) / 60000)
+            if (left < 0) {
+                wordfullme.Text = "无"
+                wordfullme.Color = "Red"
+            } else {
+                wordfullme.Text = left + ""
+                wordfullme.Color = left < 20 ? "Yellow" : "Green"
+            }
+            wordfullme.Bold = true
+        } else {
+            wordfullme.Text = "- "
+            wordfullme.Color = "white"
+        }
+        words1.push(wordfullme)
+        words1.push(summaryLabelFullme)
+        words1.push(summaryLabelSep)
         if (App.CurrentStateID() == "manual") {
             words1.push(wordCurrentQuestManual)
         } else if (App.Core.HUD.CurrentQuest) {
@@ -500,25 +519,7 @@
         words2.push(wordoverheat)
         words2.push(summaryLabelSep)
 
-        words2.push(summaryLabelFullme)
-        let now = Now()
-        let wordfullme = JSON.parse(NewWord(""))
-        if (App.Data.LastFullmeSuccess > 0) {
-            let left = Math.floor((App.Data.LastFullmeSuccess + 3600000 - now) / 60000)
-            if (left < 0) {
-                wordfullme.Text = "无"
-                wordfullme.Color = "Red"
-            } else {
-                wordfullme.Text = left + ""
-                wordfullme.Color = left < 20 ? "Yellow" : "Green"
-            }
-            wordfullme.Bold = true
-        } else {
-            wordfullme.Text = "-"
-            wordfullme.Color = "white"
-        }
-        words2.push(wordfullme)
-        words2.push(summaryLabelSep)
+
 
         words2.push(summaryLabelAfk)
         let wordafk = JSON.parse(NewWord(App.Data.Afk ? "是" : "否"))

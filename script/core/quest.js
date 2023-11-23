@@ -65,7 +65,7 @@
         if (App.Core.Quest.Queue.length) {
             let info = "任务正在执行中，将 " + quest + " 插入队列"
             Note(info)
-            Userinput.Popup("", info, "info")
+            Userinput.Popup("", "插入任务", info)
             App.Core.Quest.Pending = quest
         } else {
             Note("任务队列为空，执行 " + quest)
