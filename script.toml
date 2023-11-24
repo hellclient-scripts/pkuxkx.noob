@@ -1260,7 +1260,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2377,7 +2377,7 @@ Channel = "pkuxkx.noob"
   ID = "d1e3otdrpmn5vb71e3euje"
   Name = "App.Core.OnMoveAnswer"
   Enabled = true
-  Match = "^(王府亲兵大声喝道：「哪里来的刁民，胆敢擅闯王府？」|没有经过通传，任何人等不得擅闯都统治府。|守军拦住了你的去路，大声喝到：干什么的？要想通过先问问我们守将大人！|守将大声喝到:干什么的\\?\\(answer\\)|你的经验不够，还是不要进去的好。|那条路不知深浅，还是不要去了。)$"
+  Match = "^(王府亲兵大声喝道：「哪里来的刁民，胆敢擅闯王府？」|没有经过通传，任何人等不得擅闯都统治府。|守军拦住了你的去路，大声喝到：干什么的？要想通过先问问我们守将大人！|守将大声喝到:干什么的\\?\\(answer\\)|你的经验不够，还是不要进去的好。|那条路不知深浅，还是不要去了。|山魈对你伸了伸手，似乎想讨要点东西。)$"
   Send = ""
   ColourChangeType = 0
   Colour = 0
@@ -4356,6 +4356,7 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
+
 [[Triggers]]
   ID = "d1f1dl90qe1f0371q6189j-2"
   Name = "App.Core.Ask.OnAnimalReply2"
@@ -4386,7 +4387,7 @@ Channel = "pkuxkx.noob"
   Inverse = false
   Italic = false
   Variable = ""
-  
+
 [[Triggers]]
   ID = "d1f31gbaacmqqh71kph1pk"
   Name = "App.Core.Combat.OnRestInterrupted"
@@ -6351,28 +6352,6 @@ Channel = "pkuxkx.noob"
   Match = "^#fullme$"
   Send = ""
   Script = "App.Core.CaptchaFullme"
-  SendTo = 0
-  Sequence = 0
-  ExpandVariables = false
-  Temporary = false
-  OneShot = false
-  Regexp = true
-  Group = ""
-  IgnoreCase = false
-  KeepEvaluating = false
-  Menu = false
-  OmitFromLog = false
-  Variable = ""
-  ReverseSpeedwalk = false
-  OmitFromOutput = false
-  OmitFromCommandHistory = false
-[[Aliases]]
-  ID = "fullme"
-  Name = "fullme"
-  Enabled = true
-  Match = "^#showfullme$"
-  Send = ""
-  Script = "App.Core.CaptchaShowFullme"
   SendTo = 0
   Sequence = 0
   ExpandVariables = false

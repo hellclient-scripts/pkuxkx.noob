@@ -467,13 +467,7 @@
     App.Core.HUD.Summary = function () {
         var line1 = JSON.parse(NewLine())
         let words1 = []
-        if (GetPriority() > 0 && App.Core.HUD.WarningMessage) {
-            let wordpriority = JSON.parse(NewWord(App.Core.HUD.WarningMessage))
-            wordpriority.Bold = true
-            wordpriority.Color = "Red"
-            words1.push(wordpriority)
-            words1.push(summaryLabelSep)
-        }
+
 
         let now = Now()
         let wordfullme = JSON.parse(NewWord(""))
@@ -494,6 +488,15 @@
         words1.push(wordfullme)
         words1.push(summaryLabelFullme)
         words1.push(summaryLabelSep)
+
+        if (GetPriority() > 0 && App.Core.HUD.WarningMessage) {
+            let wordpriority = JSON.parse(NewWord(App.Core.HUD.WarningMessage))
+            wordpriority.Bold = true
+            wordpriority.Color = "Red"
+            words1.push(wordpriority)
+            words1.push(summaryLabelSep)
+        }
+        
         if (App.CurrentStateID() == "manual") {
             words1.push(wordCurrentQuestManual)
         } else if (App.Core.HUD.CurrentQuest) {

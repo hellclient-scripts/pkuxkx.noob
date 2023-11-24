@@ -4,3 +4,4 @@
 守将大声喝到:干什么的?(answer)||answer 送信
 你的经验不够，还是不要进去的好。||ask liang liuhe about 拜山
 那条路不知深浅，还是不要去了。||ask qiao fu about 绝义谷
+山魈对你伸了伸手，似乎想讨要点东西。||give 1 coin to shan xiao&&give 1 silver to shan xiao
