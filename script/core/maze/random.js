@@ -43,6 +43,9 @@
         return data[0]
     }
     Maze.prototype.IsEscaped = function (move) {
+        if (this.Mode==ModeCheckingArrived){
+            return false;
+        }
         let escaped = (this.CheckSuccess() && this.Command)
         return escaped
     }
