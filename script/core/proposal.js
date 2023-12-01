@@ -85,6 +85,7 @@
     Include("core/proposal/toggle.js")
     Include("core/proposal/zhenqi.js")
     Include("core/proposal/shaqi.js")
+    Include("core/proposal/overheat.js")
     App.RegisterState(new (Include("core/state/prepare/preparecheck.js"))())
     App.RegisterState(new (Include("core/state/prepare/prepareconfirm.js"))())
 })(App)
