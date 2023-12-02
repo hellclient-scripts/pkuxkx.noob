@@ -58,7 +58,7 @@
             if (App.Data.HP.eff_jingli>(App.Data.HP.jingli)&&App.Data.HP.eff_jingli>4000){
                 return 8
             }
-            return 5
+            return 4
         }
         return 3
     }

@@ -29,7 +29,7 @@
         "checkavatarinterval":"60000",
         "checktimeinterval":"60000",
         "checkdurabilityinterval":"60000",
-        "overheat_threshold":"200",
+        "overheat_threshold":"180",
         "checkguinterval":"10000",
         "checkexpinterval":"180000",
         "charset":"2",

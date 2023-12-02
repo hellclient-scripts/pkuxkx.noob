@@ -52,7 +52,7 @@
         "eu": 13,
         "i": 15,
         "i2": 8,
-        "l": 19,
+        "l": 20,
         "ask":50,
         "jq":160,
         "wield":5,
@@ -81,6 +81,9 @@
         App.Raise("core.overheat.updated", App.Core.Overheat.Value)
     }
     App.RegisterCallback("app.core.overheat.onsend", function (data) {
+        if (App.Data.Room.Name&&App.Data.Room.Location){
+            return;
+        }
         if (data) {
             for (var i = 0; i < data.length; i++) {
                 let v = App.Core.Overheat.Commands[data[i]]
