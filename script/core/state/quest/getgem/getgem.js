@@ -27,7 +27,7 @@
                     if (gem&&App.Quest.GetGem.Get.Filter(gem[1],gem[2],gem[3])){
                         let count=gem[5]-0
                         for (var k=0;k<count;k++){
-                            App.Quest.GetGem.Get.Data.Commands.push("get "+gem[1]+gem[2]+gem[3]+" from "+App.Quest.GetGem.Get.Data.Pack)                            
+                            App.Quest.GetGem.Get.Data.Commands.push("pickgem "+gem[1]+gem[2]+gem[3])
                         }
                     }
                 }
@@ -49,7 +49,7 @@
 
     }
     State.prototype.Enter = function (context, oldstatue) {
-        App.Send("jiancha")
+        App.Jiancha()
         App.Core.CheckBusy()
     }
     return State

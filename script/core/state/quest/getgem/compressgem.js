@@ -51,7 +51,7 @@
 
     }
     State.prototype.Enter = function (context, oldstatue) {
-        App.Send("jiancha")
+        App.Jiancha()
         App.Core.CheckBusy()
     }
     return State

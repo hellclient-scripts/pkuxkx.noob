@@ -247,4 +247,15 @@
         })
         App.Send("i2")
     }
+
+    App.Core.GemContainers=['ren tou','bo yu','budai']
+    App.Jiancha=function(){
+        let contrainerid='jin nang';
+        for (var i=0;i<App.Core.GemContainers.length;i++){
+            if (App.GetItemObj(App.Core.GemContainers[i],true)){
+                contrainerid=App.Core.GemContainers[i]
+            }
+        }
+        App.Send('jiancha '+contrainerid);
+    }  
 })(App)
