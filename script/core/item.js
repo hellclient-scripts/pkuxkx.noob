@@ -248,7 +248,7 @@
         App.Send("i2")
     }
 
-    App.Core.GemContainers=['ren tou','bo yu','budai']
+    App.Core.GemContainers=['ren ou','bo yu','budai']
     App.Jiancha=function(){
         let contrainerid='jin nang';
         for (var i=0;i<App.Core.GemContainers.length;i++){
