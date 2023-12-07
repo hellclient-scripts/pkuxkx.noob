@@ -37,7 +37,7 @@
     App.API.ShowFullme = function () {
         if (App.Data.CatpchaLastURL) {
             App.Commands([
-                App.NewCommand("function", function () { App.API.Captcha({ type: "show", timeout: 60 * 60 * 1000 }) }),
+                App.NewCommand("function", function () { App.API.Captcha({ type: "show", timeout: 60 * 60 }) }),
                 App.NewCommand("function", function () {
                     if (App.Data.CaptchaCode) {
                         Note("输入的识别内容为“" + App.Data.CaptchaCode + "”");

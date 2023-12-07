@@ -20,11 +20,15 @@
     State.prototype.Enter = function (context, oldstatue) {
         basicstate.prototype.Enter.call(this, context, oldstatue)
         world.ResetTimer("busy_retry")
-        world.EnableTimer("busy_retry",true)
-        App.Core.CheckBusy()
+        world.EnableTimer("busy_retry", true)
+        if (App.GetContext("WaitOK")) {
+            App.Core.CheckBusyWaitOK()
+        } else {
+            App.Core.CheckBusy()
+        }
     }
     State.prototype.Leave = function (context, oldstatue) {
-        world.EnableTimer("busy_retry",false)
+        world.EnableTimer("busy_retry", false)
     }
     return State
 })(App)

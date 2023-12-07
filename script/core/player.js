@@ -75,23 +75,26 @@
     }
     App.Core.OnPlayerScore4 = function (name, output, wildcards) {
         App.Data.Score["country"] = wildcards[0]
-        App.Data.Score["gender"] = wildcards[1]
+        App.Data.Score["savepoint"] = wildcards[1]
         App.Data.Score["family"] = wildcards[3]
     }
     App.Core.OnPlayerScore5 = function (name, output, wildcards) {
-        // App.Data.Score["age"]=CNumber.Split(wildcards[0]).Count
+        App.Data.Score["gender"] = wildcards[0]
+        App.Data.Score["marry"]=wildcards[1]
         App.Data.Score["teacher"] = wildcards[2]
     }
     App.Core.OnPlayerScore6 = function (name, output, wildcards) {
+        App.Data.Score["age"]=CNumber.Split(wildcards[0]).Count
         App.Data.Score["menzhong"] = wildcards[2] - 0
     }
     App.Core.OnPlayerScore7 = function (name, output, wildcards) {
-        // App.Data.Score["birthday"]=wildcards[0]
-        // App.Data.Score["chushi"]=wildcards[1]
+        App.Data.Score["height"]=wildcards[0]
+        App.Data.Score["weight"]=wildcards[1]
+        App.Data.Score["chushi"]=wildcards[2]
     }
     App.Core.OnPlayerScore8 = function (name, output, wildcards) {
-        // App.Data.Score["marry"]=wildcards[0]
-        // App.Data.Score["panshi"]=wildcards[1]
+        App.Data.Score["brithday"]=wildcards[0]
+        App.Data.Score["panshi"]=wildcards[1]
     }
     App.Core.OnPlayerScore9 = function (name, output, wildcards) {
         App.Data.Score["kill"] = wildcards[0] - 0
