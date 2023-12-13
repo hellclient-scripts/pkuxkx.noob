@@ -14,6 +14,7 @@ relogin:#sell xuejie dan
 #store type=宝石
 #sell nen cao,sui rouxie
 #sell baicao dan,puti zi
+#sell type=垃圾
 quit:#sell wushi dao,dulong bian
 #drop shi tan,xuan bing,yun tie,huo tong
 #drop name=破钟

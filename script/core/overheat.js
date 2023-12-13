@@ -1,5 +1,5 @@
 (function (App) {
-    const max = 30
+    const max = 120
     App.Core.Overheat = {}
     App.Core.Overheat.Last = []
     App.Core.Overheat.LasfBuffFull=Now()

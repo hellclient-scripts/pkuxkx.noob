@@ -562,5 +562,6 @@
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/yu.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/quest.js"))())
     App.Core.Asset.RegisterValuing(new (Include("core/valuing/gudong.js"))())
+    App.Core.Asset.RegisterValuing(new (Include("core/valuing/loot.js"))())
 
 })(App)
