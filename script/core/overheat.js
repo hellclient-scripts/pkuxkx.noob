@@ -78,11 +78,11 @@
             }
             App.Core.Overheat.Value=Math.floor(App.Core.Overheat.Value/App.Core.Overheat.Last.length)
             let shortvalue=0
-            let short=App.Core.Overheat.Last.slice(-short)
-            for (var i = 0; i < short.length; i++) {
-                shortvalue += short[i]
+            let shortlist=App.Core.Overheat.Last.slice(-short)
+            for (var i = 0; i < shortlist.length; i++) {
+                shortvalue += shortlist[i]
             }
-            shortvalue=Math.floor(shortvalue/short.length)
+            shortvalue=Math.floor(shortvalue/shortlist.length)
             if (shortvalue>App.Core.Overheat.Value){
                 App.Core.Overheat.Value=shortvalue
             }
