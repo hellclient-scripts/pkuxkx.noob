@@ -1,5 +1,6 @@
 (function (App) {
     const max = 120
+    const short=30
     App.Core.Overheat = {}
     App.Core.Overheat.Last = []
     App.Core.Overheat.LasfBuffFull=Now()
@@ -76,6 +77,15 @@
                 App.Core.Overheat.Value += App.Core.Overheat.Last[i]
             }
             App.Core.Overheat.Value=Math.floor(App.Core.Overheat.Value/App.Core.Overheat.Last.length)
+            let shortvalue=0
+            let short=App.Core.Overheat.Last.slice(-short)
+            for (var i = 0; i < short.length; i++) {
+                shortvalue += short[i]
+            }
+            shortvalue=Math.floor(shortvalue/short.length)
+            if (shortvalue>App.Core.Overheat.Value){
+                App.Core.Overheat.Value=shortvalue
+            }
         }
         App.Core.Overheat.Current = 0
         App.Raise("core.overheat.updated", App.Core.Overheat.Value)
