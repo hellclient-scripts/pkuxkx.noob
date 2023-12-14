@@ -254,7 +254,7 @@
                 App.Next()
                 break
             default:
-                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param || 0 - 0)) : App.Core.Asset.Asset.UNID
+                let cmd = (App.Core.Asset.Asset.Count > 1) ? App.Core.Asset.Asset.ID.toLowerCase() + " for " + (App.Core.Asset.Asset.Count - (action.Param || 0 - 0)) : App.Core.Asset.Asset.Name
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "sell " + cmd),
