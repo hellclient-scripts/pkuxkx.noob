@@ -57,6 +57,30 @@
         App.Raise("core.reply")
         App.RaiseStateEvent("core.reply", output)
     }
+    App.Core.Ask.UnknownRelist=[
+        /.*说道：没听说过。$/,
+        /.*说道：我从没听说过这事。$/,
+        /.*说道：你去问别人吧。$/,
+        /.*显然不知道你在说什么。$/,
+        /.*很抱歉地说：无可奉告。$/,
+        /.*这我可不清楚，你最好问问别人吧。$/,
+        /.*说道：对不起，你问的事我实在没有印象。$/,
+        /.*说道：对不起。又接着忙自己的事去了。$/,
+        /.*说道：没看我正忙着吗？$/,
+        /.*很抱歉地说：我对闲谈不感兴趣。$/,
+
+    ]
+    App.Core.Ask.IsUnkonwReplay=function(){
+        if (App.Data.Ask.Replies.length==0){
+            return true;
+        }
+        for (var i=0;i<App.Core.Ask.UnknownRelist.length;i++){
+            if (App.Data.Ask.Replies[0].match(App.Core.Ask.UnknownRelist[i])){
+                return true
+            }
+        }
+        return false;
+    }
     App.Core.Ask.OnAnimalReply=function(name, output, wildcards){
         App.Data.Ask.Replies = []
         App.Data.Ask.Lines = []
