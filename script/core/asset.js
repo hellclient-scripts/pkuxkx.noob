@@ -235,6 +235,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk("yz-jindian")),
                     App.NewCommand("do", "sell " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
@@ -246,6 +247,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomRbz)),
                     App.NewCommand("do", "sell " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
@@ -258,6 +260,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "sell " + cmd),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
@@ -300,6 +303,7 @@
                     App.Next()
                 }),
                 App.NewCommand("do", "give " + cmd + " to " + data[0]),
+                App.NewCommand("do", "i2"),
                 App.NewCommand("nobusy"),
                 App.NewCommand("function", function () {
                     App.SetRoomOnline(null)
@@ -323,6 +327,7 @@
                 }),
                 App.NewCommand("do", "put " + cmd + " in bao fu"),
                 App.NewCommand("nobusy"),
+                App.NewCommand("do", "i2"),
                 App.NewCommand("function", function () {
                     App.SetRoomOnline(null)
                     if (!App.GetRoomData("assets.put")) {
@@ -350,6 +355,7 @@
         App.Commands([
             App.NewCommand("to", App.Options.NewWalk(App.Info.RoomDrop)),
             App.NewCommand("do", "drop " + cmd),
+            App.NewCommand("do", "i2"),
             App.NewCommand("nobusy"),
             App.NewCommand("function", function () {
                 App.Core.Asset.Execute()
@@ -363,6 +369,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomRbz)),
                     App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
@@ -374,6 +381,7 @@
                 App.Commands([
                     App.NewCommand("function", App.LeaveLimitedRoom),
                     App.NewCommand("do", "pack " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()
@@ -385,6 +393,7 @@
                 App.Commands([
                     App.NewCommand("to", App.Options.NewWalk(App.Info.RoomSell)),
                     App.NewCommand("do", "dang " + App.Core.Asset.Asset.UNID),
+                    App.NewCommand("do", "i2"),
                     App.NewCommand("nobusy"),
                     App.NewCommand("function", function () {
                         App.Core.Asset.Execute()

@@ -1,56 +1,96 @@
 (function (App) {
-    App.Core.Notify={};
-    App.Core.Notify.TPush={};
-    App.Core.Notify.TPush.APIServer='api.tpns.sh.tencent.com/v3/push/app';
-    App.Core.Notify.TPush.Auth=function(success,script){
-        if (!script){
-            script=""
+    const duration = 5 * 60 * 1000;
+    App.Core.Notify = {}
+    App.Core.Notify.WaitManual = false
+    App.Core.Notify.last = {}
+    App.Notify = function (title, content, key) {
+        if (key) {
+            if (App.Core.Notify.last[key] && (Now() - App.Core.Notify.last[key]) < duration) {
+                return;
+            }
+            App.Core.Notify.last[key] = Now();
+            Broadcast('notified ' + key, false);
         }
-        if (!success){
-            success=""
-        }
-        if (!world.CheckPermissions(["http"])){
-            world.RequestPermissions(["http"],"申请HTTP权限用发送腾讯推送通知",script)
-            return
-        }
-        if (!world.CheckTrustedDomains(["api.tpns.sh.tencent.com"])){
-            world.RequestTrustDomains(["api.tpns.sh.tencent.com"],"申请信任腾讯云api",script)
-            return
-        }
-        App.ExecuteCallback(success)
+        push.Notify(title, content)
+
     }
-    App.Core.Notify.TPush.SendAndroid=function(appid,appkey,token,title,content,server,game){
-        var body={
-            "audience_type":"token",
-            "token_list":[token],
-            "message_type":"notify",
-            "message":{
-                "title":title,
-                "content":content,
-                "android":{
-                    "vibrate":1,
-                    "lights":1,
-                    "action":{
-                        "action_type":3,
-                        "intent":"hcnotify://hellclient.jarlyyn.com/notify/"+server+"#"+game,
-                    }
-                }
+    App.RegisterCallback('core.onnotified', function (msg) {
+        let data = SplitN(msg, ' ', 2)
+        if (data[0] == 'notified') {
+            App.Core.Notify.last[data[1]] = Now();
+        }
+    })
+    App.Bind('Broadcast', 'core.onnotified')
+
+    App.RegisterCallback('core.notify.zhangsan', function () {
+        App.Notify('张三找', '快查看');
+    })
+    App.Bind('core.zhangsan', 'core.notify.zhangsan')
+
+    App.RegisterCallback('core.notify.died', function () {
+        App.Notify('出现意外停机', '需要检查');
+    })
+    App.Bind('UnexpectedDeath', 'core.notify.died')
+
+    App.RegisterCallback('core.notify.topcmd', function () {
+        App.Notify('进入受限模式', '请检查设置', 'topcmd');
+    })
+    App.Bind('core.topcmd', 'core.notify.topcmd')
+
+    App.RegisterCallback('core.notify.captcha', function () {
+        if (App.Core.Notify.InSettings('captcha')){
+            App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+        }
+    })
+    App.Bind('core.topcmd', 'core.notify.captcha')
+
+    App.RegisterCallback('core.notify.manual', function () {
+        if (App.Core.Notify.WaitManual) {
+            App.Core.Notify.Report();
+        }
+    })
+    App.Core.Notify.Report = function () {
+        App.Core.Notify.WaitManual = false;
+        App.Notify('准备完毕', '等待下一步指令');
+    }
+    App.Core.Notify.Book = function () {
+        Userinput.Popup("", "已预约", "进入手动状态会进行通知", "info")
+        App.Core.Notify.WaitManual = true;
+    }
+    App.Bind('manual', 'core.notify.manual')
+
+    App.Core.Notify.Show = function () {
+        push.show();
+    }
+    App.Core.Notify.OnWaitManual = function () {
+        App.Core.Notify.Book();
+    }
+    App.Core.Notify.Settings = function () {
+        var list = Userinput.newlist("请选择你的通知设置", "选者你的通知设置", false)
+        list.setmutli(true)
+        list.append("captcha", "输入验证码提醒")
+        list.append("zhangsan", "张三提示")
+        list.setvalues(GetVariable("notify_settings").split(","))
+        list.publish("App.Core.Notify.SettingsCallback")
+    }
+
+
+    App.Core.Notify.SettingsCallback = function (name, id, code, data) {
+        if (code == 0) {
+            var list = JSON.parse(data)
+            world.SetVariable("notify_settings", list.join(","))
+        }
+    }
+    App.Core.Notify.InSettings=function(notifytype){
+        let items=GetVariable("notify_settings").split(",")
+        for(var i=0;i<items.length;i++){
+            if (notifytype==items[i]){
+                return true
             }
         }
-        api='https://'+appid+':'+appkey+"@"+App.Core.Notify.TPush.APIServer;
-        App.Core.Notify.TPush.Req = HTTP.New("POST", api)
-        App.Core.Notify.TPush.Req.SetBody(JSON.stringify(body))
-        Note(JSON.stringify(body));
-        Note("正在发送推送")
-        App.Core.Notify.TPush.Req.AsyncExecute('App.Core.Notify.TPush.Callback')
+        return false
     }
-    App.Core.Notify.TPush.Callback=function(){
-        let resp=App.Core.Notify.TPush.Req.ResponseBody();
-        let data=JSON.parse(resp);
-        if (data.ret_code==0){
-            Note('推送成功')
-        }else{
-            Note(resp)
-        }
-    }
+    App.RegisterAssistant("push", "推送管理", App.Core.Notify.Show, 9999)
+    App.RegisterAssistant("waitmanual", "预约结束后通知", App.Core.Notify.OnWaitManual, 25)
+    push.TPush.RegisterButton('settings', '通知类别设定', App.Core.Notify.Settings)
 })(App)

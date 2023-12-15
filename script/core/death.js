@@ -39,8 +39,8 @@
     App.Core.Death.Disconnect = function () {
         SetPriority(1)
         App.Core.HUD.SetWarningMessage("挂了")
-
         Note("意外死亡。")
+        App.Raise('UnexpectedDeath')
         Disconnect()
         App.Automaton.Flush()
     }

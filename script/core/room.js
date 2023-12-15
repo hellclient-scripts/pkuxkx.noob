@@ -280,7 +280,7 @@
     }
     App.Core.OnRoomObj = function (name, output, wildcards) {
         if (App.Data.Room.Exits === null) {
-            App.Data.Room.Exits === []
+            App.Data.Room.Exits = []
             world.EnableTriggerGroup("roomexit", false)
             world.EnableTriggerGroup("roomobjend", true)
         }

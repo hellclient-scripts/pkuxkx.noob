@@ -6687,6 +6687,29 @@ Channel = "pkuxkx.noob"
   OmitFromCommandHistory = false
 
 [[Aliases]]
+  ID = "d1f88m6b5iqh0072mrdv71"
+  Name = "book"
+  Enabled = true
+  Match = "^#book$"
+  Send = ""
+  Script = "App.Core.Notify.Book"
+  SendTo = 0
+  Sequence = 100
+  ExpandVariables = false
+  Temporary = false
+  OneShot = false
+  Regexp = true
+  Group = ""
+  IgnoreCase = false
+  KeepEvaluating = false
+  Menu = false
+  OmitFromLog = false
+  Variable = ""
+  ReverseSpeedwalk = false
+  OmitFromOutput = false
+  OmitFromCommandHistory = false
+
+[[Aliases]]
   ID = "d1f38qfs629oqo73v419vk"
   Name = "App.Core.OnAliasUnknown"
   Enabled = true
@@ -6943,3 +6966,8 @@ Channel = "pkuxkx.noob"
   Name = "show_content"
   Desc = "最后一次纪录的fullme内容"
   Intro = "不需要设置，纪录最后一次#showfullme的结果"
+
+[[RequiredParams]]
+  Name = "notify_settings"
+  Desc = "通知类别设定"
+  Intro = "请通过助手按钮设置"

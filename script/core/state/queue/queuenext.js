@@ -77,6 +77,10 @@
                 App.NewCommand("delay", App.GetNumberParam("queuedelay")).Push()
                 App.Next()
                 break
+            case "#report":
+                App.Core.Notify.Report()
+                App.Next();
+                break;
             case "#captcha":
                 App.API.Captcha(current.Data, "", "core.state.queue.next")
                 break

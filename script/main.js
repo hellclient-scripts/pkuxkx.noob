@@ -25,7 +25,7 @@ var onAssist = function () {
 }
 
 var onBroadcast = function (msg, global, channel) {
-    App.Raise("Broadcast")
+    App.Raise("Broadcast",msg)
 
 }
 var onResponse = function (msgtype, id, data) {
@@ -145,6 +145,7 @@ var Include = function (file) {
     return Modules.Include(file)
 }
 Include("util.js")
+Include("push.js")
 Include("app.js")
 
 SetPriority(0)
