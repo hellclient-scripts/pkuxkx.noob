@@ -42,7 +42,7 @@
             App.Notify('需要验证', '需要输入验证码继续', 'captcha');
         }
     })
-    App.Bind('core.topcmd', 'core.notify.captcha')
+    App.Bind('captcha', 'core.notify.captcha')
 
     App.RegisterCallback('core.notify.manual', function () {
         if (App.Core.Notify.WaitManual) {
@@ -56,6 +56,12 @@
     App.Core.Notify.Book = function () {
         Userinput.Popup("", "已预约", "进入手动状态会进行通知", "info")
         App.Core.Notify.WaitManual = true;
+    }
+    App.Core.Notify.OnAliasBook=function (name, line, wildcards) {
+        App.Core.Notify.Book()
+        if (wildcards[1]){
+            Execute("#"+wildcards[1]);
+        }
     }
     App.Bind('manual', 'core.notify.manual')
 
