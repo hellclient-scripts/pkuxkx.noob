@@ -23,9 +23,16 @@
     App.Bind('Broadcast', 'core.onnotified')
 
     App.RegisterCallback('core.notify.zhangsan', function () {
-        App.Notify('张三找', '快查看');
+        App.Notify('zhangsan找', '快查看');
     })
+
     App.Bind('core.zhangsan', 'core.notify.zhangsan')
+    App.RegisterCallback('core.notify.zhangsancoming', function () {
+        if (App.Core.Notify.InSettings('zhangsan')) {
+            App.Notify('zhangsan要来', '准备下');
+        }
+    })
+    App.Bind('core.zhangsancoming', 'core.notify.zhangsancoming')
 
     App.RegisterCallback('core.notify.died', function () {
         App.Notify('出现意外停机', '需要检查');
@@ -38,9 +45,19 @@
     App.Bind('core.topcmd', 'core.notify.topcmd')
 
     App.RegisterCallback('core.notify.captcha', function () {
-        if (App.Core.Notify.InSettings('captcha')){
-            App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+        switch (App.Data.CaptchaCurrentType) {
+            case "captcha":
+            case "show":
+                if (App.Core.Notify.InSettings('fullme')) {
+                    App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+                }
+                break;
+            default:
+                if (App.Core.Notify.InSettings('captcha')) {
+                    App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+                }
         }
+
     })
     App.Bind('captcha', 'core.notify.captcha')
 
@@ -57,10 +74,10 @@
         Userinput.Popup("", "已预约", "进入手动状态会进行通知", "info")
         App.Core.Notify.WaitManual = true;
     }
-    App.Core.Notify.OnAliasBook=function (name, line, wildcards) {
+    App.Core.Notify.OnAliasBook = function (name, line, wildcards) {
         App.Core.Notify.Book()
-        if (wildcards[1]){
-            Execute("#"+wildcards[1]);
+        if (wildcards[1]) {
+            Execute("#" + wildcards[1]);
         }
     }
     App.Bind('manual', 'core.notify.manual')
@@ -74,8 +91,9 @@
     App.Core.Notify.Settings = function () {
         var list = Userinput.newlist("请选择你的通知设置", "选者你的通知设置", false)
         list.setmutli(true)
-        list.append("captcha", "输入验证码提醒")
-        list.append("zhangsan", "张三提示")
+        list.append("captcha", "任务随机验证码提醒")
+        list.append("fullme", "主动触发验证码(如fullme)提醒")
+        list.append("zhangsan", "张三要来的提示")
         list.setvalues(GetVariable("notify_settings").split(","))
         list.publish("App.Core.Notify.SettingsCallback")
     }
@@ -87,10 +105,10 @@
             world.SetVariable("notify_settings", list.join(","))
         }
     }
-    App.Core.Notify.InSettings=function(notifytype){
-        let items=GetVariable("notify_settings").split(",")
-        for(var i=0;i<items.length;i++){
-            if (notifytype==items[i]){
+    App.Core.Notify.InSettings = function (notifytype) {
+        let items = GetVariable("notify_settings").split(",")
+        for (var i = 0; i < items.length; i++) {
+            if (notifytype == items[i]) {
                 return true
             }
         }

@@ -545,5 +545,7 @@
     App.Core.OnZhangsan = function (name, output, wildcards) {
         App.Raise("core.zhangsan", output)
     }
-
+    App.Core.OnZhangsanComing=function (name, output, wildcards) {
+        App.Raise("core.zhangsancoming", output)
+    }
 })(App)
