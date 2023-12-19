@@ -29,7 +29,7 @@
     App.Bind('core.zhangsan', 'core.notify.zhangsan')
     App.RegisterCallback('core.notify.zhangsancoming', function () {
         if (App.Core.Notify.InSettings('zhangsan')) {
-            App.Notify('zhangsan要来', '准备下');
+            App.Notify('zhangsan要来', '准备下', 'zhangsan');
         }
     })
     App.Bind('core.zhangsancoming', 'core.notify.zhangsancoming')
@@ -46,19 +46,26 @@
 
     App.RegisterCallback('core.notify.captcha', function () {
         switch (App.Data.CaptchaCurrentType) {
-            case "captcha":
+            case "fullme":
             case "show":
                 if (App.Core.Notify.InSettings('fullme')) {
-                    App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+                    App.Notify('需要验证' + App.Data.CaptchaCurrentType, '需要输入验证码继续');
                 }
                 break;
             default:
                 if (App.Core.Notify.InSettings('captcha')) {
-                    App.Notify('需要验证', '需要输入验证码继续', 'captcha');
+                    App.Notify('需要验证' + App.Data.CaptchaCurrentType, '需要输入验证码继续');
                 }
         }
 
     })
+    App.RegisterCallback('core.notify.captcha.timeoutsoon', function () {
+        if (App.Core.Notify.InSettings('captchatimeoutsoon')) {
+            App.Notify('验证码即将失效', '请及时输入');
+        }
+    })
+    App.Bind('core.captcha.timeoutsoon', 'core.notify.captcha.timeoutsoon')
+
     App.Bind('captcha', 'core.notify.captcha')
 
     App.RegisterCallback('core.notify.manual', function () {
@@ -93,6 +100,7 @@
         list.setmutli(true)
         list.append("captcha", "任务随机验证码提醒")
         list.append("fullme", "主动触发验证码(如fullme)提醒")
+        list.append("captchatimeoutsoon", "验证码即将过期")
         list.append("zhangsan", "张三要来的提示")
         list.setvalues(GetVariable("notify_settings").split(","))
         list.publish("App.Core.Notify.SettingsCallback")

@@ -30,6 +30,15 @@
         App.Core.HUD.SetWarningMessage("需要打码")
         App.Core.CaptchaShow()
         world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds, 'App.RaiseStateEvent("core.captcha.timeout")', 12);
+        if (App.Data.CaptchaTimeoutInSecounds>120){
+            world.DoAfterSpecial(App.Data.CaptchaTimeoutInSecounds-60, 'App.Raise("core.captcha.timeoutsoon")', 12);
+        }
+        if (App.Data.CaptchaTimeoutInSecounds>360){
+            world.DoAfterSpecial(300, 'App.Raise("core.captcha.timeoutsoon")', 12);
+        }
+        if (App.Data.CaptchaTimeoutInSecounds>660){
+            world.DoAfterSpecial(600, 'App.Raise("core.captcha.timeoutsoon")', 12);
+        }
     }
     State.prototype.Leave=function(context,newstatue){
         Userinput.hideall()

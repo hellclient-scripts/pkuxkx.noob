@@ -8,5 +8,8 @@
     OverheatMode.prototype.Delay=function(){
         return App.Core.Overheat.IsOverThreshold()?30:0
     }
+    OverheatMode.prototype.Threshold=function(){
+        return App.GetNumberParam("overheat_threshold")
+    }
     return OverheatMode
 })()

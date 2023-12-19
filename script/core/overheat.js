@@ -4,11 +4,13 @@
     App.Core.Overheat = {}
     App.Core.Overheat.Last = []
     App.Core.Overheat.LasfBuffFull=Now()
+    App.Core.Overheat.LasfBuffFullRaw=0;
     App.Bind("core.bufffull","core.overhead.onbufffull")
     App.Bind("core.topcmd","core.overhead.onbufffull")
     
     App.RegisterCallback("core.overhead.onbufffull",function(){
         App.Core.Overheat.LasfBuffFull=Now()
+        App.Core.Overheat.LasfBuffFullRaw=Now();
     })
     App.Core.Overheat.Commands = {
         "west": 13,
@@ -57,13 +59,13 @@
         "ask":50,
         "jq":160,
         "wield":5,
-        "jifa":4,
+        "jifa":10,
         "skills":123,
     }
     App.Core.Overheat.Value = 0
     App.Core.Overheat.Current = 0
     App.Core.Overheat.IsOverThreshold = function () {
-        return App.Core.Overheat.Value > App.GetNumberParam("overheat_threshold")
+        return App.Core.Overheat.Value > App.Core.OverheatMode.Current().Threshold();
     }
     App.Core.Overheat.OnTimer = function () {
         App.Core.Overheat.Last.unshift(App.Core.Overheat.Current)

@@ -10,5 +10,6 @@
     OverheatMode.prototype.Delay=function(){
         return 0
     }
+    
     return OverheatMode
 })()
