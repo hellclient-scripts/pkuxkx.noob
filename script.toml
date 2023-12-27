@@ -1260,7 +1260,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1duadkle6a05b716ik6gm"
   Name = "App.Core.HUD.OnAvatar"
-  Enabled = true
+  Enabled = false
   Match = "^│.*│$"
   Send = ""
   ColourChangeType = 0
@@ -2221,7 +2221,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1e26aou14rmm66cor2c0"
   Name = "App.Core.Job.OnJob"
-  Enabled = true
+  Enabled = false
   Match = "^│\\[(\\d+)\\]\\s*│[^|]*│[^|]*│(\\S+)\\s*│$"
   Send = ""
   ColourChangeType = 0
@@ -2252,7 +2252,7 @@ Channel = "pkuxkx.noob"
 [[Triggers]]
   ID = "d1e26b0kb4aste6cor3e3"
   Name = "App.Core.Job.OnEnd"
-  Enabled = true
+  Enabled = false
   Match = "^└────┴────┴─────────────┴─+.+─+┘$"
   Send = ""
   ColourChangeType = 0
@@ -4454,7 +4454,7 @@ Channel = "pkuxkx.noob"
   ID = "d1f8de66nacf3k72n7c6gl"
   Name = "App.Core.OnZhangsanComing"
   Enabled = true
-  Match = "^【江湖】张 三\\(Zhang san\\): 看来岛主这次是选错了人了。"
+  Match = "^(【江湖】张 三\\(Zhang san\\): 看来岛主这次是选错了人了。|【江湖】听说侠客岛赏善使者张三驾临中原，寻找武林高手前往侠客岛一聚！ )"
   Send = ""
   ColourChangeType = 0
   Colour = 0
