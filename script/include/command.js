@@ -7,7 +7,7 @@
         this.Fail=""
         this.ID=this.CommandID
     }
-    Command.prototype.CommandID="ask"
+    Command.prototype.CommandID=""
     Command.prototype.WithData=function(data){
         this.Data=data
         return this

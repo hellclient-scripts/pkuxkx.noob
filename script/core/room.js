@@ -548,4 +548,7 @@
     App.Core.OnZhangsanComing=function (name, output, wildcards) {
         App.Raise("core.zhangsancoming", output)
     }
+    App.Core.OnRelative=function(name,output,wildcards){
+        App.Raise("core.relative", output)
+    }
 })(App)

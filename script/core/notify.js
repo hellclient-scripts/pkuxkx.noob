@@ -22,10 +22,14 @@
     })
     App.Bind('Broadcast', 'core.onnotified')
 
+    App.RegisterCallback('core.notify.relative', function () {
+        App.Notify('亲戚找', '快查看');
+    })
+    App.Bind('core.relative', 'core.notify.relative')
+
     App.RegisterCallback('core.notify.zhangsan', function () {
         App.Notify('zhangsan找', '快查看');
     })
-
     App.Bind('core.zhangsan', 'core.notify.zhangsan')
     App.RegisterCallback('core.notify.zhangsancoming', function () {
         if (App.Core.Notify.InSettings('zhangsan')) {
