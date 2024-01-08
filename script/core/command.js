@@ -1,18 +1,18 @@
 (function(App){
-    App.Commands={}
+    App.RegisteredCommands={}
     App.Command={}
     App.RegisterCommand=function(command){
         let id=command.prototype.CommandID
         if (!id){
             throw "Command id不可为空"
         }
-        App.Commands[id]=command
+        App.RegisteredCommands[id]=command
     }
     App.NewCommand=function(id,data,final,fail){
-        if (App.Commands[id]==undefined){
+        if (App.RegisteredCommands[id]==undefined){
             throw "Command id["+id+"]不存在"
         }
-        return new App.Commands[id](data).WithFinalState(final).WithFailState(fail)
+        return new App.RegisteredCommands[id](data).WithFinalState(final).WithFailState(fail)
     }
     App.Commands=function(cmds,final,fail){
         return App.NewCommand("commands",cmds,final,fail)
