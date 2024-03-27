@@ -11,6 +11,7 @@
         "巨岩":true,
         "荒地":true,
         "枯藤":true,
+        "洞穴":true,
         "瀑布":true,
         "山间平台":true,
         "一线天":true,

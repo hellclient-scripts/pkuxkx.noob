@@ -138,8 +138,12 @@
                 this.Arrived[this.RoomDesc][Backward[this.LastCommand.Command]][this.LastRoomDesc] = true
             }
         }
-        let giveup = (!this.Retry && this.Visited) || this.CheckWrongway()
-        if (this.CheckWrongway() && this.RoomInfo != this.Start) {
+        let wrongway=this.CheckWrongway()
+        if (wrongway){
+            Note("已离开迷宫")
+        }
+        let giveup = (!this.Retry && this.Visited) || wrongway
+        if (wrongway && this.RoomInfo != this.Start) {
             let to = this.Command.Level.Concat()
             to.push(this.Command.Command)
             App.Core.Maze.Info[this.Start + "-" + this.RoomInfo] = (to.join(";"))
