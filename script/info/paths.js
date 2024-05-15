@@ -76,10 +76,10 @@
         result.Command = commands.join(";")
         return result
     }
-    App.RegisterAPI("GetPath", function (fr, tolist) {
+    App.RegisterAPI("GetPath", function (fr, tolist,option) {
         Mapper.flashtags()
         App.Raise("PathInit")
-        var data = Mapper.getpath(fr, 1, tolist)
+        var data = Mapper.getpath(fr, 1, tolist,option)
         if (!data) {
             return null
         }

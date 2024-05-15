@@ -183,11 +183,11 @@ Debug = function () {
 Bound = function () {
     Dump(App.Listeners)
 }
-DumpPath = function (fr, to, full) {
+DumpPath = function (fr, to,option,full) {
     if (typeof (to) == "string") {
         to = [to]
     }
-    let path = App.API.GetPath(fr, to)
+    let path = App.API.GetPath(fr, to,option)
     if (path == null) {
         Dump(path)
         return
