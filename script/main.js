@@ -68,7 +68,7 @@ var onBuffer = function (data,bytes) {
         }
         return false
     }
-    if (data.slice(-1) == "]") {
+    if (data.slice(-1) == "]" && false) {
         if (data.length > 4 && data.length < 50) {
             if (data[0] == "[") {
                 return true

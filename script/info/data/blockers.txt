@@ -15,3 +15,4 @@
 猴子||killall lao monkey||1000000
 炼丹人||killall liandan ren||100000
 严妈妈||killall yan mama||100000
+花豹||killall hua bao||100000

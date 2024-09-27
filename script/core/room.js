@@ -511,7 +511,7 @@
     }
     //进入副本指令，一般发送look，触发objend。
     App.Core.EnterInstanceCommands = {
-        "剑心居": "l",
+        "剑心居副本": "l",
         "[蛊神塔]": "l",
     }
     App.Core.OnBlind = function (name, output, wildcards) {
